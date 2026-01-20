@@ -54,7 +54,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
-     * @param  array<string,mixed>  $data
+     * @param array<string,mixed> $data
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -64,7 +64,7 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-     * @param  array<string,mixed>  $options
+     * @param array<string,mixed> $options
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
