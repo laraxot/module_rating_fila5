@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
@@ -7,7 +9,7 @@ use Modules\Rating\Tests\TestCase;
 
 class RatingApiTest extends TestCase
 {
-    public function test_can_list_ratings(): void
+    public function testCanListRatings(): void
     {
         Rating::create([
             'name' => 'Test Rating 1',
@@ -33,7 +35,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function test_can_create_rating(): void
+    public function testCanCreateRating(): void
     {
         $data = [
             'name' => 'New Rating',
@@ -50,7 +52,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function test_can_update_rating(): void
+    public function testCanUpdateRating(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -70,7 +72,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function test_can_delete_rating(): void
+    public function testCanDeleteRating(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -82,7 +84,7 @@ class RatingApiTest extends TestCase
         $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     }
 
-    public function test_can_rate_model(): void
+    public function testCanRateModel(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',

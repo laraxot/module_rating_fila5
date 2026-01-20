@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Rating\DataObjects;
 
-use InvalidArgumentException;
-
 final readonly class RatingData
 {
     /**
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public static function fromArray(array $data): self
     {
@@ -33,7 +31,7 @@ final readonly class RatingData
         public ?string $userId = null,
     ) {
         if ($score < 0 || $score > 5) {
-            throw new InvalidArgumentException('Score must be between 0 and 5');
+            throw new \InvalidArgumentException('Score must be between 0 and 5');
         }
     }
 }

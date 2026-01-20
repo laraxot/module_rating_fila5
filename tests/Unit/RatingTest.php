@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Rating\Tests\Unit;
 
 use Modules\Rating\Enums\SupportedLocale;
@@ -9,7 +11,7 @@ use Modules\Rating\Tests\TestCase;
 
 class RatingTest extends TestCase
 {
-    public function test_can_create_rating(): void
+    public function testCanCreateRating(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -22,7 +24,7 @@ class RatingTest extends TestCase
         ]);
     }
 
-    public function test_can_create_rating_morph(): void
+    public function testCanCreateRatingMorph(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -44,7 +46,7 @@ class RatingTest extends TestCase
         ]);
     }
 
-    public function test_supported_locale_enum(): void
+    public function testSupportedLocaleEnum(): void
     {
         $locale = SupportedLocale::IT;
 

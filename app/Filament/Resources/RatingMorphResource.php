@@ -17,7 +17,7 @@ class RatingMorphResource extends XotBaseResource
 {
     protected static ?string $model = RatingMorph::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getFormSchema(): array
     {

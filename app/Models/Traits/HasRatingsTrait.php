@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Modules\Rating\Models\Rating;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Modules\Rating\Models\Rating;
 
 /**
  * Trait HasRatingsTrait.
@@ -25,12 +24,13 @@ trait HasRatingsTrait
      */
     public function ratings()
     {
-        //return $this->morphRelated(Rating::class);
+        // return $this->morphRelated(Rating::class);
         $rating_class = Str::of(static::class)
         ->before('\Models\\')
         ->append('\Models\Rating')
         ->toString();
-        return $this->morphToManyX($rating_class,'model');
+
+        return $this->morphToManyX($rating_class, 'model');
     }
 
     /**
@@ -180,8 +180,6 @@ trait HasRatingsTrait
         return $msg.$btn.$btn_iframe;
     }
 
-
-
     /*
     public function getRatingsRules(string $prefix, string $postfix): array
     {
@@ -210,5 +208,5 @@ trait HasRatingsTrait
 
         return $res;
     }
-      */  
+      */
 }
