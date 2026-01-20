@@ -85,7 +85,8 @@ trait HasRatingsTrait
     // ----- mutators -----
     // *
     /**
-     * @param  float  $value
+     * @param float $value
+     *
      * @return Collection
      */
     public function getMyRatingAttribute($value)
@@ -100,13 +101,13 @@ trait HasRatingsTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if ($value !== null) {
+        if (null !== $value) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if ($this->getKey() !== null) {
+            if (null !== $this->getKey()) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -116,7 +117,7 @@ trait HasRatingsTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
@@ -125,7 +126,7 @@ trait HasRatingsTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if (null == $this->getKey()) {
             return $value;
         }
 
@@ -138,7 +139,8 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param  array<string, mixed>  $filters
+     * @param array<string, mixed> $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
