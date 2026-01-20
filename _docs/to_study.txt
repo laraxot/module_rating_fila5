@@ -1,4 +1,0 @@
-
-
-//--- rating senza criterio 
-https://github.com/rennokki/rating
