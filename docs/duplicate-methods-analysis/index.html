@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822229693487">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Analisi Metodi Duplicati - Modulo Rating</title>
+    <meta name="title" content="Analisi Metodi Duplicati - Modulo Rating">
+    <meta name="description" content="Data Generazione: 2025-10-15 06:41:17 Totale Gruppi di Duplicati:">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/docs/duplicate-methods-analysis/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/docs/duplicate-methods-analysis/">
+    <meta property="og:title" content="Analisi Metodi Duplicati - Modulo Rating">
+    <meta property="og:description" content="Data Generazione: 2025-10-15 06:41:17 Totale Gruppi di Duplicati:">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/docs/duplicate-methods-analysis/">
+    <meta property="twitter:title" content="Analisi Metodi Duplicati - Modulo Rating">
+    <meta property="twitter:description" content="Data Generazione: 2025-10-15 06:41:17 Totale Gruppi di Duplicati:">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.11.0.822229693487" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822229693487" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822229693487" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.822229693487" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="analisi-metodi-duplicati---modulo-rating" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#analisi-metodi-duplicati---modulo-rating">#</doc-anchor-trigger>
+        <span>Analisi Metodi Duplicati - Modulo Rating</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Data Generazione</strong>: 2025-10-15 06:41:17
+<strong>Totale Gruppi di Duplicati</strong>:</p>
+<doc-anchor-target id="sommario-esecutivo">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sommario-esecutivo">#</doc-anchor-trigger>
+        <span>Sommario Esecutivo</span>
+    </h2>
+</doc-anchor-target>
+<p>Questo documento identifica i metodi duplicati nel modulo <strong>Rating</strong> che potrebbero beneficiare di refactoring.</p>
+<doc-anchor-target id="statistiche">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#statistiche">#</doc-anchor-trigger>
+        <span>Statistiche</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Tipo Refactoring</th>
+<th style="text-align: right;">Conteggio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trait</strong></td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td><strong>Base Class</strong></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td><strong>Altro</strong></td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="dettaglio-metodi-duplicati">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dettaglio-metodi-duplicati">#</doc-anchor-trigger>
+        <span>Dettaglio Metodi Duplicati</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-metodo-user">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-metodo-user">#</doc-anchor-trigger>
+        <span>1. Metodo: <code v-pre>user</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>BaseClass</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F7E1;</span> Medium | <strong>Confidenza</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> 63%</p>
+<p><strong>Trovato in  file22 file</strong>:</p>
+<ul>
+<li><code v-pre>extends::user</code> - <a href="modules/activity/app/models/activity.php">Modules/Activity/app/Models/Activity.php:97</a> (Modulo: Activity)</li>
+<li><code v-pre>Article::user</code> - <a href="modules/blog/app/models/article.php">Modules/Blog/app/Models/Article.php:393</a> (Modulo: Blog)</li>
+<li><code v-pre>Comment::user</code> - <a href="modules/blog/app/models/comment.php">Modules/Blog/app/Models/Comment.php:102</a> (Modulo: Blog)</li>
+<li><code v-pre>Activity::user</code> - <a href="modules/fixcity/app/models/activity.php">Modules/Fixcity/app/Models/Activity.php:58</a> (Modulo: Fixcity)</li>
+<li><code v-pre>PushSubscription::user</code> - <a href="modules/fixcity/app/models/pushsubscription.php">Modules/Fixcity/app/Models/PushSubscription.php:64</a> (Modulo: Fixcity)</li>
+<li><code v-pre>Ticket::user</code> - <a href="modules/fixcity/app/models/ticket.php">Modules/Fixcity/app/Models/Ticket.php:572</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TicketActivity::user</code> - <a href="modules/fixcity/app/models/ticketactivity.php">Modules/Fixcity/app/Models/TicketActivity.php:78</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TicketComment::user</code> - <a href="modules/fixcity/app/models/ticketcomment.php">Modules/Fixcity/app/Models/TicketComment.php:68</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TicketHour::user</code> - <a href="modules/fixcity/app/models/tickethour.php">Modules/Fixcity/app/Models/TicketHour.php:62</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TicketSubscriber::user</code> - <a href="modules/fixcity/app/models/ticketsubscriber.php">Modules/Fixcity/app/Models/TicketSubscriber.php:51</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TaskComment::user</code> - <a href="modules/job/app/models/taskcomment.php">Modules/Job/app/Models/TaskComment.php:70</a> (Modulo: Job)</li>
+<li><code v-pre>RatingMorph::user</code> - <a href="modules/rating/app/models/ratingmorph.php">Modules/Rating/app/Models/RatingMorph.php:104</a></li>
+<li><code v-pre>AuthenticationLog::user</code> - <a href="modules/user/app/models/authenticationlog.php">Modules/User/app/Models/AuthenticationLog.php:74</a> (Modulo: User)</li>
+<li><code v-pre>Device::user</code> - <a href="modules/user/app/models/device.php">Modules/User/app/Models/Device.php:50</a> (Modulo: User)</li>
+<li><code v-pre>DeviceUser::user</code> - <a href="modules/user/app/models/deviceuser.php">Modules/User/app/Models/DeviceUser.php:79</a> (Modulo: User)</li>
+<li><code v-pre>Membership::user</code> - <a href="modules/user/app/models/membership.php">Modules/User/app/Models/Membership.php:57</a> (Modulo: User)</li>
+<li><code v-pre>OauthAccessToken::user</code> - <a href="modules/user/app/models/oauthaccesstoken.php">Modules/User/app/Models/OauthAccessToken.php:69</a> (Modulo: User)</li>
+<li><code v-pre>OauthClient::user</code> - <a href="modules/user/app/models/oauthclient.php">Modules/User/app/Models/OauthClient.php:76</a> (Modulo: User)</li>
+<li><code v-pre>SocialiteUser::user</code> - <a href="modules/user/app/models/socialiteuser.php">Modules/User/app/Models/SocialiteUser.php:52</a> (Modulo: User)</li>
+<li><code v-pre>TeamPermission::user</code> - <a href="modules/user/app/models/teampermission.php">Modules/User/app/Models/TeamPermission.php:62</a> (Modulo: User)</li>
+<li><code v-pre>TeamUser::user</code> - <a href="modules/user/app/models/teamuser.php">Modules/User/app/Models/TeamUser.php:46</a> (Modulo: User)</li>
+<li><code v-pre>TenantUser::user</code> - <a href="modules/user/app/models/tenantuser.php">Modules/User/app/Models/TenantUser.php:47</a> (Modulo: User)</li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">public function user(): BelongsTo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (22 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+<li>Struttura gerarchica chiara</li>
+<li>Possibilità di override controllato</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Richiede testing approfondito</li>
+<li>Possibili dipendenze nascoste</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Accoppiamento gerarchico tra moduli</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Valutare attentamente</strong> - Analizzare le implementazioni specifiche prima di procedere.</p>
+<hr>
+<doc-anchor-target id="2-metodo-casts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-metodo-casts">#</doc-anchor-trigger>
+        <span>2. Metodo: <code v-pre>casts</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>Interface</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F7E2;</span> Low | <strong>Confidenza</strong>: <span class="docs-emoji">&#x274C;</span> 33%</p>
+<p><strong>Trovato in  file105 file</strong>:</p>
+<ul>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/activity/app/models/basemodel.php">Modules/Activity/app/Models/BaseModel.php:56</a> (Modulo: Activity)</li>
+<li><code v-pre>Article::casts</code> - <a href="modules/blog/app/models/article.php">Modules/Blog/app/Models/Article.php:273</a> (Modulo: Blog)</li>
+<li><code v-pre>Banner::casts</code> - <a href="modules/blog/app/models/banner.php">Modules/Blog/app/Models/Banner.php:196</a> (Modulo: Blog)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/blog/app/models/basemodel.php">Modules/Blog/app/Models/BaseModel.php:65</a> (Modulo: Blog)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/blog/app/models/basemorphpivot.php">Modules/Blog/app/Models/BaseMorphPivot.php:57</a> (Modulo: Blog)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/blog/app/models/basepivot.php">Modules/Blog/app/Models/BasePivot.php:51</a> (Modulo: Blog)</li>
+<li><code v-pre>BaseTreeModel::casts</code> - <a href="modules/blog/app/models/basetreemodel.php">Modules/Blog/app/Models/BaseTreeModel.php:55</a> (Modulo: Blog)</li>
+<li><code v-pre>Category::casts</code> - <a href="modules/blog/app/models/category.php">Modules/Blog/app/Models/Category.php:200</a> (Modulo: Blog)</li>
+<li><code v-pre>Menu::casts</code> - <a href="modules/blog/app/models/menu.php">Modules/Blog/app/Models/Menu.php:148</a> (Modulo: Blog)</li>
+<li><code v-pre>Taggable::casts</code> - <a href="modules/blog/app/models/taggable.php">Modules/Blog/app/Models/Taggable.php:135</a> (Modulo: Blog)</li>
+<li><code v-pre>Attachment::casts</code> - <a href="modules/cms/app/models/attachment.php">Modules/Cms/app/Models/Attachment.php:144</a> (Modulo: Cms)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/cms/app/models/basemodel.php">Modules/Cms/app/Models/BaseModel.php:60</a> (Modulo: Cms)</li>
+<li><code v-pre>BaseModelLang::casts</code> - <a href="modules/cms/app/models/basemodellang.php">Modules/Cms/app/Models/BaseModelLang.php:58</a> (Modulo: Cms)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/cms/app/models/basemorphpivot.php">Modules/Cms/app/Models/BaseMorphPivot.php:56</a> (Modulo: Cms)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/cms/app/models/basepivot.php">Modules/Cms/app/Models/BasePivot.php:52</a> (Modulo: Cms)</li>
+<li><code v-pre>BaseTreeModel::casts</code> - <a href="modules/cms/app/models/basetreemodel.php">Modules/Cms/app/Models/BaseTreeModel.php:163</a> (Modulo: Cms)</li>
+<li><code v-pre>Menu::casts</code> - <a href="modules/cms/app/models/menu.php">Modules/Cms/app/Models/Menu.php:190</a> (Modulo: Cms)</li>
+<li><code v-pre>Page::casts</code> - <a href="modules/cms/app/models/page.php">Modules/Cms/app/Models/Page.php:123</a> (Modulo: Cms)</li>
+<li><code v-pre>PageContent::casts</code> - <a href="modules/cms/app/models/pagecontent.php">Modules/Cms/app/Models/PageContent.php:104</a> (Modulo: Cms)</li>
+<li><code v-pre>Section::casts</code> - <a href="modules/cms/app/models/section.php">Modules/Cms/app/Models/Section.php:84</a> (Modulo: Cms)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/comment/app/models/basemodel.php">Modules/Comment/app/Models/BaseModel.php:44</a> (Modulo: Comment)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/comment/app/models/basemorphpivot.php">Modules/Comment/app/Models/BaseMorphPivot.php:54</a> (Modulo: Comment)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/comment/app/models/basepivot.php">Modules/Comment/app/Models/BasePivot.php:41</a> (Modulo: Comment)</li>
+<li><code v-pre>Activity::casts</code> - <a href="modules/fixcity/app/models/activity.php">Modules/Fixcity/app/Models/Activity.php:50</a> (Modulo: Fixcity)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/fixcity/app/models/basemodel.php">Modules/Fixcity/app/Models/BaseModel.php:47</a> (Modulo: Fixcity)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/fixcity/app/models/basepivot.php">Modules/Fixcity/app/Models/BasePivot.php:49</a> (Modulo: Fixcity)</li>
+<li><code v-pre>Category::casts</code> - <a href="modules/fixcity/app/models/category.php">Modules/Fixcity/app/Models/Category.php:117</a> (Modulo: Fixcity)</li>
+<li><code v-pre>Faq::casts</code> - <a href="modules/fixcity/app/models/faq.php">Modules/Fixcity/app/Models/Faq.php:63</a> (Modulo: Fixcity)</li>
+<li><code v-pre>FaqCategory::casts</code> - <a href="modules/fixcity/app/models/faqcategory.php">Modules/Fixcity/app/Models/FaqCategory.php:67</a> (Modulo: Fixcity)</li>
+<li><code v-pre>PushSubscription::casts</code> - <a href="modules/fixcity/app/models/pushsubscription.php">Modules/Fixcity/app/Models/PushSubscription.php:58</a> (Modulo: Fixcity)</li>
+<li><code v-pre>Ticket::casts</code> - <a href="modules/fixcity/app/models/ticket.php">Modules/Fixcity/app/Models/Ticket.php:188</a> (Modulo: Fixcity)</li>
+<li><code v-pre>TicketCategory::casts</code> - <a href="modules/fixcity/app/models/ticketcategory.php">Modules/Fixcity/app/Models/TicketCategory.php:51</a> (Modulo: Fixcity)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/gdpr/app/models/basemodel.php">Modules/Gdpr/app/Models/BaseModel.php:58</a> (Modulo: Gdpr)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/gdpr/app/models/basemorphpivot.php">Modules/Gdpr/app/Models/BaseMorphPivot.php:67</a> (Modulo: Gdpr)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/gdpr/app/models/basepivot.php">Modules/Gdpr/app/Models/BasePivot.php:47</a> (Modulo: Gdpr)</li>
+<li><code v-pre>Address::casts</code> - <a href="modules/geo/app/models/address.php">Modules/Geo/app/Models/Address.php:190</a> (Modulo: Geo)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/geo/app/models/basemodel.php">Modules/Geo/app/Models/BaseModel.php:59</a> (Modulo: Geo)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/geo/app/models/basemorphpivot.php">Modules/Geo/app/Models/BaseMorphPivot.php:59</a> (Modulo: Geo)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/geo/app/models/basepivot.php">Modules/Geo/app/Models/BasePivot.php:45</a> (Modulo: Geo)</li>
+<li><code v-pre>Comune::casts</code> - <a href="modules/geo/app/models/comune.php">Modules/Geo/app/Models/Comune.php:131</a> (Modulo: Geo)</li>
+<li><code v-pre>Locality::casts</code> - <a href="modules/geo/app/models/locality.php">Modules/Geo/app/Models/Locality.php:53</a> (Modulo: Geo)</li>
+<li><code v-pre>Location::casts</code> - <a href="modules/geo/app/models/location.php">Modules/Geo/app/Models/Location.php:89</a> (Modulo: Geo)</li>
+<li><code v-pre>Place::casts</code> - <a href="modules/geo/app/models/place.php">Modules/Geo/app/Models/Place.php:117</a> (Modulo: Geo)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/job/app/models/basemodel.php">Modules/Job/app/Models/BaseModel.php:74</a> (Modulo: Job)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/job/app/models/basemorphpivot.php">Modules/Job/app/Models/BaseMorphPivot.php:56</a> (Modulo: Job)</li>
+<li><code v-pre>Export::casts</code> - <a href="modules/job/app/models/export.php">Modules/Job/app/Models/Export.php:77</a> (Modulo: Job)</li>
+<li><code v-pre>FailedImportRow::casts</code> - <a href="modules/job/app/models/failedimportrow.php">Modules/Job/app/Models/FailedImportRow.php:81</a> (Modulo: Job)</li>
+<li><code v-pre>FailedJob::casts</code> - <a href="modules/job/app/models/failedjob.php">Modules/Job/app/Models/FailedJob.php:81</a> (Modulo: Job)</li>
+<li><code v-pre>Import::casts</code> - <a href="modules/job/app/models/import.php">Modules/Job/app/Models/Import.php:120</a> (Modulo: Job)</li>
+<li><code v-pre>Job::casts</code> - <a href="modules/job/app/models/job.php">Modules/Job/app/Models/Job.php:134</a> (Modulo: Job)</li>
+<li><code v-pre>JobBatch::casts</code> - <a href="modules/job/app/models/jobbatch.php">Modules/Job/app/Models/JobBatch.php:182</a> (Modulo: Job)</li>
+<li><code v-pre>JobManager::casts</code> - <a href="modules/job/app/models/jobmanager.php">Modules/Job/app/Models/JobManager.php:163</a> (Modulo: Job)</li>
+<li><code v-pre>Result::casts</code> - <a href="modules/job/app/models/result.php">Modules/Job/app/Models/Result.php:111</a> (Modulo: Job)</li>
+<li><code v-pre>Schedule::casts</code> - <a href="modules/job/app/models/schedule.php">Modules/Job/app/Models/Schedule.php:209</a> (Modulo: Job)</li>
+<li><code v-pre>ScheduleHistory::casts</code> - <a href="modules/job/app/models/schedulehistory.php">Modules/Job/app/Models/ScheduleHistory.php:129</a> (Modulo: Job)</li>
+<li><code v-pre>Task::casts</code> - <a href="modules/job/app/models/task.php">Modules/Job/app/Models/Task.php:355</a> (Modulo: Job)</li>
+<li><code v-pre>TaskComment::casts</code> - <a href="modules/job/app/models/taskcomment.php">Modules/Job/app/Models/TaskComment.php:57</a> (Modulo: Job)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/lang/app/models/basemodel.php">Modules/Lang/app/Models/BaseModel.php:63</a> (Modulo: Lang)</li>
+<li><code v-pre>BaseModelLang::casts</code> - <a href="modules/lang/app/models/basemodellang.php">Modules/Lang/app/Models/BaseModelLang.php:71</a> (Modulo: Lang)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/lang/app/models/basemorphpivot.php">Modules/Lang/app/Models/BaseMorphPivot.php:55</a> (Modulo: Lang)</li>
+<li><code v-pre>Post::casts</code> - <a href="modules/lang/app/models/post.php">Modules/Lang/app/Models/Post.php:292</a> (Modulo: Lang)</li>
+<li><code v-pre>TranslationFile::casts</code> - <a href="modules/lang/app/models/translationfile.php">Modules/Lang/app/Models/TranslationFile.php:90</a> (Modulo: Lang)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/media/app/models/basemodel.php">Modules/Media/app/Models/BaseModel.php:61</a> (Modulo: Media)</li>
+<li><code v-pre>Media::casts</code> - <a href="modules/media/app/models/media.php">Modules/Media/app/Models/Media.php:340</a> (Modulo: Media)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/notify/app/models/basemodel.php">Modules/Notify/app/Models/BaseModel.php:60</a> (Modulo: Notify)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/notify/app/models/basemorphpivot.php">Modules/Notify/app/Models/BaseMorphPivot.php:56</a> (Modulo: Notify)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/notify/app/models/basepivot.php">Modules/Notify/app/Models/BasePivot.php:52</a> (Modulo: Notify)</li>
+<li><code v-pre>Contact::casts</code> - <a href="modules/notify/app/models/contact.php">Modules/Notify/app/Models/Contact.php:179</a> (Modulo: Notify)</li>
+<li><code v-pre>MailTemplate::casts</code> - <a href="modules/notify/app/models/mailtemplate.php">Modules/Notify/app/Models/MailTemplate.php:100</a> (Modulo: Notify)</li>
+<li><code v-pre>MailTemplateLog::casts</code> - <a href="modules/notify/app/models/mailtemplatelog.php">Modules/Notify/app/Models/MailTemplateLog.php:68</a> (Modulo: Notify)</li>
+<li><code v-pre>MailTemplateVersion::casts</code> - <a href="modules/notify/app/models/mailtemplateversion.php">Modules/Notify/app/Models/MailTemplateVersion.php:132</a> (Modulo: Notify)</li>
+<li><code v-pre>Notification::casts</code> - <a href="modules/notify/app/models/notification.php">Modules/Notify/app/Models/Notification.php:114</a> (Modulo: Notify)</li>
+<li><code v-pre>NotificationLog::casts</code> - <a href="modules/notify/app/models/notificationlog.php">Modules/Notify/app/Models/NotificationLog.php:83</a> (Modulo: Notify)</li>
+<li><code v-pre>NotificationTemplate::casts</code> - <a href="modules/notify/app/models/notificationtemplate.php">Modules/Notify/app/Models/NotificationTemplate.php:120</a> (Modulo: Notify)</li>
+<li><code v-pre>NotificationTemplateVersion::casts</code> - <a href="modules/notify/app/models/notificationtemplateversion.php">Modules/Notify/app/Models/NotificationTemplateVersion.php:67</a> (Modulo: Notify)</li>
+<li><code v-pre>NotifyTheme::casts</code> - <a href="modules/notify/app/models/notifytheme.php">Modules/Notify/app/Models/NotifyTheme.php:186</a> (Modulo: Notify)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/rating/app/models/basemodel.php">Modules/Rating/app/Models/BaseModel.php:55</a></li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/rating/app/models/basemorphpivot.php">Modules/Rating/app/Models/BaseMorphPivot.php:59</a></li>
+<li><code v-pre>Rating::casts</code> - <a href="modules/rating/app/models/rating.php">Modules/Rating/app/Models/Rating.php:132</a></li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/tenant/app/models/basemodel.php">Modules/Tenant/app/Models/BaseModel.php:61</a> (Modulo: Tenant)</li>
+<li><code v-pre>Tenant::casts</code> - <a href="modules/tenant/app/models/tenant.php">Modules/Tenant/app/Models/Tenant.php:93</a> (Modulo: Tenant)</li>
+<li><code v-pre>TestSushiModel::casts</code> - <a href="modules/tenant/app/models/testsushimodel.php">Modules/Tenant/app/Models/TestSushiModel.php:127</a> (Modulo: Tenant)</li>
+<li><code v-pre>name::casts</code> - <a href="modules/user/app/models/authentication.php">Modules/User/app/Models/Authentication.php:74</a> (Modulo: User)</li>
+<li><code v-pre>AuthenticationLog::casts</code> - <a href="modules/user/app/models/authenticationlog.php">Modules/User/app/Models/AuthenticationLog.php:62</a> (Modulo: User)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/user/app/models/basemodel.php">Modules/User/app/Models/BaseModel.php:58</a> (Modulo: User)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/user/app/models/basemorphpivot.php">Modules/User/app/Models/BaseMorphPivot.php:65</a> (Modulo: User)</li>
+<li><code v-pre>BasePivot::casts</code> - <a href="modules/user/app/models/basepivot.php">Modules/User/app/Models/BasePivot.php:49</a> (Modulo: User)</li>
+<li><code v-pre>BaseProfile::casts</code> - <a href="modules/user/app/models/baseprofile.php">Modules/User/app/Models/BaseProfile.php:169</a> (Modulo: User)</li>
+<li><code v-pre>BaseUser::casts</code> - <a href="modules/user/app/models/baseuser.php">Modules/User/app/Models/BaseUser.php:85</a> (Modulo: User)</li>
+<li><code v-pre>BaseUuidModel::casts</code> - <a href="modules/user/app/models/baseuuidmodel.php">Modules/User/app/Models/BaseUuidModel.php:59</a> (Modulo: User)</li>
+<li><code v-pre>Device::casts</code> - <a href="modules/user/app/models/device.php">Modules/User/app/Models/Device.php:60</a> (Modulo: User)</li>
+<li><code v-pre>DeviceUser::casts</code> - <a href="modules/user/app/models/deviceuser.php">Modules/User/app/Models/DeviceUser.php:100</a> (Modulo: User)</li>
+<li><code v-pre>ModelHasRole::casts</code> - <a href="modules/user/app/models/modelhasrole.php">Modules/User/app/Models/ModelHasRole.php:75</a> (Modulo: User)</li>
+<li><code v-pre>Notification::casts</code> - <a href="modules/user/app/models/notification.php">Modules/User/app/Models/Notification.php:80</a> (Modulo: User)</li>
+<li><code v-pre>OauthAccessToken::casts</code> - <a href="modules/user/app/models/oauthaccesstoken.php">Modules/User/app/Models/OauthAccessToken.php:57</a> (Modulo: User)</li>
+<li><code v-pre>OauthClient::casts</code> - <a href="modules/user/app/models/oauthclient.php">Modules/User/app/Models/OauthClient.php:62</a> (Modulo: User)</li>
+<li><code v-pre>PermissionRole::casts</code> - <a href="modules/user/app/models/permissionrole.php">Modules/User/app/Models/PermissionRole.php:53</a> (Modulo: User)</li>
+<li><code v-pre>SocialProvider::casts</code> - <a href="modules/user/app/models/socialprovider.php">Modules/User/app/Models/SocialProvider.php:105</a> (Modulo: User)</li>
+<li><code v-pre>Team::casts</code> - <a href="modules/user/app/models/team.php">Modules/User/app/Models/Team.php:34</a> (Modulo: User)</li>
+<li><code v-pre>Tenant::casts</code> - <a href="modules/user/app/models/tenant.php">Modules/User/app/Models/Tenant.php:45</a> (Modulo: User)</li>
+<li><code v-pre>BaseExtra::casts</code> - <a href="modules/xot/app/models/baseextra.php">Modules/Xot/app/Models/BaseExtra.php:80</a> (Modulo: Xot)</li>
+<li><code v-pre>BaseModel::casts</code> - <a href="modules/xot/app/models/basemodel.php">Modules/Xot/app/Models/BaseModel.php:55</a> (Modulo: Xot)</li>
+<li><code v-pre>BaseMorphPivot::casts</code> - <a href="modules/xot/app/models/basemorphpivot.php">Modules/Xot/app/Models/BaseMorphPivot.php:99</a> (Modulo: Xot)</li>
+<li><code v-pre>Log::casts</code> - <a href="modules/xot/app/models/log.php">Modules/Xot/app/Models/Log.php:91</a> (Modulo: Xot)</li>
+<li><code v-pre>Module::casts</code> - <a href="modules/xot/app/models/module.php">Modules/Xot/app/Models/Module.php:81</a> (Modulo: Xot)</li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">protected function casts(): array</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring-1">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi-1">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (105 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+<li>Contratto chiaro tra moduli</li>
+<li>Flessibilità implementativa</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni-1">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Rischio basso, monitorare test</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione-1">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Analisi manuale richiesta</strong> - Le differenze tra le implementazioni potrebbero essere significative.</p>
+<hr>
+<doc-anchor-target id="3-metodo-registermediaconversions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-metodo-registermediaconversions">#</doc-anchor-trigger>
+        <span>3. Metodo: <code v-pre>registerMediaConversions</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>Pattern</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F534;</span> High | <strong>Confidenza</strong>: <span class="docs-emoji">&#x274C;</span> 33%</p>
+<p><strong>Trovato in  file3 file</strong>:</p>
+<ul>
+<li><code v-pre>Banner::registerMediaConversions</code> - <a href="modules/blog/app/models/banner.php">Modules/Blog/app/Models/Banner.php:152</a> (Modulo: Blog)</li>
+<li><code v-pre>TemporaryUpload::registerMediaConversions</code> - <a href="modules/media/app/models/temporaryupload.php">Modules/Media/app/Models/TemporaryUpload.php:169</a> (Modulo: Media)</li>
+<li><code v-pre>Rating::registerMediaConversions</code> - <a href="modules/rating/app/models/rating.php">Modules/Rating/app/Models/Rating.php:183</a></li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">public function registerMediaConversions(?Media $media = null): void</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring-2">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi-2">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi-2">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (3 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni-2">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni-2">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Complessità elevata del refactoring</li>
+<li>Possibili breaking changes</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione-2">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione-2">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Analisi manuale richiesta</strong> - Le differenze tra le implementazioni potrebbero essere significative.</p>
+<hr>
+<doc-anchor-target id="4-metodo-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-metodo-model">#</doc-anchor-trigger>
+        <span>4. Metodo: <code v-pre>model</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>Interface</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F7E2;</span> Low | <strong>Confidenza</strong>: <span class="docs-emoji">&#x274C;</span> 33%</p>
+<p><strong>Trovato in  file3 file</strong>:</p>
+<ul>
+<li><code v-pre>Address::model</code> - <a href="modules/geo/app/models/address.php">Modules/Geo/app/Models/Address.php:204</a> (Modulo: Geo)</li>
+<li><code v-pre>RatingMorph::model</code> - <a href="modules/rating/app/models/ratingmorph.php">Modules/Rating/app/Models/RatingMorph.php:118</a></li>
+<li><code v-pre>TenantService::model</code> - <a href="modules/tenant/app/services/tenantservice.php">Modules/Tenant/app/Services/TenantService.php:287</a> (Modulo: Tenant)</li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">public function model(): MorphTo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring-3">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi-3">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi-3">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (3 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+<li>Contratto chiaro tra moduli</li>
+<li>Flessibilità implementativa</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni-3">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni-3">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Rischio basso, monitorare test</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione-3">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione-3">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Analisi manuale richiesta</strong> - Le differenze tra le implementazioni potrebbero essere significative.</p>
+<hr>
+<doc-anchor-target id="5-metodo-scopewithextraattributes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-metodo-scopewithextraattributes">#</doc-anchor-trigger>
+        <span>5. Metodo: <code v-pre>scopeWithExtraAttributes</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>Interface</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F7E2;</span> Low | <strong>Confidenza</strong>: <span class="docs-emoji">&#x274C;</span> 33%</p>
+<p><strong>Trovato in  file3 file</strong>:</p>
+<ul>
+<li><code v-pre>Rating::scopeWithExtraAttributes</code> - <a href="modules/rating/app/models/rating.php">Modules/Rating/app/Models/Rating.php:164</a></li>
+<li><code v-pre>BaseProfile::scopeWithExtraAttributes</code> - <a href="modules/user/app/models/baseprofile.php">Modules/User/app/Models/BaseProfile.php:107</a> (Modulo: User)</li>
+<li><code v-pre>BaseExtra::scopeWithExtraAttributes</code> - <a href="modules/xot/app/models/baseextra.php">Modules/Xot/app/Models/BaseExtra.php:66</a> (Modulo: Xot)</li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">public function scopeWithExtraAttributes(Builder $query): Builder</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring-4">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring-4">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi-4">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi-4">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (3 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+<li>Contratto chiaro tra moduli</li>
+<li>Flessibilità implementativa</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni-4">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni-4">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Rischio basso, monitorare test</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione-4">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione-4">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Analisi manuale richiesta</strong> - Le differenze tra le implementazioni potrebbero essere significative.</p>
+<hr>
+<doc-anchor-target id="6-metodo-profile">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-metodo-profile">#</doc-anchor-trigger>
+        <span>6. Metodo: <code v-pre>profile</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Tipo Refactoring</strong>: <code v-pre>Interface</code> | <strong>Complessità</strong>: <span class="docs-emoji">&#x1F7E2;</span> Low | <strong>Confidenza</strong>: <span class="docs-emoji">&#x274C;</span> 25%</p>
+<p><strong>Trovato in  file4 file</strong>:</p>
+<ul>
+<li><code v-pre>Ticket::profile</code> - <a href="modules/fixcity/app/models/ticket.php">Modules/Fixcity/app/Models/Ticket.php:562</a> (Modulo: Fixcity)</li>
+<li><code v-pre>RatingMorph::profile</code> - <a href="modules/rating/app/models/ratingmorph.php">Modules/Rating/app/Models/RatingMorph.php:111</a></li>
+<li><code v-pre>BaseUser::profile</code> - <a href="modules/user/app/models/baseuser.php">Modules/User/app/Models/BaseUser.php:243</a> (Modulo: User)</li>
+<li><code v-pre>DeviceUser::profile</code> - <a href="modules/user/app/models/deviceuser.php">Modules/User/app/Models/DeviceUser.php:90</a> (Modulo: User)</li>
+</ul>
+<p><strong>Signature</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">public function profile(): BelongsTo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="-analisi-refactoring-5">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-analisi-refactoring-5">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CA;</span> Analisi Refactoring</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="-vantaggi-5">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-vantaggi-5">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Vantaggi</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Riduzione duplicazione codice (4 occorrenze)</li>
+<li>Manutenibilità migliorata</li>
+<li>Consistenza tra moduli</li>
+<li>Contratto chiaro tra moduli</li>
+<li>Flessibilità implementativa</li>
+</ul>
+<doc-anchor-target id="-rischi-e-considerazioni-5">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-rischi-e-considerazioni-5">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> Rischi e Considerazioni</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Rischio basso, monitorare test</li>
+<li>Confidenza non ottimale - verificare manualmente</li>
+<li>Verificare compatibilità PHPStan Level Max</li>
+</ul>
+<doc-anchor-target id="-raccomandazione-5">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-raccomandazione-5">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> Raccomandazione</span>
+    </h5>
+</doc-anchor-target>
+<p><strong>Analisi manuale richiesta</strong> - Le differenze tra le implementazioni potrebbero essere significative.</p>
+<hr>
+<hr>
+<doc-anchor-target id="legenda">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#legenda">#</doc-anchor-trigger>
+        <span>Legenda</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="tipo-di-refactoring">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tipo-di-refactoring">#</doc-anchor-trigger>
+        <span>Tipo di Refactoring</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Trait</strong>: Metodi con implementazione identica o molto simile</li>
+<li><strong>Base Class</strong>: Metodi con logica comune ma implementazioni variabili</li>
+<li><strong>Interface</strong>: Metodi con stessa signature ma implementazioni diverse</li>
+<li><strong>Pattern</strong>: Metodi che seguono pattern simili ma richiedono analisi più approfondita</li>
+</ul>
+<doc-anchor-target id="complessità-di-refactoring">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#complessità-di-refactoring">#</doc-anchor-trigger>
+        <span>Complessità di Refactoring</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Low</strong>: Refactoring semplice, basso rischio</li>
+<li><strong>Medium</strong>: Refactoring moderato, richiede test accurati</li>
+<li><strong>High</strong>: Refactoring complesso, richiede analisi approfondita</li>
+</ul>
+<doc-anchor-target id="percentuale-di-confidenza">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#percentuale-di-confidenza">#</doc-anchor-trigger>
+        <span>Percentuale di Confidenza</span>
+    </h3>
+</doc-anchor-target>
+<p>Indica quanto è probabile che il refactoring sia vantaggioso:</p>
+<ul>
+<li><strong>90-100%</strong>: Altamente raccomandato</li>
+<li><strong>70-89%</strong>: Raccomandato</li>
+<li><strong>50-69%</strong>: Valutare caso per caso</li>
+<li><strong>&lt; 50%</strong>: Richiede analisi dettagliata</li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../docs/metodi_duplicati_analisi/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../docs/api-integration/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Api integration</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Analisi Metodi Duplicati - Modulo Rating", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
