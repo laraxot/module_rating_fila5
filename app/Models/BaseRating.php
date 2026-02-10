@@ -110,14 +110,11 @@ abstract class BaseRating extends BaseModel implements HasMedia
     /**
      * Scope to query by extra attributes.
      *
-     * @param Builder $query
      * @param array<string, mixed>|string $attributes
-     * @param mixed $value
-     * @return Builder
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-        if (is_string($attributes) && $value !== null) {
+        if (is_string($attributes) && null !== $value) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }
