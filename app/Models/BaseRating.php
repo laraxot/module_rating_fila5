@@ -17,6 +17,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 /**
  * Modules\Rating\Models\BaseRating.
@@ -83,6 +85,7 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 abstract class BaseRating extends BaseModel implements HasMedia
 {
     use InteractsWithMedia;
+     use HasSlug;
 
     /**
      * Get the attributes that should be cast.
@@ -113,7 +116,15 @@ abstract class BaseRating extends BaseModel implements HasMedia
         'is_disabled',
         'is_readonly',
         'order_column',
+        'slug',
     ];
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 
     /**
      * Scope to query by extra attributes.
