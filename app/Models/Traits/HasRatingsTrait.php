@@ -88,7 +88,6 @@ trait HasRatingsTrait
     // ----- mutators -----
     // *
     /**
-     * @param  mixed  $value
      * @return Collection
      */
     public function getMyRatingAttribute()
@@ -139,7 +138,8 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param  array<string, mixed>  $filters
+     * @param array<string, mixed> $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
