@@ -11,6 +11,7 @@ enum RuleEnum: string implements HasLabel
     case Null = '';
     case ZeroFive = 'numeric|min:0|max:5';
     case ZeroOrMin4Max25 = 'min:0|max:25|not_in:1,2,3';
+    case NullableNumericMin0Max25 = 'nullable|numeric|min:0|max:25';
 
     public function getLabel(): string
     {
