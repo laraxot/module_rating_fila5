@@ -21,11 +21,6 @@
       "Modules\\Rating\\": "app/",
       "Modules\\Rating\\Database\\Factories\\": "database/factories/",
       "Modules\\Rating\\Database\\Seeders\\": "database/seeders/"
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Modules\\Rating\\Tests\\": "tests/"
-      }
     }
   },
   "require_comment": {
@@ -62,5 +57,10 @@
     }
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "autoload-dev": {
+    "psr-4": {
+      "Modules\\Rating\\Tests\\": "tests/"
+    }
+  }
 }
