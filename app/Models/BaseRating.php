@@ -121,9 +121,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param  Builder<BaseRating>         $query
-     * @param  array<string, mixed>|string $attributes
-     * @param  mixed                       $value
+     * @param Builder<BaseRating>         $query
+     * @param array<string, mixed>|string $attributes
+     *
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
