@@ -45,6 +45,10 @@ return new class extends XotBaseMigration {
                 if (! $this->hasColumn('txt')) {
                     $table->string('txt')->nullable();
                 }
+                // @see Modules/Rating/docs/schemaless-attributes-errors.md
+                if (! $this->hasColumn('extra_attributes')) {
+                    $table->schemalessAttributes('extra_attributes');
+                }
                 if (! $this->hasColumn('is_disabled')) {
                     $table->boolean('is_disabled')->nullable();
                 }
