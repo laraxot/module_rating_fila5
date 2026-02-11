@@ -18,7 +18,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * Estende BaseRating per ereditare casts, fillable, scope e media conversions (DRY).
  *
- * @see \Modules\Rating\Models\BaseRating
+ * @see BaseRating
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
