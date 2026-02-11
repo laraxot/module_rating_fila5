@@ -85,7 +85,7 @@ use Spatie\Sluggable\SlugOptions;
 abstract class BaseRating extends BaseModel implements HasMedia
 {
     use InteractsWithMedia;
-     use HasSlug;
+    use HasSlug;
 
     /**
      * Get the attributes that should be cast.
