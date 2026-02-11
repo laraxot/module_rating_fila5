@@ -16,21 +16,25 @@ use Modules\Rating\Models\Rating;
 
 /**
  * Trait HasRatingsTrait.
+ *
+ * @see Modules/Rating/docs/schemaless-attributes.md
  */
 trait HasRatingsTrait
 {
+    public function getRatingClass(): string
+    {
+        return Str::of(static::class)
+            ->before('\Models\\')
+            ->append('\Models\Rating')
+            ->toString();
+    }
+
     /**
      * @return MorphToMany
      */
     public function ratings()
     {
-        // return $this->morphRelated(Rating::class);
-        $rating_class = Str::of(static::class)
-            ->before('\Models\\')
-            ->append('\Models\Rating')
-            ->toString();
-
-        return $this->morphToManyX($rating_class, 'model');
+        return $this->morphToManyX($this->getRatingClass(), 'model');
     }
 
     /**
@@ -38,11 +42,10 @@ trait HasRatingsTrait
      */
     public function ratingObjectives()
     {
-        $related = Rating::class;
+        $related = $this->getRatingClass();
         $user_id = Auth::id();
 
         return $this->hasMany($related, 'related_type', 'post_type')
-
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -78,22 +81,21 @@ trait HasRatingsTrait
      */
     public function myRatings()
     {
-        return $this->morphRelated(Rating::class)
-            ->wherePivot('user_id', Auth::id());
+        return $this->morphRelated($this->getRatingClass())
+            ->wherePivot('user_id', (string) Auth::id());
     }
 
     // ----- mutators -----
     // *
     /**
-     * @param float $value
-     *
+     * @param  mixed  $value
      * @return Collection
      */
-    public function getMyRatingAttribute($value)
+    public function getMyRatingAttribute()
     {
-        $my = $this->myRatings;
+        $myRatings = $this->myRatings;
 
-        return $my->pluck('pivot.rating', 'post_id');
+        return $myRatings->pluck('pivot.rating', 'post_id');
     }
 
     /**
@@ -120,9 +122,7 @@ trait HasRatingsTrait
         if (null !== $value) {
             return $value;
         }
-        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $value = $this->ratings->count('pivot.rating');
-        $value = $this->ratings->count(); // ?? forse fare filtro
+        $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
@@ -139,28 +139,33 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param array<string, mixed> $filters
-     *
+     * @param  array<string, mixed>  $filters
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
     {
-        $rating_class = Str::of(static::class)
-            ->before('\Models\\')
-            ->append('\Models\Rating')
-            ->toString();
-
         /** @var Builder $query */
         $query = $this->ratings();
 
-        foreach ($filters as $key => $value) {
-            $query->where("extra_attributes->{$key}", $value);
+        foreach ($filters as $key => $filterValue) {
+            $query->where("extra_attributes->{$key}", $filterValue);
         }
 
         /** @var Collection<int, Rating> $result */
         $result = $query->get();
 
         return $result;
+    }
+
+    public function syncRatingsWhere(array $where): Collection
+    {
+        $ratings = app($this->getRatingClass())
+            ->withExtraAttributes($where)
+            ->get();
+        $rating_ids = $ratings->modelKeys();
+        $this->ratings()->sync($rating_ids);
+
+        return $this->ratings;
     }
 
     // */
@@ -176,25 +181,14 @@ trait HasRatingsTrait
      */
     public function ratingAvgHtml(): string
     {
-        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $pivot_avg = $ratings->avg('pivot.rating');
         $pivot_avg = $this->ratings_avg;
-        // $pivot_cout = $ratings->count('pivot.rating');
         $pivot_cout = $this->ratings_count;
 
         $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
-        // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
-        // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
-        // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
         $rating_url = '#';
-        // http://geek.local/public_html/it/article/prova-articolo?_act=rate
-        /*
-        return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
-        Rate It </a>';
-        */
-        $title = 'Vota '.$this->title;
+        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
 
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
@@ -207,33 +201,41 @@ trait HasRatingsTrait
         return $msg.$btn.$btn_iframe;
     }
 
-    /*
     public function getRatingsRules(string $prefix, string $postfix): array
     {
-        $rows = Rating::withExtraAttributes()->get();
-        $rules = $rows->pluck('rule.value', 'id')->toArray();
+        $rows = $this->ratings;
+        $rules = $rows->mapWithKeys(function ($row) {
+            $ruleValue = $row->rule instanceof \BackedEnum ? (string) $row->rule->value : (string) $row->rule;
+
+            return [$row->id => $ruleValue];
+        })->toArray();
+
         $rules = Arr::prependKeysWith($rules, $prefix);
         $res = [];
-        foreach ($rules as $k => $v) {
-            // $k1=$k.'.pivot.value';
-            $k1 = $k.$postfix;
-            $res[$k1] = (string) $v;
+        foreach ($rules as $key => $ruleValue) {
+            $keyWithPostfix = $key.$postfix;
+            $ruleStr = (string) $ruleValue;
+
+            // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
+            if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
+                $ruleStr = 'nullable|'.$ruleStr;
+            }
+
+            $res[$keyWithPostfix] = $ruleStr;
         }
 
-        // $rules= Arr::appendKeysWith($rules,'.value');
         return $res;
     }
 
     public function getRatingsValidationAttributes(string $prefix, string $postfix): array
     {
-        $rows = Rating::withExtraAttributes()->get();
+        $rows = $this->ratings;
         $res = [];
         foreach ($rows as $row) {
-            $k1 = $prefix.$row->id.$postfix;
-            $res[$k1] = $row->title;
+            $keyWithPostfix = $prefix.$row->id.$postfix;
+            $res[$keyWithPostfix] = (string) $row->title;
         }
 
         return $res;
     }
-      */
 }
