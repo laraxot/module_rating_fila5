@@ -19,15 +19,21 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 
 /**
- * Modules\Rating\Models\Rating.
+ * Modules\Rating\Models\BaseRating.
+ *
+ * Classe base astratta per tutti i modelli Rating nei vari moduli.
+ * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
+ *
+ * @see https://github.com/spatie/laravel-schemaless-attributes
+ * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
  * @property RuleEnum                                          $rule
  *
- * @method static Builder|Rating newModelQuery()
- * @method static Builder|Rating newQuery()
- * @method static Builder|Rating query()
- * @method static Builder|Rating withExtraAttributes(array|string $attributes = [], mixed $value = null)
+ * @method static Builder|BaseRating newModelQuery()
+ * @method static Builder|BaseRating newQuery()
+ * @method static Builder|BaseRating query()
+ * @method static Builder|BaseRating withExtraAttributes(array|string $attributes = [], mixed $value = null)
  *
  * @property int             $id
  * @property int             $user_id
@@ -48,22 +54,22 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property int|null        $order_column
  * @property Model|\Eloquent $linkedTo
  *
- * @method static Builder|Rating whereColor($value)
- * @method static Builder|Rating whereCreatedAt($value)
- * @method static Builder|Rating whereCreatedBy($value)
- * @method static Builder|Rating whereDeletedBy($value)
- * @method static Builder|Rating whereIcon($value)
- * @method static Builder|Rating whereId($value)
- * @method static Builder|Rating whereIsDisabled($value)
- * @method static Builder|Rating whereIsReadonly($value)
- * @method static Builder|Rating whereOrderColumn($value)
- * @method static Builder|Rating wherePostId($value)
- * @method static Builder|Rating whereRelatedType($value)
- * @method static Builder|Rating whereRule($value)
- * @method static Builder|Rating whereTitle($value)
- * @method static Builder|Rating whereTxt($value)
- * @method static Builder|Rating whereUpdatedAt($value)
- * @method static Builder|Rating whereUpdatedBy($value)
+ * @method static Builder|BaseRating whereColor($value)
+ * @method static Builder|BaseRating whereCreatedAt($value)
+ * @method static Builder|BaseRating whereCreatedBy($value)
+ * @method static Builder|BaseRating whereDeletedBy($value)
+ * @method static Builder|BaseRating whereIcon($value)
+ * @method static Builder|BaseRating whereId($value)
+ * @method static Builder|BaseRating whereIsDisabled($value)
+ * @method static Builder|BaseRating whereIsReadonly($value)
+ * @method static Builder|BaseRating whereOrderColumn($value)
+ * @method static Builder|BaseRating wherePostId($value)
+ * @method static Builder|BaseRating whereRelatedType($value)
+ * @method static Builder|BaseRating whereRule($value)
+ * @method static Builder|BaseRating whereTitle($value)
+ * @method static Builder|BaseRating whereTxt($value)
+ * @method static Builder|BaseRating whereUpdatedAt($value)
+ * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                          $media_count
@@ -73,8 +79,6 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @mixin Eloquent
  *
  * @method static RatingFactory factory($count = null, $state = [])
- *
- * @mixin Eloquent
  */
 abstract class BaseRating extends BaseModel implements HasMedia
 {
@@ -82,6 +86,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
 
     /**
      * Get the attributes that should be cast.
+     *
+     * @see https://github.com/spatie/laravel-schemaless-attributes
+     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
      * @return array<string, string>
      */
@@ -95,6 +102,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
         ];
     }
 
+    /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
@@ -110,7 +118,13 @@ abstract class BaseRating extends BaseModel implements HasMedia
     /**
      * Scope to query by extra attributes.
      *
-     * @param array<string, mixed>|string $attributes
+     * @see https://github.com/spatie/laravel-schemaless-attributes
+     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
+     *
+     * @param  Builder<BaseRating>         $query
+     * @param  array<string, mixed>|string $attributes
+     * @param  mixed                       $value
+     * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
@@ -139,13 +153,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
      */
     public function registerMediaConversions(?Media $media = null): void
     {
-        /*
-        $this
-            ->addMediaConversion('my-conversion')
-            ->greyscale()
-            ->quality(80)
-            ->withResponsiveImages();
-        */
         $this->addMediaConversion('300x300')
             ->width(300)
             ->height(300);
