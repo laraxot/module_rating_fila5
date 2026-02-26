@@ -162,6 +162,8 @@ trait HasRatingsTrait
         $ratings = app($this->getRatingClass())
             ->withExtraAttributes($where)
             ->get();
+        
+        
         $rating_ids = $ratings->modelKeys();
         $this->ratings()->sync($rating_ids);
 
