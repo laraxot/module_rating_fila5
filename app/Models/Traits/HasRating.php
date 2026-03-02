@@ -21,6 +21,7 @@ trait HasRating
     //  laravel/Modules/Xot/app/Models/Traits/RelationX.php  poi passare a morphToManyX per standardizzare
     public function ratings(): MorphToMany
     {
+        /** @phpstan-ignore return.type */
         return $this->morphToManyX(Rating::class, 'model');
     }
 
