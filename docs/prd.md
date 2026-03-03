@@ -37,31 +37,32 @@ Multiple modules in Laraxot need to:
 - User-facing evaluation UI (this is a backend engine / admin tool).
 - Specific business logic (logic lives in the consumer modules).
 
-## 5. Functional Requirements
-### FR-001: Criteria Management
-- **Priority**: Must-have
-- **Description**: CRUD for evaluation criteria with support for multiple languages.
-- **Acceptance Criteria**: Admin can define a criterion and then reuse it in multiple contexts.
+## 5. Functional Requirements (Prioritized)
 
-### FR-002: Structured Options
-- **Priority**: Must-have
-- **Description**: Link options to criteria, including their individual score/weight.
-- **Acceptance Criteria**: Options can be shared between criteria.
+### P0: Scoring Engine (Must-have)
+- **FR-001: Global Criteria Registry**: Centralized library of evaluation criteria with support for weights and multiple languages.
+- **FR-002: Flexible Scoring Scales**: Define diverse options (Likert, Numeric, Binary) linked to specific criteria points.
+- **FR-004: Schemaless Result Storage**: Use of `spatie/laravel-schemaless-attributes` for flexible metadata (e.g., year, evaluator notes) without migrations.
 
-### FR-003: Scoring Engine
-- **Priority**: Must-have
-- **Description**: Calculate total scores based on weights and selected options.
-- **Acceptance Criteria**: Handles multiplication of (Option Score * Criterion Weight).
+### P1: Template Management (Important)
+- **FR-005: Reusable Templates**: Group criteria into templates for consistent application across `Performance`, `Incentivi`, and `Indennita`.
+- **FR-006: Dynamic Calculation Engine**: Hierarchical result calculation based on section and criterion weights.
 
-### FR-004: Schemaless Attributes Support
-- **Priority**: Must-have
-- **Description**: Use `spatie/laravel-schemaless-attributes` for storing dynamic evaluation data (e.g., year, notes).
-- **Acceptance Criteria**: Adheres to the "extra_attributes" pattern for flexible querying.
+### P2: Advanced Intelligence (Nice-to-have)
+- **FR-007: Visual Weight Balancer**: Admin interface to visually adjust weights and see the impact on total scores in real-time.
+- **FR-008: AI Criteria Suggestions**: Recommend relevant evaluation criteria based on the module context or job role.
 
-## 6. Non-Functional Requirements
-- **NFR-001: Flexibility**: Must handle any kind of numeric or categorical evaluation scale.
-- **NFR-002: Reusability**: Centralized storage to avoid data silos.
-- **NFR-003: Type Safety**: PHPStan Level 10 compliance.
+## 6. Non-Functional Requirements & Agnostic Design
+
+### Agnostic Design Principles
+- **Domain-Agnostic Engine**: Rating provides the evaluation logic; it MUST NOT depend on the specific thing being rated.
+- **Interoperability**: Provides standardized traits and contracts for any module to "enable" rating capabilities on its models.
+- **Isolation**: Evaluation results are managed via dedicated models, preventing data pollution in consumer modules.
+
+### Performance & Safety
+- **NFR-001: Scalability**: Support for complex evaluations with 100+ criteria without performance degradation.
+- **NFR-002: Integrity**: Strict adherence to the `withExtraAttributes` query pattern to ensure data consistency.
+- **NFR-003: Type Safety**: 100% PHPStan Level 10 compliance.
 
 ## 7. Technical Architecture
 ### Dependencies
