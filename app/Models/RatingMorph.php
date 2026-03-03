@@ -30,7 +30,6 @@ use Modules\Xot\Datas\XotData;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property int|null    $auth_user_id
- *
  * @method static Builder|RatingMorph newModelQuery()
  * @method static Builder|RatingMorph newQuery()
  * @method static Builder|RatingMorph query()
@@ -46,7 +45,6 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|RatingMorph whereRelatedType($value)
  * @method static Builder|RatingMorph whereUpdatedAt($value)
  * @method static Builder|RatingMorph whereUpdatedBy($value)
- *
  * @property string|null $user_id
  * @property string|null $model_type
  * @property int|null    $model_id
@@ -54,7 +52,6 @@ use Modules\Xot\Datas\XotData;
  * @property int|null    $value
  * @property string|null $note
  * @property string|null $deleted_at
- *
  * @method static Builder|RatingMorph whereDeletedAt($value)
  * @method static Builder|RatingMorph whereIsWinner($value)
  * @method static Builder|RatingMorph whereModelId($value)
@@ -63,32 +60,25 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|RatingMorph whereRatingId($value)
  * @method static Builder|RatingMorph whereUserId($value)
  * @method static Builder|RatingMorph whereValue($value)
- *
  * @property Model|\Eloquent   $model
  * @property Model|null        $profile
  * @property UserContract|null $user
  * @property string            $reward
- *
  * @method static Builder|RatingMorph whereReward($value)
- *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- *
- * @mixin Eloquent
- *
  * @property string $sum_credit_yes
  * @property string $sum_credit_no
  * @property int    $count_credit_yes
  * @property int    $count_credit_no
  * @property string $percentage
- *
  * @method static Builder<static>|RatingMorph whereCountCreditNo($value)
  * @method static Builder<static>|RatingMorph whereCountCreditYes($value)
  * @method static Builder<static>|RatingMorph whereHasYesNo($value)
  * @method static Builder<static>|RatingMorph wherePercentage($value)
  * @method static Builder<static>|RatingMorph whereSumCreditNo($value)
  * @method static Builder<static>|RatingMorph whereSumCreditYes($value)
- *
+ * @property-read \Modules\Ptv\Models\Profile|null $deleter
  * @mixin Eloquent
  */
 class RatingMorph extends BaseMorphPivot
