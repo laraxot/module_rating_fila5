@@ -73,7 +73,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  *
- * @property \Modules\Ptv\Models\Profile|null $deleter
+ * @property ProfileContract|null $deleter
  *
  * @mixin Eloquent
  */
