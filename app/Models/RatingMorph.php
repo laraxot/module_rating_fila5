@@ -86,7 +86,7 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder<static>|RatingMorph whereSumCreditNo($value)
  * @method static Builder<static>|RatingMorph whereSumCreditYes($value)
  *
- * @property \Modules\Ptv\Models\Profile|null $deleter
+ * @property ProfileContract|null $deleter
  *
  * @mixin Eloquent
  */

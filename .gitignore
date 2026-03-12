@@ -45,3 +45,6 @@ cache/
 
 # PHPStan documentation
 docs/phpstan/
+lang/lang/
+_docs/
+_docs/
