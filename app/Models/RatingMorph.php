@@ -73,14 +73,11 @@ use Modules\Xot\Datas\XotData;
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- *
- * @mixin Eloquent
- *
- * @property string $sum_credit_yes
- * @property string $sum_credit_no
- * @property int    $count_credit_yes
- * @property int    $count_credit_no
- * @property string $percentage
+ * @property string               $sum_credit_yes
+ * @property string               $sum_credit_no
+ * @property int                  $count_credit_yes
+ * @property int                  $count_credit_no
+ * @property string               $percentage
  *
  * @method static Builder<static>|RatingMorph whereCountCreditNo($value)
  * @method static Builder<static>|RatingMorph whereCountCreditYes($value)
@@ -88,6 +85,8 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder<static>|RatingMorph wherePercentage($value)
  * @method static Builder<static>|RatingMorph whereSumCreditNo($value)
  * @method static Builder<static>|RatingMorph whereSumCreditYes($value)
+ *
+ * @property ProfileContract|null $deleter
  *
  * @mixin Eloquent
  */
