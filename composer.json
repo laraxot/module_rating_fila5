@@ -41,13 +41,7 @@
         }
     },
     "require": {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         "spatie/laravel-schemaless-attributes": "*"
-=======
->>>>>>> origin/dev
->>>>>>> Stashed changes
     },
     "repositories": [
         {
