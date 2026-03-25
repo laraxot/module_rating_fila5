@@ -9,7 +9,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 class CreateRating extends XotBaseCreateRecord
 {
-    protected static string $resource = RatingResource::class;
+    public static string $resource = RatingResource::class;
 
     // public static function getResource(): string {
 
