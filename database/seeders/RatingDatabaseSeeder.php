@@ -6,8 +6,8 @@ namespace Modules\Rating\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use Modules\Rating\Models\Rating;
 use Modules\Rating\Enums\RuleEnum;
+use Modules\Rating\Models\Rating;
 
 class RatingDatabaseSeeder extends Seeder
 {
@@ -76,6 +76,6 @@ class RatingDatabaseSeeder extends Seeder
             ]);
         }
 
-        $this->command->info("Creati ".count($ratings)." ratings con successo!");
+        $this->command->info('Creati '.count($ratings).' ratings con successo!');
     }
 }
