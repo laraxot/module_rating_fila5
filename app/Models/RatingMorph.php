@@ -17,19 +17,19 @@ use Modules\Xot\Datas\XotData;
 /**
  * Modules\Rating\Models\RatingMorph.
  *
- * @property int         $id
- * @property bool        $is_winner
+ * @property int $id
+ * @property bool $is_winner
  * @property string|null $post_type
- * @property int|null    $post_id
+ * @property int|null $post_id
  * @property string|null $related_type
- * @property int|null    $related_id
+ * @property int|null $related_id
  * @property Rating|null $rating
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property int|null    $auth_user_id
+ * @property int|null $auth_user_id
  *
  * @method static Builder|RatingMorph newModelQuery()
  * @method static Builder|RatingMorph newQuery()
@@ -49,9 +49,9 @@ use Modules\Xot\Datas\XotData;
  *
  * @property string|null $user_id
  * @property string|null $model_type
- * @property int|null    $model_id
- * @property int         $rating_id
- * @property int|null    $value
+ * @property int|null $model_id
+ * @property int $rating_id
+ * @property int|null $value
  * @property string|null $note
  * @property string|null $deleted_at
  *
@@ -64,20 +64,20 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|RatingMorph whereUserId($value)
  * @method static Builder|RatingMorph whereValue($value)
  *
- * @property Model|\Eloquent   $model
- * @property Model|null        $profile
+ * @property Model|Eloquent $model
+ * @property Model|null $profile
  * @property UserContract|null $user
- * @property string            $reward
+ * @property string $reward
  *
  * @method static Builder|RatingMorph whereReward($value)
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- * @property string               $sum_credit_yes
- * @property string               $sum_credit_no
- * @property int                  $count_credit_yes
- * @property int                  $count_credit_no
- * @property string               $percentage
+ * @property string $sum_credit_yes
+ * @property string $sum_credit_no
+ * @property int $count_credit_yes
+ * @property int $count_credit_no
+ * @property string $percentage
  *
  * @method static Builder<static>|RatingMorph whereCountCreditNo($value)
  * @method static Builder<static>|RatingMorph whereCountCreditYes($value)
@@ -102,6 +102,11 @@ class RatingMorph extends BaseMorphPivot
         'value',
         'is_winner',
         'reward',
+        'sum_credit_yes',
+        'sum_credit_no',
+        'count_credit_yes',
+        'count_credit_no',
+        'percentage',
     ];
     // -------- RELATIONSHIP -----------
 
@@ -127,5 +132,15 @@ class RatingMorph extends BaseMorphPivot
     public function model(): MorphTo
     {
         return $this->morphTo('model');
+    }
+
+    public function getSumCreditAttribute(): float
+    {
+        return (float) ($this->sum_credit_yes ?? 0) + (float) ($this->sum_credit_no ?? 0);
+    }
+
+    public function getCountCreditAttribute(): int
+    {
+        return (int) ($this->count_credit_yes ?? 0) + (int) ($this->count_credit_no ?? 0);
     }
 }
