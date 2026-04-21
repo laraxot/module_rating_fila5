@@ -2,7 +2,7 @@
 
 ## Overview
 
-Il modulo **Rating** fa parte dell'ecosistema Laraxot PTVX.
+Il modulo **Rating** fa parte dell'ecosistema [PROJECT_NAME] platform.
 
 ## Scopo
 
@@ -44,3 +44,10 @@ Rating/
 - [ ] Aggiungere esempi codice
 
 - [Conflict Resolution](conflict-resolution.md)
+
+
+## Standard Rules & Workflow
+
+- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
