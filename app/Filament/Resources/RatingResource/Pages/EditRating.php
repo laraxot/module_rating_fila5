@@ -10,7 +10,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
 class EditRating extends XotBaseEditRecord
 {
-    public static string $resource = RatingResource::class;
+    protected static string $resource = RatingResource::class;
 
     protected function getActions(): array
     {
