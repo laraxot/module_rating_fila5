@@ -8,10 +8,12 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Modules\Media\Models\Media;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
+use Spatie\SchemalessAttributes\SchemalessAttributes;
 
 /**
  * Modules\Rating\Models\Rating.
@@ -22,32 +24,32 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
- * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
- * @property RuleEnum                                          $rule
+ * @property SchemalessAttributes $extra_attributes
+ * @property RuleEnum $rule
  *
  * @method static Builder|Rating newModelQuery()
  * @method static Builder|Rating newQuery()
  * @method static Builder|Rating query()
  * @method static Builder|Rating withExtraAttributes(array|string $attributes = [], mixed $value = null)
  *
- * @property int             $id
- * @property int             $user_id
- * @property float           $value
- * @property string|null     $related_type
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $deleted_by
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property int|null        $post_id
- * @property string|null     $title
- * @property string|null     $color
- * @property string|null     $icon
- * @property string|null     $txt
- * @property bool|null       $is_disabled
- * @property bool|null       $is_readonly
- * @property int|null        $order_column
- * @property Model|\Eloquent $linkedTo
+ * @property int $id
+ * @property int $user_id
+ * @property float $value
+ * @property string|null $related_type
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $deleted_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $post_id
+ * @property string|null $title
+ * @property string|null $color
+ * @property string|null $icon
+ * @property string|null $txt
+ * @property bool|null $is_disabled
+ * @property bool|null $is_readonly
+ * @property int|null $order_column
+ * @property Model|Eloquent $linkedTo
  *
  * @method static Builder|Rating whereColor($value)
  * @method static Builder|Rating whereCreatedAt($value)
@@ -66,10 +68,10 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder|Rating whereUpdatedAt($value)
  * @method static Builder|Rating whereUpdatedBy($value)
  *
- * @property MediaCollection<int, \Modules\Media\Models\Media> $media
- * @property int|null                                          $media_count
- * @property ProfileContract|null                              $creator
- * @property ProfileContract|null                              $updater
+ * @property MediaCollection<int, Media> $media
+ * @property int|null $media_count
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @method static RatingFactory factory($count = null, $state = [])
  *
