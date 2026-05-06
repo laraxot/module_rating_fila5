@@ -11,20 +11,15 @@ use Modules\Xot\Contracts\UserContract;
 
 trait HasLikes
 {
-    /**
-     * @return Collection
-     */
-    public function likes()
+    public function likes(): Collection
     {
         return $this->likesRelation;
     }
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
-     *
-     * @param  UserContract|null  $user
      */
-    public function likedBy($user): void
+    public function likedBy(?UserContract $user): void
     {
         $this->likesRelation()->create(['user_id' => $user->id]);
 
@@ -33,10 +28,8 @@ trait HasLikes
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
-     *
-     * @param  UserContract|null  $user
      */
-    public function dislikedBy($user): void
+    public function dislikedBy(?UserContract $user): void
     {
         /**
          * @var Like
@@ -62,24 +55,18 @@ trait HasLikes
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
-     *
-     * @param  UserContract|null  $user
-     * @return bool
      */
-    public function isLikedBy($user)
+    public function isLikedBy(?UserContract $user): bool
     {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
     }
 
     /**
      * Undocumented function.
-     *
-     * @return void
      */
-    protected static function bootHasLikes()
+    protected static function bootHasLikes(): void
     {
         static::deleting(function ($model): void {
-            $model->likesRelation()->delete(); /* @phpstan-ignore method.nonObject */
             $model->unsetRelation('likesRelation');
         });
     }

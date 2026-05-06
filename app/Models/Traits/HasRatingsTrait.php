@@ -29,18 +29,12 @@ trait HasRatingsTrait
             ->toString();
     }
 
-    /**
-     * @return MorphToMany
-     */
-    public function ratings()
+    public function ratings(): MorphToMany
     {
         return $this->morphToManyX($this->getRatingClass(), 'model');
     }
 
-    /**
-     * @return HasMany
-     */
-    public function ratingObjectives()
+    public function ratingObjectives(): HasMany
     {
         $related = $this->getRatingClass();
         $user_id = Auth::id();
@@ -76,10 +70,7 @@ trait HasRatingsTrait
         );
     }
 
-    /**
-     * @return MorphToMany
-     */
-    public function myRatings()
+    public function myRatings(): MorphToMany
     {
         return $this->morphRelated($this->getRatingClass())
             ->wherePivot('user_id', (string) Auth::id());
@@ -87,10 +78,7 @@ trait HasRatingsTrait
 
     // ----- mutators -----
     // *
-    /**
-     * @return Collection
-     */
-    public function getMyRatingAttribute()
+    public function getMyRatingAttribute(): Collection
     {
         $myRatings = $this->myRatings;
 
@@ -125,7 +113,7 @@ trait HasRatingsTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if ($this->getKey() === null) {
             return $value;
         }
 
@@ -139,6 +127,7 @@ trait HasRatingsTrait
      * Get ratings filtered by extra_attributes.
      *
      * @param  array<string, mixed>  $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -151,9 +140,7 @@ trait HasRatingsTrait
         }
 
         /** @var Collection<int, Rating> $result */
-        $result = $query->get();
-
-        return $result;
+        return $query->get();
     }
 
     public function syncRatingsWhere(array $where): Collection
