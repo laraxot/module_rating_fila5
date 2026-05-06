@@ -11,21 +11,9 @@ use Modules\Xot\Contracts\UserContract;
  */
 interface HasLikeContract
 {
-    /**
-     * @param  UserContract|null  $user
-     * @return bool
-     */
-    public function isLikedBy($user);
+    public function isLikedBy(?UserContract $user): bool;
 
-    /**
-     * @param  UserContract|null  $user
-     * @return void
-     */
-    public function likedBy($user);
+    public function likedBy(?UserContract $user): void;
 
-    /**
-     * @param  UserContract|null  $user
-     * @return void
-     */
-    public function dislikedBy($user);
+    public function dislikedBy(?UserContract $user): void;
 }

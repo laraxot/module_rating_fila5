@@ -19,18 +19,12 @@ use Modules\Rating\Models\Rating;
  */
 trait RatingTrait
 {
-    /**
-     * @return MorphToMany
-     */
-    public function ratings()
+    public function ratings(): MorphToMany
     {
         return $this->morphRelated(Rating::class);
     }
 
-    /**
-     * @return HasMany
-     */
-    public function ratingObjectives()
+    public function ratingObjectives(): HasMany
     {
         $related = Rating::class;
         $user_id = Auth::id();
@@ -67,10 +61,7 @@ trait RatingTrait
         );
     }
 
-    /**
-     * @return MorphToMany
-     */
-    public function myRatings()
+    public function myRatings(): MorphToMany
     {
         return $this->morphRelated(Rating::class)
             ->wherePivot('user_id', Auth::id());
@@ -78,11 +69,7 @@ trait RatingTrait
 
     // ----- mutators -----
     // *
-    /**
-     * @param  float  $value
-     * @return Collection
-     */
-    public function getMyRatingAttribute($value)
+    public function getMyRatingAttribute(float $value): Collection
     {
         $my = $this->myRatings;
 
@@ -119,7 +106,7 @@ trait RatingTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if ($this->getKey() === null) {
             return $value;
         }
 

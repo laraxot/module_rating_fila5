@@ -87,24 +87,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
     use HasSlug;
     use InteractsWithMedia;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @see https://github.com/spatie/laravel-schemaless-attributes
-     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'extra_attributes' => SchemalessAttributes::class,
-            'rule' => RuleEnum::class,
-            'is_disabled' => 'boolean',
-            'is_readonly' => 'boolean',
-        ];
-    }
-
     /** @var list<string> */
     protected $fillable = [
         'id',
@@ -134,6 +116,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
      *
      * @param  Builder<BaseRating>  $query
      * @param  array<string, mixed>|string  $attributes
+     *
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
@@ -172,5 +155,23 @@ abstract class BaseRating extends BaseModel implements HasMedia
         $this->addMediaConversion('50x50')
             ->width(150)
             ->height(150);
+    }
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @see https://github.com/spatie/laravel-schemaless-attributes
+     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'extra_attributes' => SchemalessAttributes::class,
+            'rule' => RuleEnum::class,
+            'is_disabled' => 'boolean',
+            'is_readonly' => 'boolean',
+        ];
     }
 }

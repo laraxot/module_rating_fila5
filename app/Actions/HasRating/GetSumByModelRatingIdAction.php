@@ -22,8 +22,6 @@ class GetSumByModelRatingIdAction
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
         $sum = $opts->sum('rating_morph.value');
-        $result = is_numeric($sum) ? (float) $sum : 0.0;
-
-        return $result;
+        return is_numeric($sum) ? (float) $sum : 0.0;
     }
 }
