@@ -7,9 +7,12 @@ namespace Modules\Rating\Filament\Resources\HasRatingResource\Widgets;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Modules\Rating\Actions\HasRating\GetCountByModelRatingIdAction;
 use Modules\Rating\Actions\HasRating\GetSumByModelRatingIdAction;
 use Modules\Rating\Models\Contracts\HasRatingContract;
+use Modules\Rating\Models\Rating;
+use Webmozart\Assert\Assert;
 
 /**
  * Undocumented class.
@@ -23,11 +26,13 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $stats = [];
-        if (null === $this->record) {
+        if ($this->record === null) {
             return $stats;
         }
         // Assert::isInstanceOf($record=$this->record,HasRatingContract::class);
         $ratings = $this->record->ratings()->wherePivot('user_id', null)->get();
+        Assert::isInstanceOf($ratings, Collection::class);
+        Assert::allIsInstanceOf($ratings, Rating::class);
         foreach ($ratings as $rating) {
             $sum = app(GetSumByModelRatingIdAction::class)->execute($this->record, (string) $rating->id);
             $count = app(GetCountByModelRatingIdAction::class)->execute($this->record, (string) $rating->id);

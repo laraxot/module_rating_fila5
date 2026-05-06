@@ -14,7 +14,7 @@ use Modules\Rating\Models\Rating;
 interface HasRatingContract
 {
     /**
-     * @return MorphToMany<Rating, Rating|Model>
+     * @return MorphToMany
      */
     public function ratings(): MorphToMany;
 }
