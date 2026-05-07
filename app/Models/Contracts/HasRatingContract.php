@@ -11,8 +11,5 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  */
 interface HasRatingContract
 {
-    /**
-     * @return MorphToMany
-     */
     public function ratings(): MorphToMany;
 }

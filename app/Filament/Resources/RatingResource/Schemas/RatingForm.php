@@ -34,6 +34,5 @@ class RatingForm extends XotBaseResourceForm
                 ]),
             'txt' => RichEditor::make('txt')->columnSpanFull(),
         ];
-
     }
 }
