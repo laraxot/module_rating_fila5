@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\App;
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
-use Webmozart\Assert\Assert;
 
 class Rating extends Block
 {
@@ -27,9 +26,12 @@ class Rating extends Block
      */
     public static function create(): Block
     {
+<<<<<<< Updated upstream
         // Ensure we're passing a string to make()
         Assert::stringNotEmpty(self::BLOCK_TYPE, 'Block type must be a non-empty string');
 
+=======
+>>>>>>> Stashed changes
         return parent::make(self::BLOCK_TYPE)
             ->schema([
                 TextInput::make('title')
@@ -54,7 +56,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
-     * @param  array<string,mixed>  $data
+     * @param array<string,mixed> $data
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -64,15 +66,18 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-     * @param  array<string,mixed>  $options
+     * @param array<string,mixed> $options
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
         string $context = 'form',
         ?array $options = null,
     ): Block {
+<<<<<<< Updated upstream
         // Ensure we're passing a string to execute()
         Assert::stringNotEmpty(self::BLOCK_TYPE, 'Block type must be a non-empty string');
+=======
+>>>>>>> Stashed changes
         $blockOptions = $options ?? app(GetViewBlocksOptionsByTypeAction::class)
             ->execute(self::BLOCK_TYPE, true);
 
