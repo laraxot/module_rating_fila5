@@ -23,8 +23,7 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
-    ) {
-    }
+    ) {}
 
     /**
      * Create from array with type casting.

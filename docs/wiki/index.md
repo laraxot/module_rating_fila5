@@ -27,6 +27,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | Pagina | Tipo | Argomento | Data |
 |--------|------|-----------|------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
+| [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files — RatingMorph and Rating populated | 2026-05-07 |
 
 ## Best Practices
 

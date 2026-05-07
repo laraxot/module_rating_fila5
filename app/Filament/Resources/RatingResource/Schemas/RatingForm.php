@@ -2,30 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Filament\Resources;
+namespace Modules\Rating\Filament\Resources\RatingResource\Schemas;
 
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Component as SchemaComponent;
 use Filament\Schemas\Components\Section;
-use Filament\Support\Components\Component;
 use Modules\Rating\Enums\RuleEnum;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\CreateRating;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\EditRating;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
-use Modules\Rating\Models\Rating;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
-class RatingResource extends XotBaseResource
+class RatingForm extends XotBaseResourceForm
 {
-    protected static ?string $model = Rating::class;
-
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
-
     /**
-     * @return array<string, Component>
+     * @return array<int|string, SchemaComponent>
      */
     public static function getFormSchema(): array
     {
@@ -42,20 +34,6 @@ class RatingResource extends XotBaseResource
                 ]),
             'txt' => RichEditor::make('txt')->columnSpanFull(),
         ];
-    }
 
-    public static function getRelations(): array
-    {
-        return [
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListRatings::route('/'),
-            'create' => CreateRating::route('/create'),
-            'edit' => EditRating::route('/{record}/edit'),
-        ];
     }
 }

@@ -28,11 +28,12 @@ enum SupportedLocale: string
     public static function toArray(): array
     {
         /** @var array<string, string> $result */
-        return array_reduce(
-            self::cases(),
-            fn (array $carry, self $locale) => [...$carry, $locale->value => $locale->getLabel()],
-            []
-        );
+        $result = [];
+        foreach (self::cases() as $locale) {
+            $result[$locale->value] = $locale->getLabel();
+        }
+
+        return $result;
     }
 
     /**

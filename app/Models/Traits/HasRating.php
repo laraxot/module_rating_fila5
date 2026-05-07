@@ -1,9 +1,5 @@
 <?php
 
-/**
- * --.
- */
-
 declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
@@ -18,7 +14,9 @@ use Modules\Rating\Models\RatingMorph;
  */
 trait HasRating
 {
-    //  laravel/Modules/Xot/app/Models/Traits/RelationX.php  poi passare a morphToManyX per standardizzare
+    /**
+     * @return MorphToMany
+     */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');

@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources;
 
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Table;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\CreateRatingMorph;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\EditRatingMorph;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\ListRatingMorphs;
@@ -24,21 +21,6 @@ class RatingMorphResource extends XotBaseResource
         return [
             // Campi del form
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-            ])
-            ->filters([
-            ])
-            ->recordActions([
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
     }
 
     public static function getRelations(): array

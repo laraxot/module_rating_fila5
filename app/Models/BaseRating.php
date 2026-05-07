@@ -116,7 +116,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
      *
      * @param  Builder<BaseRating>  $query
      * @param  array<string, mixed>|string  $attributes
-     *
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
