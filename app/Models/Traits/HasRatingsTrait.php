@@ -127,7 +127,6 @@ trait HasRatingsTrait
      * Get ratings filtered by extra_attributes.
      *
      * @param  array<string, mixed>  $filters
-     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -139,7 +138,7 @@ trait HasRatingsTrait
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
-        /** @var Collection<int, Rating> $result */
+        /* @var Collection<int, Rating> $result */
         return $query->get();
     }
 
