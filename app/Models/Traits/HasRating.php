@@ -18,6 +18,12 @@ use Modules\Rating\Models\RatingMorph;
  */
 trait HasRating
 {
+<<<<<<< Updated upstream
+=======
+    /**
+     * @return MorphToMany<Rating, static>
+     */
+>>>>>>> Stashed changes
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
