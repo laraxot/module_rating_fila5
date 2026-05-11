@@ -14,9 +14,6 @@ use Modules\Rating\Models\RatingMorph;
  */
 trait HasRating
 {
-    /**
-     * @return MorphToMany
-     */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
