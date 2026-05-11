@@ -17,6 +17,5 @@ class RatingMorphForm extends XotBaseResourceForm
         return [
             // Campi del form
         ];
-
     }
 }
