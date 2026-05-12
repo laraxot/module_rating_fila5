@@ -18,6 +18,11 @@ Indice operativo del wiki Rating.
 - [forbidden-folders-rule](../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
 - [llm-wiki-standard](../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
 
+## On-Demand Entry Points
+
+- [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
+
 ## Scopo Rating Module
 
 Gestione valutazioni, recensioni, rating polimorfici e moderazione.
@@ -27,6 +32,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | Pagina | Tipo | Argomento | Data |
 |--------|------|-----------|------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
+| [filament-resource-zen-pattern](./concepts/filament-resource-zen-pattern.md) | Concept | Resource Filament senza override `form()`/`table()` | 2026-05-06 |
 | [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files — RatingMorph and Rating populated | 2026-05-07 |
 
 ## Best Practices
@@ -52,4 +58,4 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 |--------|------|-----------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
-Aggiornato: 2026-04-28
+Aggiornato: 2026-05-12
