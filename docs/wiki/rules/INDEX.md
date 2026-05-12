@@ -1,45 +1,30 @@
 ---
 title: "Rules Index"
-type: index
+type: "index"
 created: 2026-05-11
-updated: 2026-05-11
-tags: [rules, index, on-demand]
-related:
-  - ../rules/00-TRIGGER_MAP.md
-  - ../rules/on-demand-pattern.md
+updated: 2026-05-12
+tags: [rules, rating, filament, xotbase]
 ---
 
-# Rules Index
+# Rules — Rating Module Wiki
 
-Le Rules progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
+> Regole ricorrenti del modulo Rating. Load on-demand.
 
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+## Available Rules
+- [context-overflow-prevention](../../../../../docs/wiki/rules/context-overflow-prevention.md) — prevenzione 262K token overflow; file vietati; tool output compression
 
-## Regola
+- [filament-resource-zen-pattern](../concepts/filament-resource-zen-pattern.md) — `XotBaseResource` possiede `form()`/`table()`, niente override locali
+- [xotbase-table-columns-enforcement](../concepts/xotbase-table-columns-enforcement.md) — tabelle tipizzate e complete per le risorse del modulo
+- [filament-resource-property](../../../../../docs/wiki/rules/filament-resource-property.md) — `$resource` nelle page resta `protected static string`
+- [filament-rules-summary](../../../../../docs/wiki/rules/filament-rules-summary.md) — riepilogo root su `->label()`, XotBase e convenzioni Filament
 
-1. individua il trigger del task
-2. consulta `../rules/00-TRIGGER_MAP.md`
-3. se serve, esegui `qmd search "<topic>"`
-4. leggi solo la Rules wiki pertinente
+## Usage
 
-## Pattern di caricamento
+```bash
+qmd search "Rating module rule filament xotbase" --limit 5
+```
 
-| Pattern | Comando |
-|---------|---------|
-| Carica Rules specifica | `Read ../rules/<name>.md` |
-| Ricerca semantica | `qmd search "<topic>"` |
-| Via trigger map | Consulta `../rules/00-TRIGGER_MAP.md` |
+---
 
-## Note
-
-- La sorgente di verita' per le Rules e' sempre il wiki locale
-- Non embeddare Rules nei prompt di avvio
-- Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/INDEX.md)
-
-## Aggiungere una Nuova RULES
-
-1. Crea `../rules/<nome>.md` con contenuto completo
-2. Aggiungi la voce in `../rules/00-TRIGGER_MAP.md`
-3. Aggiorna questo indice se la Rules e' ricorrente
-4. Committa: `docs: add rules <nome>`
+**Upstream:** [Root Trigger Map](../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 
