@@ -81,7 +81,7 @@ trait RatingTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
@@ -97,16 +97,14 @@ trait RatingTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
-        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $value = $this->ratings->count('pivot.rating');
-        $value = $this->ratings->count(); // ?? forse fare filtro
+        $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if (null === $this->getKey()) {
+        if ($this->getKey() === null) {
             return $value;
         }
 
