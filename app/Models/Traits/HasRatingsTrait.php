@@ -90,7 +90,7 @@ trait HasRatingsTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
@@ -106,14 +106,14 @@ trait HasRatingsTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() === null) {
+        if (null === $this->getKey()) {
             return $value;
         }
 
@@ -127,8 +127,8 @@ trait HasRatingsTrait
      * Get ratings filtered by extra_attributes.
      *
      * @param array<string, mixed> $filters
+     * @param array<string, mixed> $filters
      *
-     * @param  array<string, mixed>  $filters
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
