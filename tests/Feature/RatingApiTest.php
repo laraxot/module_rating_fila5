@@ -9,7 +9,7 @@ use Modules\Rating\Tests\TestCase;
 
 class RatingApiTest extends TestCase
 {
-    public function testCanListRatings(): void
+    public function test_can_list_ratings(): void
     {
         Rating::create([
             'name' => 'Test Rating 1',
@@ -35,7 +35,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function testCanCreateRating(): void
+    public function test_can_create_rating(): void
     {
         $data = [
             'name' => 'New Rating',
@@ -52,7 +52,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function testCanUpdateRating(): void
+    public function test_can_update_rating(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -72,7 +72,7 @@ class RatingApiTest extends TestCase
             ]);
     }
 
-    public function testCanDeleteRating(): void
+    public function test_can_delete_rating(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
@@ -84,7 +84,7 @@ class RatingApiTest extends TestCase
         $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     }
 
-    public function testCanRateModel(): void
+    public function test_can_rate_model(): void
     {
         $rating = Rating::create([
             'name' => 'Test Rating',
