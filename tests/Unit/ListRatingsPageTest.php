@@ -8,7 +8,7 @@ use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 
 describe('ListRatings page config', function (): void {
     beforeEach(function (): void {
-        $this->page = new ListRatings;
+        $this->page = new ListRatings();
     });
 
     it('defines expected table columns without labels', function (): void {
