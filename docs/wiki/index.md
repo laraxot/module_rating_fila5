@@ -10,7 +10,7 @@ Indice operativo del wiki Rating.
 - [comparisons/](./comparisons/): Implementazioni alternative.
 - [decisions/](./decisions/): ADL (Architectural Decision Log).
 - [troubleshooting/](./troubleshooting/): Problemi noti e soluzioni.
-- [_archive/](./_archive/): Documentazione legacy.
+- Storico modulo fuori dal wiki canonico: [../legacy/](../legacy/) (se presente).
 - [_templates/](./_templates/): Template standard.
 
 ## Regole collegate
@@ -59,3 +59,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
 Aggiornato: 2026-05-12
+
+## Shared Second Brain Discipline
+
+- [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) — local docs/wiki operating contract aligned with root LLM Wiki discipline.
