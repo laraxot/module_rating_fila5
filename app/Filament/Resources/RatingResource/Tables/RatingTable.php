@@ -27,7 +27,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, Column>
      */
-    public static function getTableColumns(): array
+    public function getTableColumns(): array
     {
         return [
             'title' => TextColumn::make('title'),
@@ -42,7 +42,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, BaseFilter>
      */
-    public static function getTableFilters(): array
+    public function getTableFilters(): array
     {
         return [
         ];
@@ -51,7 +51,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, Action|ActionGroup>
      */
-    public static function getTableActions(): array
+    public function getTableActions(): array
     {
         return [
             'edit' => EditAction::make(),
@@ -61,7 +61,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, BulkAction|BulkActionGroup>
      */
-    public static function getTableBulkActions(): array
+    public function getTableBulkActions(): array
     {
         return [
             'bulk' => BulkActionGroup::make([
