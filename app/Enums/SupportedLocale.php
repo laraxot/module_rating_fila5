@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Enums;
 
 use Modules\Xot\Traits\EnumTrait;
+
 enum SupportedLocale: string
 {
     use EnumTrait;
