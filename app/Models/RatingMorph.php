@@ -105,11 +105,17 @@ class RatingMorph extends BaseMorphPivot
     ];
     // -------- RELATIONSHIP -----------
 
+    /**
+     * @return BelongsTo<Rating, $this>
+     */
     public function rating(): BelongsTo
     {
         return $this->belongsTo(Rating::class, 'rating_id');
     }
 
+    /**
+     * @return BelongsTo<Model&UserContract, $this>
+     */
     public function user(): BelongsTo
     {
         $user_class = XotData::make()->getUserClass();
@@ -117,6 +123,9 @@ class RatingMorph extends BaseMorphPivot
         return $this->belongsTo($user_class, 'user_id');
     }
 
+    /**
+     * @return BelongsTo<Model&ProfileContract, $this>
+     */
     public function profile(): BelongsTo
     {
         $profile_class = XotData::make()->getProfileClass();
@@ -124,6 +133,9 @@ class RatingMorph extends BaseMorphPivot
         return $this->belongsTo($profile_class, 'user_id', 'user_id');
     }
 
+    /**
+     * @return MorphTo<Model, $this>
+     */
     public function model(): MorphTo
     {
         return $this->morphTo('model');

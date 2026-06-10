@@ -31,7 +31,7 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @method static Builder|Rating newModelQuery()
  * @method static Builder|Rating newQuery()
  * @method static Builder|Rating query()
- * @method static Builder|Rating withExtraAttributes(array|string $attributes = [], mixed $value = null)
+ * @method static Builder|Rating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
  * @property int             $id
  * @property int             $user_id
