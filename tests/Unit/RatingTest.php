@@ -51,7 +51,7 @@ class RatingTest extends TestCase
         $locale = SupportedLocale::IT;
 
         $this->assertEquals('it', $locale->value);
-        $this->assertEquals('Italiano', $locale->label());
+        $this->assertEquals('Italiano', $locale->getLabel());
 
         $localeFromString = SupportedLocale::fromString('en');
         $this->assertEquals(SupportedLocale::EN, $localeFromString);
