@@ -4,28 +4,31 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+use Illuminate\Support\Facades\DB;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-class RatingTest extends TestCase
-{
-    public function testCanCreateRating(): void
-    {
+uses(\Modules\Rating\Tests\TestCase::class);
+
+describe('Rating', function (): void {
+    test('can create rating', function (): void {
         $rating = Rating::create([
             'title' => 'Test Rating',
             'color' => '#FF0000',
         ]);
 
-        $this->assertDatabaseHas('ratings', [
-            'id' => $rating->id,
-            'title' => 'Test Rating',
-        ], 'rating');
-    }
+        Assert::assertTrue(
+            DB::connection('rating')->table('ratings')
+                ->where('id', $rating->id)
+                ->where('title', 'Test Rating')
+                ->exists()
+        );
+    });
 
-    public function testCanCreateRatingMorph(): void
-    {
+    test('can create rating morph', function (): void {
         $rating = Rating::create([
             'title' => 'Test Rating',
         ]);
@@ -40,24 +43,25 @@ class RatingTest extends TestCase
             'reward' => 10,
         ]);
 
-        $this->assertDatabaseHas('rating_morphs', [
-            'id' => $ratingMorph->id,
-            'rating_id' => $rating->id,
-        ], 'rating');
-    }
+        Assert::assertTrue(
+            DB::connection('rating')->table('rating_morphs')
+                ->where('id', $ratingMorph->id)
+                ->where('rating_id', $rating->id)
+                ->exists()
+        );
+    });
 
-    public function testSupportedLocaleEnum(): void
-    {
+    test('supported locale enum', function (): void {
         $locale = SupportedLocale::IT;
 
-        $this->assertEquals('it', $locale->value);
-        $this->assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
+        Assert::assertEquals('it', $locale->value);
+        Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
 
         $localeFromString = SupportedLocale::fromString('en');
-        $this->assertEquals(SupportedLocale::EN, $localeFromString);
+        Assert::assertEquals(SupportedLocale::EN, $localeFromString);
 
         $locales = SupportedLocale::toArray();
-        $this->assertArrayHasKey('it', $locales);
-        $this->assertArrayHasKey('en', $locales);
-    }
-}
+        Assert::assertArrayHasKey('it', $locales);
+        Assert::assertArrayHasKey('en', $locales);
+    });
+});
