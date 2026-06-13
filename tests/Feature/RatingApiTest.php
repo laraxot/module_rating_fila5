@@ -6,23 +6,24 @@ namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
 
-uses(\Modules\Rating\Tests\TestCase::class);
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
-    /** @var \Modules\Rating\Tests\TestCase $this */
+    /* @var \Modules\Rating\Tests\TestCase $this */
     skip('Rating HTTP API routes are not registered in this install (Folio/Actions architecture).');
 });
 
 describe('Rating Api', function (): void {
     test('can list ratings', function (): void {
-        /** @var \Modules\Rating\Tests\TestCase $this */
+        /* @var \Modules\Rating\Tests\TestCase $this */
         Rating::create([
             'name' => 'Test Rating 1',
         ]);
@@ -90,7 +91,7 @@ describe('Rating Api', function (): void {
         $response = deleteJson("/api/ratings/{$rating->id}");
 
         Assert::assertSame(204, $response->status());
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
     });
 
