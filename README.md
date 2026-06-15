@@ -19,6 +19,11 @@ Questo modulo non e solo codice: e una vetrina operativa. Mostra dove intervenir
 - Config: [.releaserc.json](./.releaserc.json)
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 
+
+## Documentazione tecnica
+
+- [Indice docs](./docs/README.md) — mappa knowledge base locale (wiki, audit, regole)
+
 ## Documentazione essenziale
 
 - [Second brain locale](./docs/wiki/index.md)
