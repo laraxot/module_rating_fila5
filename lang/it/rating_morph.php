@@ -47,6 +47,36 @@ return [
             'label' => 'Seleziona Tutti',
             'message' => 'Seleziona tutti gli elementi disponibili',
         ],
+        'id' => [
+            'label' => 'id',
+        ],
+        'rating_id' => [
+            'label' => 'rating_id',
+        ],
+        'model_type' => [
+            'label' => 'model_type',
+        ],
+        'model_id' => [
+            'label' => 'model_id',
+        ],
+        'user_id' => [
+            'label' => 'user_id',
+        ],
+        'value' => [
+            'label' => 'value',
+        ],
+        'note' => [
+            'label' => 'note',
+        ],
+        'is_winner' => [
+            'label' => 'is_winner',
+        ],
+        'reward' => [
+            'label' => 'reward',
+        ],
+        'created_at' => [
+            'label' => 'created_at',
+        ],
     ],
     'actions' => [
         'import' => [
