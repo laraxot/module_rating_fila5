@@ -17,6 +17,4 @@ abstract class BaseRatingMorphResource extends XotBaseResource
             // Campi del form
         ];
     }
-
-    
 }
