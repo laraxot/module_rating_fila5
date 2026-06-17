@@ -7,12 +7,9 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
 
 /**
  * Modules\Rating\Models\RatingMorph.
@@ -92,5 +89,4 @@ use Modules\Xot\Datas\XotData;
  */
 class RatingMorph extends BaseRatingMorph
 {
-    
 }

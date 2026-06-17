@@ -12,9 +12,6 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Components\Component;
 use Modules\Rating\Enums\RuleEnum;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\CreateRating;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\EditRating;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
@@ -41,6 +38,4 @@ abstract class BaseRatingResource extends XotBaseResource
             'txt' => RichEditor::make('txt')->columnSpanFull(),
         ];
     }
-
-    
 }
