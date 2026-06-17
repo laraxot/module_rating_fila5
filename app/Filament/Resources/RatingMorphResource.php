@@ -10,31 +10,9 @@ use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\ListRatingMorphs
 use Modules\Rating\Models\RatingMorph;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
-class RatingMorphResource extends XotBaseResource
+class RatingMorphResource extends BaseRatingMorphResource
 {
     protected static ?string $model = RatingMorph::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    public static function getFormSchema(): array
-    {
-        return [
-            // Campi del form
-        ];
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListRatingMorphs::route('/'),
-            'create' => CreateRatingMorph::route('/create'),
-            'edit' => EditRatingMorph::route('/{record}/edit'),
-        ];
-    }
+    
 }
