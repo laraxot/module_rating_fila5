@@ -90,7 +90,54 @@ use Modules\Xot\Datas\XotData;
  *
  * @mixin Eloquent
  */
-class RatingMorph extends BaseRatingMorph
+abstract class BaseRatingMorph extends BaseMorphPivot
 {
-    
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+        'model_id', 'model_type',
+        'rating_id',
+        'user_id',
+        'note',
+        'value',
+        'is_winner',
+        'reward',
+    ];
+    // -------- RELATIONSHIP -----------
+
+    /**
+     * @return BelongsTo<Rating, $this>
+     */
+    public function rating(): BelongsTo
+    {
+        return $this->belongsTo(Rating::class, 'rating_id');
+    }
+
+    /**
+     * @return BelongsTo<Model&UserContract, $this>
+     */
+    public function user(): BelongsTo
+    {
+        $user_class = XotData::make()->getUserClass();
+
+        return $this->belongsTo($user_class, 'user_id');
+    }
+
+    /**
+     * @return BelongsTo<Model&ProfileContract, $this>
+     */
+    public function profile(): BelongsTo
+    {
+        $profile_class = XotData::make()->getProfileClass();
+
+        return $this->belongsTo($profile_class, 'user_id', 'user_id');
+    }
+
+    /**
+     * @return MorphTo<Model, $this>
+     */
+    public function model(): MorphTo
+    {
+        return $this->morphTo('model');
+    }
 }
