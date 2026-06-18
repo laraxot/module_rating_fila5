@@ -3,7 +3,8 @@ title: "Rating Module - PHPStan Type Compliance"
 type: concept
 tags: [rating, phpstan, types, compliance, quality, static-analysis]
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-18
+qmd: "rating module phpstan level max zero errors HasRating trait"
 related:
   - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
   - ../../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
@@ -21,7 +22,7 @@ Path:     laravel/Modules/Rating/
 Status:   GREEN
 Errors:   0
 Level:    max
-Updated:  2026-06-10
+Updated:  2026-06-18
 ```
 
 ## Module Structure
@@ -127,5 +128,12 @@ vendor/bin/pest laravel/Modules/Rating/tests --parallel
 ---
 
 **Maintainer**: Dev Agent 3  
-**Last Updated**: 2026-06-10  
+**Last Updated**: 2026-06-18  
 **Status**: GREEN
+
+## Trait cleanup (2026-06-18)
+
+Rimossi trait **non usati** in app (PHPStan `trait.unused`):
+
+- `HasLikes` — modello `Like` assente, zero consumer
+- `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating` (+ probe `RatingPhpstanTraitProbe`)
