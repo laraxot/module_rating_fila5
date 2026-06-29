@@ -92,6 +92,9 @@ use Modules\Xot\Datas\XotData;
  */
 abstract class BaseRatingMorph extends BaseMorphPivot
 {
+    // Laravel auto-pluralizes 'RatingMorph' → 'rating_morphs', but the migration creates 'rating_morph'
+    protected $table = 'rating_morph';
+
     /** @var list<string> */
     protected $fillable = [
         'id',
