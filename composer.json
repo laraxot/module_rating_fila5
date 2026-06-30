@@ -41,14 +41,8 @@
         }
     },
     "require": {
-<<<<<<< Updated upstream
-        "spatie/laravel-schemaless-attributes": "*"
-=======
-<<<<<<< .merge_file_CBmtKD
-=======
-        "spatie/laravel-schemaless-attributes": "*"
->>>>>>> .merge_file_BXtWBh
->>>>>>> Stashed changes
+        "spatie/laravel-schemaless-attributes": "*",
+        "php": "^8.3"
     },
     "repositories": [
         {

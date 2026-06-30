@@ -6,6 +6,17 @@ namespace Modules\Rating\DataObjects;
 
 final readonly class RatingData
 {
+    public function __construct(
+        public string $title,
+        public int $score,
+        public ?string $description = null,
+        public ?string $userId = null,
+    ) {
+        if ($score < 0 || $score > 5) {
+            throw new \InvalidArgumentException('Score must be between 0 and 5');
+        }
+    }
+
     /**
      * @param array<string, mixed> $data
      */
@@ -22,16 +33,5 @@ final readonly class RatingData
             description: $description,
             userId: $userId
         );
-    }
-
-    public function __construct(
-        public string $title,
-        public int $score,
-        public ?string $description = null,
-        public ?string $userId = null,
-    ) {
-        if ($score < 0 || $score > 5) {
-            throw new \InvalidArgumentException('Score must be between 0 and 5');
-        }
     }
 }
