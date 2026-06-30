@@ -6,9 +6,8 @@ namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
 use Filament\Actions\DeleteAction;
 use Modules\Rating\Filament\Resources\RatingResource;
-use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-class EditRating extends XotBaseEditRecord
+class EditRating extends BaseEditRating
 {
     protected static string $resource = RatingResource::class;
 

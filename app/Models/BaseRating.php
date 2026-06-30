@@ -35,7 +35,7 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
- * @method static Builder|BaseRating withExtraAttributes(array|string $attributes = [], mixed $value = null)
+ * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
  * @property int             $id
  * @property int             $user_id
@@ -84,26 +84,8 @@ use Spatie\Sluggable\SlugOptions;
  */
 abstract class BaseRating extends BaseModel implements HasMedia
 {
-    use InteractsWithMedia;
     use HasSlug;
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @see https://github.com/spatie/laravel-schemaless-attributes
-     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'extra_attributes' => SchemalessAttributes::class,
-            'rule' => RuleEnum::class,
-            'is_disabled' => 'boolean',
-            'is_readonly' => 'boolean',
-        ];
-    }
+    use InteractsWithMedia;
 
     /** @var list<string> */
     protected $fillable = [
@@ -154,6 +136,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
         return $query;
     }
 
+    /**
+     * @return MorphTo<Model, $this>
+     */
     public function linkedTo(): MorphTo
     {
         return $this->morphTo('model');
@@ -173,5 +158,23 @@ abstract class BaseRating extends BaseModel implements HasMedia
         $this->addMediaConversion('50x50')
             ->width(150)
             ->height(150);
+    }
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @see https://github.com/spatie/laravel-schemaless-attributes
+     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'extra_attributes' => SchemalessAttributes::class,
+            'rule' => RuleEnum::class,
+            'is_disabled' => 'boolean',
+            'is_readonly' => 'boolean',
+        ];
     }
 }

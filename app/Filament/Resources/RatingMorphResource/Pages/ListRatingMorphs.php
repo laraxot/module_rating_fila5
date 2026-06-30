@@ -13,13 +13,6 @@ class ListRatingMorphs extends XotBaseListRecords
 {
     protected static string $resource = RatingMorphResource::class;
 
-    protected function getActions(): array
-    {
-        return [
-            CreateAction::make(),
-        ];
-    }
-
     public function getTableColumns(): array
     {
         return [
@@ -41,6 +34,13 @@ class ListRatingMorphs extends XotBaseListRecords
             'updated_at' => TextColumn::make('updated_at')
                 ->dateTime()
                 ->sortable(),
+        ];
+    }
+
+    protected function getActions(): array
+    {
+        return [
+            CreateAction::make(),
         ];
     }
 }
