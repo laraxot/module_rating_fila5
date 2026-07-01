@@ -42,8 +42,6 @@ cache/
 *.bak
 *.backup
 *.backup.*
-*.backup-*
-*.backup_*
 
 # PHPStan documentation
 docs/phpstan/
@@ -51,9 +49,9 @@ lang/lang/
 _docs/
 _docs/
 
-# -----------------------------------------------------------------------------
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+docs/archive/
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-# -----------------------------------------------------------------------------
 *~HEAD
 *~BASE
 *~LOCAL
@@ -62,3 +60,4 @@ _docs/
 *.rej
 *~head
 
+agentdb.rvf

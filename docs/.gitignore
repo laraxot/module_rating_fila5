@@ -1,19 +1,8 @@
-# Local generated documentation archives
-legacy/
-legacy/**
+---
+module: theme
+topic: .gitignore
+canonical: ../../../Themes/docs/shared-components/.gitignore-Modules
+---
 
-# Backup locali (script conflitti / editor — mai committare)
-*.bak
-*.backup
-*.backup.*
-*.backup-*
-*.backup_*
-
-# Copie residue merge/rebase
-*~HEAD
-*~BASE
-*~LOCAL
-*~REMOTE
-*.orig
-*.rej
-*~head
+See canonical documentation: ../../../Themes/docs/shared-components/.gitignore-Modules
+agentdb.rvf
