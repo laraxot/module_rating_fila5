@@ -1,4 +1,32 @@
+---
+title: "Rating Module Wiki Index"
+type: index
+module: Rating
+tags: [rating, wiki, index]
+created: 2026-04-15
+updated: 2026-06-05
+qmd: "rating module wiki index second brain harness"
+issues:
+  - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
+discussions:
+  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+related:
+  - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
+  - ../../../../docs/wiki/bmad/architecture.md
+  - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
+  - ../../docs/wiki/concepts/ai-harness-module-discipline.md
+---
+
 # Rating Module LLM Wiki
+
+## AI / second brain
+
+- [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+- [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
+- [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
+- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
+- [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
+
 
 Indice operativo del wiki Rating.
 
@@ -10,7 +38,7 @@ Indice operativo del wiki Rating.
 - [comparisons/](./comparisons/): Implementazioni alternative.
 - [decisions/](./decisions/): ADL (Architectural Decision Log).
 - [troubleshooting/](./troubleshooting/): Problemi noti e soluzioni.
-- Storico modulo fuori dal wiki canonico: [../legacy/](../legacy/) (se presente).
+- [_archive/](./_archive/): Documentazione legacy.
 - [_templates/](./_templates/): Template standard.
 
 ## Regole collegate
@@ -59,7 +87,3 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
 Aggiornato: 2026-05-12
-
-## Shared Second Brain Discipline
-
-- [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) — local docs/wiki operating contract aligned with root LLM Wiki discipline.
