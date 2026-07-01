@@ -19,38 +19,48 @@ use Modules\Rating\Models\Rating;
  *
  * @see Modules/Rating/docs/schemaless-attributes.md
  */
+/** @phpstan-ignore trait.unused */
 trait HasRatingsTrait
 {
     public function getRatingClass(): string
     {
-        return Str::of(static::class)
+        return (string) Str::of(static::class)
             ->before('\Models\\')
-            ->append('\Models\Rating')
-            ->toString();
+            ->append('\Models\Rating');
     }
 
+    /**
+     * Get ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
+     */
     public function ratings(): MorphToMany
     {
-        return $this->morphToManyX($this->getRatingClass(), 'model');
+        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
     }
 
+    /**
+     * Get rating objectives with aggregated data.
+     *
+     * @return HasMany<Rating, static>
+     */
     public function ratingObjectives(): HasMany
     {
-        $related = $this->getRatingClass();
-        $user_id = Auth::id();
+        $relatedClass = $this->getRatingClass();
+        $userId = (int) Auth::id();
 
-        return $this->hasMany($related, 'related_type', 'post_type')
+        return $this->hasMany($relatedClass, 'related_type', 'post_type')
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
                 avg(value) as rating_avg,
-                sum(if(user_id="'.$user_id.'",value,0)) AS rating_my
-                '
+                sum(if(user_id = ?, value, 0)) AS rating_my',
+                [$userId]
             )->leftJoin(
                 'rating_morph',
                 function ($join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
-                        ->whereRaw('rating_morph.post_type = ratings.related_type')
+                        ->whereColumn('rating_morph.post_type', 'ratings.related_type')
                         ->where('rating_morph.post_id', $this->id);
                 }
             )->groupBy('ratings.id')
@@ -65,14 +75,19 @@ trait HasRatingsTrait
         return $query->leftJoin(
             'rating_morph',
             function ($join): void {
-                $join->on('rating_morph.post_type = ratings.related_type');
+                $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
     }
 
+    /**
+     * Get my ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
+     */
     public function myRatings(): MorphToMany
     {
-        return $this->morphRelated($this->getRatingClass())
+        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
             ->wherePivot('user_id', (string) Auth::id());
     }
 
@@ -113,7 +128,7 @@ trait HasRatingsTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if (null === $this->getKey()) {
+        if (null == $this->getKey()) {
             return $value;
         }
 
@@ -139,8 +154,10 @@ trait HasRatingsTrait
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
-        /* @var Collection<int, Rating> $result */
-        return $query->get();
+        /** @var Collection<int, Rating> $result */
+        $result = $query->get();
+
+        return $result;
     }
 
     public function syncRatingsWhere(array $where): Collection

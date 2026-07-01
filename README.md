@@ -1,37 +1,56 @@
-# Rating: il modulo che trasforma complessita in vantaggio operativo
+# ⭐ Rating
 
-Rating and evaluation module for the Laraxot ecosystem with schemaless attributes support.
+[![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
+[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
 
-## Perche guardarlo adesso
+> **Valuta qualsiasi cosa — una volta sola, bene.** Rating polimorfico, like, statistiche in tempo reale.
 
-- Riduce attrito operativo con convenzioni Laraxot gia pronte.
-- Porta documentazione, release e changelog nello stesso flusso verificabile.
-- Aiuta team e agenti AI a capire subito scopo, confini e prossime mosse.
-- E pensato per crescere: semantic versioning, auto release e changelog automatico sono gia configurati.
+---
 
-## Cosa promette
+## Perché esiste
 
-Questo modulo non e solo codice: e una vetrina operativa. Mostra dove intervenire, cosa leggere, come rilasciare e come mantenere alta la confidenza tecnica.
+Feedback e soddisfazione su servizi, contenuti, operatori.
 
-## Release automation
+## Superpoteri
 
-- Workflow: [Semantic Release](./.github/workflows/semantic-release.yml)
-- Config: [.releaserc.json](./.releaserc.json)
-- Changelog: [CHANGELOG.md](./CHANGELOG.md)
+- Trait `HasRating` riusabile
+- Queueable Actions per aggregati
+- Filament Resources complete
+- PHPStan 10 e test suite
 
-## Documentazione essenziale
+## Certificazioni
 
-- [Second brain locale](./docs/wiki/index.md)
-- [Audit ridondanza](./docs/code-redundancy-audit.md)
-- [Protocollo confidenza](./docs/agent-confidence-protocol.md)
-- [Disciplina agenti](./docs/agent-edit-discipline.md)
-- [00 Index](./docs/00-INDEX.md)
-- [Bad Practices](./docs/BAD_PRACTICES.md)
-- [Best Practices](./docs/BEST_PRACTICES.md)
-- [Changelog](./docs/CHANGELOG.md)
-- [False Friends](./docs/FALSE_FRIENDS.md)
-- [Index](./docs/INDEX.md)
+| Certificazione | Stato |
+|----------------|-------|
+| PHPStan livello 10 | Target progetto |
+| `declare(strict_types=1)` | Su nuovo codice PHP |
+| Filament 5 + XotBase | Admin enterprise |
+| Test PHPUnit / Pest | Suite modulo |
+| Documentazione wiki | Cartella `docs/` |
 
-## Filosofia
+## Vuoi entrare nel team?
 
-Scopo prima del codice. DRY prima dell'orgoglio. KISS prima dell'astrazione. La release automatica non sostituisce il giudizio: lo rende tracciabile.
+Numeri che **guidano miglioramento** del servizio pubblico.
+
+Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+
+---
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

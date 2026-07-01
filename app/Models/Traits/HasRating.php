@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Support\Arr;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
@@ -14,40 +13,68 @@ use Modules\Rating\Models\RatingMorph;
  */
 trait HasRating
 {
+    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
     public function ratings(): MorphToMany
     {
-        return $this->morphToManyX(Rating::class, 'model');
+        $pivot = new RatingMorph();
+
+        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
+            ->using(RatingMorph::class)
+            ->withPivot($pivot->getFillable())
+            ->withTimestamps();
     }
 
+    /** @return array<int|string, string> */
     public function getOptionRatingsIdTitle(): array
     {
-        // return $this->ratings()->where('user_id', null)->get();
-        return Arr::pluck($this->ratings()->where('user_id', null)->get()->toArray(), 'title', 'id');
+        $options = [];
+        foreach ($this->ratings()->where('user_id', null)->get() as $rating) {
+            if (! $rating instanceof Rating) {
+                continue;
+            }
+
+            $options[$rating->id] = (string) $rating->title;
+        }
+
+        return $options;
     }
 
+    /** @return array<int|string, string> */
     public function getOptionRatingsIdColor(): array
     {
-        return Arr::pluck($this->ratings()->where('user_id', null)->get()->toArray(), 'color', 'id');
+        $options = [];
+        foreach ($this->ratings()->where('user_id', null)->get() as $rating) {
+            if (! $rating instanceof Rating) {
+                continue;
+            }
+
+            $options[$rating->id] = (string) $rating->color;
+        }
+
+        return $options;
     }
 
+    /** @return array<int, array<string, mixed>> */
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
             ->ratings()
-        // ->with('media')
+            // ->with('media')
             ->where('user_id', null)
             ->get();
         // ->toArray()
 
         $ratings_array = [];
         foreach ($ratings as $key => $rating) {
-            $ratings_array[$key] = $rating->toArray();
+            /** @var array<string, mixed> $rowData */
+            $rowData = $rating->toArray();
+            $ratings_array[$key] = $rowData;
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
                 '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm3.53 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72v4.69a.75.75 0 001.5 0v-4.69l1.72 1.72a.75.75 0 001.06 0z" clip-rule="evenodd" /></svg>',
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" /></svg>',
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72 1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" /></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365-9.75 9.75-4.365 9.75 9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" /></svg>',
             ];
 
             // Use media if it already exists, otherwise don't try to create it
@@ -69,6 +96,7 @@ trait HasRating
             ->count('user_id');
     }
 
+    /** @return array<int|string, float|int> */
     public function getRatingsPercentageByUser(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
@@ -91,6 +119,7 @@ trait HasRating
         return $result;
     }
 
+    /** @return array<int|string, float|int> */
     public function getRatingsPercentageByVolume(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
@@ -102,7 +131,7 @@ trait HasRating
         }
 
         foreach ($ratings_options as $key => $value) {
-            $volume = $this->getVolumeCredit($key);
+            $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }
 
