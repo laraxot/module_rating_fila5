@@ -12,6 +12,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 
 /**
@@ -22,17 +23,26 @@ use Modules\Rating\Models\Rating;
 /** @phpstan-ignore trait.unused */
 trait HasRatingsTrait
 {
+    /**
+     * @return class-string<BaseRating>
+     */
     public function getRatingClass(): string
     {
-        return (string) Str::of(static::class)
+        $ratingClass = (string) Str::of(static::class)
             ->before('\Models\\')
             ->append('\Models\Rating');
+
+        if (is_a($ratingClass, BaseRating::class, true)) {
+            return $ratingClass;
+        }
+
+        return Rating::class;
     }
 
     /**
      * Get ratings for this model.
      *
-     * @return MorphToMany<Rating, static>
+     * @return MorphToMany<Rating, $this>
      */
     public function ratings(): MorphToMany
     {
@@ -42,7 +52,7 @@ trait HasRatingsTrait
     /**
      * Get rating objectives with aggregated data.
      *
-     * @return HasMany<Rating, static>
+     * @return HasMany<BaseRating, $this>
      */
     public function ratingObjectives(): HasMany
     {
@@ -58,7 +68,7 @@ trait HasRatingsTrait
                 [$userId]
             )->leftJoin(
                 'rating_morph',
-                function ($join): void {
+                function (\Illuminate\Database\Query\JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
                         ->where('rating_morph.post_id', $this->id);
@@ -74,7 +84,7 @@ trait HasRatingsTrait
     {
         return $query->leftJoin(
             'rating_morph',
-            function ($join): void {
+            function (\Illuminate\Database\Query\JoinClause $join): void {
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
@@ -83,7 +93,7 @@ trait HasRatingsTrait
     /**
      * Get my ratings for this model.
      *
-     * @return MorphToMany<Rating, static>
+     * @return MorphToMany<Rating, $this>
      */
     public function myRatings(): MorphToMany
     {
@@ -147,7 +157,6 @@ trait HasRatingsTrait
      */
     public function getRatingsWhere(array $filters): Collection
     {
-        /** @var Builder $query */
         $query = $this->ratings();
 
         foreach ($filters as $key => $filterValue) {
@@ -160,9 +169,13 @@ trait HasRatingsTrait
         return $result;
     }
 
+    /**
+     * @param array<string, mixed> $where
+     */
     public function syncRatingsWhere(array $where): Collection
     {
-        $ratings = app($this->getRatingClass())
+        $ratingClass = $this->getRatingClass();
+        $ratings = $ratingClass::query()
             ->withExtraAttributes($where)
             ->get();
 
