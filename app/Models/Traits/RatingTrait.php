@@ -100,9 +100,9 @@ trait RatingTrait
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if (null !== $value) {
+        if ($value !== null) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if (null !== $this->getKey()) {
+            if ($this->getKey() !== null) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
