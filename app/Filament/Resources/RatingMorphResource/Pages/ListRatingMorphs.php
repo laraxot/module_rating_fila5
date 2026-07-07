@@ -11,7 +11,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListRatingMorphs extends XotBaseListRecords
 {
-    public static string $resource = RatingMorphResource::class;
+    protected static string $resource = RatingMorphResource::class;
 
     public function getTableColumns(): array
     {
