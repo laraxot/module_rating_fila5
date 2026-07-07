@@ -28,7 +28,7 @@ class RatingData extends Data
     /**
      * Create from array with type casting.
      *
-     * @param  array<string,mixed>  $data
+     * @param array<string,mixed> $data
      */
     public static function fromArray(array $data): self
     {
