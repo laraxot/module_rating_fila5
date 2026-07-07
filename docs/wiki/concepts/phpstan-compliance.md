@@ -136,4 +136,4 @@ vendor/bin/pest laravel/Modules/Rating/tests --parallel
 Rimossi trait **non usati** in app (PHPStan `trait.unused`):
 
 - `HasLikes` — modello `Like` assente, zero consumer
-- `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating` (+ probe `RatingPhpstanTraitProbe`)
+- `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating`
