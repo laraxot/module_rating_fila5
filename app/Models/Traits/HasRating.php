@@ -150,3 +150,4 @@ trait HasRating
         return (float) $query->sum('points');
     }
 }
+
