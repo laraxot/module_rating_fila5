@@ -7,23 +7,10 @@ namespace Modules\Rating\Tests\Feature;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 
-use function Pest\Laravel\deleteJson;
-use function Pest\Laravel\getJson;
-use function Pest\Laravel\postJson;
-use function Pest\Laravel\putJson;
-
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class);
-
-beforeEach(function (): void {
-    /* @var \Modules\Rating\Tests\TestCase $this */
-    skip('Rating HTTP API routes are not registered in this install (Folio/Actions architecture).');
-});
-
-describe('Rating Api', function (): void {
-    test('can list ratings', function (): void {
-        /* @var \Modules\Rating\Tests\TestCase $this */
+class RatingApiTest extends TestCase
+{
+    public function testCanListRatings(): void
+    {
         Rating::create([
             'name' => 'Test Rating 1',
         ]);
@@ -32,10 +19,10 @@ describe('Rating Api', function (): void {
             'name' => 'Test Rating 2',
         ]);
 
-        $response = getJson('/api/ratings');
+        $response = $this->getJson('/api/ratings');
 
-        Assert::assertSame(200, $response->status());
-        $response->assertJsonCount(2, 'data')
+        $response->assertStatus(200)
+            ->assertJsonCount(2, 'data')
             ->assertJsonStructure([
                 'data' => [
                     '*' => [
@@ -46,25 +33,27 @@ describe('Rating Api', function (): void {
                     ],
                 ],
             ]);
-    });
+    }
 
-    test('can create rating', function (): void {
+    public function testCanCreateRating(): void
+    {
         $data = [
             'name' => 'New Rating',
             'color' => '#00FF00',
         ];
 
-        $response = postJson('/api/ratings', $data);
+        $response = $this->postJson('/api/ratings', $data);
 
-        Assert::assertSame(201, $response->status());
-        $response->assertJson([
-            'data' => [
-                'name' => 'New Rating',
-            ],
-        ]);
-    });
+        $response->assertStatus(201)
+            ->assertJson([
+                'data' => [
+                    'name' => 'New Rating',
+                ],
+            ]);
+    }
 
-    test('can update rating', function (): void {
+    public function testCanUpdateRating(): void
+    {
         $rating = Rating::create([
             'name' => 'Test Rating',
         ]);
@@ -73,29 +62,30 @@ describe('Rating Api', function (): void {
             'name' => 'Updated Rating',
         ];
 
-        $response = putJson("/api/ratings/{$rating->id}", $data);
+        $response = $this->putJson("/api/ratings/{$rating->id}", $data);
 
-        Assert::assertSame(200, $response->status());
-        $response->assertJson([
-            'data' => [
-                'name' => 'Updated Rating',
-            ],
-        ]);
-    });
+        $response->assertStatus(200)
+            ->assertJson([
+                'data' => [
+                    'name' => 'Updated Rating',
+                ],
+            ]);
+    }
 
-    test('can delete rating', function (): void {
+    public function testCanDeleteRating(): void
+    {
         $rating = Rating::create([
             'name' => 'Test Rating',
         ]);
 
-        $response = deleteJson("/api/ratings/{$rating->id}");
+        $response = $this->deleteJson("/api/ratings/{$rating->id}");
 
-        Assert::assertSame(204, $response->status());
-        /* @var TestCase $this */
-        $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
-    });
+        $response->assertStatus(204);
+        $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
+    }
 
-    test('can rate model', function (): void {
+    public function testCanRateModel(): void
+    {
         $rating = Rating::create([
             'name' => 'Test Rating',
         ]);
@@ -107,15 +97,15 @@ describe('Rating Api', function (): void {
             'note' => 'Great!',
         ];
 
-        $response = postJson("/api/ratings/{$rating->id}/rate", $data);
+        $response = $this->postJson("/api/ratings/{$rating->id}/rate", $data);
 
-        Assert::assertSame(201, $response->status());
-        $response->assertJson([
-            'data' => [
-                'rating_id' => $rating->id,
-                'value' => 4.5,
-                'note' => 'Great!',
-            ],
-        ]);
-    });
-});
+        $response->assertStatus(201)
+            ->assertJson([
+                'data' => [
+                    'rating_id' => $rating->id,
+                    'value' => 4.5,
+                    'note' => 'Great!',
+                ],
+            ]);
+    }
+}

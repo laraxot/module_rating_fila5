@@ -10,10 +10,6 @@ use Modules\Rating\Models\RatingMorph;
 
 /**
  * Trait HasRating.
- *
- * @see \Modules\Fixcity\Models\Concerns\InteractsWithTicketCitizenRating
- * @see \Modules\Blog\Models\Profile
- * @see \Modules\Blog\Models\Article
  */
 trait HasRating
 {
