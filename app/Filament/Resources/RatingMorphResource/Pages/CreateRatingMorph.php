@@ -9,5 +9,5 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 class CreateRatingMorph extends XotBaseCreateRecord
 {
-    public static string $resource = RatingMorphResource::class;
+    protected static string $resource = RatingMorphResource::class;
 }

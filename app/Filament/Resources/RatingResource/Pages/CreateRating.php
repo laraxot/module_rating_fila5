@@ -8,7 +8,7 @@ use Modules\Rating\Filament\Resources\RatingResource;
 
 class CreateRating extends BaseCreateRating
 {
-    public static string $resource = RatingResource::class;
+    protected static string $resource = RatingResource::class;
 
     // public static function getResource(): string {
 
