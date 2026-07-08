@@ -9,7 +9,7 @@ use Modules\Rating\Filament\Resources\RatingResource;
 
 class EditRating extends BaseEditRating
 {
-    protected static string $resource = RatingResource::class;
+    public static string $resource = RatingResource::class;
 
     protected function getActions(): array
     {
