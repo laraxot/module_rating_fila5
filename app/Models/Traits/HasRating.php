@@ -9,12 +9,13 @@ use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
 /**
- * Trait HasRating.
+ * Trait HasRating — usato da moduli esterni (Fixcity, Blog).
  *
  * @see \Modules\Fixcity\Models\Concerns\InteractsWithTicketCitizenRating
  * @see \Modules\Blog\Models\Profile
  * @see \Modules\Blog\Models\Article
  */
+// phpstan-ignore-next-line trait.unused
 trait HasRating
 {
     /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
