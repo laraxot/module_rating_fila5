@@ -1,4 +1,32 @@
+---
+title: "Rating Module Wiki Index"
+type: index
+module: Rating
+tags: [rating, wiki, index]
+created: 2026-04-15
+updated: 2026-06-05
+qmd: "rating module wiki index second brain harness"
+issues:
+  - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
+discussions:
+  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+related:
+  - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
+  - ../../../../docs/wiki/bmad/architecture.md
+  - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
+  - ../../docs/wiki/concepts/ai-harness-module-discipline.md
+---
+
 # Rating Module LLM Wiki
+
+## AI / second brain
+
+- [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+- [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
+- [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
+- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
+- [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
+
 
 Indice operativo del wiki Rating.
 
@@ -32,14 +60,8 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | Pagina | Tipo | Argomento | Data |
 |--------|------|-----------|------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
-<<<<<<< HEAD
 | [filament-resource-zen-pattern](./concepts/filament-resource-zen-pattern.md) | Concept | Resource Filament senza override `form()`/`table()` | 2026-05-06 |
-=======
-<<<<<<< HEAD
->>>>>>> e8a46704a (initial commit)
 | [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files — RatingMorph and Rating populated | 2026-05-07 |
-=======
->>>>>>> 01dce8d29 (initial commit)
 
 ## Best Practices
 

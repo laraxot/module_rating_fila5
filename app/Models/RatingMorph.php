@@ -7,12 +7,9 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
 
 /**
  * Modules\Rating\Models\RatingMorph.
@@ -90,42 +87,6 @@ use Modules\Xot\Datas\XotData;
  *
  * @mixin Eloquent
  */
-class RatingMorph extends BaseMorphPivot
+class RatingMorph extends BaseRatingMorph
 {
-    /** @var list<string> */
-    protected $fillable = [
-        'id',
-        'model_id', 'model_type',
-        'rating_id',
-        'user_id',
-        'note',
-        'value',
-        'is_winner',
-        'reward',
-    ];
-    // -------- RELATIONSHIP -----------
-
-    public function rating(): BelongsTo
-    {
-        return $this->belongsTo(Rating::class, 'rating_id');
-    }
-
-    public function user(): BelongsTo
-    {
-        $user_class = XotData::make()->getUserClass();
-
-        return $this->belongsTo($user_class, 'user_id');
-    }
-
-    public function profile(): BelongsTo
-    {
-        $profile_class = XotData::make()->getProfileClass();
-
-        return $this->belongsTo($profile_class, 'user_id', 'user_id');
-    }
-
-    public function model(): MorphTo
-    {
-        return $this->morphTo('model');
-    }
 }

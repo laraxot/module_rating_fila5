@@ -14,6 +14,7 @@ tags: [rules, rating, filament, xotbase]
 - [context-overflow-prevention](../../../../../docs/wiki/rules/context-overflow-prevention.md) — prevenzione 262K token overflow; file vietati; tool output compression
 
 - [filament-resource-zen-pattern](../concepts/filament-resource-zen-pattern.md) — `XotBaseResource` possiede `form()`/`table()`, niente override locali
+- [code-redundancy-deep-dive-2026-05](../../../../../docs/wiki/audits/code-redundancy-deep-dive-2026-05.md) — 2026-05 deep redundancy + philosophical audit. Rating module must contribute its local redundancies and reflections (zen, doubts, politics of uniformity).
 - [xotbase-table-columns-enforcement](../concepts/xotbase-table-columns-enforcement.md) — tabelle tipizzate e complete per le risorse del modulo
 - [filament-resource-property](../../../../../docs/wiki/rules/filament-resource-property.md) — `$resource` nelle page resta `protected static string`
 - [filament-rules-summary](../../../../../docs/wiki/rules/filament-rules-summary.md) — riepilogo root su `->label()`, XotBase e convenzioni Filament

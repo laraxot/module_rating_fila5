@@ -11,9 +11,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\Column;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\BaseFilter;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
@@ -27,22 +25,25 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, Column>
      */
-    public static function getTableColumns(): array
+    public function getTableColumns(): array
     {
         return [
-            'title' => TextColumn::make('title'),
-            'type' => TextColumn::make('type'),
-            'anno' => TextColumn::make('anno'),
-            'is_disabled' => ToggleColumn::make('is_disabled'),
-            'is_readonly' => ToggleColumn::make('is_readonly'),
-            'color' => IconColumn::make('color'),
+            'id' => TextColumn::make('id')->sortable(),
+            'title' => TextColumn::make('title')->searchable()->sortable(),
+            'slug' => TextColumn::make('slug')->searchable()->sortable(),
+            'rule' => TextColumn::make('rule')->badge()->sortable(),
+            'is_disabled' => TextColumn::make('is_disabled')->badge()->sortable(),
+            'is_readonly' => TextColumn::make('is_readonly')->badge()->sortable(),
+            'order_column' => TextColumn::make('order_column')->sortable(),
+            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
+            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
         ];
     }
 
     /**
      * @return array<string, BaseFilter>
      */
-    public static function getTableFilters(): array
+    public function getTableFilters(): array
     {
         return [
         ];
@@ -51,7 +52,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, Action|ActionGroup>
      */
-    public static function getTableActions(): array
+    public function getTableActions(): array
     {
         return [
             'edit' => EditAction::make(),
@@ -61,7 +62,7 @@ class RatingTable extends XotBaseResourceTable
     /**
      * @return array<string, BulkAction|BulkActionGroup>
      */
-    public static function getTableBulkActions(): array
+    public function getTableBulkActions(): array
     {
         return [
             'bulk' => BulkActionGroup::make([

@@ -20,6 +20,7 @@ return new class extends XotBaseMigration {
             static function (Blueprint $table): void {
                 $table->id();
                 $table->string('title')->nullable();
+                $table->string('slug')->nullable();
                 $table->string('color')->nullable();
                 $table->string('icon')->nullable();
                 $table->string('rule')->nullable();
@@ -32,6 +33,9 @@ return new class extends XotBaseMigration {
             function (Blueprint $table): void {
                 if (! $this->hasColumn('title')) {
                     $table->string('title')->nullable();
+                }
+                if (! $this->hasColumn('slug')) {
+                    $table->string('slug')->nullable()->index();
                 }
                 if (! $this->hasColumn('color')) {
                     $table->string('color')->nullable();
