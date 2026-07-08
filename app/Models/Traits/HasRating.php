@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+/** @phpstan-ignore trait.unused (usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
 trait HasRating
 {
     /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
