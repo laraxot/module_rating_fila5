@@ -12,13 +12,20 @@ class GetRatingOptsByModelAction
     use QueueableAction;
 
     /**
-     * Undocumented function.
+     * @return array<int, string|null>
      */
     public function execute(HasRatingContract $model): array
     {
-        return $model->ratings()
-            ->wherePivot('user_id', null)
-            ->pluck('title', 'ratings.id')
-            ->toArray();
+        $result = [];
+
+        foreach (
+            $model->ratings()
+                ->wherePivot('user_id', null)
+                ->pluck('title', 'ratings.id') as $ratingId => $title
+        ) {
+            $result[(int) $ratingId] = is_string($title) ? $title : null;
+        }
+
+        return $result;
     }
 }
