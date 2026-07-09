@@ -15,6 +15,10 @@ use function Pest\Laravel\putJson;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 
 beforeEach(function (): void {
     /* @var \Modules\Rating\Tests\TestCase $this */
