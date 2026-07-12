@@ -44,7 +44,7 @@ describe('Rating', function (): void {
         ]);
 
         Assert::assertTrue(
-            DB::connection('rating')->table('rating_morphs')
+            DB::connection('rating')->table('rating_morph')
                 ->where('id', $ratingMorph->id)
                 ->where('rating_id', $rating->id)
                 ->exists()
