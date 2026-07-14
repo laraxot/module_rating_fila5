@@ -64,3 +64,7 @@ agentdb.rvf
 audit-coverage/
 tests/AuditCoverage/
 .claude-audit/
+.cursor/
+.vscode/
+.windsurf/
+.devcontainer/
