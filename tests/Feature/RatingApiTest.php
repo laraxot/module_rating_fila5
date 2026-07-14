@@ -96,7 +96,7 @@ describe('Rating Api', function (): void {
 
         Assert::assertSame(204, $response->status());
         /* @var TestCase $this */
-        $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
+        $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     });
 
     test('can rate model', function (): void {
