@@ -13,6 +13,9 @@ class ListRatingMorphs extends XotBaseListRecords
 {
     protected static string $resource = RatingMorphResource::class;
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getTableColumns(): array
     {
         return [
