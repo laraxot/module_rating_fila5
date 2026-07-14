@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Widgets;
 
-use Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -12,6 +11,7 @@ use Modules\Rating\Actions\HasRating\GetCountByModelRatingIdAction;
 use Modules\Rating\Actions\HasRating\GetSumByModelRatingIdAction;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Modules\Rating\Models\Rating;
+use Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget as BaseWidget;
 use Webmozart\Assert\Assert;
 
 /**
