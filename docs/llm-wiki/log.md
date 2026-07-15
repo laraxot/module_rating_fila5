@@ -1,3 +1,12 @@
+---
+title: "Rating Activity Log"
+type: guide
+tags: [log, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "log"
+---
+
 # Rating Activity Log
 
 > **Module**: Rating

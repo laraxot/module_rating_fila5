@@ -1,3 +1,12 @@
+---
+title: "Activity Log — Rating"
+type: guide
+tags: [log, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "log"
+---
+
 ## [2026-06-10] phpstan | Modulo Rating zero errori codice
 
 - `./vendor/bin/phpstan analyse Modules/Rating` → 0 errori codice
