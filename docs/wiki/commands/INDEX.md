@@ -13,7 +13,7 @@ related:
 
 Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
 
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+> Vedi anche → Trigger Map
 
 ## Regola
 
