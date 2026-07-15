@@ -31,5 +31,5 @@ docs/
 
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
-- Cross-ref: `[Link](../concepts/name.md)`
+- Cross-ref: `Link`
 - NON modificare mai `docs/raw/`
