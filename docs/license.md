@@ -1,3 +1,14 @@
+---
+title: "License"
+type: guide
+tags: [license, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "license"
+related:
+  - "./merge-conflict-files-list.md"
+---
+
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

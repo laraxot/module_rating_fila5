@@ -1,3 +1,14 @@
+---
+title: "Spatie Laravel Schemaless Attributes - Usage in Rating Module"
+type: guide
+tags: [schemaless, attributes, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "schemaless attributes"
+related:
+  - "./second-brain.md"
+---
+
 # Spatie Laravel Schemaless Attributes - Usage in Rating Module
 
 This document outlines the correct usage patterns for `spatie/laravel-schemaless-attributes` within the `Rating` module. For a comprehensive guide on schemaless attributes across the PTVX project, please refer to the [main project documentation](../../../docs/claude/schemaless-attributes.md).
