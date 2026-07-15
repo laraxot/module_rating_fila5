@@ -1,3 +1,14 @@
+---
+title: "PHPStan Fixes - Modulo Rating"
+type: guide
+tags: [phpstan, fixes, 2026, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan fixes 2026 01"
+related:
+  - "./phpstan-fixes-analysis.md"
+---
+
 # PHPStan Fixes - Modulo Rating
 
 **Data**: 2026-01-27  

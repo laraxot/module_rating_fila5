@@ -1,3 +1,14 @@
+---
+title: "Docs archive policy"
+type: rule
+tags: [docs, archive, policy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "docs archive policy"
+related:
+  - "./dry-kiss-analysis.md"
+---
+
 # Docs archive policy
 
 `docs/archive/` is local-only scratch/history and must not be used as a canonical module documentation source.

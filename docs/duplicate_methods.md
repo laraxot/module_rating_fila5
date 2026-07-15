@@ -1,3 +1,14 @@
+---
+title: "Metodi duplicati — Rating"
+type: guide
+tags: [duplicate, methods, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "duplicate methods"
+related:
+  - "./duplicate_methods_report.md"
+---
+
 # Metodi duplicati — Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.
