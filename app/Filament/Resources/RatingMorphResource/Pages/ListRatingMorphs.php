@@ -11,7 +11,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 class ListRatingMorphs extends XotBaseListRecords
 {
-    protected static string $resource = RatingMorphResource::class;
+    public static string $resource = RatingMorphResource::class;
 
     /**
      * @return array<string, mixed>
