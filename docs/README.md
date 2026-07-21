@@ -42,3 +42,5 @@ Rating/
 - [ ] Documentare modelli principali
 - [ ] Documentare risorse Filament
 - [ ] Aggiungere esempi codice
+
+- [Conflict Resolution](conflict-resolution.md)
