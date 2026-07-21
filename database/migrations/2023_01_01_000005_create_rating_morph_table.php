@@ -12,8 +12,7 @@ use Modules\Xot\Datas\XotData;
 /*
  * Class CreateRatingMorphTable.
  */
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * db up.
      */
