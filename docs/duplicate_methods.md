@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Metodi duplicati — Rating"
 type: guide
@@ -10,8 +13,11 @@ related:
   - "./duplicate_methods_report.md"
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 0fc9b73 (.)
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # Metodi duplicati — Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.

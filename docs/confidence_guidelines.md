@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Massimizzare il livello di confidenza"
 type: rule
@@ -10,8 +13,11 @@ related:
   - "./configuration.md"
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 5140f01 (.)
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.

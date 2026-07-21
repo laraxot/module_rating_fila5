@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Filament Version Declaration — Rating"
 type: guide
@@ -10,8 +13,11 @@ related:
   - "./file-naming-rules.md"
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 5140f01 (.)
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # Filament Version Declaration — Rating
 
 **Current Version**: Filament v5 (Livewire v4 + Schemas)
