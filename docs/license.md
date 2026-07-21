@@ -5,8 +5,11 @@ tags: [license, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "license"
+<<<<<<< HEAD
 related:
   - "./merge-conflict-files-list.md"
+=======
+>>>>>>> e932f22 (.)
 ---
 
 The MIT License (MIT)
