@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "⭐ Rating — English presentation"
 type: guide
@@ -10,8 +13,11 @@ related:
   - "./redundancy-audit-2026-05-21.md"
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 0fc9b73 (.)
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # ⭐ Rating — English presentation
 
 [![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)

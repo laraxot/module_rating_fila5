@@ -1,3 +1,14 @@
+---
+title: "Schemaless Attributes - Errori e Correzioni"
+type: guide
+tags: [schemaless, attributes, errors, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "schemaless attributes errors"
+related:
+  - "./schemaless-attributes.md"
+---
+
 # Schemaless Attributes - Errori e Correzioni
 
 **Modulo**: Rating
