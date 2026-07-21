@@ -1,34 +1,40 @@
 # Rating Module Roadmap
 
-## Visione
+Questo documento fornisce una vista di insieme sullo stato e sull’evoluzione del modulo `Rating`.  
+I dettagli sono suddivisi in sotto-documenti dedicati.
 
-Modulo agnostico per la gestione dei criteri di valutazione e dei punteggi: HasRatingsTrait, pivot value, calcoli dinamici. Utilizzabile in qualsiasi progetto Laravel con moduli che richiedono valutazioni e scoring.
-Modulo per la gestione dei criteri di valutazione e dei punteggi: HasRatingsTrait, pivot value, integrazione con moduli consumatori (se presenti).
+## Mappa dei documenti di roadmap
 
-## Fasi di Sviluppo
+- **Visione e obiettivi**  
+  Vedi `docs/roadmap/vision.md` per:
+  - obiettivi di business del modulo
+  - obiettivi tecnici
+  - confini e responsabilità rispetto agli altri moduli.
 
-### Fase 1: Stabilizzazione (Planned)
-- [ ] PHPStan Level 10 Compliance
-- [ ] Allineamento Filament v5
-- [ ] Test Coverage improvement
+- **Fasi di sviluppo**  
+  Vedi `docs/roadmap/phases.md` per:
+  - fasi pianificate (stabilizzazione, core, integrazione)
+  - obiettivi e attività di ciascuna fase.
 
-### Fase 2: Funzionalità Core (Planned)
-- [ ] HasRatingsTrait e relazioni pivot
-- [ ] Criteri readonly/editable
-- [ ] Regole validazione configurabili
+- **Checklist qualità**  
+  Vedi `docs/roadmap/quality.md` per:
+  - requisiti di qualità del codice
+  - regole PHPStan/Laraxot specifiche
+  - requisiti di testing, Filament e documentazione.
 
-### Fase 3: Integrazione (Future)
-- [ ] Integrazione con moduli valutazione
-- [ ] Traduzioni it/en complete
-- [ ] Documentazione completa
+- **Criteri di accettazione**  
+  Vedi `docs/roadmap/acceptance-criteria.md` per:
+  - criteri verificabili per ogni fase (Fase 1, 2, 3)
+  - riferimenti a [architecture.md](architecture.md) e convenzioni Filament/Laraxot.
 
-## Checklist Qualità
+- **Dipendenze e confini**  
+  Vedi `docs/roadmap/dependencies.md` per:
+  - da chi dipende il modulo (Laravel, Xot, Spatie)
+  - chi può usare il Rating (moduli consumer)
+  - regole per evitare dipendenze circolari.
 
-- [ ] PHPStan Level 10
-- [ ] Traduzioni in lang/it e lang/en
-- [ ] Test coverage
-- [ ] Documentazione in docs/
+- **Metriche e obiettivi**  
+  Vedi `docs/roadmap/metrics.md` per:
+  - tabelle di metriche (PHPStan, test, documentazione, traduzioni)
+  - come verificare ogni obiettivo.
 
----
-
-**Ultimo aggiornamento**: Febbraio 2026
