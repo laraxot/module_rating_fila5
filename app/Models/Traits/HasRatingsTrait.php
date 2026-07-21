@@ -251,17 +251,17 @@ trait HasRatingsTrait
         $pivot_avg = $this->ratings_avg;
         $pivot_cout = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.e((string) $pivot_avg).'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.e((string) $pivot_avg).') '.e((string) $pivot_cout).' Votes ';
 
         $rating_url = '#';
-        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
+        $title = 'Vota '.e((string) ($this->title ?? ''));
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.e($rating_url).'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.e($rating_url).'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
