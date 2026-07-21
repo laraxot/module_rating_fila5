@@ -1,3 +1,14 @@
+---
+title: "License"
+type: guide
+tags: [license, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "LICENSE"
+related:
+  - "./METODI_DUPLICATI_ANALISI.md"
+---
+
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

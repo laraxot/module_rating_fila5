@@ -1,3 +1,12 @@
+---
+title: "Testing in Rating"
+type: guide
+tags: [testing, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "testing"
+---
+
 # Testing in Rating
 
 Questo componente segue lo standard globale di progetto per il testing.

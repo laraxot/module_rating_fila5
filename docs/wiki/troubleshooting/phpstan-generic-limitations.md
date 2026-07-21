@@ -1,3 +1,12 @@
+---
+title: "PHPStan Generic Type Limitations in Laravel"
+type: guide
+tags: [phpstan, generic, limitations, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan generic limitations"
+---
+
 # PHPStan Generic Type Limitations in Laravel
 
 ## Problem
