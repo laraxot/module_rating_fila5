@@ -1,3 +1,14 @@
+---
+title: "PHPStan Fixes - Modulo Rating"
+type: guide
+tags: [phpstan, fixes, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan fixes"
+related:
+  - "./ponytail-audit-over-engineering.md"
+---
+
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori

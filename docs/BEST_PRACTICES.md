@@ -1,3 +1,14 @@
+---
+title: "Best Practices – Rating"
+type: guide
+tags: [best, practices, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "BEST PRACTICES"
+related:
+  - "./FALSE_FRIENDS.md"
+---
+
 # Best Practices – Rating
 
 ## Principi DRY/KISS
