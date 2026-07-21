@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "⭐ Rating — English presentation"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./redundancy-audit-2026-05-21.md"
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 # ⭐ Rating — English presentation
 
 [![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)

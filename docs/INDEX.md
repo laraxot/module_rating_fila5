@@ -4,6 +4,7 @@
 
 ## Documentazione
 
+<<<<<<< HEAD
 - [00-INDEX](./00-INDEX.md)
 - [BAD_PRACTICES](./BAD_PRACTICES.md)
 - [BEST_PRACTICES](./BEST_PRACTICES.md)
@@ -179,3 +180,12 @@
 
 - [phpstan-generic-limitation-morphtomany](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md)
 - [phpstan-generic-limitations](wiki/troubleshooting/phpstan-generic-limitations.md)
+=======
+<!-- auto-generato: elencare i file .md presenti -->
+
+---
+
+## ⚠️ Architectural Rules
+
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+>>>>>>> 0fc9b73 (.)

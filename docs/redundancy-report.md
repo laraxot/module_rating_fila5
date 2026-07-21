@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Redundancy Report — Modulo Rating"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./release-marketing-standard.md"
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)
 - Concetti [ridondanze cross-cutting](../Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md)
 

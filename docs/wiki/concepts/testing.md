@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Testing in Rating"
 type: guide
@@ -7,6 +8,8 @@ updated: 2026-07-14
 qmd: "testing"
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 # Testing in Rating
 
 Questo componente segue lo standard globale di progetto per il testing.
