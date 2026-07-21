@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Filament Version Declaration — Rating"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./file-naming-rules.md"
 ---
 
+=======
+>>>>>>> 5140f01 (.)
 # Filament Version Declaration — Rating
 
 **Current Version**: Filament v5 (Livewire v4 + Schemas)

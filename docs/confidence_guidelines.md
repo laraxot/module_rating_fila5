@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Massimizzare il livello di confidenza"
 type: rule
@@ -9,6 +10,8 @@ related:
   - "./configuration.md"
 ---
 
+=======
+>>>>>>> 5140f01 (.)
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.
