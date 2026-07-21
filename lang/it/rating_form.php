@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// Canon: Modules/Rating/docs/wiki — domain i18n only.
-// File: lang/it/rating_form.php
 return [
     'fields' => [
         'extra_attributes' => [

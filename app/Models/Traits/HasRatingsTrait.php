@@ -20,11 +20,7 @@ use Modules\Rating\Models\Rating;
  *
  * @see Modules/Rating/docs/schemaless-attributes.md
  */
-<<<<<<< HEAD
 /** @phpstan-ignore trait.unused (Trade-off: usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
-=======
-/** @phpstan-ignore trait.unused */
->>>>>>> 0fc9b73 (.)
 trait HasRatingsTrait
 {
     /**
@@ -32,7 +28,6 @@ trait HasRatingsTrait
      */
     public function getRatingClass(): string
     {
-<<<<<<< HEAD
         $ratingClass = (string) Str::of(static::class)
             ->before('\Models\\')
             ->append('\Models\Rating');
@@ -42,11 +37,6 @@ trait HasRatingsTrait
         }
 
         return Rating::class;
-=======
-        return (string) Str::of(static::class)
-            ->before('\Models\\')
-            ->append('\Models\Rating');
->>>>>>> 0fc9b73 (.)
     }
 
     /**
@@ -56,36 +46,24 @@ trait HasRatingsTrait
      */
     public function ratings(): MorphToMany
     {
-<<<<<<< HEAD
         /** @var MorphToMany<Rating, static> $result */
         $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
 
         return $result;
-=======
-        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
->>>>>>> 0fc9b73 (.)
     }
 
     /**
      * Get rating objectives with aggregated data.
      *
-<<<<<<< HEAD
      * @return HasMany<BaseRating, static>
-=======
-     * @return HasMany<Rating, static>
->>>>>>> 0fc9b73 (.)
      */
     public function ratingObjectives(): HasMany
     {
         $relatedClass = $this->getRatingClass();
         $userId = (int) Auth::id();
 
-<<<<<<< HEAD
         /** @var HasMany<BaseRating, static> $result */
         $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
-=======
-        return $this->hasMany($relatedClass, 'related_type', 'post_type')
->>>>>>> 0fc9b73 (.)
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -116,11 +94,7 @@ trait HasRatingsTrait
     {
         return $query->leftJoin(
             'rating_morph',
-<<<<<<< HEAD
             function (\Illuminate\Database\Query\JoinClause $join): void {
-=======
-            function ($join): void {
->>>>>>> 0fc9b73 (.)
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
@@ -133,12 +107,8 @@ trait HasRatingsTrait
      */
     public function myRatings(): MorphToMany
     {
-<<<<<<< HEAD
         /** @var MorphToMany<Rating, static> $result */
         $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
-=======
-        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
->>>>>>> 0fc9b73 (.)
             ->wherePivot('user_id', (string) Auth::id());
 
         return $result;
@@ -251,17 +221,17 @@ trait HasRatingsTrait
         $pivot_avg = $this->ratings_avg;
         $pivot_cout = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.e((string) $pivot_avg).'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.e((string) $pivot_avg).') '.e((string) $pivot_cout).' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
         $rating_url = '#';
-        $title = 'Vota '.e((string) ($this->title ?? ''));
+        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.e($rating_url).'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.e($rating_url).'">
+        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 

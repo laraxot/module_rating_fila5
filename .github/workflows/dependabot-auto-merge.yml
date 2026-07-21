@@ -12,11 +12,7 @@ jobs:
     steps:
       - name: Dependabot metadata
         id: metadata
-<<<<<<< HEAD
         uses: dependabot/fetch-metadata@latest
-=======
-        uses: dependabot/fetch-metadata@v1.7.0
->>>>>>> 0fc9b73 (.)
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 

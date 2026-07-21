@@ -32,11 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-<<<<<<< HEAD
         uses: actions/checkout@v7
-=======
-        uses: actions/checkout@v4
->>>>>>> 0fc9b73 (.)
         with:
           fetch-depth: 0
 
@@ -103,7 +99,7 @@ jobs:
           echo "![contributors](charts/contributors.svg)" >> "$OUT/README.md"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
           name: contributor-analytics
           path: docs/outputs/contributor-analytics/

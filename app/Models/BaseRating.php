@@ -86,7 +86,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
 {
     use HasSlug;
     use InteractsWithMedia;
-    use HasSlug;
 
     /** @var list<string> */
     protected $fillable = [
