@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Ponytail audit — Rating (over-engineering)"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./prd.md"
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 # Ponytail audit — Rating (over-engineering)
 
 **Ultimo run:** 2026-06-30  

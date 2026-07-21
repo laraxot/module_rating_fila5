@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./filament-version.md"
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione

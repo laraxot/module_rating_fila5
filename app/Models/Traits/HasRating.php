@@ -12,7 +12,11 @@ use Modules\Rating\Models\RatingMorph;
 /** @phpstan-ignore trait.unused */
 trait HasRating
 {
+<<<<<<< HEAD
     /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
+=======
+    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+>>>>>>> 0fc9b73 (.)
     public function ratings(): MorphToMany
     {
         $pivot = new RatingMorph();
@@ -23,7 +27,11 @@ trait HasRating
             ->withTimestamps();
     }
 
+<<<<<<< HEAD
     /** @return array<int, string> */
+=======
+    /** @return array<int|string, string> */
+>>>>>>> 0fc9b73 (.)
     public function getOptionRatingsIdTitle(): array
     {
         $options = [];
@@ -32,13 +40,21 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[(int) $rating->id] = (string) $rating->title;
+=======
+            $options[$rating->id] = (string) $rating->title;
+>>>>>>> 0fc9b73 (.)
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /** @return array<int, string> */
+=======
+    /** @return array<int|string, string> */
+>>>>>>> 0fc9b73 (.)
     public function getOptionRatingsIdColor(): array
     {
         $options = [];
@@ -47,15 +63,23 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[(int) $rating->id] = (string) $rating->color;
+=======
+            $options[$rating->id] = (string) $rating->color;
+>>>>>>> 0fc9b73 (.)
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /**
      * @return array<int, non-empty-array<string, mixed>>
      */
+=======
+    /** @return array<int, array<string, mixed>> */
+>>>>>>> 0fc9b73 (.)
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
@@ -70,6 +94,10 @@ trait HasRating
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
+<<<<<<< HEAD
+=======
+            $ratings_array[$key] = $rowData;
+>>>>>>> 0fc9b73 (.)
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -98,7 +126,11 @@ trait HasRating
             ->count('user_id');
     }
 
+<<<<<<< HEAD
     /** @return array<int, float> */
+=======
+    /** @return array<int|string, float|int> */
+>>>>>>> 0fc9b73 (.)
     public function getRatingsPercentageByUser(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
@@ -121,7 +153,11 @@ trait HasRating
         return $result;
     }
 
+<<<<<<< HEAD
     /** @return array<int, float> */
+=======
+    /** @return array<int|string, float|int> */
+>>>>>>> 0fc9b73 (.)
     public function getRatingsPercentageByVolume(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
