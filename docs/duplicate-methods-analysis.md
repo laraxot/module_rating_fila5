@@ -1,14 +1,3 @@
----
-title: "Analisi Metodi Duplicati - Modulo Rating"
-type: concept
-tags: [duplicate, methods, analysis, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "duplicate methods analysis"
-related:
-  - "./duplicate_methods.md"
----
-
 # Analisi Metodi Duplicati - Modulo Rating
 
 **Data Generazione**: 2025-10-15 06:41:17
