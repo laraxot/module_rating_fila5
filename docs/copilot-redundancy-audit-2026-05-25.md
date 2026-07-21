@@ -1,0 +1,20 @@
+---
+title: "Copilot Redundancy Audit 2026 05 25"
+type: guide
+tags: [copilot, redundancy, audit, 2026, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "copilot redundancy audit 2026 05 25"
+related:
+  - "./copilot-redundancy-audit.md"
+---
+
+Copilot Redundancy Audit — 2026-05-25
+
+Sintesi
+- Documentazione di rating e componenti correlati presente in più posizioni.
+
+Raccomandazioni
+- Consolidare pattern di rating e API in un documento riutilizzabile e linkarlo nei moduli che ne fanno uso.
+
+Autore: Copilot CLI

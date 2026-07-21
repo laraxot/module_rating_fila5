@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Copilot Redundancy Audit"
 type: guide
@@ -10,8 +13,11 @@ related:
   - "./core-functionality.md"
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 0fc9b73 (.)
+=======
+>>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi
