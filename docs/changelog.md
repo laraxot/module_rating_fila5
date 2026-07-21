@@ -5,8 +5,11 @@ tags: [changelog, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "changelog"
+<<<<<<< HEAD
 related:
   - "./code-quality-analysis.md"
+=======
+>>>>>>> e932f22 (.)
 ---
 
 # Changelog
