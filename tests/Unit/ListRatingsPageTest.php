@@ -3,30 +3,32 @@
 declare(strict_types=1);
 
 use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
+use Modules\Rating\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-// Business-logic oriented assertions on methods that build table config
+uses(TestCase::class);
 
-describe('ListRatings page config', function (): void {
-    beforeEach(function (): void {
-        $this->page = new ListRatings();
-    });
+test('defines expected table columns without labels', function (): void {
+    $page = new ListRatings();
+    $columns = $page->getTableColumns();
 
-    it('defines expected table columns without labels', function (): void {
-        $columns = $this->page->getTableColumns();
-        expect($columns)->toBeArray();
-        expect(array_keys($columns))->toEqual(['id', 'title', 'rule', 'is_disabled', 'is_readonly']);
-    });
+    Assert::assertSame(['id', 'title', 'rule', 'is_disabled', 'is_readonly'], array_keys($columns));
+});
 
-    it('defines default empty filters and header actions', function (): void {
-        expect($this->page->getTableFilters())->toBeArray()->toBeEmpty();
-        expect($this->page->getTableHeaderActions())->toBeArray()->toBeEmpty();
-    });
+test('defines default empty filters and header actions', function (): void {
+    $page = new ListRatings();
 
-    it('defines view/edit/delete actions and bulk delete', function (): void {
-        $actions = $this->page->getTableActions();
-        expect($actions)->toHaveKeys(['view', 'edit', 'delete']);
+    Assert::assertSame([], $page->getTableFilters());
+    Assert::assertNotEmpty($page->getTableHeaderActions());
+});
 
-        $bulk = $this->page->getTableBulkActions();
-        expect($bulk)->toHaveKey('delete');
-    });
+test('defines view edit delete actions and bulk delete', function (): void {
+    $page = new ListRatings();
+    $actions = $page->getTableActions();
+    $bulk = $page->getTableBulkActions();
+
+    Assert::assertArrayHasKey('view', $actions);
+    Assert::assertArrayHasKey('edit', $actions);
+    Assert::assertArrayHasKey('delete', $actions);
+    Assert::assertArrayHasKey('delete', $bulk);
 });

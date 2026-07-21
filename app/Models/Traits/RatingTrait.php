@@ -17,6 +17,7 @@ use Modules\Rating\Models\Rating;
 /**
  * Trait RatingTrait.
  */
+/** @phpstan-ignore trait.unused */
 trait RatingTrait
 {
     /**
