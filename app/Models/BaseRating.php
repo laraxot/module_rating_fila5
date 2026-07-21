@@ -17,6 +17,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 /**
  * Modules\Rating\Models\BaseRating.
@@ -33,7 +35,7 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
- * @method static Builder|BaseRating withExtraAttributes(array|string $attributes = [], mixed $value = null)
+ * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
  * @property int             $id
  * @property int             $user_id
@@ -82,25 +84,8 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  */
 abstract class BaseRating extends BaseModel implements HasMedia
 {
+    use HasSlug;
     use InteractsWithMedia;
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @see https://github.com/spatie/laravel-schemaless-attributes
-     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'extra_attributes' => SchemalessAttributes::class,
-            'rule' => RuleEnum::class,
-            'is_disabled' => 'boolean',
-            'is_readonly' => 'boolean',
-        ];
-    }
 
     /** @var list<string> */
     protected $fillable = [
@@ -113,7 +98,15 @@ abstract class BaseRating extends BaseModel implements HasMedia
         'is_disabled',
         'is_readonly',
         'order_column',
+        'slug',
     ];
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 
     /**
      * Scope to query by extra attributes.
@@ -121,9 +114,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param  Builder<BaseRating>         $query
-     * @param  array<string, mixed>|string $attributes
-     * @param  mixed                       $value
+     * @param Builder<BaseRating>         $query
+     * @param array<string, mixed>|string $attributes
+     *
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
@@ -143,6 +136,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
         return $query;
     }
 
+    /**
+     * @return MorphTo<Model, $this>
+     */
     public function linkedTo(): MorphTo
     {
         return $this->morphTo('model');
@@ -162,5 +158,23 @@ abstract class BaseRating extends BaseModel implements HasMedia
         $this->addMediaConversion('50x50')
             ->width(150)
             ->height(150);
+    }
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @see https://github.com/spatie/laravel-schemaless-attributes
+     * @see /Modules/Rating/docs/schemaless-attributes-errors.md
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'extra_attributes' => SchemalessAttributes::class,
+            'rule' => RuleEnum::class,
+            'is_disabled' => 'boolean',
+            'is_readonly' => 'boolean',
+        ];
     }
 }

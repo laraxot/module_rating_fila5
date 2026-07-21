@@ -12,6 +12,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 
 /**
@@ -19,79 +20,105 @@ use Modules\Rating\Models\Rating;
  *
  * @see Modules/Rating/docs/schemaless-attributes.md
  */
+/** @phpstan-ignore trait.unused (Trade-off: usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
 trait HasRatingsTrait
 {
+    /**
+     * @return class-string<BaseRating>
+     */
     public function getRatingClass(): string
     {
-        return Str::of(static::class)
+        $ratingClass = (string) Str::of(static::class)
             ->before('\Models\\')
-            ->append('\Models\Rating')
-            ->toString();
+            ->append('\Models\Rating');
+
+        if (is_a($ratingClass, BaseRating::class, true)) {
+            return $ratingClass;
+        }
+
+        return Rating::class;
     }
 
     /**
-     * @return MorphToMany
+     * Get ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
      */
-    public function ratings()
+    public function ratings(): MorphToMany
     {
-        return $this->morphToManyX($this->getRatingClass(), 'model');
+        /** @var MorphToMany<Rating, static> $result */
+        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
+
+        return $result;
     }
 
     /**
-     * @return HasMany
+     * Get rating objectives with aggregated data.
+     *
+     * @return HasMany<BaseRating, static>
      */
-    public function ratingObjectives()
+    public function ratingObjectives(): HasMany
     {
-        $related = $this->getRatingClass();
-        $user_id = Auth::id();
+        $relatedClass = $this->getRatingClass();
+        $userId = (int) Auth::id();
 
-        return $this->hasMany($related, 'related_type', 'post_type')
+        /** @var HasMany<BaseRating, static> $result */
+        $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
                 avg(value) as rating_avg,
-                sum(if(user_id="'.$user_id.'",value,0)) AS rating_my
-                '
+                sum(if(user_id = ?, value, 0)) AS rating_my',
+                [$userId]
             )->leftJoin(
                 'rating_morph',
-                function ($join): void {
+                function (\Illuminate\Database\Query\JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
-                        ->whereRaw('rating_morph.post_type = ratings.related_type')
+                        ->whereColumn('rating_morph.post_type', 'ratings.related_type')
                         ->where('rating_morph.post_id', $this->id);
                 }
             )->groupBy('ratings.id')
             ->with('post');
+
+        return $result;
     }
 
     /**
      * Scope a query to only include popular users.
+     *
+     * @param Builder<static> $query
+     *
+     * @return Builder<static>
      */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
             'rating_morph',
-            function ($join): void {
-                $join->on('rating_morph.post_type = ratings.related_type');
+            function (\Illuminate\Database\Query\JoinClause $join): void {
+                $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
     }
 
     /**
-     * @return MorphToMany
+     * Get my ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
      */
-    public function myRatings()
+    public function myRatings(): MorphToMany
     {
-        return $this->morphRelated($this->getRatingClass())
+        /** @var MorphToMany<Rating, static> $result */
+        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
             ->wherePivot('user_id', (string) Auth::id());
+
+        return $result;
     }
 
     // ----- mutators -----
-    // *
     /**
-     * @param  mixed  $value
-     * @return Collection
+     * @return Collection<int|string, mixed>
      */
-    public function getMyRatingAttribute()
+    public function getMyRatingAttribute(): Collection
     {
         $myRatings = $this->myRatings;
 
@@ -139,12 +166,12 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param  array<string, mixed>  $filters
+     * @param array<string, mixed> $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
     {
-        /** @var Builder $query */
         $query = $this->ratings();
 
         foreach ($filters as $key => $filterValue) {
@@ -157,15 +184,25 @@ trait HasRatingsTrait
         return $result;
     }
 
+    /**
+     * @param array<string, mixed> $where
+     *
+     * @return Collection<int, mixed>
+     */
     public function syncRatingsWhere(array $where): Collection
     {
-        $ratings = app($this->getRatingClass())
+        $ratingClass = $this->getRatingClass();
+        $ratings = $ratingClass::query()
             ->withExtraAttributes($where)
             ->get();
+
         $rating_ids = $ratings->modelKeys();
         $this->ratings()->sync($rating_ids);
 
-        return $this->ratings;
+        /** @var Collection<int, mixed> $result */
+        $result = $this->ratings;
+
+        return $result;
     }
 
     // */
@@ -201,6 +238,9 @@ trait HasRatingsTrait
         return $msg.$btn.$btn_iframe;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function getRatingsRules(string $prefix, string $postfix): array
     {
         $rows = $this->ratings;
@@ -227,6 +267,9 @@ trait HasRatingsTrait
         return $res;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function getRatingsValidationAttributes(string $prefix, string $postfix): array
     {
         $rows = $this->ratings;

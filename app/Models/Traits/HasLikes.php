@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Modules\Rating\Models\Like;
 use Modules\Xot\Contracts\UserContract;
 
+/** @phpstan-ignore trait.unused */
 trait HasLikes
 {
     /**
