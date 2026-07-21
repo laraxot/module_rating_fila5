@@ -1,3 +1,14 @@
+---
+title: "⭐ Rating — English presentation"
+type: guide
+tags: [readme, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "readme en"
+related:
+  - "./redundancy-audit-2026-05-21.md"
+---
+
 # ⭐ Rating — English presentation
 
 [![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)

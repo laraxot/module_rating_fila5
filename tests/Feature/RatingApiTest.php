@@ -15,6 +15,10 @@ use function Pest\Laravel\putJson;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 
 beforeEach(function (): void {
     /* @var \Modules\Rating\Tests\TestCase $this */
@@ -92,7 +96,7 @@ describe('Rating Api', function (): void {
 
         Assert::assertSame(204, $response->status());
         /* @var TestCase $this */
-        $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
+        $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     });
 
     test('can rate model', function (): void {

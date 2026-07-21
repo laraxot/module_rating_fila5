@@ -1,3 +1,14 @@
+---
+title: "Rating Module - Product Strategy"
+type: guide
+tags: [product, strategy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "PRODUCT STRATEGY"
+related:
+  - "./PROJECT-STRUCTURE.md"
+---
+
 # Rating Module - Product Strategy
 
 **Module:** Rating  

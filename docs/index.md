@@ -1,3 +1,14 @@
+---
+title: "Rating Module"
+type: guide
+tags: [index, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "index"
+related:
+  - "./laravel-13-upgrade.md"
+---
+
 # Rating Module
 
 Sistema di valutazione e rating per la piattaforma con supporto per diverse entità e filtraggio avanzato.
@@ -183,7 +194,7 @@ $distribution = Rating::where('rateable_type', Product::class)
 
 Vedi anche:
 - [README](README.md) - Panoramica
-- [PRD](PRD.md) - Product requirements
+- [PRD](prd.md) - Product requirements
 - [Architecture Rules](architecture-rules.md) - Regole architetturali
 - [Best Practices](best-practices.md) - Pattern consolidati
 - [PHPStan Fixes](phpstan-fixes.md) - Conformità statica
