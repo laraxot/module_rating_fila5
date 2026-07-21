@@ -13,12 +13,9 @@ abstract class BaseListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
-<<<<<<< HEAD
     /**
      * @return array<string, mixed>
      */
-=======
->>>>>>> 0fc9b73 (.)
     public function getTableColumns(): array
     {
         return [

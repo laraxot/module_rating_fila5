@@ -41,7 +41,7 @@
         }
     },
     "require": {
-        "spatie/laravel-schemaless-attributes": "^2.6",
+        "spatie/laravel-schemaless-attributes": "*",
         "php": "^8.3"
     },
     "repositories": [

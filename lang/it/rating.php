@@ -2,27 +2,7 @@
 
 declare(strict_types=1);
 
-// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// Canon: Modules/Rating/docs/wiki — domain i18n only.
-// File: lang/it/rating.php
 return [
-    // Laraxot — see module docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
-    // Laraxot module file — see docs/wiki for domain contract.
     'resource' => [
         'name' => [
             'label' => 'Rating',
