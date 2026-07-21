@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 <<<<<<< HEAD
 title: "License 1"
@@ -17,6 +18,8 @@ related:
 >>>>>>> 2cf3f4c (.)
 ---
 
+=======
+>>>>>>> 0fc9b73 (.)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

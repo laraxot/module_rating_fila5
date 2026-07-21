@@ -42,8 +42,6 @@ cache/
 *.bak
 *.backup
 *.backup.*
-*.backup-*
-*.backup_*
 
 # PHPStan documentation
 docs/phpstan/
@@ -63,6 +61,7 @@ docs/archive/
 *~head
 
 agentdb.rvf
+<<<<<<< HEAD
 audit-coverage/
 tests/AuditCoverage/
 .claude-audit/
@@ -70,3 +69,5 @@ tests/AuditCoverage/
 .vscode/
 .windsurf/
 .devcontainer/
+=======
+>>>>>>> 0fc9b73 (.)

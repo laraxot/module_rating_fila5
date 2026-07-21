@@ -18,13 +18,21 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
+<<<<<<< HEAD
         uses: actions/checkout@v7
+=======
+        uses: actions/checkout@v4
+>>>>>>> 0fc9b73 (.)
         with:
           fetch-depth: 0 # Required for commit analysis
           token: ${{ secrets.GH_TOKEN }} # using standard GH_TOKEN for semantic-release
 
       - name: Setup Node.js
+<<<<<<< HEAD
         uses: actions/setup-node@v7
+=======
+        uses: actions/setup-node@v4
+>>>>>>> 0fc9b73 (.)
         with:
           node-version: 20
 

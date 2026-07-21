@@ -27,7 +27,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+<<<<<<< HEAD
         uses: actions/checkout@v7
+=======
+        uses: actions/checkout@v4
+>>>>>>> 0fc9b73 (.)
         with:
           fetch-depth: 0
 
@@ -35,7 +39,11 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y cloc
 
       - name: Setup Node.js
+<<<<<<< HEAD
         uses: actions/setup-node@v7
+=======
+        uses: actions/setup-node@v4
+>>>>>>> 0fc9b73 (.)
         with:
           node-version: '20'
 
