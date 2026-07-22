@@ -103,7 +103,7 @@ trait HasRating
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -132,7 +132,7 @@ trait HasRating
             $total_volume = 1;
         }
 
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0fc9b73 (.)
 title: "Second Brain Local Discipline (stub Rating)"
 type: concept
 module: Rating
@@ -31,14 +27,9 @@ related:
 | **Prompt router** | [llm-wiki.txt](../../../../../../bashscripts/tools/prompts/llm-wiki.txt) |
 
 Solo decisioni specifiche di **Rating** in `docs/wiki/`; contratto generico in Xot.
-<<<<<<< HEAD
-=======
 module: theme
 topic: second-brain-local-discipline
 canonical: ../../../../../Themes/docs/shared-components/second-brain-local-discipline.md
 ---
 
 See canonical documentation: ../../../../../Themes/docs/shared-components/second-brain-local-discipline.md
->>>>>>> 5140f01 (.)
-=======
->>>>>>> 0fc9b73 (.)

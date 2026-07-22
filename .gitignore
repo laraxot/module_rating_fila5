@@ -68,3 +68,6 @@ tests/AuditCoverage/
 .vscode/
 .windsurf/
 .devcontainer/
+
+# Local vector DB (agent tooling)
+ruvector.db

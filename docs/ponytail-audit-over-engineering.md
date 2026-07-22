@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Ponytail audit — Rating (over-engineering)"
 type: guide
@@ -13,11 +9,6 @@ related:
   - "./prd.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 0fc9b73 (.)
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # Ponytail audit — Rating (over-engineering)
 
 **Ultimo run:** 2026-06-30  

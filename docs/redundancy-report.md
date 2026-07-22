@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Redundancy Report — Modulo Rating"
 type: guide
@@ -13,11 +9,6 @@ related:
   - "./release-marketing-standard.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 0fc9b73 (.)
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)
 - Concetti [ridondanze cross-cutting](../Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md)
 
