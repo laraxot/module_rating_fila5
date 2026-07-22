@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 type: guide
@@ -13,11 +9,6 @@ related:
   - "./filament-version.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 0fc9b73 (.)
-=======
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione

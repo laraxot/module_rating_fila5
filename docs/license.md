@@ -5,16 +5,8 @@ tags: [license, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "license"
-<<<<<<< HEAD
-<<<<<<< HEAD
 related:
   - "./merge-conflict-files-list.md"
-=======
->>>>>>> e932f22 (.)
-=======
-related:
-  - "./merge-conflict-files-list.md"
->>>>>>> 8b11e01 (sync(Rating): forward-only changes from base_ptvx_fila5 workspace)
 ---
 
 The MIT License (MIT)

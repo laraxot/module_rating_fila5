@@ -1,25 +1,13 @@
-<<<<<<< HEAD
----
-<<<<<<< HEAD
-title: "License 1"
-=======
 title: "License"
->>>>>>> 2cf3f4c (.)
 type: guide
 tags: [license, rating]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-qmd: "license 1"
-=======
 qmd: "LICENSE"
 related:
   - "./METODI_DUPLICATI_ANALISI.md"
->>>>>>> 2cf3f4c (.)
 ---
 
-=======
->>>>>>> 0fc9b73 (.)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

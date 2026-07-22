@@ -1,15 +1,3 @@
-<<<<<<< HEAD
----
-title: "License"
-type: guide
-tags: [license, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "license"
----
-
-=======
->>>>>>> 0fc9b73 (.)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
