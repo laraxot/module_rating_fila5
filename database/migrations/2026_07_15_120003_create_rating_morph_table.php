@@ -25,6 +25,12 @@ return new class extends XotBaseMigration {
         });
 
         $this->tableUpdate(function (Blueprint $table): void {
+            if (! $this->hasColumn('percentage')) {
+                $table->decimal('percentage', 10, 3)
+                    ->nullable()
+                    ->comment('Percentuale calcolata per il rating');
+            }
+
             $this->updateTimestamps($table, true);
         });
     }
