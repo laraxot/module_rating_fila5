@@ -41,3 +41,9 @@ Un tree dirty o un remote dietro/avanti **non** è sincronizzato, anche se l’a
 ## Note owner
 
 Seguire sync multi-org e mantenere docs allineate alla story.
+
+### Sync 2026-07-23 (batch 5-item)
+
+- `laraxot` e `provtv` entrambi raggiungibili, stesso tip `5fc001e`, entrambi **0 0** contro HEAD.
+- Working tree pulito, nessun commit da fare.
+- Nessuna modifica necessaria in questo giro.
