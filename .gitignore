@@ -72,3 +72,4 @@ tests/AuditCoverage/
 
 # Local vector DB (agent tooling)
 ruvector.db
+phpstan*
