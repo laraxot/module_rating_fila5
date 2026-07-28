@@ -73,3 +73,7 @@ tests/AuditCoverage/
 # Local vector DB (agent tooling)
 ruvector.db
 phpstan*
+
+# MODULE ROOT FORBIDDEN DIRS
+_docs
+workbench
