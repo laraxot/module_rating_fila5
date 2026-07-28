@@ -77,3 +77,4 @@ phpstan*
 # MODULE ROOT FORBIDDEN DIRS
 _docs
 workbench
+docs/**/*-[0-9].md
