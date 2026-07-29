@@ -1,8 +1,9 @@
-# Rating — Indice Documentazione
+# Rating Module — Documentation Index
 
-> Indice automatico dei documenti in `laravel/Modules/Rating/docs`.
+**Last updated:** 2026-07-28  
+**Stats:** 151 files | 18 categories | 16+ indexed resources
 
-## Documentazione
+---
 
 <!-- auto-generato: elencare i file .md presenti -->
 

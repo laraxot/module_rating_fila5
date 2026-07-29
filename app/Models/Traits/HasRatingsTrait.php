@@ -8,12 +8,14 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
+use Webmozart\Assert\Assert;
 
 /**
  * Trait HasRatingsTrait.
@@ -72,7 +74,7 @@ trait HasRatingsTrait
                 [$userId]
             )->leftJoin(
                 'rating_morph',
-                function (\Illuminate\Database\Query\JoinClause $join): void {
+                function (JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
                         ->where('rating_morph.post_id', $this->id);
@@ -86,15 +88,14 @@ trait HasRatingsTrait
     /**
      * Scope a query to only include popular users.
      *
-     * @param Builder<static> $query
-     *
+     * @param  Builder<static>  $query
      * @return Builder<static>
      */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
             'rating_morph',
-            function (\Illuminate\Database\Query\JoinClause $join): void {
+            function (JoinClause $join): void {
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
@@ -130,13 +131,13 @@ trait HasRatingsTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if (null !== $value) {
+        if ($value !== null) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if (null !== $this->getKey()) {
+            if ($this->getKey() !== null) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -146,14 +147,14 @@ trait HasRatingsTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
         $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if (null == $this->getKey()) {
+        if ($this->getKey() == null) {
             return $value;
         }
 
@@ -166,8 +167,7 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param array<string, mixed> $filters
-     *
+     * @param  array<string, mixed>  $filters
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -185,8 +185,7 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param array<string, mixed> $where
-     *
+     * @param  array<string, mixed>  $where
      * @return Collection<int, mixed>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -254,7 +253,7 @@ trait HasRatingsTrait
         $res = [];
         foreach ($rules as $key => $ruleValue) {
             $keyWithPostfix = $key.$postfix;
-            \Webmozart\Assert\Assert::string($ruleValue);
+            Assert::string($ruleValue);
             $ruleStr = $ruleValue;
 
             // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente

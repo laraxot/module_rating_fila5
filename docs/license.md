@@ -4,9 +4,9 @@ type: guide
 tags: [license, rating]
 created: 2026-07-14
 updated: 2026-07-14
-qmd: "license"
+qmd: "LICENSE"
 related:
-  - "./merge-conflict-files-list.md"
+  - "./METODI_DUPLICATI_ANALISI.md"
 ---
 
 The MIT License (MIT)
