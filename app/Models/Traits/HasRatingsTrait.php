@@ -254,10 +254,14 @@ trait HasRatingsTrait
         foreach ($rules as $key => $ruleValue) {
             $keyWithPostfix = $key.$postfix;
 <<<<<<< HEAD
+<<<<<<< HEAD
             Assert::string($ruleValue);
 =======
             \Webmozart\Assert\Assert::string($ruleValue);
 >>>>>>> 9f7a60c (fix(Rating): resolve PHPStan cast.string error via Webmozart Assert)
+=======
+            Assert::string($ruleValue);
+>>>>>>> 263831b (refactor: clean up project structure by removing unused files and updating .gitignore and .gitattributes)
             $ruleStr = $ruleValue;
 
             // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
