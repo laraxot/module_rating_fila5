@@ -253,9 +253,6 @@ trait HasRatingsTrait
         $res = [];
         foreach ($rules as $key => $ruleValue) {
             $keyWithPostfix = $key.$postfix;
-<<<<<<< HEAD
-Assert::string($ruleValue);
-=======
             Assert::string($ruleValue);
             $ruleStr = $ruleValue;
 
