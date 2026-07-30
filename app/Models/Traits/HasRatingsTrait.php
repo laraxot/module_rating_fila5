@@ -89,6 +89,7 @@ trait HasRatingsTrait
      * Scope a query to only include popular users.
      *
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -154,7 +155,7 @@ trait HasRatingsTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if ($this->getKey() === null) {
             return $value;
         }
 
@@ -168,6 +169,7 @@ trait HasRatingsTrait
      * Get ratings filtered by extra_attributes.
      *
      * @param  array<string, mixed>  $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -186,6 +188,7 @@ trait HasRatingsTrait
 
     /**
      * @param  array<string, mixed>  $where
+     *
      * @return Collection<int, mixed>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -195,8 +198,8 @@ trait HasRatingsTrait
             ->withExtraAttributes($where)
             ->get();
 
-        $rating_ids = $ratings->modelKeys();
-        $this->ratings()->sync($rating_ids);
+        $ratingIds = $ratings->modelKeys();
+        $this->ratings()->sync($ratingIds);
 
         /** @var Collection<int, mixed> $result */
         $result = $this->ratings;
@@ -217,24 +220,24 @@ trait HasRatingsTrait
      */
     public function ratingAvgHtml(): string
     {
-        $pivot_avg = $this->ratings_avg;
-        $pivot_cout = $this->ratings_count;
+        $pivotAvg = $this->ratings_avg;
+        $pivotCount = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivotAvg.') '.$pivotCount.' Votes ';
 
-        $rating_url = '#';
+        $ratingUrl = '#';
         $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btnIframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        return $msg.$btn.$btn_iframe;
+        return $msg.$btn.$btnIframe;
     }
 
     /**
