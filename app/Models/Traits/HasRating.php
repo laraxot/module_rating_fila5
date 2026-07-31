@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/**
- * Trait HasRating.
- */
+/** @phpstan-ignore trait.unused */
 trait HasRating
 {
-    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
     public function ratings(): MorphToMany
     {
         $pivot = new RatingMorph();
@@ -24,7 +23,7 @@ trait HasRating
             ->withTimestamps();
     }
 
-    /** @return array<int|string, string> */
+    /** @return array<int, string> */
     public function getOptionRatingsIdTitle(): array
     {
         $options = [];
@@ -33,13 +32,13 @@ trait HasRating
                 continue;
             }
 
-            $options[$rating->id] = (string) $rating->title;
+            $options[(int) $rating->id] = (string) $rating->title;
         }
 
         return $options;
     }
 
-    /** @return array<int|string, string> */
+    /** @return array<int, string> */
     public function getOptionRatingsIdColor(): array
     {
         $options = [];
@@ -48,13 +47,15 @@ trait HasRating
                 continue;
             }
 
-            $options[$rating->id] = (string) $rating->color;
+            $options[(int) $rating->id] = (string) $rating->color;
         }
 
         return $options;
     }
 
-    /** @return array<int, array<string, mixed>> */
+    /**
+     * @return array<int, non-empty-array<string, mixed>>
+     */
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
@@ -64,11 +65,11 @@ trait HasRating
             ->get();
         // ->toArray()
 
+        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
         $ratings_array = [];
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
-            $ratings_array[$key] = $rowData;
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -78,11 +79,12 @@ trait HasRating
             ];
 
             // Use media if it already exists, otherwise don't try to create it
-            $ratings_array[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+            $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $ratings_array[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];
-            $ratings_array[$key]['effect'] = false;
+            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['effect'] = false;
+            $ratings_array[$key] = $rowData;
         }
 
         return $ratings_array;
@@ -96,12 +98,12 @@ trait HasRating
             ->count('user_id');
     }
 
-    /** @return array<int|string, float|int> */
+    /** @return array<int, float> */
     public function getRatingsPercentageByUser(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -119,7 +121,7 @@ trait HasRating
         return $result;
     }
 
-    /** @return array<int|string, float|int> */
+    /** @return array<int, float> */
     public function getRatingsPercentageByVolume(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
@@ -130,7 +132,7 @@ trait HasRating
             $total_volume = 1;
         }
 
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

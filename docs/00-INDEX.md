@@ -1,3 +1,14 @@
+---
+title: "📚 RATING Module - Documentation Index"
+type: guide
+tags: [index, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "00 INDEX"
+related:
+  - "./BAD_PRACTICES.md"
+---
+
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  
