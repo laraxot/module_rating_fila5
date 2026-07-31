@@ -1,62 +1,70 @@
-*.jar
-*.log
-*.lock
-package-lock.json
-*.phar
-.git-rewrite
-.php-cs-fixer.cache
-package-lock.json
-vendor/
-node_modules/
-.env
-/.vagrant
-.phpunit.result.cache
-.DS_Store
-error_log
-.phpintel
-/.idea
-
-*.stackdump
-*.cache
-*.log
-*.lock
-*.bakup
-*.old
-*.old1
-package-lock.json
-
-node_modules
-.git-blame-ignore-revs
-node_modules
-vendor
-.git-blame-ignore-revs
-build/
-vendor/
-build/
-node_modules
-docs/cache/
-cache/
-*:Zone.Identifier
 
 # Backup files
-*.bak
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+# Local vector DB (agent tooling)
+# MODULE ROOT FORBIDDEN DIRS
+# PHPStan documentation
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
 *.backup
 *.backup.*
-
-# PHPStan documentation
-docs/phpstan/
-lang/lang/
-_docs/
-_docs/
-
-# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
-docs/archive/
-# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-*~HEAD
+*.bak
+*.bakup
+*.cache
+*.jar
+*.lock
+*.log
+*.old
+*.old1
+*.orig
+*.phar
+*.rej
+*.stackdump
+*:Zone.Identifier
 *~BASE
+*~HEAD
 *~LOCAL
 *~REMOTE
-*.orig
-*.rej
 *~head
+.DS_Store
+.claude-audit/
+.cursor/
+.devcontainer/
+.env
+.git-blame-ignore-revs
+.git-rewrite
+.php-cs-fixer.cache
+.phpintel
+.phpunit.result.cache
+.vscode/
+.windsurf/
+/.idea
+/.vagrant
+_docs
+_docs/
+agentdb.rvf
+audit-coverage/
+build/
+cache/
+docs/**/*-[0-9].mdarchive/
+docs/archive/
+docs/archive/**
+docs/cache/
+docs/phpstan/
+error_log
+lang/lang/
+legacy/
+node_modules
+node_modules/
+package-lock.json
+phpmd.ruleset.xml
+phpmd.ruleset.xml.bak
+phpstan*
+ruvector.db
+tests/AuditCoverage/
+vendor
+vendor/
+workbench
 
+# Root quality tool configs forbidden in module root
+rector.php
+phpmd*

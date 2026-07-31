@@ -1,3 +1,14 @@
+---
+title: "Rating Architecture"
+type: concept
+tags: [architecture, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "architecture"
+related:
+  - "./best-practices.md"
+---
+
 # Rating Architecture
 
 ## 🏗️ System Design

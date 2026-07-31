@@ -9,17 +9,23 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Modules\Rating\Models\Like;
 use Modules\Xot\Contracts\UserContract;
 
+/** @phpstan-ignore trait.unused */
 trait HasLikes
 {
-    public function likes(): Collection
+    /**
+     * @return Collection
+     */
+    public function likes()
     {
         return $this->likesRelation;
     }
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
+     *
+     * @param UserContract|null $user
      */
-    public function likedBy(?UserContract $user): void
+    public function likedBy($user): void
     {
         $this->likesRelation()->create(['user_id' => $user->id]);
 
@@ -28,8 +34,10 @@ trait HasLikes
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
+     *
+     * @param UserContract|null $user
      */
-    public function dislikedBy(?UserContract $user): void
+    public function dislikedBy($user): void
     {
         /**
          * @var Like
@@ -55,18 +63,25 @@ trait HasLikes
 
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
+     *
+     * @param UserContract|null $user
+     *
+     * @return bool
      */
-    public function isLikedBy(?UserContract $user): bool
+    public function isLikedBy($user)
     {
         return $this->likesRelation()->where('user_id', $user->id)->exists();
     }
 
     /**
      * Undocumented function.
+     *
+     * @return void
      */
-    protected static function bootHasLikes(): void
+    protected static function bootHasLikes()
     {
         static::deleting(function ($model): void {
+            $model->likesRelation()->delete(); /* @phpstan-ignore method.nonObject */
             $model->unsetRelation('likesRelation');
         });
     }
