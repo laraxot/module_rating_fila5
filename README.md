@@ -49,8 +49,19 @@ Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+| 📚 Index documentazione | [docs/INDEX.md](./docs/INDEX.md) |
+
+## Guide Tecniche
+
+| Risorsa | Proposito |
+|---------|-----------|
+| [Architecture](./docs/rating-architecture.md) | Progettazione sistema & modelli |
+| [Patterns](./docs/PATTERNS.md) | Pattern architetturali & best practices |
+| [Best Practices](./docs/BEST_PRACTICES.md) | Linee guida codice |
+| [Troubleshooting](./docs/TROUBLESHOOTING.md) | Diagnosi errori & soluzioni |
+| [Wiki tecnica](./docs/wiki/) | Concetti, how-to, configurazione |
 
 ---
 
+**Last updated:** 2026-07-28  
 **Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

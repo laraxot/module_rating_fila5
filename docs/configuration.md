@@ -1,3 +1,14 @@
+---
+title: "Rating Module Configuration"
+type: guide
+tags: [configuration, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "configuration"
+related:
+  - "./conflict-resolution.md"
+---
+
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
