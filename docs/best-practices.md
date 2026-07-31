@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Best Practices – Rating"
 type: guide
 tags: [best, practices, rating]
@@ -27,3 +28,11 @@ related:
 ## Documentazione
 - Aggiorna `docs/INDEX.md` con nuovi endpoint.
 - Collega a moduli correlati come `Review` e `Auth`.
+=======
+module: theme
+topic: best-practices
+canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
+>>>>>>> laraxot/dev
