@@ -1,9 +1,14 @@
 ---
+<<<<<<< HEAD
 title: "Rating Module - Sprint Planning"
+=======
+title: "Sprint Planning: Rating Module"
+>>>>>>> laraxot/dev
 type: guide
 tags: [sprint, planning, rating]
 created: 2026-07-14
 updated: 2026-07-14
+<<<<<<< HEAD
 qmd: "SPRINT PLANNING"
 related:
   - "./USER_RESEARCH.md"
@@ -76,3 +81,14 @@ Implement core rating and review system with moderation capabilities.
 ---
 
 *Last Updated: March 12, 2026*
+=======
+qmd: "sprint planning"
+related:
+  - "./strategy.md"
+---
+
+# Sprint Planning: Rating Module
+
+## 🏁 Sprint Goal
+Finalize documentation and validation for Rating.
+>>>>>>> laraxot/dev
