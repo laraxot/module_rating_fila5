@@ -4,9 +4,15 @@ type: guide
 tags: [license, rating]
 created: 2026-07-14
 updated: 2026-07-14
+<<<<<<< HEAD
 qmd: "LICENSE"
 related:
   - "./METODI_DUPLICATI_ANALISI.md"
+=======
+qmd: "license"
+related:
+  - "./merge-conflict-files-list.md"
+>>>>>>> laraxot/dev
 ---
 
 The MIT License (MIT)
