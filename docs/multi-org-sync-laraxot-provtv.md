@@ -3,7 +3,11 @@ title: "Sincronizzazione multi-organizzazione (laraxot + provtv)"
 type: concept
 tags: [git, sync, multi-org, laraxot, provtv, quality-gates]
 created: "2026-07-21"
+<<<<<<< HEAD
 updated: "2026-07-29"
+=======
+updated: "2026-07-23"
+>>>>>>> laraxot/dev
 related:
   - "../../../bashscripts/tools/prompts/02-gitmodules-sync.md"
 ---
@@ -39,9 +43,16 @@ revisione manuale dei conflitti reali.
 ### Playbook push dual-remote (2026-07-22, canon UI)
 
 Se `unpack failed` / `did not receive expected object` → `git push --no-thin`.
+<<<<<<< HEAD
 Se `unpack failed` / `did not receive expected object` → `git push --no-thin`.
 Niente reset/squash/force: sempre forward-only.
 
+=======
+Se `GH008` / LFS missing su un org e l’altro ha già accettato il tip →
+`git lfs fetch <sibling> --all` poi `git lfs push <target> --all`, poi push.
+Dettaglio (SSoT): [../UI/docs/wiki/troubleshooting/git-push-lfs-missing-objects.md](../UI/docs/wiki/troubleshooting/git-push-lfs-missing-objects.md).
+Niente reset/squash/force per aggirare LFS.
+>>>>>>> laraxot/dev
 
 ### Caso User 2026-07-23 (unrelated)
 
