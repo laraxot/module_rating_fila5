@@ -203,8 +203,7 @@ trait HasRatingsTrait
     {
         $ratingClass = $this->getRatingClass();
         $ratingQuery = $ratingClass::query();
-        /** @phpstan-ignore method.nonObject (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
-        /** @phpstan-ignore argument.type (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
+        /** @phpstan-ignore method.nonObject, argument.type (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
         $ratingQuery = $ratingQuery->withExtraAttributes($where);
         /** @phpstan-ignore method.nonObject (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
         $ratings = $ratingQuery->get();

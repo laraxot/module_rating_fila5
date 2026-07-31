@@ -49,7 +49,6 @@ Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-<<<<<<< HEAD
 | 📚 Index documentazione | [docs/INDEX.md](./docs/INDEX.md) |
 
 ## Guide Tecniche
@@ -65,10 +64,4 @@ Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 ---
 
 **Last updated:** 2026-07-28  
-=======
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
->>>>>>> laraxot/dev
 **Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
