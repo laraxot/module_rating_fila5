@@ -1,14 +1,9 @@
 ---
-<<<<<<< HEAD
 title: "Rating Module - User Research"
-=======
-title: "User Research: Rating Module"
->>>>>>> laraxot/dev
 type: guide
 tags: [user, research, rating]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
 qmd: "USER RESEARCH"
 related:
   - "./agent-confidence-discipline.md"
@@ -102,14 +97,3 @@ Reviewers appreciate acknowledgment.
 ---
 
 *Last Updated: March 12, 2026*
-=======
-qmd: "user research"
-related:
-  - "./00-INDEX.md"
----
-
-# User Research: Rating Module
-
-## 🔬 Research Goals
-Identify user needs for Rating functionality.
->>>>>>> laraxot/dev
