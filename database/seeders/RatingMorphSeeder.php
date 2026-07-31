@@ -6,10 +6,15 @@ namespace Modules\Rating\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+/**
+ * Pivot rating_morph owner del dominio Predict — seed via Predict\RatingMorphSeeder.
+ */
 class RatingMorphSeeder extends Seeder
 {
     public function run(): void
     {
-        // Stub per parità modulo — i dati sono sacri, mai migrate:fresh.
+        if (null !== $this->command) {
+            $this->command->info('RatingMorphSeeder: pivot demo in Modules\\Predict\\Database\\Seeders\\RatingMorphSeeder.');
+        }
     }
 }
