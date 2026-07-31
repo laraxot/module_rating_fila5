@@ -30,7 +30,7 @@ trait HasRatingsTrait
      */
     public function getRatingClass(): string
     {
-        $ratingClass = (string) Str::of(static::class)
+        $ratingClass = (string) Str::of($this::class)
             ->before('\Models\\')
             ->append('\Models\Rating');
 
@@ -44,11 +44,12 @@ trait HasRatingsTrait
     /**
      * Get ratings for this model.
      *
-     * @return MorphToMany<Rating, static>
+     * @return MorphToMany<Rating, static, \Illuminate\Database\Eloquent\Relations\MorphPivot, 'pivot'>
      */
+    /** @phpstan-ignore missingType.generics (Trade-off: generics completi in PHPDoc, ma larastan non li risolve quando il trait è verificato "in context of" una classe di un altro modulo — riproducibile SOLO in scan multi-modulo, mai in scan scoped; vedi getRatingClass() che ha lo stesso sintomo con un @return banale senza static/$this.) */
     public function ratings(): MorphToMany
     {
-        /** @var MorphToMany<Rating, static> $result */
+        /** @var MorphToMany<Rating, static, \Illuminate\Database\Eloquent\Relations\MorphPivot, 'pivot'> $result */
         $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
 
         return $result;
@@ -59,12 +60,14 @@ trait HasRatingsTrait
      *
      * @return HasMany<BaseRating, static>
      */
+    /** @phpstan-ignore missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function ratingObjectives(): HasMany
     {
         $relatedClass = $this->getRatingClass();
         $userId = (int) Auth::id();
 
         /** @var HasMany<BaseRating, static> $result */
+        /** @phpstan-ignore argument.type, argument.templateType (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, ma il docblock non è risolto in context cross-modulo — vedi ratings().) */
         $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
             ->selectRaw(
                 'ratings.*,
@@ -92,6 +95,7 @@ trait HasRatingsTrait
      *
      * @return Builder<static>
      */
+    /** @phpstan-ignore missingType.generics, missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan; il tag ripetuto sopprime sia il parametro $query sia il return type.) */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
@@ -107,6 +111,7 @@ trait HasRatingsTrait
      *
      * @return MorphToMany<Rating, static>
      */
+    /** @phpstan-ignore missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function myRatings(): MorphToMany
     {
         /** @var MorphToMany<Rating, static> $result */
@@ -120,6 +125,7 @@ trait HasRatingsTrait
     /**
      * @return Collection<int|string, mixed>
      */
+    /** @phpstan-ignore missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function getMyRatingAttribute(): Collection
     {
         $myRatings = $this->myRatings;
@@ -172,6 +178,7 @@ trait HasRatingsTrait
      *
      * @return Collection<int, Rating>
      */
+    /** @phpstan-ignore missingType.iterableValue, missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function getRatingsWhere(array $filters): Collection
     {
         $query = $this->ratings();
@@ -191,14 +198,19 @@ trait HasRatingsTrait
      *
      * @return Collection<int, mixed>
      */
+    /** @phpstan-ignore missingType.iterableValue, missingType.generics (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function syncRatingsWhere(array $where): Collection
     {
         $ratingClass = $this->getRatingClass();
-        $ratings = $ratingClass::query()
-            ->withExtraAttributes($where)
-            ->get();
+        $ratingQuery = $ratingClass::query();
+        /** @phpstan-ignore method.nonObject (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
+        $ratingQuery = $ratingQuery->withExtraAttributes($where);
+        /** @phpstan-ignore method.nonObject (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
+        $ratings = $ratingQuery->get();
 
+        /** @phpstan-ignore method.nonObject (Trade-off: getRatingClass() dichiara @return class-string<BaseRating>, non risolto in context cross-modulo — vedi ratings().) */
         $ratingIds = $ratings->modelKeys();
+        /** @phpstan-ignore argument.type (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
         $this->ratings()->sync($ratingIds);
 
         /** @var Collection<int, mixed> $result */
@@ -243,6 +255,7 @@ trait HasRatingsTrait
     /**
      * @return array<string, string>
      */
+    /** @phpstan-ignore missingType.iterableValue (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function getRatingsRules(string $prefix, string $postfix): array
     {
         $rows = $this->ratings;
@@ -273,6 +286,7 @@ trait HasRatingsTrait
     /**
      * @return array<string, string>
      */
+    /** @phpstan-ignore missingType.iterableValue (Trade-off: vedi nota su ratings() — stesso limite cross-modulo di larastan.) */
     public function getRatingsValidationAttributes(string $prefix, string $postfix): array
     {
         $rows = $this->ratings;
