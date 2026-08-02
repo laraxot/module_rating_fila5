@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-# Documentation
-
-This directory contains documentation for the module.
-
-## Structure
-
-- **architecture.md** - Module architecture and design patterns
-- **README.md** - This file
-
-## Guidelines
-
-Documentation should be:
-- Clear and concise
-- Example-driven
-- Updated with code changes
-- Use Markdown format (.md)
-=======
 ---
 title: Rating Module - Valutazione e Feedback
 type: documentation
@@ -161,4 +143,3 @@ Utilizza rating storici per calcolare metriche di performance.
 ---
 
 **Last Updated:** 2026-07-28 — Documentazione migliorata
->>>>>>> laraxot/dev

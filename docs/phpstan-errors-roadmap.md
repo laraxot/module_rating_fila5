@@ -25,11 +25,11 @@ related:
 Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 1. **`app/Models/Rating.php`** (Linea 121)
-   - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\Fixcity\Models\Profile`
+   - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\LegacyDomain\Models\Profile`
    - **Tipo**: `class.notFound`
 
 2. **`app/Models/Rating.php`** (Linea 121)
-   - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\Fixcity\Models\Profile`
+   - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\LegacyDomain\Models\Profile`
    - **Tipo**: `class.notFound`
 
 ---
@@ -38,7 +38,7 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 ### Pattern: PHPDoc con Classi Sconosciute
 
-**Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
+**Problema**: PHPDoc referenzia `Modules\LegacyDomain\Models\Profile` che non esiste nel progetto.
 
 **Causa**: 
 - Classe obsoleta o rimossa
@@ -68,8 +68,8 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 ```php
 // ❌ PRIMA (Errore)
 /**
- * @property \Modules\Fixcity\Models\Profile|null $creator
- * @property \Modules\Fixcity\Models\Profile|null $updater
+ * @property \Modules\LegacyDomain\Models\Profile|null $creator
+ * @property \Modules\LegacyDomain\Models\Profile|null $updater
  */
 
 // ✅ DOPO (Corretto - verifica classe corretta)
