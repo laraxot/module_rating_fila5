@@ -24,9 +24,9 @@ class Rating extends Block
     /**
      * Create a new rating block.
      */
-    public static function create(): Block
+    public static function create(): static
     {
-        return parent::make(self::BLOCK_TYPE)
+        return static::make(self::BLOCK_TYPE)
             ->schema([
                 TextInput::make('title')
                     ->label('Titolo')
@@ -39,7 +39,7 @@ class Rating extends Block
                     ->label('Disabilitato')
                     ->default(false),
             ])
-            ->label(function (): string {
+            ->label(static function (): string {
                 $locale = App::getLocale();
                 $supportedLocale = SupportedLocale::fromString($locale);
 
