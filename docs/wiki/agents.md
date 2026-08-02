@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-title: "Rating {{TYPE^}} LLM Wiki Agent Instructions"
-type: guide
-tags: [agents, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "AGENTS"
-=======
 title: "Agent instructions"
 type: reference
 tags: [agents, coding-agent, llm-wiki]
@@ -17,7 +9,6 @@ issues: []
 discussions: []
 related:
   - ./coding-agent-manifests.md
->>>>>>> laraxot/dev
 ---
 
 # Rating {{TYPE^}} LLM Wiki Agent Instructions

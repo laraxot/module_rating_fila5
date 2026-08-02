@@ -34,13 +34,13 @@ class StatsOverview extends BaseWidget
         foreach ($ratings as $rating) {
             $sum = app(GetSumByModelRatingIdAction::class)->execute($this->record, SafeStringCastAction::cast($rating->id));
             $count = app(GetCountByModelRatingIdAction::class)->execute($this->record, SafeStringCastAction::cast($rating->id));
-            $stats[] = Stat::make(SafeStringCastAction::cast($rating->title), $sum)->descriptionIcon('predict-bottlecap')->description('volume');
+            $stats[] = Stat::make(SafeStringCastAction::cast($rating->title), $sum)->descriptionIcon('heroicon-o-circle-stack')->description('volume');
             $stats[] = Stat::make(SafeStringCastAction::cast($rating->title), $count)->descriptionIcon('heroicon-o-users')->description('players')->color('success');
         }
 
         $sum = app(GetSumByModelRatingIdAction::class)->execute($this->record);
         $count = app(GetCountByModelRatingIdAction::class)->execute($this->record);
-        $stats[] = Stat::make('Tot Volume', $sum)->descriptionIcon('predict-bottlecap')->description('volume');
+        $stats[] = Stat::make('Tot Volume', $sum)->descriptionIcon('heroicon-o-circle-stack')->description('volume');
         $stats[] = Stat::make('Tot Player', $count)->descriptionIcon('heroicon-o-users')->description('players')->color('success');
 
         return $stats;
