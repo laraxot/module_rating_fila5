@@ -8,7 +8,7 @@
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
 [![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
 [![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
+[![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
 
 > **Valuta qualsiasi cosa — una volta sola, bene.** Rating polimorfico, like, statistiche in tempo reale.
 
@@ -49,26 +49,8 @@ Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-<<<<<<< HEAD
-| 📚 Index documentazione | [docs/INDEX.md](./docs/INDEX.md) |
-
-## Guide Tecniche
-
-| Risorsa | Proposito |
-|---------|-----------|
-| [Architecture](./docs/rating-architecture.md) | Progettazione sistema & modelli |
-| [Patterns](./docs/PATTERNS.md) | Pattern architetturali & best practices |
-| [Best Practices](./docs/BEST_PRACTICES.md) | Linee guida codice |
-| [Troubleshooting](./docs/TROUBLESHOOTING.md) | Diagnosi errori & soluzioni |
-| [Wiki tecnica](./docs/wiki/) | Concetti, how-to, configurazione |
-
----
-
-**Last updated:** 2026-07-28  
-=======
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
->>>>>>> laraxot/dev
-**Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5

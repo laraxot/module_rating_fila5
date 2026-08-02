@@ -5,7 +5,7 @@ owner: Modules/Rating
 severity: medium-high
 created: 2026-05-22
 issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/90"
+  - "https://github.com/laraxot/platform/issues/90"
 related:
   - ../../redundancy-report.md
   - ../../../docs/redundancy-report.md
@@ -39,4 +39,4 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 
 ## Tracker
 
-[#90](https://github.com/laraxot/base_fixcity_fila5/issues/90).
+[#90](https://github.com/laraxot/platform/issues/90).
