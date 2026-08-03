@@ -27,7 +27,11 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $stats = [];
+<<<<<<< HEAD
         if ($this->record === null) {
+=======
+        if (null === $this->record) {
+>>>>>>> laraxot/dev
             return $stats;
         }
         // Assert::isInstanceOf($record=$this->record,HasRatingContract::class);

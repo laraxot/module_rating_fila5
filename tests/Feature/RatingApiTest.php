@@ -6,13 +6,21 @@ namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
+<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
+=======
+>>>>>>> laraxot/dev
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
 
+<<<<<<< HEAD
+=======
+use PHPUnit\Framework\Assert;
+
+>>>>>>> laraxot/dev
 uses(TestCase::class);
 // Laraxot module file — see docs/wiki for domain contract.
 // Laraxot module file — see docs/wiki for domain contract.
