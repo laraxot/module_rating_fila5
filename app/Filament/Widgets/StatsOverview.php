@@ -25,11 +25,7 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $stats = [];
-<<<<<<< HEAD
         if ($this->record === null) {
-=======
-        if (null === $this->record) {
->>>>>>> laraxot/dev
             return $stats;
         }
         $ratings = $this->record->ratings()->wherePivot('user_id', null)->get();
