@@ -13,7 +13,11 @@ class RatingDatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+<<<<<<< HEAD
         if ($this->command !== null) {
+=======
+        if (null !== $this->command) {
+>>>>>>> laraxot/dev
             $this->command->info('RatingDatabaseSeeder: entity seeders…');
         }
 
@@ -22,7 +26,11 @@ class RatingDatabaseSeeder extends Seeder
             RatingMorphSeeder::class,
         ]);
 
+<<<<<<< HEAD
         if ($this->command !== null) {
+=======
+        if (null !== $this->command) {
+>>>>>>> laraxot/dev
             $this->command->info('RatingDatabaseSeeder: completato.');
         }
     }

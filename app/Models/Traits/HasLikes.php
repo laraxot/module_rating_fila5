@@ -23,7 +23,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  UserContract|null  $user
+=======
+     * @param UserContract|null $user
+>>>>>>> laraxot/dev
      */
     public function likedBy($user): void
     {
@@ -35,7 +39,11 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  UserContract|null  $user
+=======
+     * @param UserContract|null $user
+>>>>>>> laraxot/dev
      */
     public function dislikedBy($user): void
     {
@@ -43,7 +51,11 @@ trait HasLikes
          * @var Like
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
+<<<<<<< HEAD
         if ($where !== null) {
+=======
+        if (null !== $where) {
+>>>>>>> laraxot/dev
             $where->delete();
         }
 
@@ -64,7 +76,12 @@ trait HasLikes
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
+<<<<<<< HEAD
      * @param  UserContract|null  $user
+=======
+     * @param UserContract|null $user
+     *
+>>>>>>> laraxot/dev
      * @return bool
      */
     public function isLikedBy($user)

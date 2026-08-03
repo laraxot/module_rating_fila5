@@ -30,13 +30,18 @@ use Spatie\Sluggable\SlugOptions;
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
+<<<<<<< HEAD
  * @property RuleEnum $rule
+=======
+ * @property RuleEnum                                          $rule
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
+<<<<<<< HEAD
  * @property int $id
  * @property int $user_id
  * @property float $value
@@ -55,6 +60,26 @@ use Spatie\Sluggable\SlugOptions;
  * @property bool|null $is_readonly
  * @property int|null $order_column
  * @property Model|Eloquent $linkedTo
+=======
+ * @property int             $id
+ * @property int             $user_id
+ * @property float           $value
+ * @property string|null     $related_type
+ * @property string|null     $created_by
+ * @property string|null     $updated_by
+ * @property string|null     $deleted_by
+ * @property Carbon|null     $created_at
+ * @property Carbon|null     $updated_at
+ * @property int|null        $post_id
+ * @property string|null     $title
+ * @property string|null     $color
+ * @property string|null     $icon
+ * @property string|null     $txt
+ * @property bool|null       $is_disabled
+ * @property bool|null       $is_readonly
+ * @property int|null        $order_column
+ * @property Model|\Eloquent $linkedTo
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -74,9 +99,15 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
+<<<<<<< HEAD
  * @property int|null $media_count
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+=======
+ * @property int|null                                          $media_count
+ * @property ProfileContract|null                              $creator
+ * @property ProfileContract|null                              $updater
+>>>>>>> laraxot/dev
  *
  * @mixin Eloquent
  *
@@ -114,13 +145,23 @@ abstract class BaseRating extends BaseModel implements HasMedia
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
+<<<<<<< HEAD
      * @param  Builder<BaseRating>  $query
      * @param  array<string, mixed>|string  $attributes
+=======
+     * @param Builder<BaseRating>         $query
+     * @param array<string, mixed>|string $attributes
+     *
+>>>>>>> laraxot/dev
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
+<<<<<<< HEAD
         if (is_string($attributes) && $value !== null) {
+=======
+        if (is_string($attributes) && null !== $value) {
+>>>>>>> laraxot/dev
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }
