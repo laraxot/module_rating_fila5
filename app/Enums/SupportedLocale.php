@@ -24,4 +24,6 @@ enum SupportedLocale: string
             default => self::IT,
         };
     }
+
+   
 }
