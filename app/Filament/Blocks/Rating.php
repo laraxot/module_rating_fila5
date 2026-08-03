@@ -50,6 +50,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
+<<<<<<< HEAD
      * <<<<<<< HEAD
      *
      * @param array<string,mixed> $data
@@ -58,6 +59,10 @@ class Rating extends Block
      * @param array<string,mixed> $data
      * @param array<string,mixed> $data
      *                                  >>>>>>> laraxot/dev
+=======
+     * @param  array<string,mixed>  $data
+     * @param  array<string,mixed>  $data
+>>>>>>> fe4d397 (.)
      */
     public static function createFromFormData(array $data): RatingData
     {
@@ -67,6 +72,7 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
+<<<<<<< HEAD
      * <<<<<<< HEAD
      *
      * @param array<string,mixed> $options
@@ -75,6 +81,10 @@ class Rating extends Block
      * @param array<string,mixed> $options
      * @param array<string,mixed> $options
      *                                     >>>>>>> laraxot/dev
+=======
+     * @param  array<string,mixed>  $options
+     * @param  array<string,mixed>  $options
+>>>>>>> fe4d397 (.)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
