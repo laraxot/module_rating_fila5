@@ -18,7 +18,11 @@ class GetCountByModelRatingIdAction
     {
         $opts = $model->ratings()
             ->wherePivot('user_id', '!=', null);
+<<<<<<< HEAD
         if ($rating_id !== null) {
+=======
+        if (null !== $rating_id) {
+>>>>>>> laraxot/dev
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
 

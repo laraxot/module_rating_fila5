@@ -13,7 +13,11 @@ class RatingMorphSeeder extends Seeder
 {
     public function run(): void
     {
+<<<<<<< HEAD
         if ($this->command !== null) {
+=======
+        if (null !== $this->command) {
+>>>>>>> laraxot/dev
             $this->command->info('RatingMorphSeeder: pivot demo demandato ai seeder del dominio consumer.');
         }
     }

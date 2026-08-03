@@ -87,7 +87,12 @@ trait HasRatingsTrait
     /**
      * Scope a query to only include popular users.
      *
+<<<<<<< HEAD
      * @param  Builder<static>  $query
+=======
+     * @param Builder<static> $query
+     *
+>>>>>>> laraxot/dev
      * @return Builder<static>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -131,6 +136,7 @@ trait HasRatingsTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
+<<<<<<< HEAD
         if ($value !== null) {
             return $value;
         }
@@ -138,6 +144,15 @@ trait HasRatingsTrait
         if ($value !== null) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
             if ($this->getKey() !== null) {
+=======
+        if (null !== $value) {
+            return $value;
+        }
+        $value = $this->ratings->avg('pivot.rating');
+        if (null !== $value) {
+            // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
+            if (null !== $this->getKey()) {
+>>>>>>> laraxot/dev
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -147,14 +162,22 @@ trait HasRatingsTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
+<<<<<<< HEAD
         if ($value !== null) {
+=======
+        if (null !== $value) {
+>>>>>>> laraxot/dev
             return $value;
         }
         $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
+<<<<<<< HEAD
         if ($this->getKey() == null) {
+=======
+        if (null == $this->getKey()) {
+>>>>>>> laraxot/dev
             return $value;
         }
 
@@ -167,7 +190,12 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $filters
+=======
+     * @param array<string, mixed> $filters
+     *
+>>>>>>> laraxot/dev
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -185,7 +213,12 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $where
+=======
+     * @param array<string, mixed> $where
+     *
+>>>>>>> laraxot/dev
      * @return Collection<int, mixed>
      */
     public function syncRatingsWhere(array $where): Collection
