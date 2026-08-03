@@ -15,7 +15,11 @@ trait HasRating
     /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
     public function ratings(): MorphToMany
     {
+<<<<<<< HEAD
         $pivot = new RatingMorph;
+=======
+        $pivot = new RatingMorph();
+>>>>>>> laraxot/dev
 
         return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
             ->using(RatingMorph::class)
@@ -107,7 +111,11 @@ trait HasRating
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
+<<<<<<< HEAD
             if ($b === 0) {
+=======
+            if (0 === $b) {
+>>>>>>> laraxot/dev
                 $b = 1;
             }
 
@@ -145,7 +153,11 @@ trait HasRating
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
+<<<<<<< HEAD
         if ($rating_id !== null) {
+=======
+        if (null !== $rating_id) {
+>>>>>>> laraxot/dev
             $query->where('rating_id', $rating_id);
         }
 
