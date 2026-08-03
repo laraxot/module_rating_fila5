@@ -87,7 +87,8 @@ trait HasRatingsTrait
     /**
      * Scope a query to only include popular users.
      *
-     * @param  Builder<static>  $query
+     * @param Builder<static> $query
+     *
      * @return Builder<static>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -131,13 +132,13 @@ trait HasRatingsTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if ($value !== null) {
+        if (null !== $value) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if ($this->getKey() !== null) {
+            if (null !== $this->getKey()) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -147,14 +148,14 @@ trait HasRatingsTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->count();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if (null == $this->getKey()) {
             return $value;
         }
 
@@ -167,7 +168,8 @@ trait HasRatingsTrait
     /**
      * Get ratings filtered by extra_attributes.
      *
-     * @param  array<string, mixed>  $filters
+     * @param array<string, mixed> $filters
+     *
      * @return Collection<int, Rating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -185,7 +187,8 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param  array<string, mixed>  $where
+     * @param array<string, mixed> $where
+     *
      * @return Collection<int, mixed>
      */
     public function syncRatingsWhere(array $where): Collection
