@@ -17,46 +17,19 @@ use Modules\Xot\Datas\XotData;
 /**
  * Modules\Rating\Models\RatingMorph.
  *
- * <<<<<<< HEAD
- * <<<<<<< HEAD
- *
- * @property int         $id
- * @property bool        $is_winner
+ * @property int $id
+ * @property bool $is_winner
  * @property string|null $post_type
  * @property int|null    $post_id
  * @property string|null $related_type
- * @property int|null    $related_id
- *                                     =======
- * @property int         $id
- * @property bool        $is_winner
- * @property string|null $post_type
- * @property int|null    $post_id
- * @property string|null $related_type
- * @property int|null    $related_id
- *                                     >>>>>>> laraxot/dev
- *                                     =======
- * @property int         $id
- * @property bool        $is_winner
- * @property string|null $post_type
- * @property int|null    $post_id
- * @property string|null $related_type
- * @property int|null    $related_id
- *                                     >>>>>>> fe4d397 (.)
+ * @property int|null $related_id
  * @property Rating|null $rating
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *                                     <<<<<<< HEAD
- *                                     <<<<<<< HEAD
- * @property int|null    $auth_user_id
- *                                     =======
- * @property int|null    $auth_user_id
- *                                     >>>>>>> laraxot/dev
- *                                     =======
- * @property int|null    $auth_user_id
- *                                     >>>>>>> fe4d397 (.)
+ * @property int|null $auth_user_id
  *
  * @method static Builder|RatingMorph newModelQuery()
  * @method static Builder|RatingMorph newQuery()
@@ -76,21 +49,9 @@ use Modules\Xot\Datas\XotData;
  *
  * @property string|null $user_id
  * @property string|null $model_type
- *                                   <<<<<<< HEAD
- *                                   <<<<<<< HEAD
- * @property int|null    $model_id
- * @property int         $rating_id
- * @property int|null    $value
- *                                   =======
- * @property int|null    $model_id
- * @property int         $rating_id
- * @property int|null    $value
- *                                   >>>>>>> laraxot/dev
- *                                   =======
- * @property int|null    $model_id
- * @property int         $rating_id
- * @property int|null    $value
- *                                   >>>>>>> fe4d397 (.)
+ * @property int|null $model_id
+ * @property int $rating_id
+ * @property int|null $value
  * @property string|null $note
  * @property string|null $deleted_at
  *
@@ -103,51 +64,20 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|RatingMorph whereUserId($value)
  * @method static Builder|RatingMorph whereValue($value)
  *
- * <<<<<<< HEAD
- * <<<<<<< HEAD
- *
- * @property Model|\Eloquent   $model
- * @property Model|null        $profile
+ * @property Model|Eloquent $model
+ * @property Model|null $profile
  * @property UserContract|null $user
- * @property string            $reward
- *                                      =======
- * @property Model|\Eloquent   $model
- * @property Model|null        $profile
- * @property UserContract|null $user
- * @property string            $reward
- *                                      >>>>>>> laraxot/dev
- *                                      =======
- * @property Model|\Eloquent   $model
- * @property Model|null        $profile
- * @property UserContract|null $user
- * @property string            $reward
- *                                      >>>>>>> fe4d397 (.)
+ * @property string $reward
  *
  * @method static Builder|RatingMorph whereReward($value)
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- *                                                  <<<<<<< HEAD
- *                                                  <<<<<<< HEAD
- * @property string               $sum_credit_yes
- * @property string               $sum_credit_no
- * @property int                  $count_credit_yes
- * @property int                  $count_credit_no
- * @property string               $percentage
- *                                                  =======
- * @property string               $sum_credit_yes
- * @property string               $sum_credit_no
- * @property int                  $count_credit_yes
- * @property int                  $count_credit_no
- * @property string               $percentage
- *                                                  >>>>>>> laraxot/dev
- *                                                  =======
- * @property string               $sum_credit_yes
- * @property string               $sum_credit_no
- * @property int                  $count_credit_yes
- * @property int                  $count_credit_no
- * @property string               $percentage
- *                                                  >>>>>>> fe4d397 (.)
+ * @property string $sum_credit_yes
+ * @property string $sum_credit_no
+ * @property int $count_credit_yes
+ * @property int $count_credit_no
+ * @property string $percentage
  *
  * @method static Builder<static>|RatingMorph whereCountCreditNo($value)
  * @method static Builder<static>|RatingMorph whereCountCreditYes($value)
