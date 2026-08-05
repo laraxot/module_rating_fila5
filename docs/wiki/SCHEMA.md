@@ -19,7 +19,11 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
+<<<<<<< HEAD
 │   ├── schema.md          # Questo file
+=======
+│   ├── SCHEMA.md          # Questo file
+>>>>>>> laraxot/dev
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna

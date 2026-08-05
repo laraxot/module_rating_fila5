@@ -13,12 +13,21 @@
 
 The root level contains strategic documents, analyses, and consolidated guides:
 
+<<<<<<< HEAD
 - [00-index.md](00-index.md)
 - [index.md](index.md)
 - [README.md](README.md)
 - [BEST_PRACTICES.md](BEST_PRACTICES.md)
 - [BAD_PRACTICES.md](BAD_PRACTICES.md)
 - [changelog.md](changelog.md)
+=======
+- [00-INDEX.md](00-INDEX.md)
+- [INDEX.md](INDEX.md)
+- [README.md](README.md)
+- [BEST_PRACTICES.md](BEST_PRACTICES.md)
+- [BAD_PRACTICES.md](BAD_PRACTICES.md)
+- [CHANGELOG.md](CHANGELOG.md)
+>>>>>>> laraxot/dev
 - [FALSE_FRIENDS.md](FALSE_FRIENDS.md)
 - [LICENSE.md](LICENSE.md)
 - [METODI_DUPLICATI_ANALISI.md](METODI_DUPLICATI_ANALISI.md)
@@ -108,8 +117,13 @@ The root level contains strategic documents, analyses, and consolidated guides:
 Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooting:
 
 **Main Index** (7 files)
+<<<<<<< HEAD
   - [agents.md](wiki/agents.md)
   - [schema.md](wiki/schema.md)
+=======
+  - [AGENTS.md](wiki/AGENTS.md)
+  - [SCHEMA.md](wiki/SCHEMA.md)
+>>>>>>> laraxot/dev
   - [README.md](wiki/README.md)
   - [agents.md](wiki/agents.md)
   - [index.md](wiki/index.md)
@@ -117,7 +131,11 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [overview.md](wiki/overview.md)
 
 **Concepts** (14 files)
+<<<<<<< HEAD
   - [index.md](wiki/concepts/index.md)
+=======
+  - [INDEX.md](wiki/concepts/INDEX.md)
+>>>>>>> laraxot/dev
   - [composer-root-minimal-nwidart.md](wiki/concepts/composer-root-minimal-nwidart.md)
   - [context-mode-rating-discipline.md](wiki/concepts/context-mode-rating-discipline.md)
   - [context-overflow-prevention.md](wiki/concepts/context-overflow-prevention.md)
@@ -138,7 +156,11 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [source.md](wiki/_templates/source.md)
 
 **Rules** (2 files)
+<<<<<<< HEAD
   - [index.md](wiki/rules/index.md)
+=======
+  - [INDEX.md](wiki/rules/INDEX.md)
+>>>>>>> laraxot/dev
   - [no-rm-no-archive-use-old-suffix.md](wiki/rules/no-rm-no-archive-use-old-suffix.md)
 
 **Troubleshooting** (2 files)
@@ -146,9 +168,15 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [phpstan-generic-limitations.md](wiki/troubleshooting/phpstan-generic-limitations.md)
 
 **Other** (11 files)
+<<<<<<< HEAD
   - [skills/index.md](wiki/skills/index.md)
   - [commands/index.md](wiki/commands/index.md)
   - [memories/index.md](wiki/memories/index.md)
+=======
+  - [skills/INDEX.md](wiki/skills/INDEX.md)
+  - [commands/INDEX.md](wiki/commands/INDEX.md)
+  - [memories/INDEX.md](wiki/memories/INDEX.md)
+>>>>>>> laraxot/dev
   - [how-to/gitmodules-sync-session.md](wiki/how-to/gitmodules-sync-session.md)
   - [redundancy/duplicate-ratings-table-migrations.md](wiki/redundancy/duplicate-ratings-table-migrations.md)
 
@@ -182,7 +210,11 @@ Raw source documents and import sources:
 
 Machine learning and documentation knowledge base:
 
+<<<<<<< HEAD
 - [agents.md](llm-wiki/agents.md)
+=======
+- [AGENTS.md](llm-wiki/AGENTS.md)
+>>>>>>> laraxot/dev
 - [agents.md](llm-wiki/agents.md)
 - [index.md](llm-wiki/index.md)
 - [log.md](llm-wiki/log.md)
@@ -205,7 +237,11 @@ Consolidated root-level markdown documentation:
 
 Legacy and superseded documentation:
 
+<<<<<<< HEAD
 - [index.md](archive/index.md)
+=======
+- [INDEX.md](archive/INDEX.md)
+>>>>>>> laraxot/dev
 - [dataobjects-archived-duplicate.md](archive/dataobjects-archived-duplicate.md)
 - [docs-archive-policy.md](archive/docs-archive-policy.md)
 
@@ -223,7 +259,11 @@ Additional archived content:
 
 | Date | File | Category |
 |------|------|----------|
+<<<<<<< HEAD
 | 2026-07-28 | [00-index.md](00-index.md) | root |
+=======
+| 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
+>>>>>>> laraxot/dev
 | 2026-07-28 | [README.md](README.md) | root |
 | 2026-07-28 | [BEST_PRACTICES.md](BEST_PRACTICES.md) | root |
 | 2026-07-28 | [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md) | root |
