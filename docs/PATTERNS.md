@@ -62,7 +62,7 @@ class IndennitaResponsabilita extends BaseScheda
 }
 ```
 
-**PHPStan (level 10):** il trait è `@template TModel of Model`. Ogni host **deve** dichiarare `@use HasRatingsTrait<static>` altrimenti `missingType.generics`. Sync per `extra_attributes` usa `Rating::getClassName()::withExtraAttributes()` (modello Rating del modulo caller).
+**PHPStan (level 10):** il trait è `@template TModel of Model`. Ogni host **deve** dichiarare `@use HasRatingsTrait<static>` altrimenti `missingType.generics`. Relazioni morph: sempre `morphToManyX()` (RelationX), mai `morphToMany()` diretto. Sync per `extra_attributes` usa `Rating::getClassName()::withExtraAttributes()` (modello Rating del modulo caller).
 
 **Checklist:**
 - [ ] Module defines own `Rating` model extending `BaseRating`
