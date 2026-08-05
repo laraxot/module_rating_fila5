@@ -81,7 +81,8 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param  Builder<TModel>  $query
+     * @param Builder<TModel> $query
+     *
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -134,7 +135,8 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param  array<string, mixed>  $filters
+     * @param array<string, mixed> $filters
+     *
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -154,7 +156,8 @@ trait HasRatingsTrait
     /**
      * Sync pivot verso rating che matchano extra_attributes.
      *
-     * @param  array<string, mixed>  $where
+     * @param array<string, mixed> $where
+     *
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -168,7 +171,7 @@ trait HasRatingsTrait
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-        if ($ratingIds !== []) {
+        if ([] !== $ratingIds) {
             $this->ratings()->sync($ratingIds);
         }
 
