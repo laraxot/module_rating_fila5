@@ -15,12 +15,7 @@ trait HasRating
     /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
     public function ratings(): MorphToMany
     {
-        $pivot = new RatingMorph();
-
-        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
-            ->using(RatingMorph::class)
-            ->withPivot($pivot->getFillable())
-            ->withTimestamps();
+        return $this->morphToManyX(Rating::class, 'model');
     }
 
     /** @return array<int, string> */
