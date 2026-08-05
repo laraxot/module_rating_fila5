@@ -5,3 +5,4 @@
 /docs/archive
 /docs/legacy
 *.lock
+.php-cs-fixer.cache
