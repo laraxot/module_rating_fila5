@@ -10,7 +10,6 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
-use Filament\Support\Components\Component;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Filament\Resources\XotBaseResource;
