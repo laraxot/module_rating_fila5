@@ -86,6 +86,10 @@ abstract class BaseRating extends BaseModel implements HasMedia
 {
     use HasSlug;
     use InteractsWithMedia;
+<<<<<<< HEAD
+=======
+    use HasSlug;
+>>>>>>> laraxot/dev
 
     /** @var list<string> */
     protected $fillable = [

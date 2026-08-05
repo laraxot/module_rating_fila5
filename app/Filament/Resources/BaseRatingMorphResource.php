@@ -11,7 +11,11 @@ abstract class BaseRatingMorphResource extends XotBaseResource
 {
     protected static ?string $model = RatingMorph::class;
 
+<<<<<<< HEAD
     public static function getFormSchemaOld(): array
+=======
+    public static function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             // Campi del form
