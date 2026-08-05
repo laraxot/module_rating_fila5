@@ -26,10 +26,10 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
  */
 trait HasRatingsTrait
 {
-    /**
-     * @return class-string<BaseRating>
-     */
-    public function getRatingClass(): string
+/**
+      * @return class-string<BaseRating>
+      */
+     public function getRatingClass(): class-string<BaseRating>
     {
         $ratingClass = (string) Str::of(static::class)
             ->before('\Models\\')
@@ -42,12 +42,12 @@ trait HasRatingsTrait
         return Rating::class;
     }
 
-    /**
+/**
      * Get ratings for this model.
      *
      * @return MorphToMany<Rating, $this>
      */
-    public function ratings(): MorphToMany
+     public function ratings(): MorphToMany<Rating, $this>
     {
         /** @var MorphToMany<Rating, $this> $result */
         $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
@@ -55,12 +55,12 @@ trait HasRatingsTrait
         return $result;
     }
 
-    /**
+/**
      * Get rating objectives with aggregated data.
      *
      * @return HasMany<BaseRating, $this>
      */
-    public function ratingObjectives(): HasMany
+     public function ratingObjectives(): HasMany<BaseRating, $this>
     {
         $relatedClass = $this->getRatingClass();
         $userId = (int) Auth::id();
