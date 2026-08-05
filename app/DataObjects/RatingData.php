@@ -18,11 +18,7 @@ final readonly class RatingData
     }
 
     /**
-<<<<<<< HEAD
      * @param  array<string, mixed>  $data
-=======
-     * @param array<string, mixed> $data
->>>>>>> laraxot/dev
      */
     public static function fromArray(array $data): self
     {
