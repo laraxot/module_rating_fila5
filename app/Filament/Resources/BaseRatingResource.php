@@ -9,9 +9,14 @@ use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+<<<<<<< HEAD
 use Filament\Forms\Components\Field;
 use Filament\Schemas\Components\Section;
 
+=======
+use Filament\Schemas\Components\Section;
+use Filament\Support\Components\Component;
+>>>>>>> laraxot/dev
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -21,9 +26,15 @@ abstract class BaseRatingResource extends XotBaseResource
     protected static ?string $model = Rating::class;
 
     /**
+<<<<<<< HEAD
      * @return array<string, mixed>
      */
     public static function getFormSchemaOld(): array
+=======
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             'extra_attributes.type' => TextInput::make('extra_attributes.type'),
