@@ -24,5 +24,8 @@ enum SupportedLocale: string
             default => self::IT,
         };
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
 }

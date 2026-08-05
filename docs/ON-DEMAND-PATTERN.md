@@ -56,10 +56,17 @@ qmd search "<topic>"
 \`\`\`
 ./laravel/Modules/Rating/docs/
 └── wiki/                    # Knowledge base locale
+<<<<<<< HEAD
     ├── rules/index.md      # Indice rules modulo-specifiche
     ├── skills/index.md     # Indice skills modulo-specifiche
     ├── commands/index.md   # Indici commands
     └── memories/index.md   # Indice memories
+=======
+    ├── rules/INDEX.md      # Indice rules modulo-specifiche
+    ├── skills/INDEX.md     # Indice skills modulo-specifiche
+    ├── commands/INDEX.md   # Indici commands
+    └── memories/INDEX.md   # Indice memories
+>>>>>>> laraxot/dev
 \`\`\`
 
 ## Quick Reference
@@ -73,7 +80,11 @@ qmd search "<topic>"
 
 ## Regole Critiche per Module
 
+<<<<<<< HEAD
 1. **Nessun bootstrap pesante** — Non elencare rules in agents.md o CLAUDE.md
+=======
+1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
+>>>>>>> laraxot/dev
 2. **Carica only what you need** — Ogni task carica max 3-5 file
 3. **Mantieni la wiki aggiornata** — Dopo ogni task, aggiorna ./laravel/Modules/Rating/docs/wiki/log.md
 4. **Rispetta la trigger map** — Se esiste, usala; altrimenti usa qmd search
