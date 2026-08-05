@@ -41,7 +41,7 @@ trait HasRatingsTrait
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
-        $relation = $this->morphToMany($related, 'model', 'ratings', 'rating_morph');
+        $relation = $this->morphToManyX($related, 'model');
 
         return $relation;
     }

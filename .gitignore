@@ -4,3 +4,4 @@
 /_docs
 /docs/archive
 /docs/legacy
+*.lock
