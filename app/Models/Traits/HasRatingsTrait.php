@@ -6,11 +6,9 @@ namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
-=======
->>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
@@ -19,113 +17,50 @@ use Illuminate\Support\Str;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Webmozart\Assert\Assert;
 
 /**
- * Trait HasRatingsTrait.
+ * Trait HasRatingsTrait — rating polimorfi su modelli host.
  *
- * @see Modules/Rating/docs/schemaless-attributes.md
-<<<<<<< HEAD
+ * Perché: un solo punto per relazioni, sync per extra_attributes, regole validazione.
+ * Consumer: `@use HasRatingsTrait<static>` sulla classe host.
  *
- * @phpstan-ignore trait.unused (Trade-off: usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.)
+ * @template TModel of Model
+ *
+ * @phpstan-require-extends Model
  */
 trait HasRatingsTrait
 {
-/**
-      * @return class-string<BaseRating>
-      */
-     public function getRatingClass(): class-string<BaseRating>
-=======
- */
-/** @phpstan-ignore trait.unused (Trade-off: usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
-trait HasRatingsTrait
-{
     /**
-     * @return class-string<BaseRating>
-     */
-    public function getRatingClass(): string
->>>>>>> laraxot/dev
-    {
-        $ratingClass = (string) Str::of(static::class)
-            ->before('\Models\\')
-            ->append('\Models\Rating');
-
-        if (is_a($ratingClass, BaseRating::class, true)) {
-            return $ratingClass;
-        }
-
-        return Rating::class;
-    }
-
-<<<<<<< HEAD
-/**
-     * Get ratings for this model.
-     *
-     * @return MorphToMany<Rating, $this>
-     */
-     public function ratings(): MorphToMany<Rating, $this>
-    {
-        /** @var MorphToMany<Rating, $this> $result */
-=======
-    /**
-     * Get ratings for this model.
-     *
-     * @return MorphToMany<Rating, static>
+     * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
     {
-        /** @var MorphToMany<Rating, static> $result */
->>>>>>> laraxot/dev
-        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
+        /** @var class-string<BaseRating> $related */
+        $related = Rating::getClassName();
+        Assert::subclassOf($related, BaseRating::class);
 
-        return $result;
+        /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
+        $relation = $this->morphToMany($related, 'model', 'ratings', 'rating_morph');
+
+        return $relation;
     }
 
-<<<<<<< HEAD
-/**
-     * Get rating objectives with aggregated data.
-     *
-     * @return HasMany<BaseRating, $this>
-     */
-     public function ratingObjectives(): HasMany<BaseRating, $this>
-=======
     /**
-     * Get rating objectives with aggregated data.
+     * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
-     * @return HasMany<BaseRating, static>
+     * @return HasMany<BaseRating, TModel>
      */
     public function ratingObjectives(): HasMany
->>>>>>> laraxot/dev
     {
-        $relatedClass = $this->getRatingClass();
-        $userId = (int) Auth::id();
+        $userId = Auth::id();
 
-<<<<<<< HEAD
-        assert(is_a($relatedClass, BaseRating::class, true));
-        /** @var class-string<Model> $relatedClass */
-        $relatedClass = $this->getRatingClass();
+        /** @var class-string<BaseRating> $related */
+        $related = Rating::getClassName();
+        Assert::subclassOf($related, BaseRating::class);
 
-        /** @var HasMany<BaseRating, $this> $result */
-        $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
-             ->selectRaw(
-                 'ratings.*,
-                 count(value) as rating_count,
-                 avg(value) as rating_avg,
-                 sum(if(user_id = ?, value, 0)) AS rating_my',
-                 [$userId]
-             )->leftJoin(
-                 'rating_morph',
-                 function (JoinClause $join): void {
-                     $join->on('rating_morph.rating_id', 'ratings.id')
-                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
-                         ->where('rating_morph.post_id', $this->id);
-                 }
-             )->groupBy('ratings.id')
-             ->with('post');
-         return $result;
-     }
-=======
-        /** @var HasMany<BaseRating, static> $result */
-        $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
+        /** @var HasMany<BaseRating, TModel> $query */
+        $query = $this->hasMany($related, 'related_type', 'post_type')
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -137,21 +72,17 @@ trait HasRatingsTrait
                 function (JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
-                        ->where('rating_morph.post_id', $this->id);
+                        ->where('rating_morph.post_id', $this->getKey());
                 }
             )->groupBy('ratings.id')
             ->with('post');
 
-        return $result;
+        return $query;
     }
->>>>>>> laraxot/dev
 
     /**
-     * Scope a query to only include popular users.
-     *
-     * @param Builder<static> $query
-     *
-     * @return Builder<static>
+     * @param  Builder<TModel>  $query
+     * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
     {
@@ -164,83 +95,47 @@ trait HasRatingsTrait
     }
 
     /**
-     * Get my ratings for this model.
-     *
-     * @return MorphToMany<Rating, $this>
+     * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function myRatings(): MorphToMany
     {
         $userId = Auth::id();
-        /** @var MorphToMany<Rating, $this> $result */
-        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
+
+        /** @var class-string<BaseRating> $related */
+        $related = Rating::getClassName();
+        Assert::subclassOf($related, BaseRating::class);
+
+        /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $query */
+        $query = $this->morphToManyX($related, 'model')
             ->wherePivot('user_id', $userId);
 
-        return $result;
+        return $query;
     }
 
-    // ----- mutators -----
-<<<<<<< HEAD
-/**
-     * @return Collection<int|string, Rating>
-=======
     /**
-     * @return Collection<int|string, mixed>
->>>>>>> laraxot/dev
+     * @return Collection<string|int, mixed>
      */
     public function getMyRatingAttribute(): Collection
     {
+        /** @var Collection<int, BaseRating> $myRatings */
         $myRatings = $this->myRatings;
-<<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
         return $myRatings->pluck('pivot.rating', 'post_id');
     }
 
-    /**
-     * ----.
-     */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if (null !== $value) {
-            return $value;
-        }
-        $value = $this->ratings->avg('pivot.rating');
-        if (null !== $value) {
-            // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if (null !== $this->getKey()) {
-                $this->update(['ratings_avg' => $value]);
-            }
-        }
-
-        return $value;
+        return (float) ($value ?? 0);
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if (null !== $value) {
-            return $value;
-        }
-        $value = $this->ratings->count();
-        $this->ratings_count = $value;
-
-        // Guard: modello deve avere PK per salvare
-        if (null == $this->getKey()) {
-            return $value;
-        }
-
-        // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-        $this->update(['ratings_count' => $value]);
-
-        return $value;
+        return $value ?? 0;
     }
 
     /**
-     * Get ratings filtered by extra_attributes.
-     *
-     * @param array<string, mixed> $filters
-     *
-     * @return Collection<int, Rating>
+     * @param  array<string, mixed>  $filters
+     * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
     {
@@ -250,45 +145,39 @@ trait HasRatingsTrait
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
-        /** @var Collection<int, Rating> $result */
+        /** @var Collection<int, BaseRating> $result */
         $result = $query->get();
 
         return $result;
     }
 
     /**
-     * @param array<string, mixed> $where
+     * Sync pivot verso rating che matchano extra_attributes.
      *
-     * @return Collection<int, mixed>
+     * @param  array<string, mixed>  $where
+     * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
     {
-        $ratingClass = $this->getRatingClass();
-        $ratings = $ratingClass::query()
-            ->withExtraAttributes($where)
-            ->get();
+        /** @var class-string<BaseRating> $ratingClass */
+        $ratingClass = Rating::getClassName();
+        Assert::subclassOf($ratingClass, BaseRating::class);
 
-<<<<<<< HEAD
-        $ratingIds = $ratings->modelKeys();
-        $this->ratings()->sync($ratingIds);
-=======
-        $rating_ids = $ratings->modelKeys();
-        $this->ratings()->sync($rating_ids);
->>>>>>> laraxot/dev
+        $ratings = $ratingClass::withExtraAttributes($where)->get();
 
-        /** @var Collection<int, mixed> $result */
+        /** @var list<int|string> $ratingIds */
+        $ratingIds = $ratings->pluck('id')->all();
+
+        if ($ratingIds !== []) {
+            $this->ratings()->sync($ratingIds);
+        }
+
+        /** @var Collection<int, BaseRating> $result */
         $result = $this->ratings;
 
         return $result;
     }
 
-    // */
-    /*
-        public function setMyRatingAttribute($value){
-        dddx($value);
-        }
-    */
-    // ------ functions ------
     /**
      * @throws FileNotFoundException
      * @throws \ReflectionException
@@ -296,9 +185,8 @@ trait HasRatingsTrait
     public function ratingAvgHtml(): string
     {
         $safeStringCastAction = app(SafeStringCastAction::class);
-<<<<<<< HEAD
-        $pivotAvg = $safeStringCastAction->execute($this->ratings_avg);
-        $pivotCount = $safeStringCastAction->execute($this->ratings_count);
+        $pivotAvg = $safeStringCastAction->execute($this->ratings_avg ?? 0);
+        $pivotCount = $safeStringCastAction->execute($this->ratings_count ?? 0);
         $title = 'Vota '.$safeStringCastAction->execute($this->title ?? '');
 
         $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
@@ -315,26 +203,6 @@ trait HasRatingsTrait
         </button>';
 
         return $msg.$btn.$btnIframe;
-=======
-        $pivot_avg = $safeStringCastAction->execute($this->ratings_avg);
-        $pivot_cout = $safeStringCastAction->execute($this->ratings_count);
-        $title = 'Vota '.$safeStringCastAction->execute($this->title ?? '');
-
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
-
-        $rating_url = '#';
-
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        return $msg.$btn.$btn_iframe;
->>>>>>> laraxot/dev
     }
 
     /**
@@ -343,13 +211,14 @@ trait HasRatingsTrait
     public function getRatingsRules(string $prefix, string $postfix): array
     {
         $safeStringCastAction = app(SafeStringCastAction::class);
+        /** @var Collection<int, BaseRating> $rows */
         $rows = $this->ratings;
         $res = [];
+
         foreach ($rows as $row) {
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $ruleStr = $this->ratingRuleToString($row->rule, $safeStringCastAction);
 
-            // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
                 $ruleStr = 'nullable|'.$ruleStr;
             }
@@ -375,13 +244,13 @@ trait HasRatingsTrait
     public function getRatingsValidationAttributes(string $prefix, string $postfix): array
     {
         $safeStringCastAction = app(SafeStringCastAction::class);
+        /** @var Collection<int, BaseRating> $rows */
         $rows = $this->ratings;
         $res = [];
+
         foreach ($rows as $row) {
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
-            /** @var string|null $title */
-            $title = $row->title;
-            $res[$keyWithPostfix] = $safeStringCastAction->execute($title);
+            $res[$keyWithPostfix] = $safeStringCastAction->execute($row->title ?? '');
         }
 
         return $res;

@@ -57,19 +57,16 @@ namespace Modules\IndennitaResponsabilita\Models;
 
 class IndennitaResponsabilita extends BaseScheda
 {
+    /** @use HasRatingsTrait<static> */
     use \Modules\Rating\Models\Traits\HasRatingsTrait;
-    
-    public function ratings(): MorphMany
-    {
-        // Automatically uses Modules\IndennitaResponsabilita\Models\Rating
-        return parent::ratings();
-    }
 }
 ```
 
+**PHPStan (level 10):** il trait è `@template TModel of Model`. Ogni host **deve** dichiarare `@use HasRatingsTrait<static>` altrimenti `missingType.generics`. Sync per `extra_attributes` usa `Rating::getClassName()::withExtraAttributes()` (modello Rating del modulo caller).
+
 **Checklist:**
 - [ ] Module defines own `Rating` model extending `BaseRating`
-- [ ] Module uses `HasRatingsTrait` on primary model
+- [ ] Module uses `HasRatingsTrait` on primary model with `@use HasRatingsTrait<static>`
 - [ ] Rating rules defined in `RuleEnum` or config
 - [ ] Validation rules applied via `getRatingsRules()`
 - [ ] Tests cover polymorphic relationships
