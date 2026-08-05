@@ -34,7 +34,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
+- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/index.md)
 
 ## Aggiungere una Nuova COMMANDS
 

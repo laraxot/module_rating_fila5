@@ -145,5 +145,5 @@ Related:
 ## Related Documentation
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
-- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+- [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 - [Module Documentation](../README.md)
