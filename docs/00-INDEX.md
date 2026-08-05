@@ -34,7 +34,7 @@ related:
 ## 🔗 Riferimenti
 
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
-- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+- [agents.md](../../../../agents.md) - Project guidelines
 
 ---
 

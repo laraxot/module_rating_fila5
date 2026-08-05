@@ -18,14 +18,14 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
  * Form rating condiviso tra moduli che estendono BaseRatingResource.
  *
  * Le classi concrete nei moduli figli estendono questa base e sovrascrivono
- * getFormSchemaOld() quando l'UI differisce.
+ * getFormSchema() quando l'UI differisce.
  */
 abstract class BaseRatingForm extends XotBaseResourceForm
 {
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             'extra_attributes.type' => TextInput::make('extra_attributes.type'),

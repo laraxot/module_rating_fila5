@@ -381,7 +381,7 @@ $validated = $request->validate($rating->rules());
 - [ ] Filament resource created (Resource, List, Form)
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
-- [ ] Documentation added to docs/INDEX.md
+- [ ] Documentation added to docs/index.md
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 

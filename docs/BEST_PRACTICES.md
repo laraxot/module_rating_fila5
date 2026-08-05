@@ -25,5 +25,5 @@ related:
 - Copri casi limite come rating inversi.
 
 ## Documentazione
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
+- Aggiorna `docs/index.md` con nuovi endpoint.
 - Collega a moduli correlati come `Review` e `Auth`.

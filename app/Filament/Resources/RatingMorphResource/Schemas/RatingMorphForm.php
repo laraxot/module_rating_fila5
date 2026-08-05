@@ -12,7 +12,7 @@ class RatingMorphForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             // Campi del form
