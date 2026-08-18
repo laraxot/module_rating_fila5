@@ -52,24 +52,35 @@ trait HasRatingsTrait
     }
 }
 
-// Each module extends trait
-namespace Modules\IndennitaResponsabilita\Models;
+// Ptv centralizes shared scheda rating relations
+namespace Modules\Ptv\Models;
 
-class IndennitaResponsabilita extends BaseScheda
+abstract class BaseScheda extends BaseModel
 {
     /** @use HasRatingsTrait<static> */
     use \Modules\Rating\Models\Traits\HasRatingsTrait;
 }
 ```
 
-**PHPStan (level 10):** il trait è `@template TModel of Model`. Ogni host **deve** dichiarare `@use HasRatingsTrait<static>` altrimenti `missingType.generics`. Relazioni morph: sempre `morphToManyX()` (RelationX), mai `morphToMany()` diretto. Sync per `extra_attributes` usa `Rating::getClassName()::withExtraAttributes()` (modello Rating del modulo caller).
+**PHPStan (level 10):** il trait è `@template TModel of Model`. Ogni host diretto **deve**
+dichiarare `@use HasRatingsTrait<static>` altrimenti `missingType.generics`; i figli che ereditano
+da quell'host non devono ripetere il trait. Relazioni morph: sempre `morphToManyX()` (RelationX),
+mai `morphToMany()` diretto. Sync per `extra_attributes` usa `Rating::getClassName()::withExtraAttributes()`
+(modello Rating del modulo caller).
+
+**Ownership relazioni:** `ratings()`, `myRatings()` e `ratingObjectives()` sono relazioni Eloquent
+e devono restare su model o trait del model. Non spostarle in `Services` e non creare Actions
+generiche come proxy della relazione: Laravel risolve eager loading, `whereHas`, accesso property e
+return type partendo dal metodo relation sul model. Le Spatie Queueable Actions sono corrette per
+use case operativi che usano le relation, non per definirle.
 
 **Checklist:**
 - [ ] Module defines own `Rating` model extending `BaseRating`
-- [ ] Module uses `HasRatingsTrait` on primary model with `@use HasRatingsTrait<static>`
+- [ ] Module uses `HasRatingsTrait` on the direct rating-aware host with `@use HasRatingsTrait<static>`
 - [ ] Rating rules defined in `RuleEnum` or config
 - [ ] Validation rules applied via `getRatingsRules()`
 - [ ] Tests cover polymorphic relationships
+- [ ] Nessun `*Service` o Action generica sostituisce le relation del trait
 
 ---
 

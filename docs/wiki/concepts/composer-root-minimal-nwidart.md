@@ -6,9 +6,9 @@ created: 2026-06-29
 updated: 2026-06-29
 qmd: "Rating composer dependencies root minimal nwidart merge-plugin"
 issues:
-  - "https://github.com/laraxot/base_ptvx_fila5/issues/214"
+  - "https://github.com/laraxot/<nome repository>/issues/214"
 discussions:
-  - "https://github.com/laraxot/base_ptvx_fila5/discussions/215"
+  - "https://github.com/laraxot/<nome repository>/discussions/215"
 related:
   - ../../../Xot/docs/wiki/concepts/composer-root-skeleton-modular.md
   - ../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md
