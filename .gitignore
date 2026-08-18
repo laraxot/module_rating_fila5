@@ -1,0 +1,8 @@
+/.ai*
+/_bmad
+/bashscripts
+/_docs
+/docs/archive
+/docs/legacy
+*.lock
+.php-cs-fixer.cache
