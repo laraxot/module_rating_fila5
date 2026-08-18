@@ -131,9 +131,13 @@ vendor/bin/pest laravel/Modules/Rating/tests --parallel
 **Last Updated**: 2026-06-18  
 **Status**: GREEN
 
-## Trait cleanup (2026-06-18)
+## Host di `HasRatingsTrait`
 
-Rimossi trait **non usati** in app (PHPStan `trait.unused`):
+Il trait è generico (`@template TModel of Model`). Ogni modello host deve dichiarare:
 
-- `HasLikes` — modello `Like` assente, zero consumer
-- `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating` (+ probe `RatingPhpstanTraitProbe`)
+```php
+/** @use HasRatingsTrait<static> */
+use HasRatingsTrait;
+```
+
+SSoT: `Modules/Rating/app/Models/Traits/HasRatingsTrait.php`. Consumer attuali: modelli IndennitaResponsabilita (`IndennitaResponsabilita`, `LettF`, `LettI`).
