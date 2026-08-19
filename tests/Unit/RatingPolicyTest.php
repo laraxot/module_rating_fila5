@@ -40,6 +40,13 @@ function ratingFakeUser(array $ruoli, ?string $userId = null): UserContract
         ->with('profile')
         ->andReturn(null);
 
+    // Le policy leggono `$user->id` e `$user->profile` come proprieta', non via
+    // getAttribute(): un mock di interfaccia non ha il __get di Eloquent, quindi
+    // le due espressioni sopra non bastano e senza queste assegnazioni PHP solleva
+    // "Undefined property".
+    $user->id = $userId;
+    $user->profile = null;
+
     return $user;
 }
 
