@@ -42,6 +42,10 @@ return [
         'type' => ['label' => 'type'],
         'rule' => ['label' => 'rule'],
         'disabled' => ['label' => 'disabled', 'placeholder' => 'disabled', 'helper_text' => 'disabled', 'description' => 'disabled'],
+        'slug' => ['label' => 'slug'],
+        'order_column' => ['label' => 'order_column'],
+        'created_at' => ['label' => 'created_at'],
+        'updated_at' => ['label' => 'updated_at'],
     ],
     'actions' => [
         'enable' => [

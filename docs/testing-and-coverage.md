@@ -10,7 +10,9 @@ updated_at: 2026-08-19
 related:
   - ../../../../bashscripts/docs/prompts/03-quality-gates.md
   - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
-tags: [pest, coverage, xdebug, phpunit, skip]
+  - ../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md
+  - ../../Xot/tests/XotBasePest.php
+tags: [pest, coverage, xdebug, phpunit, skip, xotbasepest]
 ---
 
 # Rating — test e coverage
@@ -46,6 +48,20 @@ XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage 
 
 Delta complessivo **+29,3 punti**. La misura richiede una suite verde: Pest stampa la
 tabella di coverage solo quando il run esce `0`.
+
+## XotBasePest (gap aperto — story 3.1)
+
+Il bootstrap [`Modules/Rating/tests/Pest.php`](../tests/Pest.php) deve allinearsi ad ADR-003:
+
+```php
+require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
+```
+
+- **Vietato** `uses(TestCase::class)->in(...)` nel bootstrap (PHPStan `method.internalClass`).
+- Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo.
+- Helper condivisi: prefisso `xot*` da [`XotBasePest.php`](../../Xot/tests/XotBasePest.php).
+
+Story: [`docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md`](../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md).
 
 Al 100 %: `Datas/RatingData`, `DataObjects/RatingData`, `Enums/{RuleEnum,SupportedLocale}`,
 `Filament/Blocks/Rating`, tutte le `Tables/` e `Schemas/` delle due resource,
