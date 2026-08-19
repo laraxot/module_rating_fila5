@@ -14,9 +14,13 @@ use Modules\Xot\Contracts\UserContract;
 trait HasLikes
 {
     /**
-     * @return Collection
+     * Il generic resta su `Model`: `Modules\Rating\Models\Like` non esiste nel tree, e
+     * dichiararlo qui fa fallire l'analisi con `class.notFound` in ogni classe che usa il
+     * trait. Vedi docs/chat/coverage-misurabilita-suite-moduli.md.
+     *
+     * @return Collection<int, Model>
      */
-    public function likes()
+    public function likes(): Collection
     {
         return $this->likesRelation;
     }
@@ -39,7 +43,9 @@ trait HasLikes
         }
 
         /**
-         * @var Like|null
+         * `Like` non e' dichiarato come tipo: la classe non esiste nel tree (vedi `likes()`).
+         *
+         * @var Model|null
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
         if ($where !== null) {
@@ -71,8 +77,8 @@ trait HasLikes
 
     protected static function bootHasLikes(): void
     {
-        static::deleting(function (Model $model): void {
-            $model->likesRelation()->delete(); /* @phpstan-ignore method.nonObject */
+        static::deleting(static function (self $model): void {
+            $model->likesRelation()->delete();
             $model->unsetRelation('likesRelation');
         });
     }
