@@ -4,7 +4,7 @@ description: Come si eseguono i test del modulo Rating, su quale perimetro si mi
 document_type: doc
 category: testing
 status: active
-version: 1.0.0
+version: 1.1.0
 language: it-IT
 updated_at: 2026-08-19
 related:
@@ -38,13 +38,22 @@ per questo non sono eseguibili da `laravel/`.
 XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage --min=0
 ```
 
-| Data | Statement coperti | Totale |
-|------|-------------------|--------|
-| 2026-08-19, prima | — | **3,0 %** |
-| 2026-08-19, dopo | — | **13,1 %** |
+| Data | Totale | Suite |
+|------|--------|-------|
+| 2026-08-19, baseline | **3,0 %** | 3 passati, 8 rossi |
+| 2026-08-19, primo giro | **13,1 %** | 34 passati, 7 skipped |
+| 2026-08-19, secondo giro | **32,3 %** | 69 passati, 7 skipped |
 
-Delta **+10,1 punti**. La misura richiede una suite verde: Pest stampa la tabella di
-coverage solo quando il run esce `0`.
+Delta complessivo **+29,3 punti**. La misura richiede una suite verde: Pest stampa la
+tabella di coverage solo quando il run esce `0`.
+
+Al 100 %: `Datas/RatingData`, `DataObjects/RatingData`, `Enums/{RuleEnum,SupportedLocale}`,
+`Filament/Blocks/Rating`, tutte le `Tables/` e `Schemas/` delle due resource,
+`Models/Policies/RatingPolicy`, `View/Components/Dashboard/Item`.
+
+Restano a 0 %: `Filament/Widgets/StatsOverview`, `Filament/Actions/Table/BetTableAction`,
+`Actions/HasRating/*`, `Models/{BaseModel,BaseRatingMorph}`, `Models/Traits/*` — vogliono
+il database o un contesto Livewire, non un unit test.
 
 `--coverage-filter` **non** sposta il perimetro: Pest lo accetta e lo ignora.
 
@@ -84,6 +93,17 @@ Un test che asserisce la chiave grezza sta certificando il buco: si asserisce la
 Il modulo ha solo `lang/it`. Un `App::setLocale('en')` dentro un test fa scrivere all'adapter
 Lang i file mancanti e fallisce con `Failed to open stream` perché `lang/en/` non esiste: i
 test leggono il locale corrente con `SupportedLocale::fromString(App::getLocale())`.
+
+## Lacune trovate, non colmate
+
+Due classi hanno un contratto **vuoto**. I test le fotografano com'è, con un commento che
+dice di aggiornarli quando verranno riempite: un test che asserisce quello che vorremmo
+sarebbe rosso a vuoto, uno che asserisce quello che c'è si accorge del cambiamento.
+
+| Classe | Stato |
+|--------|-------|
+| `Filament/Resources/RatingMorphResource/Schemas/RatingMorphForm` | `getFormSchema()` ritorna `[]`, quindi il create/edit di `RatingMorphResource` non renderizza campi — mentre `RatingMorphInfolist`, della stessa resource, ne dichiara otto |
+| `View/Components/Dashboard/Item` | `render()` ritorna la stringa vuota: componente registrato, nessuna view |
 
 ## Cosa non è testabile a unit
 
