@@ -3,8 +3,8 @@ title: "Rating Module - PHPStan Type Compliance"
 type: concept
 tags: [rating, phpstan, types, compliance, quality, static-analysis]
 created: 2026-06-10
-updated: 2026-06-18
-qmd: "rating module phpstan level max zero errors HasRating trait"
+updated: 2026-08-18
+qmd: "rating module phpstan level max zero errors HasRatingsTrait trait.unused isolation"
 related:
   - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
   - ../../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
@@ -14,15 +14,19 @@ related:
 
 ## Status
 
-✅ **COMPLIANT** — 0 errors in PHPStan level: max
+`analyse Modules` (albero intero, neon unico, **senza** `--level`) è verde.
+
+`analyse Modules/Rating` da solo può segnalare `trait.unused` su `HasRatingsTrait`.
+Non è un trait morto: i consumer stanno in altri moduli (`Ptv\Models\BaseScheda` e i leaf).
+PHPStan vede i `use Trait` solo nei path passati all'analisi. Non aggiungere un `use`
+finto in Rating. Non toccare `phpstan.neon`. Gate canonico: `Modules`, non il sottoalbero.
 
 ```
-Module:   Rating
-Path:     laravel/Modules/Rating/
-Status:   GREEN
-Errors:   0
-Level:    max
-Updated:  2026-06-18
+Module:   Rating (nel tree Modules)
+Status:   GREEN su analyse Modules
+Pitfall:  trait.unused se analizzi solo Modules/Rating
+Level:    max da laravel/phpstan.neon
+Updated:  2026-08-18
 ```
 
 ## Module Structure
@@ -66,9 +70,8 @@ Rating/
 ### CI/CD Pipeline
 
 ```bash
-vendor/bin/phpstan analyse laravel/Modules/Rating \
-  --level=max \
-  --no-progress
+# cwd laravel/ — neon unico, niente --level
+./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1
 ```
 
 ### Pre-commit Hook
@@ -76,7 +79,7 @@ vendor/bin/phpstan analyse laravel/Modules/Rating \
 ✅ Developers must pass before committing.
 
 ```bash
-vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
+./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1
 ```
 
 ## Type Coverage Summary

@@ -23,16 +23,13 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @see BaseRating
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
- *
  * @property SchemalessAttributes $extra_attributes
  * @property RuleEnum             $rule
  * @property RuleEnum             $rule
- *
  * @method static Builder|Rating newModelQuery()
  * @method static Builder|Rating newQuery()
  * @method static Builder|Rating query()
  * @method static Builder|Rating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
- *
  * @property int             $id
  * @property int             $user_id
  * @property float           $value
@@ -69,7 +66,6 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @property bool|null       $is_readonly
  * @property int|null        $order_column
  * @property Model|\Eloquent $linkedTo
- *
  * @method static Builder|Rating whereColor($value)
  * @method static Builder|Rating whereCreatedAt($value)
  * @method static Builder|Rating whereCreatedBy($value)
@@ -86,7 +82,6 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @method static Builder|Rating whereTxt($value)
  * @method static Builder|Rating whereUpdatedAt($value)
  * @method static Builder|Rating whereUpdatedBy($value)
- *
  * @property MediaCollection<int, Media> $media
  * @property int|null                    $media_count
  * @property ProfileContract|null        $creator
@@ -94,13 +89,9 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @property int|null                    $media_count
  * @property ProfileContract|null        $creator
  * @property ProfileContract|null        $updater
- *
  * @method static RatingFactory factory($count = null, $state = [])
- *
  * @property ProfileContract|null $deleter
- *
  * @method static Builder<static>|Rating whereExtraAttributes($value)
- *
  * @mixin Eloquent
  */
 class Rating extends BaseRating

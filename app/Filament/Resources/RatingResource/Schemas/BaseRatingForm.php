@@ -28,8 +28,8 @@ abstract class BaseRatingForm extends XotBaseResourceForm
     public static function getFormSchema(): array
     {
         return [
-            'extra_attributes.type' => TextInput::make('extra_attributes.type'),
-            'extra_attributes.anno' => TextInput::make('extra_attributes.anno'),
+            //'extra_attributes.type' => TextInput::make('extra_attributes.type'),
+            //'extra_attributes.anno' => TextInput::make('extra_attributes.anno'),
             'title' => TextInput::make('title')->autofocus()->required(),
             'color' => ColorPicker::make('color'),
             'rule' => Radio::make('rule')->options(RuleEnum::class),
