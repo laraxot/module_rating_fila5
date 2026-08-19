@@ -6,24 +6,14 @@ namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
 
-use PHPUnit\Framework\Assert;
-
 uses(TestCase::class);
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-
-beforeEach(function (): void {
-    /* @var \Modules\Rating\Tests\TestCase $this */
-    skip('Rating HTTP API routes are not registered in this install (Folio/Actions architecture).');
-});
 
 describe('Rating Api', function (): void {
     test('can list ratings', function (): void {
@@ -122,4 +112,4 @@ describe('Rating Api', function (): void {
             ],
         ]);
     });
-});
+})->skip('Le rotte HTTP /api/ratings non sono registrate in questa install (architettura Folio/Actions).');
