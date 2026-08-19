@@ -27,12 +27,19 @@ test('description e userId sono opzionali', function (): void {
     Assert::assertNull($data->userId);
 });
 
-test('rifiuta un punteggio fuori dal range 0-5', function (int $score): void {
-    $this->expectException(InvalidArgumentException::class);
-    $this->expectExceptionMessage('Score must be between 0 and 5');
+test('rifiuta un punteggio fuori dal range 0-5', function (): void {
+    /** @var list<int> $punteggiInvalidi */
+    $punteggiInvalidi = [-1, 6, 100];
 
-    new RatingData(title: 'Fuori range', score: $score);
-})->with([-1, 6, 100]);
+    foreach ($punteggiInvalidi as $score) {
+        try {
+            new RatingData(title: 'Fuori range', score: $score);
+            Assert::fail('Attesa InvalidArgumentException per score '.$score);
+        } catch (InvalidArgumentException $exception) {
+            Assert::assertSame('Score must be between 0 and 5', $exception->getMessage());
+        }
+    }
+});
 
 test('fromArray mappa user_id su userId', function (): void {
     $data = RatingData::fromArray([

@@ -16,8 +16,12 @@ use function Pest\Laravel\putJson;
 uses(TestCase::class);
 
 describe('Rating Api', function (): void {
+    beforeEach(function (): void {
+        /** @var TestCase $this */
+        $this->skipTest('Le rotte HTTP /api/ratings non sono registrate in questa install (architettura Folio/Actions).');
+    });
+
     test('can list ratings', function (): void {
-        /* @var \Modules\Rating\Tests\TestCase $this */
         Rating::create([
             'name' => 'Test Rating 1',
         ]);
@@ -85,7 +89,7 @@ describe('Rating Api', function (): void {
         $response = deleteJson("/api/ratings/{$rating->id}");
 
         Assert::assertSame(204, $response->status());
-        /* @var TestCase $this */
+        /** @var TestCase $this */
         $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     });
 
@@ -112,4 +116,4 @@ describe('Rating Api', function (): void {
             ],
         ]);
     });
-})->skip('Le rotte HTTP /api/ratings non sono registrate in questa install (architettura Folio/Actions).');
+});

@@ -15,6 +15,11 @@ uses(TestCase::class);
 
 describe('Rating', function (): void {
     test('can create rating', function (): void {
+        /** @var TestCase $this */
+        if (TestCase::ratingDbUnavailable()) {
+            $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
+        }
+
         $rating = Rating::create([
             'title' => 'Test Rating',
             'color' => '#FF0000',
@@ -26,9 +31,14 @@ describe('Rating', function (): void {
                 ->where('title', 'Test Rating')
                 ->exists()
         );
-    })->skip(fn (): bool => TestCase::ratingDbUnavailable(), 'DB `rating` non raggiungibile: blocco di ambiente.');
+    });
 
     test('can create rating morph', function (): void {
+        /** @var TestCase $this */
+        if (TestCase::ratingDbUnavailable()) {
+            $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
+        }
+
         $rating = Rating::create([
             'title' => 'Test Rating',
         ]);
@@ -49,7 +59,7 @@ describe('Rating', function (): void {
                 ->where('rating_id', $rating->id)
                 ->exists()
         );
-    })->skip(fn (): bool => TestCase::ratingDbUnavailable(), 'DB `rating` non raggiungibile: blocco di ambiente.');
+    });
 
     test('supported locale enum', function (): void {
         $locale = SupportedLocale::IT;

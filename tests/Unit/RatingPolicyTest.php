@@ -20,27 +20,42 @@ uses(TestCase::class);
  * interrogano `hasRole()` e confrontano `id` con `user_id` del morph.
  *
  * @param  list<string>  $ruoli
+ * @return Mockery\MockInterface&UserContract
  */
 function ratingFakeUser(array $ruoli, ?string $userId = null): UserContract
 {
+    /** @var Mockery\MockInterface&UserContract $user */
     $user = Mockery::mock(UserContract::class);
     $user->shouldReceive('hasRole')
-        ->andReturnUsing(static fn (array|string $richiesti): bool => array_intersect((array) $richiesti, $ruoli) !== []);
-    $user->shouldReceive('getAttribute')->with('id')->andReturn($userId);
-    $user->id = $userId;
-    $user->profile = null;
+        ->andReturnUsing(static function (array|string $richiesti) use ($ruoli): bool {
+            /** @var list<string> $richiestiNormalizzati */
+            $richiestiNormalizzati = is_array($richiesti) ? $richiesti : [$richiesti];
+
+            return array_intersect($richiestiNormalizzati, $ruoli) !== [];
+        });
+    $user->shouldReceive('getAttribute')
+        ->with('id')
+        ->andReturn($userId);
+    $user->shouldReceive('getAttribute')
+        ->with('profile')
+        ->andReturn(null);
 
     return $user;
 }
 
 describe('RatingPolicy', function (): void {
-    test('viewAny e view aprono a chi valuta', function (string $ruolo): void {
-        $policy = new RatingPolicy;
-        $user = ratingFakeUser([$ruolo]);
+    test('viewAny e view aprono a chi valuta', function (): void {
+        /** @var list<string> $ruoli */
+        $ruoli = ['super-admin', 'admin', 'hr-manager', 'evaluator'];
 
-        Assert::assertTrue($policy->viewAny($user));
-        Assert::assertTrue($policy->view($user, new Rating));
-    })->with(['super-admin', 'admin', 'hr-manager', 'evaluator']);
+        foreach ($ruoli as $ruolo) {
+            $policy = new RatingPolicy;
+            $user = ratingFakeUser([$ruolo]);
+
+            Assert::assertTrue($policy->viewAny($user));
+            Assert::assertTrue($policy->view($user, new Rating));
+        }
+    });
 
     test('create e update escludono evaluator', function (): void {
         $policy = new RatingPolicy;
@@ -50,25 +65,35 @@ describe('RatingPolicy', function (): void {
         Assert::assertFalse($policy->update($evaluator, new Rating));
     });
 
-    test('delete è riservato ad admin e super-admin', function (string $ruolo, bool $atteso): void {
-        Assert::assertSame($atteso, (new RatingPolicy)->delete(ratingFakeUser([$ruolo]), new Rating));
-    })->with([
-        ['super-admin', true],
-        ['admin', true],
-        ['hr-manager', false],
-        ['evaluator', false],
-    ]);
+    test('delete è riservato ad admin e super-admin', function (): void {
+        /** @var list<array{0: string, 1: bool}> $casi */
+        $casi = [
+            ['super-admin', true],
+            ['admin', true],
+            ['hr-manager', false],
+            ['evaluator', false],
+        ];
 
-    test('restore e forceDelete sono solo del super-admin', function (string $ruolo, bool $atteso): void {
-        $policy = new RatingPolicy;
-        $user = ratingFakeUser([$ruolo]);
+        foreach ($casi as [$ruolo, $atteso]) {
+            Assert::assertSame($atteso, (new RatingPolicy)->delete(ratingFakeUser([$ruolo]), new Rating));
+        }
+    });
 
-        Assert::assertSame($atteso, $policy->restore($user, new Rating));
-        Assert::assertSame($atteso, $policy->forceDelete($user, new Rating));
-    })->with([
-        ['super-admin', true],
-        ['admin', false],
-    ]);
+    test('restore e forceDelete sono solo del super-admin', function (): void {
+        /** @var list<array{0: string, 1: bool}> $casi */
+        $casi = [
+            ['super-admin', true],
+            ['admin', false],
+        ];
+
+        foreach ($casi as [$ruolo, $atteso]) {
+            $policy = new RatingPolicy;
+            $user = ratingFakeUser([$ruolo]);
+
+            Assert::assertSame($atteso, $policy->restore($user, new Rating));
+            Assert::assertSame($atteso, $policy->forceDelete($user, new Rating));
+        }
+    });
 
     test('un ruolo sconosciuto non passa da nessuna parte', function (): void {
         $policy = new RatingPolicy;
@@ -81,9 +106,14 @@ describe('RatingPolicy', function (): void {
 });
 
 describe('RatingMorphPolicy', function (): void {
-    test('view passa per chi gestisce, senza guardare il morph', function (string $ruolo): void {
-        Assert::assertTrue((new RatingMorphPolicy)->view(ratingFakeUser([$ruolo]), new RatingMorph));
-    })->with(['super-admin', 'admin', 'hr-manager']);
+    test('view passa per chi gestisce, senza guardare il morph', function (): void {
+        /** @var list<string> $ruoli */
+        $ruoli = ['super-admin', 'admin', 'hr-manager'];
+
+        foreach ($ruoli as $ruolo) {
+            Assert::assertTrue((new RatingMorphPolicy)->view(ratingFakeUser([$ruolo]), new RatingMorph));
+        }
+    });
 
     test('un evaluator vede solo il proprio morph', function (): void {
         $policy = new RatingMorphPolicy;

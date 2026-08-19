@@ -15,7 +15,9 @@ use Modules\Rating\Filament\Resources\RatingResource\Schemas\RatingInfolist;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingsTable;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingTable;
 use Modules\Rating\Tests\TestCase;
+use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use PHPUnit\Framework\Assert;
+use ReflectionMethod;
 
 uses(TestCase::class);
 
@@ -36,46 +38,56 @@ function ratingAssertKeyedSchema(array $schema, string $tipo): void
     }
 }
 
-test('le tabelle espongono colonne indicizzate per campo', function (string $classe): void {
-    $colonne = app($classe)->getTableColumns();
+test('le tabelle espongono colonne indicizzate per campo', function (): void {
+    /** @var list<class-string<XotBaseResourceTable>> $classi */
+    $classi = [
+        RatingsTable::class,
+        RatingTable::class,
+        RatingMorphsTable::class,
+        RatingMorphTable::class,
+    ];
 
-    ratingAssertKeyedSchema($colonne, $classe);
-    Assert::assertContainsOnlyInstancesOf(Column::class, $colonne);
-})->with([
-    RatingsTable::class,
-    RatingTable::class,
-    RatingMorphsTable::class,
-    RatingMorphTable::class,
-]);
+    foreach ($classi as $classe) {
+        $tabella = new $classe();
+        $colonne = $tabella->getTableColumns();
 
-test('le tabelle dichiarano filtri e azioni senza esplodere', function (string $classe): void {
-    $tabella = app($classe);
+        ratingAssertKeyedSchema($colonne, $classe);
+        Assert::assertContainsOnlyInstancesOf(Column::class, $colonne);
+    }
+});
 
-    Assert::assertIsArray($tabella->getTableFilters());
-    Assert::assertIsArray($tabella->getTableActions());
-    Assert::assertIsArray($tabella->getTableBulkActions());
-})->with([
-    RatingsTable::class,
-    RatingTable::class,
-    RatingMorphsTable::class,
-    RatingMorphTable::class,
-]);
+test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void {
+    /** @var list<class-string<XotBaseResourceTable>> $classi */
+    $classi = [
+        RatingsTable::class,
+        RatingTable::class,
+        RatingMorphsTable::class,
+        RatingMorphTable::class,
+    ];
+
+    foreach ($classi as $classe) {
+        $tabella = new $classe();
+        $actionsMethod = new ReflectionMethod($tabella, 'getTableActions');
+
+        Assert::assertIsArray($tabella->getTableFilters());
+        Assert::assertIsArray($actionsMethod->invoke($tabella));
+        Assert::assertIsArray($tabella->getTableBulkActions());
+    }
+});
 
 test('RatingsTable copre i campi anagrafici del rating', function (): void {
     Assert::assertSame(
         ['id', 'title', 'slug', 'rule', 'is_disabled', 'is_readonly', 'order_column', 'created_at', 'updated_at'],
-        array_keys(app(RatingsTable::class)->getTableColumns()),
+        array_keys((new RatingsTable)->getTableColumns()),
     );
 });
 
-test('i form espongono uno schema indicizzato per campo', function (string $classe): void {
-    $schema = $classe::getFormSchema();
+test('i form espongono uno schema indicizzato per campo', function (): void {
+    $schema = RatingForm::getFormSchema();
 
-    ratingAssertKeyedSchema($schema, $classe);
+    ratingAssertKeyedSchema($schema, RatingForm::class);
     Assert::assertContainsOnlyInstancesOf(SchemaComponent::class, $schema);
-})->with([
-    RatingForm::class,
-]);
+});
 
 test('RatingMorphForm è ancora uno stub vuoto', function (): void {
     // Contratto reale, non desiderato: `getFormSchema()` ritorna `[]` e il create/edit di
@@ -86,12 +98,19 @@ test('RatingMorphForm è ancora uno stub vuoto', function (): void {
     Assert::assertSame([], RatingMorphForm::getFormSchema());
 });
 
-test('gli infolist espongono uno schema indicizzato per campo', function (string $classe): void {
-    ratingAssertKeyedSchema($classe::getInfolistSchema(), $classe);
-})->with([
-    RatingInfolist::class,
-    RatingMorphInfolist::class,
-]);
+test('gli infolist espongono uno schema indicizzato per campo', function (): void {
+    /** @var list<class-string> $classi */
+    $classi = [
+        RatingInfolist::class,
+        RatingMorphInfolist::class,
+    ];
+
+    foreach ($classi as $classe) {
+        $schema = $classe::getInfolistSchema();
+        Assert::assertIsArray($schema);
+        ratingAssertKeyedSchema($schema, $classe);
+    }
+});
 
 test('il form del rating dichiara i campi attesi', function (): void {
     Assert::assertSame(
@@ -100,10 +119,15 @@ test('il form del rating dichiara i campi attesi', function (): void {
     );
 });
 
-test('i form usano una sola colonna e nessuno step wizard', function (string $classe): void {
-    Assert::assertSame(1, $classe::getFormSchemaColumns());
-    Assert::assertSame([], $classe::getSteps());
-})->with([
-    RatingForm::class,
-    RatingMorphForm::class,
-]);
+test('i form usano una sola colonna e nessuno step wizard', function (): void {
+    /** @var list<class-string> $classi */
+    $classi = [
+        RatingForm::class,
+        RatingMorphForm::class,
+    ];
+
+    foreach ($classi as $classe) {
+        Assert::assertSame(1, $classe::getFormSchemaColumns());
+        Assert::assertSame([], $classe::getSteps());
+    }
+});
