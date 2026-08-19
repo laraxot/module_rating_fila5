@@ -8,6 +8,7 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Rating\Models\Rating;
@@ -46,7 +47,7 @@ trait RatingTrait
                 '
             )->leftJoin(
                 'rating_morph',
-                function ($join): void {
+                function (JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereRaw('rating_morph.post_type = ratings.related_type')
                         ->where('rating_morph.post_id', $this->id);
@@ -62,7 +63,7 @@ trait RatingTrait
     {
         return $query->leftJoin(
             'rating_morph',
-            function ($join): void {
+            function (JoinClause $join): void {
                 $join->on('rating_morph.post_type = ratings.related_type');
             }
         );
@@ -80,11 +81,9 @@ trait RatingTrait
     // ----- mutators -----
     // *
     /**
-     * @param float $value
-     *
      * @return Collection
      */
-    public function getMyRatingAttribute($value)
+    public function getMyRatingAttribute(mixed $value)
     {
         $my = $this->myRatings;
 
@@ -96,13 +95,13 @@ trait RatingTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if (null !== $value) {
+        if ($value !== null) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if (null !== $this->getKey()) {
+            if ($this->getKey() !== null) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -112,7 +111,7 @@ trait RatingTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
@@ -121,7 +120,7 @@ trait RatingTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if (null == $this->getKey()) {
+        if ($this->getKey() == null) {
             return $value;
         }
 
