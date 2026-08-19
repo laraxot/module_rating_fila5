@@ -45,9 +45,15 @@ XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage 
 | 2026-08-19, baseline | **3,0 %** | 3 passati, 8 rossi |
 | 2026-08-19, primo giro | **13,1 %** | 34 passati, 7 skipped |
 | 2026-08-19, secondo giro | **32,3 %** | 69 passati, 7 skipped |
+| 2026-08-19 22:10, story 5.24 | **71,1 %** | 84 passati, 9 skipped — gate `--min=50` ✅ |
 
-Delta complessivo **+29,3 punti**. La misura richiede una suite verde: Pest stampa la
-tabella di coverage solo quando il run esce `0`.
+Gate floor 50% (story [5.24](../../Xot/docs/stories/5.24.module-coverage-fifty-percent-floor.story.md)):
+
+```bash
+XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage --min=50
+```
+
+Pest stampa la tabella di coverage solo quando il run esce `0`.
 
 ## XotBasePest (gap aperto — story 3.1)
 
