@@ -10,6 +10,7 @@ use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
+use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
@@ -147,5 +148,52 @@ describe('RatingMorphPolicy', function (): void {
 
         Assert::assertTrue($policy->viewAny($evaluator));
         Assert::assertTrue($policy->create($evaluator));
+    });
+
+    test('delete consente admin e evaluator proprietario', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+        $morph->user_id = 'u-1';
+
+        Assert::assertTrue($policy->delete(ratingFakeUser(['admin']), $morph));
+        Assert::assertTrue($policy->delete(ratingFakeUser(['evaluator'], 'u-1'), $morph));
+        Assert::assertFalse($policy->delete(ratingFakeUser(['evaluator'], 'u-2'), $morph));
+        Assert::assertFalse($policy->delete(ratingFakeUser(['hr-manager']), $morph));
+    });
+
+    test('restore e forceDelete solo super-admin', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+
+        Assert::assertTrue($policy->restore(ratingFakeUser(['super-admin']), $morph));
+        Assert::assertTrue($policy->forceDelete(ratingFakeUser(['super-admin']), $morph));
+        Assert::assertFalse($policy->restore(ratingFakeUser(['admin']), $morph));
+        Assert::assertFalse($policy->forceDelete(ratingFakeUser(['admin']), $morph));
+    });
+
+    test('view passa se l utente è owner del modello valutato', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+        $morph->user_id = 'u-2';
+
+        $ratedModel = new class extends \Illuminate\Database\Eloquent\Model
+        {
+            protected $table = 'rated_stub';
+        };
+        // `setAttribute()` invece di `$ratedModel->user_id = ...`: su un model anonimo
+        // l'assegnazione magica non e' una proprieta' dichiarata, e a level max PHPStan
+        // la rifiuta. `isOwner()` legge comunque l'attributo con `isset()`.
+        $ratedModel->setAttribute('user_id', 'u-1');
+        $morph->setRelation('model', $ratedModel);
+
+        $user = ratingFakeUser(['evaluator'], 'u-1');
+        // `profile` e' tipizzata `ProfileContract|null` sul contratto: uno `stdClass` non
+        // la soddisfa. Basta un profilo qualunque purche' truthy — la policy lo usa solo
+        // come guardia prima di `isOwner()`.
+        /** @var Mockery\MockInterface&ProfileContract $profilo */
+        $profilo = Mockery::mock(ProfileContract::class);
+        $user->profile = $profilo;
+
+        Assert::assertTrue($policy->view($user, $morph));
     });
 });
