@@ -1,0 +1,94 @@
+---
+title: Rating — test e coverage
+description: Come si eseguono i test del modulo Rating, su quale perimetro si misura la coverage e perché alcuni test sono in skip condizionato.
+document_type: doc
+category: testing
+status: active
+version: 1.0.0
+language: it-IT
+updated_at: 2026-08-19
+related:
+  - ../../../../bashscripts/docs/prompts/03-quality-gates.md
+  - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
+tags: [pest, coverage, xdebug, phpunit, skip]
+---
+
+# Rating — test e coverage
+
+## Eseguire la suite
+
+```bash
+# cwd: laravel/
+./vendor/bin/pest -c Modules/Rating/phpunit.xml --no-coverage
+```
+
+`Modules/Rating/phpunit.xml` esiste per una ragione sola: **spostare il perimetro di
+coverage** su `Modules/Rating/app`. La `laravel/phpunit.xml` di root dichiara
+`<source><include><directory>app</directory>`, cioè lo scheletro applicativo, non i moduli:
+misurata da lì, la coverage di Rating non compare affatto.
+
+Il `bootstrap` è `../../vendor/autoload.php` — **relativo al file di config**, non alla cwd.
+Le `phpunit.xml` di `Modules/Activity` e `Modules/Job` dichiarano `vendor/autoload.php` e
+per questo non sono eseguibili da `laravel/`.
+
+## Coverage
+
+```bash
+# cwd: laravel/
+XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage --min=0
+```
+
+| Data | Statement coperti | Totale |
+|------|-------------------|--------|
+| 2026-08-19, prima | — | **3,0 %** |
+| 2026-08-19, dopo | — | **13,1 %** |
+
+Delta **+10,1 punti**. La misura richiede una suite verde: Pest stampa la tabella di
+coverage solo quando il run esce `0`.
+
+`--coverage-filter` **non** sposta il perimetro: Pest lo accetta e lo ignora.
+
+## Skip condizionato, non skip permanente
+
+`RatingTest` tocca le tabelle `ratings` e `rating_morphs`. Il `TestCase` del modulo rimappa
+tutte le connessioni sqlite su `database/database.sqlite`, che non contiene lo schema del
+modulo (i test non lanciano migration: mai `RefreshDatabase`, mai `migrate:fresh`). Quei due
+test sono quindi in skip **valutato a runtime**:
+
+```php
+})->skip(fn (): bool => TestCase::ratingDbUnavailable(), 'DB `rating` non raggiungibile: blocco di ambiente.');
+```
+
+`TestCase::ratingDbUnavailable()` interroga davvero l'ambiente (`getPdo()` + `hasTable()`):
+quando lo schema c'è, i test ripartono da soli. È l'equivalente per-test dell'exit `3` del
+quality gate. Uno skip **incondizionato** sarebbe invece un test spento per sempre: non si usa.
+
+`RatingApiTest` è in skip di blocco (`describe(...)->skip(...)`): le rotte `/api/ratings` non
+sono registrate in questa install, che è a architettura Folio/Actions. Il file precedente
+chiamava `skip('…')` dentro `beforeEach`, ma **`skip()` non è una funzione globale di Pest**:
+i cinque test risultavano *failed* con `Call to undefined function`, non skipped.
+
+## Helper dei test
+
+Gli helper stanno come metodi statici su `Modules\Rating\Tests\TestCase`, non come funzioni
+in `tests/Pest.php`: passando `-c Modules/Rating/phpunit.xml`, Pest carica
+`laravel/tests/Pest.php` (root della cwd) e **non** quello del modulo. Per lo stesso motivo
+ogni file di test ripete `uses(TestCase::class);` in testa.
+
+## Traduzioni
+
+`SupportedLocale::getLabel()` passa da `TransTrait::transClass()`, che ritorna `'fix:'.$chiave`
+quando la traduzione manca. Le label vivono in `Modules/Rating/lang/it/supported_locale.php`.
+Un test che asserisce la chiave grezza sta certificando il buco: si asserisce la label.
+
+Il modulo ha solo `lang/it`. Un `App::setLocale('en')` dentro un test fa scrivere all'adapter
+Lang i file mancanti e fallisce con `Failed to open stream` perché `lang/en/` non esiste: i
+test leggono il locale corrente con `SupportedLocale::fromString(App::getLocale())`.
+
+## Cosa non è testabile a unit
+
+I componenti Filament non si ispezionano fuori da uno `Schema`: `Block::getChildComponents()`
+solleva `Typed property … Component::$container must not be accessed before initialization`.
+Restano coperti a costo zero i metodi statici che ritornano array (`getTableColumns()`,
+`getTableActions()`, `getTableBulkActions()` — vedi `ListRatingsPageTest`) e le factory
+(`::create()`, `->getName()`, `->getLabel()`).

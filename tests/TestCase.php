@@ -33,6 +33,22 @@ abstract class TestCase extends XotBaseTestCase
         ];
     }
 
+    /**
+     * Lo sqlite condiviso (`database/database.sqlite`) non contiene per forza le tabelle
+     * del modulo: le migration non vengono lanciate dai test (mai `RefreshDatabase`).
+     * I test che toccano il DB vanno saltati, non falliti: è un blocco d'ambiente.
+     */
+    public static function ratingDbUnavailable(): bool
+    {
+        try {
+            DB::connection('rating')->getPdo();
+
+            return ! DB::connection('rating')->getSchemaBuilder()->hasTable('ratings');
+        } catch (\Throwable) {
+            return true;
+        }
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,7 +59,7 @@ abstract class TestCase extends XotBaseTestCase
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
             }
 
