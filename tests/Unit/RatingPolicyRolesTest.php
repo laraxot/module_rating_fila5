@@ -17,6 +17,11 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
+// Aggancia i test alle due policy: senza `covers()` la mutation testing di Pest associa
+// i test ai sorgenti per convenzione di nome, e un file che non si chiama
+// `RatingPolicyTest` non viene eseguito contro i mutanti di `RatingPolicy`.
+covers(RatingPolicy::class, RatingMorphPolicy::class);
+
 require_once __DIR__.'/Fixtures/OwnedModelStub.php';
 
 /**
