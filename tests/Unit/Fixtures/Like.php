@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * Stub di test: `HasLikes` referenzia `Modules\Rating\Models\Like`, assente nel tree app.
  * Caricato solo dai test Unit (require_once) per esercitare `likesRelation()` / boot.
  *
- * @see \Modules\Rating\Models\Traits\HasLikes
+ * @see Traits\HasLikes
  */
 class Like extends Model
 {
