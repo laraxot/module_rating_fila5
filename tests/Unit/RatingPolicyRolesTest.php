@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Mockery;
-use Modules\Rating\Tests\Unit\Fixtures\OwnedModelStub;
 use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
+use Modules\Rating\Tests\Unit\Fixtures\OwnedModelStub;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
@@ -34,7 +34,7 @@ require_once __DIR__.'/Fixtures/OwnedModelStub.php';
 function ratingRoleUser(string $ruolo, ?string $userId = null, bool $conProfilo = false): UserContract
 {
     /** @var Mockery\MockInterface&UserContract $user */
-    $user = Mockery::mock(UserContract::class);
+    $user = \Mockery::mock(UserContract::class);
     $user->shouldReceive('hasRole')
         ->andReturnUsing(static function (array|string $richiesti) use ($ruolo): bool {
             $elenco = is_array($richiesti) ? $richiesti : [$richiesti];
@@ -49,7 +49,7 @@ function ratingRoleUser(string $ruolo, ?string $userId = null, bool $conProfilo 
 
     if ($conProfilo) {
         /** @var Mockery\MockInterface&ProfileContract $profilo */
-        $profilo = Mockery::mock(ProfileContract::class);
+        $profilo = \Mockery::mock(ProfileContract::class);
         $profilo->matr = 1;
         $user->profile = $profilo;
     }
@@ -59,7 +59,7 @@ function ratingRoleUser(string $ruolo, ?string $userId = null, bool $conProfilo 
 
 describe('RatingPolicy — ogni ruolo dell elenco pesa', function (): void {
     test('create ammette super-admin, admin e hr-manager, uno per uno', function (): void {
-        $policy = new RatingPolicy;
+        $policy = new RatingPolicy();
 
         foreach (['super-admin', 'admin', 'hr-manager'] as $ruolo) {
             Assert::assertTrue(
@@ -70,28 +70,28 @@ describe('RatingPolicy — ogni ruolo dell elenco pesa', function (): void {
     });
 
     test('create nega evaluator, che non è nell elenco', function (): void {
-        Assert::assertFalse((new RatingPolicy)->create(ratingRoleUser('evaluator')));
+        Assert::assertFalse((new RatingPolicy())->create(ratingRoleUser('evaluator')));
     });
 
     test('update ammette super-admin, admin e hr-manager, uno per uno', function (): void {
-        $policy = new RatingPolicy;
+        $policy = new RatingPolicy();
 
         foreach (['super-admin', 'admin', 'hr-manager'] as $ruolo) {
             Assert::assertTrue(
-                $policy->update(ratingRoleUser($ruolo), new Rating),
+                $policy->update(ratingRoleUser($ruolo), new Rating()),
                 sprintf('il ruolo %s deve poter aggiornare un rating', $ruolo),
             );
         }
     });
 
     test('update nega evaluator, che non è nell elenco', function (): void {
-        Assert::assertFalse((new RatingPolicy)->update(ratingRoleUser('evaluator'), new Rating));
+        Assert::assertFalse((new RatingPolicy())->update(ratingRoleUser('evaluator'), new Rating()));
     });
 });
 
 describe('RatingMorphPolicy — ogni ruolo dell elenco pesa', function (): void {
     test('viewAny ammette i quattro ruoli, uno per uno', function (): void {
-        $policy = new RatingMorphPolicy;
+        $policy = new RatingMorphPolicy();
 
         foreach (['super-admin', 'admin', 'hr-manager', 'evaluator'] as $ruolo) {
             Assert::assertTrue(
@@ -102,11 +102,11 @@ describe('RatingMorphPolicy — ogni ruolo dell elenco pesa', function (): void 
     });
 
     test('viewAny nega un ruolo estraneo', function (): void {
-        Assert::assertFalse((new RatingMorphPolicy)->viewAny(ratingRoleUser('dipendente')));
+        Assert::assertFalse((new RatingMorphPolicy())->viewAny(ratingRoleUser('dipendente')));
     });
 
     test('create ammette i quattro ruoli, uno per uno', function (): void {
-        $policy = new RatingMorphPolicy;
+        $policy = new RatingMorphPolicy();
 
         foreach (['super-admin', 'admin', 'hr-manager', 'evaluator'] as $ruolo) {
             Assert::assertTrue(
@@ -117,12 +117,12 @@ describe('RatingMorphPolicy — ogni ruolo dell elenco pesa', function (): void 
     });
 
     test('create nega un ruolo estraneo', function (): void {
-        Assert::assertFalse((new RatingMorphPolicy)->create(ratingRoleUser('dipendente')));
+        Assert::assertFalse((new RatingMorphPolicy())->create(ratingRoleUser('dipendente')));
     });
 
     test('update ammette super-admin, admin e hr-manager senza guardare il proprietario', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
 
         foreach (['super-admin', 'admin', 'hr-manager'] as $ruolo) {
@@ -134,8 +134,8 @@ describe('RatingMorphPolicy — ogni ruolo dell elenco pesa', function (): void 
     });
 
     test('delete ammette solo super-admin e admin, non hr-manager', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
 
         foreach (['super-admin', 'admin'] as $ruolo) {
@@ -154,8 +154,8 @@ describe('RatingMorphPolicy — ogni ruolo dell elenco pesa', function (): void 
 
 describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function (): void {
     test('senza modello valutato la proprietà non si può stabilire', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
         $morph->setRelation('model', null);
 
@@ -163,8 +163,8 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
     });
 
     test('la matricola coincidente rende proprietario', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
         $morph->setRelation('model', new OwnedModelStub(['matr' => 1]));
 
@@ -172,8 +172,8 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
     });
 
     test('la matricola diversa non rende proprietario', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
         $morph->setRelation('model', new OwnedModelStub(['matr' => 999]));
 
@@ -181,8 +181,8 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
     });
 
     test('la matricola sul modello non basta senza profilo utente', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
         $morph->setRelation('model', new OwnedModelStub(['matr' => 1]));
 
@@ -192,8 +192,8 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
     });
 
     test('user_id coincidente rende proprietario anche senza matricola', function (): void {
-        $policy = new RatingMorphPolicy;
-        $morph = new RatingMorph;
+        $policy = new RatingMorphPolicy();
+        $morph = new RatingMorph();
         $morph->user_id = 'altro-utente';
         $morph->setRelation('model', new OwnedModelStub(['user_id' => 'u-1']));
 
