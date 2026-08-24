@@ -15,7 +15,7 @@ uses(TestCase::class);
 
 describe('Rating', function (): void {
     test('can create rating', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }
@@ -34,7 +34,7 @@ describe('Rating', function (): void {
     });
 
     test('can create rating morph', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }

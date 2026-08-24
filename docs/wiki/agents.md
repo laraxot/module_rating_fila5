@@ -149,5 +149,13 @@ Related:
 ## Related Documentation
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
+<<<<<<< .merge_file_qfzqYS
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
+=======
+<<<<<<< HEAD
+- [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
+=======
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_SbU1cv
 - [Module Documentation](../README.md)
