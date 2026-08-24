@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Mockery;
-use Modules\Rating\Models\Traits\HasLikes;
 use Modules\Rating\Models\Like;
+use Modules\Rating\Models\Traits\HasLikes;
 use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
@@ -35,7 +35,7 @@ final class LikeableStub extends Model
         }
 
         /** @var MorphMany<Like, $this>&Mockery\MockInterface $fallback */
-        $fallback = Mockery::mock(MorphMany::class);
+        $fallback = \Mockery::mock(MorphMany::class);
         $fallback->shouldReceive('delete')->andReturn(0);
 
         return $fallback;
@@ -53,12 +53,12 @@ final class LikeableNativeRelationStub extends Model
 }
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 describe('HasLikes', function (): void {
     test('likedBy e dislikedBy ignorano utente null', function (): void {
-        $model = new LikeableStub;
+        $model = new LikeableStub();
 
         $model->likedBy(null);
         $model->dislikedBy(null);
@@ -67,12 +67,12 @@ describe('HasLikes', function (): void {
     });
 
     test('isLikedBy restituisce false senza utente', function (): void {
-        Assert::assertFalse((new LikeableStub)->isLikedBy(null));
+        Assert::assertFalse((new LikeableStub())->isLikedBy(null));
     });
 
     test('likes restituisce la relazione caricata', function (): void {
-        $model = new LikeableStub;
-        $collection = new Collection;
+        $model = new LikeableStub();
+        $collection = new Collection();
         $model->setRelation('likesRelation', $collection);
 
         $likes = $model->likes();
@@ -83,15 +83,15 @@ describe('HasLikes', function (): void {
 
     test('likedBy crea il pivot e invalida la relazione', function (): void {
         /** @var UserContract&Mockery\MockInterface $user */
-        $user = Mockery::mock(UserContract::class);
+        $user = \Mockery::mock(UserContract::class);
         $user->shouldReceive('getAttribute')->with('id')->andReturn(7);
         $user->id = '7';
 
         /** @var MorphMany<Like, LikeableStub>&Mockery\MockInterface $relation */
-        $relation = Mockery::mock(MorphMany::class);
+        $relation = \Mockery::mock(MorphMany::class);
         $relation->shouldReceive('create')->once()->with(['user_id' => '7']);
 
-        $model = new LikeableStub;
+        $model = new LikeableStub();
         $model->mockLikesRelation = $relation;
 
         $model->likedBy($user);
@@ -101,18 +101,18 @@ describe('HasLikes', function (): void {
 
     test('dislikedBy elimina il like esistente', function (): void {
         /** @var UserContract&Mockery\MockInterface $user */
-        $user = Mockery::mock(UserContract::class);
+        $user = \Mockery::mock(UserContract::class);
         $user->id = '3';
 
-        $like = Mockery::mock(Model::class);
+        $like = \Mockery::mock(Model::class);
         $like->shouldReceive('delete')->once();
 
         /** @var MorphMany<Like, LikeableStub>&Mockery\MockInterface $relation */
-        $relation = Mockery::mock(MorphMany::class);
+        $relation = \Mockery::mock(MorphMany::class);
         $relation->shouldReceive('where')->with('user_id', '3')->andReturnSelf();
         $relation->shouldReceive('first')->andReturn($like);
 
-        $model = new LikeableStub;
+        $model = new LikeableStub();
         $model->mockLikesRelation = $relation;
 
         $model->dislikedBy($user);
@@ -122,22 +122,22 @@ describe('HasLikes', function (): void {
 
     test('isLikedBy verifica exists sulla relazione', function (): void {
         /** @var UserContract&Mockery\MockInterface $user */
-        $user = Mockery::mock(UserContract::class);
+        $user = \Mockery::mock(UserContract::class);
         $user->id = '9';
 
         /** @var MorphMany<Like, LikeableStub>&Mockery\MockInterface $relation */
-        $relation = Mockery::mock(MorphMany::class);
+        $relation = \Mockery::mock(MorphMany::class);
         $relation->shouldReceive('where')->with('user_id', '9')->andReturnSelf();
         $relation->shouldReceive('exists')->andReturnTrue();
 
-        $model = new LikeableStub;
+        $model = new LikeableStub();
         $model->mockLikesRelation = $relation;
 
         Assert::assertTrue($model->isLikedBy($user));
     });
 
     test('likesRelation del trait restituisce MorphMany su Like', function (): void {
-        $model = new LikeableNativeRelationStub;
+        $model = new LikeableNativeRelationStub();
         $relation = $model->likesRelation();
 
         Assert::assertInstanceOf(MorphMany::class, $relation);
@@ -146,12 +146,12 @@ describe('HasLikes', function (): void {
 
     test('bootHasLikes elimina i like in cascata al deleting', function (): void {
         /** @var MorphMany<Like, LikeableStub>&Mockery\MockInterface $relation */
-        $relation = Mockery::mock(MorphMany::class);
+        $relation = \Mockery::mock(MorphMany::class);
         $relation->shouldReceive('delete')->once()->andReturn(1);
 
-        $model = new LikeableStub;
+        $model = new LikeableStub();
         $model->mockLikesRelation = $relation;
-        $model->setRelation('likesRelation', new Collection);
+        $model->setRelation('likesRelation', new Collection());
 
         $fire = new \ReflectionMethod(Model::class, 'fireModelEvent');
         $fire->setAccessible(true);
