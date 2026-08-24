@@ -6,3 +6,11 @@
 /docs/legacy
 *.lock
 .php-cs-fixer.cache
+.vscode
+
+# Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
+# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
+# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+.cursor/
+.devcontainer/
+.windsurf/

@@ -18,11 +18,7 @@ related:
 **Dopo**: Carico solo what's needed (~2K startup)
 
 \`\`\`diff
-<<<<<<< HEAD
 - 150+ rules embeddate in agents.md
-=======
-- 150+ rules embeddate in AGENTS.md
->>>>>>> laraxot/dev
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -47,11 +43,7 @@ related:
 
 ### 4. Wiki Indici Locali
 
-<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
-=======
-Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
->>>>>>> laraxot/dev
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei

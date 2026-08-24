@@ -1,3 +1,15 @@
+---
+title: 'Up'
+module: Rating
+type: reference
+slug: up
+description: 'aggiungere al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php /** * Get the attributes that should be cast. * * @return array<string, string> */ protected function casts(): array { '
+tags: [migrato-da-txt, rating]
+converted_from: up.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php
  /**
      * Get the attributes that should be cast.
@@ -40,7 +52,6 @@ aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.p
     }
 
     // -------------------------------------------------
-
 
 
 e' sbagliato ! perche' sono rindondati e dovrebbero stare dentro laravel/Modules/Rating/app/Models/BaseRating.php
