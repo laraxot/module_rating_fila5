@@ -3,7 +3,7 @@ title: "Rating Module - PHPStan Type Compliance"
 type: concept
 tags: [rating, phpstan, types, compliance, quality, static-analysis]
 created: 2026-06-10
-updated: 2026-08-18
+updated: 2026-08-24
 qmd: "rating module phpstan level max zero errors HasRatingsTrait trait.unused isolation"
 related:
   - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
@@ -14,19 +14,21 @@ related:
 
 ## Status
 
-`analyse Modules` (albero intero, neon unico, **senza** `--level`) è verde.
+`analyse Modules/Rating` (story 4.26, 2026-08-24): **[OK] No errors**. Famiglia E
+chiusa con guardie/`Assert::` sugli host stub, non con cast. `HasLikes` tipizza
+`Like` perché la classe esiste nel tree (fixture FQCN). `phpstan.neon` intoccato.
 
-`analyse Modules/Rating` da solo può segnalare `trait.unused` su `HasRatingsTrait`.
-Non è un trait morto: i consumer stanno in altri moduli (`Ptv\Models\BaseScheda` e i leaf).
-PHPStan vede i `use Trait` solo nei path passati all'analisi. Non aggiungere un `use`
-finto in Rating. Non toccare `phpstan.neon`. Gate canonico: `Modules`, non il sottoalbero.
+`analyse Modules` resta il gate canonico: sul sottoalbero `typeCoverage` può spegnersi.
+
+`HasRatingsTrait` può ancora dare `trait.unused` se l'analisi esclude gli stub:
+i consumer di produzione stanno in `Ptv\Models\BaseScheda`. Non aggiungere un `use` finto.
 
 ```
-Module:   Rating (nel tree Modules)
-Status:   GREEN su analyse Modules
-Pitfall:  trait.unused se analizzi solo Modules/Rating
+Module:   Rating
+Status:   GREEN su analyse Modules/Rating (4.26)
+Pitfall:  trait.unused se manca l'host stub; typeCoverage solo sul tree Modules
 Level:    max da laravel/phpstan.neon
-Updated:  2026-08-18
+Updated:  2026-08-24
 ```
 
 ## Module Structure

@@ -46,6 +46,14 @@ return [
         'order_column' => ['label' => 'order_column'],
         'created_at' => ['label' => 'created_at'],
         'updated_at' => ['label' => 'updated_at'],
+        'pivot' => [
+            'user' => [
+                'name' => ['label' => 'pivot.user.name'],
+            ],
+        ],
+        'value' => ['label' => 'value'],
+        'is_winner' => ['label' => 'is_winner'],
+        'reward' => ['label' => 'reward'],
     ],
     'actions' => [
         'enable' => [

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Mockery;
-use Modules\Rating\Models\OwnedModelStub;
+use Modules\Rating\Tests\Unit\Fixtures\OwnedModelStub;
 use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
@@ -50,7 +50,7 @@ function ratingRoleUser(string $ruolo, ?string $userId = null, bool $conProfilo 
     if ($conProfilo) {
         /** @var Mockery\MockInterface&ProfileContract $profilo */
         $profilo = Mockery::mock(ProfileContract::class);
-        $profilo->matr = 'M-1';
+        $profilo->matr = 1;
         $user->profile = $profilo;
     }
 
@@ -166,7 +166,7 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
         $policy = new RatingMorphPolicy;
         $morph = new RatingMorph;
         $morph->user_id = 'altro-utente';
-        $morph->setRelation('model', new OwnedModelStub(['matr' => 'M-1']));
+        $morph->setRelation('model', new OwnedModelStub(['matr' => 1]));
 
         Assert::assertTrue($policy->view(ratingRoleUser('dipendente', 'u-1', true), $morph));
     });
@@ -175,7 +175,7 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
         $policy = new RatingMorphPolicy;
         $morph = new RatingMorph;
         $morph->user_id = 'altro-utente';
-        $morph->setRelation('model', new OwnedModelStub(['matr' => 'M-999']));
+        $morph->setRelation('model', new OwnedModelStub(['matr' => 999]));
 
         Assert::assertFalse($policy->view(ratingRoleUser('dipendente', 'u-1', true), $morph));
     });
@@ -184,7 +184,7 @@ describe('RatingMorphPolicy::isOwner — i due rami di proprietà', function ():
         $policy = new RatingMorphPolicy;
         $morph = new RatingMorph;
         $morph->user_id = 'altro-utente';
-        $morph->setRelation('model', new OwnedModelStub(['matr' => 'M-1']));
+        $morph->setRelation('model', new OwnedModelStub(['matr' => 1]));
 
         // Utente senza profilo: `isset($ratedModel->matr) && $user->profile` deve restare
         // una congiunzione. Se diventasse una disgiunzione, questo test passerebbe a true.

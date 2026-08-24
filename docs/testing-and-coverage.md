@@ -4,9 +4,9 @@ description: Come si eseguono i test del modulo Rating, su quale perimetro si mi
 document_type: doc
 category: testing
 status: active
-version: 1.1.0
+version: 1.2.0
 language: it-IT
-updated_at: 2026-08-19
+updated_at: 2026-08-24
 related:
   - ../../../../bashscripts/docs/prompts/03-quality-gates.md
   - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
@@ -46,11 +46,13 @@ XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage 
 | 2026-08-19, primo giro | **13,1 %** | 34 passati, 7 skipped |
 | 2026-08-19, secondo giro | **32,3 %** | 69 passati, 7 skipped |
 | 2026-08-19 22:10, story 5.24 | **71,1 %** | 84 passati, 9 skipped — gate `--min=50` ✅ |
+| 2026-08-20, story 5.25 | **100 %** | 92 passati, 0 skipped — gate `--min=80` ✅ |
+| 2026-08-20, story 5.26 | **100,0 %** | 102 passati, 7 skipped — gate `--min=100` ✅ |
 
-Gate floor 50% (story [5.24](../../Xot/docs/stories/5.24.module-coverage-fifty-percent-floor.story.md)):
+Gate floor 100% (story 5.26):
 
 ```bash
-XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage --min=50
+XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage --min=100
 ```
 
 Pest stampa la tabella di coverage solo quando il run esce `0`.
@@ -69,13 +71,25 @@ require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
 
 Story: [`docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md`](../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md).
 
-Al 100 %: `Datas/RatingData`, `DataObjects/RatingData`, `Enums/{RuleEnum,SupportedLocale}`,
-`Filament/Blocks/Rating`, tutte le `Tables/` e `Schemas/` delle due resource,
-`Models/Policies/RatingPolicy`, `View/Components/Dashboard/Item`.
+Al **100 % statement** (5.26): tutto `Modules/Rating/app`, inclusi `HasRatingsTrait`,
+`HasLikes`, `BaseRating::scopeWithExtraAttributes`, policy `isOwner`, action sum con
+`rating_id`, widget StatsOverview con/senza record.
 
-Restano a 0 %: `Filament/Widgets/StatsOverview`, `Filament/Actions/Table/BetTableAction`,
-`Actions/HasRating/*`, `Models/{BaseModel,BaseRatingMorph}`, `Models/Traits/*` — vogliono
-il database o un contesto Livewire, non un unit test.
+### HasLikes e fixture `Like`
+
+`HasLikes` referenzia `Modules\Rating\Models\Like`; in questa installazione il contratto è
+esercitato dalla fixture `tests/Unit/Fixtures/Like.php`, caricata esplicitamente dal test e
+dichiarata con lo stesso FQCN. Il namespace è parte del contratto: spostarlo sotto
+`Modules\Rating\Tests` rende la relazione nativa irrisolvibile sia a runtime sia per
+PHPStan. **Nessun exclude** in `phpunit.xml`: il codice è raggiungibile e testato.
+
+Host stub per `HasRatingsTrait`: `tests/Unit/Fixtures/RatingsHostStub.php` nel namespace
+`Modules\Rating\Models\` (necessario a `XotBaseModel::getClassName()` che cerca `Models\`
+nello stack). Estende `AbstractRatingsHost`, non `Model` nudo: così gli accessor e le
+relazioni non arrivano a PHPStan come `mixed` (famiglia E, story 4.26). **Nessun file
+test cancellato** — solo guardie e generics.
+
+Story campagna: [`docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md`](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md).
 
 `--coverage-filter` **non** sposta il perimetro: Pest lo accetta e lo ignora.
 

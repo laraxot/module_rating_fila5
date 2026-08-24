@@ -16,6 +16,9 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
+mutates(\Modules\Rating\Models\Policies\RatingPolicy::class);
+mutates(\Modules\Rating\Models\Policies\RatingMorphPolicy::class);
+
 /**
  * Utente finto che conosce solo i ruoli: le policy di Rating non toccano il database,
  * interrogano `hasRole()` e confrontano `id` con `user_id` del morph.
@@ -196,4 +199,65 @@ describe('RatingMorphPolicy', function (): void {
 
         Assert::assertTrue($policy->view($user, $morph));
     });
+
+    test('view fallisce se profile presente ma modello valutato assente', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+        $morph->user_id = 'altro';
+        $morph->setRelation('model', null);
+
+        $user = ratingFakeUser(['evaluator'], 'u-1');
+        /** @var Mockery\MockInterface&ProfileContract $profilo */
+        $profilo = Mockery::mock(ProfileContract::class);
+        $user->profile = $profilo;
+
+        Assert::assertFalse($policy->view($user, $morph));
+    });
+
+    test('view passa se matr del modello coincide col profilo', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+        $morph->user_id = 'altro';
+
+        $ratedModel = new RatedModelStub;
+        $ratedModel->setAttribute('matr', 42);
+        $morph->setRelation('model', $ratedModel);
+
+        $user = ratingFakeUser(['evaluator'], 'u-1');
+        /** @var Mockery\MockInterface&ProfileContract $profilo */
+        $profilo = Mockery::mock(ProfileContract::class);
+        $profilo->matr = 42;
+        $user->profile = $profilo;
+
+        Assert::assertTrue($policy->view($user, $morph));
+        Assert::assertTrue($policy->update($user, $morph));
+    });
+
+    test('isOwner restituisce false se né user_id né matr coincidono', function (): void {
+        $policy = new RatingMorphPolicy;
+        $morph = new RatingMorph;
+        $morph->user_id = 'altro';
+
+        $ratedModel = new RatedModelStub;
+        $ratedModel->setAttribute('user_id', 'altro-owner');
+        $ratedModel->setAttribute('matr', 99);
+        $morph->setRelation('model', $ratedModel);
+
+        $user = ratingFakeUser(['evaluator'], 'u-1');
+        /** @var Mockery\MockInterface&ProfileContract $profilo */
+        $profilo = Mockery::mock(ProfileContract::class);
+        $profilo->matr = 42;
+        $user->profile = $profilo;
+
+        Assert::assertFalse($policy->view($user, $morph));
+        Assert::assertFalse($policy->update($user, $morph));
+    });
 });
+
+/**
+ * Host concreto per ownership via attributi Eloquent (niente classe anonima).
+ */
+final class RatedModelStub extends \Illuminate\Database\Eloquent\Model
+{
+    protected $table = 'rated_stub';
+}
