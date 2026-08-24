@@ -10,12 +10,12 @@ use ReflectionMethod;
 
 uses(TestCase::class);
 
-/**
+/*
  * I metodi pubblici di pagina Filament sono deprecati a favore di `table()`; qui
  * invochiamo via reflection solo per fissare il contratto attuale di BaseListRatings.
  */
 test('defines expected table columns without labels', function (): void {
-    $page = new ListRatings;
+    $page = new ListRatings();
     $method = new ReflectionMethod(BaseListRatings::class, 'getTableColumns');
     /** @var array<string, mixed> $columns */
     $columns = $method->invoke($page);
@@ -24,7 +24,7 @@ test('defines expected table columns without labels', function (): void {
 });
 
 test('defines default empty filters and header actions', function (): void {
-    $page = new ListRatings;
+    $page = new ListRatings();
     $filtersMethod = new ReflectionMethod($page, 'getTableFilters');
     $headerMethod = new ReflectionMethod($page, 'getTableHeaderActions');
 
@@ -38,7 +38,7 @@ test('defines default empty filters and header actions', function (): void {
 });
 
 test('defines view edit delete actions and bulk delete', function (): void {
-    $page = new ListRatings;
+    $page = new ListRatings();
     $actionsMethod = new ReflectionMethod($page, 'getTableActions');
     $bulkMethod = new ReflectionMethod($page, 'getTableBulkActions');
 
