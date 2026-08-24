@@ -7,7 +7,6 @@ namespace Modules\Rating\Tests\Unit;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
-use Mockery;
 use Mockery\MockInterface;
 use Modules\Rating\Filament\RelationManagers\RatingsRelationManager;
 use Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers\RatingsRelationManager as HasRatingRatingsRelationManager;
@@ -17,7 +16,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 /**
@@ -26,7 +25,7 @@ afterEach(function (): void {
 function ratingRelationManagerColumnNames(RatingsRelationManager|HasRatingRatingsRelationManager $manager): array
 {
     /** @var HasTable&MockInterface $livewire */
-    $livewire = Mockery::mock(HasTable::class);
+    $livewire = \Mockery::mock(HasTable::class);
 
     $table = $manager->table(Table::make($livewire));
 
@@ -37,7 +36,7 @@ function ratingRelationManagerColumnNames(RatingsRelationManager|HasRatingRating
 }
 
 test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function (): void {
-    $manager = new RatingsRelationManager;
+    $manager = new RatingsRelationManager();
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 
@@ -50,7 +49,7 @@ test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function ():
 });
 
 test('HasRatingResource RatingsRelationManager allinea lo schema tabella', function (): void {
-    $manager = new HasRatingRatingsRelationManager;
+    $manager = new HasRatingRatingsRelationManager();
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 

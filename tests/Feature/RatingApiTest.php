@@ -6,18 +6,19 @@ namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
 
+use PHPUnit\Framework\Assert;
+
 uses(TestCase::class);
 
 describe('Rating Api', function (): void {
     beforeEach(function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         $this->skipTest('Le rotte HTTP /api/ratings non sono registrate in questa install (architettura Folio/Actions).');
     });
 
@@ -89,7 +90,7 @@ describe('Rating Api', function (): void {
         $response = deleteJson("/api/ratings/{$rating->id}");
 
         Assert::assertSame(204, $response->status());
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     });
 

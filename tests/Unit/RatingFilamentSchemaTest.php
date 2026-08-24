@@ -17,7 +17,6 @@ use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingTable;
 use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use PHPUnit\Framework\Assert;
-use ReflectionMethod;
 
 uses(TestCase::class);
 
@@ -26,7 +25,7 @@ uses(TestCase::class);
  * campo e sostituisce la label esplicita. Un array a chiavi numeriche è una regressione,
  * non uno stile diverso.
  *
- * @param  array<array-key, mixed>  $schema
+ * @param array<array-key, mixed> $schema
  */
 function ratingAssertKeyedSchema(array $schema, string $tipo): void
 {
@@ -67,7 +66,7 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
 
     foreach ($classi as $classe) {
         $tabella = new $classe();
-        $actionsMethod = new ReflectionMethod($tabella, 'getTableActions');
+        $actionsMethod = new \ReflectionMethod($tabella, 'getTableActions');
 
         Assert::assertIsArray($tabella->getTableFilters());
         Assert::assertIsArray($actionsMethod->invoke($tabella));
@@ -78,7 +77,7 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
 test('RatingsTable copre i campi anagrafici del rating', function (): void {
     Assert::assertSame(
         ['id', 'title', 'slug', 'rule', 'is_disabled', 'is_readonly', 'order_column', 'created_at', 'updated_at'],
-        array_keys((new RatingsTable)->getTableColumns()),
+        array_keys((new RatingsTable())->getTableColumns()),
     );
 });
 
