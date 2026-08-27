@@ -14,22 +14,22 @@
 The root level contains strategic documents, analyses, and consolidated guides:
 
 - [00-INDEX.md](00-INDEX.md)
-- [INDEX.md](INDEX.md)
+- [INDEX.md](index.md)
 - [README.md](README.md)
 - [BEST_PRACTICES.md](BEST_PRACTICES.md)
 - [BAD_PRACTICES.md](BAD_PRACTICES.md)
 - [CHANGELOG.md](CHANGELOG.md)
 - [FALSE_FRIENDS.md](FALSE_FRIENDS.md)
 - [LICENSE.md](LICENSE.md)
-- [METODI_DUPLICATI_ANALISI.md](METODI_DUPLICATI_ANALISI.md)
-- [MIGRATIONS.md](MIGRATIONS.md)
-- [ON-DEMAND-PATTERN.md](ON-DEMAND-PATTERN.md)
-- [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md)
+- [METODI_DUPLICATI_ANALISI.md](metodi_duplicati_analisi.md)
+- [MIGRATIONS.md](migrations.md)
+- [ON-DEMAND-PATTERN.md](on-demand-pattern.md)
+- [PERFORMANCE-OPTIMIZATION.md](performance-optimization.md)
 - [PRODUCT_LAUNCH_PLAN.md](PRODUCT_LAUNCH_PLAN.md)
 - [PRODUCT_ROADMAP.md](PRODUCT_ROADMAP.md)
 - [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md)
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
-- [QMD-SETUP.md](QMD-SETUP.md)
+- [PROJECT-STRUCTURE.md](project-structure.md)
+- [QMD-SETUP.md](qmd-setup.md)
 - [REDUNDANCY_ANALYSIS.md](REDUNDANCY_ANALYSIS.md)
 - [SPRINT_PLANNING.md](SPRINT_PLANNING.md)
 - [USER_RESEARCH.md](USER_RESEARCH.md)
@@ -41,7 +41,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [architecture.md](architecture.md)
 - [best-practices.md](best-practices.md)
 - [case-sensitivity-rules.md](case-sensitivity-rules.md)
-- [changelog.md](changelog.md)
+- [changelog.md](CHANGELOG.md)
 - [code-quality-analysis.md](code-quality-analysis.md)
 - [code-redundancy-audit.md](code-redundancy-audit.md)
 - [codex-error-fix.md](codex-error-fix.md)
@@ -64,7 +64,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [index.md](index.md)
 - [laravel-13-upgrade.md](laravel-13-upgrade.md)
 - [launch-plan.md](launch-plan.md)
-- [license.md](license.md)
+- [license.md](LICENSE.md)
 - [merge-conflict-files-list.md](merge-conflict-files-list.md)
 - [merge-conflicts-list.md](merge-conflicts-list.md)
 - [metodi-duplicati-analisi.md](metodi-duplicati-analisi.md)
@@ -111,7 +111,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [AGENTS.md](wiki/AGENTS.md)
   - [schema.md](wiki/schema.md)
   - [README.md](wiki/README.md)
-  - [agents.md](wiki/agents.md)
+  - [agents.md](wiki/AGENTS.md)
   - [index.md](wiki/index.md)
   - [log.md](wiki/log.md)
   - [overview.md](wiki/overview.md)
@@ -183,7 +183,7 @@ Raw source documents and import sources:
 Machine learning and documentation knowledge base:
 
 - [AGENTS.md](llm-wiki/AGENTS.md)
-- [agents.md](llm-wiki/agents.md)
+- [agents.md](llm-wiki/AGENTS.md)
 - [index.md](llm-wiki/index.md)
 - [log.md](llm-wiki/log.md)
 
@@ -237,7 +237,7 @@ Additional archived content:
 | 2026-07-28 | [schema.md](schema.md) | root |
 | 2026-07-28 | [user-interface.md](user-interface.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
-| 2026-07-28 | [changelog.md](changelog.md) | root |
+| 2026-07-28 | [changelog.md](CHANGELOG.md) | root |
 | 2026-07-28 | [conflict-resolution.md](conflict-resolution.md) | root |
 | 2026-07-28 | [architecture-rules.md](architecture-rules.md) | root |
 | 2026-07-28 | [file-naming-rules.md](file-naming-rules.md) | root |

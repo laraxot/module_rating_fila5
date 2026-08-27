@@ -440,3 +440,30 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
 **Ultimo aggiornamento**: 2024-02-11
+
+
+---
+
+## Contenuto assorbito da `ARCHITECTURE.md`
+
+# Rating Module Architecture
+
+## Overview
+The Rating module provides star ratings, reviews, and feedback mechanisms.
+
+## Components
+- **Rating Model**: Core rating entity
+- **Review System**: User-submitted reviews with moderation
+- **Aggregation**: Rating calculations and statistics
+- **Display Components**: Star display widgets
+
+## Features
+- 1-5 star ratings
+- Text reviews with moderation queue
+- Rating aggregation (average, count)
+- User-specific ratings (prevent duplicate)
+
+## Integration
+- Rateable trait for other models
+- Filament admin interface for moderation
+- Statistics dashboard widget

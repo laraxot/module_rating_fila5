@@ -3,13 +3,19 @@
 namespace Modules\Rating\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Rating\Models\Like;
 
+/**
+ * @extends Factory<Like>
+ */
 class LikeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
+     *
+     * @var class-string<Like>
      */
-    protected $model = \Modules\Rating\Models\Like::class;
+    protected $model = Like::class;
 
     /**
      * Define the model's default state.
