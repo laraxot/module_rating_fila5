@@ -19,15 +19,7 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
-<<<<<<< .merge_file_VEGcaF
 │   ├── schema.md          # Questo file
-=======
-<<<<<<< HEAD
-│   ├── schema.md          # Questo file
-=======
-│   ├── SCHEMA.md          # Questo file
->>>>>>> laraxot/dev
->>>>>>> .merge_file_kvZppw
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
