@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit\Fixtures;
+namespace Modules\Rating\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Model;
 

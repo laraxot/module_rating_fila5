@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Models;
+namespace Modules\Rating\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Modules\Rating\Models\AbstractRatingsHost;
+use Modules\Rating\Models\Rating;
 
 /**
- * Host di test in namespace Models\ (richiesto da XotBaseModel::getClassName()).
+ * Host di test (richiesto da XotBaseModel::getClassName()).
  * Caricato solo dai Unit test via require_once.
  */
 class RatingsHostStub extends AbstractRatingsHost
