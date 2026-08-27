@@ -32,12 +32,33 @@ use Webmozart\Assert\Assert;
 trait HasRatingsTrait
 {
     /**
+     * Resolve the Rating class for the host model's module.
+     *
+     * @return class-string<BaseRating>
+     */
+    protected function resolveRatingClass(): string
+    {
+        // Try to resolve Rating class based on host model's namespace
+        $hostClass = static::class;
+        $namespace = Str::beforeLast($hostClass, '\\Models\\');
+
+        // Check if module-specific Rating exists
+        $moduleRatingClass = $namespace.'\\Models\\Rating';
+        if (class_exists($moduleRatingClass) && is_subclass_of($moduleRatingClass, BaseRating::class)) {
+            return $moduleRatingClass;
+        }
+
+        // Fallback to base Rating module
+        return Rating::class;
+    }
+
+    /**
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
     {
         /** @var class-string<BaseRating> $related */
-        $related = Rating::getClassName();
+        $related = $this->resolveRatingClass();
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
@@ -56,7 +77,7 @@ trait HasRatingsTrait
         $userId = Auth::id();
 
         /** @var class-string<BaseRating> $related */
-        $related = Rating::getClassName();
+        $related = $this->resolveRatingClass();
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var HasMany<BaseRating, TModel> $query */
@@ -103,7 +124,7 @@ trait HasRatingsTrait
         $userId = Auth::id();
 
         /** @var class-string<BaseRating> $related */
-        $related = Rating::getClassName();
+        $related = $this->resolveRatingClass();
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $query */
@@ -163,7 +184,7 @@ trait HasRatingsTrait
     public function syncRatingsWhere(array $where): Collection
     {
         /** @var class-string<BaseRating> $ratingClass */
-        $ratingClass = Rating::getClassName();
+        $ratingClass = $this->resolveRatingClass();
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();

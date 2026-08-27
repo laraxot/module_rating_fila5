@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Mockery;
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Models\RatingsHostStub;
+use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-require_once __DIR__.'/Fixtures/RatingsHostStub.php';
+require_once __DIR__.'/../Fixtures/RatingsHostStub.php';
 
 afterEach(function (): void {
     \Mockery::close();

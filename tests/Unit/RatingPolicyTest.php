@@ -10,6 +10,7 @@ use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
+use Modules\Rating\Tests\Fixtures\RatedModelStub;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
@@ -253,11 +254,3 @@ describe('RatingMorphPolicy', function (): void {
         Assert::assertFalse($policy->update($user, $morph));
     });
 });
-
-/**
- * Host concreto per ownership via attributi Eloquent (niente classe anonima).
- */
-final class RatedModelStub extends \Illuminate\Database\Eloquent\Model
-{
-    protected $table = 'rated_stub';
-}
