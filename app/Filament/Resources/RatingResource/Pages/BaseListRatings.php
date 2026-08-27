@@ -15,7 +15,7 @@ abstract class BaseListRatings extends XotBaseListRecords
 
     /**
      * @return array<string, mixed>
-     */
+     
     public function getTableColumns(): array
     {
         return [
@@ -42,4 +42,5 @@ abstract class BaseListRatings extends XotBaseListRecords
 
         // TextColumn::make('color'),
     }
+    */
 }

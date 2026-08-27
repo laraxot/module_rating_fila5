@@ -8,49 +8,14 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Mockery;
+use Modules\Rating\Tests\Fixtures\LikeableNativeRelationStub;
+use Modules\Rating\Tests\Fixtures\LikeableStub;
 use Modules\Rating\Models\Like;
-use Modules\Rating\Models\Traits\HasLikes;
 use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
-
-require_once __DIR__.'/Fixtures/Like.php';
-
-final class LikeableStub extends Model
-{
-    use HasLikes;
-
-    protected $table = 'likeable_stub';
-
-    /** @var MorphMany<Like, $this>|null */
-    public ?MorphMany $mockLikesRelation = null;
-
-    /** @return MorphMany<Like, $this> */
-    public function likesRelation(): MorphMany
-    {
-        if ($this->mockLikesRelation instanceof MorphMany) {
-            return $this->mockLikesRelation;
-        }
-
-        /** @var MorphMany<Like, $this>&Mockery\MockInterface $fallback */
-        $fallback = \Mockery::mock(MorphMany::class);
-        $fallback->shouldReceive('delete')->andReturn(0);
-
-        return $fallback;
-    }
-}
-
-/**
- * Non sovrascrive `likesRelation`: esercita il morphMany del trait (richiede Like stub).
- */
-final class LikeableNativeRelationStub extends Model
-{
-    use HasLikes;
-
-    protected $table = 'likeable_native_stub';
-}
 
 afterEach(function (): void {
     \Mockery::close();

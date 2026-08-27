@@ -9,25 +9,13 @@ use Filament\Tables\Table;
 use Modules\Rating\Filament\Actions\Table\BetTableAction;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\EditRatingMorph;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\ListRatingMorphs;
-use Modules\Rating\Filament\Resources\RatingResource\Pages\BaseEditRating;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\EditRating;
-use Modules\Rating\Filament\Resources\RatingResource\Tables\BaseRatingsTable;
+use Modules\Rating\Tests\Fixtures\BaseEditRatingStub;
+use Modules\Rating\Tests\Fixtures\BaseRatingsTableStub;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
-
-/**
- * Stub concreto: evita classi anonime che in alcuni contesti PHPUnit
- * innescano side-effect del costruttore XotBaseResourceTable.
- */
-final class BaseRatingsTableStub extends BaseRatingsTable
-{
-}
-
-final class BaseEditRatingStub extends BaseEditRating
-{
-}
 
 afterEach(function (): void {
     \Mockery::close();
