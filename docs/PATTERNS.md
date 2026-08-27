@@ -408,5 +408,5 @@ $validated = $request->validate($rating->rules());
 
 - [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
+- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism
