@@ -29,6 +29,7 @@ rifare e contestare.
 | PHPInsights — Style | 93.8 % |
 | File `.md` sotto `docs/` | 167 |
 | `TODO`/`FIXME`/`HACK` | 0 |
+| Test con casi che non girano (senza suffisso `Test.php`) | 0 |
 | Collisioni di case nel codice | 2 |
 | Collisioni di case nei docs | 0 |
 | Marker di conflitto | 0 |
@@ -90,6 +91,10 @@ sposta il bootstrap di `Pest.php` e `Helpers.php`.
 - **PHPMD misurato su `app/`, non sulla root del modulo.** Puntandolo alla root,
   una singola classe anonima nei test fa abortire tutta l'analisi e stampare zero
   rilievi. Uno zero PHPMD sulla root non e una prova di pulizia.
+- **I file sotto `tests/` senza suffisso `Test.php` non sono tutti test.** Una
+  prima passata ne aveva contati 62 come "test che non girano": verificati uno a uno,
+  47 sono stub, fake, helper e classi base che correttamente non hanno il suffisso.
+  Il conteggio qui sopra riporta solo i file che contengono davvero casi di test.
 - **PHPInsights `Complexity 100 %` su tutte e 22 le unita.** Un valore identico
   ovunque non sta discriminando niente: va trattato come non informativo finche
   non se ne capisce la configurazione.
