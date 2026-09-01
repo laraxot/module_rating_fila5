@@ -17,9 +17,9 @@ rifare e contestare.
 | Metrica | Valore |
 |---|---:|
 | File PHP | 137 |
-| Righe di codice | 6659 |
+| Righe di codice | 6678 |
 | File di test `*Test.php` | 20 |
-| Casi di test | 124 |
+| Casi di test | 125 |
 | Casi di test per file PHP | 0.91 |
 | `@phpstan-ignore` nel codice | 2 |
 | Rilievi PHPMD su `app/` | 38 *(analisi parziale: abortita in corso)* |
@@ -27,7 +27,7 @@ rifare e contestare.
 | PHPInsights — Complexity | 100.0 % |
 | PHPInsights — Architecture | 78.6 % |
 | PHPInsights — Style | 93.8 % |
-| File `.md` sotto `docs/` | 167 |
+| File `.md` sotto `docs/` | 169 |
 | `TODO`/`FIXME`/`HACK` | 0 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |
 | Collisioni di case nel codice | 2 |
@@ -45,9 +45,16 @@ da `ignoreErrors` e non vengono contate da nessun gate.
 
 ### 2 parse error PHPMD
 
-Due file non vengono analizzati affatto. Lo stack trace annega nel report: si trovano
-cercando `Unexpected token`. Finche' restano, il numero di rilievi e' una
-sottostima e non un risultato.
+Due file non vengono analizzati affatto: il conteggio di 38 rilievi e' una sottostima.
+Si trovano cercando `Unexpected token` nell'output.
+
+### Il coverage e' stato sbloccato il 1 settembre
+
+La suite era rossa su `tests/Unit/ListRatingsPageTest.php`, che asseriva 5 colonne su
+`BaseListRatings::getTableColumns()`. Quel metodo e' chiuso dentro un docblock mai
+terminato, perche' le colonne sono state spostate di proposito in
+`app/Filament/Resources/RatingResource/Tables/`. Il test era vecchio, non il codice:
+riscritto sul contratto vero, la suite e' verde e il coverage e' **80,8 %**.
 
 ### 2 soppressioni `@phpstan-ignore`
 
@@ -69,16 +76,8 @@ Percorsi coinvolti:
 
 ## Coverage
 
-**`docs/coverage.md` non esiste in questo modulo.** Il pilastro 5 dello standing
-order lo richiede. Va creato alla prossima run di Pest, con il comando canonico:
-
-```bash
-cd laravel
-XDEBUG_MODE=coverage ./vendor/bin/pest Modules/Rating/tests -c Modules/Rating/phpunit.xml --coverage --min=0
-```
-
-Servono **entrambe** le opzioni: `-c` sposta il perimetro di coverage, il path
-sposta il bootstrap di `Pest.php` e `Helpers.php`.
+La misura sta in [`coverage.md`](./coverage.md), che va aggiornato a ogni run e non
+sostituito.
 
 ## Cosa questa misura non vede
 
