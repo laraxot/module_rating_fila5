@@ -31,7 +31,7 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 - `database/migrations/2023_01_01_000000_create_ratings_table.php`
 - `database/migrations/2026_03_12_180000_create_ratings_table.php`
 
-**Azione:** una sola `create` + migration `alter` successive; archiviare la ridondante in `_archive_redundant/` (pattern Notify/Xot).
+**Azione:** una sola `create` owner; colonne in `tableUpdate`; **`git rm`** sui duplicati (mai `_archive_redundant`).
 
 ## Widget
 
