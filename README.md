@@ -15,6 +15,25 @@ errori, `level: max`). Rilanciabile: `cd laravel && ./vendor/bin/phpstan analyse
 
 ---
 
+## Scopo e confini
+
+Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo
+estendono `BaseRating` o `BaseRatingMorph`** (Ptv, Performance, Progressioni,
+IndennitaResponsabilita, IndennitaCondizioniLavoro) e `Modules/Ptv/app/Models/BaseScheda.php:111`
+compone `HasRatingsTrait`. Due tabelle sole: `ratings` (il criterio, schemaless) e
+`rating_morph` (il voto, polimorfo). La direzione delle dipendenze è pulita — 38 file
+toccano Xot, 2 Media, **zero** un modulo di dominio.
+
+I confini rotti stanno nel Filament e nei modelli: 5 classi `Tables/` per 2 Resource (due
+mai risolte, vive solo nei test; `RatingsTable` ricopia le 9 colonne di `BaseRatingsTable`
+invece di estenderla), 2 `RatingsRelationManager` che estendono Filament direttamente —
+le uniche violazioni di `XotBase*` fra Activity, Job e Rating — e `Like` che dichiara
+`$table = 'likes'` senza che nessuna migrazione crei quella tabella.
+
+Scopo esteso, misure e mosse: [docs/scopo.md](docs/scopo.md).
+
+---
+
 ## Perché
 
 Uno schema rigido per ogni tipo di valutazione moltiplica le migration e
@@ -89,3 +108,10 @@ cd laravel
 ---
 
 **Modulo** `rating` · **Laraxot / FixCity Platform** · licenza MIT
+
+---
+
+## Scopo del modulo
+
+Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartiene:
+[`docs/purpose.md`](./docs/purpose.md).

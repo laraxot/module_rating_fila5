@@ -188,7 +188,12 @@ trait HasRatingsTrait
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
-
+        /*
+        dddx([
+            'ratings' => $ratings,
+            'where' => $where,
+        ]);
+        */
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
