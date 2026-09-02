@@ -6,7 +6,7 @@ created: 2026-07-28
 updated: 2026-07-28
 qmd: "rating patterns"
 related:
-  - "./BEST_PRACTICES.md"
+  - "./best-practices.md"
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
 ---
@@ -406,7 +406,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
+- [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

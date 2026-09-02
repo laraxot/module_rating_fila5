@@ -45,23 +45,33 @@ naming è meccanico) oppure rimossi se davvero non servono.
 ## 172 documenti per 59 file di codice
 
 Un rapporto di quasi 3 documenti per ogni file PHP. `bad-practices.md` e
-`BAD_PRACTICES.md` coesistono (collisione di case, lo stesso pattern già
+`BAD_PRACTICES.md` coesistevano (collisione di case, lo stesso pattern già
 visto altrove nel monorepo), così come `best-practices.md` /
 `BEST_PRACTICES.md`. Su un filesystem case-insensitive questi sarebbero già
-un errore fatale; qui sopravvivono solo perché Linux è permissivo, non
-perché qualcuno li abbia voluti entrambi. `docs/00-INDEX.md` esiste, quindi
+un errore fatale; sopravvivevano solo perché Linux è permissivo, non
+perché qualcuno li avesse voluti entrambi. `docs/00-INDEX.md` esiste, quindi
 il modulo ha già un punto d'ingresso — usarlo per marcare come deprecati (o
 cancellare) i cluster duplicati sarebbe più utile di scriverne un altro.
 
+**Aggiornamento 2026-09-02**: `bad-practices.md`/`BAD_PRACTICES.md` erano
+byte-identici, cancellata la copia uppercase. `best-practices.md`/
+`BEST_PRACTICES.md` NON erano deduplicabili per contenuto: uno rimandava a
+un canonical Themes vuoto (`.gitkeep-Modules`), l'altro descriveva classi
+(`RatingService`, `RatingStar`, `AverageRating`) inesistenti nel modulo —
+verificato con grep, zero risultati. Nessuno dei due era tenibile; sostituiti
+con una nota onesta in `best-practices.md`, vedi quel file.
+
 ## Priorità concrete
 
-1. Cancellare `RatingTrait`/`HasRating` se l'indagine del 2026-09-01 regge
-   ancora — un `grep -rn` di conferma costa trenta secondi.
+1. ~~Cancellare `RatingTrait`/`HasRating` se l'indagine del 2026-09-01 regge
+   ancora~~ — riverificato 2026-09-02: zero consumer, ancora vero. Tenuti con
+   motivo scritto (`@phpstan-ignore trait.unused`), non cancellati: sono API
+   di piattaforma dichiarate, non morte per errore. Vedi
+   `docs/chat/phpstan-ignore-audit-2026-09-02.md`.
 2. Popolare `require-dev` e decidere il destino dei tre `repositories` path
    inutilizzati, come primo passo verso una CI reale.
-3. Deduplicare `bad-practices.md`/`BAD_PRACTICES.md` e
-   `best-practices.md`/`BEST_PRACTICES.md`, tenendo il contenuto più
-   completo dei due (da verificare riga per riga, non a dimensione file).
+3. ~~Deduplicare `bad-practices.md`/`BAD_PRACTICES.md` e
+   `best-practices.md`/`BEST_PRACTICES.md`~~ — fatto 2026-09-02.
 
 Rating è il modulo di questi cinque più vicino a essere davvero pulito: gli
 basta smettere di accumulare fantasmi — di trait e di file — invece di
