@@ -6,7 +6,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "00 INDEX"
 related:
-  - "./BAD_PRACTICES.md"
+  - "./bad-practices.md"
 ---
 
 # 📚 RATING Module - Documentation Index

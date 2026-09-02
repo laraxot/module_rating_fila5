@@ -16,10 +16,10 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [00-INDEX.md](00-INDEX.md)
 - [INDEX.md](index.md)
 - [README.md](README.md)
-- [BEST_PRACTICES.md](BEST_PRACTICES.md)
-- [BAD_PRACTICES.md](BAD_PRACTICES.md)
+- [best-practices.md](best-practices.md)
+- [bad-practices.md](bad-practices.md)
 - [CHANGELOG.md](CHANGELOG.md)
-- [FALSE_FRIENDS.md](FALSE_FRIENDS.md)
+- [false-friends.md](false-friends.md)
 - [LICENSE.md](LICENSE.md)
 - [METODI_DUPLICATI_ANALISI.md](metodi_duplicati_analisi.md)
 - [MIGRATIONS.md](migrations.md)
@@ -30,7 +30,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md)
 - [PROJECT-STRUCTURE.md](project-structure.md)
 - [QMD-SETUP.md](qmd-setup.md)
-- [REDUNDANCY_ANALYSIS.md](REDUNDANCY_ANALYSIS.md)
+- [redundancy-analysis.md](redundancy-analysis.md)
 - [SPRINT_PLANNING.md](SPRINT_PLANNING.md)
 - [USER_RESEARCH.md](USER_RESEARCH.md)
 - [agent-confidence-discipline.md](agent-confidence-discipline.md)
@@ -223,7 +223,7 @@ Additional archived content:
 |------|------|----------|
 | 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
-| 2026-07-28 | [BEST_PRACTICES.md](BEST_PRACTICES.md) | root |
+| 2026-07-28 | [best-practices.md](best-practices.md) | root |
 | 2026-07-28 | [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md) | root |
 | 2026-07-28 | [PRODUCT_ROADMAP.md](PRODUCT_ROADMAP.md) | root |
 | 2026-07-28 | [SPRINT_PLANNING.md](SPRINT_PLANNING.md) | root |
@@ -276,7 +276,7 @@ Additional archived content:
 ## Recommendations
 
 1. **Deduplication**: Consolidate similar files:
-   - `best-practices.md` vs `BEST_PRACTICES.md`
+   - ~~`best-practices.md` vs `BEST_PRACTICES.md`~~ — risolto 2026-09-02, vedi `best-practices.md`
    - `changelog.md` vs `CHANGELOG.md` vs `changelog-*.md`
    - `license.md` vs `LICENSE.md`
    - `product-*.md` vs `PRODUCT_*.md`

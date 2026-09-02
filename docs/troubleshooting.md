@@ -75,7 +75,7 @@ $sum = $rating->value + 1;  // Should work without error
 - Add PHPStan property types: `@property float $value`
 
 **Reference:**
-- [BEST_PRACTICES.md](./BEST_PRACTICES.md) — DRY rule definitions
+- [best-practices.md](./best-practices.md) — DRY rule definitions
 - [architecture.md](./architecture.md) — Rating model casts
 
 ---
@@ -564,7 +564,7 @@ $this->post('/ratings', ['category' => 'technical'])
 
 - **Architecture issues** → [architecture.md](./architecture.md)
 - **Design patterns** → [PATTERNS.md](./PATTERNS.md)
-- **Code style** → [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+- **Code style** → [best-practices.md](./best-practices.md)
 - **Wiki concepts** → [wiki/](./wiki/)
 - **PHPStan errors** → Prefix with `phpstan` in QMD: `qmd search "phpstan rating"`
 
