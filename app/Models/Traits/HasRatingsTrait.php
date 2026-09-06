@@ -243,7 +243,7 @@ trait HasRatingsTrait
         $res = [];
         foreach ($rules as $key => $ruleValue) {
             $keyWithPostfix = $key.$postfix;
-            $ruleStr = (string) $ruleValue;
+            $ruleStr = is_string($ruleValue) ? $ruleValue : '';
 
             // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
