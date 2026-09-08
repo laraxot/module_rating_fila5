@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models;
 
+use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -19,12 +20,15 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 /**
  * Modules\Rating\Models\BaseRating.
  *
  * Classe base astratta per tutti i modelli Rating nei vari moduli.
  * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
+ * Utilizza HasRecursiveRelationships per l'albero genitore-figlio (adjacency list):
+ * children(), parent(), ancestors(), descendants() arrivano dal trait e non si riscrivono.
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
@@ -54,6 +58,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property bool|null       $is_disabled
  * @property bool|null       $is_readonly
  * @property int|null        $order_column
+ * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  *
  * @method static Builder|BaseRating whereColor($value)
@@ -82,15 +87,41 @@ use Spatie\Sluggable\SlugOptions;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-abstract class BaseRating extends BaseModel implements HasMedia
+abstract class BaseRating extends BaseModel implements HasMedia, HasRecursiveRelationshipsContract
 {
     use HasSlug;
     use InteractsWithMedia;
+    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
+    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
+    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
+    // due relazioni scritte a mano non possono dare.
+    use HasRecursiveRelationships;
+
+    /**
+     * Etichetta del nodo nell'albero.
+     *
+     * Richiesta da {@see HasRecursiveRelationshipsContract} e usata da
+     * `GetTreeOptionsByModelClassAction` per costruire le opzioni indentate del `Select`
+     * su `parent_id`. Per un criterio l'etichetta e' il titolo.
+     */
+    public function getLabel(): string
+    {
+        $title = $this->getAttribute('title');
+
+        if (is_string($title) && $title !== '') {
+            return $title;
+        }
+
+        $key = $this->getKey();
+
+        return '#'.(is_scalar($key) ? (string) $key : '');
+    }
 
     /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
+        'parent_id',
         'title',
         'color',
         'txt',
@@ -137,11 +168,11 @@ abstract class BaseRating extends BaseModel implements HasMedia
     }
 
     /**
-     * @return MorphTo<Model, $this>
+     * @return MorphTo<Model, BaseRating>
      */
     public function linkedTo(): MorphTo
     {
-        return $this->morphTo('model');
+        return $this->morphTo('model'); // @phpstan-ignore return.type
     }
 
     /**
