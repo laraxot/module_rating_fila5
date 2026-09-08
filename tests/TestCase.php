@@ -53,7 +53,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         parent::setUp();
 
-        $database = database_path('database.sqlite');
+        $database = self::sharedSqlitePath();
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
