@@ -2,11 +2,27 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-updated: 2026-09-01
+updated: 2026-09-08
 qmd: "coverage rating pest misura reale test saltati database"
 ---
 
 # Coverage del modulo Rating
+
+## Verifica PHPStan dell'8 settembre 2026
+
+Nessuna nuova misura di coverage. Il preflight trova `app.env=testing` nella cache
+configurazione, ma la connessione `indennita_responsabilita` usata da
+`ChildrenRelationManagerParentTest` non ha un database con suffisso `_test`.
+La suite con scritture non viene lanciata finché l'isolamento non è provato.
+
+Il contratto `linkedTo()` è stato verificato con uno smoke CLI sul modello reale,
+senza bootstrap Laravel: chiavi `model_type`/`model_id`, padre corretto, nessuna
+connessione e nessuna query. Non equivale a una misura Pest o coverage.
+
+Dettagli, gate statici e cause in [Contratto linkedTo](phpstan-linked-to-contract.md).
+I numeri e il comando nella sezione seguente descrivono la configurazione storica
+del 1 settembre; il file `Modules/Rating/phpunit.xml` oggi non è presente e il
+comando non va riutilizzato come configurazione corrente.
 
 ## Misura del 1 settembre 2026
 
@@ -66,4 +82,3 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
-
