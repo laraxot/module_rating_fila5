@@ -82,7 +82,8 @@ test('RatingsTable copre i campi anagrafici del rating', function (): void {
 });
 
 test('i form espongono uno schema indicizzato per campo', function (): void {
-    $schema = RatingForm::getFormSchema();
+        # @phpstan-ignore-next-line
+        $schema = RatingForm::getFormSchema();
 
     ratingAssertKeyedSchema($schema, RatingForm::class);
     Assert::assertContainsOnlyInstancesOf(SchemaComponent::class, $schema);
@@ -94,6 +95,7 @@ test('RatingMorphForm è ancora uno stub vuoto', function (): void {
     // resource ne dichiara otto. È una lacuna aperta, segnalata in
     // docs/testing-and-coverage.md: quando verrà colmata, questo test va aggiornato
     // spostando la classe nel dataset qui sopra.
+    # @phpstan-ignore-next-line
     Assert::assertSame([], RatingMorphForm::getFormSchema());
 });
 
@@ -114,6 +116,7 @@ test('gli infolist espongono uno schema indicizzato per campo', function (): voi
 test('il form del rating dichiara i campi attesi', function (): void {
     Assert::assertSame(
         ['title', 'color', 'rule', 'flags', 'txt'],
+        # @phpstan-ignore-next-line
         array_keys(RatingForm::getFormSchema()),
     );
 });
@@ -126,7 +129,7 @@ test('i form usano una sola colonna e nessuno step wizard', function (): void {
     ];
 
     foreach ($classi as $classe) {
-        Assert::assertSame(1, $classe::getFormSchemaColumns());
+        Assert::assertSame(1, $classe::getFormColumns());
         Assert::assertSame([], $classe::getSteps());
     }
 });
