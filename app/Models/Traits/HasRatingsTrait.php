@@ -53,6 +53,38 @@ trait HasRatingsTrait
     }
 
     /**
+     * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
+     *
+     * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
+     * map sia il FQCN del model, a seconda di come è stata scritta la riga. Misurato
+     * su un'installazione: 180 righe con l'alias (2 record) e 2.045 con il FQCN
+     * (228 record). `ratings()` è una `morphToMany` e vede **solo** `getMorphClass()`,
+     * cioè l'alias: chi ci aggrega sopra conta 2 record su 230 e mostra un numero
+     * sbagliato che sembra giusto.
+     *
+     * Questa relazione esiste per leggere lo stato reale finché i dati non sono
+     * normalizzati. **È una misura di transizione, non il modello giusto**: la cura è
+     * un `UPDATE` che porta `model_type` all'alias ovunque, e va decisa da chi possiede
+     * i dati. Vedi la story `rating-morph-model-type-doppio`.
+     *
+     * Aggrega qui e non su `ratings()` anche per un secondo motivo: `value` sta sul
+     * pivot, non su `ratings`, quindi `sum('ratings', 'value')` è un errore SQL
+     * (`Unknown column 'ratings.value'`).
+     *
+     * @return HasMany<MorphPivot, TModel>
+     */
+    public function ratingMorphs(): HasMany
+    {
+        $pivot = $this->guessMorphPivot($this->resolveRatingClass());
+
+        /** @var HasMany<MorphPivot, TModel> $relation */
+        $relation = $this->hasMany($pivot::class, 'model_id', $this->getKeyName())
+            ->whereIn('model_type', array_unique([$this->getMorphClass(), static::class]));
+
+        return $relation;
+    }
+
+    /**
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
