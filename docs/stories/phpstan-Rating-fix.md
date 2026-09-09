@@ -1,7 +1,11 @@
 ---
 id: phpstan-Rating-fix
 slug: phpstan-Rating
+<<<<<<< .merge_file_qHbpi4
 scope: [module:Rating, project:<repo progetto>]
+=======
+scope: [module:Rating, project:base_workorder_fila5]
+>>>>>>> .merge_file_lz7ZiG
 status: Completed
 priority: High
 created: 2026-09-06
