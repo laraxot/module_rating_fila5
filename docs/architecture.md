@@ -457,6 +457,7 @@ The Rating module provides star ratings, reviews, and feedback mechanisms.
 - **Aggregation**: Rating calculations and statistics
 - **Display Components**: Star display widgets
 
+<<<<<<< .merge_file_MRXgvF
 ## 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
 
 ### Purpose
@@ -542,6 +543,8 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 - 5.90: resolveRatingClass() vs getClassName()
 - 5.91: getRatingsFormSchema con parametro $caller
 
+=======
+>>>>>>> .merge_file_q941RN
 ## Features
 - 1-5 star ratings
 - Text reviews with moderation queue

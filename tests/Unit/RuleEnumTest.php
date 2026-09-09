@@ -12,6 +12,7 @@ uses(TestCase::class);
 
 test('RuleEnum espone le regole di validazione attese', function (): void {
     Assert::assertSame('', RuleEnum::Null->value);
+<<<<<<< .merge_file_mKYMwO
     Assert::assertSame('numeric|min:0|max:4', RuleEnum::ZeroFour->value);
     Assert::assertSame('numeric|min:0|max:5', RuleEnum::ZeroFive->value);
     Assert::assertSame('numeric|min:0|max:6', RuleEnum::ZeroSix->value);
@@ -66,3 +67,9 @@ test('i tetti dei criteri dell art. 17 c. 6 sono tutti esprimibili', function ()
 
     Assert::assertSame(25, array_sum($tettiRichiesti), 'La somma dei tetti dell art. 17 c. 6 deve essere 25');
 });
+=======
+    Assert::assertSame('numeric|min:0|max:5', RuleEnum::ZeroFive->value);
+    Assert::assertSame('min:0|max:25|not_in:1,2,3', RuleEnum::ZeroOrMin4Max25->value);
+    Assert::assertSame('nullable|numeric|min:0|max:25', RuleEnum::NullableNumericMin0Max25->value);
+});
+>>>>>>> .merge_file_Yxxert

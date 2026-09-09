@@ -18,7 +18,11 @@ depends_on:
 - ../docs/stories/ratings-edit-resource-management.md
 - ../../app/Datas/RatingMorphData.php
 github:
+<<<<<<< .merge_file_DlTLQk
   repo: <repo progetto>
+=======
+  repo: base_ptvx_fila5
+>>>>>>> .merge_file_q5KNEN
 tags: [ptvx, rating, value, field-types, analysis, bmad]
 created_at: '2026-08-27'
 updated_at: '2026-08-27'
