@@ -55,11 +55,7 @@ test('la relazione children imposta parent_id sul figlio creato', function (): v
 
         Assert::assertSame(
             $parent->getKey(),
-<<<<<<< .merge_file_hXlUmn
             $child->parent_id,
-=======
-            $child->getAttribute('parent_id'),
->>>>>>> .merge_file_flWoo3
             'Creando attraverso la relazione, parent_id deve essere quello del record aperto.'
         );
     } finally {

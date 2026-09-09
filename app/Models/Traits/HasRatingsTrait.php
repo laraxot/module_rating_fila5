@@ -12,10 +12,7 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
-<<<<<<< .merge_file_85B2Nz
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-=======
->>>>>>> .merge_file_Obnfis
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -43,7 +40,6 @@ use Webmozart\Assert\Assert;
 trait HasRatingsTrait
 {
     /**
-<<<<<<< .merge_file_85B2Nz
      * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
      *
      * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
@@ -76,71 +72,12 @@ trait HasRatingsTrait
     }
 
     /**
-=======
-     * Resolve the Rating class for the host model's module.
-     *
-     * @return class-string<BaseRating>
-     */
-    protected function resolveRatingClass(): string
-    {
-        // Try to resolve Rating class based on host model's namespace
-        $hostClass = static::class;
-        $namespace = Str::beforeLast($hostClass, '\\Models\\');
-
-        // Check if module-specific Rating exists
-        $moduleRatingClass = $namespace.'\\Models\\Rating';
-        if (class_exists($moduleRatingClass) && is_subclass_of($moduleRatingClass, BaseRating::class)) {
-            return $moduleRatingClass;
-        }
-
-        // Fallback to base Rating module
-        return Rating::class;
-    }
-
-    /**
-     * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
-     *
-     * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
-     * map sia il FQCN del model, a seconda di come è stata scritta la riga. Misurato
-     * su un'installazione: 180 righe con l'alias (2 record) e 2.045 con il FQCN
-     * (228 record). `ratings()` è una `morphToMany` e vede **solo** `getMorphClass()`,
-     * cioè l'alias: chi ci aggrega sopra conta 2 record su 230 e mostra un numero
-     * sbagliato che sembra giusto.
-     *
-     * Questa relazione esiste per leggere lo stato reale finché i dati non sono
-     * normalizzati. **È una misura di transizione, non il modello giusto**: la cura è
-     * un `UPDATE` che porta `model_type` all'alias ovunque, e va decisa da chi possiede
-     * i dati. Vedi la story `rating-morph-model-type-doppio`.
-     *
-     * Aggrega qui e non su `ratings()` anche per un secondo motivo: `value` sta sul
-     * pivot, non su `ratings`, quindi `sum('ratings', 'value')` è un errore SQL
-     * (`Unknown column 'ratings.value'`).
-     *
-     * @return HasMany<MorphPivot, TModel>
-     */
-    public function ratingMorphs(): HasMany
-    {
-        $pivot = $this->guessMorphPivot($this->resolveRatingClass());
-
-        /** @var HasMany<MorphPivot, TModel> $relation */
-        $relation = $this->hasMany($pivot::class, 'model_id', $this->getKeyName())
-            ->whereIn('model_type', array_unique([$this->getMorphClass(), static::class]));
-
-        return $relation;
-    }
-
-    /**
->>>>>>> .merge_file_Obnfis
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
     {
         /** @var class-string<BaseRating> $related */
-<<<<<<< .merge_file_85B2Nz
         $related = Rating::getClassName();
-=======
-        $related = $this->resolveRatingClass();
->>>>>>> .merge_file_Obnfis
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
@@ -157,19 +94,11 @@ trait HasRatingsTrait
     public function ratingObjectives(): HasMany
     {
         $userId = Auth::id();
-<<<<<<< .merge_file_85B2Nz
 
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
         Assert::subclassOf($related, BaseRating::class);
 
-=======
-
-        /** @var class-string<BaseRating> $related */
-        $related = $this->resolveRatingClass();
-        Assert::subclassOf($related, BaseRating::class);
-
->>>>>>> .merge_file_Obnfis
         /** @var HasMany<BaseRating, TModel> $query */
         $query = $this->hasMany($related, 'related_type', 'post_type')
             ->selectRaw(
@@ -192,12 +121,7 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< .merge_file_85B2Nz
      * @param  Builder<TModel>  $query
-=======
-     * @param Builder<TModel> $query
-     *
->>>>>>> .merge_file_Obnfis
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -218,11 +142,7 @@ trait HasRatingsTrait
         $userId = Auth::id();
 
         /** @var class-string<BaseRating> $related */
-<<<<<<< .merge_file_85B2Nz
         $related = Rating::getClassName();
-=======
-        $related = $this->resolveRatingClass();
->>>>>>> .merge_file_Obnfis
         Assert::subclassOf($related, BaseRating::class);
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $query */
@@ -254,12 +174,7 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< .merge_file_85B2Nz
      * @param  array<string, mixed>  $filters
-=======
-     * @param array<string, mixed> $filters
-     *
->>>>>>> .merge_file_Obnfis
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -278,24 +193,14 @@ trait HasRatingsTrait
 
     /**
      * Sync pivot verso rating che matchano extra_attributes.
-<<<<<<< .merge_file_85B2Nz
      *
      * @param  array<string, mixed>  $where
-=======
-     *
-     * @param array<string, mixed> $where
-     *
->>>>>>> .merge_file_Obnfis
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
     {
         /** @var class-string<BaseRating> $ratingClass */
-<<<<<<< .merge_file_85B2Nz
         $ratingClass = Rating::getClassName();
-=======
-        $ratingClass = $this->resolveRatingClass();
->>>>>>> .merge_file_Obnfis
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
@@ -308,11 +213,7 @@ trait HasRatingsTrait
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-<<<<<<< .merge_file_85B2Nz
         if ($ratingIds !== []) {
-=======
-        if ([] !== $ratingIds) {
->>>>>>> .merge_file_Obnfis
             $this->ratings()->sync($ratingIds);
         }
 
@@ -347,7 +248,6 @@ trait HasRatingsTrait
         </button>';
 
         return $msg.$btn.$btnIframe;
-<<<<<<< .merge_file_85B2Nz
     }
 
     /**
@@ -468,8 +368,6 @@ trait HasRatingsTrait
                     $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
                 }
             );
-=======
->>>>>>> .merge_file_Obnfis
     }
 
     /**
