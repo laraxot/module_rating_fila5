@@ -1,0 +1,121 @@
+---
+title: "Coverage del modulo Rating"
+type: report
+module: Rating
+updated: 2026-09-01
+qmd: "coverage rating pest misura reale test saltati database"
+---
+
+# Coverage del modulo Rating
+
+## Misura del 1 settembre 2026
+
+Comando canonico (AD-25 — servono **entrambe** le opzioni: `-c` sposta il perimetro
+di coverage, il path sposta il bootstrap di `Pest.php` e `Helpers.php`):
+
+```bash
+cd laravel
+XDEBUG_MODE=coverage ./vendor/bin/pest Modules/Rating/tests -c Modules/Rating/phpunit.xml --coverage --min=0
+```
+
+| | |
+|---|---:|
+| **Coverage di riga** | **80.8 %** |
+| Test passati | 118 |
+| Test saltati | 7 |
+| Falliti | 0 |
+| Asserzioni | 442 |
+
+## Come leggere questo numero
+
+La percentuale copre il codice sotto `Modules/Rating/app`, che e il perimetro
+dichiarato in `Modules/Rating/phpunit.xml`.
+
+**7 test sono stati saltati**, non falliti. I salti in questo progetto
+vengono quasi sempre dal database di test irraggiungibile (`10.100.200.53:3306`)
+e non da `skip()` scritti a mano: la suite resta verde e il numero descrive solo
+la parte che ha girato davvero.
+
+## Cosa e cambiato oggi
+
+Prima di questa misura la suite era rossa su
+`tests/Unit/ListRatingsPageTest.php:23`, che asserva 5 colonne su
+`BaseListRatings::getTableColumns()`. Quel metodo pero e chiuso dentro un docblock
+mai terminato: le colonne sono state spostate di proposito nelle classi sotto
+`app/Filament/Resources/RatingResource/Tables/`.
+
+Il test era vecchio, non il codice. Riscritto per asserire il contratto vero — la
+pagina non possiede piu colonne, e le 9 colonne stanno in `RatingsTable` — la suite
+e verde e il coverage e diventato misurabile: **80,8 %**.
+
+## Precondizioni che invalidano la misura
+
+1. **`bootstrap/cache/config.php` non deve esistere.** Con la config in cache
+   `config('app.env')` vale `production` e `app()->runningUnitTests()` diventa falso:
+   ogni guardia costruita su quel segnale smette di funzionare. Il file e gitignored e
+   viene rigenerato da un qualsiasi `artisan optimize`, quindi va ricontrollato ogni volta.
+2. **Nessun altro agente deve stare scrivendo sul tree.** Una run su file in scrittura
+   produce risultati diversi a ogni giro.
+
+```bash
+/usr/bin/find Modules -newermt '-70 seconds' -type f | wc -l   # deve dare 0
+```
+
+## Storico
+
+| Data | Passati | Saltati | Falliti | Coverage |
+|---|---:|---:|---:|---|
+| 2026-09-01 | 118 | 7 | 0 | 80.8 % |
+
+
+---
+
+## Misura del 9 settembre 2026 — story `IndennitaResponsabilita/8.22`
+
+**Coverage non misurato, e va detto perché.** Il comando canonico qui sopra richiede
+`-c Modules/Rating/phpunit.xml`; quel file (`phpunit.xml.dist`) risulta **cancellato nel
+working tree** da un'altra sessione, insieme ad altre 54 cancellazioni pendenti nel modulo.
+Finché non torna, la misura di coverage di questo modulo **non è ripetibile**. Non l'ho
+ripristinato: non è materia della story 8.22 e non voglio interferire con quel working tree.
+
+Eseguito invece `./vendor/bin/pest Modules/Rating/tests` (senza `-c`, quindi senza coverage):
+
+| | 1 set 2026 | 9 set 2026 |
+|---|---:|---:|
+| Passati | 118 | **105** |
+| Saltati | 7 | **5** |
+| **Falliti** | **0** | **19** |
+| Asserzioni | 442 | 404 |
+| Durata | — | 248 s |
+
+### I 19 falliti sono preesistenti, e sono di due famiglie
+
+**17 su 19 — refactor Filament in corso.** `Non-static method
+BaseRatingForm::getFormSchema() cannot be called statically`: `XotBaseResourceForm` è stata
+resa astratta e il metodo non statico (registrato in `docs/sprint-status.yaml` come
+«structural-change-form-infolist»), i test la chiamano ancora staticamente. Colpisce
+`RatingDatasDataTest` (5), `RatingFilamentSchemaTest` (4), `RatingFilamentRelationManagerTest`
+(2), `RatingFilamentExtendedTest` (2), `ListRatingsPageTest` (2), `RatingBlockTest` (1),
+`BaseRatingModelTest` (1).
+
+**2 su 19 — database di test indietro di una migrazione.** `SQLSTATE[42S22] Unknown column
+'slug'` su `ptv_lara_test`. La colonna è creata da `RatingData::updateColumns()` (righe 73-74)
+e serve a `Spatie\Sluggable\HasSlug`; **sulla connection di sviluppo esiste** — verificato con
+`Schema::getColumnListing('ratings')`. È la divergenza di schema fra installazioni tracciata
+da `Xot/5.87.guardia-divergenza-schema-fra-installazioni`.
+
+### Cosa ha aggiunto la story 8.22
+
+`RuleEnum::ZeroFour` e `RuleEnum::ZeroSix` (griglia art. 17 c. 6 del CCI 2026-2028), le due
+voci in `lang/it/rule_enum.php`, e **tre test** in `RuleEnumTest` — le sei asserzioni sui
+valori più due guardie che reggono anche il caso del prossimo rinnovo:
+
+- ogni caso ha l'etichetta tradotta (`getLabel()` non comincia per `rating::`);
+- i tetti `[5,6,4,4,6]` sono tutti esprimibili e sommano 25.
+
+`RuleEnumTest`: **3 passati, 22 asserzioni**. PHPStan `[OK] No errors`, PHPMD 0 violazioni,
+PHP Insights **100/100/100/100** su `app/Enums`, Pint `passed`.
+
+**Il numero di test passati è sceso, il perimetro coperto è salito**: le due guardie nuove non
+esistevano. I 13 test in meno rispetto al 1 settembre sono i falliti delle due famiglie sopra,
+nessuno dei quali tocca l'enum.
