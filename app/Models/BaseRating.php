@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models;
 
+use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -41,6 +42,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
+<<<<<<< .merge_file_t4HSN8
  * @property int $id
  * @property int $user_id
  * @property float $value
@@ -60,6 +62,27 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property bool|null $is_readonly
  * @property int|null $order_column
  * @property Model|Eloquent $linkedTo
+=======
+ * @property int             $id
+ * @property int             $user_id
+ * @property float           $value
+ * @property string|null     $related_type
+ * @property string|null     $created_by
+ * @property string|null     $updated_by
+ * @property string|null     $deleted_by
+ * @property Carbon|null     $created_at
+ * @property Carbon|null     $updated_at
+ * @property int|null        $post_id
+ * @property string|null     $title
+ * @property string|null     $color
+ * @property string|null     $icon
+ * @property string|null     $txt
+ * @property bool|null       $is_disabled
+ * @property bool|null       $is_readonly
+ * @property int|null        $order_column
+ * @property int|null        $parent_id
+ * @property Model|\Eloquent $linkedTo
+>>>>>>> .merge_file_fWNtO8
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -87,7 +110,11 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
+<<<<<<< .merge_file_t4HSN8
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
+=======
+abstract class BaseRating extends BaseModel implements HasMedia, HasRecursiveRelationshipsContract
+>>>>>>> .merge_file_fWNtO8
 {
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
     // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
@@ -97,6 +124,31 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
     use HasSlug;
 
     use InteractsWithMedia;
+    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
+    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
+    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
+    // due relazioni scritte a mano non possono dare.
+    use HasRecursiveRelationships;
+
+    /**
+     * Etichetta del nodo nell'albero.
+     *
+     * Richiesta da {@see HasRecursiveRelationshipsContract} e usata da
+     * `GetTreeOptionsByModelClassAction` per costruire le opzioni indentate del `Select`
+     * su `parent_id`. Per un criterio l'etichetta e' il titolo.
+     */
+    public function getLabel(): string
+    {
+        $title = $this->getAttribute('title');
+
+        if (is_string($title) && $title !== '') {
+            return $title;
+        }
+
+        $key = $this->getKey();
+
+        return '#'.(is_scalar($key) ? (string) $key : '');
+    }
 
     /**
      * Etichetta del nodo nell'albero.
@@ -168,6 +220,17 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
     }
 
     /**
+<<<<<<< .merge_file_t4HSN8
+=======
+     * @return MorphTo<Model, BaseRating>
+     */
+    public function linkedTo(): MorphTo
+    {
+        return $this->morphTo('model'); // @phpstan-ignore return.type
+    }
+
+    /**
+>>>>>>> .merge_file_fWNtO8
      * Register the conversions that should be performed.
      */
     public function registerMediaConversions(?Media $media = null): void
