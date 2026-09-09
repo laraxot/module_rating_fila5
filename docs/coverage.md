@@ -2,10 +2,6 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-<<<<<<< HEAD
-updated: 2026-09-01
-=======
->>>>>>> 12d3fefc63 (.)
 updated: 2026-09-08
 qmd: "coverage rating pest misura reale test saltati database"
 ---
@@ -86,7 +82,6 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
-<<<<<<< HEAD
 
 
 ---
@@ -140,5 +135,3 @@ PHP Insights **100/100/100/100** su `app/Enums`, Pint `passed`.
 **Il numero di test passati è sceso, il perimetro coperto è salito**: le due guardie nuove non
 esistevano. I 13 test in meno rispetto al 1 settembre sono i falliti delle due famiglie sopra,
 nessuno dei quali tocca l'enum.
-=======
->>>>>>> 12d3fefc63 (.)
