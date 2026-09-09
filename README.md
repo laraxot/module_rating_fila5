@@ -114,4 +114,4 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 
 ---
 
-**Modulo** `rating` · **Laraxot** · licenza MIT
+**Modulo** `rating` · licenza MIT
