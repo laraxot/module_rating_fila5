@@ -107,11 +107,8 @@ cd laravel
 
 ---
 
-<<<<<<< .merge_file_ZZJQvR
 **Modulo** `rating` · **Laraxot / <nome progetto> Platform** · licenza MIT
-=======
 **Modulo** `rating` · **Laraxot / FixCity Platform** · licenza MIT
->>>>>>> .merge_file_PQYPGV
 
 ---
 
