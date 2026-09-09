@@ -457,6 +457,91 @@ The Rating module provides star ratings, reviews, and feedback mechanisms.
 - **Aggregation**: Rating calculations and statistics
 - **Display Components**: Star display widgets
 
+## 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
+
+### Purpose
+Estrarre la generazione dello schema del form dei rating nel trait `HasRatingsTrait` per riutilizzo DRY tra i moduli che lo compongono.
+
+### Implementation
+
+```php
+// In HasRatingsTrait
+public function getRatingsFormSchema(?object $caller = null): array
+{
+    $ratings = $this->ratings;
+    $schema = [];
+    $readonlyFields = $ratings->where('is_readonly', true);
+
+    foreach ($ratings as $rating) {
+        $fieldname = 'ratings.' . $rating->id . '.pivot.value';
+        $label = strip_tags((string) ($rating->txt ?? $rating->title));
+        $readOnly = (bool) ($rating->is_readonly ?? false);
+
+        if (! $readOnly) {
+            $item = TextInput::make($fieldname)
+                ->label($label)
+                ->numeric()
+                ->nullable()
+                ->columns(2)
+                ->inlineLabel()
+                ->live(onBlur: true)
+                ->rules((string) ($rating->rule?->value ?? ''));
+
+            if ($caller && method_exists($caller, 'recalculateReadonlyFields')) {
+                $item->afterStateUpdated(function (Set $set, Get $get) use ($caller, $readonlyFields): void {
+                    $caller->recalculateReadonlyFields($set, $get, $readonlyFields);
+                });
+            }
+        } else {
+            $item = TextEntry::make($fieldname)
+                ->label($label)
+                ->inlineLabel()
+                ->default(Arr::get($this->data ?? [], $fieldname, 0));
+
+            // Formattazione specifica del modulo (es. Importo -> money)
+            if (Str::contains($label, 'Importo') && method_exists($item, 'money')) {
+                $item->money('EUR'); // Configurabile via $caller
+            }
+        }
+        $schema[] = $item;
+    }
+
+    return $schema;
+}
+```
+
+### Usage in Module Pages
+
+```php
+// In module page (es. CompilaIndennitaResponsabilita)
+protected function getFormSchema(): array
+{
+    return array_merge(
+        [
+            DatePicker::make('dal'),
+            DatePicker::make('al'),
+            Textarea::make('note')->columnSpanFull(),
+        ],
+        $this->getRatingsFormSchema($this) // Passa $this come $caller
+    );
+}
+
+// I metodi di calcolo specifici del modulo restano nel page
+public function getTot(Get $get): int { /* ... */ }
+public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
+```
+
+### Why This Pattern
+- **DRY**: Elimina il loop duplicato `foreach ($this->ratings as $rating)`
+- **KISS**: Il page implementa solo i calcoli specifici (`getTot`, `getImporto*`)
+- **SOLID**: Il trait gestisce la logica di presentazione, il page la business logic
+- **Safe**: `$caller` è opzionale; il trait funziona anche senza
+- **Extensible**: I moduli possono iniettare comportamenti tramite `$caller` senza modificare il trait
+
+### Related Stories
+- 5.90: resolveRatingClass() vs getClassName()
+- 5.91: getRatingsFormSchema con parametro $caller
+
 ## Features
 - 1-5 star ratings
 - Text reviews with moderation queue
