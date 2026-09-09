@@ -107,12 +107,11 @@ cd laravel
 
 ---
 
-**Modulo** `rating` · **Laraxot / <nome progetto> Platform** · licenza MIT
-**Modulo** `rating` · **Laraxot / FixCity Platform** · licenza MIT
-
----
-
 ## Scopo del modulo
 
 Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartiene:
 [`docs/purpose.md`](./docs/purpose.md).
+
+---
+
+**Modulo** `rating` · **Laraxot** · licenza MIT
