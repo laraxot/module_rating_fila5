@@ -20,7 +20,7 @@ updated: 2026-09-09
 qmd: "Verifica frontmatters tutte le story BMAD GitHub links corretti"
 repository: "provtv/module_rating_fila5"
 gh_issue: "https://github.com/provtv/module_rating_fila5/issues/35"
-gh_discussion: "https://github.com/provtv/module_rating_fila5/discussions/35"
+gh_discussion: "https://github.com/provtv/module_rating_fila5/discussions/36"
 related_repo_remote: "provtv/module_rating_fila5"
 ---
 
