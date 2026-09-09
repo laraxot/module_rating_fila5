@@ -136,3 +136,31 @@ c'era.
   ragione per cui i conteggi sono giusti.
 - `RatingsSection` non è ancora composta in nessun form: è pronta, e va aggiunta
   dove serve mostrare lo stato nel record singolo.
+
+## Il predecessore: `RatingsNonZeroFilter` (superato)
+
+Prima di questo filtro esisteva un `RatingsNonZeroFilter`, con nome
+`ratings_nonzero` e tre opzioni (`Tutti` / `Solo zero` / `Diverso da zero`), che
+interrogava direttamente la colonna aggregata `ratings_avg`:
+`ratings_avg IS NOT NULL AND ratings_avg != 0`. Il criterio era lo stesso di oggi —
+lo zero vale come non valutato — ma letto sull'aggregato invece che sulle righe
+pivot, quindi dipendeva da un campo che qualcuno doveva ricalcolare.
+
+Della classe non resta nulla nel codice. Restava solo la sua nota di
+implementazione, e in un posto che non era un posto: il file
+`Modules/Ptv/app/Filament/Tables/Filters/HasRatingValuesFilter.php` **non era
+codice**, era questo documento Markdown salvato con estensione `.php`, dentro
+l'albero applicativo di Ptv. Descriveva per giunta una classe che a quel percorso
+non e' mai esistita: `BaseSchedasTable` importa da `Modules\Rating`, non da `Ptv`.
+
+Conseguenze concrete, prima della rimozione:
+
+- il preflight dei quality gate lo segnalava come «.php troncato» e **bloccava il
+  gate** (`03-quality-gates.md`, step 1c);
+- `php -l` lo dava per valido — fuori da `<?php` e' tutto testo inline — quindi
+  nessun gate sintattico lo vedeva;
+- lo snippet che conteneva era gia' sbagliato due volte: usava `->label()`, vietato
+  dalle regole del progetto, e aveva le graffe sbilanciate.
+
+File rimosso. Il contenuto utile e' questa sezione. Chi cerca `ratings_nonzero` in
+git lo trova qui.
