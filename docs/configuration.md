@@ -28,7 +28,7 @@ This section lists the essential packages required for the module to function co
 ```
 
 *   `spatie/laravel-schemaless-attributes`: Essential for handling flexible, schemaless data structures within the module's Eloquent models.
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
+*   `laravel/framework`: Specifies compatibility with Laravel 13.x.
 *   `filament/filament`: Indicates integration with Filament Admin Panel version 5.x.
 
 ### `require-dev` Section

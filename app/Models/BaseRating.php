@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models;
 
-use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
+use Modules\Rating\Models\Contracts\RatingContract;
+use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -34,13 +34,34 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
- * @property RuleEnum                                          $rule
+ * @property RuleEnum $rule
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
+<<<<<<< HEAD
+ * @property int $id
+ * @property int $user_id
+ * @property float $value
+ * @property string|null $related_type
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $deleted_by
+ * @property int $id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $post_id
+ * @property string|null $title
+ * @property string|null $color
+ * @property string|null $icon
+ * @property string|null $txt
+ * @property bool|null $is_disabled
+ * @property bool|null $is_readonly
+ * @property int|null $order_column
+ * @property Model|Eloquent $linkedTo
+=======
  * @property int             $id
  * @property int             $user_id
  * @property float           $value
@@ -60,6 +81,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int|null        $order_column
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
+>>>>>>> 7f7d2c4a6b (docs(phpstan): swarm story 5.79 — 0 errori su Modules, linkedTo ripristinato da contratto storico)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -79,23 +101,29 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
- * @property int|null                                          $media_count
- * @property ProfileContract|null                              $creator
- * @property ProfileContract|null                              $updater
+ * @property int|null $media_count
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @mixin Eloquent
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-abstract class BaseRating extends BaseModel implements HasMedia, HasRecursiveRelationshipsContract
+abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
 {
-    use HasSlug;
-    use InteractsWithMedia;
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
     // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
     // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
     // due relazioni scritte a mano non possono dare.
     use HasRecursiveRelationships;
+
+    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
+    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
+    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
+    // due relazioni scritte a mano non possono dare.
+    use HasRecursiveRelationships;
+    use HasSlug;
+    use InteractsWithMedia;
 
     /**
      * Etichetta del nodo nell'albero.
@@ -145,14 +173,13 @@ abstract class BaseRating extends BaseModel implements HasMedia, HasRecursiveRel
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param Builder<BaseRating>         $query
-     * @param array<string, mixed>|string $attributes
-     *
+     * @param  Builder<BaseRating>  $query
+     * @param  array<string, mixed>|string  $attributes
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-        if (is_string($attributes) && null !== $value) {
+        if (is_string($attributes) && $value !== null) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }

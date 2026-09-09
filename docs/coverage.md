@@ -2,6 +2,10 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
+<<<<<<< HEAD
+updated: 2026-09-01
+=======
+>>>>>>> 12d3fefc63 (.)
 updated: 2026-09-08
 qmd: "coverage rating pest misura reale test saltati database"
 ---
@@ -82,3 +86,59 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
+<<<<<<< HEAD
+
+
+---
+
+## Misura del 9 settembre 2026 — story `IndennitaResponsabilita/8.22`
+
+**Coverage non misurato, e va detto perché.** Il comando canonico qui sopra richiede
+`-c Modules/Rating/phpunit.xml`; quel file (`phpunit.xml.dist`) risulta **cancellato nel
+working tree** da un'altra sessione, insieme ad altre 54 cancellazioni pendenti nel modulo.
+Finché non torna, la misura di coverage di questo modulo **non è ripetibile**. Non l'ho
+ripristinato: non è materia della story 8.22 e non voglio interferire con quel working tree.
+
+Eseguito invece `./vendor/bin/pest Modules/Rating/tests` (senza `-c`, quindi senza coverage):
+
+| | 1 set 2026 | 9 set 2026 |
+|---|---:|---:|
+| Passati | 118 | **105** |
+| Saltati | 7 | **5** |
+| **Falliti** | **0** | **19** |
+| Asserzioni | 442 | 404 |
+| Durata | — | 248 s |
+
+### I 19 falliti sono preesistenti, e sono di due famiglie
+
+**17 su 19 — refactor Filament in corso.** `Non-static method
+BaseRatingForm::getFormSchema() cannot be called statically`: `XotBaseResourceForm` è stata
+resa astratta e il metodo non statico (registrato in `docs/sprint-status.yaml` come
+«structural-change-form-infolist»), i test la chiamano ancora staticamente. Colpisce
+`RatingDatasDataTest` (5), `RatingFilamentSchemaTest` (4), `RatingFilamentRelationManagerTest`
+(2), `RatingFilamentExtendedTest` (2), `ListRatingsPageTest` (2), `RatingBlockTest` (1),
+`BaseRatingModelTest` (1).
+
+**2 su 19 — database di test indietro di una migrazione.** `SQLSTATE[42S22] Unknown column
+'slug'` su `ptv_lara_test`. La colonna è creata da `RatingData::updateColumns()` (righe 73-74)
+e serve a `Spatie\Sluggable\HasSlug`; **sulla connection di sviluppo esiste** — verificato con
+`Schema::getColumnListing('ratings')`. È la divergenza di schema fra installazioni tracciata
+da `Xot/5.87.guardia-divergenza-schema-fra-installazioni`.
+
+### Cosa ha aggiunto la story 8.22
+
+`RuleEnum::ZeroFour` e `RuleEnum::ZeroSix` (griglia art. 17 c. 6 del CCI 2026-2028), le due
+voci in `lang/it/rule_enum.php`, e **tre test** in `RuleEnumTest` — le sei asserzioni sui
+valori più due guardie che reggono anche il caso del prossimo rinnovo:
+
+- ogni caso ha l'etichetta tradotta (`getLabel()` non comincia per `rating::`);
+- i tetti `[5,6,4,4,6]` sono tutti esprimibili e sommano 25.
+
+`RuleEnumTest`: **3 passati, 22 asserzioni**. PHPStan `[OK] No errors`, PHPMD 0 violazioni,
+PHP Insights **100/100/100/100** su `app/Enums`, Pint `passed`.
+
+**Il numero di test passati è sceso, il perimetro coperto è salito**: le due guardie nuove non
+esistevano. I 13 test in meno rispetto al 1 settembre sono i falliti delle due famiglie sopra,
+nessuno dei quali tocca l'enum.
+=======
+>>>>>>> 12d3fefc63 (.)
