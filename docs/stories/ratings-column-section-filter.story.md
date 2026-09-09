@@ -136,7 +136,6 @@ c'era.
   ragione per cui i conteggi sono giusti.
 - `RatingsSection` non è ancora composta in nessun form: è pronta, e va aggiunta
   dove serve mostrare lo stato nel record singolo.
-<<<<<<< .merge_file_24aoEQ
 
 ## Il predecessore: `RatingsNonZeroFilter` (superato)
 
@@ -165,5 +164,3 @@ Conseguenze concrete, prima della rimozione:
 
 File rimosso. Il contenuto utile e' questa sezione. Chi cerca `ratings_nonzero` in
 git lo trova qui.
-=======
->>>>>>> .merge_file_N6gSit

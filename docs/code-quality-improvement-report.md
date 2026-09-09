@@ -8,15 +8,12 @@ updated: 2026-07-17
 qmd: "code quality baseline PHPStan Pest strict types Laraxot Rating"
 story: STORY-001
 issues:
-<<<<<<< .merge_file_xMCsKK
   - "https://github.com/laraxot/<repo progetto>/issues/46"
 discussions:
   - "https://github.com/laraxot/<repo progetto>/discussions/47"
-=======
   - "https://github.com/laraxot/base_workorder_fila5/issues/46"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
->>>>>>> .merge_file_Bcl8cy
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
 ---

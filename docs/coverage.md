@@ -2,18 +2,13 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-<<<<<<< .merge_file_zXRiR8
 updated: 2026-09-01
-=======
 updated: 2026-09-08
->>>>>>> .merge_file_QsIliJ
 qmd: "coverage rating pest misura reale test saltati database"
 ---
 
 # Coverage del modulo Rating
 
-<<<<<<< .merge_file_zXRiR8
-=======
 ## Verifica PHPStan dell'8 settembre 2026
 
 Nessuna nuova misura di coverage. Il preflight trova `app.env=testing` nella cache
@@ -30,7 +25,6 @@ I numeri e il comando nella sezione seguente descrivono la configurazione storic
 del 1 settembre; il file `Modules/Rating/phpunit.xml` oggi non è presente e il
 comando non va riutilizzato come configurazione corrente.
 
->>>>>>> .merge_file_QsIliJ
 ## Misura del 1 settembre 2026
 
 Comando canonico (AD-25 — servono **entrambe** le opzioni: `-c` sposta il perimetro
@@ -89,7 +83,6 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
-<<<<<<< .merge_file_zXRiR8
 
 
 ---
@@ -143,5 +136,3 @@ PHP Insights **100/100/100/100** su `app/Enums`, Pint `passed`.
 **Il numero di test passati è sceso, il perimetro coperto è salito**: le due guardie nuove non
 esistevano. I 13 test in meno rispetto al 1 settembre sono i falliti delle due famiglie sopra,
 nessuno dei quali tocca l'enum.
-=======
->>>>>>> .merge_file_QsIliJ
