@@ -4,8 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -14,6 +21,7 @@ use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Modules\Rating\Contracts\RatingsFormCallerContract;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
@@ -31,6 +39,38 @@ use Webmozart\Assert\Assert;
  */
 trait HasRatingsTrait
 {
+    /**
+     * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
+     *
+     * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
+     * map sia il FQCN del model, a seconda di come è stata scritta la riga. Misurato
+     * su un'installazione: 180 righe con l'alias (2 record) e 2.045 con il FQCN
+     * (228 record). `ratings()` è una `morphToMany` e vede **solo** `getMorphClass()`,
+     * cioè l'alias: chi ci aggrega sopra conta 2 record su 230 e mostra un numero
+     * sbagliato che sembra giusto.
+     *
+     * Questa relazione esiste per leggere lo stato reale finché i dati non sono
+     * normalizzati. **È una misura di transizione, non il modello giusto**: la cura è
+     * un `UPDATE` che porta `model_type` all'alias ovunque, e va decisa da chi possiede
+     * i dati. Vedi la story `rating-morph-model-type-doppio`.
+     *
+     * Aggrega qui e non su `ratings()` anche per un secondo motivo: `value` sta sul
+     * pivot, non su `ratings`, quindi `sum('ratings', 'value')` è un errore SQL
+     * (`Unknown column 'ratings.value'`).
+     *
+     * @return HasMany<MorphPivot, TModel>
+     */
+    public function ratingMorphs(): HasMany
+    {
+        $pivot = $this->guessMorphPivot(Rating::getClassName());
+
+        /** @var HasMany<MorphPivot, TModel> $relation */
+        $relation = $this->hasMany($pivot::class, 'model_id', $this->getKeyName())
+            ->whereIn('model_type', array_unique([$this->getMorphClass(), static::class]));
+
+        return $relation;
+    }
+
     /**
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
@@ -81,8 +121,7 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param Builder<TModel> $query
-     *
+     * @param  Builder<TModel>  $query
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -135,8 +174,7 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param array<string, mixed> $filters
-     *
+     * @param  array<string, mixed>  $filters
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -156,8 +194,7 @@ trait HasRatingsTrait
     /**
      * Sync pivot verso rating che matchano extra_attributes.
      *
-     * @param array<string, mixed> $where
-     *
+     * @param  array<string, mixed>  $where
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -167,11 +204,16 @@ trait HasRatingsTrait
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
-
+        /*
+        dddx([
+            'ratings' => $ratings,
+            'where' => $where,
+        ]);
+        */
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-        if ([] !== $ratingIds) {
+        if ($ratingIds !== []) {
             $this->ratings()->sync($ratingIds);
         }
 
@@ -206,6 +248,126 @@ trait HasRatingsTrait
         </button>';
 
         return $msg.$btn.$btnIframe;
+    }
+
+    /**
+     * Il nome del campo di form che corrisponde a una riga di `ratings`.
+     *
+     * Convenzione unica, condivisa fra chi costruisce lo schema, chi legge lo stato e chi
+     * salva le pivot: se cambia, cambia in un posto solo.
+     */
+    public static function ratingFieldName(BaseRating $rating): string
+    {
+        return 'ratings.'.$rating->id.'.pivot.value';
+    }
+
+    /**
+     * Costruisce i campi di form a partire dalle righe di `ratings`.
+     *
+     * Il trait decide il **generale**: che una riga diventa un campo, che le righe con
+     * `is_readonly` sono in sola lettura, il nome del campo, la regola di validazione presa
+     * da `ratings.rule`, la reattività.
+     *
+     * Il **particolare** — etichetta, formato denaro, colonne, valore di default, e
+     * soprattutto il ricalcolo dei campi readonly — resta dell'host e arriva da
+     * {@see RatingsFormCallerContract}. È un'interfaccia e non un `method_exists` su un nome
+     * dedotto perché dedurre il comportamento da una stringa è esattamente il difetto che
+     * questa estrazione non deve promuovere a piattaforma: `Rating` è consumato da sei moduli.
+     *
+     * Il trait **non chiama mai** `->label()`. L'etichetta di un rating è un dato
+     * (`txt`/`title`), non una costante, e la regola `no-filament-labels` non ammette
+     * eccezioni: finché quella tensione non è decisa, resta dove già era — nell'host,
+     * dentro `decorateRatingField()`. Vedi la decisione D-1 della story 5.92.
+     *
+     * Senza `$caller` lo schema è comunque valido: manca solo il particolare.
+     *
+     * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
+     * @return array<string, Component> indicizzato per nome di campo
+     */
+    /**
+     * I criteri che diventano campi: tutti tranne le opzioni.
+     *
+     * Un criterio con `parent_id` e' una voce del `Select` del padre, non un campo suo.
+     * Pubblico perche' chi somma deve escludere le stesse righe: vedi `getTot()` di
+     * IndennitaResponsabilita. Due definizioni di «opzione» prima o poi divergono.
+     *
+     * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
+     * @return Collection<int, BaseRating>
+     */
+    public function ratingFormFields(?EloquentCollection $ratings = null): Collection
+    {
+        return ($ratings ?? $this->ratings)
+            ->unique('id')
+            ->reject(static fn (BaseRating $row): bool => $row->parent_id !== null);
+    }
+
+    /**
+     * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
+     * @return array<string, Component> indicizzato per nome di campo
+     */
+    public function getRatingsFormSchema(?RatingsFormCallerContract $caller = null, ?EloquentCollection $ratings = null): array
+    {
+        /** @var EloquentCollection<int, BaseRating> $rows */
+        $rows = $ratings ?? $this->ratings;
+
+        // Una query sola per tutti i figli: dentro il ciclo sarebbe una per criterio.
+        $rows->loadMissing('children');
+
+        $fields = $this->ratingFormFields($rows);
+
+        /** @var Collection<int, BaseRating> $readonlyRatings */
+        $readonlyRatings = $fields->where('is_readonly', true);
+
+        $schema = [];
+        foreach ($fields as $rating) {
+            $component = $this->buildRatingComponent($rating, $caller, $readonlyRatings);
+
+            $schema[self::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
+        }
+
+        return $schema;
+    }
+
+    /**
+     * Il campo di una riga, prima della decorazione dell'host.
+     *
+     * Sola lettura: `TextEntry`. Modificabile: `Select` se il criterio elenca dei figli,
+     * altrimenti `TextInput`. Cambia solo il costruttore — regola di validazione presa dal
+     * dato e gancio di ricalcolo sono in coda, scritti una volta sola: quando il gancio
+     * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
+     *
+     * @param  Collection<int, BaseRating>  $readonlyRatings
+     */
+    private function buildRatingComponent(
+        BaseRating $rating,
+        ?RatingsFormCallerContract $caller,
+        Collection $readonlyRatings,
+    ): Component {
+        $field = self::ratingFieldName($rating);
+
+        if ($rating->is_readonly === true) {
+            return TextEntry::make($field)->inlineLabel();
+        }
+
+        // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
+        // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
+        $options = $rating->children
+            ->mapWithKeys(static fn (BaseRating $child): array => [$child->id => $child->getLabel()])
+            ->all();
+
+        $component = $options === []
+            ? TextInput::make($field)->numeric()->live(onBlur: true)
+            : Select::make($field)->options($options)->live();
+
+        return $component
+            ->nullable()
+            ->inlineLabel()
+            ->rules((string) ($rating->rule->value ?? ''))
+            ->afterStateUpdated(
+                static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
+                    $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
+                }
+            );
     }
 
     /**

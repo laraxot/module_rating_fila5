@@ -6,7 +6,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "readme en"
 related:
-  - "./redundancy-audit-2026-05-21.md"
+  - "./redundancy-audit.md"
 ---
 
 # ⭐ Rating — English presentation

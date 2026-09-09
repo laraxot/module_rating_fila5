@@ -1,16 +1,3 @@
----
-title: "Agent instructions"
-type: reference
-tags: [agents, coding-agent, llm-wiki]
-created: 2026-07-01
-updated: 2026-07-01
-qmd: "istruzioni agenti LLM wiki modulo"
-issues: []
-discussions: []
-related:
-  - ./coding-agent-manifests.md
----
-
 # Rating {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating
@@ -149,9 +136,5 @@ Related:
 ## Related Documentation
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
-<<<<<<< HEAD
-- [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
-=======
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
->>>>>>> laraxot/dev
 - [Module Documentation](../README.md)

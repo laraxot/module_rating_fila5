@@ -50,25 +50,7 @@ abstract class BaseRatingsTable extends XotBaseResourceTable
         ];
     }
 
-    /**
-     * @return array<string, Action|ActionGroup>
-     */
-    public function getTableActions(): array
-    {
-        return [
-            'edit' => EditAction::make(),
-        ];
-    }
+    
 
-    /**
-     * @return array<string, BulkAction|BulkActionGroup>
-     */
-    public function getTableBulkActions(): array
-    {
-        return [
-            'bulk' => BulkActionGroup::make([
-                DeleteBulkAction::make(),
-            ]),
-        ];
-    }
+   
 }

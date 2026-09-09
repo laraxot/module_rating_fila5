@@ -7,10 +7,11 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
+use Modules\Rating\Models\Contracts\RatingContract;
+use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -19,42 +20,46 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 /**
  * Modules\Rating\Models\BaseRating.
  *
  * Classe base astratta per tutti i modelli Rating nei vari moduli.
  * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
+ * Utilizza HasRecursiveRelationships per l'albero genitore-figlio (adjacency list):
+ * children(), parent(), ancestors(), descendants() arrivano dal trait e non si riscrivono.
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
- * @property RuleEnum                                          $rule
+ * @property RuleEnum $rule
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
- * @property int             $id
- * @property int             $user_id
- * @property float           $value
- * @property string|null     $related_type
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $deleted_by
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property int|null        $post_id
- * @property string|null     $title
- * @property string|null     $color
- * @property string|null     $icon
- * @property string|null     $txt
- * @property bool|null       $is_disabled
- * @property bool|null       $is_readonly
- * @property int|null        $order_column
- * @property Model|\Eloquent $linkedTo
+ * @property int $id
+ * @property int $user_id
+ * @property float $value
+ * @property string|null $related_type
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $deleted_by
+ * @property int $id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $post_id
+ * @property string|null $title
+ * @property string|null $color
+ * @property string|null $icon
+ * @property string|null $txt
+ * @property bool|null $is_disabled
+ * @property bool|null $is_readonly
+ * @property int|null $order_column
+ * @property Model|Eloquent $linkedTo
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -74,23 +79,50 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
- * @property int|null                                          $media_count
- * @property ProfileContract|null                              $creator
- * @property ProfileContract|null                              $updater
+ * @property int|null $media_count
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @mixin Eloquent
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-abstract class BaseRating extends BaseModel implements HasMedia
+abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
 {
+    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
+    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
+    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
+    // due relazioni scritte a mano non possono dare.
+    use HasRecursiveRelationships;
     use HasSlug;
+
     use InteractsWithMedia;
+
+    /**
+     * Etichetta del nodo nell'albero.
+     *
+     * Richiesta da {@see HasRecursiveRelationshipsContract} e usata da
+     * `GetTreeOptionsByModelClassAction` per costruire le opzioni indentate del `Select`
+     * su `parent_id`. Per un criterio l'etichetta e' il titolo.
+     */
+    public function getLabel(): string
+    {
+        $title = $this->getAttribute('title');
+
+        if (is_string($title) && $title !== '') {
+            return $title;
+        }
+
+        $key = $this->getKey();
+
+        return '#'.(is_scalar($key) ? (string) $key : '');
+    }
 
     /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
+        'parent_id',
         'title',
         'color',
         'txt',
@@ -114,14 +146,13 @@ abstract class BaseRating extends BaseModel implements HasMedia
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param Builder<BaseRating>         $query
-     * @param array<string, mixed>|string $attributes
-     *
+     * @param  Builder<BaseRating>  $query
+     * @param  array<string, mixed>|string  $attributes
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-        if (is_string($attributes) && null !== $value) {
+        if (is_string($attributes) && $value !== null) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }
@@ -134,14 +165,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
         }
 
         return $query;
-    }
-
-    /**
-     * @return MorphTo<Model, $this>
-     */
-    public function linkedTo(): MorphTo
-    {
-        return $this->morphTo('model');
     }
 
     /**

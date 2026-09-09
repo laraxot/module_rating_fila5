@@ -7,7 +7,7 @@ type: workflow
 document_type: workflow
 category: process
 status: active
-version: 1.0.0
+version: 1.1.0
 language: it-IT
 module: Rating
 scope: [repository, modules]
@@ -17,10 +17,9 @@ created: 2026-09-09
 updated: 2026-09-09
 qmd: "workflow estrarre schema Filament trait condiviso caller misurare duplicazione tre occorrenze generale particolare deduzione da stringa label"
 issues:
-  # DA CREARE — nessun numero inventato.
-  - "https://github.com/provtv/module_rating_fila5/issues/"
+  - "https://github.com/provtv/module_rating_fila5/issues/22"
 discussions:
-  - "https://github.com/provtv/module_rating_fila5/discussions/"
+  - "https://github.com/provtv/module_rating_fila5/discussions/24"
 related:
   - ../wiki/concepts/schema-form-dai-rating.md
   - ../../../../../bashscripts/ai/wiki/rules/normativa-atterra-dove-vive-il-meccanismo.md
@@ -177,3 +176,65 @@ Si scrive la firma **dopo** i cinque passi, e deve poter essere letta senza il r
 - [Da riga di rating a campo di form](../wiki/concepts/schema-form-dai-rating.md) — il caso che ha prodotto questo workflow
 - [`normativa-atterra-dove-vive-il-meccanismo`](../../../../../bashscripts/ai/wiki/rules/normativa-atterra-dove-vive-il-meccanismo.md)
 - [form-column-parity](../../../Ptv/docs/form-column-parity.md) — la parità che vale anche per gli schemi estratti
+
+---
+
+## Due misure che mancavano al passo 3 e al passo 6 (aggiunte 2026-09-09, sessione c21fdd4e)
+
+### Dove puo' vivere il metodo: il precedente non e' neutro
+
+Il passo 3 sceglie **il canale** del particolare, ma non dice dove sta il generale. La
+misura che manca:
+
+**Nessun model del monorepo importa un componente form di Filament.** Sette file sotto
+`app/Models` importano da `Filament\`, e importano solo contratti e infrastruttura:
+
+```
+Job/Models/Export.php                       Filament\Actions\Exports\Models\Export
+User/Models/Scopes/TenantScope.php          Filament\Facades\Filament
+User/Models/BaseUser.php                    Filament\Models\Contracts\*, Filament\Panel
+User/Models/BaseTenant.php                  Filament\Models\Contracts\HasAvatar
+User/Models/Traits/HasTenants.php           Filament\Panel
+User/Models/Traits/IsProfileTrait.php       Filament\Notifications\Notification
+User/Models/Traits/InteractsWithTenant.php  Filament\Facades\Filament
+```
+
+Zero `Filament\Forms\Components\*`. Mettere `TextInput`/`TextEntry` in un trait di model
+sarebbe **il primo caso del monorepo**: non e' vietato, ma e' un precedente, e i precedenti
+si citano. Va deciso da una persona, con la decisione scritta — non ereditato per inerzia
+dal fatto che il trait era il posto comodo.
+
+Aggiungere al passo 3 la domanda: *il generale va in un trait di model o in un componente
+sotto `app/Filament/Forms/Components/`?* La regola `filament-form-components-vocabulary`
+risponde gia' per i blocchi di campi riutilizzabili.
+
+### Il gemello di sola lettura esiste gia'
+
+Il passo 6 cita la parita' form <-> column. Nel caso concreto la meta' esiste ed e' scritta:
+`Modules/Rating/app/Filament/Forms/Components/RatingsSection.php`, **di sola lettura per
+scelta dichiarata** — «i voti non si scrivono da qui, si scrivono dove si valuta» — specchio
+di `RatingsColumn`.
+
+Quindi cio' che manca non e' «un componente per i rating»: e' il **gemello editabile** di uno
+che c'e' gia'. Chi estrae deve guardarlo prima, perche' decide il nome, la sede e il confine.
+
+### Le due deduzioni da stringa, sui dati veri
+
+Il passo 4 le nomina. Ecco cosa sono sui 16 criteri readonly reali (4 gruppi anno/tipo):
+
+| id | `title` -> dispatch | `txt` -> label e money | money | metodo atteso |
+|---:|---|---|---|---|
+| 9 | `tot` | `Totale Punti` | no | `getTot` |
+| 10 | `importo mensile calcolato` | `Importo mensile calcolato` | si | `getImportoMensileCalcolato` |
+| 11 | `importo mensile attribuito` | `Importo mensile attribuito` | si | `getImportoMensileAttribuito` |
+| 12 | `importo annuale attribuito` | `Importo annuale attribuito` | si | `getImportoAnnualeAttribuito` |
+
+**Due sistemi di naming sulla stessa riga**, entrambi editabili da chi amministra i criteri:
+`title` tecnico che e' il nome di un metodo PHP, `txt` umano che decide la formattazione. E
+nessuno dei due ha una guardia.
+
+### Trappola Filament da mettere nel passo 3
+
+Il `$caller` (o la closure) va catturato con `use (...)`. Un parametro di closure **tipizzato
+con un'interfaccia** viene risolto dal container di Filament e la closure esplode a runtime:
+il nome e il tipo del parametro sono il contratto.
