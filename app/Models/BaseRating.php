@@ -7,6 +7,7 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
@@ -41,7 +42,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
-<<<<<<< HEAD
  * @property int $id
  * @property int $user_id
  * @property float $value
@@ -49,7 +49,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
- * @property int $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property int|null $post_id
@@ -60,28 +59,8 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property bool|null $is_disabled
  * @property bool|null $is_readonly
  * @property int|null $order_column
+ * @property int|null $parent_id
  * @property Model|Eloquent $linkedTo
-=======
- * @property int             $id
- * @property int             $user_id
- * @property float           $value
- * @property string|null     $related_type
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $deleted_by
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property int|null        $post_id
- * @property string|null     $title
- * @property string|null     $color
- * @property string|null     $icon
- * @property string|null     $txt
- * @property bool|null       $is_disabled
- * @property bool|null       $is_readonly
- * @property int|null        $order_column
- * @property int|null        $parent_id
- * @property Model|\Eloquent $linkedTo
->>>>>>> 7f7d2c4a6b (docs(phpstan): swarm story 5.79 — 0 errori su Modules, linkedTo ripristinato da contratto storico)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
