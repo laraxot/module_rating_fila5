@@ -83,7 +83,10 @@ trait HasRatingsTrait
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
 
+<<<<<<< HEAD
         $relation = $relation->ordered();
+=======
+>>>>>>> laraxot/dev
         return $relation;
     }
 
@@ -297,7 +300,10 @@ trait HasRatingsTrait
      */
     public function ratingFormFields(?EloquentCollection $ratings = null): Collection
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
         return ($ratings ?? $this->ratings)
             ->unique('id')
             ->reject(static fn (BaseRating $row): bool => $row->parent_id !== null);
