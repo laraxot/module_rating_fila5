@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 return [
     'fields' => [
-        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => '', 'description' => 'value'],
     ],
 ];
