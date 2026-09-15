@@ -7,11 +7,8 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-=======
->>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
@@ -93,20 +90,8 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-<<<<<<< HEAD
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
-   
-=======
-abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
-{
-    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
-    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
-    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
-    // due relazioni scritte a mano non possono dare.
-    use HasRecursiveRelationships;
->>>>>>> laraxot/dev
-
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
     // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
     // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
@@ -114,10 +99,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
     use HasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
-<<<<<<< HEAD
     use SortableTrait;
-=======
->>>>>>> laraxot/dev
 
     /**
      * Etichetta del nodo nell'albero.
