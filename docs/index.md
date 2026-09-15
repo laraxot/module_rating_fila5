@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Rating Module — Documentation Index
+
+Browse wiki: [Rating Analysis](../../docs/wiki/analysis/modules/rating/)
+=======
 ---
 title: "Rating Module"
 type: guide
@@ -205,6 +210,7 @@ Vedi anche:
 **PHPStan Level**: Target Level 9  
 **Translation**: IT/EN ✅  
 **Last Updated**: 2026-05-13
+<<<<<<< HEAD
 
 ---
 
@@ -224,3 +230,6 @@ Vedi anche:
 ## ⚠️ Architectural Rules
 
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

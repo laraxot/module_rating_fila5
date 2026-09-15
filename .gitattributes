@@ -1,20 +1,34 @@
+<<<<<<< HEAD
 # Prototipo .gitattributes per laravel/Modules/* e laravel/Themes/*
 # Canon: bashscripts/ai/wiki/rules/no-git-lfs.md
 # Sync:  bash bashscripts/templates/sync-gitattributes-modules.sh
 #
 # Git LFS VIETATO. I binari sono blob git normali.
+=======
+# Prototype: laravel/Modules/* e laravel/Themes/*
+# Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
+#
+# Git LFS VIETATO. Binari = blob git normali.
+>>>>>>> laraxot/dev
 # Mai: filter=lfs / diff=lfs / merge=lfs
 
 * text=auto
+
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
+
 CHANGELOG.md export-ignore
+<<<<<<< HEAD
 # Binari come blob git normali — NIENTE git-lfs.
 # `binary` disattiva diff e normalizzazione di fine riga.
 # `!filter` annulla un eventuale filter.lfs ereditato dalla configurazione di sistema:
 # e' questa la protezione vera, perche' filter.lfs.* puo' restare installato sulla
 # macchina per altri progetti e senza `!filter` verrebbe applicato anche qui.
+=======
+
+# `binary` + `!filter` azzera eventuali filtri LFS ereditati
+>>>>>>> laraxot/dev
 *.png binary !filter
 *.jpg binary !filter
 *.jpeg binary !filter
@@ -22,6 +36,10 @@ CHANGELOG.md export-ignore
 *.webp binary !filter
 *.ico binary !filter
 *.svg binary !filter
+<<<<<<< HEAD
+=======
+*.psd binary !filter
+>>>>>>> laraxot/dev
 *.pdf binary !filter
 *.zip binary !filter
 *.woff binary !filter
@@ -29,6 +47,7 @@ CHANGELOG.md export-ignore
 *.ttf binary !filter
 *.eot binary !filter
 *.otf binary !filter
+<<<<<<< HEAD
 *.mp4 binary !filter
 *.psd binary !filter
 *.phar binary !filter
@@ -40,3 +59,8 @@ CHANGELOG.md export-ignore
 *.jpeg !text !filter !merge !diff
 *.gif !text !filter !merge !diff
 *.webp !text !filter !merge !diff
+=======
+*.phar binary !filter
+*.db binary !filter
+*.sqlite binary !filter
+>>>>>>> laraxot/dev
