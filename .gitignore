@@ -6,6 +6,7 @@
 /docs/legacy
 *.lock
 .php-cs-fixer.cache
+<<<<<<< HEAD
 .vscode
 
 # Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
@@ -14,3 +15,5 @@
 .cursor/
 .devcontainer/
 .windsurf/
+=======
+>>>>>>> laraxot/dev

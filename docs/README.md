@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+# Rating Module
+
+Module documentation. See wiki for detailed documentation.
+
+- [Architecture](./architecture.md)
+- [Index](./index.md)
+- [Wiki](../../docs/wiki/analysis/modules/rating/)
+=======
 ---
 title: Rating Module - Valutazione e Feedback
 type: documentation
@@ -143,3 +152,4 @@ Utilizza rating storici per calcolare metriche di performance.
 ---
 
 **Last Updated:** 2026-07-28 — Documentazione migliorata
+>>>>>>> laraxot/dev
