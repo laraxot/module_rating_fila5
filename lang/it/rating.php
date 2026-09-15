@@ -18,11 +18,7 @@ return [
     'fields' => [
         'brand' => ['label' => 'Marca'],
         'model' => ['label' => 'Modello'],
-<<<<<<< HEAD
         'description' => ['label' => 'Descrizione', 'placeholder' => 'description', 'helper_text' => '', 'description' => 'description'],
-=======
-        'description' => ['label' => 'Descrizione', 'placeholder' => 'description', 'helper_text' => 'description', 'description' => 'description'],
->>>>>>> laraxot/dev
         'serial_number' => ['label' => 'Numero di serie'],
         'inventory_number' => ['label' => 'Codice inventario'],
         'code' => ['label' => 'Identificativo'],
@@ -36,7 +32,6 @@ return [
         'is_disabled' => ['label' => 'is_disabled'],
         'is_readonly' => ['label' => 'is_readonly'],
         '_tpl' => ['label' => '_tpl'],
-<<<<<<< HEAD
         'ratings' => ['label' => 'ratings', 'placeholder' => 'ratings', 'helper_text' => '', 'description' => 'ratings'],
         'id' => ['label' => 'id', 'placeholder' => 'id', 'helper_text' => '', 'description' => 'id'],
         'title' => ['label' => 'title', 'placeholder' => 'title', 'helper_text' => '', 'description' => 'title'],
@@ -47,18 +42,6 @@ return [
         'type' => ['label' => 'type'],
         'rule' => ['label' => 'rule'],
         'disabled' => ['label' => 'disabled', 'placeholder' => 'disabled', 'helper_text' => '', 'description' => 'disabled'],
-=======
-        'ratings' => ['label' => 'ratings', 'placeholder' => 'ratings', 'helper_text' => 'ratings', 'description' => 'ratings'],
-        'id' => ['label' => 'id', 'placeholder' => 'id', 'helper_text' => 'id', 'description' => 'id'],
-        'title' => ['label' => 'title', 'placeholder' => 'title', 'helper_text' => 'title', 'description' => 'title'],
-        'color' => ['label' => 'color', 'placeholder' => 'color', 'helper_text' => 'color', 'description' => 'color'],
-        'rating' => ['label' => 'rating', 'description' => 'rating', 'helper_text' => 'rating', 'placeholder' => 'rating'],
-        'view' => ['label' => 'view', 'placeholder' => 'view', 'helper_text' => 'view', 'description' => 'view'],
-        'anno' => ['label' => 'anno'],
-        'type' => ['label' => 'type'],
-        'rule' => ['label' => 'rule'],
-        'disabled' => ['label' => 'disabled', 'placeholder' => 'disabled', 'helper_text' => 'disabled', 'description' => 'disabled'],
->>>>>>> laraxot/dev
         'slug' => ['label' => 'slug'],
         'order_column' => ['label' => 'order_column'],
         'created_at' => ['label' => 'created_at'],
