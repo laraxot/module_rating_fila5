@@ -53,11 +53,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         parent::setUp();
 
-<<<<<<< HEAD
         $database = self::sharedSqlitePath();
-=======
-        $database = database_path('database.sqlite');
->>>>>>> laraxot/dev
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
