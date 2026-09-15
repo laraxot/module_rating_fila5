@@ -12,7 +12,10 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -40,6 +43,7 @@ use Webmozart\Assert\Assert;
 trait HasRatingsTrait
 {
     /**
+<<<<<<< HEAD
      * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
      *
      * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
@@ -72,6 +76,8 @@ trait HasRatingsTrait
     }
 
     /**
+=======
+>>>>>>> laraxot/dev
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
@@ -83,8 +89,11 @@ trait HasRatingsTrait
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
 
+<<<<<<< HEAD
         $relation = $relation->ordered();
 
+=======
+>>>>>>> laraxot/dev
         return $relation;
     }
 
@@ -123,7 +132,12 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  Builder<TModel>  $query
+=======
+     * @param Builder<TModel> $query
+     *
+>>>>>>> laraxot/dev
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -176,7 +190,12 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $filters
+=======
+     * @param array<string, mixed> $filters
+     *
+>>>>>>> laraxot/dev
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -195,8 +214,14 @@ trait HasRatingsTrait
 
     /**
      * Sync pivot verso rating che matchano extra_attributes.
+<<<<<<< HEAD
      *
      * @param  array<string, mixed>  $where
+=======
+     *
+     * @param array<string, mixed> $where
+     *
+>>>>>>> laraxot/dev
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -206,6 +231,7 @@ trait HasRatingsTrait
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
+<<<<<<< HEAD
         /*
         dddx([
             'ratings' => $ratings,
@@ -216,6 +242,13 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ($ratingIds !== []) {
+=======
+
+        /** @var list<int|string> $ratingIds */
+        $ratingIds = $ratings->pluck('id')->all();
+
+        if ([] !== $ratingIds) {
+>>>>>>> laraxot/dev
             $this->ratings()->sync($ratingIds);
         }
 
@@ -250,6 +283,7 @@ trait HasRatingsTrait
         </button>';
 
         return $msg.$btn.$btnIframe;
+<<<<<<< HEAD
     }
 
     /**
@@ -370,6 +404,8 @@ trait HasRatingsTrait
                     $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
                 }
             );
+=======
+>>>>>>> laraxot/dev
     }
 
     /**
