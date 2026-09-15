@@ -15,9 +15,12 @@ return [
         'reward' => ['label' => 'reward'],
         'created_at' => ['label' => 'created_at'],
         'updated_at' => ['label' => 'updated_at'],
+<<<<<<< HEAD
         'rating' => ['label' => 'rating'],
         'ratingable_type' => ['label' => 'ratingable_type'],
         'ratingable_id' => ['label' => 'ratingable_id'],
+=======
+>>>>>>> laraxot/dev
     ],
     'actions' => [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
