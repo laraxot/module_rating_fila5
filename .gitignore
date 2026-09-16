@@ -14,3 +14,17 @@
 .cursor/
 .devcontainer/
 .windsurf/
+/rector.php
+/phpinsights.php
+rector.php
+graphify-out/
+
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+/.cursor
+/.cursor/
+/.windsurf
+/.windsurf/
+/.vscode
+/.vscode/
+.cursor~*
+.windsurf~*
