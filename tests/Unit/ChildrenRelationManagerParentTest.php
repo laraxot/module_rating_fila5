@@ -55,7 +55,7 @@ test('la relazione children imposta parent_id sul figlio creato', function (): v
 
         Assert::assertSame(
             $parent->getKey(),
-            $child->parent_id,
+            $child->getAttribute('parent_id'),
             'Creando attraverso la relazione, parent_id deve essere quello del record aperto.'
         );
     } finally {

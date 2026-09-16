@@ -7,6 +7,9 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
@@ -48,7 +51,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
- * @property int $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property int|null $post_id
@@ -59,6 +61,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property bool|null $is_disabled
  * @property bool|null $is_readonly
  * @property int|null $order_column
+ * @property int|null $parent_id
  * @property Model|Eloquent $linkedTo
  *
  * @method static Builder|BaseRating whereColor($value)
@@ -87,14 +90,8 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
+abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
-    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
-    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
-    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
-    // due relazioni scritte a mano non possono dare.
-    use HasRecursiveRelationships;
-
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
     // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
     // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
@@ -102,6 +99,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
     use HasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
+    use SortableTrait;
 
     /**
      * Etichetta del nodo nell'albero.
@@ -170,6 +168,14 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract
         }
 
         return $query;
+    }
+
+    /**
+     * @return MorphTo<Model, BaseRating>
+     */
+    public function linkedTo(): MorphTo
+    {
+        return $this->morphTo('model'); // @phpstan-ignore return.type
     }
 
     /**

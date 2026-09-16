@@ -2,7 +2,6 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-updated: 2026-09-01
 updated: 2026-09-08
 qmd: "coverage rating pest misura reale test saltati database"
 ---
