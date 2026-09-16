@@ -233,14 +233,19 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         Assert::assertInstanceOf(\Closure::class, $required);
 
         $stubGet = static function (mixed $selectValue) use ($select): Get {
-            $get = \Mockery::mock(Get::class);
-            $get->shouldReceive('__invoke')
-                ->withArgs(static function (mixed $path) use ($select): bool {
-                    return $path === $select;
-                })
-                ->andReturn($selectValue);
+            return new class($select, $selectValue) extends Get {
+                public function __construct(
+                    private readonly Component $select,
+                    private readonly mixed $selectValue,
+                ) {
+                    parent::__construct($select);
+                }
 
-            return $get;
+                public function __invoke(string|Component $path = '', bool $isAbsolute = false): mixed
+                {
+                    return $path === $this->select ? $this->selectValue : null;
+                }
+            };
         };
 
         Assert::assertTrue($required($stubGet('other')));
