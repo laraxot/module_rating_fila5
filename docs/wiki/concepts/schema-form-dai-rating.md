@@ -60,6 +60,8 @@ Da qui la divisione, che è la sola non arbitraria:
 | che un rating diventa un campo | **il trait** |
 | che i `is_readonly` sono in sola lettura | **il trait** |
 | il nome del campo, la regola di validazione, la reattività | **il trait** |
+| hydrate/sync pivot value+note (altro = `''`) | **il trait** (5.147) |
+| stringa etichetta form (`formFieldLabel`) + decorazione Fieldset/Field di default | **trait + concern Filament** (5.149) — l’host può ancora override |
 | che «importo annuale» si mostra in euro | **l'host** |
 | quale metodo ricalcola quel campo | **l'host** |
 | la soglia minima di criteri compilati | **l'host** |
