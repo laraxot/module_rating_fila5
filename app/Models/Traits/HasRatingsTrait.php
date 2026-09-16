@@ -83,6 +83,8 @@ trait HasRatingsTrait
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
 
+        $relation = $relation->ordered();
+
         return $relation;
     }
 
