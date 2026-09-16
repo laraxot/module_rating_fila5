@@ -63,6 +63,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int|null $order_column
  * @property int|null $parent_id
  * @property Model|Eloquent $linkedTo
+ * @property-read BaseRatingMorph $pivot
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
