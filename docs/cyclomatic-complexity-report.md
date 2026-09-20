@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Cyclomatic Complexity Report - Module: Rating"
+type: guide
+tags: [cyclomatic, complexity, report, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "cyclomatic complexity report"
+related:
+  - "./data-models.md"
+---
+
+>>>>>>> laraxot/dev
 # Cyclomatic Complexity Report - Module: Rating
 
 **Generated:** 2025-10-01 19:44:11  

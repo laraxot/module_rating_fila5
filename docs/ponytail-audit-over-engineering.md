@@ -1,9 +1,27 @@
+<<<<<<< HEAD
+=======
+---
+title: "Ponytail audit — Rating (over-engineering)"
+type: guide
+tags: [ponytail, audit, over, engineering, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "ponytail audit over engineering"
+related:
+  - "./prd.md"
+---
+
+>>>>>>> laraxot/dev
 # Ponytail audit — Rating (over-engineering)
 
 **Ultimo run:** 2026-06-30  
 **Hub:** [../../../../docs/audit/ponytail-audit.md](../../../../docs/audit/ponytail-audit.md)
 **Remediation:** [../../../../docs/project/ponytail-audit-remediation.md](../../../../docs/project/ponytail-audit-remediation.md)
+<<<<<<< HEAD
 **GitHub monorepo:** [Issue #221](https://github.com/laraxot/base_predict_fila5/issues/221) · [Discussion #222](https://github.com/laraxot/base_predict_fila5/discussions/222) · [Discussion #228](https://github.com/laraxot/base_predict_fila5/discussions/228)
+=======
+**GitHub monorepo:** [Issue #221](https://github.com/laraxot/<nome repository>/discussions/228)
+>>>>>>> laraxot/dev
 
 ## Esito run 2026-06-30
 
