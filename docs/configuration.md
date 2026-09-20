@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Rating Module Configuration"
+type: guide
+tags: [configuration, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "configuration"
+related:
+  - "./conflict-resolution.md"
+---
+
+>>>>>>> laraxot/dev
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
@@ -26,8 +40,13 @@ This section includes packages necessary for development, testing, and code qual
 
 ```json
 "require-dev": {
+<<<<<<< HEAD
     "pestphp/pest": "*",
     "pestphp/pest-plugin-laravel": "*"
+=======
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0"
+>>>>>>> laraxot/dev
 }
 ```
 
@@ -68,4 +87,8 @@ The `scripts` section defines Composer scripts for common development tasks, inc
 *   `test-coverage`: Executes Pest tests with HTML coverage reporting.
 *   `format`: Formats code using PHP-CS-Fixer.
 
+<<<<<<< HEAD
 The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
+=======
+The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
+>>>>>>> laraxot/dev

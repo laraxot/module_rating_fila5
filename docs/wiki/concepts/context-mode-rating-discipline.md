@@ -15,7 +15,15 @@ updated: 2026-05-12
 ```
 laravel/Modules/Rating/docs/wiki/
 ├── index.md                         # ≤30 righe
+<<<<<<< HEAD
 ├── rules/INDEX.md                   # ≤20 righe
+=======
+<<<<<<< HEAD
+├── rules/index.md                   # ≤20 righe
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 └── concepts/
     └── filament-resource-zen-pattern.md  # ≤200 righe
 ```

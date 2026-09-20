@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+---
+title: "Dipendenze e confini del modulo Rating"
+type: guide
+tags: [dependencies, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "dependencies"
+---
+
+>>>>>>> laraxot/dev
 # Dipendenze e confini del modulo Rating
 
 Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa può essere **usato**.

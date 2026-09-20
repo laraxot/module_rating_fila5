@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Rating - Product Strategy"
+type: guide
+tags: [product, strategy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "product strategy"
+related:
+  - "./rating-architecture.md"
+---
+
+>>>>>>> laraxot/dev
 # Rating - Product Strategy
 
 > Strategia prodotto. Modulo.

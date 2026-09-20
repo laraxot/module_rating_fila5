@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "PHPStan Level 10 Errors Roadmap - Modulo Rating"
+type: guide
+tags: [phpstan, errors, roadmap, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan errors roadmap"
+related:
+  - "./phpstan-fixes-2026-01.md"
+---
+
+>>>>>>> laraxot/dev
 # PHPStan Level 10 Errors Roadmap - Modulo Rating
 
 **Data**: 2026-01-12  
@@ -14,11 +28,19 @@
 Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 1. **`app/Models/Rating.php`** (Linea 121)
+<<<<<<< HEAD
    - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\Fixcity\Models\Profile`
    - **Tipo**: `class.notFound`
 
 2. **`app/Models/Rating.php`** (Linea 121)
    - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\Fixcity\Models\Profile`
+=======
+   - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\LegacyDomain\Models\Profile`
+   - **Tipo**: `class.notFound`
+
+2. **`app/Models/Rating.php`** (Linea 121)
+   - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\LegacyDomain\Models\Profile`
+>>>>>>> laraxot/dev
    - **Tipo**: `class.notFound`
 
 ---
@@ -27,7 +49,11 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 ### Pattern: PHPDoc con Classi Sconosciute
 
+<<<<<<< HEAD
 **Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
+=======
+**Problema**: PHPDoc referenzia `Modules\LegacyDomain\Models\Profile` che non esiste nel progetto.
+>>>>>>> laraxot/dev
 
 **Causa**: 
 - Classe obsoleta o rimossa
@@ -57,8 +83,13 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 ```php
 // ❌ PRIMA (Errore)
 /**
+<<<<<<< HEAD
  * @property \Modules\Fixcity\Models\Profile|null $creator
  * @property \Modules\Fixcity\Models\Profile|null $updater
+=======
+ * @property \Modules\LegacyDomain\Models\Profile|null $creator
+ * @property \Modules\LegacyDomain\Models\Profile|null $updater
+>>>>>>> laraxot/dev
  */
 
 // ✅ DOPO (Corretto - verifica classe corretta)

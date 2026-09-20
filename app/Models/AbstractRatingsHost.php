@@ -13,5 +13,9 @@ use Modules\Rating\Models\Traits\HasRatingsTrait;
  */
 abstract class AbstractRatingsHost extends BaseModel
 {
+<<<<<<< HEAD
+=======
+    /** @use HasRatingsTrait<static> */
+>>>>>>> laraxot/dev
     use HasRatingsTrait;
 }
