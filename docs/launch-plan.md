@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Product Launch Plan: Rating Module"
+type: guide
+tags: [launch, plan, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "launch plan"
+related:
+  - "./license.md"
+---
+
+>>>>>>> laraxot/dev
 # Product Launch Plan: Rating Module
 
 ## 🚀 Launch Overview

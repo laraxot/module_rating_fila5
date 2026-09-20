@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+---
+title: "Checklist Qualità Modulo Rating"
+type: guide
+tags: [quality, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "quality"
+---
+
+>>>>>>> laraxot/dev
 # Checklist Qualità Modulo Rating
 
 Questa checklist serve come riferimento operativo per mantenere il modulo `Rating` allineato agli standard Laraxot (PHPStan Level 10, PSR-12, documentazione aggiornata).

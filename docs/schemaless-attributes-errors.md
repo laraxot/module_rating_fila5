@@ -114,6 +114,12 @@ Rating::withExtraAttributes('anno', 2024)->get();
 Rating::withExtraAttributes(['anno' => 2024, 'type' => 'performance'])->get();
 Rating::where('extra_attributes->anno', 2024)->get();
 
+<<<<<<< HEAD
+=======
+// Via HasRatingsTrait (host model): syncRatingsWhere chiama
+// Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
+
+>>>>>>> laraxot/dev
 // 4. Set attributes:
 $rating->extra_attributes->set('anno', 2024);
 $rating->save(); // OBBLIGATORIO!

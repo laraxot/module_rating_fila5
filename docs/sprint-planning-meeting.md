@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Rating - Sprint Planning Meeting"
+type: guide
+tags: [sprint, planning, meeting, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "sprint planning meeting"
+related:
+  - "./sprint-planning.md"
+---
+
+>>>>>>> laraxot/dev
 # Rating - Sprint Planning Meeting
 
 > Documento operativo per sprint planning. Modulo.

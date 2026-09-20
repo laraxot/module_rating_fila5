@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+---
+title: "Metriche e obiettivi di qualità"
+type: guide
+tags: [metrics, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "metrics"
+---
+
+>>>>>>> laraxot/dev
 # Metriche e obiettivi di qualità
 
 Indicatori misurabili per lo stato del modulo e il successo delle fasi.

@@ -13,6 +13,7 @@ abstract class BaseListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
+<<<<<<< HEAD
     public function getTableColumns(): array
     {
         return [
@@ -39,4 +40,7 @@ abstract class BaseListRatings extends XotBaseListRecords
 
         // TextColumn::make('color'),
     }
+=======
+  
+>>>>>>> laraxot/dev
 }

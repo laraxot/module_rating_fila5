@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
+=======
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+<<<<<<< HEAD
 /**
  * Trait HasRating.
  */
@@ -26,6 +31,18 @@ trait HasRating
     }
 
     /** @return array<int|string, string> */
+=======
+/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
+trait HasRating
+{
+    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
+    public function ratings(): MorphToMany
+    {
+        return $this->morphToManyX(Rating::class, 'model');
+    }
+
+    /** @return array<int, string> */
+>>>>>>> laraxot/dev
     public function getOptionRatingsIdTitle(): array
     {
         $options = [];
@@ -34,13 +51,21 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[$rating->id] = (string) $rating->title;
+=======
+            $options[(int) $rating->id] = (string) $rating->title;
+>>>>>>> laraxot/dev
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /** @return array<int|string, string> */
+=======
+    /** @return array<int, string> */
+>>>>>>> laraxot/dev
     public function getOptionRatingsIdColor(): array
     {
         $options = [];
@@ -49,13 +74,23 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[$rating->id] = (string) $rating->color;
+=======
+            $options[(int) $rating->id] = (string) $rating->color;
+>>>>>>> laraxot/dev
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /** @return array<int, array<string, mixed>> */
+=======
+    /**
+     * @return array<int, non-empty-array<string, mixed>>
+     */
+>>>>>>> laraxot/dev
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
@@ -65,11 +100,19 @@ trait HasRating
             ->get();
         // ->toArray()
 
+<<<<<<< HEAD
         $ratingsArray = [];
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             $ratingsArray[$key] = $rowData;
+=======
+        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
+        $ratings_array = [];
+        foreach ($ratings as $key => $rating) {
+            /** @var array<string, mixed> $rowData */
+            $rowData = $rating->toArray();
+>>>>>>> laraxot/dev
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -79,6 +122,7 @@ trait HasRating
             ];
 
             // Use media if it already exists, otherwise don't try to create it
+<<<<<<< HEAD
             $ratingsArray[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
@@ -87,6 +131,17 @@ trait HasRating
         }
 
         return $ratingsArray;
+=======
+            $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+
+            // Add SVG icon directly to the array
+            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['effect'] = false;
+            $ratings_array[$key] = $rowData;
+        }
+
+        return $ratings_array;
+>>>>>>> laraxot/dev
     }
 
     public function getBettingUsers(): int
@@ -97,6 +152,7 @@ trait HasRating
             ->count('user_id');
     }
 
+<<<<<<< HEAD
     /** @return array<int|string, float|int> */
     public function getRatingsPercentageByUser(): array
     {
@@ -115,11 +171,32 @@ trait HasRating
                 ->where('rating_id', $key)
                 ->count();
             $result[$key] = round(100 * $matchCount / $totalCount, 0);
+=======
+    /** @return array<int, float> */
+    public function getRatingsPercentageByUser(): array
+    {
+        $ratings_options = $this->getOptionRatingsIdTitle();
+        $result = [];
+        foreach (array_keys($ratings_options) as $key) {
+            $b = RatingMorph::where('model_id', $this->id)
+                ->where('user_id', '!=', null)
+                ->count();
+            if (0 === $b) {
+                $b = 1;
+            }
+
+            $a = RatingMorph::where('model_id', $this->id)
+                ->where('user_id', '!=', null)
+                ->where('rating_id', $key)
+                ->count();
+            $result[$key] = round(100 * $a / $b, 0);
+>>>>>>> laraxot/dev
         }
 
         return $result;
     }
 
+<<<<<<< HEAD
     /** @return array<int|string, float|int> */
     public function getRatingsPercentageByVolume(): array
     {
@@ -134,18 +211,43 @@ trait HasRating
         foreach (array_keys($ratingsOptions) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $totalVolume, 0);
+=======
+    /** @return array<int, float> */
+    public function getRatingsPercentageByVolume(): array
+    {
+        $ratings_options = $this->getOptionRatingsIdTitle();
+        $result = [];
+
+        $total_volume = $this->getVolumeCredit();
+        if ($total_volume <= 0) {
+            $total_volume = 1;
+        }
+
+        foreach (array_keys($ratings_options) as $key) {
+            $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
+            $result[$key] = round($volume * 100 / $total_volume, 0);
+>>>>>>> laraxot/dev
         }
 
         return $result;
     }
 
+<<<<<<< HEAD
     public function getVolumeCredit(?int $ratingId = null): float
+=======
+    public function getVolumeCredit(?int $rating_id = null): float
+>>>>>>> laraxot/dev
     {
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
+<<<<<<< HEAD
         if (null !== $ratingId) {
             $query->where('rating_id', $ratingId);
+=======
+        if (null !== $rating_id) {
+            $query->where('rating_id', $rating_id);
+>>>>>>> laraxot/dev
         }
 
         return (float) $query->sum('points');
