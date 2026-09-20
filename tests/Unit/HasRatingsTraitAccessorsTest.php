@@ -8,14 +8,20 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+<<<<<<< HEAD
 use Illuminate\Database\Query\JoinClause;
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Mockery;
+<<<<<<< HEAD
 use Modules\Rating\Enums\RuleEnum;
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
@@ -26,7 +32,11 @@ uses(TestCase::class);
 require_once __DIR__.'/../Fixtures/RatingsHostStub.php';
 
 afterEach(function (): void {
+<<<<<<< HEAD
     Mockery::close();
+=======
+    \Mockery::close();
+>>>>>>> laraxot/dev
 });
 
 describe('HasRatingsTrait accessors', function (): void {
@@ -80,7 +90,11 @@ describe('HasRatingsTrait accessors', function (): void {
     test('getRatingsRules prefixa le regole dei rating collegati', function (): void {
         $host = new RatingsHostStub();
         $host->setRelation('ratings', new Collection([
+<<<<<<< HEAD
             (object) ['id' => 1, 'rule' => RuleEnum::ZeroFive, 'title' => 'Voto'],
+=======
+            (object) ['id' => 1, 'rule' => \Modules\Rating\Enums\RuleEnum::ZeroFive, 'title' => 'Voto'],
+>>>>>>> laraxot/dev
         ]));
 
         $rules = $host->getRatingsRules('r_', '_x');
@@ -116,7 +130,11 @@ describe('HasRatingsTrait accessors', function (): void {
 describe('HasRatingsTrait relazioni e sync', function (): void {
     test('ratings delega a morphToManyX sul modello Rating', function (): void {
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+<<<<<<< HEAD
         $relation = Mockery::mock(MorphToMany::class);
+=======
+        $relation = \Mockery::mock(MorphToMany::class);
+>>>>>>> laraxot/dev
 
         $host = new RatingsHostStub();
         $host->forcedMorph = $relation;
@@ -128,7 +146,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         Auth::shouldReceive('id')->andReturn(42);
 
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+<<<<<<< HEAD
         $relation = Mockery::mock(MorphToMany::class);
+=======
+        $relation = \Mockery::mock(MorphToMany::class);
+>>>>>>> laraxot/dev
         $relation->shouldReceive('wherePivot')->once()->with('user_id', 42)->andReturnSelf();
 
         $host = new RatingsHostStub();
@@ -141,13 +163,21 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         Auth::shouldReceive('id')->andReturn(7);
 
         /** @var HasMany<Rating, RatingsHostStub>&Mockery\MockInterface $hasMany */
+<<<<<<< HEAD
         $hasMany = Mockery::mock(HasMany::class);
+=======
+        $hasMany = \Mockery::mock(HasMany::class);
+>>>>>>> laraxot/dev
         $hasMany->shouldReceive('selectRaw')->once()->andReturnSelf();
         $hasMany->shouldReceive('leftJoin')
             ->once()
             ->withArgs(function (string $table, callable $join): bool {
                 Assert::assertSame('rating_morph', $table);
+<<<<<<< HEAD
                 $clause = Mockery::mock(JoinClause::class);
+=======
+                $clause = \Mockery::mock(\Illuminate\Database\Query\JoinClause::class);
+>>>>>>> laraxot/dev
                 $clause->shouldReceive('on')->once()->with('rating_morph.rating_id', 'ratings.id')->andReturnSelf();
                 $clause->shouldReceive('whereColumn')->once()->with('rating_morph.post_type', 'ratings.related_type')->andReturnSelf();
                 $clause->shouldReceive('where')->once()->with('rating_morph.post_id', 99)->andReturnSelf();
@@ -157,7 +187,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
             })
             ->andReturnSelf();
         $hasMany->shouldReceive('groupBy')->once()->with('ratings.id')->andReturnSelf();
+<<<<<<< HEAD
         $hasMany->shouldReceive('with')->once()->with('linkedTo')->andReturnSelf();
+=======
+        $hasMany->shouldReceive('with')->once()->with('post')->andReturnSelf();
+>>>>>>> laraxot/dev
 
         $host = new RatingsHostStub();
         $host->forcedHasMany = $hasMany;
@@ -168,12 +202,20 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
 
     test('scopeWithRating applica leftJoin su rating_morph', function (): void {
         /** @var Builder<RatingsHostStub>&Mockery\MockInterface $query */
+<<<<<<< HEAD
         $query = Mockery::mock(Builder::class);
+=======
+        $query = \Mockery::mock(Builder::class);
+>>>>>>> laraxot/dev
         $query->shouldReceive('leftJoin')
             ->once()
             ->withArgs(function (string $table, callable $join): bool {
                 Assert::assertSame('rating_morph', $table);
+<<<<<<< HEAD
                 $clause = Mockery::mock(JoinClause::class);
+=======
+                $clause = \Mockery::mock(\Illuminate\Database\Query\JoinClause::class);
+>>>>>>> laraxot/dev
                 $clause->shouldReceive('on')->once()->andReturnSelf();
 
                 $join($clause);
@@ -189,7 +231,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
 
     test('getRatingsWhere applica filtri su extra_attributes', function (): void {
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+<<<<<<< HEAD
         $relation = Mockery::mock(MorphToMany::class);
+=======
+        $relation = \Mockery::mock(MorphToMany::class);
+>>>>>>> laraxot/dev
         $relation->shouldReceive('where')
             ->once()
             ->with('extra_attributes->anno', 2024)
@@ -236,7 +282,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         });
 
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+<<<<<<< HEAD
         $relation = Mockery::mock(MorphToMany::class);
+=======
+        $relation = \Mockery::mock(MorphToMany::class);
+>>>>>>> laraxot/dev
         $relation->shouldNotReceive('sync');
 
         $host = new RatingsHostStub();
@@ -284,7 +334,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         $rating->save();
 
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+<<<<<<< HEAD
         $relation = Mockery::mock(MorphToMany::class);
+=======
+        $relation = \Mockery::mock(MorphToMany::class);
+>>>>>>> laraxot/dev
         $relation->shouldReceive('sync')->once()->with([$rating->id])->andReturn([
             'attached' => [$rating->id],
             'detached' => [],

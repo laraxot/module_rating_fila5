@@ -3,7 +3,17 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     'fields' => [
+=======
+    'state' => ['not_rated' => 'non valutata (:count criteri)', 'rated' => ':count criteri · totale :total'],
+    'fields' => [
+        'ratings' => ['label' => 'Valutazione'],
+        'ratings_state' => ['label' => 'Stato valutazione'],
+        'ratings_count' => ['label' => 'Criteri'],
+        'ratings_sum_value' => ['label' => 'Totale punteggio'],
+        'has_rating_values' => ['label' => 'Valutazione inserita', 'placeholder' => 'Tutte', 'true' => 'Solo valutate', 'false' => 'Solo non valutate'],
+>>>>>>> laraxot/dev
         'id' => ['label' => 'id'],
         'title' => ['label' => 'title'],
         'slug' => ['label' => 'slug'],
@@ -16,5 +26,10 @@ return [
     ],
     'actions' => [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
+<<<<<<< HEAD
+=======
+        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
+        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+>>>>>>> laraxot/dev
     ],
 ];

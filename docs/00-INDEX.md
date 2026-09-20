@@ -42,7 +42,15 @@ related:
 ## 🔗 Riferimenti
 
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
+<<<<<<< HEAD
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+=======
+<<<<<<< HEAD
+- [agents.md](../../../../agents.md) - Project guidelines
+=======
+- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ---
 

@@ -1,6 +1,10 @@
 ---
 id: phpstan-Rating-fix
 slug: phpstan-Rating
+<<<<<<< HEAD
+=======
+scope: [module:Rating, project:<repo progetto>]
+>>>>>>> laraxot/dev
 scope: [module:Rating, project:base_workorder_fila5]
 status: Completed
 priority: High

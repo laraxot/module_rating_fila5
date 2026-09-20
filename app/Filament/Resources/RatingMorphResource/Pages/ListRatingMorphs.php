@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingMorphResource\Pages;
 
 use Filament\Actions\CreateAction;
+<<<<<<< HEAD
 use Filament\Tables\Columns\TextColumn;
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Filament\Resources\RatingMorphResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -13,6 +16,7 @@ class ListRatingMorphs extends XotBaseListRecords
 {
     protected static string $resource = RatingMorphResource::class;
 
+<<<<<<< HEAD
     public function getTableColumns(): array
     {
         return [
@@ -37,6 +41,8 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
+=======
+>>>>>>> laraxot/dev
     protected function getActions(): array
     {
         return [

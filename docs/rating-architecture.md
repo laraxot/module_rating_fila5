@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Rating System - Architecture Analysis & Fixes"
+type: concept
+tags: [rating, architecture]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "rating architecture"
+related:
+  - "./readme-en.md"
+---
+
+>>>>>>> laraxot/dev
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  
@@ -188,4 +202,8 @@ Update rating architecture docs with:
 
 **Author**: Development Team  
 **Status**: Ready for Implementation  
+<<<<<<< HEAD
 **Priority**: High (User-facing validation errors)
+=======
+**Priority**: High (User-facing validation errors)
+>>>>>>> laraxot/dev

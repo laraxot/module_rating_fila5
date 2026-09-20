@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Case Sensitivity Rules - Rating Module"
+type: rule
+tags: [case, sensitivity, rules, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "case sensitivity rules"
+related:
+  - "./changelog.md"
+---
+
+>>>>>>> laraxot/dev
 # Case Sensitivity Rules - Rating Module
 
 ## Problema / Problem
