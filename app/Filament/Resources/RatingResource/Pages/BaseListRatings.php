@@ -13,9 +13,6 @@ abstract class BaseListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 
-<<<<<<< HEAD
-  
-=======
     /**
      * @return array<string, mixed>
      */
@@ -45,5 +42,4 @@ abstract class BaseListRatings extends XotBaseListRecords
 
         // TextColumn::make('color'),
     }
->>>>>>> b2d53b8 (.)
 }

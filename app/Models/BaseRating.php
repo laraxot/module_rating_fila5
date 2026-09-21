@@ -7,20 +7,14 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-=======
->>>>>>> b2d53b8 (.)
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
-<<<<<<< HEAD
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
-=======
->>>>>>> b2d53b8 (.)
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -29,59 +23,27 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-<<<<<<< HEAD
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
-=======
->>>>>>> b2d53b8 (.)
 
 /**
  * Modules\Rating\Models\BaseRating.
  *
  * Classe base astratta per tutti i modelli Rating nei vari moduli.
  * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
-<<<<<<< HEAD
  * Utilizza HasRecursiveRelationships per l'albero genitore-figlio (adjacency list):
  * children(), parent(), ancestors(), descendants() arrivano dal trait e non si riscrivono.
-=======
->>>>>>> b2d53b8 (.)
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
-<<<<<<< HEAD
- * @property RuleEnum $rule
-=======
  * @property RuleEnum                                          $rule
->>>>>>> b2d53b8 (.)
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
-<<<<<<< HEAD
- * @property int $id
- * @property int $user_id
- * @property float $value
- * @property string|null $related_type
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $deleted_by
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property int|null $post_id
- * @property string|null $title
- * @property string|null $color
- * @property string|null $icon
- * @property string|null $txt
- * @property bool|null $is_disabled
- * @property bool|null $is_readonly
- * @property int|null $order_column
- * @property int|null $parent_id
- * @property Model|Eloquent $linkedTo
- * @property-read BaseRatingMorph $pivot
-=======
  * @property int             $id
  * @property int             $user_id
  * @property float           $value
@@ -100,7 +62,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property bool|null       $is_readonly
  * @property int|null        $order_column
  * @property Model|\Eloquent $linkedTo
->>>>>>> b2d53b8 (.)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -120,21 +81,14 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
-<<<<<<< HEAD
- * @property int|null $media_count
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
-=======
  * @property int|null                                          $media_count
  * @property ProfileContract|null                              $creator
  * @property ProfileContract|null                              $updater
->>>>>>> b2d53b8 (.)
  *
  * @mixin Eloquent
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-<<<<<<< HEAD
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
@@ -165,21 +119,12 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return '#'.(is_scalar($key) ? (string) $key : '');
     }
-=======
-abstract class BaseRating extends BaseModel implements HasMedia
-{
-    use HasSlug;
-    use InteractsWithMedia;
->>>>>>> b2d53b8 (.)
 
     /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
-<<<<<<< HEAD
         'parent_id',
-=======
->>>>>>> b2d53b8 (.)
         'title',
         'color',
         'txt',
@@ -203,23 +148,14 @@ abstract class BaseRating extends BaseModel implements HasMedia
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-<<<<<<< HEAD
-     * @param  Builder<BaseRating>  $query
-     * @param  array<string, mixed>|string  $attributes
-=======
      * @param Builder<BaseRating>         $query
      * @param array<string, mixed>|string $attributes
      *
->>>>>>> b2d53b8 (.)
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-<<<<<<< HEAD
-        if (is_string($attributes) && $value !== null) {
-=======
         if (is_string($attributes) && null !== $value) {
->>>>>>> b2d53b8 (.)
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }
@@ -235,19 +171,11 @@ abstract class BaseRating extends BaseModel implements HasMedia
     }
 
     /**
-<<<<<<< HEAD
      * @return MorphTo<Model, BaseRating>
      */
     public function linkedTo(): MorphTo
     {
         return $this->morphTo('model'); // @phpstan-ignore return.type
-=======
-     * @return MorphTo<Model, $this>
-     */
-    public function linkedTo(): MorphTo
-    {
-        return $this->morphTo('model');
->>>>>>> b2d53b8 (.)
     }
 
     /**
