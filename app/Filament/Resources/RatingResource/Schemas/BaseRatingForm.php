@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
-use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 /**
