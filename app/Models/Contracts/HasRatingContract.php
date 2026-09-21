@@ -15,6 +15,5 @@ use Modules\Rating\Models\Rating;
  */
 interface HasRatingContract
 {
-    /** @return MorphToMany<Rating, Model, MorphPivot, 'pivot'> */
     public function ratings(): Relation;
 }
