@@ -19,11 +19,7 @@ use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 
 class Rating extends Block
 {
-<<<<<<< HEAD
     public const string BLOCK_TYPE = 'rating';
-=======
-    public const BLOCK_TYPE = 'rating';
->>>>>>> b2d53b8 (.)
 
     /**
      * Create a new rating block.
@@ -65,12 +61,7 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-<<<<<<< HEAD
      * @param array<string, string>|null $options Chiave = vista, valore = etichetta; se null li fornisce GetViewBlocksOptionsByTypeAction
-=======
-     * @param array<string,mixed> $options
-     * @param array<string,mixed> $options
->>>>>>> b2d53b8 (.)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
@@ -83,11 +74,7 @@ class Rating extends Block
         return Block::make($name)
             ->schema([
                 Radio::make('view')
-<<<<<<< HEAD
-                    ->options($blockOptions),
-=======
                     ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
->>>>>>> b2d53b8 (.)
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

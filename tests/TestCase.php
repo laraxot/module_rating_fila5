@@ -33,7 +33,6 @@ abstract class TestCase extends XotBaseTestCase
         ];
     }
 
-<<<<<<< HEAD
     /**
      * Lo sqlite condiviso (`database/database.sqlite`) non contiene per forza le tabelle
      * del modulo: le migration non vengono lanciate dai test (mai `RefreshDatabase`).
@@ -50,17 +49,11 @@ abstract class TestCase extends XotBaseTestCase
         }
     }
 
-=======
->>>>>>> b2d53b8 (.)
     protected function setUp(): void
     {
         parent::setUp();
 
-<<<<<<< HEAD
-        $database = self::sharedSqlitePath();
-=======
         $database = database_path('database.sqlite');
->>>>>>> b2d53b8 (.)
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);

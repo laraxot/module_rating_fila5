@@ -1,27 +1,14 @@
-<<<<<<< HEAD
+# Canon: docs/wiki/rules/no-git-lfs.md
+#
+# Git LFS VIETATO. Binari = blob git normali.
+
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
-# Prototipo .gitattributes per laravel/Modules/* e laravel/Themes/*
-# Canon: bashscripts/ai/wiki/rules/no-git-lfs.md
-# Sync:  bash bashscripts/templates/sync-gitattributes-modules.sh
-#
-# Git LFS VIETATO. I binari sono blob git normali.
-# Mai: filter=lfs / diff=lfs / merge=lfs
-
-# Binari come blob git normali — NIENTE git-lfs.
-# `binary` disattiva diff e normalizzazione di fine riga.
-# `!filter` annulla un eventuale filter.lfs ereditato dalla configurazione di sistema:
-# e' questa la protezione vera, perche' filter.lfs.* puo' restare installato sulla
-# macchina per altri progetti e senza `!filter` verrebbe applicato anche qui.
-=======
-# Prototype: laravel/Modules/* e laravel/Themes/*
-# Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
-# Git LFS VIETATO. Binari = blob git normali.
+# Binary files (regular git blobs — NO git-lfs)
 # `binary` + `!filter` azzera eventuali filtri LFS ereditati
->>>>>>> b2d53b8 (.)
 *.png binary !filter
 *.jpg binary !filter
 *.jpeg binary !filter
