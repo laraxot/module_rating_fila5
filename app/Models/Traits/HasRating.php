@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
@@ -12,7 +13,7 @@ use Modules\Rating\Models\RatingMorph;
 /** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
 {
-    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
+    /** @return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
