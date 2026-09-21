@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Filament\Tables\Columns\RatingsColumn;
 use Modules\Xot\Filament\Forms\Components\XotBasePlaceholder;
 use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
-use Webmozart\Assert\Assert;
 
 /**
  * Lo stato della valutazione nella scheda singola.
@@ -36,7 +35,7 @@ class RatingsSection extends XotBaseSection
     {
         parent::setUp();
 
-        if ($this->getHeading() === null) {
+        if (null === $this->getHeading()) {
             $this->heading(static::DEFAULT_HEADING);
         }
 
@@ -46,7 +45,7 @@ class RatingsSection extends XotBaseSection
     /**
      * Campi aggiuntivi accodati a quelli standard.
      *
-     * @param  array<string, Component>  $array
+     * @param array<string, Component> $array
      */
     public function add(array $array): self
     {
