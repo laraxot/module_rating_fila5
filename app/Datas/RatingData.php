@@ -1,17 +1,13 @@
 <?php
 
-<<<<<<< HEAD
-=======
 /**
  * ---.
  */
 
->>>>>>> b2d53b8 (.)
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
-<<<<<<< HEAD
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
@@ -29,13 +25,6 @@ use Spatie\LaravelData\Data;
  * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità',
  * come `SchedaData` sta a `schede` — è tracciata come lavoro a se': tocca il blocco, il
  * test e ogni chiamante, e non si fa di passaggio.
-=======
-use Modules\Rating\Enums\SupportedLocale;
-use Spatie\LaravelData\Data;
-
-/**
- * Undocumented class.
->>>>>>> b2d53b8 (.)
  */
 class RatingData extends Data
 {
@@ -46,15 +35,11 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
-<<<<<<< HEAD
         public readonly ?int $parent_id = null,
-=======
->>>>>>> b2d53b8 (.)
     ) {
     }
 
     /**
-<<<<<<< HEAD
      * Costruisce il DTO da un payload di form.
      *
      * Delega al casting automatico di Spatie LaravelData (max DRY — no controller
@@ -119,21 +104,5 @@ class RatingData extends Data
         if ($missing('parent_id')) {
             $table->unsignedBigInteger('parent_id')->nullable();
         }
-=======
-     * Create from array with type casting.
-     *
-     * @param array<string,mixed> $data
-     */
-    public static function fromArray(array $data): self
-    {
-        return new self(
-            title: is_string($data['title'] ?? '') ? ($data['title'] ?? '') : (is_scalar($data['title'] ?? '') ? (string) ($data['title'] ?? '') : ''),
-            description: is_string($data['description'] ?? '') ? ($data['description'] ?? '') : (is_scalar($data['description'] ?? '') ? (string) ($data['description'] ?? '') : ''),
-            disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
-            position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
-            locale: SupportedLocale::fromString(is_string($data['locale'] ?? 'it') ? ($data['locale'] ?? 'it') : 'it'),
-            image_url: isset($data['image_url']) ? (is_string($data['image_url']) ? $data['image_url'] : null) : null,
-        );
->>>>>>> b2d53b8 (.)
     }
 }
