@@ -57,6 +57,7 @@ abstract class BaseChildrenRelationManager extends XotBaseRelationManager
         $schema['parent_id'] = Hidden::make('parent_id')
             ->default(function (): int|string|null {
                 $key = $this->getOwnerRecord()->getKey();
+
                 return is_int($key) || is_string($key) ? $key : null;
             });
 

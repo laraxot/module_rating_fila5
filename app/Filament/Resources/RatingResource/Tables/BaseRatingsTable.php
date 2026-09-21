@@ -4,12 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\RatingResource\Tables;
 
-use Filament\Actions\Action;
-use Filament\Actions\ActionGroup;
-use Filament\Actions\BulkAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
@@ -51,8 +45,4 @@ abstract class BaseRatingsTable extends XotBaseResourceTable
         return [
         ];
     }
-
-    
-
-   
 }
