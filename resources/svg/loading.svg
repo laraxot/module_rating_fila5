@@ -3,4 +3,8 @@
     <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
     <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
   </circle>
+<<<<<<< HEAD
 </svg>
+=======
+</svg>
+>>>>>>> b2d53b8 (.)

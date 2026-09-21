@@ -7,6 +7,7 @@ namespace Modules\Rating\Enums;
 use Filament\Support\Contracts\HasLabel;
 use Modules\Xot\Traits\EnumTrait;
 
+<<<<<<< HEAD
 /**
  * Regole di validazione applicabili al voto di un criterio.
  *
@@ -24,14 +25,20 @@ use Modules\Xot\Traits\EnumTrait;
  * @see ../../../IndennitaResponsabilita/docs/stories/8.22.ruleenum-zerosix-zerofour-per-art-17.story.md
  * @see ../../docs/stories/8.17.tetto-criterio-come-dato-non-enum.story.md
  */
+=======
+>>>>>>> b2d53b8 (.)
 enum RuleEnum: string implements HasLabel
 {
     use EnumTrait;
 
     case Null = '';
+<<<<<<< HEAD
     case ZeroFour = 'numeric|min:0|max:4';
     case ZeroFive = 'numeric|min:0|max:5';
     case ZeroSix = 'numeric|min:0|max:6';
+=======
+    case ZeroFive = 'numeric|min:0|max:5';
+>>>>>>> b2d53b8 (.)
     case ZeroOrMin4Max25 = 'min:0|max:25|not_in:1,2,3';
     case NullableNumericMin0Max25 = 'nullable|numeric|min:0|max:25';
 }

@@ -20,6 +20,7 @@ docs/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
 <<<<<<< HEAD
+<<<<<<< HEAD
 │   ├── SCHEMA.md          # Questo file
 =======
 <<<<<<< HEAD
@@ -29,15 +30,20 @@ docs/
 =======
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 │   ├── schema.md          # Questo file
 =======
 │   ├── SCHEMA.md          # Questo file
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>>> laraxot/dev:docs/wiki/SCHEMA.md
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -50,8 +56,12 @@ docs/
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Cross-ref: `[Link](../concepts/name.md)`
 =======
 - Cross-ref: `Link`
 >>>>>>> laraxot/dev
+=======
+- Cross-ref: `Link`
+>>>>>>> b2d53b8 (.)
 - NON modificare mai `docs/raw/`

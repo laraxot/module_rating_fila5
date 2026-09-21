@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Rating - Sprint Planning Meeting"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./sprint-planning.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Rating - Sprint Planning Meeting
 
 > Documento operativo per sprint planning. Modulo.

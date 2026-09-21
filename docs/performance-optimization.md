@@ -19,14 +19,20 @@ related:
 
 \`\`\`diff
 <<<<<<< HEAD
+<<<<<<< HEAD
 - 150+ rules embeddate in AGENTS.md
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 - 150+ rules embeddate in agents.md
 =======
 - 150+ rules embeddate in AGENTS.md
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -52,14 +58,20 @@ related:
 ### 4. Wiki Indici Locali
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 =======
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
@@ -130,6 +142,7 @@ context-mode ctx-stats
 ## Riferimenti
 
 - [Global Performance Guide](../../docs/wiki/concepts/performance-optimization.md)
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 - [QMD Setup](./QMD-SETUP.md)
@@ -259,6 +272,10 @@ context-mode ctx-stats
 - [QMD Setup](./QMD-SETUP.md)
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
+- [QMD Setup](./QMD-SETUP.md)
+>>>>>>> b2d53b8 (.)
 
 ---
 *Status: Ottimizzato | Token risparmiati: ~48K per session*

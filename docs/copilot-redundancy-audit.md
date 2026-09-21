@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Copilot Redundancy Audit"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./core-functionality.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi

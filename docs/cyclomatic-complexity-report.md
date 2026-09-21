@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Cyclomatic Complexity Report - Module: Rating"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./data-models.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Cyclomatic Complexity Report - Module: Rating
 
 **Generated:** 2025-10-01 19:44:11  
