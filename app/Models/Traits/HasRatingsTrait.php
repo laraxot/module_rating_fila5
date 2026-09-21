@@ -222,7 +222,7 @@ trait HasRatingsTrait
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-        if ($ratingIds !== []) {
+        if ([] !== $ratingIds) {
             $this->ratings()->sync($ratingIds);
         }
 
@@ -291,7 +291,7 @@ trait HasRatingsTrait
      */
     private static function selectIsOther(mixed $selectValue): bool
     {
-        return $selectValue === self::OTHER_OPTION_KEY;
+        return self::OTHER_OPTION_KEY === $selectValue;
     }
 
     /**
@@ -328,14 +328,15 @@ trait HasRatingsTrait
      * Pubblico perche' chi somma deve escludere le stesse righe: vedi `getTot()` di
      * IndennitaResponsabilita. Due definizioni di «opzione» prima o poi divergono.
      *
-     * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
+     * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
+     *
      * @return Collection<int, BaseRating>
      */
     public function ratingFormFields(?EloquentCollection $ratings = null): Collection
     {
         return ($ratings ?? $this->ratings)
             ->unique('id')
-            ->reject(static fn (BaseRating $row): bool => $row->parent_id !== null);
+            ->reject(static fn (BaseRating $row): bool => null !== $row->parent_id);
     }
 
     /**
@@ -352,7 +353,8 @@ trait HasRatingsTrait
      * refactor 2026-09-16: prima duplicato (parziale, solo `value`) dentro
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
+     *
      * @return array<string, mixed>
      */
     public function hydrateRatingsFormData(array $data): array
@@ -365,7 +367,7 @@ trait HasRatingsTrait
             $value = $rating->pivot->value;
             $note = $rating->pivot->note;
 
-            if ($value === null && filled($note)) {
+            if (null === $value && filled($note)) {
                 $value = self::OTHER_OPTION_KEY;
             }
 
@@ -390,7 +392,7 @@ trait HasRatingsTrait
      * Nato dal refactor 2026-09-16: prima duplicato (con cast a `0`, il bug che questo
      * metodo corregge) dentro `CompilaIndennitaResponsabilita::save()`.
      *
-     * @param  array<int|string, array{pivot?: array<string, mixed>}>  $ratingsData
+     * @param array<int|string, array{pivot?: array<string, mixed>}> $ratingsData
      */
     public function syncRatingsFormData(array $ratingsData): void
     {
@@ -398,7 +400,7 @@ trait HasRatingsTrait
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
-            $pivot['value'] = ($value === self::OTHER_OPTION_KEY || $value === null)
+            $pivot['value'] = (self::OTHER_OPTION_KEY === $value || null === $value)
                 ? null
                 : (is_numeric($value) ? $value : null);
 
@@ -407,7 +409,8 @@ trait HasRatingsTrait
     }
 
     /**
-     * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
+     * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
+     *
      * @return array<string, Component> indicizzato per nome di campo
      */
     public function getRatingsFormSchema(?RatingsFormCallerContract $caller = null, ?EloquentCollection $ratings = null): array
@@ -441,7 +444,7 @@ trait HasRatingsTrait
      * dato e gancio di ricalcolo sono in coda, scritti una volta sola: quando il gancio
      * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
      *
-     * @param  Collection<int, BaseRating>  $readonlyRatings
+     * @param Collection<int, BaseRating> $readonlyRatings
      */
     private function buildRatingComponent(
         BaseRating $rating,
@@ -450,7 +453,7 @@ trait HasRatingsTrait
     ): Component {
         $field = self::ratingFieldName($rating);
 
-        if ($rating->is_readonly === true) {
+        if (true === $rating->is_readonly) {
             return TextEntry::make($field)->inlineLabel();
         }
 
@@ -468,7 +471,7 @@ trait HasRatingsTrait
         // («ratings.52.pivot.value»). API distinta da label() → non viola D-1 (5.151).
         $humanName = self::formFieldLabel($rating);
 
-        if ($options === []) {
+        if ([] === $options) {
             return TextInput::make($field)
                 ->numeric()
                 ->live(onBlur: true)

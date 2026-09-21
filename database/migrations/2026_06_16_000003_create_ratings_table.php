@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
-use Modules\Rating\Datas\RatingData;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
