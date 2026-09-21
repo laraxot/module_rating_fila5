@@ -17,7 +17,8 @@ uses(TestCase::class);
 
 describe('DecoratesRatingFormFields', function (): void {
     test('applica label al Fieldset e al Field', function (): void {
-        $host = new class {
+        $host = new class
+        {
             use DecoratesRatingFormFields;
 
             public function decorate(BaseRating $rating, Component $component): Component
@@ -26,7 +27,7 @@ describe('DecoratesRatingFormFields', function (): void {
             }
         };
 
-        $rating = new Rating();
+        $rating = new Rating;
         $rating->forceFill(['id' => 1, 'title' => 'Ruolo', 'txt' => 'Ruolo <i>x</i>']);
 
         $fieldset = $host->decorate($rating, Fieldset::make());

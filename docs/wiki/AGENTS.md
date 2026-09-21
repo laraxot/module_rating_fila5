@@ -146,17 +146,9 @@ Related:
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
 <<<<<<< HEAD
-<<<<<<< HEAD
-- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b2d53b8 (.)
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 =======
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
->>>>>>> laraxot/dev
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
 - [Module Documentation](../README.md)
 
@@ -462,6 +454,4 @@ Related:
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
-=======
->>>>>>> b2d53b8 (.)
 - [Module Documentation](../README.md)

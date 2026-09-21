@@ -1,71 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# ⭐ Rating
-
-[![Stars](https://img.shields.io/github/stars/laraxot/module_rating_fila5?style=plastic&color=yellow)]()
-[![Forks](https://img.shields.io/github/forks/laraxot/module_rating_fila5?style=plastic&color=green)]()
-[![Issues](https://img.shields.io/github/issues/laraxot/module_rating_fila5?style=plastic&color=red)]()
-[![License](https://img.shields.io/github/license/laraxot/module_rating_fila5?style=plastic&color=blue)]()
-[![Last Commit](https://img.shields.io/github/last-commit/laraxot/module_rating_fila5?style=plastic&color=purple)]()
-[![Release](https://img.shields.io/github/v/release/laraxot/module_rating_fila5?style=plastic&color=orange&display_name=release)]()
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
-]()
-
-> **Sistema di valutazioni e feedback**  
-> Rating, voti, likeable traits e sistemi di valutazione flessibili.
-
-## 🎯 La Visione
-
-Crediamo che il software debba essere **chiaro, modulare e potente**. Ogni modulo è stato pensato per risolvere problemi reali con soluzioni eleganti.
-
-## Perché esiste questo modulo?
-
-**Rating, voti, likeable traits e sistemi di valutazione flessibili.**
-
-In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Questo modulo non è solo una libreria: è una **promessa di qualità** mantenuta.
-
-## 🧘 I Principi Zen (e la nostra filosofia)
-
-1. **Semplicità vince sulla complessità** - Il codice chiaro è più potente di mille righe di commenti.
-2. **Modulare è dare vita** - Ogni pezzo può vivere da solo, ma insieme diventa un universo.
-3. **Documentare è onniscienza** - La mancanza di documentazione è la paura del futuro.
-4. **Testare è fidarsi** - Non fidarsi del proprio codice è fidarsi del caos.
-5. **Rifattorizzare è crescere** - Lentamente, incrementalmente, diventiamo migliori.
-
-## 💎 Le sue Superpoteri
-
-- **Architettura modulare** - Separazione netta tra logica di business e presentazione
-- **PHPStan Level 10** - Massima sicurezza tipizzazione
-- **PSR-12** - Codice che parla lo stesso linguaggio del mondo
-- **Filament 5** - Admin panel d'eccellenza
-- **XotBase** - Pattern consolidati che funzionano
-
-## 📖 Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-| 🎯 Esempi | [docs/examples/](./docs/examples/) |
-
-## 🔧 Tecnologie chiave
-
-**Stack principale:** Laravel 13, Filament 5, XotBase
-
-**Keywords:** Ratings, Reviews, Stars
-
-## 🚀 Pronte all'uso
-
-Importa, installa, configura. Il resto ci penseremo noi.
-
----
-
-**Modulo** `Rating` · **Laraxot** · PHPStan 10 · Filament 5
-=======
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
 <<<<<<< HEAD
@@ -75,10 +7,6 @@ Importa, installa, configura. Il resto ci penseremo noi.
 [![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 =======
-=======
-# ⭐ Rating
-
->>>>>>> b2d53b8 (.)
 [![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
 [![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
@@ -88,7 +16,6 @@ Importa, installa, configura. Il resto ci penseremo noi.
 [![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
 [![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
 [![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
 
 > Non ogni valutazione ha gli stessi campi. Un rating su un servizio, uno su
@@ -204,51 +131,3 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 =======
 **Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-
-> **Valuta qualsiasi cosa — una volta sola, bene.** Rating polimorfico, like, statistiche in tempo reale.
-
----
-
-## Perché esiste
-
-Feedback e soddisfazione su servizi, contenuti, operatori.
-
-## Superpoteri
-
-- Trait `HasRating` riusabile
-- Queueable Actions per aggregati
-- Filament Resources complete
-- PHPStan 10 e test suite
-
-## Certificazioni
-
-| Certificazione | Stato |
-|----------------|-------|
-| PHPStan livello 10 | Target progetto |
-| `declare(strict_types=1)` | Su nuovo codice PHP |
-| Filament 5 + XotBase | Admin enterprise |
-| Test PHPUnit / Pest | Suite modulo |
-| Documentazione wiki | Cartella `docs/` |
-
-## Vuoi entrare nel team?
-
-Numeri che **guidano miglioramento** del servizio pubblico.
-
-Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
-
----
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
-**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
->>>>>>> b2d53b8 (.)

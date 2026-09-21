@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Criteri di accettazione per le fasi"
 type: guide
@@ -12,10 +7,6 @@ updated: 2026-07-14
 qmd: "acceptance criteria"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Criteri di accettazione per le fasi
 
 Criteri misurabili e verificabili per considerare completata ogni fase della roadmap.  
@@ -36,11 +27,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 
 - [ ] Ogni modello in `Modules/Rating/Models/` estende `Modules\Rating\Models\BaseModel` (o la classe base indicata in [architecture.md](../architecture.md)).
 - [ ] Relazioni con PHPDoc completo (`@return BelongsTo<...>`, `MorphMany<...>`, ecc.) e type hint di ritorno.
-<<<<<<< HEAD
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 13 / regole progetto.
-=======
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
->>>>>>> b2d53b8 (.)
 
 ### Filament (se presente)
 

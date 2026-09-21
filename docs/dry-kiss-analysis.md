@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "🐄 DRY & KISS Analysis - Rating"
 type: concept
@@ -14,10 +9,6 @@ related:
   - "./duplicate-methods-analysis.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # 🐄 DRY & KISS Analysis - Rating
 
 **Data:** 2025-10-15 | **Status:** ✅

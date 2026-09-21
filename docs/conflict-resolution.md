@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Conflict Resolution — Module Rating"
 type: guide
@@ -14,10 +9,6 @@ related:
   - "./contracts-naming.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Conflict Resolution — Module Rating
 
 ## Summary

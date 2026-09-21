@@ -65,18 +65,10 @@ qmd search "form" -c rating  # Solo questo modulo
 - [Global QMD Config](../qmd.md) (root docs)
 - [Operational Discipline](../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
 <<<<<<< HEAD
-<<<<<<< HEAD
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
-=======
-<<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
 =======
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
->>>>>>> b2d53b8 (.)
 
 ---
 *Cache: ~/.cache/qmd-cache/ | Index: ~/.cache/qmd-cache/index*

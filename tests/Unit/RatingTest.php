@@ -65,7 +65,7 @@ describe('Rating', function (): void {
         $locale = SupportedLocale::IT;
 
         Assert::assertEquals('it', $locale->value);
-        Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
+        Assert::assertEquals('Italiano', $locale->getLabel());
 
         $localeFromString = SupportedLocale::fromString('en');
         Assert::assertEquals(SupportedLocale::EN, $localeFromString);

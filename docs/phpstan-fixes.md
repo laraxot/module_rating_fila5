@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "PHPStan Fixes - Modulo Rating"
 type: guide
@@ -11,7 +9,6 @@ related:
   - "./ponytail-audit-over-engineering.md"
 ---
 
->>>>>>> laraxot/dev
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori
@@ -132,10 +129,6 @@ return $result;
 ---
 
 **Status**: ✅ COMPLETATO  
-<<<<<<< HEAD
-**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
-**Errori Totali**: 0 ✅
-=======
 **Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
 
@@ -159,4 +152,3 @@ per un pattern analogo (`@mixin contains unknown class`).
 
 Non risolvibile senza modificare `phpstan.neon` (vietato dal mandato). Sparisce
 eseguendo l'analisi sull'intero albero `Modules/`.
->>>>>>> laraxot/dev

@@ -3,7 +3,6 @@ title: "concepts index — Rating"
 type: index
 tags: [concepts, Rating]
 created: 2026-05-11
-<<<<<<< HEAD
 updated: 2026-08-24
 ---
 
@@ -12,11 +11,6 @@ updated: 2026-08-24
 - [schemaless-attributes-casts.md](schemaless-attributes-casts.md) — nota casts `extra_attributes` (SchemalessAttributes) su Rating
 
 
-=======
-updated: 2026-05-11
----
-
->>>>>>> b2d53b8 (.)
 # concepts Index — Rating
 
 Concetti specifici del modulo Rating. Carica on-demand via `qmd search` o consulta il [trigger map root](/docs/wiki/rules/00-TRIGGER_MAP.md).
