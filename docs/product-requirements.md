@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Product Requirements Document (PRD)"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./product-roadmap.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Product Requirements Document (PRD)
 
 ## Metadata

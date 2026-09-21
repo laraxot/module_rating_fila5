@@ -13,7 +13,11 @@ class RatingMorphInfolist extends XotBaseResourceInfolist
     /**
      * @return array<string, Component>
      */
+<<<<<<< HEAD
     public function getInfolistSchema(): array
+=======
+    public static function getInfolistSchema(): array
+>>>>>>> b2d53b8 (.)
     {
         return [
             'model_id' => TextEntry::make('model_id'),

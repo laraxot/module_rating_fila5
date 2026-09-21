@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Product Strategy: Rating Module"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./troubleshooting.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Product Strategy: Rating Module
 
 ## 🌍 Market Context

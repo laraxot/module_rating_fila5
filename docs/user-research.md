@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "User Research: Rating Module"
 type: guide
@@ -15,7 +18,10 @@ related:
 >>>>>>> laraxot/dev
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # User Research: Rating Module
 
 ## 🔬 Research Goals

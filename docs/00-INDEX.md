@@ -6,7 +6,11 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "00 INDEX"
 related:
+<<<<<<< HEAD
   - "./bad-practices.md"
+=======
+  - "./BAD_PRACTICES.md"
+>>>>>>> b2d53b8 (.)
 ---
 
 # 📚 RATING Module - Documentation Index
@@ -31,6 +35,7 @@ related:
 | SPRINT_PLANNING.md | Sprint Planning |
 | USER_RESEARCH.md | User Research |
 
+<<<<<<< HEAD
 ### BMAD stories attive
 
 | Story | Stato | Scopo |
@@ -39,18 +44,26 @@ related:
 | [RATING-2.3](stories/2.3.phpstan-rating-tail-contracts.story.md) | review | Ultimi 11 findings nei test Rating: cold module a zero |
 | [4.26 coda](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md) | review | PHPStan modulo a zero (E+F) |
 
+=======
+>>>>>>> b2d53b8 (.)
 ## 🔗 Riferimenti
 
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 - [agents.md](../../../../agents.md) - Project guidelines
 =======
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 
 ---
 

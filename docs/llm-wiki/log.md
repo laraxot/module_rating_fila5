@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Rating Activity Log"
 type: guide
@@ -9,7 +12,10 @@ updated: 2026-07-14
 qmd: "log"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Rating Activity Log
 
 > **Module**: Rating
@@ -21,14 +27,20 @@ qmd: "log"
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Created: AGENTS.md (agent instructions)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 - Created: agents.md (agent instructions)
 =======
 - Created: AGENTS.md (agent instructions)
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:
