@@ -19,8 +19,11 @@ tags: [structure, architecture, module]
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 │   │   ├── 00-index.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -33,7 +36,10 @@ tags: [structure, architecture, module]
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── index.md
 =======
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -46,8 +52,11 @@ tags: [structure, architecture, module]
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 >>>>>>> laraxot/dev
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
@@ -55,6 +64,7 @@ tags: [structure, architecture, module]
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+<<<<<<< HEAD
 <<<<<<< HEAD
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 =======
@@ -65,10 +75,13 @@ tags: [structure, architecture, module]
 =======
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 ├── architecture.md               # (opzionale) Architettura modulo
 =======
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>>> laraxot/dev:docs/PROJECT-STRUCTURE.md
 =======
@@ -198,6 +211,8 @@ git commit -m "docs: add wiki structure for Rating"
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
 ├── architecture.md               # (opzionale) Architettura modulo
+=======
+>>>>>>> b2d53b8 (.)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -269,7 +284,15 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files (già creati)
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
+=======
+<<<<<<< HEAD
+cp docs/wiki/rules/index.md docs/wiki/rules/
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> laraxot/dev
+>>>>>>> b2d53b8 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)
@@ -282,6 +305,9 @@ git commit -m "docs: add wiki structure for Rating"
 
 ---
 *Pattern: On-Demand | Source: docs/wiki/*
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)

@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "./best-practices.md"
 =======
 <<<<<<< HEAD
@@ -15,6 +16,9 @@ related:
   - "./BEST_PRACTICES.md"
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - "./BEST_PRACTICES.md"
+>>>>>>> b2d53b8 (.)
 ---
 
 # Bad Practices – Rating

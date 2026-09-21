@@ -64,6 +64,7 @@ related:
 ### Rule 3: Link Heavily
 - Every page MUST have 3+ incoming links
 - Every page MUST have 3+ outgoing links
+<<<<<<< HEAD
 
 ---
 
@@ -139,3 +140,5 @@ related:
 ### Rule 3: Link Heavily
 - Every page MUST have 3+ incoming links
 - Every page MUST have 3+ outgoing links
+=======
+>>>>>>> b2d53b8 (.)

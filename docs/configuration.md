@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Rating Module Configuration"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./conflict-resolution.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
@@ -31,7 +37,11 @@ This section lists the essential packages required for the module to function co
 ```
 
 *   `spatie/laravel-schemaless-attributes`: Essential for handling flexible, schemaless data structures within the module's Eloquent models.
+<<<<<<< HEAD
 *   `laravel/framework`: Specifies compatibility with Laravel 13.x.
+=======
+*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
+>>>>>>> b2d53b8 (.)
 *   `filament/filament`: Indicates integration with Filament Admin Panel version 5.x.
 
 ### `require-dev` Section
@@ -41,12 +51,17 @@ This section includes packages necessary for development, testing, and code qual
 ```json
 "require-dev": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "pestphp/pest": "*",
     "pestphp/pest-plugin-laravel": "*"
 =======
     "pestphp/pest": "^2.0",
     "pestphp/pest-plugin-laravel": "^2.0"
 >>>>>>> laraxot/dev
+=======
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0"
+>>>>>>> b2d53b8 (.)
 }
 ```
 
@@ -88,7 +103,11 @@ The `scripts` section defines Composer scripts for common development tasks, inc
 *   `format`: Formats code using PHP-CS-Fixer.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
 =======
 The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
 >>>>>>> laraxot/dev
+=======
+The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
+>>>>>>> b2d53b8 (.)

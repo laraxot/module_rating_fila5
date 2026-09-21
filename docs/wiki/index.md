@@ -8,18 +8,24 @@ updated: 2026-06-05
 qmd: "rating module wiki index second brain harness"
 issues:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
 =======
+=======
+>>>>>>> b2d53b8 (.)
   - "https://github.com/laraxot/platform/issues/272"
 discussions:
   - "https://github.com/laraxot/platform/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
   - ../../../../docs/wiki/bmad/architecture.md
   - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
@@ -29,6 +35,7 @@ related:
 
 ## AI / second brain
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
 =======
@@ -131,6 +138,8 @@ Aggiornato: 2026-05-12
 
 ## AI / second brain
 
+=======
+>>>>>>> b2d53b8 (.)
 - [hackernoon-ai-coding-tips-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
@@ -158,8 +167,18 @@ Indice operativo del wiki Rating.
 
 ## On-Demand Entry Points
 
+<<<<<<< HEAD
 - [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
+=======
+<<<<<<< HEAD
+- [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
+=======
+- [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
+>>>>>>> laraxot/dev
+>>>>>>> b2d53b8 (.)
 
 ## Scopo Rating Module
 
@@ -182,8 +201,11 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 ## Bad Practices
 
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))
 
@@ -199,4 +221,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
 Aggiornato: 2026-05-12
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)

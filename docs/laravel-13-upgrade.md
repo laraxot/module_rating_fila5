@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Upgrade Laravel 13 - Rating 🐄✨"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./launch-plan.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Upgrade Laravel 13 - Rating 🐄✨
 
 ## 🎯 Visione Architetturale

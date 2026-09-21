@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Rating - Product Roadmap"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./product-strategy.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Rating - Product Roadmap
 
 > Documento vivente. Modulo.

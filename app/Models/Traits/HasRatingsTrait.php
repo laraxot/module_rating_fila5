@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -15,6 +16,10 @@ use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+=======
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Database\Eloquent\Builder;
+>>>>>>> b2d53b8 (.)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -23,9 +28,12 @@ use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use Illuminate\Validation\Rule;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
+=======
+>>>>>>> b2d53b8 (.)
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
@@ -44,6 +52,7 @@ use Webmozart\Assert\Assert;
 trait HasRatingsTrait
 {
     /**
+<<<<<<< HEAD
      * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
      *
      * `rating_morph.model_type` contiene per la stessa entità sia l'alias della morph
@@ -76,6 +85,8 @@ trait HasRatingsTrait
     }
 
     /**
+=======
+>>>>>>> b2d53b8 (.)
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany
@@ -87,8 +98,11 @@ trait HasRatingsTrait
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
 
+<<<<<<< HEAD
         $relation = $relation->ordered();
 
+=======
+>>>>>>> b2d53b8 (.)
         return $relation;
     }
 
@@ -127,7 +141,12 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  Builder<TModel>  $query
+=======
+     * @param Builder<TModel> $query
+     *
+>>>>>>> b2d53b8 (.)
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -180,7 +199,12 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $filters
+=======
+     * @param array<string, mixed> $filters
+     *
+>>>>>>> b2d53b8 (.)
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -200,7 +224,12 @@ trait HasRatingsTrait
     /**
      * Sync pivot verso rating che matchano extra_attributes.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $where
+=======
+     * @param array<string, mixed> $where
+     *
+>>>>>>> b2d53b8 (.)
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -210,6 +239,7 @@ trait HasRatingsTrait
         Assert::subclassOf($ratingClass, BaseRating::class);
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
+<<<<<<< HEAD
         /*
         dddx([
             'ratings' => $ratings,
@@ -220,6 +250,13 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ($ratingIds !== []) {
+=======
+
+        /** @var list<int|string> $ratingIds */
+        $ratingIds = $ratings->pluck('id')->all();
+
+        if ([] !== $ratingIds) {
+>>>>>>> b2d53b8 (.)
             $this->ratings()->sync($ratingIds);
         }
 
@@ -257,6 +294,7 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
      * Chiave sentinella dell'opzione "altro" nel Select di un rating con figli.
      *
      * Stringa non vuota `'other'` — **non** `''`. Era `''` fino al 2026-09-16: bug reale
@@ -528,6 +566,8 @@ trait HasRatingsTrait
     }
 
     /**
+=======
+>>>>>>> b2d53b8 (.)
      * @return array<string, string>
      */
     public function getRatingsRules(string $prefix, string $postfix): array
@@ -572,9 +612,13 @@ trait HasRatingsTrait
 
         foreach ($rows as $row) {
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
+<<<<<<< HEAD
             $res[$keyWithPostfix] = $row instanceof BaseRating
                 ? self::formFieldLabel($row)
                 : $safeStringCastAction->execute($row->title ?? '');
+=======
+            $res[$keyWithPostfix] = $safeStringCastAction->execute($row->title ?? '');
+>>>>>>> b2d53b8 (.)
         }
 
         return $res;

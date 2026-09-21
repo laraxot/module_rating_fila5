@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Massimizzare il livello di confidenza"
+type: rule
+tags: [confidence, guidelines, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "confidence guidelines"
+related:
+  - "./configuration.md"
+---
+
+>>>>>>> b2d53b8 (.)
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.

@@ -4,11 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
+=======
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> b2d53b8 (.)
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+<<<<<<< HEAD
 trait HasRating
 {
     /**
@@ -20,6 +25,12 @@ trait HasRating
      *
      * @return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
      */
+=======
+/** @phpstan-ignore trait.unused */
+trait HasRating
+{
+    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
+>>>>>>> b2d53b8 (.)
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
