@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers;
 
-use Filament\Actions\Action;
-use Filament\Actions\BulkAction;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
