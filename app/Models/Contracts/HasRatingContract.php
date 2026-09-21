@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Contracts;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphPivot;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Modules\Rating\Models\Rating;
 
 /**
  * Contract for models that have ratings.
