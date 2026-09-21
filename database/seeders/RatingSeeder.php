@@ -8,11 +8,7 @@ use Illuminate\Database\Seeder;
 use Modules\Rating\Models\Rating;
 
 /**
-<<<<<<< HEAD
- * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
-=======
  * Rating base Sì/No — schema ratings (title, color) usati da seeder di dominio.
->>>>>>> laraxot/dev
  */
 class RatingSeeder extends Seeder
 {

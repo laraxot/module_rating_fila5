@@ -6,10 +6,6 @@ namespace Modules\Rating\Filament\Blocks;
 
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\ColorPicker;
-<<<<<<< HEAD
-use Modules\Xot\Filament\Forms\Components\Builder\XotBaseBuilderBlock;
-=======
->>>>>>> laraxot/dev
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -21,26 +17,16 @@ use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 
-<<<<<<< HEAD
-class Rating extends XotBaseBuilderBlock
-=======
 class Rating extends Block
->>>>>>> laraxot/dev
 {
     public const string BLOCK_TYPE = 'rating';
 
     /**
      * Create a new rating block.
      */
-<<<<<<< HEAD
-    public static function create(): Block
-    {
-        return parent::make(self::BLOCK_TYPE)
-=======
     public static function create(): static
     {
         return static::make(self::BLOCK_TYPE)
->>>>>>> laraxot/dev
             ->schema([
                 TextInput::make('title')
                     ->label('Titolo')
@@ -53,11 +39,7 @@ class Rating extends Block
                     ->label('Disabilitato')
                     ->default(false),
             ])
-<<<<<<< HEAD
-            ->label(function (): string {
-=======
             ->label(static function (): string {
->>>>>>> laraxot/dev
                 $locale = App::getLocale();
                 $supportedLocale = SupportedLocale::fromString($locale);
 
@@ -79,12 +61,7 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
-<<<<<<< HEAD
-     * @param array<string,mixed> $options
-     * @param array<string,mixed> $options
-=======
      * @param array<string, string>|null $options Chiave = vista, valore = etichetta; se null li fornisce GetViewBlocksOptionsByTypeAction
->>>>>>> laraxot/dev
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
@@ -97,11 +74,7 @@ class Rating extends Block
         return Block::make($name)
             ->schema([
                 Radio::make('view')
-<<<<<<< HEAD
-                    ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
-=======
                     ->options($blockOptions),
->>>>>>> laraxot/dev
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

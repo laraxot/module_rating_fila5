@@ -15,11 +15,6 @@ return [
         'reward' => ['label' => 'reward'],
         'created_at' => ['label' => 'created_at'],
         'updated_at' => ['label' => 'updated_at'],
-<<<<<<< HEAD
-    ],
-    'actions' => [
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-=======
         'rating' => ['label' => 'rating'],
         'ratingable_type' => ['label' => 'ratingable_type'],
         'ratingable_id' => ['label' => 'ratingable_id'],
@@ -30,6 +25,5 @@ return [
         'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
         'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
         'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
->>>>>>> laraxot/dev
     ],
 ];
