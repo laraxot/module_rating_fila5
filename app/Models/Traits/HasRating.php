@@ -12,7 +12,7 @@ use Modules\Rating\Models\RatingMorph;
 /** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
 {
-    /** @return MorphToMany<Rating, Model, MorphPivot, 'pivot'> */
+    /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
