@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Product Roadmap - Rating Module"
 type: guide
@@ -14,10 +9,6 @@ related:
   - "./root-file-policy.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Product Roadmap - Rating Module
 
 ## 🎯 Vision & Strategy

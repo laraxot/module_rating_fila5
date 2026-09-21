@@ -3,7 +3,6 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-<<<<<<< HEAD
 
 ---
 
@@ -27,5 +26,3 @@ All notable changes to `:package_name` will be documented in this file.
 ## 1.0.0 - 202X-XX-XX
 
 - initial release
-=======
->>>>>>> b2d53b8 (.)

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Rating - Product Launch Plan"
 type: guide
@@ -14,10 +9,6 @@ related:
   - "./product-requirements.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Rating - Product Launch Plan
 
 > Piano di lancio. Modulo.

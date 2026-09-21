@@ -4,22 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-use Illuminate\Database\Eloquent\Relations\MorphPivot;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
 {
-    /**
-     * morphToManyX() guessa il pivot ('RatingMorph') a runtime ma dichiara il
-     * suo ritorno con il pivot generico MorphPivot (vedi RelationX::morphToManyX);
-     * il tipo qui deve rispecchiare quello, non il pivot concreto, altrimenti
-     * ogni classe che usa il trait (Blog\Article, Blog\Profile, ...) eredita
-     * un return.type che non corrisponde a quanto la trait restituisce davvero.
-     *
-     * @return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
-     */
+    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');

@@ -1,9 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b2d53b8 (.)
 # Rating Module Architecture
 
 Lightweight reference to architecture. See consolidated documentation:
@@ -75,10 +70,6 @@ related:
   - "./best-practices.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Rating Architecture
 
 ## 🏗️ System Design
@@ -509,10 +500,6 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
-<<<<<<< HEAD
-<<<<<<< HEAD
-**Ultimo aggiornamento**: 2024-02-11
-=======
 **Ultimo aggiornamento**: 2024-02-11
 <<<<<<< HEAD
 
@@ -629,8 +616,4 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 - Statistics dashboard widget
 =======
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-**Ultimo aggiornamento**: 2024-02-11
->>>>>>> b2d53b8 (.)
 >>>>>>> laraxot/dev

@@ -2,18 +2,12 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-<<<<<<< HEAD
-updated: 2026-09-01
-=======
 updated: 2026-09-08
->>>>>>> laraxot/dev
 qmd: "coverage rating pest misura reale test saltati database"
 ---
 
 # Coverage del modulo Rating
 
-<<<<<<< HEAD
-=======
 ## Verifica PHPStan dell'8 settembre 2026
 
 Nessuna nuova misura di coverage. Il preflight trova `app.env=testing` nella cache
@@ -30,7 +24,6 @@ I numeri e il comando nella sezione seguente descrivono la configurazione storic
 del 1 settembre; il file `Modules/Rating/phpunit.xml` oggi non è presente e il
 comando non va riutilizzato come configurazione corrente.
 
->>>>>>> laraxot/dev
 ## Misura del 1 settembre 2026
 
 Comando canonico (AD-25 — servono **entrambe** le opzioni: `-c` sposta il perimetro
@@ -84,67 +77,11 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 /usr/bin/find Modules -newermt '-70 seconds' -type f | wc -l   # deve dare 0
 ```
 
-<<<<<<< HEAD
-## Aggiornamento del 6 settembre 2026 (PHPStan zero-error, story phpstan-Rating-fix)
-
-Baseline PHPStan `Modules/Rating` ripulita da 6 → 0 errori (1 `cast.string` in
-`HasRatingsTrait::getRatingsRules()`, 5 `method.deprecated` in
-`tests/Unit/ListRatingsPageTest.php`). Dettagli tecnici:
-`docs/stories/phpstan-Rating-fix.md`.
-
-`tests/Unit/ListRatingsPageTest.php` è stato riportato da 1 a 2 test dopo la
-rimozione delle chiamate deprecate: il test sulle colonne è stato riscritto contro
-`$page->table(Table::make($page))->getColumns()` invece di chiamare
-`getTableColumns()` deprecato direttamente (stesso pattern di
-`RatingFilamentExtendedTest.php`, story 2.3). I tre test su filtri/header/row
-actions non sono stati riproposti con lo stesso pattern: passando dal `Table`
-costruito, `HasXotTable::invokeTableHook()` salta di proposito
-`getTableFilters()/getTableHeaderActions()/getTableActions()/getTableBulkActions()`
-quando non overridati dalla pagina concreta (per non duplicare i default nativi
-Filament), quindi avrebbero prodotto asserzioni false — non erano nello scope
-PHPStan/deprecazione della story.
-
-Verifica mirata (rete/CPU condivisa con ~30 agenti concorrenti, run full-module
-troppo lento per attendere in sessione):
-```
-./vendor/bin/pest Modules/Rating/tests/Unit/ListRatingsPageTest.php -c Modules/Rating/phpunit.xml --no-coverage
-Tests: 2 passed (2 assertions)
-```
-PHPStan `Modules/Rating` cold: **0 errori** (confermato 3 volte con
-`clear-result-cache` prima di ogni run).
-
-## Aggiornamento del 7 settembre 2026 (DoD piena — typeCoverage + PHPMD, story RATING-2.4)
-
-Fix `typeCoverage.constantTypeCoverage` (const tipizzata su `Rating.php::BLOCK_TYPE`) +
-pulizia PHPMD (~40→12 violazioni, resto documentato come falso positivo o vincolo di
-framework — dettaglio in `docs/stories/2.4.dod-full-closure-typecoverage-phpmd.story.md`).
-Nessun comportamento nuovo: solo rename camelCase, un `MissingImport`, un
-extract-method a comportamento identico (`Datas/RatingData::fromArray()`, complessità
-ciclomatica 11→~5), rimozione di un parametro closure morto.
-
-Verifica mirata (carico condiviso ~30 agenti attivo, suite completa lanciata in
-background con timeout 8 min per lo stesso motivo):
-```
-./vendor/bin/pest Modules/Rating/tests/Unit/RatingDatasDataTest.php --no-coverage
-Tests: 6 passed (29 assertions) — 38.31s (5-8s/test, carico condiviso, non un hang)
-```
-PHPStan `Modules/Rating`: verde più volte durante il lavoro (cache pulita ogni
-volta); verifica finale bloccata da un bootstrap-fatal non correlato su
-`Modules/Platform` (WIP di un altro agente, classe mancante temporaneamente) —
-`php -l` pulito su tutti i file toccati.
-
-=======
->>>>>>> laraxot/dev
 ## Storico
 
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
-<<<<<<< HEAD
-| 2026-09-06 (mirato, vedi nota sopra) | 2/2 file toccato | — | 0 | non ricalcolata (full-suite non completata per carico condiviso) |
-| 2026-09-07 (mirato, story RATING-2.4) | 6/6 file toccato | — | 0 | non ricalcolata (full-suite in background, carico condiviso) |
-
-=======
 
 
 ---
@@ -257,4 +194,3 @@ fix — il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi
 | Data | PHPStan Rating | PHPMD | Insights | Pest |
 |---|---|---|---|---|
 | 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip — DB `10.100.200.53:3306` unreachable |
->>>>>>> laraxot/dev
