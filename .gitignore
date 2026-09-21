@@ -113,3 +113,6 @@ graphify-out/
 .windsurf~*
 =======
 >>>>>>> b2d53b8 (.)
+phpstan*.json
+phpstan-baseline.neon
+phpstan.neon.dist
