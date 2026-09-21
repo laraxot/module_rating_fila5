@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-<<<<<<< HEAD
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-use Illuminate\Database\Eloquent\Builder;
-=======
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -19,25 +15,11 @@ use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
->>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Query\JoinClause;
-<<<<<<< HEAD
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Modules\Rating\Models\Rating;
-use Webmozart\Assert\Assert;
-
-/**
- * Trait HasRatingsTrait.
- *
- * @see Modules/Rating/docs/schemaless-attributes.md
-=======
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -56,50 +38,11 @@ use Webmozart\Assert\Assert;
  * Consumer: `@use HasRatingsTrait<static>` sulla classe host.
  *
  * @template TModel of Model
->>>>>>> laraxot/dev
  *
  * @phpstan-require-extends Model
  */
 trait HasRatingsTrait
 {
-<<<<<<< HEAD
-    /** @return class-string<Rating> */
-    public function getRatingClass(): string
-    {
-        $moduleName = Str::of(static::class)
-            ->after('Modules\\')
-            ->before('\\')
-            ->toString();
-        $ratingClass = 'Modules\\'.$moduleName.'\Models\Rating';
-
-        Assert::classExists($ratingClass);
-        Assert::isAOf($ratingClass, Rating::class);
-
-        return $ratingClass;
-    }
-
-    /**
-     * Get ratings for this model.
-     *
-     * @return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
-     */
-    public function ratings(): MorphToMany
-    {
-        return $this->morphToManyX(Rating::class, 'model', 'ratings', 'rating_morph');
-    }
-
-    /**
-     * Get rating objectives with aggregated data.
-     *
-     * @return HasMany<Rating, $this>
-     */
-    public function ratingObjectives(): HasMany
-    {
-        $relatedClass = $this->getRatingClass();
-        $userId = (int) Auth::id();
-
-        return $this->hasMany($relatedClass, 'related_type', 'post_type')
-=======
     /**
      * Le righe pivot della valutazione, **entrambe le forme di `model_type`**.
      *
@@ -164,7 +107,6 @@ trait HasRatingsTrait
 
         /** @var HasMany<BaseRating, TModel> $query */
         $query = $this->hasMany($related, 'related_type', 'post_type')
->>>>>>> laraxot/dev
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -179,16 +121,6 @@ trait HasRatingsTrait
                         ->where('rating_morph.post_id', $this->getKey());
                 }
             )->groupBy('ratings.id')
-<<<<<<< HEAD
-            ->with('linkedTo');
-    }
-
-    /**
-     * Scope a query to only include popular users.
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
-=======
             ->with('post');
 
         return $query;
@@ -197,40 +129,18 @@ trait HasRatingsTrait
     /**
      * @param  Builder<TModel>  $query
      * @return Builder<TModel>
->>>>>>> laraxot/dev
      */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
             'rating_morph',
-<<<<<<< HEAD
-            static function (JoinClause $join): void {
-=======
             function (JoinClause $join): void {
->>>>>>> laraxot/dev
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
     }
 
     /**
-<<<<<<< HEAD
-     * Get my ratings for this model.
-     *
-     * @return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
-     */
-    public function myRatings(): MorphToMany
-    {
-        return $this->morphToManyX(Rating::class, 'model', 'ratings', 'rating_morph')
-            ->wherePivot('user_id', (string) Auth::id());
-    }
-
-    // ----- mutators -----
-    // *
-    /** @return Collection<array-key, mixed> */
-    public function getMyRatingAttribute(): Collection
-    {
-=======
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function myRatings(): MorphToMany
@@ -254,72 +164,24 @@ trait HasRatingsTrait
     public function getMyRatingAttribute(): Collection
     {
         /** @var Collection<int, BaseRating> $myRatings */
->>>>>>> laraxot/dev
         $myRatings = $this->myRatings;
 
         return $myRatings->pluck('pivot.rating', 'post_id');
     }
 
-<<<<<<< HEAD
-    /**
-     * ----.
-     */
-    public function getRatingsAvgAttribute(?float $value): ?float
-    {
-        if ($value !== null) {
-            return $value;
-        }
-        $value = $this->ratings->avg('pivot.rating');
-        if ($value === null) {
-            return 0.0;
-        }
-
-        // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-        if ($this->getKey() !== null) {
-            $this->update(['ratings_avg' => $value]);
-        }
-
-        return $value;
-=======
     public function getRatingsAvgAttribute(?float $value): ?float
     {
         return (float) ($value ?? 0);
->>>>>>> laraxot/dev
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-<<<<<<< HEAD
-        if ($value !== null) {
-            return $value;
-        }
-        $value = $this->ratings->count();
-        $this->ratings_count = $value;
-
-        // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
-            return $value;
-        }
-
-        // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-        $this->update(['ratings_count' => $value]);
-
-        return $value;
-    }
-
-    /**
-     * Get ratings filtered by extra_attributes.
-     *
-     * @param  array<string, mixed>  $filters
-     * @return Collection<int, Rating>
-=======
         return $value ?? 0;
     }
 
     /**
      * @param  array<string, mixed>  $filters
      * @return Collection<int, BaseRating>
->>>>>>> laraxot/dev
      */
     public function getRatingsWhere(array $filters): Collection
     {
@@ -329,39 +191,6 @@ trait HasRatingsTrait
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
-<<<<<<< HEAD
-        return $query->get();
-    }
-
-    /**
-     * @param  array<string, mixed>  $where
-     * @return Collection<int, Rating>
-     */
-    public function syncRatingsWhere(array $where): Collection
-    {
-        $ratingClass = $this->getRatingClass();
-        $ratings = $ratingClass::query()
-            ->withExtraAttributes($where)
-            ->get();
-
-        if ($ratings->isEmpty()) {
-            return $ratings;
-        }
-
-        $this->ratings()->sync($ratings->modelKeys());
-        $this->setRelation('ratings', $ratings);
-
-        return $ratings;
-    }
-
-    // */
-    /*
-        public function setMyRatingAttribute($value){
-        dddx($value);
-        }
-    */
-    // ------ functions ------
-=======
         /** @var Collection<int, BaseRating> $result */
         $result = $query->get();
 
@@ -400,32 +229,21 @@ trait HasRatingsTrait
         return $result;
     }
 
->>>>>>> laraxot/dev
     /**
      * @throws FileNotFoundException
      * @throws \ReflectionException
      */
     public function ratingAvgHtml(): string
     {
-<<<<<<< HEAD
-        $pivotAvg = $this->ratings_avg;
-        $pivotCount = $this->ratings_count;
-=======
         $safeStringCastAction = app(SafeStringCastAction::class);
         $pivotAvg = $safeStringCastAction->execute($this->ratings_avg ?? 0);
         $pivotCount = $safeStringCastAction->execute($this->ratings_count ?? 0);
         $title = 'Vota '.$safeStringCastAction->execute($this->title ?? '');
->>>>>>> laraxot/dev
 
         $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
         $msg .= '('.$pivotAvg.') '.$pivotCount.' Votes ';
 
         $ratingUrl = '#';
-<<<<<<< HEAD
-        $titleValue = $this->title ?? '';
-        $title = 'Vota '.(is_scalar($titleValue) ? (string) $titleValue : '');
-=======
->>>>>>> laraxot/dev
 
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
@@ -438,25 +256,6 @@ trait HasRatingsTrait
         return $msg.$btn.$btnIframe;
     }
 
-<<<<<<< HEAD
-    /** @return array<string, string> */
-    public function getRatingsRules(string $prefix, string $postfix): array
-    {
-        $rows = $this->ratings;
-        $rules = $rows->mapWithKeys(function ($row) {
-            $ruleValue = $row->rule instanceof \BackedEnum ? (string) $row->rule->value : (string) $row->rule;
-
-            return [$row->id => $ruleValue];
-        })->toArray();
-
-        $rules = Arr::prependKeysWith($rules, $prefix);
-        $res = [];
-        foreach ($rules as $key => $ruleValue) {
-            $keyWithPostfix = $key.$postfix;
-            $ruleStr = is_string($ruleValue) ? $ruleValue : '';
-
-            // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
-=======
     /**
      * Chiave sentinella dell'opzione "altro" nel Select di un rating con figli.
      *
@@ -742,7 +541,6 @@ trait HasRatingsTrait
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $ruleStr = $this->ratingRuleToString($row->rule, $safeStringCastAction);
 
->>>>>>> laraxot/dev
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
                 $ruleStr = 'nullable|'.$ruleStr;
             }
@@ -753,16 +551,6 @@ trait HasRatingsTrait
         return $res;
     }
 
-<<<<<<< HEAD
-    /** @return array<string, string> */
-    public function getRatingsValidationAttributes(string $prefix, string $postfix): array
-    {
-        $rows = $this->ratings;
-        $res = [];
-        foreach ($rows as $row) {
-            $keyWithPostfix = $prefix.$row->id.$postfix;
-            $res[$keyWithPostfix] = (string) $row->title;
-=======
     private function ratingRuleToString(mixed $rule, SafeStringCastAction $safeStringCastAction): string
     {
         if ($rule instanceof \BackedEnum) {
@@ -787,7 +575,6 @@ trait HasRatingsTrait
             $res[$keyWithPostfix] = $row instanceof BaseRating
                 ? self::formFieldLabel($row)
                 : $safeStringCastAction->execute($row->title ?? '');
->>>>>>> laraxot/dev
         }
 
         return $res;

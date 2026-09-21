@@ -13,11 +13,7 @@ use Modules\Xot\Tests\XotBaseTestCase;
 /**
  * Base test case for Rating module.
  *
-<<<<<<< HEAD
- * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
-=======
  * Uses shared sqlite from database.sqlite (no migrate:fresh / RefreshDatabase).
->>>>>>> laraxot/dev
  */
 abstract class TestCase extends XotBaseTestCase
 {
@@ -37,8 +33,6 @@ abstract class TestCase extends XotBaseTestCase
         ];
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Lo sqlite condiviso (`database/database.sqlite`) non contiene per forza le tabelle
      * del modulo: le migration non vengono lanciate dai test (mai `RefreshDatabase`).
@@ -55,16 +49,11 @@ abstract class TestCase extends XotBaseTestCase
         }
     }
 
->>>>>>> laraxot/dev
     protected function setUp(): void
     {
         parent::setUp();
 
-<<<<<<< HEAD
-        $database = database_path('fixcity_data.sqlite');
-=======
         $database = self::sharedSqlitePath();
->>>>>>> laraxot/dev
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
