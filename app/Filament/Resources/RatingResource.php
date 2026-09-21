@@ -5,15 +5,11 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources;
 
 use Modules\Rating\Models\Rating;
-<<<<<<< HEAD
 use Modules\Rating\Filament\Resources\RatingResource\RelationManagers\ChildrenRelationManager;
-=======
->>>>>>> b2d53b8 (.)
 
 class RatingResource extends BaseRatingResource
 {
     protected static ?string $model = Rating::class;
-<<<<<<< HEAD
 
     /**
      * @return array<int, class-string>
@@ -24,6 +20,4 @@ class RatingResource extends BaseRatingResource
             ChildrenRelationManager::class,
         ];
     }
-=======
->>>>>>> b2d53b8 (.)
 }

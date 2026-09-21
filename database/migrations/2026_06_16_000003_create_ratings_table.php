@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
-<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
-=======
->>>>>>> b2d53b8 (.)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
@@ -35,15 +32,6 @@ return new class extends XotBaseMigration {
         // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table): void {
-<<<<<<< HEAD
-                RatingData::updateColumns($table, $this);
-
-                // `updateTimestamps()` resta qui e non dentro RatingData: in questa
-                // migrazione il `tableCreate()` non dichiara i timestamp, quindi è
-                // questa riga a crearli su un'installazione nuova. Le migrazioni degli
-                // altri moduli li dichiarano in creazione e non ne hanno bisogno —
-                // e' il motivo per cui l'helper condiviso non li impone a tutti.
-=======
                 if (! $this->hasColumn('title')) {
                     $table->string('title')->nullable();
                 }
@@ -75,7 +63,6 @@ return new class extends XotBaseMigration {
                 if (! $this->hasColumn('order_column')) {
                     $table->unsignedInteger('order_column')->nullable()->index();
                 }
->>>>>>> b2d53b8 (.)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: false);
             }
         );

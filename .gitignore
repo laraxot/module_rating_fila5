@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Auto-generated forbidden paths — do not edit manually
 # Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
@@ -8,10 +7,12 @@ _bmad-output
 .claude-audit
 .devcontainer
 _docs
+workbench
 docs/archive
 docs/archived
 docs/legacy
 docs/workbench
+docs/**/*-[0-9].md
 .kilocode
 .kiro
 .ralph
@@ -39,22 +40,16 @@ error_log
 *.bakup
 *.old
 *.old1
-node_modules
 .git-blame-ignore-revs
-vendor
 build/
 docs/cache/
 cache/
 *:Zone.Identifier
-# Backup files
 *.bak
 *.backup
 *.backup.*
-# PHPStan documentation
 docs/phpstan/
 lang/lang/
-# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
-# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 *~HEAD
 *~BASE
 *~LOCAL
@@ -64,55 +59,35 @@ lang/lang/
 *~head
 agentdb.rvf
 tests/AuditCoverage
-# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
-# Logs and lock markers
 
-# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
-.devcontainer/
-.vscode/
-.windsurf/
-tests/AuditCoverage/
-
-# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-phpinsights.php
-rector.php
-graphify-out
-=======
->>>>>>> b2d53b8 (.)
 /.ai*
 /_bmad
-/bashscripts
 /_docs
-/docs/archive
-/docs/legacy
-*.lock
-.php-cs-fixer.cache
-<<<<<<< HEAD
-.vscode
 
-# Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
-# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
-# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+# IDE — not part of the module contract
 .cursor/
-.devcontainer/
-.windsurf/
-/rector.php
-/phpinsights.php
-rector.php
-graphify-out/
-
-# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
 /.cursor
 /.cursor/
-/.windsurf
-/.windsurf/
+.devcontainer/
+.vscode/
 /.vscode
 /.vscode/
+.windsurf/
+/.windsurf
+/.windsurf/
 .cursor~*
 .windsurf~*
-=======
->>>>>>> b2d53b8 (.)
+
+# Quality-tool configuration belongs to the Laravel application root.
+phpinsights.php
+/phpinsights.php
+rector.php
+/rector.php
+graphify-out
+graphify-out/
 phpstan*.json
 phpstan-baseline.neon
 phpstan.neon.dist
+phpunit.xml
+phpunit.xml.dist
+phpmd.ruleset.xml
