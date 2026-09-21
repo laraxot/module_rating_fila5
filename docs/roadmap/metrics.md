@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Metriche e obiettivi di qualità"
 type: guide
@@ -12,10 +7,6 @@ updated: 2026-07-14
 qmd: "metrics"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Metriche e obiettivi di qualità
 
 Indicatori misurabili per lo stato del modulo e il successo delle fasi.

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Code Quality Analysis - Rating Module"
 type: concept
@@ -14,10 +9,6 @@ related:
   - "./code-redundancy-audit.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Code Quality Analysis - Rating Module
 
 **Data Analisi**: 2025-01-22  

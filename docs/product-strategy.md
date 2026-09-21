@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Rating - Product Strategy"
 type: guide
@@ -14,10 +9,6 @@ related:
   - "./rating-architecture.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Rating - Product Strategy
 
 > Strategia prodotto. Modulo.

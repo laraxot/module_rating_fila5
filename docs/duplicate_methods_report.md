@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "Report: Metodi con nome duplicato nei moduli e nei temi"
-type: guide
-tags: [duplicate, methods, report, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "duplicate methods report"
-related:
-  - "./filament-version.md"
----
-
->>>>>>> b2d53b8 (.)
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione
@@ -89,8 +75,4 @@ Di seguito la classifica dei metodi più frequenti (solo quelli con più di una 
 
 ## Allegati
 - `docs/duplicate_methods_report.md` (questo file)
-<<<<<<< HEAD
 - Script di ricerca (`find_duplicate_methods.sh`) disponibile in `bashscripts/` per replicare l’analisi.
-=======
-- Script di ricerca (`find_duplicate_methods.sh`) disponibile in `bashscripts/` per replicare l’analisi.
->>>>>>> b2d53b8 (.)

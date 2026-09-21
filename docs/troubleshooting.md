@@ -5,9 +5,6 @@ canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 ---
 
@@ -572,6 +569,3 @@ $this->post('/ratings', ['category' => 'technical'])
 - **PHPStan errors** → Prefix with `phpstan` in QMD: `qmd search "phpstan rating"`
 
 **Last resort:** Check [INDEX_GENERATED.md](./INDEX_GENERATED.md) for all 151 documentation files.
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)

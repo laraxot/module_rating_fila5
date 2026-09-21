@@ -74,7 +74,7 @@ class Rating extends Block
         return Block::make($name)
             ->schema([
                 Radio::make('view')
-                    ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
+                    ->options($blockOptions),
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

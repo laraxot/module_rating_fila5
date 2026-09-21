@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources;
 
-use Modules\Rating\Filament\Resources\RatingResource\RelationManagers\ChildrenRelationManager;
 use Modules\Rating\Models\Rating;
+use Modules\Rating\Filament\Resources\RatingResource\RelationManagers\ChildrenRelationManager;
 
 class RatingResource extends BaseRatingResource
 {
