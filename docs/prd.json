@@ -9,11 +9,7 @@
     "Stabilizzare il contratto dati delle opzioni"
   ],
   "nonGoals": [
-<<<<<<< HEAD
-    "Gestire il dominio completo Predict"
-=======
     "Gestire un dominio applicativo esterno completo"
->>>>>>> laraxot/dev
   ],
   "dependencies": [
     "Xot"

@@ -1,23 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-/**
- * ---.
- */
-
-=======
->>>>>>> laraxot/dev
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
-<<<<<<< HEAD
-use Modules\Rating\Enums\SupportedLocale;
-use Spatie\LaravelData\Data;
-
-/**
- * Undocumented class.
-=======
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
@@ -35,7 +21,6 @@ use Spatie\LaravelData\Data;
  * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità',
  * come `SchedaData` sta a `schede` — è tracciata come lavoro a se': tocca il blocco, il
  * test e ogni chiamante, e non si fa di passaggio.
->>>>>>> laraxot/dev
  */
 class RatingData extends Data
 {
@@ -45,42 +30,6 @@ class RatingData extends Data
         public readonly bool $disabled = false,
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
-<<<<<<< HEAD
-        public readonly ?string $imageUrl = null,
-    ) {}
-
-    /**
-     * Create from array with type casting.
-     *
-     * @param  array<string,mixed>  $data
-     */
-    public static function fromArray(array $data): self
-    {
-        return new self(
-            title: self::normalizeString($data['title'] ?? '', ''),
-            description: self::normalizeString($data['description'] ?? '', ''),
-            disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
-            position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
-            locale: SupportedLocale::fromString(self::normalizeString($data['locale'] ?? 'it', 'it')),
-            imageUrl: isset($data['image_url']) ? self::normalizeNullableString($data['image_url']) : null,
-        );
-    }
-
-    private static function normalizeString(mixed $value, string $default): string
-    {
-        if (is_string($value)) {
-            return $value;
-        }
-
-        return is_scalar($value) ? (string) $value : $default;
-    }
-
-    private static function normalizeNullableString(mixed $value): ?string
-    {
-        return is_string($value) ? $value : null;
-    }
-}
-=======
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
     ) {
@@ -153,4 +102,3 @@ class RatingData extends Data
         }
     }
 }
->>>>>>> laraxot/dev

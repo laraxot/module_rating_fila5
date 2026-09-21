@@ -9,10 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\AbstractRatingsHost;
-<<<<<<< HEAD
-=======
 use Modules\Rating\Models\BaseRating;
->>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 
 /**
@@ -35,12 +32,7 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-<<<<<<< HEAD
-     * @param class-string<TRelatedModel> $related
-     *
-=======
      * @param  class-string<TRelatedModel>  $related
->>>>>>> laraxot/dev
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -75,12 +67,6 @@ class RatingsHostStub extends AbstractRatingsHost
     }
 
     /**
-<<<<<<< HEAD
-     * @template TRelatedModel of Model
-     *
-     * @param class-string<TRelatedModel> $related
-     *
-=======
      * Bypassa `Rating::getClassName()` (risoluzione via `debug_backtrace`, verificata
      * fragile/ambientale su questa macchina — vedi nota nel test) quando il test forza
      * esplicitamente la relazione, stesso pattern di `morphToManyX()` sopra.
@@ -103,7 +89,6 @@ class RatingsHostStub extends AbstractRatingsHost
      * @template TRelatedModel of Model
      *
      * @param  class-string<TRelatedModel>  $related
->>>>>>> laraxot/dev
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)

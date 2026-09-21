@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Filament\Forms\Components\Hidden;
-use Modules\IndennitaResponsabilita\Filament\Resources\RatingResource\RelationManagers\ChildrenRelationManager;
-use Modules\IndennitaResponsabilita\Models\Rating;
+use Modules\Rating\Filament\Resources\RatingResource\RelationManagers\ChildrenRelationManager;
+use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
