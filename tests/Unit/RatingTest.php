@@ -11,12 +11,6 @@ use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-uses(\Modules\Rating\Tests\TestCase::class);
-
-describe('Rating', function (): void {
-    test('can create rating', function (): void {
-=======
 uses(TestCase::class);
 
 describe('Rating', function (): void {
@@ -26,7 +20,6 @@ describe('Rating', function (): void {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }
 
->>>>>>> laraxot/dev
         $rating = Rating::create([
             'title' => 'Test Rating',
             'color' => '#FF0000',
@@ -41,14 +34,11 @@ describe('Rating', function (): void {
     });
 
     test('can create rating morph', function (): void {
-<<<<<<< HEAD
-=======
         /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }
 
->>>>>>> laraxot/dev
         $rating = Rating::create([
             'title' => 'Test Rating',
         ]);
@@ -64,11 +54,7 @@ describe('Rating', function (): void {
         ]);
 
         Assert::assertTrue(
-<<<<<<< HEAD
-            DB::connection('rating')->table((new RatingMorph())->getTable())
-=======
             DB::connection('rating')->table('rating_morphs')
->>>>>>> laraxot/dev
                 ->where('id', $ratingMorph->id)
                 ->where('rating_id', $rating->id)
                 ->exists()

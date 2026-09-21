@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\DataObjects;
 
-<<<<<<< HEAD
-use InvalidArgumentException;
-
-=======
->>>>>>> laraxot/dev
 final readonly class RatingData
 {
     public function __construct(
@@ -18,20 +13,12 @@ final readonly class RatingData
         public ?string $userId = null,
     ) {
         if ($score < 0 || $score > 5) {
-<<<<<<< HEAD
-            throw new InvalidArgumentException('Score must be between 0 and 5');
-=======
             throw new \InvalidArgumentException('Score must be between 0 and 5');
->>>>>>> laraxot/dev
         }
     }
 
     /**
-<<<<<<< HEAD
-     * @param  array<string, mixed>  $data
-=======
      * @param array<string, mixed> $data
->>>>>>> laraxot/dev
      */
     public static function fromArray(array $data): self
     {

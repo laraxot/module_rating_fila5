@@ -35,13 +35,9 @@ abstract class BaseRatingsTable extends XotBaseResourceTable
             'rule' => TextColumn::make('rule')->badge()->sortable(),
             'is_disabled' => TextColumn::make('is_disabled')->badge()->sortable(),
             'is_readonly' => TextColumn::make('is_readonly')->badge()->sortable(),
-<<<<<<< HEAD
-            'order_column' => TextColumn::make('order_column')->sortable(),
-=======
             // order_column è interno — usato solo per reordering via HasXotTable::applyReorderable()
             // Non visibile nell'UI utente (vedi story 5.97 e 5.98):
             // 'order_column' => TextColumn::make('order_column')->sortable(),
->>>>>>> laraxot/dev
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
             'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
         ];
@@ -56,31 +52,7 @@ abstract class BaseRatingsTable extends XotBaseResourceTable
         ];
     }
 
-<<<<<<< HEAD
-    /**
-     * @return array<string, Action|ActionGroup>
-     */
-    public function getTableActions(): array
-    {
-        return [
-            'edit' => EditAction::make(),
-        ];
-    }
-
-    /**
-     * @return array<string, BulkAction|BulkActionGroup>
-     */
-    public function getTableBulkActions(): array
-    {
-        return [
-            'bulk' => BulkActionGroup::make([
-                DeleteBulkAction::make(),
-            ]),
-        ];
-    }
-=======
     
 
    
->>>>>>> laraxot/dev
 }
