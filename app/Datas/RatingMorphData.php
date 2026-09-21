@@ -1,11 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
-use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Spatie\LaravelData\Data;
 
