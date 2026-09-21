@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Auto-generated forbidden paths — do not edit manually
 # Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
@@ -77,6 +78,8 @@ tests/AuditCoverage/
 phpinsights.php
 rector.php
 graphify-out
+=======
+>>>>>>> b2d53b8 (.)
 /.ai*
 /_bmad
 /bashscripts
@@ -85,6 +88,7 @@ graphify-out
 /docs/legacy
 *.lock
 .php-cs-fixer.cache
+<<<<<<< HEAD
 .vscode
 
 # Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
@@ -107,3 +111,5 @@ graphify-out/
 /.vscode/
 .cursor~*
 .windsurf~*
+=======
+>>>>>>> b2d53b8 (.)

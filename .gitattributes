@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
@@ -15,6 +16,12 @@ CHANGELOG.md export-ignore
 # `!filter` annulla un eventuale filter.lfs ereditato dalla configurazione di sistema:
 # e' questa la protezione vera, perche' filter.lfs.* puo' restare installato sulla
 # macchina per altri progetti e senza `!filter` verrebbe applicato anche qui.
+=======
+# Prototype: laravel/Modules/* e laravel/Themes/*
+# Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
+# Git LFS VIETATO. Binari = blob git normali.
+# `binary` + `!filter` azzera eventuali filtri LFS ereditati
+>>>>>>> b2d53b8 (.)
 *.png binary !filter
 *.jpg binary !filter
 *.jpeg binary !filter
@@ -22,6 +29,7 @@ CHANGELOG.md export-ignore
 *.webp binary !filter
 *.ico binary !filter
 *.svg binary !filter
+*.psd binary !filter
 *.pdf binary !filter
 *.zip binary !filter
 *.woff binary !filter
@@ -30,7 +38,6 @@ CHANGELOG.md export-ignore
 *.eot binary !filter
 *.otf binary !filter
 *.mp4 binary !filter
-*.psd binary !filter
 *.phar binary !filter
 *.db binary !filter
 *.sqlite binary !filter

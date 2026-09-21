@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Sprint Planning: Rating Module"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./strategy.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Sprint Planning: Rating Module
 
 ## 🏁 Sprint Goal

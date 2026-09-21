@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "User Interface"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./user-research.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 ## User Interface - Modulo Rating
 
 - Le risorse Filament espongono le traduzioni da `rating::` secondo la struttura espansa.

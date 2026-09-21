@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "Product Launch Plan: Rating Module"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./license.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # Product Launch Plan: Rating Module
 
 ## 🚀 Launch Overview

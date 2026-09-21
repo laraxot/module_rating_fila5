@@ -57,21 +57,30 @@ qmd search "<topic>"
 ./laravel/Modules/Rating/docs/
 └── wiki/                    # Knowledge base locale
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
     ├── rules/index.md      # Indice rules modulo-specifiche
     ├── skills/index.md     # Indice skills modulo-specifiche
     ├── commands/index.md   # Indici commands
     └── memories/index.md   # Indice memories
 =======
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
     ├── rules/INDEX.md      # Indice rules modulo-specifiche
     ├── skills/INDEX.md     # Indice skills modulo-specifiche
     ├── commands/INDEX.md   # Indici commands
     └── memories/INDEX.md   # Indice memories
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 >>>>>>> laraxot/dev
 \`\`\`
 
@@ -87,14 +96,20 @@ qmd search "<topic>"
 ## Regole Critiche per Module
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2d53b8 (.)
 1. **Nessun bootstrap pesante** — Non elencare rules in agents.md o CLAUDE.md
 =======
 1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 2. **Carica only what you need** — Ogni task carica max 3-5 file
 3. **Mantieni la wiki aggiornata** — Dopo ogni task, aggiorna ./laravel/Modules/Rating/docs/wiki/log.md
 4. **Rispetta la trigger map** — Se esiste, usala; altrimenti usa qmd search
@@ -108,6 +123,7 @@ qmd search "<topic>"
 
 ---
 *Ultimo aggiornamento: 2026-05-11 | Pattern: on-demand via QMD*
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -194,3 +210,5 @@ qmd search "<topic>"
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)

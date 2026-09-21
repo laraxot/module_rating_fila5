@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b2d53b8 (.)
 ---
 title: "PRD: Rating Module"
 type: guide
@@ -11,7 +14,10 @@ related:
   - "./product-launch-plan.md"
 ---
 
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> b2d53b8 (.)
 # PRD: Rating Module
 
 ## 📋 Overview
