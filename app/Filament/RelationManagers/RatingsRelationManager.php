@@ -10,9 +10,9 @@ use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 class RatingsRelationManager extends XotBaseRelationManager
 {

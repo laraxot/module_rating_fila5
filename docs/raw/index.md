@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Raw Sources — Rating"
 type: guide
@@ -12,10 +7,6 @@ updated: 2026-07-14
 qmd: "index"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Raw Sources — Rating
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.
@@ -46,24 +37,14 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 ## Schema di riferimento
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
+→ `docs/.schema/wiki-schema.md` (root progetto)
 =======
 <<<<<<< HEAD
 → `docs/.schema/wiki-schema.md` (root progetto)
 =======
-<<<<<<< HEAD
-=======
->>>>>>> b2d53b8 (.)
-→ `docs/.schema/wiki-schema.md` (root progetto)
-=======
 → `docs/.schema/WIKI_SCHEMA.md` (root progetto)
 >>>>>>> laraxot/dev
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 
 ---

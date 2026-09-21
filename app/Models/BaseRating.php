@@ -7,6 +7,8 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
@@ -14,8 +16,6 @@ use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
-use Spatie\EloquentSortable\Sortable;
-use Spatie\EloquentSortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -37,31 +37,33 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
- * @property RuleEnum                                          $rule
+ * @property RuleEnum $rule
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
- * @property int             $id
- * @property int             $user_id
- * @property float           $value
- * @property string|null     $related_type
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $deleted_by
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property int|null        $post_id
- * @property string|null     $title
- * @property string|null     $color
- * @property string|null     $icon
- * @property string|null     $txt
- * @property bool|null       $is_disabled
- * @property bool|null       $is_readonly
- * @property int|null        $order_column
- * @property Model|\Eloquent $linkedTo
+ * @property int $id
+ * @property int $user_id
+ * @property float $value
+ * @property string|null $related_type
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $deleted_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $post_id
+ * @property string|null $title
+ * @property string|null $color
+ * @property string|null $icon
+ * @property string|null $txt
+ * @property bool|null $is_disabled
+ * @property bool|null $is_readonly
+ * @property int|null $order_column
+ * @property int|null $parent_id
+ * @property Model|Eloquent $linkedTo
+ * @property-read BaseRatingMorph $pivot
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -81,9 +83,9 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
- * @property int|null                                          $media_count
- * @property ProfileContract|null                              $creator
- * @property ProfileContract|null                              $updater
+ * @property int|null $media_count
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @mixin Eloquent
  *
@@ -111,7 +113,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     {
         $title = $this->getAttribute('title');
 
-        if (is_string($title) && '' !== $title) {
+        if (is_string($title) && $title !== '') {
             return $title;
         }
 
@@ -148,14 +150,13 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param Builder<BaseRating>         $query
-     * @param array<string, mixed>|string $attributes
-     *
+     * @param  Builder<BaseRating>  $query
+     * @param  array<string, mixed>|string  $attributes
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-        if (is_string($attributes) && null !== $value) {
+        if (is_string($attributes) && $value !== null) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }

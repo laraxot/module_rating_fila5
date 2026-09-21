@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Filament Version Declaration — Rating"
 type: guide
@@ -14,10 +9,6 @@ related:
   - "./file-naming-rules.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Filament Version Declaration — Rating
 
 **Current Version**: Filament v5 (Livewire v4 + Schemas)

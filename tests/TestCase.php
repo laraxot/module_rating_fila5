@@ -51,8 +51,20 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        $this->prepareSharedSqliteForTesting();
-
         parent::setUp();
+
+        $database = self::sharedSqlitePath();
+
+        /** @var array<string, array<string, mixed>> $connections */
+        $connections = config('database.connections', []);
+
+        foreach (array_keys($connections) as $connection) {
+            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+                continue;
+            }
+
+            $this->app['config']->set("database.connections.{$connection}.database", $database);
+            DB::purge($connection);
+        }
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Modules\Rating\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -27,3 +25,4 @@ class LikeFactory extends Factory
         return [];
     }
 }
+

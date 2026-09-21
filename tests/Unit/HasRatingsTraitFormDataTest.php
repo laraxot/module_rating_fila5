@@ -20,7 +20,7 @@ afterEach(function (): void {
     \Mockery::close();
 });
 
-/*
+/**
  * Story Rating/5.145 — refactor: fill/save del pivot ratings.{id}.pivot.{value,note}
  * spostato da CompilaIndennitaResponsabilita (duplicato, parziale, con un cast a 0 buggato)
  * a due metodi generici del trait. Risolve anche il blocker IR/5.140 (issue
@@ -28,7 +28,7 @@ afterEach(function (): void {
  */
 describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     test('mappa value e note per ogni riga gia caricata', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->setRelation('ratings', collect([
             (object) ['id' => 1, 'pivot' => (object) ['value' => 5, 'note' => null]],
             (object) ['id' => 2, 'pivot' => (object) ['value' => null, 'note' => null]],
@@ -44,7 +44,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('rimappa value null + note valorizzata sulla chiave "other" (altro)', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->setRelation('ratings', collect([
             (object) ['id' => 3, 'pivot' => (object) ['value' => null, 'note' => 'motivo libero']],
         ]));
@@ -57,7 +57,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('non rimappa se value e un numero reale, anche zero', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->setRelation('ratings', collect([
             (object) ['id' => 4, 'pivot' => (object) ['value' => 0, 'note' => 'commento']],
         ]));
@@ -78,7 +78,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
             ->once()
             ->with(7, ['value' => 5, 'note' => 'ok']);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forcedMorph = $relation;
 
         $host->syncRatingsFormData([
@@ -93,7 +93,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
             ->once()
             ->with(8, ['value' => null, 'note' => 'motivo']);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forcedMorph = $relation;
 
         $host->syncRatingsFormData([
@@ -108,7 +108,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
             ->once()
             ->with(9, ['value' => null]);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forcedMorph = $relation;
 
         $host->syncRatingsFormData([
@@ -123,7 +123,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
             ->once()
             ->with(10, ['value' => null]);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forcedMorph = $relation;
 
         $host->syncRatingsFormData([

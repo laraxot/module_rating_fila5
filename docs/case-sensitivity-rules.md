@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Case Sensitivity Rules - Rating Module"
 type: rule
@@ -14,10 +9,6 @@ related:
   - "./changelog.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Case Sensitivity Rules - Rating Module
 
 ## Problema / Problem

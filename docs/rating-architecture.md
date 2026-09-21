@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b2d53b8 (.)
 ---
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
@@ -14,10 +9,6 @@ related:
   - "./readme-en.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  
@@ -208,12 +199,4 @@ Update rating architecture docs with:
 
 **Author**: Development Team  
 **Status**: Ready for Implementation  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Priority**: High (User-facing validation errors)
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> laraxot/dev
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> b2d53b8 (.)

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Tables\Columns;
 
+use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
 
 /**
  * Lo stato della valutazione di un record, in una cella sola.
@@ -54,7 +54,7 @@ class RatingsColumn extends XotBaseTextColumn
     {
         $sum = $record->getAttribute('rating_morphs_sum_value');
 
-        return is_numeric($sum) && 0.0 !== (float) $sum;
+        return is_numeric($sum) && (float) $sum !== 0.0;
     }
 
     public static function describe(Model $record): string

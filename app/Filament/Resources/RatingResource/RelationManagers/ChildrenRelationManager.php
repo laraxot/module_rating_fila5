@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingResource\RelationManagers;
 
 use Modules\Rating\Filament\Resources\RatingResource;
+use Modules\Rating\Filament\Resources\RatingResource\RelationManagers\BaseChildrenRelationManager;
 
 /**
  * I sotto-criteri di un criterio, per il modulo Rating.

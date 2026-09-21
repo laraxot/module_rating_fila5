@@ -7,18 +7,10 @@ updated: 2026-07-28
 qmd: "rating patterns"
 related:
 <<<<<<< HEAD
-<<<<<<< HEAD
-  - "./best-practices.md"
-=======
-<<<<<<< HEAD
   - "./best-practices.md"
 =======
   - "./BEST_PRACTICES.md"
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-  - "./BEST_PRACTICES.md"
->>>>>>> b2d53b8 (.)
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
 ---
@@ -402,24 +394,14 @@ $validated = $request->validate($rating->rules());
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
 <<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Documentation added to docs/INDEX.md
 =======
 <<<<<<< HEAD
-- [ ] Documentation added to docs/INDEX.md
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b2d53b8 (.)
 - [ ] Documentation added to docs/index.md
 =======
 - [ ] Documentation added to docs/INDEX.md
 >>>>>>> laraxot/dev
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
->>>>>>> b2d53b8 (.)
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 
@@ -437,12 +419,6 @@ $validated = $request->validate($rating->rules());
 ## Related Resources
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-- [Best Practices](./best-practices.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-=======
-<<<<<<< HEAD
 - [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
@@ -451,10 +427,4 @@ $validated = $request->validate($rating->rules());
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
 >>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
->>>>>>> b2d53b8 (.)
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism
