@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-/**
+/*
  * Creando un figlio dal RelationManager, il padre lo imposta la relazione.
  *
  * `children()` è una `HasMany` con chiave esterna `parent_id`: un `CreateAction` di
