@@ -13,14 +13,14 @@ uses(TestCase::class);
 
 describe('HasRatingsTrait::formFieldLabel', function (): void {
     test('preferisce txt a title e toglie HTML', function (): void {
-        $rating = new Rating;
+        $rating = new Rating();
         $rating->forceFill(['id' => 1, 'title' => 'Ruolo', 'txt' => 'Ruolo <b>organizzativo</b>']);
 
         Assert::assertSame('Ruolo organizzativo', HasRatingsTrait::formFieldLabel($rating));
     });
 
     test('usa title se txt assente', function (): void {
-        $rating = new Rating;
+        $rating = new Rating();
         $rating->forceFill(['id' => 2, 'title' => 'Criterio']);
 
         Assert::assertSame('Criterio', HasRatingsTrait::formFieldLabel($rating));

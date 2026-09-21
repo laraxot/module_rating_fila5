@@ -33,6 +33,7 @@ enum SupportedLocale: string
         foreach ($cases as $item) {
             $result[(string) $item->value] = (string) $item->getLabel();
         }
+
         return $result;
     }
 }
