@@ -5,268 +5,135 @@ slug: rating-altro-option-conditional-textarea-design
 status: ready-for-dev
 module: Rating
 created: 2026-09-15
-updated: 2026-09-15
-related: []
+updated: 2026-09-16
+related:
+  - ../bmad/epics/rating-select-altro.md
+  - ../bmad/architecture/rating-select-altro-note.md
+  - ../bmad/architecture/rating-select-altro-implementation-spec.md
+  - ../bmad/brainstorming/rating-select-altro-note-obbligatoria.md
+  - ../bmad/stories/5.99-select-altro-note-obbligatoria.story.md
+  - ../bmad/stories/5.141-has-rating-values-filter-note.story.md
+  - 5.99-rating-select-altro-textarea-obbligatoria.story.md
 github_issues:
-  - laraxot/module_rating_fila5#57
+  - https://github.com/laraxot/module_rating_fila5/issues/57
+  - https://github.com/laraxot/module_rating_fila5/issues/58
+  - https://github.com/laraxot/module_rating_fila5/issues/60
+github_discussion: https://github.com/laraxot/module_rating_fila5/discussions/59
 ---
 
-## Contesto — come funziona oggi
+# Design — Select «altro» + note
 
-`HasRatingsTrait::buildRatingComponent()` (`Modules/Rating/app/Models/Traits/HasRatingsTrait.php:343-373`)
-decide fra tre rese per una riga di `ratings`:
+## BMAD pack (2026-09-16)
 
-1. `is_readonly === true` → `TextEntry` (sola lettura)
-2. Riga con figli (`$rating->children` non vuota) → `Select::make($field)->options($options)->live()`
-3. Riga senza figli → `TextInput::make($field)->numeric()->live(onBlur: true)`
+**SSoT contratto + codice proposto:** pack in [`../bmad/`](../bmad/README.md), in particolare:
 
-Le opzioni del `Select` sono **esclusivamente** i figli esistenti:
+- [architecture/rating-select-altro-note.md](../bmad/architecture/rating-select-altro-note.md)
+- [architecture/rating-select-altro-implementation-spec.md](../bmad/architecture/rating-select-altro-implementation-spec.md)
+
+Questo file resta il design storico D-1..D-8 **riallineato** al canone utente.  
+**Fase:** solo documentazione — nessun codice.
+
+## Chiave option — cronologia (e perché batte le rivendicazioni parallele)
+
+| Quando | Versione | Fonte |
+|--------|----------|-------|
+| 2026-09-15 | `ALTRO_KEY = 'altro'` (stringa) + dehydrate | bozza design iniziale |
+| 2026-09-16 a.m. | chiave `''`/`null` (spesso collassate) | prompt utente in [`../prompts/01.md`](../prompts/01.md): *«chiave "" o null»* |
+| 2026-09-16 | raffinamento **null ≠ `''`** | placeholder → `null`; option altro → `''`; `selectIsOther === ''` only; **mai** `blank()` |
+| 2026-09-16 | alcuni agenti hanno ri-scritto «utente ha confermato `'altro'`» | **contraddetto** dal prompt scritto + commenti GH #57/#58/#59 più recenti |
+
+**Canon attuale (non riaprire senza nuovo prompt utente verificabile):**
+
+- Option «altro» = **`''`** (`OTHER_OPTION_KEY`)
+- Placeholder Select = **`null`** («non scelto»)
+- `note` required solo se `Get(select) === ''`
+- Vecchia `ALTRO_KEY = 'altro'` + `dehydrateStateUsing` string→null = **D-7 superseded**
+
+Evidence GH: commenti «Canon raffinato: null ≠ altro» e «Gate `selectIsOther`» su #57/#58.
+
+## Meccanismo attuale (`HasRatingsTrait::buildRatingComponent`)
+
+Verificato su `HasRatingsTrait.php` (~343–373):
+
+1. `is_readonly === true` → `TextEntry`
+2. Con figli → **oggi solo** `Select` (options = id figli). **Target:** `Group(Select + Textarea)` sempre
+3. Senza figli → `TextInput` numerico (invariato)
+
+Nessuna option «altro» oggi. Campo testo: `rating_morph.note` già in migration — **nessuna migration nuova**.
+
+`ratingFieldName` oggi solo `…pivot.value`; to-be: secondo argomento `$pivotColumn = 'value'|'note'`.
+
+## Decisioni (canone)
+
+### D-1 — Chiave option «altro» (supersede stringa `'altro'`)
 
 ```php
-$options = $rating->children
-    ->mapWithKeys(static fn (BaseRating $child): array => [$child->id => $child->getLabel()])
-    ->all();
-```
-
-Le chiavi sono **id interi** dei rating figli (autoincrement DB) — non esiste oggi nessuna
-entry con chiave `''` o `null`.
-
-Dopo il branch, una coda comune si applica a **qualunque** `$component` (Select o TextInput):
-
-```php
-return $component
-    ->nullable()
-    ->inlineLabel()
-    ->rules((string) ($rating->rule->value ?? ''))
-    ->afterStateUpdated(
-        static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
-            $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
-        }
-    );
-```
-
-`getRatingsFormSchema()` chiama poi `$caller?->decorateRatingField($rating, $component)` **una
-volta sola**, sul componente già completo, e lo indicizza con **un solo nome di campo**:
-`$schema[self::ratingFieldName($rating)] = ...`.
-
-Il valore scelto va nel pivot `value` (colonna `decimal(10,3)` su `rating_morph`), tramite
-`ratingFieldName()`:
-
-```php
-public static function ratingFieldName(BaseRating $rating): string
+private const string OTHER_OPTION_KEY = '';
+private static function selectIsOther(Get $get, string $selectField): bool
 {
-    return 'ratings.'.$rating->id.'.pivot.value';
+    return $get($selectField) === self::OTHER_OPTION_KEY; // mai blank()
 }
 ```
 
-Nessun parametro per colonne pivot diverse da `value` — verificato leggendo il metodo, non
-assunto.
+| Stato Select | Significato | note required |
+|--------------|-------------|----------------|
+| `null` | non scelto (placeholder) | no |
+| `''` | option «altro» | **sì** |
+| int > 0 | id figlio | no |
 
-## Campo per il testo libero — già esiste, non serve migration
+### D-2 — Storage testo
 
-La tabella `rating_morph` ha già una colonna `note` (`text`, nullable), definita in
-`Modules/Rating/database/migrations/2026_07_27_100005_create_rating_morph_table.php` (riga 30)
-e nella migration di compatibilità `2026_07_15_120003_create_rating_morph_table.php` (riga 48,
-guardia `hasColumn`) — vedi `rating-morph-migrazioni-doppie.story.md`. Nessun nuovo campo DB è
-necessario: il testo di "altro" vive in `rating_morph.note`.
+`rating_morph.note`. `ratingFieldName($rating, 'note')`.
 
-## Pattern esistenti nel progetto
+### D-3 — Label option
 
-`visible(fn (...))` su componenti Filament reattivi (`live()` + `visible()`) è già in uso in
-altri moduli (`Incentivi/.../StabiDirigentesTable.php`,
-`IndennitaResponsabilita/.../MailTemplateForm.php`). Non è un pattern nuovo da inventare.
+`trans('rating::fields.altro')` nel **valore** dell’array options — non `->label()` sul componente (D-1 story 5.92).
 
-`Filament\Schemas\Components\Group` esiste (`vendor/filament/schemas/src/Components/Group.php`,
-verificato) ed è compatibile col tipo di ritorno di `buildRatingComponent()`
-(`Filament\Schemas\Components\Component`, lo stesso import già in uso nel trait).
+### D-4 — Presenza e validazione
 
-## Vincolo del trait — nessuna eccezione, con una precisazione
-
-Il trait **non chiama mai `->label()`** su un componente (vedi commento righe 278-281 del
-trait): l'etichetta di un *componente* è un dato che appartiene all'host, non una costante —
-regola `no-filament-labels`, decisione D-1 della story 5.92. Questo vincolo riguarda
-`Component::label()`, cioè l'etichetta del *campo*.
-
-Il testo dell'opzione **"Altro" dentro l'array `$options` di un Select non è la label di un
-componente**: è un valore di dominio Rating, allo stesso livello del nome colonna `note` o
-della convenzione `ratings.*.pivot.value` — un dato che il modulo Rating possiede, non un
-dato specifico dell'host che consuma il trait. Per questo la Decisione 3 (sotto) fa produrre
-al trait stesso `trans('rating::fields.altro')`, senza violare D-1: non è un `->label()` su un
-componente, è un valore di un array di opzioni, di proprietà del modulo Rating.
-
-## Decisioni prese
-
-### 1. Chiave sentinella per "altro"
-
-**Decisione**: costante privata sul trait, non su `BaseRating`.
-
-```php
-private const string ALTRO_KEY = 'altro';
-```
-
-**Perché sul trait e non su `BaseRating`**: nessun consumer esterno al trait deve confrontare
-questa chiave (vedi Decisione 3 — non serve un nuovo metodo sul contratto, quindi l'host non
-ha mai bisogno di leggerla). Se in futuro un host reale avesse bisogno di distinguere "altro"
-dalle altre risposte (es. in `recalculateRatingFields()`), si promuove a costante pubblica
-allora, guidati da quel requisito — non ora (YAGNI).
-
-**Perché una stringa esplicita e non `''`/`null`**: le chiavi esistenti sono id interi
-autoincrement; `''`/`null` sono ambigui con lo stato iniziale "nessuna scelta fatta" del
-Select (che Filament rappresenta internamente come stato vuoto). Una stringa `'altro'`
-comparabile con `===` non collide mai con un id (tipi diversi dopo cast, valore distinguibile
-da "non ancora risposto").
-
-### 2. Dove salvare il testo libero
-
-**Decisione**: `rating_morph.note` (già esiste, nessuna migration). Nome campo form:
-
-```php
-public static function ratingFieldName(BaseRating $rating, string $pivotColumn = 'value'): string
-{
-    return 'ratings.'.$rating->id.'.pivot.'.$pivotColumn;
-}
-```
-
-Modifica **retrocompatibile** (parametro con default): ogni chiamata esistente
-`ratingFieldName($rating)` continua a restituire `...pivot.value` invariato. La nuova chiamata
-per la nota è `ratingFieldName($rating, 'note')` → `ratings.{id}.pivot.note`.
-
-### 3. Label dell'opzione "altro" — il trait la produce, non `->label()` su un componente
-
-**Decisione**: `trans('rating::fields.altro')`, chiamato dal trait dentro `buildRatingComponent()`,
-per popolare il *valore* dell'opzione nell'array `$options` (non per impostare `->label()` su
-nessun componente). Vedi motivazione sopra ("Vincolo del trait — con una precisazione").
-
-Se la chiave di traduzione manca, `trans()` restituisce la chiave stessa
-(`'rating::fields.altro'`) — degradazione visibile ma non un crash, coerente con "senza
-`$caller` lo schema è comunque valido" già documentato nel trait per `decorateRatingField()`.
-
-**Nessun nuovo metodo su `RatingsFormCallerContract`.** Verificato leggendo il contratto
-(`decorateRatingField(BaseRating $rating, Component $component): Component`, riga 44): riceve
-il componente **già costruito** (nel nuovo design, il `Group` che contiene Select + Textarea),
-non l'array `$options` grezzo prima della build. Un ipotetico `decorateRatingOptions()`
-arriverebbe troppo tardi nel flusso per essere utile senza restrutturare quando viene
-invocato — un nuovo metodo di contratto per un valore che il modulo Rating già possiede
-(come `note`) sarebbe complessità aggiunta senza bisogno reale (YAGNI).
-
-### 4. Validazione condizionale
-
-**Decisione**:
+Select + Textarea **sempre** visibili (`Group`). Nessun `->visible()` sulla note.
 
 ```php
 Textarea::make(self::ratingFieldName($rating, 'note'))
-    ->visible(static fn (Get $get): bool => $get(self::ratingFieldName($rating)) === self::ALTRO_KEY)
-    ->required(static fn (Get $get): bool => $get(self::ratingFieldName($rating)) === self::ALTRO_KEY);
+    ->required(static fn (Get $get): bool => self::selectIsOther($get, $field));
 ```
 
-Nessun `->maxLength()`: `note` è `text` nullable, nessun vincolo di lunghezza esiste oggi nel
-dominio. Se un caso reale lo richiede, si aggiunge con story separata guidata da quel
-requisito (YAGNI — non anticipare vincoli non richiesti).
+Coda `nullable|rules|live|afterStateUpdated` resta sul **Select**, non sul Group.
 
-### 5. `recalculateRatingFields()` e la nota
+### D-5 — `recalculateRatingFields`
 
-**Decisione**: non reagisce al cambio di `note`. Il hook esiste per ricalcoli che dipendono
-dal **valore numerico** (`pivot.value`) dei rating readonly; `note` è puro storage descrittivo,
-non aziona business logic. Resta agganciato solo al campo Select/TextInput principale, come
-oggi.
+Non reagisce a `note` (solo value numerico readonly).
 
-### 6. Opt-in per singolo rating
+### D-6 — Opt-in
 
-**Decisione**: nessun flag. Quando un rating ha figli, l'opzione "altro" è **sempre**
-disponibile — stesso principio KISS con cui oggi tutti i rating con figli ricevono
-automaticamente un Select. Se un caso reale richiede di escluderla per un rating specifico, si
-aggiunge un flag esplicito guidato da quel requisito, non ora.
+Nessun flag: con figli, «altro» sempre in coda options.
 
-## Pseudocodice completo (NON implementazione)
+### D-7 — Mapping form ↔ `value` (**superseded** come sentinella stringa)
 
-Punto critico verificato: la coda comune (`nullable/inlineLabel/rules/afterStateUpdated`) oggi
-si applica a **qualunque** `$component` restituito dal branch (Select o TextInput), perché è
-uno solo. Con il nuovo design, quella coda deve restare sul **Select**, non sul `Group` che lo
-avvolge insieme alla Textarea — un `Group` non ha `.rules()`/`nullable()` con lo stesso
-significato di un campo. Questo richiede spostare la coda **dentro** il branch "con figli",
-applicata al Select prima di comporre il Group, mantenendo la coda invariata per gli altri due
-branch.
+Con chiave `''`, dehydrate speciale stringa→null **non serve**: form `''` e DB `null` si allineano in save host (`''`→`null`).  
 
-```php
-private function buildRatingComponent(
-    BaseRating $rating,
-    ?RatingsFormCallerContract $caller,
-    Collection $readonlyRatings,
-): Component {
-    $field = self::ratingFieldName($rating);
+Hydrate round-trip: se `value===null` e `note` filled → Select state **`''`** (non placeholder). Vedi implementation-spec § fill.
 
-    if ($rating->is_readonly === true) {
-        return TextEntry::make($field)->inlineLabel();
-    }
+### D-8 — `HasRatingValuesFilter`
 
-    $options = $rating->children
-        ->mapWithKeys(static fn (BaseRating $child): array => [$child->id => $child->getLabel()])
-        ->all();
+`value` null/0 = non valutata oggi → schede solo-note false negative.  
+**Issue:** [#60](https://github.com/laraxot/module_rating_fila5/issues/60) · story [5.141](../bmad/stories/5.141-has-rating-values-filter-note.story.md). Preferenza: note filled = valutata.
 
-    $afterStateUpdated = static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
-        $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
-    };
+## Gap host IR
 
-    if ($options === []) {
-        return TextInput::make($field)
-            ->numeric()
-            ->live(onBlur: true)
-            ->nullable()
-            ->inlineLabel()
-            ->rules((string) ($rating->rule->value ?? ''))
-            ->afterStateUpdated($afterStateUpdated);
-    }
+`CompilaIndennitaResponsabilita` fill/save solo `value` (+ cast non-numerici a `0`).  
+Story [IR/5.140](../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md) · issue [IR#36](https://github.com/provtv/module_indennitaresponsabilita_fila5/issues/36).
 
-    $options[self::ALTRO_KEY] = trans('rating::fields.altro');
+## Acceptance (implementazione)
 
-    $select = Select::make($field)
-        ->options($options)
-        ->live()
-        ->nullable()
-        ->inlineLabel()
-        ->rules((string) ($rating->rule->value ?? ''))
-        ->afterStateUpdated($afterStateUpdated);
+- [ ] `OTHER_OPTION_KEY = ''` + `selectIsOther` (Pest: null non required; `''` required)
+- [ ] Placeholder Select; Group Select+Textarea; no `->label()`; lang `fields.altro`
+- [ ] IR 5.140 pass-through note; no cast a `0`
+- [ ] D-8 #60 / 5.141 esplicitato (dopo #58)
+- [ ] PHPStan level max Rating
 
-    $note = Textarea::make(self::ratingFieldName($rating, 'note'))
-        ->visible(static fn (Get $get): bool => $get($field) === self::ALTRO_KEY)
-        ->required(static fn (Get $get): bool => $get($field) === self::ALTRO_KEY);
+## Fuori scope
 
-    return Group::make([$select, $note]);
-}
-```
-
-**Nota su `getRatingsFormSchema()`**: nessuna modifica necessaria. Continua a indicizzare
-`$schema[self::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component`
-— `$component` ora può essere un `Group`, e `decorateRatingField()` lo riceve intero (il
-contratto non cambia firma).
-
-**Import nuovi richiesti**: `Filament\Forms\Components\Textarea`,
-`Filament\Schemas\Components\Group` (verificati esistenti, non assunti).
-
-## Criteri di accettazione (per l'implementazione)
-
-- [ ] `ALTRO_KEY` = costante privata `'altro'` su `HasRatingsTrait`
-- [ ] `ratingFieldName()` esteso con parametro `string $pivotColumn = 'value'`, retrocompatibile
-- [ ] `trans('rating::fields.altro')` — chiave aggiunta a `Modules/Rating/lang/it/fields.php`
-      (e alle altre lingue presenti nel modulo, stesso pattern delle chiavi esistenti)
-- [ ] Coda `nullable/inlineLabel/rules/afterStateUpdated` applicata al `Select`, non al `Group`
-- [ ] `Textarea` su `ratings.{id}.pivot.note`, `visible()` e `required()` sullo stesso confronto
-      `=== ALTRO_KEY`, nessun `->maxLength()`
-- [ ] Nessuna modifica a `RatingsFormCallerContract` (nessun nuovo metodo)
-- [ ] Nessuna migration (confermato: colonna `note` già esistente)
-- [ ] Test Pest scritti PRIMA (TDD, standing order): opzione "altro" presente nelle options,
-      textarea nascosta di default, visibile dopo selezione "altro" (via `live()`), required
-      solo quando visibile, valore salvato su `pivot.note`, altri rating (readonly, senza
-      figli) invariati
-- [ ] PHPStan livello 10, PHPMD, PHPInsights, Pest coverage — come da standing order
-
-## Riferimenti
-
-- `Modules/Rating/app/Models/Traits/HasRatingsTrait.php:260-263` (`ratingFieldName`)
-- `Modules/Rating/app/Models/Traits/HasRatingsTrait.php:343-373` (`buildRatingComponent`)
-- `Modules/Rating/app/Contracts/RatingsFormCallerContract.php:44` (`decorateRatingField`)
-- `Modules/Rating/database/migrations/2026_07_27_100005_create_rating_morph_table.php:30`
-  (colonna `note`)
-- `vendor/filament/schemas/src/Components/Group.php` (esistenza verificata)
-- Story 5.92: `get-ratings-form-schema-nel-trait.story.md` (decisione D-1, no-filament-labels)
-- `rating-morph-migrazioni-doppie.story.md` (doppia migration rating_morph)
+- Flag per disabilitare «altro» per rating
+- `maxLength` su note
+- Cambiare ricalcolo readonly

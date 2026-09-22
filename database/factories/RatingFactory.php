@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Rating\Database\Factories;
 
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Database\Factories\BaseRatingFactory;
 
 /**
  * La forma del dato sta in {@see BaseRatingFactory}, nel modulo che possiede il concetto.
