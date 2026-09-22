@@ -28,3 +28,4 @@ graphify-out/
 /.vscode/
 .cursor~*
 .windsurf~*
+node_modules

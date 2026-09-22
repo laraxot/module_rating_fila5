@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Tables\Filters;
 
-use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
 
 /**
- * «La scheda è stata valutata davvero?»
+ * «La scheda è stata valutata davvero?».
  *
  * Una riga in `rating_morph` non vuol dire valutazione inserita: le righe si creano
  * quando la scheda viene preparata, con `value` a NULL, e restano così finché il
@@ -59,7 +59,7 @@ class HasRatingValuesFilter extends XotBaseTernaryFilter
      * sul pivot, e `ratings()` vede una sola delle due forme di `model_type` presenti
      * in tabella. Con la relazione sbagliata il filtro risponderebbe 1 invece di 147.
      *
-     * @param  Builder<Model>  $rows
+     * @param Builder<Model> $rows
      */
     protected function constrainToValued(Builder $rows): void
     {
