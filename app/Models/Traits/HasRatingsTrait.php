@@ -95,16 +95,49 @@ trait HasRatingsTrait
     /**
      * `ratings` (morphToMany) e' indicizzata per posizione (0..N), non per id del
      * rating: `data_get($host, 'ratings.52')` non trova il rating con id 52.
-     * Questo accessor re-indicizza la collection gia' caricata per `id`, cosi'
-     * `data_get($host, 'ratings_by_id.52.pivot.value')` funziona. Il voto vive sul
-     * pivot (`rating_morph.value`), non sul model `ratings`.
+     * Questo accessor re-indicizza per `id`, cosi' `data_get($host,
+     * 'ratings_by_id.52.pivot.value')` funziona. Il voto vive sul pivot
+     * (`rating_morph.value`), non sul model `ratings`.
+     *
+     * `ratings` vede solo la forma alias di `model_type` (vedi `ratingMorphs()`
+     * sopra, story `rating-morph-model-type-doppio`): usata da sola perdeva il
+     * pivot per ~228 host su 230. Il pivot arriva quindi da `ratingMorphs`
+     * (entrambe le forme); il model `Rating` (per il title) resta quello gia'
+     * caricato da `ratings` quando c'e', altrimenti un'istanza col solo `id` —
+     * stesso limite gia' accettato da `RatingsColumn`.
      *
      * @return EloquentCollection<int|string, BaseRating>
      */
     public function getRatingsByIdAttribute(): EloquentCollection
     {
-        /** @var EloquentCollection<int|string, BaseRating> */
-        return $this->ratings->keyBy('id');
+        /** @var EloquentCollection<int, BaseRating> $ratings */
+        $ratings = $this->ratings->keyBy('id');
+
+        /** @var Collection<int, MorphPivot> $pivots */
+        $pivots = $this->ratingMorphs;
+
+        /** @var EloquentCollection<int|string, BaseRating> $result */
+        $result = new EloquentCollection;
+
+        foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
+            /** @var MorphPivot $pivot */
+            $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null) ?? $group->first();
+
+            $rating = $ratings->get($ratingId);
+            if (! $rating instanceof BaseRating) {
+                /** @var class-string<BaseRating> $related */
+                $related = Rating::getClassName();
+                Assert::subclassOf($related, BaseRating::class);
+                $rating = new $related;
+                $rating->setRawAttributes(['id' => $ratingId]);
+            }
+
+            $rating = clone $rating;
+            $rating->setRelation('pivot', $pivot);
+            $result->put($ratingId, $rating);
+        }
+
+        return $result;
     }
 
     /**
