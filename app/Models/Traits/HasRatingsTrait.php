@@ -93,6 +93,30 @@ trait HasRatingsTrait
     }
 
     /**
+     * `ratings` (morphToMany) e' indicizzata per posizione (0..N), non per id del
+     * rating: `data_get($host, 'ratings.52')` non trova il rating con id 52.
+     * Questo accessor re-indicizza la collection gia' caricata per `id`, cosi'
+     * `data_get($host, 'ratings_by_id.52.pivot.value')` funziona. Il voto vive sul
+     * pivot (`rating_morph.value`), non sul model `ratings`.
+     *
+     * @return EloquentCollection<int|string, BaseRating>
+     */
+    public function getRatingsByIdAttribute(): EloquentCollection
+    {
+        /** @var EloquentCollection<int|string, BaseRating> */
+        return $this->ratings->keyBy('id');
+    }
+
+    /**
+     * Percorso `data_get` del campo pivot di un rating sull'host
+     * (es. `ratings_by_id.52.pivot.value`).
+     */
+    public static function ratingValuePath(BaseRating $rating, string $field = 'value'): string
+    {
+        return 'ratings_by_id.'.$rating->id.'.pivot.'.$field;
+    }
+
+    /**
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
