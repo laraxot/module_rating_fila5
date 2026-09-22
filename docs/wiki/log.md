@@ -7,11 +7,47 @@ updated: 2026-07-14
 qmd: "log"
 ---
 
+<<<<<<< HEAD
+=======
+## [2026-06-10] phpstan | Modulo Rating zero errori codice
+
+- `./vendor/bin/phpstan analyse Modules/Rating` → 0 errori codice
+- Fix: ListRatingsPageTest (Assert), RatingTest `getLabel()` vs `label()`
+- Campagna: [docs/chat/phpstan-modules-second-brain.md](../../../../../docs/chat/phpstan-modules-second-brain.md)
+
+## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
+
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/platform/issues/272) / [D#273](https://github.com/laraxot/platform/discussions/273)
+
+## [2026-06-10] phpstan | Modulo Rating zero errori codice
+
+- `./vendor/bin/phpstan analyse Modules/Rating` → 0 errori codice
+- Fix: ListRatingsPageTest (Assert), RatingTest `getLabel()` vs `label()`
+- Campagna: [docs/chat/2026-06-10-phpstan-modules-second-brain.md](../../../../../docs/chat/2026-06-10-phpstan-modules-second-brain.md)
+
+## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
+
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/platform/issues/272) / [D#273](https://github.com/laraxot/platform/discussions/273)
+
+---
+title: "Activity Log"
+module: "Rating"
+---
+
+>>>>>>> laraxot/dev
 # Activity Log — Rating
 
 > **Purpose:** Append-only chronological activity record tracking ingests, queries, and lint passes.
 
+<<<<<<< HEAD
 ## Format
+=======
+## Log Entries
+
+### Format
+>>>>>>> laraxot/dev
 
 ```text
 [YYYY-MM-DD HH:MM:SS UTC] [OPERATION] Description
@@ -26,6 +62,7 @@ qmd: "log"
 
 ---
 
+<<<<<<< HEAD
 ## Log Entries
 
 ### [2026-06-10] phpstan | Modulo Rating zero errori codice
@@ -47,3 +84,17 @@ qmd: "log"
 
 **Last Activity:** 2026-05-12 08:19:00 UTC  
 **Total Operations:** 3
+=======
+<<<<<<< HEAD
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `INDEX.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+=======
+<<<<<<< HEAD
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/index.md` e `skills/index.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+=======
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+
+**Last Activity:** 2026-05-12 08:19:00 UTC  
+**Total Operations:** 1
+>>>>>>> laraxot/dev

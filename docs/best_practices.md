@@ -14,5 +14,18 @@
 - Copri casi limite come rating inversi.
 
 ## Documentazione
+<<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
 - Collega a moduli correlati come `Review` e `Auth`.
+=======
+<<<<<<< HEAD
+- Aggiorna `docs/index.md` con nuovi endpoint.
+=======
+- Aggiorna `docs/INDEX.md` con nuovi endpoint.
+<<<<<<< HEAD:docs/best_practices.md
+- Collega a moduli correlati come `Review` e `Auth`.
+=======
+>>>>>>> laraxot/dev
+- Collega a moduli correlati come `Review` e `Auth`.
+>>>>>>> laraxot/dev:docs/BEST_PRACTICES.md
+>>>>>>> laraxot/dev
