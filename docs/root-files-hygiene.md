@@ -11,6 +11,7 @@ related:
 
 # Root files hygiene
 
+<<<<<<< HEAD
 ## 2026-09-22 (regressione: cleanup annullato da un merge)
 
 Il commit `817ec7e` (09:06) aveva riportato la root a 3 `.md` (README.md,
@@ -39,6 +40,8 @@ commit"), quindi `git log` su questo repo fallisce oltre `817ec7e` con
 repo git indipendente di questo modulo, non solo un problema di file .md;
 segnalare prima di fare altre operazioni di history rewriting su questo repo.
 
+=======
+>>>>>>> laraxot/dev
 ## 2026-07-08 16:51
 
 - created `Rating.code-workspace` as the single canonical root workspace file.

@@ -2,7 +2,11 @@
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating
+<<<<<<< HEAD
 updated: 2026-09-22
+=======
+updated: 2026-09-16
+>>>>>>> laraxot/dev
 ---
 
 # Rating Module — Index
@@ -28,6 +32,7 @@ updated: 2026-09-22
 
 ## Debito docs
 
+<<<<<<< HEAD
 **2026-09-22 — risolto.** I 38 file sotto `docs/` con marker di merge non risolti
 (`<<<<<<<`/`=======`/`>>>>>>>`, incluso `architecture.md`) sono stati fusi e ripuliti
 (verifica: `grep -rl '^<<<<<<< \|^=======$\|^>>>>>>> ' docs/` → nessun risultato).
@@ -42,3 +47,8 @@ Ancora aperto (fuori scope per questo cleanup, non toccare qui):
   root) — vedi `root-files-hygiene.md`.
 - possibile corruzione repo Git (commit mancante, vedi `git fsck`) — da investigare
   prima di qualsiasi rewrite di history su questo modulo.
+=======
+Molti `.md` sotto `docs/` (fuori `bmad/`) contengono ancora **marker di merge non risolti**
+(`<<<<<<<`). Non usarli come SSoT. Pulizia: story dedicata o sessione docs-only; priorità
+`bmad/` + README + questo index.
+>>>>>>> laraxot/dev
