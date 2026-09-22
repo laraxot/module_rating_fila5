@@ -25,5 +25,4 @@ abstract class BaseRatingResource extends XotBaseResource
     {
         return [];
     }
-
 }
