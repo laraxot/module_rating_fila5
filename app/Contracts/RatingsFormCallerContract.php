@@ -49,7 +49,7 @@ interface RatingsFormCallerContract
      * Il trait aggancia questo metodo a `afterStateUpdated()` e gli passa i rating con
      * `is_readonly = true`. **Il calcolo resta dell'host**: è dominio, non piattaforma.
      *
-     * @param  Collection<int, BaseRating>  $readonlyRatings
+     * @param Collection<int, BaseRating> $readonlyRatings
      */
     public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void;
 }
