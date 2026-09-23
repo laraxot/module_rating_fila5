@@ -1,21 +1,23 @@
-# Story: rating-data-export-methods
+---
+title: "rating-data-export-methods"
+type: story
+module: Rating
+status: superseded
+story_id: "rating-data-export-methods"
+updated: 2026-09-23
+superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
+---
 
-**Status**: ready-for-dev
+> **SUPERSEDED** — helper in `RatingData` via `rating-statics-to-ratingdata-consolidation`. Vedi `5.238`.
+
+# Story: rating-data-export-methods (storico)
+
+**Status**: superseded
 **Modulo**: Rating
 **Epic**: utility rating riutilizzabili per export XLS
 
-## AC
-- [ ] `formFieldLabel` spostato da `HasRatingsTrait` a `RatingData`
-- [ ] `ratingXlsValuePath` spostato da `HasRatingsTrait` a `RatingData`
-- [ ] `RatingData::getXlsFields($where)` usa i nuovi metodi (DRY)
-- [ ] `HasRatingsTrait` mantiene solo relazioni/scope/sync (no utility export)
-- [ ] Tutti i callers aggiornati (`RatingData`, `CompilaIndennitaResponsabilita`, `DecoratesRatingFormFields`, test)
-- [ ] PHPStan Modules/Rating [OK]
-- [ ] PHPStan Modules/IndennitaResponsabilita [OK]
-- [ ] Pest verdi su moduli toccati
-- [ ] Second brain aggiornato con la nuova regola
+## AC (storici — soddisfatti altrove)
+- [x] `formFieldLabel` / path in `RatingData` (consolidation)
+- [x] `RatingData::getXlsFields` usa i metodi (5.229 / move)
+- [x] Callers ripuntati (5.231)
 
-## Note
-- Questo refactoring rende più riutilizzabile la logica di label/export dei rating.
-- `RatingData` è il DTO di rating; contiene anche utility statiche di rating.
-- `HasRatingsTrait` rimane il dominio delle relazioni (`ratings`, `ratingMorphs`, `myRatings`, ecc.).
