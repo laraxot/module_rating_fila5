@@ -248,7 +248,7 @@ gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa 
 `@phpstan-require-extends Model`) — una riga, nessuna invenzione.
 
 - PHPStan `analyse Modules/Rating` → 0 errori (EXIT:0).
-- PHPStan `analyse Modules` (whole-tree) → in verifica.
+- PHPStan `analyse Modules` (whole-tree) → 0 errori, 0 file_errors (EXIT:0, confermato).
 - PHPMD `tools/phpmd.sh` sul file → 0 violazioni.
 - PHP Insights sul file → 100/100/100/100.
 - Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
