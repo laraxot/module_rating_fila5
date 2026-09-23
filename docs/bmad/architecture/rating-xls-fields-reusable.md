@@ -2,11 +2,14 @@
 title: "Dove mettere le colonne XLS dei rating (catalogo)"
 type: architecture
 module: Rating
-status: accepted
+status: superseded
 created: 2026-09-23
 updated: 2026-09-23
 qmd: "getXlsFields ratingXlsFields withExtraAttributes RatingData HasRatingsTrait getClassName reusable export"
 related:
+  - ./rating-entity-helpers-home-in-ratingdata.md
+  - ./ratingdata-getxlsfields-caller-resolve.md
+  - ../stories/5.237-ratingdata-export-ssot-architecture-reconcile.story.md
   - ../stories/18.60-rating-xls-fields-catalog.story.md
   - ../stories/18.58-xls-export-value-selected-child.story.md
   - ../stories/5.149-compila-vs-trait-reusable-boundary.story.md
@@ -15,6 +18,13 @@ related:
   - ../../app/Datas/RatingData.php
   - ../../app/Models/Traits/HasRatingsTrait.php
 ---
+
+> **Superseded (2026-09-23)** — le opzioni qui scelte (catalogo in
+> `HasRatingsTrait`, «non RatingData») sono state ribaltate dal refactor:
+> il catalogo e le helper (label/path/fieldName) vivono in `RatingData`
+> (`getXlsFields(array $where, string $ratingClass)` con `$ratingClass`
+> required). Canon unica: `rating-entity-helpers-home-in-ratingdata.md`
+> (reconcile 5.237, revert 5.234). Questo file resta come storico del debate.
 
 # Architettura — catalogo colonne XLS dai rating
 

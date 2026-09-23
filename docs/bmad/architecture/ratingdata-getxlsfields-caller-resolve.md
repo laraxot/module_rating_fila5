@@ -2,7 +2,7 @@
 title: "RatingData::getXlsFields($where) — resolve subclass dal backtrace statico"
 type: architecture
 module: Rating
-status: accepted
+status: superseded
 created: 2026-09-23
 updated: 2026-09-23
 qmd: "RatingData getXlsFields resolveRatingClassFromCaller backtrace Filament Resources connection"
@@ -12,6 +12,12 @@ related:
   - ../../../../IndennitaResponsabilita/docs/bmad/stories/5.179-rating-xls-fields-reusable-component.story.md
   - ../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
+
+> **Superseded (2026-09-23)** — vedi
+> [`5.232`](../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md).
+> `$ratingClass` torna required, `resolveRatingClassFromCaller()` rimosso:
+> il backtrace non porta il frame originale nella call chain asincrona
+> (`XotBaseExporter::resolveColumns()` dopo deserializzazione job).
 
 # Perché `...RatingData::getXlsFields($where)` senza FQCN
 
