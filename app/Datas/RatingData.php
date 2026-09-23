@@ -4,23 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Modules\Rating\Enums\SupportedLocale;
+use Modules\Rating\Models\BaseRating;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use RuntimeException;
 use Spatie\LaravelData\Data;
+use Webmozart\Assert\Assert;
 
 /**
  * DTO per un rating.
  *
- * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
- * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
- * usate da `RatingBlockTest`; i metodi statici in fondo descrivono invece le **colonne**
- * della tabella `ratings`. Non è un accostamento voluto: è il nome `RatingData` che era
- * già occupato quando è servito il secondo concetto.
+ * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
+ * Split `RatingBlockData` / entity tracciato a parte.
  *
- * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità',
- * come `SchedaData` sta a `schede` — è tracciata come lavoro a se': tocca il blocco, il
- * test e ogni chiamante, e non si fa di passaggio.
+ * `getXlsFields($where)` = catalogo export **solo rating**. Risolve
+ * `Modules\<Mod>\Models\Rating` dal backtrace (anche static `Filament\Resources\*`)
+ * perché IR Rating usa connection `indennita_responsabilita`.
+ * Canon: `docs/bmad/architecture/ratingdata-getxlsfields-caller-resolve.md`.
  */
 class RatingData extends Data
 {
@@ -36,12 +40,7 @@ class RatingData extends Data
     }
 
     /**
-     * Costruisce il DTO da un payload di form.
-     *
-     * Delega al casting automatico di Spatie LaravelData (max DRY — no controller
-     * manuale di tipo, PHPStan verifica i rami tramite tipi di proprietà).
-     *
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
     {
@@ -49,19 +48,159 @@ class RatingData extends Data
     }
 
     /**
-     * Le colonne di `ratings`, dichiarate una volta sola.
-     *
-     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
-     * si aggiungono solo quelle che mancano. Una lista, due usi — l'idea presa da
-     * `NestedSet::columns()`: quello che costa non sono le righe, è avere la stessa
-     * colonna dichiarata in due posti che prima o poi non concordano. Qui era già
-     * successo: `txt` era `text()` in creazione e `string()` nel guard di update.
-     *
-     * ```php
-     * $this->tableCreate(fn (Blueprint $table) => RatingData::columns($table));
-     * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
-     * ```
+     * Percorso `data_get` del campo pivot di un rating sull'host
+     * (es. `ratings_by_id.52.pivot.value`).
      */
+    public static function ratingValuePath(BaseRating $rating, string $field = 'value'): string
+    {
+        return 'ratings_by_id.'.$rating->id.'.pivot.'.$field;
+    }
+
+    /**
+     * Percorso `data_get` del valore leggibile in export XLS/XLSX
+     * (`xls_export_value`: txt del figlio se Select, altrimenti pivot.value).
+     *
+     * @see BaseRating::getXlsExportValueAttribute()
+     */
+    public static function ratingXlsValuePath(BaseRating $rating): string
+    {
+        return 'ratings_by_id.'.$rating->id.'.xls_export_value';
+    }
+
+    /**
+     * Testo etichetta form per un criterio: `txt` se presente, altrimenti `title`.
+     *
+     * Diverso da {@see BaseRating::getLabel()} (albero / solo `title`). Il metodo
+     * non chiama `->label()` Filament: restituisce solo la stringa, l'host (o
+     * {@see \Modules\Rating\Filament\Concerns\DecoratesRatingFormFields}) la applica.
+     *
+     * Sede: funzione pura di `$rating`, nessuna dipendenza dall'host — per questo
+     * qui e non in `HasRatingsTrait` (trait per gli host, non per l'entità rating).
+     * Canon: `docs/bmad/architecture/rating-entity-helpers-home-in-ratingdata.md`.
+     */
+    public static function formFieldLabel(BaseRating $rating): string
+    {
+        return strip_tags((string) ($rating->txt ?? $rating->title));
+    }
+
+    /**
+     * Catalogo colonne XLS/XLSX **solo rating** (path => label).
+     *
+     * @param  array<string, mixed>  $where
+     * @param  class-string<BaseRating>|null  $ratingClass
+     * @return array<string, string>
+     */
+    public static function getXlsFields(array $where, ?string $ratingClass = null): array
+    {
+        $ratingClass ??= self::resolveRatingClassFromCaller();
+        Assert::implementsInterface($ratingClass, RatingContract::class);
+
+        /** @var EloquentCollection<int, BaseRating> $ratings */
+        $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
+        $ratings = $ratings
+            ->reject(static fn (BaseRating $rating): bool => $rating->parent_id !== null)
+            ->values();
+        $ratings->loadMissing('children');
+
+        return self::criteriaToXlsFields($ratings);
+    }
+
+    /**
+     * @param  iterable<int, BaseRating>  $ratings
+     * @return array<string, string>
+     */
+    public static function criteriaToXlsFields(iterable $ratings): array
+    {
+        if ($ratings instanceof EloquentCollection) {
+            $ratings->loadMissing('children');
+        }
+
+        $fields = [];
+
+        foreach ($ratings as $rating) {
+            if ($rating->parent_id !== null) {
+                continue;
+            }
+
+            $label = self::formFieldLabel($rating);
+            if ($label === '') {
+                $label = 'Rating '.$rating->id;
+            }
+
+            $fields[self::ratingXlsValuePath($rating)] = $label;
+
+            $children = $rating->relationLoaded('children')
+                ? $rating->children
+                : Collection::make();
+
+            if ($children->isNotEmpty()) {
+                $fields[self::ratingValuePath($rating, 'note')] = (string) __(
+                    'rating::fields.note_for',
+                    ['label' => $label],
+                );
+            }
+        }
+
+        return $fields;
+    }
+
+    /**
+     * Come getClassName(), ma accetta frame statici Filament\Resources / Models.
+     *
+     * @return class-string<BaseRating>
+     */
+    public static function resolveRatingClassFromCaller(): string
+    {
+        foreach (debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 40) as $frame) {
+            $class = null;
+
+            if (isset($frame['object']) && is_object($frame['object'])) {
+                $class = $frame['object']::class;
+                if (method_exists($frame['object'], 'getModelClass')) {
+                    /** @var mixed $modelClass */
+                    $modelClass = $frame['object']->getModelClass();
+                    if (is_string($modelClass) && $modelClass !== '') {
+                        $class = $modelClass;
+                    }
+                }
+            } elseif (isset($frame['class']) && is_string($frame['class'])) {
+                $class = $frame['class'];
+            }
+
+            if (! is_string($class) || ! str_contains($class, 'Modules\\')) {
+                continue;
+            }
+
+            if (str_contains($class, '\\Datas\\RatingData')
+                || str_contains($class, '\\Traits\\HasRatingsTrait')
+                || str_ends_with($class, '\\Models\\BaseRating')) {
+                continue;
+            }
+
+            $namespace = null;
+            if (str_contains($class, '\\Models\\')) {
+                $namespace = Str::beforeLast($class, '\\Models\\');
+            } elseif (str_contains($class, '\\Filament\\')) {
+                $namespace = Str::before($class, '\\Filament\\');
+            }
+
+            if (! is_string($namespace) || $namespace === '') {
+                continue;
+            }
+
+            $candidate = $namespace.'\\Models\\Rating';
+            if (class_exists($candidate) && is_subclass_of($candidate, RatingContract::class)) {
+                /** @var class-string<BaseRating> $candidate */
+                return $candidate;
+            }
+        }
+
+        throw new RuntimeException(
+            'Unable to resolve Modules\\*\\Models\\Rating from caller backtrace. '
+            .'Pass $ratingClass explicitly to RatingData::getXlsFields($where, $ratingClass).',
+        );
+    }
+
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration
