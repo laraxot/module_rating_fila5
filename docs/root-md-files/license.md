@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "License"
 type: guide
@@ -9,7 +7,6 @@ updated: 2026-07-14
 qmd: "license"
 ---
 
->>>>>>> laraxot/dev
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
