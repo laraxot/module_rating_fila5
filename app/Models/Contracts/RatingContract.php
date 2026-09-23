@@ -46,7 +46,7 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * @property bool|null   $is_readonly
  * @property bool|null   $is_disabled
  * @property int|null    $order_column
- * @property Collection<int, RatingContract> $children
+ * @property Collection<int, Model> $children
  * @property RuleEnum    $rule
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
