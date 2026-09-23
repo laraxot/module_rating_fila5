@@ -504,7 +504,7 @@ trait HasRatingsTrait
 
         $fields = $this->ratingFormFields($rows);
 
-        /** @var Collection<int, BaseRating> $readonlyRatings */
+        /** @var Collection<int, RatingContract> $readonlyRatings */
         $readonlyRatings = $fields->where('is_readonly', true);
 
         $schema = [];
@@ -525,7 +525,7 @@ trait HasRatingsTrait
      * dato e gancio di ricalcolo sono in coda, scritti una volta sola: quando il gancio
      * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
      *
-     * @param  Collection<int, BaseRating>  $readonlyRatings
+     * @param  Collection<int, RatingContract>  $readonlyRatings
      */
     private function buildRatingComponent(
         RatingContract $rating,
@@ -540,9 +540,10 @@ trait HasRatingsTrait
 
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
-        $options = $rating->children
-            ->mapWithKeys(static fn (RatingContract $child): array => [$child->id => $child->getLabel()])
-            ->all();
+        $options = [];
+        foreach ($rating->children as $child) {
+            $options[$child->id] = $child->getLabel();
+        }
 
         $afterStateUpdated = static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
             $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
