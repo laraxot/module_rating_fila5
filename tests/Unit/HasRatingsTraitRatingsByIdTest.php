@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
@@ -112,8 +113,8 @@ describe('HasRatingsTrait ratings_by_id', function (): void {
     test('ratingValuePath costruisce il percorso data_get del valore pivot di un rating', function (): void {
         $rating = ratingWithPivot(52, 'Obiettivo A', 57);
 
-        Assert::assertSame('ratings_by_id.52.pivot.value', RatingsHostStub::ratingValuePath($rating));
-        Assert::assertSame('ratings_by_id.52.pivot.note', RatingsHostStub::ratingValuePath($rating, 'note'));
+        Assert::assertSame('ratings_by_id.52.pivot.value', RatingData::ratingValuePath($rating));
+        Assert::assertSame('ratings_by_id.52.pivot.note', RatingData::ratingValuePath($rating, 'note'));
     });
 
     test('ratingValuePath risolve davvero il valore sull\'host', function (): void {
@@ -124,6 +125,6 @@ describe('HasRatingsTrait ratings_by_id', function (): void {
             Assert::fail('hostWithRatings() deve popolare almeno un rating');
         }
 
-        Assert::assertSame(57, data_get($host, RatingsHostStub::ratingValuePath($rating)));
+        Assert::assertSame(57, data_get($host, RatingData::ratingValuePath($rating)));
     });
 });

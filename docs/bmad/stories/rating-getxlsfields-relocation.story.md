@@ -1,7 +1,19 @@
-# Story: rating-getxlsfields-relocation
-**Status**: ready-for-dev
+---
+title: "rating-getxlsfields-relocation"
+type: story
+module: Rating
+status: superseded
+story_id: "rating-getxlsfields-relocation"
+updated: 2026-09-23
+superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
+---
+
+> **SUPERSEDED** — implementato come `RatingData::getXlsFields` (5.229 / move). Vedi `5.238`.
+
+# Story: rating-getxlsfields-relocation (storico)
+**Status**: superseded
 **Modulo**: Rating / IndennitaResponsabilita
-**Epic**: spostare `getXlsFields()` da `IndennitaResponsabilitaResource` in un componente riutilizzabile del modulo Rating
+**Epic**: spostare catalogo export rating in `RatingData`
 
 ## Analisi architetturale (BMAD)
 

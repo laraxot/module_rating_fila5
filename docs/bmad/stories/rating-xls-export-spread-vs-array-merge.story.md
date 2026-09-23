@@ -1,7 +1,21 @@
-# BMAD — rating-xls-export-spread-vs-array-merge
-**Status**: in-progress  
-**Agente**: base-ptvx-fila5-1c  
-**Lock**: `IndennitaResponsabilitaResource.php` bloccato da `agent-codemonkey` (live, 23h) — NON rubato  
+---
+title: "rating-xls-export-spread-vs-array-merge"
+type: story
+module: Rating
+status: superseded
+story_id: "rating-xls-export-spread"
+created: 2026-09-23
+updated: 2026-09-23
+superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
+qmd: "spread vs array_merge RatingData getXlsFields"
+---
+
+> **SUPERSEDED** — IR Resource già usa `$where` + spread +
+> `RatingData::getXlsFields($where, Rating::class)`. Chiusura: `5.238`.
+> Testo sotto = debate storico (parti obsolete su helper nel trait).
+
+# BMAD — rating-xls-export-spread-vs-array-merge (storico)
+**Status**: superseded (implementato)
 **Epic**: Rating / IndennitaResponsabilita — spostamento `getXlsFields()` in `RatingData`
 
 ---

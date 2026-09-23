@@ -15,7 +15,16 @@ related:
   - ../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-# Verdetto — dove vivono label, path e catalogo XLS
+> **AMENDED 2026-09-23** — il verdetto sotto (~78%, "restano nel trait") è stato
+> **ribaltato** da correzione esplicita dell'utente in `04.md` righe 66-79:
+> chiamare `TraitName::staticMethod()` va evitato "come la peste" a prescindere dal
+> dominio del metodo — i due helper sono spostati in `RatingData` con type hint
+> `RatingContract` (non `BaseRating`). Vedi
+> [story 5.232](../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md)
+> per il verdetto finale e la contro-analisi dei punti 1-3 sotto. Documento
+> mantenuto come storico del dibattito, non più normativo.
+
+# Verdetto — dove vivono label, path e catalogo XLS (storico, vedi nota sopra)
 
 Prompt utente (`04.md` 35–64): spostare `formFieldLabel` + `ratingXlsValuePath`
 in `RatingData`; Resource con `...RatingData::getXlsFields($where)`.

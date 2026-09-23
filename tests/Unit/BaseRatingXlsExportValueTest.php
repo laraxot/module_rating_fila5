@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use Modules\Rating\Models\BaseRating;
+use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
@@ -81,9 +81,9 @@ describe('BaseRating xls_export_value (story 18.58)', function (): void {
 
         Assert::assertSame(
             'ratings_by_id.52.xls_export_value',
-            RatingsHostStub::ratingXlsValuePath($parent),
+            RatingData::ratingXlsValuePath($parent),
         );
-        Assert::assertSame('Scelta A', data_get($host, RatingsHostStub::ratingXlsValuePath($parent)));
-        Assert::assertSame('n1', data_get($host, RatingsHostStub::ratingValuePath($parent, 'note')));
+        Assert::assertSame('Scelta A', data_get($host, RatingData::ratingXlsValuePath($parent)));
+        Assert::assertSame('n1', data_get($host, RatingData::ratingValuePath($parent, 'note')));
     });
 });
