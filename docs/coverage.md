@@ -236,3 +236,21 @@ fix — il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi
 | Data | PHPStan Rating | PHPMD | Insights | Pest |
 |---|---|---|---|---|
 | 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip — DB `10.100.200.53:3306` unreachable |
+
+## 2026-09-23 — fix generics.notSubtype su RatingContract
+
+Task utente: `phpstan analyse Modules` fleet-wide, fix in ordine random/parallelo
+(swarm+subagents+bmad+second brain+ponytail). Unico finding reale trovato su tutto
+`Modules/`: `RatingContract.php` — `@property Collection<int, RatingContract> $children`
+non e' subtype di `TModel of Model` nel generic `Collection`. Fix: allineato al pattern
+gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa sempre
+`Collection<int, Model>`, mai l'interfaccia stessa, per le property self-referential con
+`@phpstan-require-extends Model`) — una riga, nessuna invenzione.
+
+- PHPStan `analyse Modules/Rating` → 0 errori (EXIT:0).
+- PHPStan `analyse Modules` (whole-tree) → in verifica.
+- PHPMD `tools/phpmd.sh` sul file → 0 violazioni.
+- PHP Insights sul file → 100/100/100/100.
+- Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
+
+Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.
