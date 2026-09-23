@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Tables\Filters;
 
+use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
@@ -26,7 +27,7 @@ use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
  *
  * @see docs/wiki/rules/filament-reusable-component-owns-visibility.md
  */
-class HasRatingValuesFilter extends XotBaseTernaryFilter
+class HasRatingValuesFilter extends TernaryFilter
 {
     public static function getDefaultName(): ?string
     {
