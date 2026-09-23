@@ -540,8 +540,13 @@ trait HasRatingsTrait
 
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
+        /** @var array<int, string> $options */
         $options = [];
         foreach ($rating->children as $child) {
+            if (! $child instanceof RatingContract) {
+                continue;
+            }
+
             $options[$child->id] = $child->getLabel();
         }
 
