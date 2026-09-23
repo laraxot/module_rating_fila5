@@ -29,3 +29,4 @@ graphify-out/
 .cursor~*
 .windsurf~*
 node_modules
+docs/phpstan/

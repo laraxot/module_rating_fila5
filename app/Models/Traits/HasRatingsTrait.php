@@ -150,6 +150,17 @@ trait HasRatingsTrait
     }
 
     /**
+     * Percorso `data_get` del valore leggibile in export XLS/XLSX
+     * (`xls_export_value`: txt del figlio se Select, altrimenti pivot.value).
+     *
+     * @see BaseRating::getXlsExportValueAttribute()
+     */
+    public static function ratingXlsValuePath(BaseRating $rating): string
+    {
+        return 'ratings_by_id.'.$rating->id.'.xls_export_value';
+    }
+
+    /**
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
@@ -277,7 +288,9 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ($ratingIds !== []) {
-            $this->ratings()->sync($ratingIds);
+            // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
+            // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
+            $this->ratings()->syncWithoutDetaching($ratingIds);
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -441,23 +454,77 @@ trait HasRatingsTrait
      * colonna numerica `value` — mai cast a `0`, che li renderebbe indistinguibili da un
      * voto reale zero e romperebbe `HasRatingValuesFilter` (D-8, story Rating/5.141).
      * Le altre chiavi pivot presenti nello stato del form (es. `note`) passano invariate.
-     * Nato dal refactor 2026-09-16: prima duplicato (con cast a `0`, il bug che questo
-     * metodo corregge) dentro `CompilaIndennitaResponsabilita::save()`.
+     *
+     * Scope: aggiorna SOLO le righe `rating_morph` di QUESTO host (`model_id` + entrambi
+     * i `model_type` legacy alias|FQCN via {@see ratingMorphs()}). Non usare
+     * `updateExistingPivot` da solo: vede solo `getMorphClass()` e lascia orfani i FQCN
+     * (o crea duplicati alias). Mai un update globale su `rating_id` senza `model_id`.
      *
      * @param  array<int|string, array{pivot?: array<string, mixed>}>  $ratingsData
      */
     public function syncRatingsFormData(array $ratingsData): void
     {
+        if ($this->getKey() === null) {
+            throw new \LogicException('syncRatingsFormData richiede un model_id persistito.');
+        }
+
         foreach ($ratingsData as $id => $rating) {
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
-            $pivot['value'] = ($value === self::OTHER_OPTION_KEY || $value === null)
+            $value = ($value === self::OTHER_OPTION_KEY || $value === null)
                 ? null
                 : (is_numeric($value) ? $value : null);
 
-            $this->ratings()->updateExistingPivot($id, $pivot);
+            /** @var array{value: int|float|string|null, note?: string|null} $payload */
+            $payload = ['value' => $value];
+            if (array_key_exists('note', $pivot)) {
+                $note = $pivot['note'];
+                $payload['note'] = is_string($note) || $note === null ? $note : null;
+            }
+
+            $updated = $this->ratingMorphs()
+                ->where('rating_id', $id)
+                ->update($payload);
+
+            // Nessuna riga per questo host+rating: crea UNA sola pivot con morph corrente.
+            if ($updated === 0) {
+                $this->ratings()->attach($id, $payload);
+            }
         }
+    }
+
+    /**
+     * Svuota la valutazione del record corrente: mette a `null` value e note su tutte
+     * le pivot `rating_morph` gia' collegate a QUESTO `model_id` (alias + FQCN via
+     * {@see ratingMorphs()}). Non tocca la scheda, non crea pivot, non fa sync/attach,
+     * non cancella righe del catalogo `ratings`.
+     *
+     * Richiesta utente 2026-09-16: logica in HasRatingsTrait; Svuota UI solo header.
+     */
+    public function clearEvaluation(): void
+    {
+        if ($this->getKey() === null) {
+            throw new \LogicException('clearEvaluation richiede un model_id persistito.');
+        }
+
+        $this->ratingMorphs()->update([
+            'value' => null,
+            'note' => null,
+        ]);
+    }
+
+    /**
+     * Alias di {@see clearEvaluation()} (editabili+readonly sullo stesso host).
+     * Mantenuto per i caller che filtrano ancora per collection — lo scope resta
+     * sempre `model_id` di `$this`; la collection e' ignorata di proposito (KISS:
+     * azzerare tutta la relazione ratings del record, non un sottoinsieme fragile).
+     *
+     * @param  EloquentCollection<int, BaseRating>|null  $ratings  ignorato (BC firma)
+     */
+    public function clearRatingsFormData(?EloquentCollection $ratings = null): void
+    {
+        $this->clearEvaluation();
     }
 
     /**

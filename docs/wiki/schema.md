@@ -19,26 +19,8 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
-<<<<<<< HEAD
 │   ├── schema.md          # Questo file
-│   ├── SCHEMA.md          # Questo file
-=======
-<<<<<<< HEAD
-<<<<<<<< HEAD:docs/wiki/schema.md
-│   ├── schema.md          # Questo file
-========
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-│   ├── schema.md          # Questo file
-=======
-│   ├── SCHEMA.md          # Questo file
->>>>>>> laraxot/dev
-<<<<<<< HEAD
->>>>>>>> laraxot/dev:docs/wiki/SCHEMA.md
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
+│   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
