@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Contracts;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
@@ -45,6 +46,7 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * @property bool|null   $is_readonly
  * @property bool|null   $is_disabled
  * @property int|null    $order_column
+ * @property Collection<int, RatingContract> $children
  * @property RuleEnum    $rule
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
