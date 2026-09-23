@@ -18,15 +18,7 @@ related:
 **Dopo**: Carico solo what's needed (~2K startup)
 
 \`\`\`diff
-<<<<<<< HEAD
 - 150+ rules embeddate in AGENTS.md
-=======
-<<<<<<< HEAD
-- 150+ rules embeddate in agents.md
-=======
-- 150+ rules embeddate in AGENTS.md
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -51,27 +43,16 @@ related:
 
 ### 4. Wiki Indici Locali
 
-<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
-=======
-<<<<<<< HEAD
-Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
-=======
-Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
 
-<<<<<<< HEAD
 > Nota: `agents.md`/`AGENTS.md` e `index.md`/`INDEX.md` esistono tuttora come varianti
 > case-duplicate non deduplicate in questo modulo — qui si usa la forma maiuscola per
 > coerenza con `ON-DEMAND-PATTERN.md`/`QMD-SETUP.md` citati più sotto; vedi
 > `case-sensitivity-rules.md`.
 
-=======
->>>>>>> laraxot/dev
 ## Metriche Attuali
 
 | Metric | Before | After |
