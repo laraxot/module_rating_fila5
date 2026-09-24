@@ -42,10 +42,14 @@
     },
     "require": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "spatie/laravel-schemaless-attributes": "*",
 =======
         "spatie/laravel-schemaless-attributes": "^2.6",
 >>>>>>> 77b9106 (.)
+=======
+        "spatie/laravel-schemaless-attributes": "*",
+>>>>>>> c91c8c3 (.)
         "php": "^8.3"
     },
     "repositories": [

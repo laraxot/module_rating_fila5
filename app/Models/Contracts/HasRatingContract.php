@@ -7,6 +7,7 @@ namespace Modules\Rating\Models\Contracts;
 use Illuminate\Database\Eloquent\Model;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
@@ -23,6 +24,8 @@ interface HasRatingContract
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Modules\Rating\Models\Rating;
@@ -36,7 +39,10 @@ interface HasRatingContract
     /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
     public function ratings(): Relation;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 }

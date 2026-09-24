@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -17,9 +20,12 @@ related:
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Rating {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating
@@ -161,6 +167,7 @@ Related:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 =======
 <<<<<<< HEAD
@@ -186,4 +193,7 @@ Related:
 =======
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 >>>>>>> 77b9106 (.)
+=======
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+>>>>>>> c91c8c3 (.)
 - [Module Documentation](../README.md)

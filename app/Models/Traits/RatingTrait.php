@@ -19,6 +19,7 @@ use Modules\Rating\Models\Rating;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 =======
 /** @phpstan-ignore trait.unused */
@@ -26,6 +27,9 @@ use Modules\Rating\Models\Rating;
 =======
 /** @phpstan-ignore trait.unused */
 >>>>>>> 77b9106 (.)
+=======
+/** @phpstan-ignore trait.unused */
+>>>>>>> c91c8c3 (.)
 trait RatingTrait
 {
     /**
@@ -163,6 +167,7 @@ trait RatingTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';
         // $ratingUrl = Panel::make()->get($this)->itemAction('rate_it')->url();
@@ -173,6 +178,8 @@ trait RatingTrait
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
         // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
@@ -181,13 +188,17 @@ trait RatingTrait
         /*
         return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         Rate It </a>';
         */
         $title = 'Vota '.$this->title;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
@@ -202,6 +213,8 @@ trait RatingTrait
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
@@ -212,8 +225,11 @@ trait RatingTrait
 
         return $msg.$btn.$btn_iframe;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     }
 }

@@ -22,6 +22,7 @@ class BetTableAction extends Action
             ->modalWidth('xl')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->schema(static fn (Action $action): array => [
 =======
             ->schema(fn (Action $action): array => [
@@ -29,6 +30,9 @@ class BetTableAction extends Action
 =======
             ->schema(fn (Action $action): array => [
 >>>>>>> 77b9106 (.)
+=======
+            ->schema(fn (Action $action): array => [
+>>>>>>> c91c8c3 (.)
                 TextInput::make('aa'),
             ]);
     }

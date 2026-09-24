@@ -6,11 +6,14 @@ use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
 =======
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
@@ -40,6 +43,7 @@ return new class extends XotBaseMigration {
             function (Blueprint $table): void {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 RatingData::updateColumns($table, $this);
 
                 // `updateTimestamps()` resta qui e non dentro RatingData: in questa
@@ -50,6 +54,8 @@ return new class extends XotBaseMigration {
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
                 if (! $this->hasColumn('title')) {
                     $table->string('title')->nullable();
                 }
@@ -82,9 +88,12 @@ return new class extends XotBaseMigration {
                     $table->unsignedInteger('order_column')->nullable()->index();
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: false);
             }
         );

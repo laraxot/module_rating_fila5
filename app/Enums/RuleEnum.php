@@ -9,6 +9,7 @@ use Modules\Xot\Traits\EnumTrait;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * Regole di validazione applicabili al voto di un criterio.
  *
@@ -30,11 +31,14 @@ use Modules\Xot\Traits\EnumTrait;
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 enum RuleEnum: string implements HasLabel
 {
     use EnumTrait;
 
     case Null = '';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     case ZeroFour = 'numeric|min:0|max:4';
@@ -46,6 +50,9 @@ enum RuleEnum: string implements HasLabel
 =======
     case ZeroFive = 'numeric|min:0|max:5';
 >>>>>>> 77b9106 (.)
+=======
+    case ZeroFive = 'numeric|min:0|max:5';
+>>>>>>> c91c8c3 (.)
     case ZeroOrMin4Max25 = 'min:0|max:25|not_in:1,2,3';
     case NullableNumericMin0Max25 = 'nullable|numeric|min:0|max:25';
 }

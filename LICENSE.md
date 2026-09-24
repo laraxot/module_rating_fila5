@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
@@ -46,3 +47,5 @@ THE SOFTWARE.
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

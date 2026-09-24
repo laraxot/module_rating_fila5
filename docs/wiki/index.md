@@ -9,6 +9,7 @@ qmd: "rating module wiki index second brain harness"
 issues:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "https://github.com/laraxot/platform/issues/272"
 discussions:
   - "https://github.com/laraxot/platform/discussions/273"
@@ -17,15 +18,20 @@ related:
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
   - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
   - ../../../../docs/wiki/bmad/architecture.md
   - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
@@ -35,6 +41,7 @@ related:
 
 ## AI / second brain
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - [hackernoon-ai-coding-tips-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
@@ -196,6 +203,9 @@ Aggiornato: 2026-05-12
 ## AI / second brain
 
 - [hackernoon-ai-coding-tips-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
+=======
+- [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+>>>>>>> c91c8c3 (.)
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
@@ -222,8 +232,13 @@ Indice operativo del wiki Rating.
 
 ## On-Demand Entry Points
 
+<<<<<<< HEAD
 - [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
+=======
+- [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
+>>>>>>> c91c8c3 (.)
 
 ## Scopo Rating Module
 
@@ -239,12 +254,17 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 
 ## Best Practices
 
+<<<<<<< HEAD
 - Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+=======
+- Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+>>>>>>> c91c8c3 (.)
 - Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../docs/wiki/concepts/model-casts-phpstan.md))
 - Usare Eloquent polymorphic relations per rating (vedi [eloquent-best-practices](../../../../docs/wiki/concepts/eloquent-best-practices.md))
 
 ## Bad Practices
 
+<<<<<<< HEAD
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -261,6 +281,9 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+>>>>>>> c91c8c3 (.)
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))
 
@@ -275,6 +298,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 |--------|------|-----------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
+<<<<<<< HEAD
 Aggiornato: 2026-05-12
 =======
 Aggiornato: 2026-05-12
@@ -282,3 +306,6 @@ Aggiornato: 2026-05-12
 =======
 Aggiornato: 2026-05-12
 >>>>>>> 77b9106 (.)
+=======
+Aggiornato: 2026-05-12
+>>>>>>> c91c8c3 (.)

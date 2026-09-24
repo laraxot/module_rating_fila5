@@ -21,6 +21,7 @@ abstract class BaseRatingInfolist extends XotBaseResourceInfolist
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getInfolistSchema(): array
 =======
     public static function getInfolistSchema(): array
@@ -28,6 +29,9 @@ abstract class BaseRatingInfolist extends XotBaseResourceInfolist
 =======
     public static function getInfolistSchema(): array
 >>>>>>> 77b9106 (.)
+=======
+    public static function getInfolistSchema(): array
+>>>>>>> c91c8c3 (.)
     {
         return [
             'id' => TextEntry::make('id'),

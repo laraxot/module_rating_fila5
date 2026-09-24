@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /.ai*
 /_bmad
 /bashscripts
@@ -48,6 +49,8 @@ audit-coverage/
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 *.jar
 *.log
 *.lock
@@ -112,6 +115,9 @@ docs/archive/
 
 agentdb.rvf
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c91c8c3 (.)
 audit-coverage/
 tests/AuditCoverage/
 .claude-audit/
@@ -119,6 +125,7 @@ tests/AuditCoverage/
 .vscode/
 .windsurf/
 .devcontainer/
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 tests/AuditCoverage/
 =======
@@ -131,3 +138,5 @@ tests/AuditCoverage/
 audit-coverage/
 tests/AuditCoverage/*
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

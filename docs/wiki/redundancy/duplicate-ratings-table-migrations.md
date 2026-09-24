@@ -7,6 +7,7 @@ created: 2026-05-22
 issues:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "https://github.com/laraxot/platform/issues/90"
 =======
   - "https://github.com/laraxot/base_fixcity_fila5/issues/90"
@@ -14,6 +15,9 @@ issues:
 =======
   - "https://github.com/laraxot/base_fixcity_fila5/issues/90"
 >>>>>>> 77b9106 (.)
+=======
+  - "https://github.com/laraxot/base_fixcity_fila5/issues/90"
+>>>>>>> c91c8c3 (.)
 related:
   - ../../redundancy-report.md
   - ../../../docs/redundancy-report.md
@@ -41,6 +45,7 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Azione:** una sola `create` owner; colonne in `tableUpdate`; **`git rm`** sui duplicati (mai `_archive_redundant`).
 =======
 **Azione:** una sola `create` + migration `alter` successive; archiviare la ridondante in `_archive_redundant/` (pattern Notify/Xot).
@@ -48,6 +53,9 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 =======
 **Azione:** una sola `create` + migration `alter` successive; archiviare la ridondante in `_archive_redundant/` (pattern Notify/Xot).
 >>>>>>> 77b9106 (.)
+=======
+**Azione:** una sola `create` + migration `alter` successive; archiviare la ridondante in `_archive_redundant/` (pattern Notify/Xot).
+>>>>>>> c91c8c3 (.)
 
 ## Widget
 
@@ -57,6 +65,7 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [#90](https://github.com/laraxot/platform/issues/90).
 =======
 [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90).
@@ -64,3 +73,6 @@ Nessun riferimento esplicito nel grep resource → possibile **orfane** o risolt
 =======
 [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90).
 >>>>>>> 77b9106 (.)
+=======
+[#90](https://github.com/laraxot/base_fixcity_fila5/issues/90).
+>>>>>>> c91c8c3 (.)

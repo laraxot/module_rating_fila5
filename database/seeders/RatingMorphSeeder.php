@@ -9,6 +9,7 @@ use Illuminate\Database\Seeder;
 /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Pivot rating_morph owner del dominio consumer — seed demandato ai seeder del dominio consumer.
 =======
  * Pivot rating_morph owner del dominio Predict — seed via Predict\RatingMorphSeeder.
@@ -16,12 +17,16 @@ use Illuminate\Database\Seeder;
 =======
  * Pivot rating_morph owner del dominio Predict — seed via Predict\RatingMorphSeeder.
 >>>>>>> 77b9106 (.)
+=======
+ * Pivot rating_morph owner del dominio Predict — seed via Predict\RatingMorphSeeder.
+>>>>>>> c91c8c3 (.)
  */
 class RatingMorphSeeder extends Seeder
 {
     public function run(): void
     {
         if (null !== $this->command) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             $this->command->info('RatingMorphSeeder: pivot demo demandato ai seeder del dominio consumer.');
@@ -31,6 +36,9 @@ class RatingMorphSeeder extends Seeder
 =======
             $this->command->info('RatingMorphSeeder: pivot demo in Modules\\Predict\\Database\\Seeders\\RatingMorphSeeder.');
 >>>>>>> 77b9106 (.)
+=======
+            $this->command->info('RatingMorphSeeder: pivot demo in Modules\\Predict\\Database\\Seeders\\RatingMorphSeeder.');
+>>>>>>> c91c8c3 (.)
         }
     }
 }

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Changelog"
 type: guide
@@ -13,6 +14,8 @@ qmd: "changelog"
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.

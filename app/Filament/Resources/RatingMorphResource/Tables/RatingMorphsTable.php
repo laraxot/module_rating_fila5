@@ -18,6 +18,7 @@ class RatingMorphsTable extends XotBaseResourceTable
         return [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'id' => TextColumn::make('id')->sortable()->searchable(),
             'rating' => TextColumn::make('rating')->sortable()->searchable(),
             'rating_id' => TextColumn::make('rating_id')->sortable(),
@@ -34,6 +35,11 @@ class RatingMorphsTable extends XotBaseResourceTable
             'rating_id' => TextColumn::make('rating_id')->sortable(),
             'user_id' => TextColumn::make('user_id')->searchable()->sortable(),
 >>>>>>> 77b9106 (.)
+=======
+            'id' => TextColumn::make('id')->sortable(),
+            'rating_id' => TextColumn::make('rating_id')->sortable(),
+            'user_id' => TextColumn::make('user_id')->searchable()->sortable(),
+>>>>>>> c91c8c3 (.)
             'model_type' => TextColumn::make('model_type')->searchable()->sortable(),
             'model_id' => TextColumn::make('model_id')->searchable()->sortable(),
             'value' => TextColumn::make('value')->sortable(),

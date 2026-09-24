@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Visione del Modulo Rating"
 type: guide
@@ -13,6 +14,8 @@ qmd: "vision"
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Visione del Modulo Rating
 
 Il modulo `Rating` ha l'obiettivo di fornire un'infrastruttura **agnostica e riusabile** per la gestione di criteri di valutazione e punteggi, indipendente dal dominio applicativo specifico.
@@ -32,6 +35,7 @@ Il modulo `Rating` ha l'obiettivo di fornire un'infrastruttura **agnostica e riu
   - PHP 8.2+ e `declare(strict_types=1);`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Laravel 13 e pattern Eloquent moderni
 =======
   - Laravel 12 e pattern Eloquent moderni
@@ -39,6 +43,9 @@ Il modulo `Rating` ha l'obiettivo di fornire un'infrastruttura **agnostica e riu
 =======
   - Laravel 12 e pattern Eloquent moderni
 >>>>>>> 77b9106 (.)
+=======
+  - Laravel 12 e pattern Eloquent moderni
+>>>>>>> c91c8c3 (.)
   - Filament v5 per eventuali UI di amministrazione/configurazione.
 - Integrazione naturale con il sistema di traduzioni modulare Laraxot (naming chiavi coerente e nessuna label hardcoded).
 

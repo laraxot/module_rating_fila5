@@ -15,6 +15,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Vedi anche → Trigger Map
 =======
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
@@ -22,6 +23,9 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 =======
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
 >>>>>>> 77b9106 (.)
+=======
+> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+>>>>>>> c91c8c3 (.)
 
 ## Regola
 
@@ -42,6 +46,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,6 +80,9 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 =======
 - Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
 >>>>>>> 77b9106 (.)
+=======
+- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
+>>>>>>> c91c8c3 (.)
 
 ## Aggiungere una Nuova COMMANDS
 

@@ -6,6 +6,7 @@ namespace Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 =======
@@ -14,10 +15,14 @@ use Filament\Actions\BulkActionGroup;
 =======
 use Filament\Actions\BulkActionGroup;
 >>>>>>> 77b9106 (.)
+=======
+use Filament\Actions\BulkActionGroup;
+>>>>>>> c91c8c3 (.)
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 use Filament\Tables\Columns\Column;
@@ -76,6 +81,8 @@ class RatingsRelationManager extends XotBaseRelationManager
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -120,8 +127,11 @@ class RatingsRelationManager extends RelationManager
                 ]),
             ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     }
 }

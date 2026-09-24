@@ -11,6 +11,7 @@ use Modules\Xot\Contracts\UserContract;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 trait HasLikes
 {
     /**
@@ -20,6 +21,8 @@ trait HasLikes
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 /** @phpstan-ignore trait.unused */
 trait HasLikes
 {
@@ -28,13 +31,17 @@ trait HasLikes
      */
     public function likes()
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     {
         return $this->likesRelation;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function likedBy(?UserContract $user): void
@@ -46,6 +53,8 @@ trait HasLikes
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
@@ -54,14 +63,18 @@ trait HasLikes
     public function likedBy($user): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         $this->likesRelation()->create(['user_id' => $user->id]);
 
         $this->unsetRelation('likesRelation');
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function dislikedBy(?UserContract $user): void
@@ -73,6 +86,8 @@ trait HasLikes
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
@@ -84,9 +99,12 @@ trait HasLikes
          * @var Like
          */
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
         if (null !== $where) {
             $where->delete();
@@ -103,16 +121,20 @@ trait HasLikes
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /** @return MorphMany<Like, $this> */
 =======
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     public function likesRelation(): MorphMany
     {
         return $this->morphMany(Like::class, 'likesRelation', 'likeable_type', 'likeable_id');
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function isLikedBy(?UserContract $user): bool
@@ -131,6 +153,8 @@ trait HasLikes
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     /**
      * param \Modules\Xot\Contracts\UserContract|null $user.
      *
@@ -153,9 +177,12 @@ trait HasLikes
         static::deleting(function ($model): void {
             $model->likesRelation()->delete(); /* @phpstan-ignore method.nonObject */
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
             $model->unsetRelation('likesRelation');
         });
     }

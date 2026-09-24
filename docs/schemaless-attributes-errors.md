@@ -116,6 +116,7 @@ Rating::where('extra_attributes->anno', 2024)->get();
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Via HasRatingsTrait (host model): syncRatingsWhere chiama
 // Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
 
@@ -123,6 +124,8 @@ Rating::where('extra_attributes->anno', 2024)->get();
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 // 4. Set attributes:
 $rating->extra_attributes->set('anno', 2024);
 $rating->save(); // OBBLIGATORIO!

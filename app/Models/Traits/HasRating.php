@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /** @phpstan-require-extends Model */
 /** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
@@ -23,6 +27,11 @@ trait HasRating
         return $this->morphToManyX(Rating::class, 'model');
 =======
 /** @phpstan-ignore trait.unused (usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
+=======
+/**
+ * Trait HasRating.
+ */
+>>>>>>> c91c8c3 (.)
 trait HasRating
 {
     /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
@@ -34,10 +43,16 @@ trait HasRating
             ->using(RatingMorph::class)
             ->withPivot($pivot->getFillable())
             ->withTimestamps();
+<<<<<<< HEAD
 >>>>>>> 77b9106 (.)
     }
 
     /** @return array<int, string> */
+=======
+    }
+
+    /** @return array<int|string, string> */
+>>>>>>> c91c8c3 (.)
     public function getOptionRatingsIdTitle(): array
     {
         $options = [];
@@ -46,13 +61,21 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[(int) $rating->id] = (string) $rating->title;
+=======
+            $options[$rating->id] = (string) $rating->title;
+>>>>>>> c91c8c3 (.)
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /** @return array<int, string> */
+=======
+    /** @return array<int|string, string> */
+>>>>>>> c91c8c3 (.)
     public function getOptionRatingsIdColor(): array
     {
         $options = [];
@@ -61,12 +84,17 @@ trait HasRating
                 continue;
             }
 
+<<<<<<< HEAD
             $options[(int) $rating->id] = (string) $rating->color;
+=======
+            $options[$rating->id] = (string) $rating->color;
+>>>>>>> c91c8c3 (.)
         }
 
         return $options;
     }
 
+<<<<<<< HEAD
     /**
 <<<<<<< HEAD
      * @return array<int, array<string, mixed>>
@@ -74,6 +102,9 @@ trait HasRating
      * @return array<int, non-empty-array<string, mixed>>
 >>>>>>> 77b9106 (.)
      */
+=======
+    /** @return array<int, array<string, mixed>> */
+>>>>>>> c91c8c3 (.)
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
@@ -84,6 +115,7 @@ trait HasRating
         // ->toArray()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $ratings_array = [];
         foreach ($ratings as $rating) {
 =======
@@ -93,6 +125,13 @@ trait HasRating
 >>>>>>> 77b9106 (.)
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
+=======
+        $ratings_array = [];
+        foreach ($ratings as $key => $rating) {
+            /** @var array<string, mixed> $rowData */
+            $rowData = $rating->toArray();
+            $ratings_array[$key] = $rowData;
+>>>>>>> c91c8c3 (.)
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -102,6 +141,7 @@ trait HasRating
             ];
 
             // Use media if it already exists, otherwise don't try to create it
+<<<<<<< HEAD
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
@@ -114,6 +154,13 @@ trait HasRating
             $rowData['effect'] = false;
             $ratings_array[$key] = $rowData;
 >>>>>>> 77b9106 (.)
+=======
+            $ratings_array[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+
+            // Add SVG icon directly to the array
+            $ratings_array[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $ratings_array[$key]['effect'] = false;
+>>>>>>> c91c8c3 (.)
         }
 
         return $ratings_array;
@@ -127,16 +174,24 @@ trait HasRating
             ->count('user_id');
     }
 
+<<<<<<< HEAD
     /** @return array<int, float> */
+=======
+    /** @return array<int|string, float|int> */
+>>>>>>> c91c8c3 (.)
     public function getRatingsPercentageByUser(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
 <<<<<<< HEAD
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
 =======
         foreach ($ratings_options as $key => $value) {
 >>>>>>> 77b9106 (.)
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> c91c8c3 (.)
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -154,7 +209,11 @@ trait HasRating
         return $result;
     }
 
+<<<<<<< HEAD
     /** @return array<int, float> */
+=======
+    /** @return array<int|string, float|int> */
+>>>>>>> c91c8c3 (.)
     public function getRatingsPercentageByVolume(): array
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
@@ -166,10 +225,14 @@ trait HasRating
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
 =======
         foreach ($ratings_options as $key => $value) {
 >>>>>>> 77b9106 (.)
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> c91c8c3 (.)
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

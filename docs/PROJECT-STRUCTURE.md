@@ -23,6 +23,7 @@ tags: [structure, architecture, module]
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
@@ -58,6 +59,8 @@ tags: [structure, architecture, module]
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -71,6 +74,7 @@ tags: [structure, architecture, module]
 │   │   ├── INDEX.md
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,6 +88,8 @@ tags: [structure, architecture, module]
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
@@ -93,6 +99,7 @@ tags: [structure, architecture, module]
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
 =======
 <<<<<<< HEAD
@@ -118,6 +125,9 @@ tags: [structure, architecture, module]
 =======
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 >>>>>>> 77b9106 (.)
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> c91c8c3 (.)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -159,6 +169,7 @@ related:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Interno modulo**: `[[concepts/page]]` o `link`
 =======
 - **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
@@ -166,6 +177,9 @@ related:
 =======
 - **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
 >>>>>>> 77b9106 (.)
+=======
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
+>>>>>>> c91c8c3 (.)
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
@@ -200,6 +214,7 @@ mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,t
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
 =======
 <<<<<<< HEAD
@@ -225,6 +240,9 @@ cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 =======
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 >>>>>>> 77b9106 (.)
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> c91c8c3 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)
