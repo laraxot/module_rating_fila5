@@ -7,15 +7,10 @@ namespace Modules\Rating\Tests\Unit;
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
-<<<<<<< HEAD
 use Cknow\Money\Money;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-=======
-use Modules\Rating\Models\BaseRating;
-use Modules\Rating\Models\Rating;
->>>>>>> laraxot/dev
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\Sluggable\SlugOptions;
@@ -103,7 +98,6 @@ describe('BaseRating (via Rating)', function (): void {
 
         Assert::assertSame($builder, $result);
     });
-<<<<<<< HEAD
 
     test('getValueHtml restituisce stringa per valori non Importo', function (): void {
         $rating = new Rating([
@@ -153,6 +147,4 @@ describe('BaseRating (via Rating)', function (): void {
         $encoded = new Rating(['txt' => '&lt;p&gt;Obiettivo&lt;/p&gt;']);
         Assert::assertSame('<p>Obiettivo</p>', $encoded->getTxtHtml());
     });
-=======
->>>>>>> laraxot/dev
 });

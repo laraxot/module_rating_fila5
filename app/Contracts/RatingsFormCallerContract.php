@@ -8,11 +8,7 @@ use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Collection;
-<<<<<<< HEAD
 use Modules\Rating\Models\Contracts\RatingContract;
-=======
-use Modules\Rating\Models\BaseRating;
->>>>>>> laraxot/dev
 use Modules\Rating\Models\Traits\HasRatingsTrait;
 
 /**
@@ -45,11 +41,7 @@ interface RatingsFormCallerContract
      * valore di default — tutto ciò che il trait non può sapere. Il componente va
      * restituito: i metodi di Filament sono fluenti ma il contratto non lo assume.
      */
-<<<<<<< HEAD
     public function decorateRatingField(RatingContract $rating, Component $component): Component;
-=======
-    public function decorateRatingField(BaseRating $rating, Component $component): Component;
->>>>>>> laraxot/dev
 
     /**
      * Ricalcola i campi in sola lettura dopo che un campo modificabile è cambiato.
@@ -57,11 +49,7 @@ interface RatingsFormCallerContract
      * Il trait aggancia questo metodo a `afterStateUpdated()` e gli passa i rating con
      * `is_readonly = true`. **Il calcolo resta dell'host**: è dominio, non piattaforma.
      *
-<<<<<<< HEAD
      * @param Collection<int, RatingContract> $readonlyRatings
-=======
-     * @param Collection<int, BaseRating> $readonlyRatings
->>>>>>> laraxot/dev
      */
     public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void;
 }
