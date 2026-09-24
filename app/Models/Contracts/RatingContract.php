@@ -38,16 +38,30 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  *
  * @phpstan-require-extends Model
  *
- * @property int         $id
- * @property int|null    $parent_id
- * @property string|null $title
- * @property string|null $txt
- * @property string|null $slug
- * @property bool|null   $is_readonly
- * @property bool|null   $is_disabled
- * @property int|null    $order_column
+ * <<<<<<< .merge_file_tCmmJ1
+ *
+ * @property int                    $id
+ * @property int|null               $parent_id
+ * @property string|null            $title
+ * @property string|null            $txt
+ * @property string|null            $slug
+ * @property bool|null              $is_readonly
+ * @property bool|null              $is_disabled
+ * @property int|null               $order_column
  * @property Collection<int, Model> $children
- * @property RuleEnum    $rule
+ * @property RuleEnum               $rule
+ *                                                =======
+ * @property int                    $id
+ * @property int|null               $parent_id
+ * @property string|null            $title
+ * @property string|null            $txt
+ * @property string|null            $slug
+ * @property bool|null              $is_readonly
+ * @property bool|null              $is_disabled
+ * @property int|null               $order_column
+ * @property Collection<int, Model> $children
+ * @property RuleEnum               $rule
+ *                                                >>>>>>> .merge_file_UJNWcp
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
 {

@@ -7,7 +7,10 @@ namespace Modules\Rating\Filament\Tables\Filters;
 use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< .merge_file_maxxgz
 use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
+=======
+>>>>>>> .merge_file_mPMHDt
 
 /**
  * «La scheda è stata valutata davvero?».
