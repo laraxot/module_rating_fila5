@@ -1,3 +1,14 @@
+---
+title: "Rating Module Configuration"
+type: guide
+tags: [configuration, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "configuration"
+related:
+  - "./conflict-resolution.md"
+---
+
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
@@ -17,7 +28,7 @@ This section lists the essential packages required for the module to function co
 ```
 
 *   `spatie/laravel-schemaless-attributes`: Essential for handling flexible, schemaless data structures within the module's Eloquent models.
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
+*   `laravel/framework`: Specifies compatibility with Laravel 13.x.
 *   `filament/filament`: Indicates integration with Filament Admin Panel version 5.x.
 
 ### `require-dev` Section

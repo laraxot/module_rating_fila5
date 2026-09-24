@@ -10,11 +10,4 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 abstract class BaseRatingMorphResource extends XotBaseResource
 {
     protected static ?string $model = RatingMorph::class;
-
-    public static function getFormSchema(): array
-    {
-        return [
-            // Campi del form
-        ];
-    }
 }
