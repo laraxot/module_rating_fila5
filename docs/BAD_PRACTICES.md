@@ -1,3 +1,14 @@
+---
+title: "Bad Practices – Rating"
+type: guide
+tags: [bad, practices, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "BAD PRACTICES"
+related:
+  - "./BEST_PRACTICES.md"
+---
+
 # Bad Practices – Rating
 
 ## ❌ Calcolare la media in query N+1
