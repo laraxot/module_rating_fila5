@@ -18,7 +18,7 @@ uses(TestCase::class);
 test('page no longer owns the column set', function (): void {
     // Le colonne sono state spostate nelle classi sotto Tables/: qui resta solo
     // l'ereditarieta' da XotBaseListRecords, che non ne dichiara nessuna.
-    $page = new ListRatings();
+    $page = new ListRatings;
     $method = new ReflectionMethod(BaseListRatings::class, 'getTableColumns');
     /** @var array<string, mixed> $columns */
     $columns = $method->invoke($page);
@@ -27,7 +27,7 @@ test('page no longer owns the column set', function (): void {
 });
 
 test('the column set lives in RatingsTable', function (): void {
-    $columns = (new RatingsTable())->getTableColumns();
+    $columns = (new RatingsTable)->getTableColumns();
 
     Assert::assertSame([
         'id',
@@ -43,7 +43,7 @@ test('the column set lives in RatingsTable', function (): void {
 });
 
 test('defines default empty filters and header actions', function (): void {
-    $page = new ListRatings();
+    $page = new ListRatings;
     $filtersMethod = new ReflectionMethod($page, 'getTableFilters');
     $headerMethod = new ReflectionMethod($page, 'getTableHeaderActions');
 
@@ -57,7 +57,7 @@ test('defines default empty filters and header actions', function (): void {
 });
 
 test('defines view edit delete actions and bulk delete', function (): void {
-    $page = new ListRatings();
+    $page = new ListRatings;
     $actionsMethod = new ReflectionMethod($page, 'getTableActions');
     $bulkMethod = new ReflectionMethod($page, 'getTableBulkActions');
 
