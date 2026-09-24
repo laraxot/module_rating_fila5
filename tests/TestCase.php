@@ -15,6 +15,7 @@ use Modules\Xot\Tests\XotBaseTestCase;
  *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Uses shared sqlite from database.sqlite (no migrate:fresh / RefreshDatabase).
 =======
  * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
@@ -22,6 +23,9 @@ use Modules\Xot\Tests\XotBaseTestCase;
 =======
  * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
 >>>>>>> 77b9106 (.)
+=======
+ * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
+>>>>>>> c91c8c3 (.)
  */
 abstract class TestCase extends XotBaseTestCase
 {
@@ -41,6 +45,7 @@ abstract class TestCase extends XotBaseTestCase
         ];
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     /**
@@ -63,10 +68,13 @@ abstract class TestCase extends XotBaseTestCase
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     protected function setUp(): void
     {
         parent::setUp();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $database = self::sharedSqlitePath();
@@ -76,6 +84,9 @@ abstract class TestCase extends XotBaseTestCase
 =======
         $database = database_path('fixcity_data.sqlite');
 >>>>>>> 77b9106 (.)
+=======
+        $database = database_path('fixcity_data.sqlite');
+>>>>>>> c91c8c3 (.)
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);

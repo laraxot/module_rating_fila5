@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "False Friends – Rating"
 type: guide
@@ -15,6 +16,8 @@ related:
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # False Friends – Rating
 
 | Falso Amico | Perché è fuorviante | Soluzione |
@@ -24,6 +27,7 @@ related:
 | 4.5 ⭐ è "ottimo" | Dipende da scala e contesto | Definisci soglie chiare |
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 | Rating sempre crescente | Non considera il tempo | Usa weighted average |
 =======
 | Rating sempre crescente | Non considera il tempo | Usa weighted average |
@@ -31,3 +35,6 @@ related:
 =======
 | Rating sempre crescente | Non considera il tempo | Usa weighted average |
 >>>>>>> 77b9106 (.)
+=======
+| Rating sempre crescente | Non considera il tempo | Usa weighted average |
+>>>>>>> c91c8c3 (.)

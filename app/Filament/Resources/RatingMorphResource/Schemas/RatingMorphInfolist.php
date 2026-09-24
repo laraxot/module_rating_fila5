@@ -15,6 +15,7 @@ class RatingMorphInfolist extends XotBaseResourceInfolist
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getInfolistSchema(): array
 =======
     public static function getInfolistSchema(): array
@@ -22,6 +23,9 @@ class RatingMorphInfolist extends XotBaseResourceInfolist
 =======
     public static function getInfolistSchema(): array
 >>>>>>> 77b9106 (.)
+=======
+    public static function getInfolistSchema(): array
+>>>>>>> c91c8c3 (.)
     {
         return [
             'model_id' => TextEntry::make('model_id'),

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Best Practices – Rating"
 type: guide
@@ -15,6 +16,8 @@ related:
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Best Practices – Rating
 
 ## Principi DRY/KISS
@@ -31,6 +34,7 @@ related:
 - Copri casi limite come rating inversi.
 
 ## Documentazione
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,3 +66,7 @@ related:
 - Aggiorna `docs/INDEX.md` con nuovi endpoint.
 - Collega a moduli correlati come `Review` e `Auth`.
 >>>>>>> 77b9106 (.)
+=======
+- Aggiorna `docs/INDEX.md` con nuovi endpoint.
+- Collega a moduli correlati come `Review` e `Auth`.
+>>>>>>> c91c8c3 (.)

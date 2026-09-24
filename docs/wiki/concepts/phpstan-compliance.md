@@ -5,6 +5,7 @@ tags: [rating, phpstan, types, compliance, quality, static-analysis]
 created: 2026-06-10
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 updated: 2026-08-24
 qmd: "rating module phpstan level max zero errors HasRatingsTrait trait.unused isolation"
 =======
@@ -15,6 +16,10 @@ qmd: "rating module phpstan level max zero errors HasRating trait"
 updated: 2026-06-18
 qmd: "rating module phpstan level max zero errors HasRating trait"
 >>>>>>> 77b9106 (.)
+=======
+updated: 2026-06-18
+qmd: "rating module phpstan level max zero errors HasRating trait"
+>>>>>>> c91c8c3 (.)
 related:
   - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
   - ../../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
@@ -24,6 +29,7 @@ related:
 
 ## Status
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 `analyse Modules/Rating` (story 4.26, 2026-08-24): **[OK] No errors**. Famiglia E
@@ -44,6 +50,8 @@ Updated:  2026-08-24
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 ✅ **COMPLIANT** — 0 errors in PHPStan level: max
 
 ```
@@ -54,9 +62,12 @@ Errors:   0
 Level:    max
 Updated:  2026-06-18
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 ```
 
 ## Module Structure
@@ -102,6 +113,7 @@ Rating/
 ```bash
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # cwd laravel/ — neon unico, niente --level
 ./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1
 =======
@@ -114,6 +126,11 @@ vendor/bin/phpstan analyse laravel/Modules/Rating \
   --level=max \
   --no-progress
 >>>>>>> 77b9106 (.)
+=======
+vendor/bin/phpstan analyse laravel/Modules/Rating \
+  --level=max \
+  --no-progress
+>>>>>>> c91c8c3 (.)
 ```
 
 ### Pre-commit Hook
@@ -123,6 +140,7 @@ vendor/bin/phpstan analyse laravel/Modules/Rating \
 ```bash
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1
 =======
 vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
@@ -130,6 +148,9 @@ vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
 =======
 vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
 >>>>>>> 77b9106 (.)
+=======
+vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
+>>>>>>> c91c8c3 (.)
 ```
 
 ## Type Coverage Summary
@@ -186,6 +207,7 @@ vendor/bin/pest laravel/Modules/Rating/tests --parallel
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Host di `HasRatingsTrait`
 
 Il trait è generico (`@template TModel of Model`). Ogni modello host deve dichiarare:
@@ -199,6 +221,8 @@ SSoT: `Modules/Rating/app/Models/Traits/HasRatingsTrait.php`. Consumer attuali: 
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 ## Trait cleanup (2026-06-18)
 
 Rimossi trait **non usati** in app (PHPStan `trait.unused`):
@@ -206,6 +230,9 @@ Rimossi trait **non usati** in app (PHPStan `trait.unused`):
 - `HasLikes` — modello `Like` assente, zero consumer
 - `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating` (+ probe `RatingPhpstanTraitProbe`)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

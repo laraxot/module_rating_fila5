@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "PHPStan Generic Type Limitations in Laravel"
 type: guide
@@ -13,6 +14,8 @@ qmd: "phpstan generic limitations"
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # PHPStan Generic Type Limitations in Laravel
 
 ## Problem
@@ -30,6 +33,7 @@ PHPStan/Larastan can't fully resolve Laravel's generic relationship types when u
 - Interface contracts with generic return types
 - `static::class` in generic type parameters
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 ## Workaround attuale (HasRatingsTrait)
@@ -57,6 +61,11 @@ Consumer: `IndennitaResponsabilita`, `LettF`, `LettI` (valutatore che compila vo
 - `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
 - `Modules/Rating/app/Models/Traits/HasRating.php`
 >>>>>>> 77b9106 (.)
+=======
+## Files Affected
+- `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
+- `Modules/Rating/app/Models/Traits/HasRating.php`
+>>>>>>> c91c8c3 (.)
 
 ## Workaround
 This is a **PHPStan/Larastan limitation**, not a code bug. The code works correctly at runtime.

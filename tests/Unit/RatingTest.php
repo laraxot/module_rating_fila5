@@ -17,6 +17,7 @@ describe('Rating', function (): void {
     test('can create rating', function (): void {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
@@ -26,6 +27,8 @@ describe('Rating', function (): void {
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         $rating = Rating::create([
             'title' => 'Test Rating',
             'color' => '#FF0000',
@@ -42,6 +45,7 @@ describe('Rating', function (): void {
     test('can create rating morph', function (): void {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
@@ -51,6 +55,8 @@ describe('Rating', function (): void {
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         $rating = Rating::create([
             'title' => 'Test Rating',
         ]);
@@ -67,10 +73,14 @@ describe('Rating', function (): void {
 
         Assert::assertTrue(
 <<<<<<< HEAD
+<<<<<<< HEAD
             DB::connection('rating')->table('rating_morphs')
 =======
             DB::connection('rating')->table('rating_morph')
 >>>>>>> 77b9106 (.)
+=======
+            DB::connection('rating')->table('rating_morphs')
+>>>>>>> c91c8c3 (.)
                 ->where('id', $ratingMorph->id)
                 ->where('rating_id', $rating->id)
                 ->exists()
@@ -83,6 +93,7 @@ describe('Rating', function (): void {
         Assert::assertEquals('it', $locale->value);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Assert::assertEquals('Italiano', $locale->getLabel());
 =======
         Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
@@ -90,6 +101,9 @@ describe('Rating', function (): void {
 =======
         Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
 >>>>>>> 77b9106 (.)
+=======
+        Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
+>>>>>>> c91c8c3 (.)
 
         $localeFromString = SupportedLocale::fromString('en');
         Assert::assertEquals(SupportedLocale::EN, $localeFromString);

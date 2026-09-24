@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Schemaless Attributes — Rating Module
 
 **Package**: [`spatie/laravel-schemaless-attributes`](https://github.com/spatie/laravel-schemaless-attributes)
@@ -170,6 +171,8 @@ class RatingData extends Data {
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Spatie Laravel Schemaless Attributes - Usage in Rating Module
 
 This document outlines the correct usage patterns for `spatie/laravel-schemaless-attributes` within the `Rating` module. For a comprehensive guide on schemaless attributes across the PTVX project, please refer to the [main project documentation](../../../docs/claude/schemaless-attributes.md).
@@ -246,6 +249,9 @@ PHPStan may incorrectly report errors on `withExtraAttributes()` due to its use 
 *   [Rating Module README](../README.md)
 *   [HasRatingsTrait Best Practices (IndennitaResponsabilita Module)](../../IndennitaResponsabilita/docs/rating-schemaless-usage.md) - *Note: This document provides context specific to IndennitaResponsabilita's usage.*
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

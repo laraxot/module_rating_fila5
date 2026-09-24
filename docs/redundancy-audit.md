@@ -7,6 +7,7 @@ created: 2026-05-21
 related:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - https://github.com/laraxot/platform/issues/89
 =======
   - https://github.com/laraxot/base_fixcity_fila5/issues/89
@@ -14,6 +15,9 @@ related:
 =======
   - https://github.com/laraxot/base_fixcity_fila5/issues/89
 >>>>>>> 77b9106 (.)
+=======
+  - https://github.com/laraxot/base_fixcity_fila5/issues/89
+>>>>>>> c91c8c3 (.)
 ---
 
 # Rating redundancy audit 2026-05-21
@@ -26,6 +30,7 @@ High-risk findings:
 - `favorite.blade.php` and `favorite/default.blade.php` are also byte-identical.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - `admin/dashboard/item.blade.php` is duplicated with `Modules/LegacyDomain`.
 =======
 - `admin/dashboard/item.blade.php` is duplicated with `Modules/Fixcity`.
@@ -33,10 +38,14 @@ High-risk findings:
 =======
 - `admin/dashboard/item.blade.php` is duplicated with `Modules/Fixcity`.
 >>>>>>> 77b9106 (.)
+=======
+- `admin/dashboard/item.blade.php` is duplicated with `Modules/Fixcity`.
+>>>>>>> c91c8c3 (.)
 - PHP CS Fixer config files duplicate common module boilerplate.
 
 Risk:
 - Livewire view resolution can drift when multiple files imply the same component intent.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - Dashboard item ownership between Rating and LegacyDomain is unclear.
@@ -46,6 +55,9 @@ Risk:
 =======
 - Dashboard item ownership between Rating and Fixcity is unclear.
 >>>>>>> 77b9106 (.)
+=======
+- Dashboard item ownership between Rating and Fixcity is unclear.
+>>>>>>> c91c8c3 (.)
 
 Suggested cleanup order:
 1. Identify Livewire component class/view mapping, then keep only the resolved view.

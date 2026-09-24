@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return [
     'fields' => [
         'extra_attributes' => [
@@ -29,6 +30,11 @@ return [
     'fields' => [
         'extra_attributes' => [
 >>>>>>> 77b9106 (.)
+=======
+return [
+    'fields' => [
+        'extra_attributes' => [
+>>>>>>> c91c8c3 (.)
             'type' => [
                 'label' => 'extra_attributes.type',
                 'placeholder' => 'extra_attributes.type',
@@ -85,8 +91,11 @@ return [
             'heading' => 'empty',
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     ],
 ];
