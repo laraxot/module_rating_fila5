@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  
@@ -211,6 +214,7 @@ Update rating architecture docs with:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Priority**: High (User-facing validation errors)
 =======
 **Priority**: High (User-facing validation errors)
@@ -221,3 +225,6 @@ Update rating architecture docs with:
 =======
 **Priority**: High (User-facing validation errors)
 >>>>>>> c91c8c3 (.)
+=======
+**Priority**: High (User-facing validation errors)
+>>>>>>> 2025498 (.)

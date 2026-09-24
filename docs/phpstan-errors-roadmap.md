@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "PHPStan Level 10 Errors Roadmap - Modulo Rating"
 type: guide
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # PHPStan Level 10 Errors Roadmap - Modulo Rating
 
 **Data**: 2026-01-12  
@@ -37,6 +40,7 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\LegacyDomain\Models\Profile`
    - **Tipo**: `class.notFound`
 
@@ -47,6 +51,8 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
    - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\Fixcity\Models\Profile`
    - **Tipo**: `class.notFound`
 
@@ -54,11 +60,14 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
    - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\Fixcity\Models\Profile`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
    - **Tipo**: `class.notFound`
 
 ---
@@ -67,6 +76,7 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 ### Pattern: PHPDoc con Classi Sconosciute
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +90,9 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 =======
 **Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
 >>>>>>> c91c8c3 (.)
+=======
+**Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
+>>>>>>> 2025498 (.)
 
 **Causa**: 
 - Classe obsoleta o rimossa
@@ -112,6 +125,7 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property \Modules\LegacyDomain\Models\Profile|null $creator
  * @property \Modules\LegacyDomain\Models\Profile|null $updater
 =======
@@ -126,6 +140,10 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
  * @property \Modules\Fixcity\Models\Profile|null $creator
  * @property \Modules\Fixcity\Models\Profile|null $updater
 >>>>>>> c91c8c3 (.)
+=======
+ * @property \Modules\Fixcity\Models\Profile|null $creator
+ * @property \Modules\Fixcity\Models\Profile|null $updater
+>>>>>>> 2025498 (.)
  */
 
 // ✅ DOPO (Corretto - verifica classe corretta)

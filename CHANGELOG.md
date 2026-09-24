@@ -8,6 +8,7 @@ All notable changes to `:package_name` will be documented in this file.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.
@@ -21,3 +22,5 @@ All notable changes to `:package_name` will be documented in this file.
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

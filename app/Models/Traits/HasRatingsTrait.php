@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -145,11 +146,58 @@ trait HasRatingsTrait
             $rating->setRelation('pivot', $pivot);
             $result->put($ratingId, $rating);
         }
+=======
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Modules\Rating\Models\BaseRating;
+use Modules\Rating\Models\Rating;
+
+/**
+ * Trait HasRatingsTrait.
+ *
+ * @see Modules/Rating/docs/schemaless-attributes.md
+ */
+/** @phpstan-ignore trait.unused (Trade-off: usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
+trait HasRatingsTrait
+{
+    /**
+     * @return class-string<BaseRating>
+     */
+    public function getRatingClass(): string
+    {
+        $ratingClass = (string) Str::of(static::class)
+            ->before('\Models\\')
+            ->append('\Models\Rating');
+
+        if (is_a($ratingClass, BaseRating::class, true)) {
+            return $ratingClass;
+        }
+
+        return Rating::class;
+    }
+
+    /**
+     * Get ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
+     */
+    public function ratings(): MorphToMany
+    {
+        /** @var MorphToMany<Rating, static> $result */
+        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
+>>>>>>> 2025498 (.)
 
         return $result;
     }
 
     /**
+<<<<<<< HEAD
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
@@ -164,6 +212,19 @@ trait HasRatingsTrait
 
         /** @var HasMany<BaseRating, TModel> $query */
         $query = $this->hasMany($related, 'related_type', 'post_type')
+=======
+     * Get rating objectives with aggregated data.
+     *
+     * @return HasMany<BaseRating, static>
+     */
+    public function ratingObjectives(): HasMany
+    {
+        $relatedClass = $this->getRatingClass();
+        $userId = (int) Auth::id();
+
+        /** @var HasMany<BaseRating, static> $result */
+        $result = $this->hasMany($relatedClass, 'related_type', 'post_type')
+>>>>>>> 2025498 (.)
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -172,32 +233,56 @@ trait HasRatingsTrait
                 [$userId]
             )->leftJoin(
                 'rating_morph',
+<<<<<<< HEAD
                 function (JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
                         ->where('rating_morph.post_id', $this->getKey());
+=======
+                function (\Illuminate\Database\Query\JoinClause $join): void {
+                    $join->on('rating_morph.rating_id', 'ratings.id')
+                        ->whereColumn('rating_morph.post_type', 'ratings.related_type')
+                        ->where('rating_morph.post_id', $this->id);
+>>>>>>> 2025498 (.)
                 }
             )->groupBy('ratings.id')
             ->with('post');
 
+<<<<<<< HEAD
         return $query;
     }
 
     /**
      * @param  Builder<TModel>  $query
      * @return Builder<TModel>
+=======
+        return $result;
+    }
+
+    /**
+     * Scope a query to only include popular users.
+     *
+     * @param Builder<static> $query
+     *
+     * @return Builder<static>
+>>>>>>> 2025498 (.)
      */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
             'rating_morph',
+<<<<<<< HEAD
             function (JoinClause $join): void {
+=======
+            function (\Illuminate\Database\Query\JoinClause $join): void {
+>>>>>>> 2025498 (.)
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
     }
 
     /**
+<<<<<<< HEAD
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function myRatings(): MorphToMany
@@ -221,24 +306,91 @@ trait HasRatingsTrait
     public function getMyRatingAttribute(): Collection
     {
         /** @var Collection<int, BaseRating> $myRatings */
+=======
+     * Get my ratings for this model.
+     *
+     * @return MorphToMany<Rating, static>
+     */
+    public function myRatings(): MorphToMany
+    {
+        /** @var MorphToMany<Rating, static> $result */
+        $result = $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
+            ->wherePivot('user_id', (string) Auth::id());
+
+        return $result;
+    }
+
+    // ----- mutators -----
+    /**
+     * @return Collection<int|string, mixed>
+     */
+    public function getMyRatingAttribute(): Collection
+    {
+>>>>>>> 2025498 (.)
         $myRatings = $this->myRatings;
 
         return $myRatings->pluck('pivot.rating', 'post_id');
     }
 
+<<<<<<< HEAD
     public function getRatingsAvgAttribute(?float $value): ?float
     {
         return (float) ($value ?? 0);
+=======
+    /**
+     * ----.
+     */
+    public function getRatingsAvgAttribute(?float $value): ?float
+    {
+        if (null !== $value) {
+            return $value;
+        }
+        $value = $this->ratings->avg('pivot.rating');
+        if (null !== $value) {
+            // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
+            if (null !== $this->getKey()) {
+                $this->update(['ratings_avg' => $value]);
+            }
+        }
+
+        return $value;
+>>>>>>> 2025498 (.)
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
+<<<<<<< HEAD
         return $value ?? 0;
     }
 
     /**
      * @param  array<string, mixed>  $filters
      * @return Collection<int, BaseRating>
+=======
+        if (null !== $value) {
+            return $value;
+        }
+        $value = $this->ratings->count();
+        $this->ratings_count = $value;
+
+        // Guard: modello deve avere PK per salvare
+        if (null == $this->getKey()) {
+            return $value;
+        }
+
+        // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
+        $this->update(['ratings_count' => $value]);
+
+        return $value;
+    }
+
+    /**
+     * Get ratings filtered by extra_attributes.
+     *
+     * @param array<string, mixed> $filters
+     *
+     * @return Collection<int, Rating>
+>>>>>>> 2025498 (.)
      */
     public function getRatingsWhere(array $filters): Collection
     {
@@ -248,13 +400,18 @@ trait HasRatingsTrait
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
+<<<<<<< HEAD
         /** @var Collection<int, BaseRating> $result */
+=======
+        /** @var Collection<int, Rating> $result */
+>>>>>>> 2025498 (.)
         $result = $query->get();
 
         return $result;
     }
 
     /**
+<<<<<<< HEAD
      * Sync pivot verso rating che matchano extra_attributes.
      *
      * @param  array<string, mixed>  $where
@@ -283,17 +440,45 @@ trait HasRatingsTrait
         }
 
         /** @var Collection<int, BaseRating> $result */
+=======
+     * @param array<string, mixed> $where
+     *
+     * @return Collection<int, mixed>
+     */
+    public function syncRatingsWhere(array $where): Collection
+    {
+        $ratingClass = $this->getRatingClass();
+        $ratings = $ratingClass::query()
+            ->withExtraAttributes($where)
+            ->get();
+
+        $rating_ids = $ratings->modelKeys();
+        $this->ratings()->sync($rating_ids);
+
+        /** @var Collection<int, mixed> $result */
+>>>>>>> 2025498 (.)
         $result = $this->ratings;
 
         return $result;
     }
 
+<<<<<<< HEAD
+=======
+    // */
+    /*
+        public function setMyRatingAttribute($value){
+        dddx($value);
+        }
+    */
+    // ------ functions ------
+>>>>>>> 2025498 (.)
     /**
      * @throws FileNotFoundException
      * @throws \ReflectionException
      */
     public function ratingAvgHtml(): string
     {
+<<<<<<< HEAD
         $safeStringCastAction = app(SafeStringCastAction::class);
         $pivotAvg = $safeStringCastAction->execute($this->ratings_avg ?? 0);
         $pivotCount = $safeStringCastAction->execute($this->ratings_count ?? 0);
@@ -618,6 +803,26 @@ trait HasRatingsTrait
             ->columnSpan(2)
             ->markAsRequired()
             ->schema([$select, $note]);
+=======
+        $pivot_avg = $this->ratings_avg;
+        $pivot_cout = $this->ratings_count;
+
+        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
+
+        $rating_url = '#';
+        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
+
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
+        </button>';
+
+        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
+        </button>';
+
+        return $msg.$btn.$btn_iframe;
+>>>>>>> 2025498 (.)
     }
 
     /**
@@ -625,6 +830,7 @@ trait HasRatingsTrait
      */
     public function getRatingsRules(string $prefix, string $postfix): array
     {
+<<<<<<< HEAD
         $safeStringCastAction = app(SafeStringCastAction::class);
         /** @var Collection<int, BaseRating> $rows */
         $rows = $this->ratings;
@@ -634,6 +840,22 @@ trait HasRatingsTrait
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $ruleStr = $this->ratingRuleToString($row->rule, $safeStringCastAction);
 
+=======
+        $rows = $this->ratings;
+        $rules = $rows->mapWithKeys(function ($row) {
+            $ruleValue = $row->rule instanceof \BackedEnum ? (string) $row->rule->value : (string) $row->rule;
+
+            return [$row->id => $ruleValue];
+        })->toArray();
+
+        $rules = Arr::prependKeysWith($rules, $prefix);
+        $res = [];
+        foreach ($rules as $key => $ruleValue) {
+            $keyWithPostfix = $key.$postfix;
+            $ruleStr = (string) $ruleValue;
+
+            // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
+>>>>>>> 2025498 (.)
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
                 $ruleStr = 'nullable|'.$ruleStr;
             }
@@ -644,6 +866,7 @@ trait HasRatingsTrait
         return $res;
     }
 
+<<<<<<< HEAD
     private function ratingRuleToString(mixed $rule, SafeStringCastAction $safeStringCastAction): string
     {
         if ($rule instanceof \BackedEnum) {
@@ -653,11 +876,14 @@ trait HasRatingsTrait
         return $safeStringCastAction->execute($rule);
     }
 
+=======
+>>>>>>> 2025498 (.)
     /**
      * @return array<string, string>
      */
     public function getRatingsValidationAttributes(string $prefix, string $postfix): array
     {
+<<<<<<< HEAD
         $safeStringCastAction = app(SafeStringCastAction::class);
         /** @var Collection<int, BaseRating> $rows */
         $rows = $this->ratings;
@@ -668,6 +894,13 @@ trait HasRatingsTrait
             $res[$keyWithPostfix] = $row instanceof BaseRating
                 ? RatingData::formFieldLabel($row)
                 : $safeStringCastAction->execute($row->title ?? '');
+=======
+        $rows = $this->ratings;
+        $res = [];
+        foreach ($rows as $row) {
+            $keyWithPostfix = $prefix.$row->id.$postfix;
+            $res[$keyWithPostfix] = (string) $row->title;
+>>>>>>> 2025498 (.)
         }
 
         return $res;

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "PHPStan Fixes - Modulo Rating"
 type: guide
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori
@@ -141,10 +144,14 @@ return $result;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
 =======
 **Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
 >>>>>>> 77b9106 (.)
+=======
+**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
+>>>>>>> 2025498 (.)
 **Errori Totali**: 0 ✅
 
 ---
@@ -168,6 +175,7 @@ per un pattern analogo (`@mixin contains unknown class`).
 Non risolvibile senza modificare `phpstan.neon` (vietato dal mandato). Sparisce
 eseguendo l'analisi sull'intero albero `Modules/`.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 **Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
@@ -178,3 +186,5 @@ eseguendo l'analisi sull'intero albero `Modules/`.
 **Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

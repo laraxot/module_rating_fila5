@@ -16,6 +16,7 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Vedi anche → Trigger Map
 =======
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
@@ -26,6 +27,9 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 =======
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
 >>>>>>> c91c8c3 (.)
+=======
+> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+>>>>>>> 2025498 (.)
 
 ## Regola
 
@@ -46,6 +50,7 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Memories e' sempre il wiki locale
 - Non embeddare Memories nei prompt di avvio
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +88,9 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 =======
 - Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
 >>>>>>> c91c8c3 (.)
+=======
+- Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
+>>>>>>> 2025498 (.)
 
 ## Aggiungere una Nuova MEMORIES
 

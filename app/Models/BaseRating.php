@@ -11,11 +11,15 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
+<<<<<<< HEAD
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+=======
+use Modules\Xot\Contracts\ProfileContract;
+>>>>>>> 2025498 (.)
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -23,16 +27,22 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+<<<<<<< HEAD
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Illuminate\Support\Str;
+=======
+>>>>>>> 2025498 (.)
 
 /**
  * Modules\Rating\Models\BaseRating.
  *
  * Classe base astratta per tutti i modelli Rating nei vari moduli.
  * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
+<<<<<<< HEAD
  * Utilizza HasRecursiveRelationships per l'albero genitore-figlio (adjacency list):
  * children(), parent(), ancestors(), descendants() arrivano dal trait e non si riscrivono.
+=======
+>>>>>>> 2025498 (.)
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
@@ -62,10 +72,14 @@ use Illuminate\Support\Str;
  * @property bool|null       $is_disabled
  * @property bool|null       $is_readonly
  * @property int|null        $order_column
+<<<<<<< HEAD
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
  * @property-read mixed      $xls_export_value
+=======
+ * @property Model|\Eloquent $linkedTo
+>>>>>>> 2025498 (.)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -93,6 +107,7 @@ use Illuminate\Support\Str;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
+<<<<<<< HEAD
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
@@ -123,12 +138,21 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return '#'.(is_scalar($key) ? (string) $key : '');
     }
+=======
+abstract class BaseRating extends BaseModel implements HasMedia
+{
+    use HasSlug;
+    use InteractsWithMedia;
+>>>>>>> 2025498 (.)
 
     /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
+<<<<<<< HEAD
         'parent_id',
+=======
+>>>>>>> 2025498 (.)
         'title',
         'color',
         'txt',
@@ -175,11 +199,19 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     }
 
     /**
+<<<<<<< HEAD
      * @return MorphTo<Model, BaseRating>
      */
     public function linkedTo(): MorphTo
     {
         return $this->morphTo('model'); // @phpstan-ignore return.type
+=======
+     * @return MorphTo<Model, $this>
+     */
+    public function linkedTo(): MorphTo
+    {
+        return $this->morphTo('model');
+>>>>>>> 2025498 (.)
     }
 
     /**
@@ -215,6 +247,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
             'is_readonly' => 'boolean',
         ];
     }
+<<<<<<< HEAD
 
 
     /**
@@ -327,4 +360,6 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return $this->children()->exists();
     }
+=======
+>>>>>>> 2025498 (.)
 }

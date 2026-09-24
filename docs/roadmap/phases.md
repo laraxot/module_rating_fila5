@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Fasi di Sviluppo del Modulo Rating"
 type: guide
@@ -16,6 +17,8 @@ qmd: "phases"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Fasi di Sviluppo del Modulo Rating
 
 ## Fase 1 · Stabilizzazione della base tecnica
@@ -23,6 +26,7 @@ qmd: "phases"
 ### Obiettivi
 
 - Portare il modulo a **PHPStan Level 10** senza errori.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,6 +40,9 @@ qmd: "phases"
 =======
 - Allineare tutte le dipendenze e il codice a **Laravel 12** e **Filament v5**.
 >>>>>>> c91c8c3 (.)
+=======
+- Allineare tutte le dipendenze e il codice a **Laravel 12** e **Filament v5**.
+>>>>>>> 2025498 (.)
 - Garantire che il modulo sia **sicuro da riutilizzare** in altri progetti Laraxot senza regressioni.
 
 ### Attività

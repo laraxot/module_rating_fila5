@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Raw Sources — Rating"
 type: guide
@@ -16,6 +17,8 @@ qmd: "index"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Raw Sources — Rating
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.
@@ -45,6 +48,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Schema di riferimento
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,6 +86,9 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 =======
 → `docs/.schema/WIKI_SCHEMA.md` (root progetto)
 >>>>>>> c91c8c3 (.)
+=======
+→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
+>>>>>>> 2025498 (.)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 
 ---

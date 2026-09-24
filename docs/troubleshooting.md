@@ -8,6 +8,7 @@ See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Mod
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ---
 
@@ -578,3 +579,5 @@ $this->post('/ratings', ['category' => 'technical'])
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

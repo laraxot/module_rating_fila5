@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Metriche e obiettivi di qualità"
 type: guide
@@ -16,6 +17,8 @@ qmd: "metrics"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Metriche e obiettivi di qualità
 
 Indicatori misurabili per lo stato del modulo e il successo delle fasi.
