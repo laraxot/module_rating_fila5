@@ -48,6 +48,11 @@ Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
 
+> Nota: `agents.md`/`AGENTS.md` e `index.md`/`INDEX.md` esistono tuttora come varianti
+> case-duplicate non deduplicate in questo modulo — qui si usa la forma maiuscola per
+> coerenza con `ON-DEMAND-PATTERN.md`/`QMD-SETUP.md` citati più sotto; vedi
+> `case-sensitivity-rules.md`.
+
 ## Metriche Attuali
 
 | Metric | Before | After |
