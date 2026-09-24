@@ -29,10 +29,13 @@ use Modules\Rating\Contracts\RatingsFormCallerContract;
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
+<<<<<<< HEAD
 =======
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
 use Modules\Rating\Models\BaseRating;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Webmozart\Assert\Assert;
@@ -89,10 +92,14 @@ trait HasRatingsTrait
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
 <<<<<<< HEAD
+<<<<<<< HEAD
         Assert::implementsInterface($related, RatingContract::class);
 =======
         Assert::subclassOf($related, BaseRating::class);
 >>>>>>> fd7a600 (.)
+=======
+        Assert::implementsInterface($related, RatingContract::class);
+>>>>>>> laraxot/dev
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
@@ -104,6 +111,9 @@ trait HasRatingsTrait
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      * `ratings` (morphToMany) e' indicizzata per posizione (0..N), non per id del
      * rating: `data_get($host, 'ratings.52')` non trova il rating con id 52.
      * Questo accessor re-indicizza per `id`, cosi' `data_get($host,
@@ -159,8 +169,11 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
@@ -172,6 +185,9 @@ trait HasRatingsTrait
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         Assert::implementsInterface($related, RatingContract::class);
 =======
         Assert::subclassOf($related, BaseRating::class);
@@ -223,10 +239,14 @@ trait HasRatingsTrait
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
 <<<<<<< HEAD
+<<<<<<< HEAD
         Assert::implementsInterface($related, RatingContract::class);
 =======
         Assert::subclassOf($related, BaseRating::class);
 >>>>>>> fd7a600 (.)
+=======
+        Assert::implementsInterface($related, RatingContract::class);
+>>>>>>> laraxot/dev
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $query */
         $query = $this->morphToManyX($related, 'model')
@@ -287,10 +307,14 @@ trait HasRatingsTrait
         /** @var class-string<BaseRating> $ratingClass */
         $ratingClass = Rating::getClassName();
 <<<<<<< HEAD
+<<<<<<< HEAD
         Assert::implementsInterface($ratingClass, RatingContract::class);
 =======
         Assert::subclassOf($ratingClass, BaseRating::class);
 >>>>>>> fd7a600 (.)
+=======
+        Assert::implementsInterface($ratingClass, RatingContract::class);
+>>>>>>> laraxot/dev
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
         /*
@@ -304,12 +328,18 @@ trait HasRatingsTrait
 
         if ([] !== $ratingIds) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
             // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
 =======
             $this->ratings()->sync($ratingIds);
 >>>>>>> fd7a600 (.)
+=======
+            // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
+            // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
+            $this->ratings()->syncWithoutDetaching($ratingIds);
+>>>>>>> laraxot/dev
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -382,6 +412,7 @@ trait HasRatingsTrait
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      * Il nome del campo di form che corrisponde a una riga di `ratings`.
      *
@@ -411,6 +442,8 @@ trait HasRatingsTrait
 
     /**
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
      * I criteri che diventano campi: tutti tranne le opzioni.
      *
      * Un criterio con `parent_id` e' una voce del `Select` del padre, non un campo suo.
@@ -426,10 +459,14 @@ trait HasRatingsTrait
         return ($ratings ?? $this->ratings)
             ->unique('id')
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
 =======
             ->reject(static fn (BaseRating $row): bool => null !== $row->parent_id);
 >>>>>>> fd7a600 (.)
+=======
+            ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -443,6 +480,7 @@ trait HasRatingsTrait
      * `null` ("non ancora risposto"). Se questo remap vivesse in ogni host lo
      * riscriverebbe uguale o lo dimenticherebbe — stesso motivo per cui
 <<<<<<< HEAD
+<<<<<<< HEAD
      * `OTHER_OPTION_KEY` vive qui e `RatingData::ratingFieldName()` è la SSoT
      * del path form (non sull'host). Nato dal refactor 2026-09-16: prima
      * duplicato (parziale, solo `value`) dentro
@@ -450,6 +488,11 @@ trait HasRatingsTrait
      * `ratingFieldName()`/`OTHER_OPTION_KEY` vivono qui e non nell'host. Nato dal
      * refactor 2026-09-16: prima duplicato (parziale, solo `value`) dentro
 >>>>>>> fd7a600 (.)
+=======
+     * `OTHER_OPTION_KEY` vive qui e `RatingData::ratingFieldName()` è la SSoT
+     * del path form (non sull'host). Nato dal refactor 2026-09-16: prima
+     * duplicato (parziale, solo `value`) dentro
+>>>>>>> laraxot/dev
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
      * @param array<string, mixed> $data
@@ -489,6 +532,9 @@ trait HasRatingsTrait
      * voto reale zero e romperebbe `HasRatingValuesFilter` (D-8, story Rating/5.141).
      * Le altre chiavi pivot presenti nello stato del form (es. `note`) passano invariate.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      *
      * Scope: aggiorna SOLO le righe `rating_morph` di QUESTO host (`model_id` + entrambi
      * i `model_type` legacy alias|FQCN via {@see ratingMorphs()}). Non usare
@@ -504,17 +550,26 @@ trait HasRatingsTrait
     public function syncRatingsFormData(array $ratingsData): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         if (null === $this->getKey()) {
             throw new \LogicException('syncRatingsFormData richiede un model_id persistito.');
         }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
         foreach ($ratingsData as $id => $rating) {
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
             $value = (self::OTHER_OPTION_KEY === $value || null === $value)
                 ? null
                 : (is_numeric($value) ? $value : null);
@@ -536,6 +591,7 @@ trait HasRatingsTrait
             if (0 === $updated) {
                 $this->ratings()->attach($id, $payload);
             }
+<<<<<<< HEAD
 =======
             $pivot['value'] = (self::OTHER_OPTION_KEY === $value || null === $value)
                 ? null
@@ -543,11 +599,16 @@ trait HasRatingsTrait
 
             $this->ratings()->updateExistingPivot($id, $pivot);
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
         }
     }
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      * Svuota la valutazione del record corrente: mette a `null` value e note su tutte
      * le pivot `rating_morph` gia' collegate a QUESTO `model_id` (alias + FQCN via
      * {@see ratingMorphs()}). Non tocca la scheda, non crea pivot, non fa sync/attach,
@@ -581,8 +642,11 @@ trait HasRatingsTrait
     }
 
     /**
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
      * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
      *
      * @return array<string, Component> indicizzato per nome di campo
@@ -598,10 +662,14 @@ trait HasRatingsTrait
         $fields = $this->ratingFormFields($rows);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /** @var Collection<int, RatingContract> $readonlyRatings */
 =======
         /** @var Collection<int, BaseRating> $readonlyRatings */
 >>>>>>> fd7a600 (.)
+=======
+        /** @var Collection<int, RatingContract> $readonlyRatings */
+>>>>>>> laraxot/dev
         $readonlyRatings = $fields->where('is_readonly', true);
 
         $schema = [];
@@ -609,10 +677,14 @@ trait HasRatingsTrait
             $component = $this->buildRatingComponent($rating, $caller, $readonlyRatings);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             $schema[RatingData::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
 =======
             $schema[self::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
 >>>>>>> fd7a600 (.)
+=======
+            $schema[RatingData::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
+>>>>>>> laraxot/dev
         }
 
         return $schema;
@@ -627,6 +699,9 @@ trait HasRatingsTrait
      * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      * @param Collection<int, RatingContract> $readonlyRatings
      */
     private function buildRatingComponent(
@@ -653,6 +728,9 @@ trait HasRatingsTrait
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         /** @var array<int, string> $options */
         $options = [];
         foreach ($rating->children as $child) {
@@ -675,10 +753,14 @@ trait HasRatingsTrait
         // Messaggi errore: senza validationAttribute Filament stampa lo state path
         // («ratings.52.pivot.value»). API distinta da label() → non viola D-1 (5.151).
 <<<<<<< HEAD
+<<<<<<< HEAD
         $humanName = RatingData::formFieldLabel($rating);
 =======
         $humanName = self::formFieldLabel($rating);
 >>>>>>> fd7a600 (.)
+=======
+        $humanName = RatingData::formFieldLabel($rating);
+>>>>>>> laraxot/dev
 
         if ([] === $options) {
             return TextInput::make($field)
@@ -726,6 +808,7 @@ trait HasRatingsTrait
         // del form). $get($field, isAbsolute: true) toglieva il prefisso `data.` e
         // selectIsOther vedeva sempre null → note mai obbligatoria (bug utente 2026-09-16).
 <<<<<<< HEAD
+<<<<<<< HEAD
         $note = Textarea::make(RatingData::ratingFieldName($rating, 'note'))
             ->rows(3)
             ->hiddenLabel()
@@ -738,6 +821,14 @@ trait HasRatingsTrait
             ->hiddenLabel()
             ->validationAttribute(trans('rating::fields.note_for', ['label' => $humanName]))
 >>>>>>> fd7a600 (.)
+=======
+        $note = Textarea::make(RatingData::ratingFieldName($rating, 'note'))
+            ->rows(3)
+            ->hiddenLabel()
+            ->validationAttribute(trans('rating::fields.note_for', [
+                'label' => $humanName,
+            ]))
+>>>>>>> laraxot/dev
             ->required(static fn (Get $get): bool => self::selectIsOther($get($select)));
 
         // Fieldset Filament 5: label + bordo + columns(2) di default (setUp).
@@ -749,13 +840,19 @@ trait HasRatingsTrait
             ->columnSpan(2)
             ->markAsRequired()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
             ->schema([
                 $select,
                 $note,
             ]);
+<<<<<<< HEAD
 =======
             ->schema([$select, $note]);
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -805,10 +902,14 @@ trait HasRatingsTrait
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $res[$keyWithPostfix] = $row instanceof BaseRating
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ? RatingData::formFieldLabel($row)
 =======
                 ? self::formFieldLabel($row)
 >>>>>>> fd7a600 (.)
+=======
+                ? RatingData::formFieldLabel($row)
+>>>>>>> laraxot/dev
                 : $safeStringCastAction->execute($row->title ?? '');
         }
 

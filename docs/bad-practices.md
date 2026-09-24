@@ -11,15 +11,21 @@ related:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
   - "./best-practices.md"
 =======
   - "./BEST_PRACTICES.md"
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
   - "./BEST_PRACTICES.md"
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 
 # Bad Practices – Rating

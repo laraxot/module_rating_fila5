@@ -19,6 +19,11 @@ related:
 
 \`\`\`diff
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -150,9 +155,13 @@ context-mode ctx-stats
 
 \`\`\`diff
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - 150+ rules embeddate in agents.md
 + 0 rules embeddate — tutte on-demand
 \`\`\`
@@ -253,17 +262,25 @@ context-mode ctx-stats
 - [QMD Setup](./qmd-setup.md)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+>>>>>>> laraxot/dev
 =======
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 - [QMD Setup](./QMD-SETUP.md)
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ---
 *Status: Ottimizzato | Token risparmiati: ~48K per session*

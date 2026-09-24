@@ -51,10 +51,14 @@ trait HasRating
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return list<non-empty-array<string, mixed>>
 =======
      * @return array<int, non-empty-array<string, mixed>>
 >>>>>>> fd7a600 (.)
+=======
+     * @return list<non-empty-array<string, mixed>>
+>>>>>>> laraxot/dev
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -66,6 +70,7 @@ trait HasRating
         // ->toArray()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $ratings_array = [];
         foreach ($ratings as $rating) {
 =======
@@ -73,6 +78,10 @@ trait HasRating
         $ratings_array = [];
         foreach ($ratings as $key => $rating) {
 >>>>>>> fd7a600 (.)
+=======
+        $ratings_array = [];
+        foreach ($ratings as $rating) {
+>>>>>>> laraxot/dev
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -88,6 +97,7 @@ trait HasRating
 
             // Add SVG icon directly to the array
 <<<<<<< HEAD
+<<<<<<< HEAD
             $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
             $rowData['effect'] = false;
             $ratings_array[] = $rowData;
@@ -96,6 +106,11 @@ trait HasRating
             $rowData['effect'] = false;
             $ratings_array[$key] = $rowData;
 >>>>>>> fd7a600 (.)
+=======
+            $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
+            $rowData['effect'] = false;
+            $ratings_array[] = $rowData;
+>>>>>>> laraxot/dev
         }
 
         return $ratings_array;

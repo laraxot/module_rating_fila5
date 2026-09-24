@@ -30,13 +30,19 @@ related:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
 =======
 - Aggiorna `docs/INDEX.md` con nuovi endpoint.
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 - Aggiorna `docs/INDEX.md` con nuovi endpoint.
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 - Collega a moduli correlati come `Review` e `Auth`.

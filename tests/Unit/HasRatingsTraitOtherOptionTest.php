@@ -18,14 +18,20 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\In;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
+<<<<<<< HEAD
 =======
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
@@ -211,6 +217,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         $rating = makeChildRating(7, 'Prova');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
         Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
         Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
@@ -219,6 +226,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         Assert::assertSame('ratings.7.pivot.value', RatingsHostStub::ratingFieldName($rating, 'value'));
         Assert::assertSame('ratings.7.pivot.note', RatingsHostStub::ratingFieldName($rating, 'note'));
 >>>>>>> fd7a600 (.)
+=======
+        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
+        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
+        Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
+>>>>>>> laraxot/dev
     });
 
     test('la Textarea e required solo quando Get sul Select restituisce other', function (): void {
@@ -350,10 +362,14 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
             public array $decorated = [];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             public function decorateRatingField(RatingContract $rating, Component $component): Component
 =======
             public function decorateRatingField(BaseRating $rating, Component $component): Component
 >>>>>>> fd7a600 (.)
+=======
+            public function decorateRatingField(RatingContract $rating, Component $component): Component
+>>>>>>> laraxot/dev
             {
                 $this->decorated[] = $component::class;
 

@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Contracts;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection;
 =======
 >>>>>>> fd7a600 (.)
+=======
+use Illuminate\Database\Eloquent\Collection;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
@@ -42,6 +46,9 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * @phpstan-require-extends Model
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
  * @property int                    $id
  * @property int|null               $parent_id
  * @property string|null            $title
@@ -52,6 +59,7 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * @property int|null               $order_column
  * @property Collection<int, Model> $children
  * @property RuleEnum               $rule
+<<<<<<< HEAD
 =======
  * @property int         $id
  * @property int|null    $parent_id
@@ -63,6 +71,8 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * @property int|null    $order_column
  * @property RuleEnum    $rule
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
 {
