@@ -55,7 +55,19 @@ module: "Rating"
 
 ---
 
+<<<<<<< HEAD
 [2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/index.md` e `skills/index.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+=======
+<<<<<<< HEAD
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `INDEX.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+=======
+<<<<<<< HEAD
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/index.md` e `skills/index.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+=======
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 **Last Activity:** 2026-05-12 08:19:00 UTC  
 **Total Operations:** 1

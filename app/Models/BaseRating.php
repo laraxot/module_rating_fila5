@@ -24,7 +24,10 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Modules\Rating\Models\BaseRating.
@@ -65,7 +68,10 @@ use Illuminate\Support\Str;
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
+<<<<<<< HEAD
  * @property-read mixed      $xls_export_value
+=======
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -215,6 +221,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
             'is_readonly' => 'boolean',
         ];
     }
+<<<<<<< HEAD
 
 
     /**
@@ -327,4 +334,6 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return $this->children()->exists();
     }
+=======
+>>>>>>> laraxot/dev
 }

@@ -29,8 +29,11 @@ graphify-out/
 .cursor~*
 .windsurf~*
 node_modules
+<<<<<<< HEAD
 
 # Regola tests-auditcoverage-forbidden: artefatti audit, mai nel repo
 tests/AuditCoverage/
 audit-coverage/
 .claude-audit/
+=======
+>>>>>>> laraxot/dev
