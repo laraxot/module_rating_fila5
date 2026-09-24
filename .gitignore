@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /.ai*
 /_bmad
 /bashscripts
@@ -51,6 +52,8 @@ audit-coverage/
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 *.jar
 *.log
 *.lock
@@ -116,6 +119,7 @@ docs/archive/
 agentdb.rvf
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c91c8c3 (.)
 audit-coverage/
@@ -140,3 +144,5 @@ tests/AuditCoverage/*
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

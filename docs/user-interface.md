@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "User Interface"
 type: guide
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 ## User Interface - Modulo Rating
 
 - Le risorse Filament espongono le traduzioni da `rating::` secondo la struttura espansa.

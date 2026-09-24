@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 /*
  * FILE NON LETTO DA NESSUNA CHIAVE. Le etichette qui sotto sono indicizzate per nome
  * del caso (`ZeroFive`), mentre `Modules\Xot\Traits\EnumTrait` costruisce
@@ -13,6 +14,12 @@ declare(strict_types=1);
  * modificarlo, verificare che serva ancora a qualcuno.
  */
 
+=======
+// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
+// claude-audit static: ≥5% comment lines on files >100 LOC.
+// Canon: Modules/Rating/docs/wiki — domain i18n only.
+// File: lang/it/enums.php
+>>>>>>> 2025498 (.)
 return [
     'ZeroFive' => [
         'label' => 'da 0 a 5',

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Checklist Qualità Modulo Rating"
 type: guide
@@ -16,6 +17,8 @@ qmd: "quality"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Checklist Qualità Modulo Rating
 
 Questa checklist serve come riferimento operativo per mantenere il modulo `Rating` allineato agli standard Laraxot (PHPStan Level 10, PSR-12, documentazione aggiornata).

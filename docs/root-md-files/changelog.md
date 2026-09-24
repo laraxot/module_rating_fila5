@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Changelog"
 type: guide
@@ -16,6 +17,8 @@ qmd: "changelog"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Conflict Resolution — Module Rating"
 type: guide
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Conflict Resolution — Module Rating
 
 ## Summary

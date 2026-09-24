@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Activity Log — Rating"
 type: guide
@@ -28,6 +29,8 @@ qmd: "log"
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 ## [2026-06-10] phpstan | Modulo Rating zero errori codice
 
 - `./vendor/bin/phpstan analyse Modules/Rating` → 0 errori codice
@@ -36,6 +39,7 @@ qmd: "log"
 
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
@@ -52,6 +56,10 @@ qmd: "log"
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
 >>>>>>> c91c8c3 (.)
+=======
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
+>>>>>>> 2025498 (.)
 
 ---
 title: "Activity Log"
@@ -79,6 +87,7 @@ module: "Rating"
 
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,6 +129,9 @@ module: "Rating"
 =======
 [2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
 >>>>>>> c91c8c3 (.)
+=======
+[2026-05-12 08:19:00 UTC] [UPDATE] Aggiornati `index.md`, `rules/INDEX.md` e `skills/INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+>>>>>>> 2025498 (.)
 
 **Last Activity:** 2026-05-12 08:19:00 UTC  
 **Total Operations:** 1

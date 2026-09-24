@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Criteri di accettazione per le fasi"
 type: guide
@@ -16,6 +17,8 @@ qmd: "acceptance criteria"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Criteri di accettazione per le fasi
 
 Criteri misurabili e verificabili per considerare completata ogni fase della roadmap.  
@@ -39,6 +42,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 13 / regole progetto.
 =======
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
@@ -49,6 +53,9 @@ Riferimento architettura: [architecture.md](../architecture.md).
 =======
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
 >>>>>>> c91c8c3 (.)
+=======
+- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
+>>>>>>> 2025498 (.)
 
 ### Filament (se presente)
 

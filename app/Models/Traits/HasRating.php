@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
+=======
+>>>>>>> 2025498 (.)
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+<<<<<<< HEAD
 /** @phpstan-require-extends Model */
 /** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
@@ -17,6 +21,20 @@ trait HasRating
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
+=======
+/** @phpstan-ignore trait.unused (usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
+trait HasRating
+{
+    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+    public function ratings(): MorphToMany
+    {
+        $pivot = new RatingMorph();
+
+        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
+            ->using(RatingMorph::class)
+            ->withPivot($pivot->getFillable())
+            ->withTimestamps();
+>>>>>>> 2025498 (.)
     }
 
     /** @return array<int, string> */
@@ -99,7 +117,11 @@ trait HasRating
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> 2025498 (.)
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -128,7 +150,11 @@ trait HasRating
             $total_volume = 1;
         }
 
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> 2025498 (.)
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

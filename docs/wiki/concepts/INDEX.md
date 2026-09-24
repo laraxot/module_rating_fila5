@@ -6,6 +6,7 @@ created: 2026-05-11
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 updated: 2026-08-24
 ---
 
@@ -29,6 +30,11 @@ updated: 2026-05-11
 ---
 
 >>>>>>> c91c8c3 (.)
+=======
+updated: 2026-05-11
+---
+
+>>>>>>> 2025498 (.)
 # concepts Index — Rating
 
 Concetti specifici del modulo Rating. Carica on-demand via `qmd search` o consulta il [trigger map root](/docs/wiki/rules/00-TRIGGER_MAP.md).

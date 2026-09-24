@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -34,6 +35,8 @@ All notable changes to `:package_name` will be documented in this file.
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 ---
 module: theme
 topic: CHANGELOG
@@ -43,8 +46,11 @@ canonical: ../../../Themes/docs/shared-components/CHANGELOG.md
 See canonical documentation: ../../../Themes/docs/shared-components/CHANGELOG.md
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 title: "Rating Module"
 type: documentation
 module: Rating
@@ -44,6 +45,8 @@ Preferire sempre `docs/bmad/` per lavoro in corso; bozze in `docs/stories/` con
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 title: "Rating Module Documentation"
 type: documentation
 tags: [module, documentation]
@@ -112,6 +115,7 @@ Rating/
 - [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
 >>>>>>> e8cf105 (Check & fix styling)
 =======
@@ -120,3 +124,6 @@ Rating/
 =======
 - [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
 >>>>>>> c91c8c3 (.)
+=======
+- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
+>>>>>>> 2025498 (.)
