@@ -1,9 +1,17 @@
 <?php
 
+<<<<<<< HEAD
+=======
+/**
+ * ---.
+ */
+
+>>>>>>> 77b9106 (.)
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
@@ -33,6 +41,13 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
+=======
+use Modules\Rating\Enums\SupportedLocale;
+use Spatie\LaravelData\Data;
+
+/**
+ * Undocumented class.
+>>>>>>> 77b9106 (.)
  */
 class RatingData extends Data
 {
@@ -43,11 +58,15 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
+<<<<<<< HEAD
         public readonly ?int $parent_id = null,
+=======
+>>>>>>> 77b9106 (.)
     ) {
     }
 
     /**
+<<<<<<< HEAD
      * Costruisce il DTO da un payload di form.
      *
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
@@ -228,5 +247,21 @@ class RatingData extends Data
         if ($missing('parent_id')) {
             $table->unsignedBigInteger('parent_id')->nullable();
         }
+=======
+     * Create from array with type casting.
+     *
+     * @param array<string,mixed> $data
+     */
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            title: is_string($data['title'] ?? '') ? ($data['title'] ?? '') : (is_scalar($data['title'] ?? '') ? (string) ($data['title'] ?? '') : ''),
+            description: is_string($data['description'] ?? '') ? ($data['description'] ?? '') : (is_scalar($data['description'] ?? '') ? (string) ($data['description'] ?? '') : ''),
+            disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
+            position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
+            locale: SupportedLocale::fromString(is_string($data['locale'] ?? 'it') ? ($data['locale'] ?? 'it') : 'it'),
+            image_url: isset($data['image_url']) ? (is_string($data['image_url']) ? $data['image_url'] : null) : null,
+        );
+>>>>>>> 77b9106 (.)
     }
 }

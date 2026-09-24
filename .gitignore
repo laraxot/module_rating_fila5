@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /.ai*
 /_bmad
 /bashscripts
@@ -45,6 +46,8 @@ audit-coverage/
 =======
 >>>>>>> laraxot/dev
 =======
+=======
+>>>>>>> 77b9106 (.)
 *.jar
 *.log
 *.lock
@@ -108,6 +111,7 @@ docs/archive/
 *~head
 
 agentdb.rvf
+<<<<<<< HEAD
 audit-coverage/
 tests/AuditCoverage/
 .claude-audit/
@@ -117,3 +121,13 @@ tests/AuditCoverage/
 .devcontainer/
 >>>>>>> e8cf105 (Check & fix styling)
 tests/AuditCoverage/
+=======
+
+# Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
+!tests/
+!tests/**
+
+# claude-audit bridge (non committare)
+audit-coverage/
+tests/AuditCoverage/*
+>>>>>>> 77b9106 (.)

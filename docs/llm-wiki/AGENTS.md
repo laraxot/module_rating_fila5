@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Module LLM Wiki Agent Instructions"
 type: guide
@@ -85,6 +86,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

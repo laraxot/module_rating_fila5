@@ -14,10 +14,14 @@ related:
 Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Vedi anche → Trigger Map
 =======
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+>>>>>>> 77b9106 (.)
 
 ## Regola
 
@@ -38,6 +42,7 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Memories e' sempre il wiki locale
 - Non embeddare Memories nei prompt di avvio
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -67,6 +72,9 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 =======
 - Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
+>>>>>>> 77b9106 (.)
 
 ## Aggiungere una Nuova MEMORIES
 

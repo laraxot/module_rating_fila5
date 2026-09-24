@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "License"
 type: guide
@@ -10,6 +11,8 @@ qmd: "license"
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

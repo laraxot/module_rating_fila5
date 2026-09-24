@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-<<<<<<< HEAD
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -26,17 +25,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
-<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
-<<<<<<< HEAD
-=======
-use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
-use Modules\Rating\Models\BaseRating;
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Webmozart\Assert\Assert;
@@ -46,6 +37,9 @@ use Webmozart\Assert\Assert;
  *
  * Perché: un solo punto per relazioni, sync per extra_attributes, regole validazione.
  * Consumer: `@use HasRatingsTrait<static>` sulla classe host.
+ *
+ * Path/label form/export: SSoT in {@see RatingData} (no statiche omonime sul trait —
+ * regola `no-trait-name-static-calls`).
  *
  * @template TModel of Model
  *
@@ -92,15 +86,7 @@ trait HasRatingsTrait
     {
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
-<<<<<<< HEAD
-<<<<<<< HEAD
         Assert::implementsInterface($related, RatingContract::class);
-=======
-        Assert::subclassOf($related, BaseRating::class);
->>>>>>> fd7a600 (.)
-=======
-        Assert::implementsInterface($related, RatingContract::class);
->>>>>>> laraxot/dev
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $relation */
         $relation = $this->morphToManyX($related, 'model');
@@ -111,10 +97,6 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
      * `ratings` (morphToMany) e' indicizzata per posizione (0..N), non per id del
      * rating: `data_get($host, 'ratings.52')` non trova il rating con id 52.
      * Questo accessor re-indicizza per `id`, cosi' `data_get($host,
@@ -170,11 +152,6 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
@@ -185,65 +162,10 @@ trait HasRatingsTrait
 
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
         Assert::implementsInterface($related, RatingContract::class);
-=======
-        Assert::subclassOf($related, BaseRating::class);
->>>>>>> fd7a600 (.)
 
         /** @var HasMany<BaseRating, TModel> $query */
         $query = $this->hasMany($related, 'related_type', 'post_type')
-=======
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Modules\Rating\Models\Rating;
-
-/**
- * Trait HasRatingsTrait.
- *
- * @see Modules/Rating/docs/schemaless-attributes.md
- */
-/** @phpstan-ignore trait.unused */
-trait HasRatingsTrait
-{
-    public function getRatingClass(): string
-    {
-        return (string) Str::of(static::class)
-            ->before('\Models\\')
-            ->append('\Models\Rating');
-    }
-
-    /**
-     * Get ratings for this model.
-     *
-     * @return MorphToMany<Rating, static>
-     */
-    public function ratings(): MorphToMany
-    {
-        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph');
-    }
-
-    /**
-     * Get rating objectives with aggregated data.
-     *
-     * @return HasMany<Rating, static>
-     */
-    public function ratingObjectives(): HasMany
-    {
-        $relatedClass = $this->getRatingClass();
-        $userId = (int) Auth::id();
-
-        return $this->hasMany($relatedClass, 'related_type', 'post_type')
->>>>>>> e8cf105 (Check & fix styling)
             ->selectRaw(
                 'ratings.*,
                 count(value) as rating_count,
@@ -252,7 +174,6 @@ trait HasRatingsTrait
                 [$userId]
             )->leftJoin(
                 'rating_morph',
-<<<<<<< HEAD
                 function (JoinClause $join): void {
                     $join->on('rating_morph.rating_id', 'ratings.id')
                         ->whereColumn('rating_morph.post_type', 'ratings.related_type')
@@ -268,36 +189,18 @@ trait HasRatingsTrait
      * @param Builder<TModel> $query
      *
      * @return Builder<TModel>
-=======
-                function ($join): void {
-                    $join->on('rating_morph.rating_id', 'ratings.id')
-                        ->whereColumn('rating_morph.post_type', 'ratings.related_type')
-                        ->where('rating_morph.post_id', $this->id);
-                }
-            )->groupBy('ratings.id')
-            ->with('post');
-    }
-
-    /**
-     * Scope a query to only include popular users.
->>>>>>> e8cf105 (Check & fix styling)
      */
     public function scopeWithRating(Builder $query): Builder
     {
         return $query->leftJoin(
             'rating_morph',
-<<<<<<< HEAD
             function (JoinClause $join): void {
-=======
-            function ($join): void {
->>>>>>> e8cf105 (Check & fix styling)
                 $join->on('rating_morph.post_type', '=', 'ratings.related_type');
             }
         );
     }
 
     /**
-<<<<<<< HEAD
      * @return MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>
      */
     public function myRatings(): MorphToMany
@@ -306,15 +209,7 @@ trait HasRatingsTrait
 
         /** @var class-string<BaseRating> $related */
         $related = Rating::getClassName();
-<<<<<<< HEAD
-<<<<<<< HEAD
         Assert::implementsInterface($related, RatingContract::class);
-=======
-        Assert::subclassOf($related, BaseRating::class);
->>>>>>> fd7a600 (.)
-=======
-        Assert::implementsInterface($related, RatingContract::class);
->>>>>>> laraxot/dev
 
         /** @var MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'> $query */
         $query = $this->morphToManyX($related, 'model')
@@ -329,55 +224,18 @@ trait HasRatingsTrait
     public function getMyRatingAttribute(): Collection
     {
         /** @var Collection<int, BaseRating> $myRatings */
-=======
-     * Get my ratings for this model.
-     *
-     * @return MorphToMany<Rating, static>
-     */
-    public function myRatings(): MorphToMany
-    {
-        return $this->morphToMany(Rating::class, 'model', 'ratings', 'rating_morph')
-            ->wherePivot('user_id', (string) Auth::id());
-    }
-
-    // ----- mutators -----
-    // *
-    public function getMyRatingAttribute(): Collection
-    {
->>>>>>> e8cf105 (Check & fix styling)
         $myRatings = $this->myRatings;
 
         return $myRatings->pluck('pivot.rating', 'post_id');
     }
 
-<<<<<<< HEAD
     public function getRatingsAvgAttribute(?float $value): ?float
     {
         return (float) ($value ?? 0);
-=======
-    /**
-     * ----.
-     */
-    public function getRatingsAvgAttribute(?float $value): ?float
-    {
-        if (null !== $value) {
-            return $value;
-        }
-        $value = $this->ratings->avg('pivot.rating');
-        if (null !== $value) {
-            // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if (null !== $this->getKey()) {
-                $this->update(['ratings_avg' => $value]);
-            }
-        }
-
-        return $value;
->>>>>>> e8cf105 (Check & fix styling)
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-<<<<<<< HEAD
         return $value ?? 0;
     }
 
@@ -388,52 +246,18 @@ trait HasRatingsTrait
      */
     public function getRatingsWhere(array $filters): Collection
     {
-=======
-        if (null !== $value) {
-            return $value;
-        }
-        $value = $this->ratings->count();
-        $this->ratings_count = $value;
-
-        // Guard: modello deve avere PK per salvare
-        if (null == $this->getKey()) {
-            return $value;
-        }
-
-        // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-        $this->update(['ratings_count' => $value]);
-
-        return $value;
-    }
-
-    /**
-     * Get ratings filtered by extra_attributes.
-     *
-     * @param array<string, mixed> $filters
-     *
-     * @return Collection<int, Rating>
-     */
-    public function getRatingsWhere(array $filters): Collection
-    {
-        /** @var Builder $query */
->>>>>>> e8cf105 (Check & fix styling)
         $query = $this->ratings();
 
         foreach ($filters as $key => $filterValue) {
             $query->where("extra_attributes->{$key}", $filterValue);
         }
 
-<<<<<<< HEAD
         /** @var Collection<int, BaseRating> $result */
-=======
-        /** @var Collection<int, Rating> $result */
->>>>>>> e8cf105 (Check & fix styling)
         $result = $query->get();
 
         return $result;
     }
 
-<<<<<<< HEAD
     /**
      * Sync pivot verso rating che matchano extra_attributes.
      *
@@ -445,15 +269,7 @@ trait HasRatingsTrait
     {
         /** @var class-string<BaseRating> $ratingClass */
         $ratingClass = Rating::getClassName();
-<<<<<<< HEAD
-<<<<<<< HEAD
         Assert::implementsInterface($ratingClass, RatingContract::class);
-=======
-        Assert::subclassOf($ratingClass, BaseRating::class);
->>>>>>> fd7a600 (.)
-=======
-        Assert::implementsInterface($ratingClass, RatingContract::class);
->>>>>>> laraxot/dev
 
         $ratings = $ratingClass::withExtraAttributes($where)->get();
         /*
@@ -466,19 +282,9 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ([] !== $ratingIds) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
             // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
-=======
-            $this->ratings()->sync($ratingIds);
->>>>>>> fd7a600 (.)
-=======
-            // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
-            // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
-            $this->ratings()->syncWithoutDetaching($ratingIds);
->>>>>>> laraxot/dev
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -487,34 +293,12 @@ trait HasRatingsTrait
         return $result;
     }
 
-=======
-    public function syncRatingsWhere(array $where): Collection
-    {
-        $ratings = app($this->getRatingClass())
-            ->withExtraAttributes($where)
-            ->get();
-
-        $rating_ids = $ratings->modelKeys();
-        $this->ratings()->sync($rating_ids);
-
-        return $this->ratings;
-    }
-
-    // */
-    /*
-        public function setMyRatingAttribute($value){
-        dddx($value);
-        }
-    */
-    // ------ functions ------
->>>>>>> e8cf105 (Check & fix styling)
     /**
      * @throws FileNotFoundException
      * @throws \ReflectionException
      */
     public function ratingAvgHtml(): string
     {
-<<<<<<< HEAD
         $safeStringCastAction = app(SafeStringCastAction::class);
         $pivotAvg = $safeStringCastAction->execute($this->ratings_avg ?? 0);
         $pivotCount = $safeStringCastAction->execute($this->ratings_count ?? 0);
@@ -572,39 +356,6 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-     * Il nome del campo di form che corrisponde a una riga di `ratings`.
-     *
-     * Convenzione unica, condivisa fra chi costruisce lo schema, chi legge lo stato e chi
-     * salva le pivot: se cambia, cambia in un posto solo. `$pivotColumn` resta `'value'`
-     * per compatibilita: ogni chiamata esistente continua a puntare li; `'note'` e' la
-     * sola altra colonna pivot che il trait genera oggi (vedi `buildRatingComponent()`).
-     */
-    public static function ratingFieldName(BaseRating $rating, string $pivotColumn = 'value'): string
-    {
-        return 'ratings.'.$rating->id.'.pivot.'.$pivotColumn;
-    }
-
-    /**
-     * Testo etichetta form per un criterio: `txt` se presente, altrimenti `title`.
-     *
-     * Diverso da {@see BaseRating::getLabel()} (albero / solo `title`). Qui preferiamo
-     * il testo lungo della scheda e togliamo HTML — convenzione condivisa da ogni host
-     * che decora i campi (story 5.149). Il trait **non** chiama `->label()` Filament
-     * (D-1): restituisce solo la stringa; l'host (o
-     * {@see DecoratesRatingFormFields}) la applica.
-     */
-    public static function formFieldLabel(BaseRating $rating): string
-    {
-        return strip_tags((string) ($rating->txt ?? $rating->title));
-    }
-
-    /**
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
      * I criteri che diventano campi: tutti tranne le opzioni.
      *
      * Un criterio con `parent_id` e' una voce del `Select` del padre, non un campo suo.
@@ -619,15 +370,7 @@ trait HasRatingsTrait
     {
         return ($ratings ?? $this->ratings)
             ->unique('id')
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
-=======
-            ->reject(static fn (BaseRating $row): bool => null !== $row->parent_id);
->>>>>>> fd7a600 (.)
-=======
-            ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
->>>>>>> laraxot/dev
     }
 
     /**
@@ -640,20 +383,9 @@ trait HasRatingsTrait
      * salvataggio, quindi il Select deve ripartire su {@see OTHER_OPTION_KEY}, non su
      * `null` ("non ancora risposto"). Se questo remap vivesse in ogni host lo
      * riscriverebbe uguale o lo dimenticherebbe — stesso motivo per cui
-<<<<<<< HEAD
-<<<<<<< HEAD
      * `OTHER_OPTION_KEY` vive qui e `RatingData::ratingFieldName()` è la SSoT
      * del path form (non sull'host). Nato dal refactor 2026-09-16: prima
      * duplicato (parziale, solo `value`) dentro
-=======
-     * `ratingFieldName()`/`OTHER_OPTION_KEY` vivono qui e non nell'host. Nato dal
-     * refactor 2026-09-16: prima duplicato (parziale, solo `value`) dentro
->>>>>>> fd7a600 (.)
-=======
-     * `OTHER_OPTION_KEY` vive qui e `RatingData::ratingFieldName()` è la SSoT
-     * del path form (non sull'host). Nato dal refactor 2026-09-16: prima
-     * duplicato (parziale, solo `value`) dentro
->>>>>>> laraxot/dev
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
      * @param array<string, mixed> $data
@@ -692,45 +424,24 @@ trait HasRatingsTrait
      * colonna numerica `value` — mai cast a `0`, che li renderebbe indistinguibili da un
      * voto reale zero e romperebbe `HasRatingValuesFilter` (D-8, story Rating/5.141).
      * Le altre chiavi pivot presenti nello stato del form (es. `note`) passano invariate.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
      *
      * Scope: aggiorna SOLO le righe `rating_morph` di QUESTO host (`model_id` + entrambi
      * i `model_type` legacy alias|FQCN via {@see ratingMorphs()}). Non usare
      * `updateExistingPivot` da solo: vede solo `getMorphClass()` e lascia orfani i FQCN
      * (o crea duplicati alias). Mai un update globale su `rating_id` senza `model_id`.
-=======
-     * Nato dal refactor 2026-09-16: prima duplicato (con cast a `0`, il bug che questo
-     * metodo corregge) dentro `CompilaIndennitaResponsabilita::save()`.
->>>>>>> fd7a600 (.)
      *
      * @param array<int|string, array{pivot?: array<string, mixed>}> $ratingsData
      */
     public function syncRatingsFormData(array $ratingsData): void
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
         if (null === $this->getKey()) {
             throw new \LogicException('syncRatingsFormData richiede un model_id persistito.');
         }
 
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
         foreach ($ratingsData as $id => $rating) {
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
             $value = (self::OTHER_OPTION_KEY === $value || null === $value)
                 ? null
                 : (is_numeric($value) ? $value : null);
@@ -752,24 +463,10 @@ trait HasRatingsTrait
             if (0 === $updated) {
                 $this->ratings()->attach($id, $payload);
             }
-<<<<<<< HEAD
-=======
-            $pivot['value'] = (self::OTHER_OPTION_KEY === $value || null === $value)
-                ? null
-                : (is_numeric($value) ? $value : null);
-
-            $this->ratings()->updateExistingPivot($id, $pivot);
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
         }
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
      * Svuota la valutazione del record corrente: mette a `null` value e note su tutte
      * le pivot `rating_morph` gia' collegate a QUESTO `model_id` (alias + FQCN via
      * {@see ratingMorphs()}). Non tocca la scheda, non crea pivot, non fa sync/attach,
@@ -803,11 +500,6 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
      * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
      *
      * @return array<string, Component> indicizzato per nome di campo
@@ -822,30 +514,14 @@ trait HasRatingsTrait
 
         $fields = $this->ratingFormFields($rows);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         /** @var Collection<int, RatingContract> $readonlyRatings */
-=======
-        /** @var Collection<int, BaseRating> $readonlyRatings */
->>>>>>> fd7a600 (.)
-=======
-        /** @var Collection<int, RatingContract> $readonlyRatings */
->>>>>>> laraxot/dev
         $readonlyRatings = $fields->where('is_readonly', true);
 
         $schema = [];
         foreach ($fields as $rating) {
             $component = $this->buildRatingComponent($rating, $caller, $readonlyRatings);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             $schema[RatingData::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
-=======
-            $schema[self::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
->>>>>>> fd7a600 (.)
-=======
-            $schema[RatingData::ratingFieldName($rating)] = $caller?->decorateRatingField($rating, $component) ?? $component;
->>>>>>> laraxot/dev
         }
 
         return $schema;
@@ -859,10 +535,6 @@ trait HasRatingsTrait
      * dato e gancio di ricalcolo sono in coda, scritti una volta sola: quando il gancio
      * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
      * @param Collection<int, RatingContract> $readonlyRatings
      */
     private function buildRatingComponent(
@@ -871,16 +543,6 @@ trait HasRatingsTrait
         Collection $readonlyRatings,
     ): Component {
         $field = RatingData::ratingFieldName($rating);
-=======
-     * @param Collection<int, BaseRating> $readonlyRatings
-     */
-    private function buildRatingComponent(
-        BaseRating $rating,
-        ?RatingsFormCallerContract $caller,
-        Collection $readonlyRatings,
-    ): Component {
-        $field = self::ratingFieldName($rating);
->>>>>>> fd7a600 (.)
 
         if (true === $rating->is_readonly) {
             return TextEntry::make($field)->inlineLabel();
@@ -888,10 +550,6 @@ trait HasRatingsTrait
 
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
         /** @var array<int, string> $options */
         $options = [];
         foreach ($rating->children as $child) {
@@ -901,11 +559,6 @@ trait HasRatingsTrait
 
             $options[$child->id] = $child->getLabel();
         }
-=======
-        $options = $rating->children
-            ->mapWithKeys(static fn (BaseRating $child): array => [$child->id => $child->getLabel()])
-            ->all();
->>>>>>> fd7a600 (.)
 
         $afterStateUpdated = static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
             $caller?->recalculateRatingFields($set, $get, $readonlyRatings);
@@ -913,15 +566,7 @@ trait HasRatingsTrait
 
         // Messaggi errore: senza validationAttribute Filament stampa lo state path
         // («ratings.52.pivot.value»). API distinta da label() → non viola D-1 (5.151).
-<<<<<<< HEAD
-<<<<<<< HEAD
         $humanName = RatingData::formFieldLabel($rating);
-=======
-        $humanName = self::formFieldLabel($rating);
->>>>>>> fd7a600 (.)
-=======
-        $humanName = RatingData::formFieldLabel($rating);
->>>>>>> laraxot/dev
 
         if ([] === $options) {
             return TextInput::make($field)
@@ -968,28 +613,12 @@ trait HasRatingsTrait
         // $get($select) passa il Component: Get risolve lo statePath reale (incl. `data.`
         // del form). $get($field, isAbsolute: true) toglieva il prefisso `data.` e
         // selectIsOther vedeva sempre null → note mai obbligatoria (bug utente 2026-09-16).
-<<<<<<< HEAD
-<<<<<<< HEAD
         $note = Textarea::make(RatingData::ratingFieldName($rating, 'note'))
             ->rows(3)
             ->hiddenLabel()
             ->validationAttribute(trans('rating::fields.note_for', [
                 'label' => $humanName,
             ]))
-=======
-        $note = Textarea::make(self::ratingFieldName($rating, 'note'))
-            ->rows(3)
-            ->hiddenLabel()
-            ->validationAttribute(trans('rating::fields.note_for', ['label' => $humanName]))
->>>>>>> fd7a600 (.)
-=======
-        $note = Textarea::make(RatingData::ratingFieldName($rating, 'note'))
-            ->rows(3)
-            ->hiddenLabel()
-            ->validationAttribute(trans('rating::fields.note_for', [
-                'label' => $humanName,
-            ]))
->>>>>>> laraxot/dev
             ->required(static fn (Get $get): bool => self::selectIsOther($get($select)));
 
         // Fieldset Filament 5: label + bordo + columns(2) di default (setUp).
@@ -1000,20 +629,10 @@ trait HasRatingsTrait
         return Fieldset::make()
             ->columnSpan(2)
             ->markAsRequired()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
             ->schema([
                 $select,
                 $note,
             ]);
-<<<<<<< HEAD
-=======
-            ->schema([$select, $note]);
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
     }
 
     /**
@@ -1030,44 +649,6 @@ trait HasRatingsTrait
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $ruleStr = $this->ratingRuleToString($row->rule, $safeStringCastAction);
 
-=======
-        $pivot_avg = $this->ratings_avg;
-        $pivot_cout = $this->ratings_count;
-
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
-
-        $rating_url = '#';
-        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
-
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        return $msg.$btn.$btn_iframe;
-    }
-
-    public function getRatingsRules(string $prefix, string $postfix): array
-    {
-        $rows = $this->ratings;
-        $rules = $rows->mapWithKeys(function ($row) {
-            $ruleValue = $row->rule instanceof \BackedEnum ? (string) $row->rule->value : (string) $row->rule;
-
-            return [$row->id => $ruleValue];
-        })->toArray();
-
-        $rules = Arr::prependKeysWith($rules, $prefix);
-        $res = [];
-        foreach ($rules as $key => $ruleValue) {
-            $keyWithPostfix = $key.$postfix;
-            $ruleStr = (string) $ruleValue;
-
-            // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
->>>>>>> e8cf105 (Check & fix styling)
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {
                 $ruleStr = 'nullable|'.$ruleStr;
             }
@@ -1078,7 +659,6 @@ trait HasRatingsTrait
         return $res;
     }
 
-<<<<<<< HEAD
     private function ratingRuleToString(mixed $rule, SafeStringCastAction $safeStringCastAction): string
     {
         if ($rule instanceof \BackedEnum) {
@@ -1101,25 +681,8 @@ trait HasRatingsTrait
         foreach ($rows as $row) {
             $keyWithPostfix = $prefix.$safeStringCastAction->execute($row->id).$postfix;
             $res[$keyWithPostfix] = $row instanceof BaseRating
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ? RatingData::formFieldLabel($row)
-=======
-                ? self::formFieldLabel($row)
->>>>>>> fd7a600 (.)
-=======
-                ? RatingData::formFieldLabel($row)
->>>>>>> laraxot/dev
                 : $safeStringCastAction->execute($row->title ?? '');
-=======
-    public function getRatingsValidationAttributes(string $prefix, string $postfix): array
-    {
-        $rows = $this->ratings;
-        $res = [];
-        foreach ($rows as $row) {
-            $keyWithPostfix = $prefix.$row->id.$postfix;
-            $res[$keyWithPostfix] = (string) $row->title;
->>>>>>> e8cf105 (Check & fix styling)
         }
 
         return $res;

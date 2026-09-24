@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "📚 RATING Module - Documentation Index"
 type: guide
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  
@@ -34,6 +37,7 @@ related:
 | SPRINT_PLANNING.md | Sprint Planning |
 | USER_RESEARCH.md | User Research |
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### BMAD stories attive
 
@@ -72,11 +76,16 @@ related:
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
 =======
+=======
+>>>>>>> 77b9106 (.)
 ## 🔗 Riferimenti
 
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 
 ---
 

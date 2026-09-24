@@ -13,12 +13,18 @@ return new class extends Migration {
     public function up(): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 77b9106 (.)
         if (! Schema::connection('rating')->hasTable('rating_morph')) {
             return;
         }
 
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
         Schema::connection('rating')->table('rating_morph', function (Blueprint $table) {
             if (! Schema::connection('rating')->hasColumn('rating_morph', 'percentage')) {
                 $table->decimal('percentage', 10, 3)->nullable()->after('value')->comment('Percentuale calcolata per il rating');

@@ -1,5 +1,6 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 title: "Best practices — Rating"
 type: guide
 tags: [best-practices, rating]
@@ -32,10 +33,15 @@ Una guida best-practices accurata richiede di documentare questi, non le
 classi immaginarie di prima — non scritta qui per non ripetere lo stesso
 errore (contenuto plausibile ma non verificato riga per riga sul codice).
 =======
+=======
+>>>>>>> 77b9106 (.)
 module: theme
 topic: best-practices
 canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)

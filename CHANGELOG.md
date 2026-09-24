@@ -6,6 +6,7 @@ All notable changes to `:package_name` will be documented in this file.
 
 - initial release
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.
@@ -15,3 +16,5 @@ All notable changes to `:package_name` will be documented in this file.
 - initial release
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)

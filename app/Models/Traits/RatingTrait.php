@@ -18,10 +18,14 @@ use Modules\Rating\Models\Rating;
  * Trait RatingTrait.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 =======
 /** @phpstan-ignore trait.unused */
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+/** @phpstan-ignore trait.unused */
+>>>>>>> 77b9106 (.)
 trait RatingTrait
 {
     /**
@@ -158,6 +162,7 @@ trait RatingTrait
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';
         // $ratingUrl = Panel::make()->get($this)->itemAction('rate_it')->url();
@@ -166,6 +171,8 @@ trait RatingTrait
         /*
         return $msg.'<a data-href="'.$ratingUrl.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
 =======
+=======
+>>>>>>> 77b9106 (.)
         // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
         // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
@@ -173,11 +180,15 @@ trait RatingTrait
         // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
         return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
         Rate It </a>';
         */
         $title = 'Vota '.$this->title;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
@@ -189,6 +200,8 @@ trait RatingTrait
 
         return $msg.$btn.$btnIframe;
 =======
+=======
+>>>>>>> 77b9106 (.)
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
@@ -198,6 +211,9 @@ trait RatingTrait
         </button>';
 
         return $msg.$btn.$btn_iframe;
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
     }
 }

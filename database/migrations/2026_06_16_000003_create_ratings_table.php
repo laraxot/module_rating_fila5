@@ -5,9 +5,12 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
@@ -36,6 +39,7 @@ return new class extends XotBaseMigration {
         $this->tableUpdate(
             function (Blueprint $table): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 RatingData::updateColumns($table, $this);
 
                 // `updateTimestamps()` resta qui e non dentro RatingData: in questa
@@ -44,6 +48,8 @@ return new class extends XotBaseMigration {
                 // altri moduli li dichiarano in creazione e non ne hanno bisogno —
                 // e' il motivo per cui l'helper condiviso non li impone a tutti.
 =======
+=======
+>>>>>>> 77b9106 (.)
                 if (! $this->hasColumn('title')) {
                     $table->string('title')->nullable();
                 }
@@ -75,7 +81,10 @@ return new class extends XotBaseMigration {
                 if (! $this->hasColumn('order_column')) {
                     $table->unsignedInteger('order_column')->nullable()->index();
                 }
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: false);
             }
         );

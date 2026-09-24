@@ -1,5 +1,6 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 title: "Rating Module"
 type: documentation
 module: Rating
@@ -38,6 +39,8 @@ Questo README aveva marker di merge non risolti (`<<<<<<< HEAD`); ripulito 2026-
 Preferire sempre `docs/bmad/` per lavoro in corso; bozze in `docs/stories/` con
 `ALTRO_KEY='altro'` sono superseded-pointer.
 =======
+=======
+>>>>>>> 77b9106 (.)
 title: "Rating Module Documentation"
 type: documentation
 tags: [module, documentation]
@@ -104,5 +107,9 @@ Rating/
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md) — Pattern per caricamento efficiente
 - [QMD Setup](./QMD-SETUP.md) — Configurazione ricerca locale
 - [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
+<<<<<<< HEAD
 - [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
+>>>>>>> 77b9106 (.)

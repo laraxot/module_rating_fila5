@@ -17,6 +17,7 @@ laravel/Modules/Rating/docs/wiki/
 ├── index.md                         # ≤30 righe
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ├── rules/index.md                   # ≤20 righe
 =======
 <<<<<<< HEAD
@@ -39,6 +40,9 @@ laravel/Modules/Rating/docs/wiki/
 =======
 ├── rules/INDEX.md                   # ≤20 righe
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> 77b9106 (.)
 └── concepts/
     └── filament-resource-zen-pattern.md  # ≤200 righe
 ```
