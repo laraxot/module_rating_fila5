@@ -1,3 +1,5 @@
+<<<<<<< .merge_file_jYpHXW
+=======
 ---
 title: "License"
 type: guide
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "license"
 ---
 
+>>>>>>> .merge_file_j0RwyC
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
