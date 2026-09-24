@@ -7,7 +7,6 @@ namespace Modules\Rating\Filament\Tables\Filters;
 use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
 
 /**
  * «La scheda è stata valutata davvero?».
