@@ -19,7 +19,8 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
-│   ├── SCHEMA.md          # Questo file
+│   ├── schema.md          # Questo file
+│   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -31,5 +32,5 @@ docs/
 
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
-- Cross-ref: `[Link](../concepts/name.md)`
+- Cross-ref: `Link`
 - NON modificare mai `docs/raw/`
