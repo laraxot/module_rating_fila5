@@ -69,7 +69,7 @@ trait HasRating
 
     /**
 <<<<<<< HEAD
-     * @return array<int, non-empty-array<string, mixed>>
+     * @return array<int, array<string, mixed>>
 =======
      * @return list<non-empty-array<string, mixed>>
 >>>>>>> 88e4240 (.)
