@@ -198,6 +198,9 @@ trait HasRatingsTrait
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88e4240 (.)
      * Obiettivi rating con aggregati (count, avg, voto utente corrente).
      *
      * @return HasMany<BaseRating, TModel>
@@ -366,6 +369,7 @@ trait HasRatingsTrait
     /**
      * @param  array<string, mixed>  $filters
      * @return Collection<int, BaseRating>
+<<<<<<< HEAD
 =======
         if (null !== $value) {
             return $value;
@@ -391,6 +395,8 @@ trait HasRatingsTrait
      *
      * @return Collection<int, Rating>
 >>>>>>> 2025498 (.)
+=======
+>>>>>>> 88e4240 (.)
      */
     public function getRatingsWhere(array $filters): Collection
     {

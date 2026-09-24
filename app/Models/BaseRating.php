@@ -28,10 +28,15 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Illuminate\Support\Str;
 =======
 >>>>>>> 2025498 (.)
+=======
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+use Illuminate\Support\Str;
+>>>>>>> 88e4240 (.)
 
 /**
  * Modules\Rating\Models\BaseRating.
@@ -77,9 +82,12 @@ use Illuminate\Support\Str;
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
  * @property-read mixed      $xls_export_value
+<<<<<<< HEAD
 =======
  * @property Model|\Eloquent $linkedTo
 >>>>>>> 2025498 (.)
+=======
+>>>>>>> 88e4240 (.)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -247,7 +255,6 @@ abstract class BaseRating extends BaseModel implements HasMedia
             'is_readonly' => 'boolean',
         ];
     }
-<<<<<<< HEAD
 
 
     /**
@@ -360,6 +367,9 @@ abstract class BaseRating extends BaseModel implements HasMedia
 
         return $this->children()->exists();
     }
+<<<<<<< HEAD
 =======
 >>>>>>> 2025498 (.)
+=======
+>>>>>>> 88e4240 (.)
 }

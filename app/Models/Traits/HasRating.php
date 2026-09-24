@@ -68,7 +68,11 @@ trait HasRating
     }
 
     /**
+<<<<<<< HEAD
      * @return array<int, non-empty-array<string, mixed>>
+=======
+     * @return list<non-empty-array<string, mixed>>
+>>>>>>> 88e4240 (.)
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -79,9 +83,12 @@ trait HasRating
             ->get();
         // ->toArray()
 
+<<<<<<< HEAD
         /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
+=======
+>>>>>>> 88e4240 (.)
         $ratings_array = [];
-        foreach ($ratings as $key => $rating) {
+        foreach ($ratings as $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -96,9 +103,9 @@ trait HasRating
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
             $rowData['effect'] = false;
-            $ratings_array[$key] = $rowData;
+            $ratings_array[] = $rowData;
         }
 
         return $ratings_array;

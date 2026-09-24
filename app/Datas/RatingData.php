@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
@@ -26,8 +25,18 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
+<<<<<<< HEAD
  * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
  * Split `RatingBlockData` / entity tracciato a parte.
+=======
+ * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
+ * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
+ * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
+ * (path form/export, label, colonne della tabella). Non è un accostamento voluto: è il
+ * nome `RatingData` che era già occupato quando è servito il secondo concetto.
+ * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
+ * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
+>>>>>>> 88e4240 (.)
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -36,6 +45,7 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
+<<<<<<< HEAD
 =======
 use Modules\Rating\Enums\SupportedLocale;
 use Spatie\LaravelData\Data;
@@ -43,6 +53,8 @@ use Spatie\LaravelData\Data;
 /**
  * Undocumented class.
 >>>>>>> 2025498 (.)
+=======
+>>>>>>> 88e4240 (.)
  */
 class RatingData extends Data
 {
@@ -54,10 +66,21 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 88e4240 (.)
         public readonly ?int $parent_id = null,
     ) {}
 
     /**
+<<<<<<< HEAD
+=======
+     * Costruisce il DTO da un payload di form.
+     *
+     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
+     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
+     *
+>>>>>>> 88e4240 (.)
      * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
@@ -170,7 +193,9 @@ class RatingData extends Data
             if ($children->isNotEmpty()) {
                 $fields[self::ratingValuePath($rating, 'note')] = (string) __(
                     'rating::fields.note_for',
-                    ['label' => $label],
+                    [
+                        'label' => $label,
+                    ],
                 );
             }
         }
@@ -178,6 +203,22 @@ class RatingData extends Data
         return $fields;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Le colonne di `ratings`, dichiarate una volta sola.
+     *
+     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
+     * si aggiungono solo quelle che mancano. Una lista, due usi: la stessa colonna
+     * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
+     * `text()` in creazione e `string()` nel guard di update).
+     *
+     * ```php
+     * $this->tableCreate(fn (Blueprint $table) => RatingData::updateColumns($table));
+     * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
+     * ```
+     */
+>>>>>>> 88e4240 (.)
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration
