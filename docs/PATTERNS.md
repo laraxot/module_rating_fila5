@@ -7,6 +7,7 @@ updated: 2026-07-28
 qmd: "rating patterns"
 related:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "./best-practices.md"
 =======
 <<<<<<< HEAD
@@ -26,6 +27,9 @@ related:
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+  - "./BEST_PRACTICES.md"
+>>>>>>> e8cf105 (Check & fix styling)
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
 ---
@@ -409,6 +413,7 @@ $validated = $request->validate($rating->rules());
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 - [ ] Documentation added to docs/index.md
@@ -437,6 +442,9 @@ $validated = $request->validate($rating->rules());
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [ ] Documentation added to docs/index.md
+>>>>>>> e8cf105 (Check & fix styling)
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 
@@ -453,6 +461,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -486,4 +495,9 @@ $validated = $request->validate($rating->rules());
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
+- [Architecture](./architecture.md) — Detailed system design
+- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
+>>>>>>> e8cf105 (Check & fix styling)
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

@@ -20,6 +20,7 @@ docs/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 │   ├── schema.md          # Questo file
@@ -54,6 +55,10 @@ docs/
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+│   ├── schema.md          # Questo file
+│   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
+>>>>>>> e8cf105 (Check & fix styling)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna

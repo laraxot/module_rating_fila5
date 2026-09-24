@@ -99,8 +99,11 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  *
  * @property ProfileContract|null $deleter
  *
+<<<<<<< HEAD
  * @method static Builder<static>|Rating whereExtraAttributes($value)
  *
+=======
+>>>>>>> e8cf105 (Check & fix styling)
  * @mixin Eloquent
  */
 class Rating extends BaseRating

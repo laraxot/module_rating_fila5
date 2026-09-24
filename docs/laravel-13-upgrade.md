@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Upgrade Laravel 13 - Rating 🐄✨"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./launch-plan.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Upgrade Laravel 13 - Rating 🐄✨
 
 ## 🎯 Visione Architetturale

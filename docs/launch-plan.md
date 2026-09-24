@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Product Launch Plan: Rating Module"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./license.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Product Launch Plan: Rating Module
 
 ## 🚀 Launch Overview

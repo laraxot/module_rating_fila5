@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
@@ -18,4 +19,18 @@ interface HasRatingContract
      * @phpstan-return MorphToMany<Rating, Model, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany;
+=======
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Modules\Rating\Models\Rating;
+use Modules\Rating\Models\RatingMorph;
+
+/**
+ * Contract for models that have ratings.
+ */
+interface HasRatingContract
+{
+    /** @return MorphToMany<Rating, Model, RatingMorph, 'pivot'> */
+    public function ratings(): Relation;
+>>>>>>> e8cf105 (Check & fix styling)
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating - Product Strategy"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./rating-architecture.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating - Product Strategy
 
 > Strategia prodotto. Modulo.

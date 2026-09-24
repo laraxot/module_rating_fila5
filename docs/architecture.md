@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 ---
@@ -129,6 +130,9 @@ related:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+# Rating Architecture
+>>>>>>> e8cf105 (Check & fix styling)
 
 ## 🏗️ System Design
 
@@ -307,6 +311,7 @@ trait HasRatingsTrait
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 #### 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
@@ -406,6 +411,9 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+### 3. **RuleEnum** - Validation Rules Standardization
+>>>>>>> e8cf105 (Check & fix styling)
 ```php
 <?php
 
@@ -615,6 +623,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
 =======
 >>>>>>> laraxot/dev
@@ -625,6 +634,8 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 
 ### Documentation Standards
 - **PHPDoc Completo**: Ogni metodo e classe documentata
@@ -671,6 +682,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 Vedi anche: [FAQ](./faq.md) per guida per-argomento e [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/) per l'analisi wiki correlata.
@@ -698,10 +710,13 @@ Contenuto di un precedente `ARCHITECTURE.md` di root, assorbito qui durante la r
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 ---
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -838,3 +853,6 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+**Ultimo aggiornamento**: 2024-02-11
+>>>>>>> e8cf105 (Check & fix styling)

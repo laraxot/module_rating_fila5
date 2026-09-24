@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating - Sprint Planning Meeting"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./sprint-planning.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating - Sprint Planning Meeting
 
 > Documento operativo per sprint planning. Modulo.

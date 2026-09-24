@@ -16,6 +16,7 @@ updated: 2026-05-12
 laravel/Modules/Rating/docs/wiki/
 ├── index.md                         # ≤30 righe
 <<<<<<< HEAD
+<<<<<<< HEAD
 ├── rules/index.md                   # ≤20 righe
 =======
 <<<<<<< HEAD
@@ -35,6 +36,9 @@ laravel/Modules/Rating/docs/wiki/
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> e8cf105 (Check & fix styling)
 └── concepts/
     └── filament-resource-zen-pattern.md  # ≤200 righe
 ```

@@ -19,14 +19,24 @@ use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 
 class Rating extends Block
 {
+<<<<<<< HEAD
     public const string BLOCK_TYPE = 'rating';
+=======
+    public const BLOCK_TYPE = 'rating';
+>>>>>>> e8cf105 (Check & fix styling)
 
     /**
      * Create a new rating block.
      */
+<<<<<<< HEAD
     public static function create(): static
     {
         return static::make(self::BLOCK_TYPE)
+=======
+    public static function create(): Block
+    {
+        return parent::make(self::BLOCK_TYPE)
+>>>>>>> e8cf105 (Check & fix styling)
             ->schema([
                 TextInput::make('title')
                     ->label('Titolo')
@@ -39,7 +49,11 @@ class Rating extends Block
                     ->label('Disabilitato')
                     ->default(false),
             ])
+<<<<<<< HEAD
             ->label(static function (): string {
+=======
+            ->label(function (): string {
+>>>>>>> e8cf105 (Check & fix styling)
                 $locale = App::getLocale();
                 $supportedLocale = SupportedLocale::fromString($locale);
 
@@ -61,7 +75,12 @@ class Rating extends Block
     /**
      * Create a new rating block with advanced options.
      *
+<<<<<<< HEAD
      * @param array<string, string>|null $options Chiave = vista, valore = etichetta; se null li fornisce GetViewBlocksOptionsByTypeAction
+=======
+     * @param array<string,mixed> $options
+     * @param array<string,mixed> $options
+>>>>>>> e8cf105 (Check & fix styling)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
@@ -74,7 +93,11 @@ class Rating extends Block
         return Block::make($name)
             ->schema([
                 Radio::make('view')
+<<<<<<< HEAD
                     ->options($blockOptions),
+=======
+                    ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
+>>>>>>> e8cf105 (Check & fix styling)
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

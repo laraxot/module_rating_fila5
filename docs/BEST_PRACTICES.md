@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Best Practices – Rating"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./FALSE_FRIENDS.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Best Practices – Rating
 
 ## Principi DRY/KISS
@@ -25,6 +28,7 @@ related:
 - Copri casi limite come rating inversi.
 
 ## Documentazione
+<<<<<<< HEAD
 <<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
 =======
@@ -46,3 +50,7 @@ related:
 =======
 >>>>>>> laraxot/dev
 - Collega a moduli correlati come `Review` e `Auth`.
+=======
+- Aggiorna `docs/INDEX.md` con nuovi endpoint.
+- Collega a moduli correlati come `Review` e `Auth`.
+>>>>>>> e8cf105 (Check & fix styling)

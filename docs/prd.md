@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "PRD: Rating Module"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./product-launch-plan.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # PRD: Rating Module
 
 ## 📋 Overview

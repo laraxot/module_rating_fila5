@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
@@ -9,6 +10,8 @@ related:
   - "./readme-en.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  
@@ -199,4 +202,8 @@ Update rating architecture docs with:
 
 **Author**: Development Team  
 **Status**: Ready for Implementation  
+<<<<<<< HEAD
 **Priority**: High (User-facing validation errors)
+=======
+**Priority**: High (User-facing validation errors)
+>>>>>>> e8cf105 (Check & fix styling)
