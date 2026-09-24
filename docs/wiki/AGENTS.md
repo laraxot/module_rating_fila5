@@ -1,3 +1,17 @@
+---
+title: "Rating {{TYPE^}} LLM Wiki Agent Instructions"
+type: guide
+tags: [agents, rating]
+created: 2026-07-14
+updated: 2026-09-23
+qmd: "AGENTS"
+issues: []
+discussions: []
+related:
+  - ./coding-agent-manifests.md
+  - ./rules/index.md
+---
+
 # Rating {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating
@@ -137,4 +151,5 @@ Related:
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+- [Module Rules Index](./rules/index.md)
 - [Module Documentation](../README.md)
