@@ -8,19 +8,7 @@ use Illuminate\Database\Seeder;
 use Modules\Rating\Models\Rating;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
  * Rating base Sì/No — schema ratings (title, color) usati da seeder di dominio.
-=======
- * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
->>>>>>> e8cf105 (Check & fix styling)
-=======
- * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
->>>>>>> 77b9106 (.)
-=======
- * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
->>>>>>> c91c8c3 (.)
  */
 class RatingSeeder extends Seeder
 {
