@@ -6,9 +6,13 @@ namespace Modules\Rating\Filament\Resources\RatingMorphResource\Pages;
 
 use Filament\Actions\CreateAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Filament\Tables\Columns\TextColumn;
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+use Filament\Tables\Columns\TextColumn;
+>>>>>>> 77b9106 (.)
 use Modules\Rating\Filament\Resources\RatingMorphResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -17,7 +21,13 @@ class ListRatingMorphs extends XotBaseListRecords
     protected static string $resource = RatingMorphResource::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    /**
+     * @return array<string, mixed>
+     */
+>>>>>>> 77b9106 (.)
     public function getTableColumns(): array
     {
         return [
@@ -42,7 +52,10 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
     protected function getActions(): array
     {
         return [

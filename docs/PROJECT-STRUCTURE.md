@@ -22,6 +22,7 @@ tags: [structure, architecture, module]
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
@@ -55,6 +56,8 @@ tags: [structure, architecture, module]
 =======
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -67,6 +70,7 @@ tags: [structure, architecture, module]
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,6 +82,8 @@ tags: [structure, architecture, module]
 >>>>>>> laraxot/dev
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
@@ -86,6 +92,7 @@ tags: [structure, architecture, module]
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
 =======
 <<<<<<< HEAD
@@ -108,6 +115,9 @@ tags: [structure, architecture, module]
 =======
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> 77b9106 (.)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -148,10 +158,14 @@ related:
 ### Link Rules
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Interno modulo**: `[[concepts/page]]` o `link`
 =======
 - **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
+>>>>>>> 77b9106 (.)
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
@@ -185,6 +199,7 @@ mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,t
 # 2. Crea INDEX files (già creati)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
 =======
 <<<<<<< HEAD
@@ -207,6 +222,9 @@ cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 =======
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> 77b9106 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)

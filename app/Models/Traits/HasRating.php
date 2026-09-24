@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
+=======
+>>>>>>> 77b9106 (.)
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
+<<<<<<< HEAD
 /** @phpstan-require-extends Model */
 /** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
@@ -17,6 +21,20 @@ trait HasRating
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
+=======
+/** @phpstan-ignore trait.unused (usato da moduli esterni; PHPStan sul solo modulo Rating non vede i consumer.) */
+trait HasRating
+{
+    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+    public function ratings(): MorphToMany
+    {
+        $pivot = new RatingMorph();
+
+        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
+            ->using(RatingMorph::class)
+            ->withPivot($pivot->getFillable())
+            ->withTimestamps();
+>>>>>>> 77b9106 (.)
     }
 
     /** @return array<int, string> */
@@ -50,7 +68,11 @@ trait HasRating
     }
 
     /**
+<<<<<<< HEAD
      * @return array<int, array<string, mixed>>
+=======
+     * @return array<int, non-empty-array<string, mixed>>
+>>>>>>> 77b9106 (.)
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -61,8 +83,14 @@ trait HasRating
             ->get();
         // ->toArray()
 
+<<<<<<< HEAD
         $ratings_array = [];
         foreach ($ratings as $rating) {
+=======
+        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
+        $ratings_array = [];
+        foreach ($ratings as $key => $rating) {
+>>>>>>> 77b9106 (.)
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -77,9 +105,15 @@ trait HasRating
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
+<<<<<<< HEAD
             $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
             $rowData['effect'] = false;
             $ratings_array[] = $rowData;
+=======
+            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['effect'] = false;
+            $ratings_array[$key] = $rowData;
+>>>>>>> 77b9106 (.)
         }
 
         return $ratings_array;
@@ -98,7 +132,11 @@ trait HasRating
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> 77b9106 (.)
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -127,7 +165,11 @@ trait HasRating
             $total_volume = 1;
         }
 
+<<<<<<< HEAD
         foreach (array_keys($ratings_options) as $key) {
+=======
+        foreach ($ratings_options as $key => $value) {
+>>>>>>> 77b9106 (.)
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

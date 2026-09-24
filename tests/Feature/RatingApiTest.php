@@ -16,6 +16,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 describe('Rating Api', function (): void {
     beforeEach(function (): void {
@@ -25,6 +26,8 @@ describe('Rating Api', function (): void {
 
     test('can list ratings', function (): void {
 =======
+=======
+>>>>>>> 77b9106 (.)
 // Laraxot module file — see docs/wiki for domain contract.
 // Laraxot module file — see docs/wiki for domain contract.
 // Laraxot module file — see docs/wiki for domain contract.
@@ -38,7 +41,10 @@ beforeEach(function (): void {
 describe('Rating Api', function (): void {
     test('can list ratings', function (): void {
         /* @var \Modules\Rating\Tests\TestCase $this */
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
         Rating::create([
             'name' => 'Test Rating 1',
         ]);
@@ -107,7 +113,11 @@ describe('Rating Api', function (): void {
 
         Assert::assertSame(204, $response->status());
         /* @var TestCase $this */
+<<<<<<< HEAD
         $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
+=======
+        $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
+>>>>>>> 77b9106 (.)
     });
 
     test('can rate model', function (): void {

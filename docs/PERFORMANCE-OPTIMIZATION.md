@@ -20,6 +20,7 @@ related:
 \`\`\`diff
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - 150+ rules embeddate in agents.md
 =======
 <<<<<<< HEAD
@@ -42,6 +43,9 @@ related:
 =======
 - 150+ rules embeddate in AGENTS.md
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- 150+ rules embeddate in AGENTS.md
+>>>>>>> 77b9106 (.)
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -68,6 +72,7 @@ related:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 =======
 <<<<<<< HEAD
@@ -90,6 +95,9 @@ Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 =======
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
+>>>>>>> 77b9106 (.)
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei

@@ -21,6 +21,7 @@ docs/
 │   ├── log.md             # Registro
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 │   ├── schema.md          # Questo file
 =======
 <<<<<<< HEAD
@@ -43,6 +44,9 @@ docs/
 =======
 │   ├── SCHEMA.md          # Questo file
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+│   ├── SCHEMA.md          # Questo file
+>>>>>>> 77b9106 (.)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -55,8 +59,12 @@ docs/
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Cross-ref: `Link`
 =======
 - Cross-ref: `[Link](../concepts/name.md)`
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- Cross-ref: `[Link](../concepts/name.md)`
+>>>>>>> 77b9106 (.)
 - NON modificare mai `docs/raw/`

@@ -20,14 +20,19 @@ use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 class Rating extends Block
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     public const string BLOCK_TYPE = 'rating';
 =======
     public const BLOCK_TYPE = 'rating';
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+    public const BLOCK_TYPE = 'rating';
+>>>>>>> 77b9106 (.)
 
     /**
      * Create a new rating block.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
     public static function create(): static
     {
@@ -37,6 +42,11 @@ class Rating extends Block
     {
         return parent::make(self::BLOCK_TYPE)
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+    public static function create(): Block
+    {
+        return parent::make(self::BLOCK_TYPE)
+>>>>>>> 77b9106 (.)
             ->schema([
                 TextInput::make('title')
                     ->label('Titolo')
@@ -50,10 +60,14 @@ class Rating extends Block
                     ->default(false),
             ])
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->label(static function (): string {
 =======
             ->label(function (): string {
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+            ->label(function (): string {
+>>>>>>> 77b9106 (.)
                 $locale = App::getLocale();
                 $supportedLocale = SupportedLocale::fromString($locale);
 
@@ -76,11 +90,16 @@ class Rating extends Block
      * Create a new rating block with advanced options.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array<string, string>|null $options Chiave = vista, valore = etichetta; se null li fornisce GetViewBlocksOptionsByTypeAction
 =======
      * @param array<string,mixed> $options
      * @param array<string,mixed> $options
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+     * @param array<string,mixed> $options
+     * @param array<string,mixed> $options
+>>>>>>> 77b9106 (.)
      */
     public static function createAdvanced(
         string $name = self::BLOCK_TYPE,
@@ -94,10 +113,14 @@ class Rating extends Block
             ->schema([
                 Radio::make('view')
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ->options($blockOptions),
 =======
                     ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+                    ->options(is_array($blockOptions) ? array_map(fn ($value) => is_scalar($value) ? (string) $value : '', $blockOptions) : []),
+>>>>>>> 77b9106 (.)
 
                 Repeater::make('ratings')
                     ->visible(fn (Get $get): bool => $get('locale') === App::getLocale())

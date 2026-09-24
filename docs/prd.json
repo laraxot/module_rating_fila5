@@ -10,10 +10,14 @@
   ],
   "nonGoals": [
 <<<<<<< HEAD
+<<<<<<< HEAD
     "Gestire un dominio applicativo esterno completo"
 =======
     "Gestire il dominio completo Predict"
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+    "Gestire il dominio completo Predict"
+>>>>>>> 77b9106 (.)
   ],
   "dependencies": [
     "Xot"

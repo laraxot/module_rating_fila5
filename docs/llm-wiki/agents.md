@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 77b9106 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -13,7 +16,10 @@ related:
   - ./coding-agent-manifests.md
 ---
 
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

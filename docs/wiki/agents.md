@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 77b9106 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -13,7 +16,10 @@ related:
   - ./coding-agent-manifests.md
 ---
 
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Rating {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating
@@ -154,6 +160,7 @@ Related:
 - [Project Wiki Integration](../../docs/wiki/README.md)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 =======
 <<<<<<< HEAD
@@ -176,4 +183,7 @@ Related:
 =======
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+>>>>>>> 77b9106 (.)
 - [Module Documentation](../README.md)

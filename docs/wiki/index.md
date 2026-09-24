@@ -8,18 +8,24 @@ updated: 2026-06-05
 qmd: "rating module wiki index second brain harness"
 issues:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "https://github.com/laraxot/platform/issues/272"
 discussions:
   - "https://github.com/laraxot/platform/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
 =======
+=======
+>>>>>>> 77b9106 (.)
   - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
   - ../../../../docs/wiki/bmad/architecture.md
   - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
@@ -30,6 +36,7 @@ related:
 ## AI / second brain
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [hackernoon-ai-coding-tips-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
 =======
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
@@ -37,6 +44,12 @@ related:
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
+=======
+- [hackernoon-ai-coding-tips-fixcity-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+- [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
+- [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
+- [ai-harness-module-discipline](../../../docs/wiki/concepts/ai-harness-module-discipline.md)
+>>>>>>> 77b9106 (.)
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
 
@@ -55,6 +68,7 @@ Indice operativo del wiki Rating.
 
 ## Regole collegate
 
+<<<<<<< HEAD
 - [forbidden-folders-rule](../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
 - [llm-wiki-standard](../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
 
@@ -89,6 +103,15 @@ Indice operativo del wiki Rating.
 - [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- [forbidden-folders-rule](../../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
+- [llm-wiki-standard](../../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
+
+## On-Demand Entry Points
+
+- [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
+>>>>>>> 77b9106 (.)
 
 ## Scopo Rating Module
 
@@ -105,15 +128,20 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 ## Best Practices
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 =======
 - Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+>>>>>>> 77b9106 (.)
 - Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../docs/wiki/concepts/model-casts-phpstan.md))
 - Usare Eloquent polymorphic relations per rating (vedi [eloquent-best-practices](../../../../docs/wiki/concepts/eloquent-best-practices.md))
 
 ## Bad Practices
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 <<<<<<< HEAD
@@ -132,13 +160,21 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 =======
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+>>>>>>> 77b9106 (.)
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))
 
 ## False Friends
 
+<<<<<<< HEAD
 - `dehydrated(false)` sembra mantenere il campo nei dati ma blocca il salvataggio (vedi [coordinate-picker-filament5-save-pattern](../../Geo/docs/wiki/concepts/coordinate-picker-filament5-save-pattern.md))
 - `live()` in Filament non rende il campo sempre live - serve `$applyStateBindingModifiers()` (vedi [coordinate-picker-state-binding-rule](../../Geo/docs/wiki/concepts/coordinate-picker-state-binding-rule.md))
+=======
+- `dehydrated(false)` sembra mantenere il campo nei dati ma blocca il salvataggio (vedi [coordinate-picker-filament5-save-pattern](../../../Geo/docs/wiki/concepts/coordinate-picker-filament5-save-pattern.md))
+- `live()` in Filament non rende il campo sempre live - serve `$applyStateBindingModifiers()` (vedi [coordinate-picker-state-binding-rule](../../../Geo/docs/wiki/concepts/coordinate-picker-state-binding-rule.md))
+>>>>>>> 77b9106 (.)
 
 ## Troubleshooting
 
@@ -146,6 +182,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 |--------|------|-----------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | Template iniziale |
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Aggiornato: 2026-05-12
 
@@ -242,3 +279,6 @@ Aggiornato: 2026-05-12
 =======
 Aggiornato: 2026-05-12
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+Aggiornato: 2026-05-12
+>>>>>>> 77b9106 (.)

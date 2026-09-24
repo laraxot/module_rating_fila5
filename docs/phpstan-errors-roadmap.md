@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "PHPStan Level 10 Errors Roadmap - Modulo Rating"
 type: guide
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # PHPStan Level 10 Errors Roadmap - Modulo Rating
 
 **Data**: 2026-01-12  
@@ -29,18 +32,24 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 
 1. **`app/Models/Rating.php`** (Linea 121)
 <<<<<<< HEAD
+<<<<<<< HEAD
    - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\LegacyDomain\Models\Profile`
    - **Tipo**: `class.notFound`
 
 2. **`app/Models/Rating.php`** (Linea 121)
    - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\LegacyDomain\Models\Profile`
 =======
+=======
+>>>>>>> 77b9106 (.)
    - **Errore**: `PHPDoc tag @property for property $creator contains unknown class Modules\Fixcity\Models\Profile`
    - **Tipo**: `class.notFound`
 
 2. **`app/Models/Rating.php`** (Linea 121)
    - **Errore**: `PHPDoc tag @property for property $updater contains unknown class Modules\Fixcity\Models\Profile`
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
    - **Tipo**: `class.notFound`
 
 ---
@@ -50,10 +59,14 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 ### Pattern: PHPDoc con Classi Sconosciute
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Problema**: PHPDoc referenzia `Modules\LegacyDomain\Models\Profile` che non esiste nel progetto.
 =======
 **Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+**Problema**: PHPDoc referenzia `Modules\Fixcity\Models\Profile` che non esiste nel progetto.
+>>>>>>> 77b9106 (.)
 
 **Causa**: 
 - Classe obsoleta o rimossa
@@ -84,12 +97,17 @@ Entrambi gli errori riguardano PHPDoc con classi sconosciute.
 // ❌ PRIMA (Errore)
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property \Modules\LegacyDomain\Models\Profile|null $creator
  * @property \Modules\LegacyDomain\Models\Profile|null $updater
 =======
  * @property \Modules\Fixcity\Models\Profile|null $creator
  * @property \Modules\Fixcity\Models\Profile|null $updater
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+ * @property \Modules\Fixcity\Models\Profile|null $creator
+ * @property \Modules\Fixcity\Models\Profile|null $updater
+>>>>>>> 77b9106 (.)
  */
 
 // ✅ DOPO (Corretto - verifica classe corretta)

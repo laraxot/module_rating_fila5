@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "🐄 DRY & KISS Analysis - Rating"
 type: concept
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # 🐄 DRY & KISS Analysis - Rating
 
 **Data:** 2025-10-15 | **Status:** ✅
