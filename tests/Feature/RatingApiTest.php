@@ -15,19 +15,14 @@ use function Pest\Laravel\putJson;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-
-beforeEach(function (): void {
-    /* @var \Modules\Rating\Tests\TestCase $this */
-    skip('Rating HTTP API routes are not registered in this install (Folio/Actions architecture).');
-});
 
 describe('Rating Api', function (): void {
+    beforeEach(function (): void {
+        /* @var TestCase $this */
+        $this->skipTest('Le rotte HTTP /api/ratings non sono registrate in questa install (architettura Folio/Actions).');
+    });
+
     test('can list ratings', function (): void {
-        /* @var \Modules\Rating\Tests\TestCase $this */
         Rating::create([
             'name' => 'Test Rating 1',
         ]);
@@ -96,7 +91,7 @@ describe('Rating Api', function (): void {
 
         Assert::assertSame(204, $response->status());
         /* @var TestCase $this */
-        $this->assertDatabaseMissingRow('ratings', ['id' => $rating->id]);
+        $this->assertDatabaseMissing('ratings', ['id' => $rating->id]);
     });
 
     test('can rate model', function (): void {
