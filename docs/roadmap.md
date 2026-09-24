@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Product Roadmap - Rating Module"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./root-file-policy.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Product Roadmap - Rating Module
 
 ## 🎯 Vision & Strategy

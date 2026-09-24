@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Module - Product Launch Plan"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./PRODUCT_ROADMAP.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Module - Product Launch Plan
 
 **Module:** Rating  

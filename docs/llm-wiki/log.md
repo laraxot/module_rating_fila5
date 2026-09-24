@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Activity Log"
 type: guide
@@ -7,6 +8,8 @@ updated: 2026-07-14
 qmd: "log"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Activity Log
 
 > **Module**: Rating
@@ -17,6 +20,7 @@ qmd: "log"
 
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -42,6 +46,9 @@ qmd: "log"
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- Created: AGENTS.md (agent instructions)
+>>>>>>> e8cf105 (Check & fix styling)
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:

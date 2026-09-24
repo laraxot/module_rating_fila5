@@ -140,6 +140,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /** @var HasMany<MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
 =======
         /** @var HasMany<Rating, RatingsHostStub>&Mockery\MockInterface $hasMany */
@@ -147,6 +148,9 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
 =======
         /** @var HasMany<MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
 >>>>>>> laraxot/dev
+=======
+        /** @var HasMany<MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
+>>>>>>> e8cf105 (Check & fix styling)
         $hasMany = \Mockery::mock(HasMany::class);
         $hasMany->shouldReceive('selectRaw')->once()->andReturnSelf();
         $hasMany->shouldReceive('leftJoin')

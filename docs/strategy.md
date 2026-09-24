@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Product Strategy: Rating Module"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./troubleshooting.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Product Strategy: Rating Module
 
 ## 🌍 Market Context

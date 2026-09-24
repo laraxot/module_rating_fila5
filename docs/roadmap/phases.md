@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Fasi di Sviluppo del Modulo Rating"
 type: guide
@@ -7,6 +8,8 @@ updated: 2026-07-14
 qmd: "phases"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Fasi di Sviluppo del Modulo Rating
 
 ## Fase 1 · Stabilizzazione della base tecnica
@@ -14,7 +17,11 @@ qmd: "phases"
 ### Obiettivi
 
 - Portare il modulo a **PHPStan Level 10** senza errori.
+<<<<<<< HEAD
 - Allineare tutte le dipendenze e il codice a **Laravel 13** e **Filament v5**.
+=======
+- Allineare tutte le dipendenze e il codice a **Laravel 12** e **Filament v5**.
+>>>>>>> e8cf105 (Check & fix styling)
 - Garantire che il modulo sia **sicuro da riutilizzare** in altri progetti Laraxot senza regressioni.
 
 ### Attività

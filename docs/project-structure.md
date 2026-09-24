@@ -21,6 +21,7 @@ tags: [structure, architecture, module]
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
@@ -52,6 +53,8 @@ tags: [structure, architecture, module]
 =======
 >>>>>>> laraxot/dev
 =======
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -63,6 +66,7 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,12 +76,15 @@ tags: [structure, architecture, module]
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -116,6 +123,21 @@ tags: [structure, architecture, module]
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
+=======
+├── architecture.md               # (opzionale) Architettura modulo
+└── README.md                     # (opzionale) Overview modulo
+\`\`\`
+
+> Nota (verificata 2026-09-22 via `ls`/`git ls-tree` sul filesystem reale, non per ipotesi):
+> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella — non
+> esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
+> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso — vedi
+> `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
+> tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
+> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`) — vedi
+> `case-sensitivity-rules.md`.
+
+>>>>>>> e8cf105 (Check & fix styling)
 ## File Chiave
 
 | File | Purpose |
@@ -185,6 +207,7 @@ mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,t
 
 # 2. Crea INDEX files (già creati)
 <<<<<<< HEAD
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
 =======
 <<<<<<< HEAD
@@ -204,6 +227,9 @@ cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> e8cf105 (Check & fix styling)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)
@@ -216,6 +242,7 @@ git commit -m "docs: add wiki structure for Rating"
 
 ---
 *Pattern: On-Demand | Source: docs/wiki/*
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -354,3 +381,5 @@ git commit -m "docs: add wiki structure for Rating"
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)

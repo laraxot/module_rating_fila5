@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Conflict Resolution — Module Rating"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./contracts-naming.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Conflict Resolution — Module Rating
 
 ## Summary

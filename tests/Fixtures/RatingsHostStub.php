@@ -6,12 +6,15 @@ namespace Modules\Rating\Tests\Fixtures;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 =======
 >>>>>>> fd7a600 (.)
 =======
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -23,6 +26,7 @@ use Modules\Rating\Models\Rating;
 /**
  * Host di test (richiesto da XotBaseModel::getClassName()).
  * Caricato solo dai Unit test via require_once.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -38,12 +42,15 @@ use Modules\Rating\Models\Rating;
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
  */
 class RatingsHostStub extends AbstractRatingsHost
 {
     protected $table = 'ratings_host_stub';
 
     /** @var list<string> */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -60,14 +67,20 @@ class RatingsHostStub extends AbstractRatingsHost
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+    protected $fillable = ['title', 'ratings_avg', 'ratings_count', 'post_type'];
+>>>>>>> e8cf105 (Check & fix styling)
 
     /** @var MorphToMany<Rating, $this, MorphPivot, 'pivot'>|null */
     public ?MorphToMany $forcedMorph = null;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
     /**
      * Relazione forzata dai test: `ratingMorphs()` la legge come
      * `HasMany<MorphPivot, ...>`, `hasMany(Rating::class)`/`ratingObjectives()`
@@ -76,11 +89,14 @@ class RatingsHostStub extends AbstractRatingsHost
      * @var HasMany<MorphPivot, static>|HasMany<Rating, static>|null
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     /** @var HasMany<Rating, $this>|null */
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
     public ?HasMany $forcedHasMany = null;
 
     /**
@@ -143,8 +159,11 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
      * Evita Rating::getClassName()/guessMorphPivot nei unit (backtrace fragile).
      *
      * @return HasMany<MorphPivot, static>
@@ -162,8 +181,11 @@ class RatingsHostStub extends AbstractRatingsHost
     }
 
     /**
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> e8cf105 (Check & fix styling)
      * @template TRelatedModel of Model
      *
      * @param class-string<TRelatedModel> $related

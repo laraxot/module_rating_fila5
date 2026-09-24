@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Module - User Research"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./agent-confidence-discipline.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Module - User Research
 
 **Module:** Rating  

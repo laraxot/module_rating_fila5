@@ -19,6 +19,7 @@ related:
 
 \`\`\`diff
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -33,6 +34,9 @@ related:
 =======
 - 150+ rules embeddate in AGENTS.md
 >>>>>>> laraxot/dev
+=======
+- 150+ rules embeddate in AGENTS.md
+>>>>>>> e8cf105 (Check & fix styling)
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -58,14 +62,26 @@ related:
 ### 4. Wiki Indici Locali
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 =======
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 >>>>>>> laraxot/dev
+=======
+Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
+>>>>>>> e8cf105 (Check & fix styling)
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
 
+<<<<<<< HEAD
+=======
+> Nota: `agents.md`/`AGENTS.md` e `index.md`/`INDEX.md` esistono tuttora come varianti
+> case-duplicate non deduplicate in questo modulo — qui si usa la forma maiuscola per
+> coerenza con `ON-DEMAND-PATTERN.md`/`QMD-SETUP.md` citati più sotto; vedi
+> `case-sensitivity-rules.md`.
+
+>>>>>>> e8cf105 (Check & fix styling)
 ## Metriche Attuali
 
 | Metric | Before | After |
@@ -132,6 +148,7 @@ context-mode ctx-stats
 ## Riferimenti
 
 - [Global Performance Guide](../../docs/wiki/concepts/performance-optimization.md)
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
 - [QMD Setup](./qmd-setup.md)
@@ -281,6 +298,10 @@ context-mode ctx-stats
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
+- [QMD Setup](./QMD-SETUP.md)
+>>>>>>> e8cf105 (Check & fix styling)
 
 ---
 *Status: Ottimizzato | Token risparmiati: ~48K per session*

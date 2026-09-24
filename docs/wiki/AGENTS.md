@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating {{TYPE^}} LLM Wiki Agent Instructions"
 type: guide
@@ -330,6 +331,8 @@ Related:
 
 ## Contenuto assorbito da `agents.md`
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

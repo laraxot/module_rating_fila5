@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
@@ -86,3 +87,18 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+# Documentation Index
+
+Modulo: Rating
+
+## File disponibili
+
+<!-- auto-generato: elencare i file .md presenti -->
+
+---
+
+## ⚠️ Architectural Rules
+
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+>>>>>>> e8cf105 (Check & fix styling)
