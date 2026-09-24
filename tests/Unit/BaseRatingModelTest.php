@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+use Cknow\Money\Money;
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
-use Cknow\Money\Money;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
@@ -104,7 +104,7 @@ describe('BaseRating (via Rating)', function (): void {
             'title' => 'Punteggio',
             'txt' => 'Voto',
         ]);
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['value' => 42]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -116,7 +116,7 @@ describe('BaseRating (via Rating)', function (): void {
         $rating = new Rating([
             'txt' => 'Importo mensile',
         ]);
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['value' => 12.5]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -129,7 +129,7 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('getNoteHtml restituisce note pivot quando ci sono figli caricati', function (): void {
         $rating = new Rating(['txt' => 'Criterio']);
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['value' => 1, 'note' => 'scelta utente']);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect([new Rating(['title' => 'Figlio'])]));
