@@ -15,7 +15,8 @@ updated: 2026-05-12
 ```
 laravel/Modules/Rating/docs/wiki/
 ├── index.md                         # ≤30 righe
-├── rules/INDEX.md                   # ≤20 righe
+├── rules/index.md                   # ≤20 righe
+├── rules/INDEX.md                   # ≤20 righe (case-duplicate di index.md)
 └── concepts/
     └── filament-resource-zen-pattern.md  # ≤200 righe
 ```

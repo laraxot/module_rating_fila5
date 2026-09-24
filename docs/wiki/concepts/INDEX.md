@@ -3,8 +3,13 @@ title: "concepts index — Rating"
 type: index
 tags: [concepts, Rating]
 created: 2026-05-11
-updated: 2026-05-11
+updated: 2026-08-24
 ---
+
+# Concepts — Rating
+
+- [schemaless-attributes-casts.md](schemaless-attributes-casts.md) — nota casts `extra_attributes` (SchemalessAttributes) su Rating
+
 
 # concepts Index — Rating
 

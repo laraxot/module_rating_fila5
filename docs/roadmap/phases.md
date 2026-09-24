@@ -1,3 +1,12 @@
+---
+title: "Fasi di Sviluppo del Modulo Rating"
+type: guide
+tags: [phases, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phases"
+---
+
 # Fasi di Sviluppo del Modulo Rating
 
 ## Fase 1 · Stabilizzazione della base tecnica
@@ -5,7 +14,7 @@
 ### Obiettivi
 
 - Portare il modulo a **PHPStan Level 10** senza errori.
-- Allineare tutte le dipendenze e il codice a **Laravel 12** e **Filament v5**.
+- Allineare tutte le dipendenze e il codice a **Laravel 13** e **Filament v5**.
 - Garantire che il modulo sia **sicuro da riutilizzare** in altri progetti Laraxot senza regressioni.
 
 ### Attività

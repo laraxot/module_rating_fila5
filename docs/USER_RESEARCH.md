@@ -1,3 +1,14 @@
+---
+title: "Rating Module - User Research"
+type: guide
+tags: [user, research, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "USER RESEARCH"
+related:
+  - "./agent-confidence-discipline.md"
+---
+
 # Rating Module - User Research
 
 **Module:** Rating  
