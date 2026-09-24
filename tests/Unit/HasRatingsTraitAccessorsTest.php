@@ -138,7 +138,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
     test('ratingObjectives costruisce hasMany con aggregati', function (): void {
         Auth::shouldReceive('id')->andReturn(7);
 
+<<<<<<< HEAD
         /** @var HasMany<\Illuminate\Database\Eloquent\Relations\MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
+=======
+        /** @var HasMany<Rating, RatingsHostStub>&Mockery\MockInterface $hasMany */
+>>>>>>> laraxot/dev
         $hasMany = \Mockery::mock(HasMany::class);
         $hasMany->shouldReceive('selectRaw')->once()->andReturnSelf();
         $hasMany->shouldReceive('leftJoin')
