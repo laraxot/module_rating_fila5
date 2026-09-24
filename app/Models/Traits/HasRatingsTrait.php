@@ -30,7 +30,6 @@ use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use RuntimeException;
 use Webmozart\Assert\Assert;
 
 /**
@@ -119,11 +118,11 @@ trait HasRatingsTrait
         $pivots = $this->ratingMorphs;
 
         /** @var EloquentCollection<int|string, BaseRating> $result */
-        $result = new EloquentCollection;
+        $result = new EloquentCollection();
 
         foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
             /** @var MorphPivot $pivot */
-            $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null) ?? $group->first();
+            $pivot = $group->first(static fn (MorphPivot $p): bool => null !== $p->getAttribute('value')) ?? $group->first();
 
             $rating = $ratings->get($ratingId);
             if (! $rating instanceof BaseRating) {
@@ -133,11 +132,11 @@ trait HasRatingsTrait
                 try {
                     /** @var class-string<BaseRating> $related */
                     $related = Rating::getClassName();
-                } catch (RuntimeException) {
+                } catch (\RuntimeException) {
                     $related = Rating::class;
                 }
                 Assert::implementsInterface($related, RatingContract::class);
-                $rating = new $related;
+                $rating = new $related();
                 $rating->setRawAttributes(['id' => $ratingId]);
             }
 
@@ -279,7 +278,7 @@ trait HasRatingsTrait
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-        if ($ratingIds !== []) {
+        if ([] !== $ratingIds) {
             // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
             // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
@@ -350,7 +349,7 @@ trait HasRatingsTrait
      */
     private static function selectIsOther(mixed $selectValue): bool
     {
-        return $selectValue === self::OTHER_OPTION_KEY;
+        return self::OTHER_OPTION_KEY === $selectValue;
     }
 
     /**
@@ -368,7 +367,7 @@ trait HasRatingsTrait
     {
         return ($ratings ?? $this->ratings)
             ->unique('id')
-            ->reject(static fn (RatingContract $row): bool => $row->parent_id !== null);
+            ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
     }
 
     /**
@@ -400,7 +399,7 @@ trait HasRatingsTrait
             $value = $rating->pivot->value;
             $note = $rating->pivot->note;
 
-            if ($value === null && filled($note)) {
+            if (null === $value && filled($note)) {
                 $value = self::OTHER_OPTION_KEY;
             }
 
@@ -432,7 +431,7 @@ trait HasRatingsTrait
      */
     public function syncRatingsFormData(array $ratingsData): void
     {
-        if ($this->getKey() === null) {
+        if (null === $this->getKey()) {
             throw new \LogicException('syncRatingsFormData richiede un model_id persistito.');
         }
 
@@ -440,7 +439,7 @@ trait HasRatingsTrait
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
-            $value = ($value === self::OTHER_OPTION_KEY || $value === null)
+            $value = (self::OTHER_OPTION_KEY === $value || null === $value)
                 ? null
                 : (is_numeric($value) ? $value : null);
 
@@ -450,7 +449,7 @@ trait HasRatingsTrait
             ];
             if (array_key_exists('note', $pivot)) {
                 $note = $pivot['note'];
-                $payload['note'] = is_string($note) || $note === null ? $note : null;
+                $payload['note'] = is_string($note) || null === $note ? $note : null;
             }
 
             $updated = $this->ratingMorphs()
@@ -458,7 +457,7 @@ trait HasRatingsTrait
                 ->update($payload);
 
             // Nessuna riga per questo host+rating: crea UNA sola pivot con morph corrente.
-            if ($updated === 0) {
+            if (0 === $updated) {
                 $this->ratings()->attach($id, $payload);
             }
         }
@@ -474,7 +473,7 @@ trait HasRatingsTrait
      */
     public function clearEvaluation(): void
     {
-        if ($this->getKey() === null) {
+        if (null === $this->getKey()) {
             throw new \LogicException('clearEvaluation richiede un model_id persistito.');
         }
 
@@ -542,7 +541,7 @@ trait HasRatingsTrait
     ): Component {
         $field = RatingData::ratingFieldName($rating);
 
-        if ($rating->is_readonly === true) {
+        if (true === $rating->is_readonly) {
             return TextEntry::make($field)->inlineLabel();
         }
 
@@ -566,7 +565,7 @@ trait HasRatingsTrait
         // («ratings.52.pivot.value»). API distinta da label() → non viola D-1 (5.151).
         $humanName = RatingData::formFieldLabel($rating);
 
-        if ($options === []) {
+        if ([] === $options) {
             return TextInput::make($field)
                 ->numeric()
                 ->live(onBlur: true)
