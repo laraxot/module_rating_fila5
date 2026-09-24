@@ -44,8 +44,7 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
-    ) {
-    }
+    ) {}
 
     /**
      * Costruisce il DTO da un payload di form.
@@ -53,7 +52,7 @@ class RatingData extends Data
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
      *
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
     {
@@ -64,9 +63,9 @@ class RatingData extends Data
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
      */
-    public static function ratingValuePath(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
+    public static function ratingValuePath(RatingContract $rating, string $field = 'value'): string
     {
-        return 'ratings_by_id.'.$rating->id.'.pivot.'.$pivotColumn;
+        return 'ratings_by_id.'.$rating->id.'.pivot.'.$field;
     }
 
     /**
@@ -75,7 +74,7 @@ class RatingData extends Data
      *
      * @see BaseRating::getXlsExportValueAttribute()
      */
-    public static function ratingXlsValuePath(RatingContract|BaseRating $rating): string
+    public static function ratingXlsValuePath(RatingContract $rating): string
     {
         return 'ratings_by_id.'.$rating->id.'.xls_export_value';
     }
@@ -88,7 +87,7 @@ class RatingData extends Data
      * per compatibilita: ogni chiamata esistente continua a puntare li; `'note'` e' la
      * sola altra colonna pivot generata oggi (vedi `buildRatingComponent()` nel trait).
      */
-    public static function ratingFieldName(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
+    public static function ratingFieldName(RatingContract $rating, string $pivotColumn = 'value'): string
     {
         return 'ratings.'.$rating->id.'.pivot.'.$pivotColumn;
     }
@@ -116,10 +115,9 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param array<string, mixed>     $where
-     * @param class-string<BaseRating> $ratingClass
-     *
-     * @return array<int|string, string>
+     * @param  array<string, mixed>  $where
+     * @param  class-string<BaseRating>  $ratingClass
+     * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
     {
@@ -128,7 +126,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
+            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
         $ratings->loadMissing('children');
 
@@ -136,9 +134,8 @@ class RatingData extends Data
     }
 
     /**
-     * @param Collection<int, RatingContract>|EloquentCollection<int, RatingContract>|iterable<int, RatingContract> $ratings
-     *
-     * @return array<int|string, string>
+     * @param  iterable<int, RatingContract>  $ratings
+     * @return array<string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
     {
@@ -149,12 +146,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if (null !== $rating->parent_id) {
+            if ($rating->parent_id !== null) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ('' === $label) {
+            if ($label === '') {
                 $label = 'Rating '.$rating->id;
             }
 
@@ -167,9 +164,7 @@ class RatingData extends Data
             if ($children->isNotEmpty()) {
                 $fields[self::ratingValuePath($rating, 'note')] = (string) __(
                     'rating::fields.note_for',
-                    [
-                        'label' => $label,
-                    ],
+                    ['label' => $label],
                 );
             }
         }
@@ -184,11 +179,6 @@ class RatingData extends Data
      * si aggiungono solo quelle che mancano. Una lista, due usi: la stessa colonna
      * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
      * `text()` in creazione e `string()` nel guard di update).
-     *
-     * ```php
-     * $this->tableCreate(fn (Blueprint $table) => RatingData::updateColumns($table));
-     * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
-     * ```
      */
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
