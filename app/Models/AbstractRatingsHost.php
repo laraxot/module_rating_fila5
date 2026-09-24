@@ -12,7 +12,7 @@ use Modules\Rating\Models\Traits\HasRatingsTrait;
  * (es. `Ptv\Models\BaseScheda`). Nel perimetro Rating non esiste un modello host reale;
  * questa base astratta documenta il contratto senza mappare una tabella.
  *
- * @property-read EloquentCollection<int|string, BaseRating> $ratings_by_id
+ * @property EloquentCollection<int|string, BaseRating> $ratings_by_id
  */
 abstract class AbstractRatingsHost extends BaseModel
 {
