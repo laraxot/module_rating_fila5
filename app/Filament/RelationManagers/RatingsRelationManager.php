@@ -4,17 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\RelationManagers;
 
-<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
-=======
-use Filament\Actions\BulkActionGroup;
->>>>>>> 2025498 (.)
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-<<<<<<< HEAD
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
@@ -68,41 +63,5 @@ class RatingsRelationManager extends XotBaseRelationManager
         return [
             'delete' => DeleteBulkAction::make(),
         ];
-=======
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-
-class RatingsRelationManager extends RelationManager
-{
-    protected static string $relationship = 'ratings';
-
-    public function table(Table $table): Table
-    {
-        return $table
-            ->recordTitleAttribute('title')
-            ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('title'),
-                TextColumn::make('pivot.user.name'),
-                TextColumn::make('value'),
-                TextColumn::make('is_winner'),
-                TextColumn::make('reward'),
-                TextColumn::make('updated_at'),
-            ])
-            ->filters([])
-            ->headerActions([
-                CreateAction::make(),
-            ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
->>>>>>> 2025498 (.)
     }
 }

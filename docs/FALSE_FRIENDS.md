@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "False Friends – Rating"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./LICENSE.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # False Friends – Rating
 
 | Falso Amico | Perché è fuorviante | Soluzione |
@@ -28,20 +16,4 @@ related:
 | `rating_count` = `reviews_count` | Conta anche rating senza testo | Usa `review_count()` distinto |
 | `avg(rating)` = `popularity` | Ignora il numero di voti | Normalizza per numero voti |
 | 4.5 ⭐ è "ottimo" | Dipende da scala e contesto | Definisci soglie chiare |
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Rating sempre crescente | Non considera il tempo | Usa weighted average |
-=======
-| Rating sempre crescente | Non considera il tempo | Usa weighted average |
->>>>>>> e8cf105 (Check & fix styling)
-=======
-| Rating sempre crescente | Non considera il tempo | Usa weighted average |
->>>>>>> 77b9106 (.)
-=======
-| Rating sempre crescente | Non considera il tempo | Usa weighted average |
->>>>>>> c91c8c3 (.)
-=======
-| Rating sempre crescente | Non considera il tempo | Usa weighted average |
->>>>>>> 2025498 (.)

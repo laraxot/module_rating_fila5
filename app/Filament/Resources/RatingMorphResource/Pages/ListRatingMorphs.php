@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingMorphResource\Pages;
 
 use Filament\Actions\CreateAction;
-<<<<<<< HEAD
-=======
 use Filament\Tables\Columns\TextColumn;
->>>>>>> 2025498 (.)
 use Modules\Rating\Filament\Resources\RatingMorphResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -16,8 +13,6 @@ class ListRatingMorphs extends XotBaseListRecords
 {
     protected static string $resource = RatingMorphResource::class;
 
-<<<<<<< HEAD
-=======
     /**
      * @return array<string, mixed>
      */
@@ -31,10 +26,8 @@ class ListRatingMorphs extends XotBaseListRecords
                 ->sortable()
                 ->searchable(),
             'ratingable_type' => TextColumn::make('ratingable_type')
-                ->label('Type')
                 ->sortable(),
             'ratingable_id' => TextColumn::make('ratingable_id')
-                ->label('ID')
                 ->sortable(),
             'created_at' => TextColumn::make('created_at')
                 ->dateTime()
@@ -45,7 +38,6 @@ class ListRatingMorphs extends XotBaseListRecords
         ];
     }
 
->>>>>>> 2025498 (.)
     protected function getActions(): array
     {
         return [

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Raw Sources — Rating"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "index"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Raw Sources — Rating
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.
@@ -48,47 +36,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Schema di riferimento
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 → `docs/.schema/wiki-schema.md` (root progetto)
-=======
-<<<<<<< HEAD
-→ `docs/.schema/wiki-schema.md` (root progetto)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-→ `docs/.schema/wiki-schema.md` (root progetto)
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> 77b9106 (.)
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> c91c8c3 (.)
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> 2025498 (.)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 
 ---

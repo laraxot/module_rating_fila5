@@ -55,8 +55,6 @@ metodi di istanza host (relazioni, form schema, hydrate/sync) e delega ai
 vocab `RatingData::` — dipendenza a senso unico trait→Data. `Rating::class`
 esplicito resta canon al call-site Resource (story 5.232, subclass IR per
 connection dedicata); `resolveRatingClassFromCaller()` resta fallback.
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 ## Verifica swarm 2026-09-24 (cursor-swarm-rating)
 
@@ -69,7 +67,3 @@ connection dedicata); `resolveRatingClassFromCaller()` resta fallback.
 - `RatingsHostStub` + `AbstractRatingsHost`: `@property-read ratings_by_id`.
 - `tests/AuditCoverage/` assente; già in `.gitignore`.
 - PHPStan `Modules/Rating`: **0 errori**.
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)

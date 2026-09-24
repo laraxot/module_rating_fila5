@@ -13,7 +13,6 @@ use Illuminate\Support\Str;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
-use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -224,7 +223,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     public function getTxtHtml(): string
     {
         $raw = $this->txt;
-        if (! is_string($raw) || '' === $raw) {
+        if (! is_string($raw) || $raw === '') {
             return e((string) ($this->title ?? ''));
         }
 
@@ -246,7 +245,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         }
 
         $value = $this->pivot->value ?? null;
-        if (null === $value || '' === $value) {
+        if ($value === null || $value === '') {
             return null;
         }
 
@@ -276,7 +275,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
             $text = $child->txt ?? $child->title;
 
-            return \is_string($text) && '' !== $text ? strip_tags($text) : '';
+            return \is_string($text) && $text !== '' ? strip_tags($text) : '';
         }
 
         return $this->pivot->value ?? null;

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Bad Practices – Rating"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./BEST_PRACTICES.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Bad Practices – Rating
 
 ## ❌ Calcolare la media in query N+1

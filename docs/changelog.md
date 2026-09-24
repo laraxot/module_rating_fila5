@@ -1,35 +1,17 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
-module: theme
-topic: CHANGELOG
-canonical: ../../../Themes/docs/shared-components/CHANGELOG.md
+title: "Changelog (pointer)"
+type: reference
+tags: [changelog, pointer, rating]
+created: 2026-07-14
+updated: 2026-09-24
+qmd: "rating changelog pointer canonical"
+canonical: ./CHANGELOG.md
+related:
+  - ./CHANGELOG.md
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/CHANGELOG.md
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
-# Changelog
+# Changelog — pointer
 
-All notable changes to `:package_name` will be documented in this file.
+Il changelog canonico del modulo Rating è **[CHANGELOG.md](./CHANGELOG.md)**.
 
-## 1.0.0 - 202X-XX-XX
-
-- initial release
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
+Il vecchio rimando a `../../../Themes/docs/shared-components/CHANGELOG.md` puntava a un file inesistente (verificato 2026-09-24).
