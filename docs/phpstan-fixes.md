@@ -1,3 +1,14 @@
+---
+title: "PHPStan Fixes - Modulo Rating"
+type: guide
+tags: [phpstan, fixes, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan fixes"
+related:
+  - "./ponytail-audit-over-engineering.md"
+---
+
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori
@@ -118,7 +129,7 @@ return $result;
 ---
 
 **Status**: ✅ COMPLETATO  
-**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
+**Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
 
 ---

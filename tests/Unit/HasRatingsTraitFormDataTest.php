@@ -22,7 +22,12 @@ afterEach(function (): void {
 });
 
 /**
+<<<<<<< .merge_file_qaR3g4
  * @param  array<string, int|string|null>  $payload
+=======
+ * @param array<string, int|string|null> $payload
+ *
+>>>>>>> .merge_file_NS7WEq
  * @return HasMany<MorphPivot, RatingsHostStub>&MockInterface
  */
 function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $updated = 1): HasMany
@@ -36,7 +41,11 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
     return $relation;
 }
 
+<<<<<<< .merge_file_qaR3g4
 /**
+=======
+/*
+>>>>>>> .merge_file_NS7WEq
  * Story Rating/5.145 — refactor: fill/save del pivot ratings.{id}.pivot.{value,note}
  * spostato da CompilaIndennitaResponsabilita (duplicato, parziale, con un cast a 0 buggato)
  * a due metodi generici del trait. Risolve anche il blocker IR/5.140 (issue
@@ -47,7 +56,11 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
  */
 describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     test('mappa value e note per ogni riga gia caricata', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->setRelation('ratings', collect([
             (object) ['id' => 1, 'pivot' => (object) ['value' => 5, 'note' => null]],
             (object) ['id' => 2, 'pivot' => (object) ['value' => null, 'note' => null]],
@@ -63,7 +76,11 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('rimappa value null + note valorizzata sulla chiave "other" (altro)', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->setRelation('ratings', collect([
             (object) ['id' => 3, 'pivot' => (object) ['value' => null, 'note' => 'motivo libero']],
         ]));
@@ -76,7 +93,11 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('non rimappa se value e un numero reale, anche zero', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->setRelation('ratings', collect([
             (object) ['id' => 4, 'pivot' => (object) ['value' => 0, 'note' => 'commento']],
         ]));
@@ -91,7 +112,11 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
 
 describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     test('scrive value numerico e note invariata via ratingMorphs', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 1001]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(7, ['value' => 5, 'note' => 'ok'], 1);
@@ -102,7 +127,11 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('normalizza a null la chiave "other" (altro), mai a zero', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 1002]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(8, ['value' => null, 'note' => 'motivo'], 1);
@@ -113,7 +142,11 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('normalizza a null un valore non numerico, mai a zero', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 1003]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(9, ['value' => null], 1);
@@ -124,7 +157,11 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('value null resta null (nessuna scelta), mai a zero', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 1004]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(10, ['value' => null], 1);
@@ -135,7 +172,11 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('se nessuna pivot esiste per questo host, attach una sola volta', function (): void {
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 1005]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(11, ['value' => 3], 0);
@@ -160,7 +201,11 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
             'note' => null,
         ])->andReturn(3);
 
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 9408]);
         $host->exists = true;
         $host->forcedHasMany = $relation;
@@ -176,7 +221,11 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
             'note' => null,
         ])->andReturn(1);
 
+<<<<<<< .merge_file_qaR3g4
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_NS7WEq
         $host->forceFill(['id' => 9409]);
         $host->exists = true;
         $host->forcedHasMany = $relation;
