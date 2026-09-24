@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Architecture"
 type: concept
@@ -15,6 +16,9 @@ related:
 <<<<<<< HEAD
 # Rating Module Architecture
 >>>>>>> laraxot/dev
+=======
+# Rating Module Architecture
+>>>>>>> fd7a600 (.)
 
 Lightweight reference to architecture. See consolidated documentation:
 
@@ -48,10 +52,14 @@ Any module uses Rating via trait:
 
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Rating\Models\Traits\HasRatingsTrait;
 =======
 use Modules\Rating\Traits\HasRatingsTrait;
 >>>>>>> laraxot/dev
+=======
+use Modules\Rating\Traits\HasRatingsTrait;
+>>>>>>> fd7a600 (.)
 
 class Product extends Model {
     use HasRatingsTrait;
@@ -74,8 +82,11 @@ $product->ratedBy($user);   // Check user rated
 - **Migrations** use XotBaseMigration for tenant-awareness
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 =======
+=======
+>>>>>>> fd7a600 (.)
 ## See Also
 
 Full topic-specific guidance in [FAQ](./faq.md).
@@ -93,7 +104,10 @@ related:
 ---
 
 # Rating Architecture
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 
 ## 🏗️ System Design
 
@@ -270,6 +284,7 @@ trait HasRatingsTrait
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #### 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
 
 ##### Purpose
@@ -361,6 +376,9 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 ### 3. **RuleEnum** - Validation Rules Standardization
 >>>>>>> laraxot/dev
+=======
+### 3. **RuleEnum** - Validation Rules Standardization
+>>>>>>> fd7a600 (.)
 ```php
 <?php
 
@@ -568,9 +586,12 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 - **Pest Testing**: 100% coverage per nuove funzionalità
 - **Type Safety**: Strict typing in tutti i metodi
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 
 ### Documentation Standards
 - **PHPDoc Completo**: Ogni metodo e classe documentata
@@ -615,6 +636,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 7. **[API Reference](#api-reference)** - Dettagli metodi
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Vedi anche: [FAQ](./faq.md) per guida per-argomento e [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/) per l'analisi wiki correlata.
 
 ---
@@ -635,13 +657,18 @@ Contenuto di un precedente `ARCHITECTURE.md` di root, assorbito qui durante la r
 
 =======
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 ---
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Ultimo aggiornamento**: 2026-09-22 (merge conflict risolto; contenuto invariato nella sostanza, solo unificato)
 =======
+=======
+>>>>>>> fd7a600 (.)
 **Ultimo aggiornamento**: 2024-02-11
 <<<<<<< HEAD
 
@@ -759,4 +786,7 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)

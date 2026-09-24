@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
@@ -14,12 +15,19 @@ use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Spatie\LaravelData\Data;
 use Webmozart\Assert\Assert;
+=======
+use Illuminate\Database\Schema\Blueprint;
+use Modules\Rating\Enums\SupportedLocale;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Spatie\LaravelData\Data;
+>>>>>>> fd7a600 (.)
 
 /**
  * DTO per un rating.
  *
  * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
  * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
+<<<<<<< HEAD
  * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
  * (path form/export, label, colonne della tabella). Non è un accostamento voluto: è il
  * nome `RatingData` che era già occupato quando è servito il secondo concetto.
@@ -33,6 +41,15 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
+=======
+ * usate da `RatingBlockTest`; i metodi statici in fondo descrivono invece le **colonne**
+ * della tabella `ratings`. Non è un accostamento voluto: è il nome `RatingData` che era
+ * già occupato quando è servito il secondo concetto.
+ *
+ * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità',
+ * come `SchedaData` sta a `schede` — è tracciata come lavoro a se': tocca il blocco, il
+ * test e ogni chiamante, e non si fa di passaggio.
+>>>>>>> fd7a600 (.)
  */
 class RatingData extends Data
 {
@@ -50,8 +67,13 @@ class RatingData extends Data
     /**
      * Costruisce il DTO da un payload di form.
      *
+<<<<<<< HEAD
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
+=======
+     * Delega al casting automatico di Spatie LaravelData (max DRY — no controller
+     * manuale di tipo, PHPStan verifica i rami tramite tipi di proprietà).
+>>>>>>> fd7a600 (.)
      *
      * @param array<string, mixed> $data
      */
@@ -61,6 +83,7 @@ class RatingData extends Data
     }
 
     /**
+<<<<<<< HEAD
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
      */
@@ -187,6 +210,18 @@ class RatingData extends Data
      *
      * ```php
      * $this->tableCreate(fn (Blueprint $table) => RatingData::updateColumns($table));
+=======
+     * Le colonne di `ratings`, dichiarate una volta sola.
+     *
+     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
+     * si aggiungono solo quelle che mancano. Una lista, due usi — l'idea presa da
+     * `NestedSet::columns()`: quello che costa non sono le righe, è avere la stessa
+     * colonna dichiarata in due posti che prima o poi non concordano. Qui era già
+     * successo: `txt` era `text()` in creazione e `string()` nel guard di update.
+     *
+     * ```php
+     * $this->tableCreate(fn (Blueprint $table) => RatingData::columns($table));
+>>>>>>> fd7a600 (.)
      * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
      * ```
      */

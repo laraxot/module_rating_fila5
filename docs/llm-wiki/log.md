@@ -18,14 +18,20 @@ qmd: "log"
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Created: AGENTS.md (agent instructions)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> fd7a600 (.)
 - Created: agents.md (agent instructions)
 =======
 - Created: AGENTS.md (agent instructions)
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:

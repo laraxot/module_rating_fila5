@@ -76,14 +76,20 @@ Ridurre rumore, duplicazione e ambiguita' nel codice di questo module, senza per
 
 - Markdown locale + Git restano la base piu' portabile: gli agenti leggono/scrivono file senza database esterni.
 <<<<<<< HEAD
+<<<<<<< HEAD
 - AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> fd7a600 (.)
 - agents.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
 =======
 - AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 - I descrittori architetturali navigabili riducono i passi di localizzazione: ogni owner dovrebbe avere mappa scopo -> file chiave.
 - AI utile = recupero mirato, non pre-caricamento: report atomici, QMD, issue e log.
 

@@ -140,9 +140,14 @@ Related:
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Project Wiki Agent Instructions](../../docs/wiki/agents.md)
 =======
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 - [Module Documentation](../README.md)
