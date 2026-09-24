@@ -4,16 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
@@ -41,9 +32,6 @@ return new class extends XotBaseMigration {
         // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table): void {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 RatingData::updateColumns($table, $this);
 
                 // `updateTimestamps()` resta qui e non dentro RatingData: in questa
@@ -51,49 +39,6 @@ return new class extends XotBaseMigration {
                 // questa riga a crearli su un'installazione nuova. Le migrazioni degli
                 // altri moduli li dichiarano in creazione e non ne hanno bisogno —
                 // e' il motivo per cui l'helper condiviso non li impone a tutti.
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-                if (! $this->hasColumn('title')) {
-                    $table->string('title')->nullable();
-                }
-                if (! $this->hasColumn('slug')) {
-                    $table->string('slug')->nullable()->index();
-                }
-                if (! $this->hasColumn('color')) {
-                    $table->string('color')->nullable();
-                }
-                if (! $this->hasColumn('icon')) {
-                    $table->string('icon')->nullable();
-                }
-                if (! $this->hasColumn('rule')) {
-                    $table->string('rule')->nullable();
-                }
-                if (! $this->hasColumn('txt')) {
-                    $table->string('txt')->nullable();
-                }
-                // @see Modules/Rating/docs/schemaless-attributes-errors.md
-                if (! $this->hasColumn('extra_attributes')) {
-                    $table->schemalessAttributes('extra_attributes');
-                }
-                if (! $this->hasColumn('is_disabled')) {
-                    $table->boolean('is_disabled')->nullable();
-                }
-                if (! $this->hasColumn('is_readonly')) {
-                    $table->boolean('is_readonly')->nullable();
-                }
-                if (! $this->hasColumn('order_column')) {
-                    $table->unsignedInteger('order_column')->nullable()->index();
-                }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: false);
             }
         );

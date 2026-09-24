@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 return [
     'fields' => [
         'extra_attributes' => [
-<<<<<<< HEAD
             'type' => ['label' => 'extra_attributes.type', 'placeholder' => 'extra_attributes.type', 'helper_text' => 'extra_attributes.type', 'description' => 'extra_attributes.type'],
             'anno' => ['label' => 'extra_attributes.anno', 'placeholder' => 'extra_attributes.anno', 'helper_text' => 'extra_attributes.anno', 'description' => 'extra_attributes.anno'],
         ],
@@ -21,81 +18,5 @@ return [
     ],
     'sections' => [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
-=======
-=======
-// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// Canon: Modules/Rating/docs/wiki — domain i18n only.
-// File: lang/it/rating_form.php
-return [
-    'fields' => [
-        'extra_attributes' => [
->>>>>>> 77b9106 (.)
-=======
-return [
-    'fields' => [
-        'extra_attributes' => [
->>>>>>> c91c8c3 (.)
-            'type' => [
-                'label' => 'extra_attributes.type',
-                'placeholder' => 'extra_attributes.type',
-                'helper_text' => 'extra_attributes.type',
-                'description' => 'extra_attributes.type',
-            ],
-            'anno' => [
-                'label' => 'extra_attributes.anno',
-                'placeholder' => 'extra_attributes.anno',
-                'helper_text' => 'extra_attributes.anno',
-                'description' => 'extra_attributes.anno',
-            ],
-        ],
-        'title' => [
-            'label' => 'title',
-            'placeholder' => 'title',
-            'helper_text' => 'title',
-            'description' => 'title',
-        ],
-        'color' => [
-            'label' => 'color',
-            'placeholder' => 'color',
-            'helper_text' => 'color',
-            'description' => 'color',
-        ],
-        'rule' => [
-            'label' => 'rule',
-            'placeholder' => 'rule',
-            'helper_text' => 'rule',
-            'description' => 'rule',
-        ],
-        'is_disabled' => [
-            'label' => 'is_disabled',
-            'placeholder' => 'is_disabled',
-            'helper_text' => 'is_disabled',
-            'description' => 'is_disabled',
-        ],
-        'is_readonly' => [
-            'label' => 'is_readonly',
-            'placeholder' => 'is_readonly',
-            'helper_text' => 'is_readonly',
-            'description' => 'is_readonly',
-        ],
-        'txt' => [
-            'label' => 'txt',
-            'placeholder' => 'txt',
-            'helper_text' => 'txt',
-            'description' => 'txt',
-        ],
-    ],
-    'sections' => [
-        'empty' => [
-            'label' => 'empty',
-            'heading' => 'empty',
-        ],
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
     ],
 ];

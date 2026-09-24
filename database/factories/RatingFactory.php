@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Database\Factories;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Rating\Models\Rating;
 
 /**
@@ -19,45 +16,4 @@ class RatingFactory extends BaseRatingFactory
 {
     /** @var class-string<Rating> */
     protected $model = Rating::class;
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Rating\Models\Rating;
-
-/**
- * @extends Factory<Rating>
- */
-class RatingFactory extends Factory
-{
-    /**
-     * The name of the factory's corresponding model.
-     */
-    protected $model = Rating::class;
-
-    /**
-     * Define the model's default state.
-     */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    /**
-     * @return array<string, mixed>
-     */
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-    public function definition(): array
-    {
-        return [];
-    }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
 }

@@ -17,15 +17,7 @@ class GetSumByModelRatingIdAction
     public function execute(HasRatingContract $model, ?string $rating_id = null): float
     {
         $opts = $model->ratings()
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->wherePivot('user_id', '!=', null);
-=======
-            ->wherePivotNotNull('user_id');
->>>>>>> 77b9106 (.)
-=======
-            ->wherePivot('user_id', '!=', null);
->>>>>>> c91c8c3 (.)
         if (null !== $rating_id) {
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
