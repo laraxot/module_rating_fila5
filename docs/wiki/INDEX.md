@@ -54,6 +54,9 @@ Indice operativo del wiki Rating.
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 - [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
 =======
@@ -61,11 +64,14 @@ Indice operativo del wiki Rating.
 - [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 - [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 ## Scopo Rating Module
 

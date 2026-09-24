@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Rating Architecture"
 type: concept
@@ -16,9 +19,12 @@ related:
 <<<<<<< HEAD
 # Rating Module Architecture
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 # Rating Module Architecture
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 Lightweight reference to architecture. See consolidated documentation:
 
@@ -53,13 +59,19 @@ Any module uses Rating via trait:
 ```php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\Traits\HasRatingsTrait;
 =======
 use Modules\Rating\Traits\HasRatingsTrait;
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 use Modules\Rating\Traits\HasRatingsTrait;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 class Product extends Model {
     use HasRatingsTrait;
@@ -83,10 +95,15 @@ $product->ratedBy($user);   // Check user rated
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 =======
 =======
 >>>>>>> fd7a600 (.)
+=======
+---
+=======
+>>>>>>> laraxot/dev
 ## See Also
 
 Full topic-specific guidance in [FAQ](./faq.md).
@@ -105,9 +122,13 @@ related:
 
 # Rating Architecture
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ## 🏗️ System Design
 
@@ -285,6 +306,9 @@ trait HasRatingsTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 #### 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
 
 ##### Purpose
@@ -376,9 +400,12 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 ### 3. **RuleEnum** - Validation Rules Standardization
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 ### 3. **RuleEnum** - Validation Rules Standardization
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 ```php
 <?php
 
@@ -587,11 +614,17 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 - **Type Safety**: Strict typing in tutti i metodi
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
 =======
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+- **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ### Documentation Standards
 - **PHPDoc Completo**: Ogni metodo e classe documentata
@@ -637,6 +670,9 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 Vedi anche: [FAQ](./faq.md) per guida per-argomento e [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/) per l'analisi wiki correlata.
 
 ---
@@ -657,18 +693,26 @@ Contenuto di un precedente `ARCHITECTURE.md` di root, assorbito qui durante la r
 
 =======
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Ultimo aggiornamento**: 2026-09-22 (merge conflict risolto; contenuto invariato nella sostanza, solo unificato)
 =======
 =======
 >>>>>>> fd7a600 (.)
+=======
+**Ultimo aggiornamento**: 2026-09-22 (merge conflict risolto; contenuto invariato nella sostanza, solo unificato)
+=======
+>>>>>>> laraxot/dev
 **Ultimo aggiornamento**: 2024-02-11
 <<<<<<< HEAD
 
@@ -787,6 +831,10 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

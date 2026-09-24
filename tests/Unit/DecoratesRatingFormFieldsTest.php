@@ -8,7 +8,11 @@ use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
+<<<<<<< HEAD
 use Modules\Rating\Contracts\RatingContract;
+=======
+use Modules\Rating\Models\Contracts\RatingContract;
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;

@@ -69,15 +69,21 @@ qmd search "form" -c rating  # Solo questo modulo
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
 =======
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 ---
 *Cache: ~/.cache/qmd-cache/ | Index: ~/.cache/qmd-cache/index*

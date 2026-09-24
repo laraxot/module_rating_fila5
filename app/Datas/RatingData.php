@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Modules\Rating\Datas;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
@@ -15,12 +18,15 @@ use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Spatie\LaravelData\Data;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 =======
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Spatie\LaravelData\Data;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 /**
  * DTO per un rating.
@@ -41,6 +47,7 @@ use Spatie\LaravelData\Data;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
+<<<<<<< HEAD
 =======
  * usate da `RatingBlockTest`; i metodi statici in fondo descrivono invece le **colonne**
  * della tabella `ratings`. Non è un accostamento voluto: è il nome `RatingData` che era
@@ -50,6 +57,8 @@ use Spatie\LaravelData\Data;
  * come `SchedaData` sta a `schede` — è tracciata come lavoro a se': tocca il blocco, il
  * test e ogni chiamante, e non si fa di passaggio.
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
  */
 class RatingData extends Data
 {
@@ -84,6 +93,9 @@ class RatingData extends Data
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
      */
@@ -210,6 +222,7 @@ class RatingData extends Data
      *
      * ```php
      * $this->tableCreate(fn (Blueprint $table) => RatingData::updateColumns($table));
+<<<<<<< HEAD
 =======
      * Le colonne di `ratings`, dichiarate una volta sola.
      *
@@ -222,6 +235,8 @@ class RatingData extends Data
      * ```php
      * $this->tableCreate(fn (Blueprint $table) => RatingData::columns($table));
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
      * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
      * ```
      */

@@ -11,15 +11,21 @@ related:
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
   - "./00-index.md"
 =======
   - "./00-INDEX.md"
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
   - "./00-INDEX.md"
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 
 # User Research: Rating Module
