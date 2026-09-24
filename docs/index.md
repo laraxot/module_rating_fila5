@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Module — Documentation Index"
 type: guide
@@ -36,6 +37,8 @@ Molti `.md` sotto `docs/` (fuori `bmad/`) contengono ancora **marker di merge no
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Rating Module
 
 Sistema di valutazione e rating per la piattaforma con supporto per diverse entità e filtraggio avanzato.
@@ -233,6 +236,9 @@ Vedi anche:
 **Translation**: IT/EN ✅  
 **Last Updated**: 2026-05-13
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return [
     'resource' => [
 <<<<<<< HEAD
@@ -38,6 +39,10 @@ return [
     // Laraxot module file — see docs/wiki for domain contract.
     'resource' => [
 >>>>>>> 77b9106 (.)
+=======
+return [
+    'resource' => [
+>>>>>>> c91c8c3 (.)
         'name' => [
             'label' => 'Rating',
         ],
@@ -54,14 +59,18 @@ return [
                 'label' => 'Admin',
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         ],
         'sort' => 33,
         'label' => 'Rating',
     ],
     'fields' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         'brand' => ['label' => 'Marca'],
@@ -162,6 +171,8 @@ return [
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
         'brand' => [
             'label' => 'Marca',
         ],
@@ -409,9 +420,12 @@ return [
             'label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti',
         ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     ],
     'label' => 'rating',
 ];

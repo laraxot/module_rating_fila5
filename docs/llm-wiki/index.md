@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Module Wiki Index"
 type: guide
@@ -13,6 +14,8 @@ qmd: "index"
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Rating Module Wiki Index
 
 > **Module**: Rating
@@ -59,6 +62,7 @@ _No troubleshooting pages created yet_
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Laraxot Architecture
 - Actions Over Services
 - PHPStan Level 10
@@ -72,6 +76,11 @@ _No troubleshooting pages created yet_
 - [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
 - [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
 >>>>>>> 77b9106 (.)
+=======
+- [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
+- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
+- [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
+>>>>>>> c91c8c3 (.)
 
 ## Module's Role in Project
 

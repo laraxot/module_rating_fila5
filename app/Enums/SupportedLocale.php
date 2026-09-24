@@ -26,6 +26,7 @@ enum SupportedLocale: string
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     /** @return array<int|string, string> */
     public static function toArray(): array
@@ -42,4 +43,6 @@ enum SupportedLocale: string
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 }

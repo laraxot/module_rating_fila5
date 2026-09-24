@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Case Sensitivity Rules - Rating Module"
 type: rule
@@ -15,6 +16,8 @@ related:
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Case Sensitivity Rules - Rating Module
 
 ## Problema / Problem

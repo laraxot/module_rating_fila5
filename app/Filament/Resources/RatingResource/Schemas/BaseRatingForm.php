@@ -9,15 +9,19 @@ use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Forms\Components\Select;
 =======
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
@@ -30,6 +34,9 @@ use Modules\Rating\Enums\RuleEnum;
 =======
 use Modules\Rating\Enums\RuleEnum;
 >>>>>>> 77b9106 (.)
+=======
+use Modules\Rating\Enums\RuleEnum;
+>>>>>>> c91c8c3 (.)
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 /**
@@ -43,6 +50,7 @@ abstract class BaseRatingForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function getFormSchema(): array
@@ -81,6 +89,8 @@ abstract class BaseRatingForm extends XotBaseResourceForm
 =======
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
     public static function getFormSchema(): array
     {
         return [
@@ -90,9 +100,12 @@ abstract class BaseRatingForm extends XotBaseResourceForm
             'color' => ColorPicker::make('color'),
             'rule' => Radio::make('rule')->options(RuleEnum::class),
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
             'flags' => Section::make()
                 ->schema([
                     Toggle::make('is_disabled'),

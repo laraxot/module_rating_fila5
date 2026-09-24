@@ -7,6 +7,7 @@ canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ---
 
@@ -575,3 +576,5 @@ $this->post('/ratings', ['category' => 'technical'])
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)

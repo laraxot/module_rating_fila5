@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Module - Sprint Planning"
 type: guide
@@ -15,6 +16,8 @@ related:
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # Rating Module - Sprint Planning
 
 **Module:** Rating  

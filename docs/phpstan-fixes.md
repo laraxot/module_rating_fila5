@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "PHPStan Fixes - Modulo Rating"
 type: guide
@@ -15,6 +16,8 @@ related:
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+>>>>>>> c91c8c3 (.)
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori
@@ -137,6 +140,7 @@ return $result;
 **Status**: ✅ COMPLETATO  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
 =======
 **Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
@@ -170,3 +174,7 @@ eseguendo l'analisi sull'intero albero `Modules/`.
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
+=======
+**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
+**Errori Totali**: 0 ✅
+>>>>>>> c91c8c3 (.)
