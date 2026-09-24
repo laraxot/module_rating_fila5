@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
 
 **Powered by**: Super Mucca AI 🐄✨  
@@ -536,3 +537,12 @@ public function getTableFilters(): array
 4. Implementazione ColumnBuilder
 
 **Domande?** Chiedi alla Super Mucca! 🐄⚡
+=======
+---
+module: theme
+topic: metodi-duplicati-analisi
+canonical: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
+>>>>>>> e8cf105 (Check & fix styling)

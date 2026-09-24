@@ -43,4 +43,8 @@ trait DecoratesRatingFormFields
 
         return $component;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e8cf105 (Check & fix styling)

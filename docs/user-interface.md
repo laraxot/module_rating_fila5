@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "User Interface"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./user-research.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 ## User Interface - Modulo Rating
 
 - Le risorse Filament espongono le traduzioni da `rating::` secondo la struttura espansa.

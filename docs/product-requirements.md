@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Product Requirements Document (PRD)"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./product-roadmap.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Product Requirements Document (PRD)
 
 ## Metadata

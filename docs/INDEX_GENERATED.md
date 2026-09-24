@@ -16,6 +16,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
@@ -75,10 +76,35 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [MIGRATIONS.md](MIGRATIONS.md)
 - [ON-DEMAND-PATTERN.md](ON-DEMAND-PATTERN.md)
 - [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md)
+=======
+- [00-INDEX.md](00-INDEX.md)
+- [00-index.md](00-index.md)
+- [INDEX.md](INDEX.md)
+- [index.md](index.md)
+- [README.md](README.md)
+- [BEST_PRACTICES.md](BEST_PRACTICES.md)
+- [best-practices.md](best-practices.md)
+- [BAD_PRACTICES.md](BAD_PRACTICES.md)
+- [bad-practices.md](bad-practices.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [changelog.md](changelog.md)
+- [FALSE_FRIENDS.md](FALSE_FRIENDS.md)
+- [false-friends.md](false-friends.md)
+- [LICENSE.md](LICENSE.md)
+- [METODI_DUPLICATI_ANALISI.md](METODI_DUPLICATI_ANALISI.md)
+- [metodi_duplicati_analisi.md](metodi_duplicati_analisi.md)
+- [MIGRATIONS.md](MIGRATIONS.md)
+- [migrations.md](migrations.md)
+- [ON-DEMAND-PATTERN.md](ON-DEMAND-PATTERN.md)
+- [on-demand-pattern.md](on-demand-pattern.md)
+- [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md)
+- [performance-optimization.md](performance-optimization.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [PRODUCT_LAUNCH_PLAN.md](PRODUCT_LAUNCH_PLAN.md)
 - [PRODUCT_ROADMAP.md](PRODUCT_ROADMAP.md)
 - [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md)
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
+<<<<<<< HEAD
 - [QMD-SETUP.md](QMD-SETUP.md)
 - [REDUNDANCY_ANALYSIS.md](REDUNDANCY_ANALYSIS.md)
 >>>>>>> laraxot/dev
@@ -90,6 +116,13 @@ The root level contains strategic documents, analyses, and consolidated guides:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [project-structure.md](project-structure.md)
+- [QMD-SETUP.md](QMD-SETUP.md)
+- [qmd-setup.md](qmd-setup.md)
+- [REDUNDANCY_ANALYSIS.md](REDUNDANCY_ANALYSIS.md)
+- [redundancy-analysis.md](redundancy-analysis.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [SPRINT_PLANNING.md](SPRINT_PLANNING.md)
 - [USER_RESEARCH.md](USER_RESEARCH.md)
 - [agent-confidence-discipline.md](agent-confidence-discipline.md)
@@ -100,6 +133,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [architecture.md](architecture.md)
 - [best-practices.md](best-practices.md)
 - [case-sensitivity-rules.md](case-sensitivity-rules.md)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -125,6 +159,10 @@ The root level contains strategic documents, analyses, and consolidated guides:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [CHANGELOG.md](CHANGELOG.md)
+- [changelog.md](changelog.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [code-quality-analysis.md](code-quality-analysis.md)
 - [code-redundancy-audit.md](code-redundancy-audit.md)
 - [codex-error-fix.md](codex-error-fix.md)
@@ -132,6 +170,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,6 +191,9 @@ The root level contains strategic documents, analyses, and consolidated guides:
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit-2026-05-25.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
 - [core-functionality.md](core-functionality.md)
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
@@ -166,6 +208,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [index.md](index.md)
 - [laravel-13-upgrade.md](laravel-13-upgrade.md)
 - [launch-plan.md](launch-plan.md)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -191,6 +234,10 @@ The root level contains strategic documents, analyses, and consolidated guides:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [LICENSE.md](LICENSE.md)
+- [license.md](license.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [merge-conflict-files-list.md](merge-conflict-files-list.md)
 - [merge-conflicts-list.md](merge-conflicts-list.md)
 - [metodi-duplicati-analisi.md](metodi-duplicati-analisi.md)
@@ -213,6 +260,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 - [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
@@ -230,6 +278,9 @@ The root level contains strategic documents, analyses, and consolidated guides:
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+- [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
@@ -253,6 +304,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooting:
 
 **Main Index** (7 files)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -295,11 +347,19 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - [AGENTS.md](wiki/AGENTS.md)
+  - [agents.md](wiki/agents.md)
+  - [SCHEMA.md](wiki/SCHEMA.md)
+  - [schema.md](wiki/schema.md)
+  - [README.md](wiki/README.md)
+>>>>>>> e8cf105 (Check & fix styling)
   - [index.md](wiki/index.md)
   - [log.md](wiki/log.md)
   - [overview.md](wiki/overview.md)
 
 **Concepts** (14 files)
+<<<<<<< HEAD
 <<<<<<< HEAD
   - [INDEX.md](wiki/concepts/INDEX.md)
 =======
@@ -329,6 +389,10 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - [INDEX.md](wiki/concepts/INDEX.md)
+  - [index.md](wiki/concepts/index.md)
+>>>>>>> e8cf105 (Check & fix styling)
   - [composer-root-minimal-nwidart.md](wiki/concepts/composer-root-minimal-nwidart.md)
   - [context-mode-rating-discipline.md](wiki/concepts/context-mode-rating-discipline.md)
   - [context-overflow-prevention.md](wiki/concepts/context-overflow-prevention.md)
@@ -349,6 +413,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [source.md](wiki/_templates/source.md)
 
 **Rules** (2 files)
+<<<<<<< HEAD
 <<<<<<< HEAD
   - [INDEX.md](wiki/rules/INDEX.md)
 =======
@@ -378,6 +443,10 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - [INDEX.md](wiki/rules/INDEX.md)
+  - [index.md](wiki/rules/index.md)
+>>>>>>> e8cf105 (Check & fix styling)
   - [no-rm-no-archive-use-old-suffix.md](wiki/rules/no-rm-no-archive-use-old-suffix.md)
 
 **Troubleshooting** (2 files)
@@ -385,6 +454,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [phpstan-generic-limitations.md](wiki/troubleshooting/phpstan-generic-limitations.md)
 
 **Other** (11 files)
+<<<<<<< HEAD
 <<<<<<< HEAD
   - [skills/INDEX.md](wiki/skills/INDEX.md)
   - [commands/INDEX.md](wiki/commands/INDEX.md)
@@ -424,6 +494,14 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - [skills/INDEX.md](wiki/skills/INDEX.md)
+  - [skills/index.md](wiki/skills/index.md)
+  - [commands/INDEX.md](wiki/commands/INDEX.md)
+  - [commands/index.md](wiki/commands/index.md)
+  - [memories/INDEX.md](wiki/memories/INDEX.md)
+  - [memories/index.md](wiki/memories/index.md)
+>>>>>>> e8cf105 (Check & fix styling)
   - [how-to/gitmodules-sync-session.md](wiki/how-to/gitmodules-sync-session.md)
   - [redundancy/duplicate-ratings-table-migrations.md](wiki/redundancy/duplicate-ratings-table-migrations.md)
 
@@ -458,6 +536,7 @@ Raw source documents and import sources:
 Machine learning and documentation knowledge base:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 - [AGENTS.md](llm-wiki/AGENTS.md)
@@ -490,6 +569,10 @@ Machine learning and documentation knowledge base:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [AGENTS.md](llm-wiki/AGENTS.md)
+- [agents.md](llm-wiki/agents.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [index.md](llm-wiki/index.md)
 - [log.md](llm-wiki/log.md)
 
@@ -511,6 +594,7 @@ Consolidated root-level markdown documentation:
 
 Legacy and superseded documentation:
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [INDEX.md](archive/INDEX.md)
 =======
@@ -540,6 +624,10 @@ Legacy and superseded documentation:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- [INDEX.md](archive/INDEX.md)
+- [index.md](archive/index.md)
+>>>>>>> e8cf105 (Check & fix styling)
 - [dataobjects-archived-duplicate.md](archive/dataobjects-archived-duplicate.md)
 - [docs-archive-policy.md](archive/docs-archive-policy.md)
 
@@ -557,6 +645,7 @@ Additional archived content:
 
 | Date | File | Category |
 |------|------|----------|
+<<<<<<< HEAD
 <<<<<<< HEAD
 | 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
@@ -594,6 +683,13 @@ Additional archived content:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+| 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
+| 2026-07-28 | [00-index.md](00-index.md) | root |
+| 2026-07-28 | [README.md](README.md) | root |
+| 2026-07-28 | [best-practices.md](best-practices.md) | root |
+| 2026-07-28 | [BEST_PRACTICES.md](BEST_PRACTICES.md) | root |
+>>>>>>> e8cf105 (Check & fix styling)
 | 2026-07-28 | [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md) | root |
 | 2026-07-28 | [PRODUCT_ROADMAP.md](PRODUCT_ROADMAP.md) | root |
 | 2026-07-28 | [SPRINT_PLANNING.md](SPRINT_PLANNING.md) | root |
@@ -605,6 +701,7 @@ Additional archived content:
 | 2026-07-28 | [schema.md](schema.md) | root |
 | 2026-07-28 | [user-interface.md](user-interface.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -630,6 +727,10 @@ Additional archived content:
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+| 2026-07-28 | [CHANGELOG.md](CHANGELOG.md) | root |
+| 2026-07-28 | [changelog.md](changelog.md) | root |
+>>>>>>> e8cf105 (Check & fix styling)
 | 2026-07-28 | [conflict-resolution.md](conflict-resolution.md) | root |
 | 2026-07-28 | [architecture-rules.md](architecture-rules.md) | root |
 | 2026-07-28 | [file-naming-rules.md](file-naming-rules.md) | root |
@@ -671,6 +772,7 @@ Additional archived content:
 
 1. **Deduplication**: Consolidate similar files:
 <<<<<<< HEAD
+<<<<<<< HEAD
    - ~~`best-practices.md` vs `BEST_PRACTICES.md`~~ — risolto 2026-09-02, vedi `best-practices.md`
 =======
 <<<<<<< HEAD
@@ -690,6 +792,9 @@ Additional archived content:
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+   - `best-practices.md` vs `BEST_PRACTICES.md`
+>>>>>>> e8cf105 (Check & fix styling)
    - `changelog.md` vs `CHANGELOG.md` vs `changelog-*.md`
    - `license.md` vs `LICENSE.md`
    - `product-*.md` vs `PRODUCT_*.md`

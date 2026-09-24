@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Root file policy"
 type: rule
@@ -9,6 +10,8 @@ related:
   - "./root-files-hygiene.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Root file policy
 
 Updated: 2026-07-08

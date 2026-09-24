@@ -49,6 +49,7 @@ Indice operativo del wiki Rating.
 ## On-Demand Entry Points
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
 =======
@@ -72,6 +73,10 @@ Indice operativo del wiki Rating.
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+- [rules/INDEX](./rules/index.md) (case-duplicate anche `./rules/INDEX.md`): regole locali e root per Rating/XotBase/Filament.
+- [skills/INDEX](./skills/index.md) (case-duplicate anche `./skills/INDEX.md`): skill locali e condivise da caricare on-demand.
+>>>>>>> e8cf105 (Check & fix styling)
 
 ## Scopo Rating Module
 

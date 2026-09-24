@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -26,3 +27,12 @@ All notable changes to `:package_name` will be documented in this file.
 ## 1.0.0 - 202X-XX-XX
 
 - initial release
+=======
+---
+module: theme
+topic: CHANGELOG
+canonical: ../../../Themes/docs/shared-components/CHANGELOG.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/CHANGELOG.md
+>>>>>>> e8cf105 (Check & fix styling)

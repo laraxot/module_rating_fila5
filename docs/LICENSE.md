@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "License"
 type: guide
@@ -46,6 +47,8 @@ related:
   - "./merge-conflict-files-list.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

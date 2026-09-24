@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating - Product Roadmap"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./product-strategy.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating - Product Roadmap
 
 > Documento vivente. Modulo.

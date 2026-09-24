@@ -15,6 +15,7 @@
 
 ## Documentazione
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
@@ -46,3 +47,7 @@
 =======
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- Aggiorna `docs/index.md` con nuovi endpoint.
+- Collega a moduli correlati come `Review` e `Auth`.
+>>>>>>> e8cf105 (Check & fix styling)

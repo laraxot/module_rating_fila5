@@ -20,6 +20,7 @@ docs/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
 <<<<<<< HEAD
+<<<<<<< HEAD
 │   ├── schema.md          # Questo file
 =======
 <<<<<<< HEAD
@@ -39,6 +40,9 @@ docs/
 >>>>>>> fd7a600 (.)
 =======
 >>>>>>> laraxot/dev
+=======
+│   ├── SCHEMA.md          # Questo file
+>>>>>>> e8cf105 (Check & fix styling)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -50,5 +54,9 @@ docs/
 
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
+<<<<<<< HEAD
 - Cross-ref: `Link`
+=======
+- Cross-ref: `[Link](../concepts/name.md)`
+>>>>>>> e8cf105 (Check & fix styling)
 - NON modificare mai `docs/raw/`

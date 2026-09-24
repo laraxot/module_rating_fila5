@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Root files hygiene"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./schema.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Root files hygiene
 
 ## 2026-07-08 16:51

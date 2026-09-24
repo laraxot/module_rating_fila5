@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "User Research: Rating Module"
 type: guide
@@ -28,6 +29,8 @@ related:
 >>>>>>> laraxot/dev
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # User Research: Rating Module
 
 ## 🔬 Research Goals

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating - Product Launch Plan"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./product-requirements.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating - Product Launch Plan
 
 > Piano di lancio. Modulo.

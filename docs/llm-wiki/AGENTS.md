@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Module LLM Wiki Agent Instructions"
 type: guide
@@ -82,6 +83,8 @@ related:
   - ./coding-agent-manifests.md
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

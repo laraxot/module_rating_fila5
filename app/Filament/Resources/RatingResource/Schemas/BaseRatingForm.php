@@ -7,15 +7,22 @@ namespace Modules\Rating\Filament\Resources\RatingResource\Schemas;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
+<<<<<<< HEAD
 use Filament\Forms\Components\Select;
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
+=======
+use Modules\Rating\Enums\RuleEnum;
+>>>>>>> e8cf105 (Check & fix styling)
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 /**
@@ -29,6 +36,7 @@ abstract class BaseRatingForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
+<<<<<<< HEAD
     public function getFormSchema(): array
     {
         return [
@@ -62,6 +70,16 @@ abstract class BaseRatingForm extends XotBaseResourceForm
                 ->searchable()
                 ->preload()
                 ->nullable(),
+=======
+    public static function getFormSchema(): array
+    {
+        return [
+            'extra_attributes.type' => TextInput::make('extra_attributes.type'),
+            'extra_attributes.anno' => TextInput::make('extra_attributes.anno'),
+            'title' => TextInput::make('title')->autofocus()->required(),
+            'color' => ColorPicker::make('color'),
+            'rule' => Radio::make('rule')->options(RuleEnum::class),
+>>>>>>> e8cf105 (Check & fix styling)
             'flags' => Section::make()
                 ->schema([
                     Toggle::make('is_disabled'),

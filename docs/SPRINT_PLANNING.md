@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Module - Sprint Planning"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./USER_RESEARCH.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Module - Sprint Planning
 
 **Module:** Rating  

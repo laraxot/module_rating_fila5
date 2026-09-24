@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Sprint Planning: Rating Module"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./strategy.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Sprint Planning: Rating Module
 
 ## 🏁 Sprint Goal

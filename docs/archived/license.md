@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< .merge_file_jYpHXW
 =======
@@ -16,6 +17,8 @@ qmd: "license"
 =======
 >>>>>>> .merge_file_j0RwyC
 >>>>>>> laraxot/dev
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

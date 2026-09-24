@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Architectural Rules & Guidelines"
 type: rule
@@ -9,6 +10,8 @@ related:
   - "./architecture.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Architectural Rules & Guidelines
 
 This module adheres to the **Laraxot Architecture** and **Super Cow Methodology**.

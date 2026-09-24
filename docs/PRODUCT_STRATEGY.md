@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating Module - Product Strategy"
 type: guide
@@ -9,6 +10,8 @@ related:
   - "./PROJECT-STRUCTURE.md"
 ---
 
+=======
+>>>>>>> e8cf105 (Check & fix styling)
 # Rating Module - Product Strategy
 
 **Module:** Rating  
