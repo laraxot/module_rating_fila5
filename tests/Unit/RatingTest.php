@@ -15,14 +15,11 @@ uses(TestCase::class);
 
 describe('Rating', function (): void {
     test('can create rating', function (): void {
-<<<<<<< HEAD
         /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }
 
-=======
->>>>>>> 2025498 (.)
         $rating = Rating::create([
             'title' => 'Test Rating',
             'color' => '#FF0000',
@@ -37,14 +34,11 @@ describe('Rating', function (): void {
     });
 
     test('can create rating morph', function (): void {
-<<<<<<< HEAD
         /* @var TestCase $this */
         if (TestCase::ratingDbUnavailable()) {
             $this->skipTest('DB `rating` non raggiungibile: blocco di ambiente.');
         }
 
-=======
->>>>>>> 2025498 (.)
         $rating = Rating::create([
             'title' => 'Test Rating',
         ]);
@@ -71,11 +65,7 @@ describe('Rating', function (): void {
         $locale = SupportedLocale::IT;
 
         Assert::assertEquals('it', $locale->value);
-<<<<<<< HEAD
         Assert::assertEquals('Italiano', $locale->getLabel());
-=======
-        Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
->>>>>>> 2025498 (.)
 
         $localeFromString = SupportedLocale::fromString('en');
         Assert::assertEquals(SupportedLocale::EN, $localeFromString);

@@ -1,18 +1,6 @@
 includes:
     - phpstan-baseline.neon
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     - ../../vendor/larastan/larastan/extension.neon
-=======
-    - ./vendor/larastan/larastan/extension.neon
->>>>>>> 77b9106 (.)
-=======
-    - ../../vendor/larastan/larastan/extension.neon
->>>>>>> c91c8c3 (.)
-=======
-    - ./vendor/larastan/larastan/extension.neon
->>>>>>> 2025498 (.)
 
 parameters:
     level: 1
@@ -26,18 +14,6 @@ parameters:
 
     checkMissingIterableValueType: false
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     ignoreErrors:
         - '#Trait Modules\\Rating\\Models\\Traits\\HasRating is used zero times#'
 
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
-    ignoreErrors:
-        - '#Trait Modules\\Rating\\Models\\Traits\\HasRating is used zero times#'
-
->>>>>>> 2025498 (.)

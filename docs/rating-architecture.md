@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
@@ -13,14 +9,6 @@ related:
   - "./readme-en.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  
@@ -211,20 +199,4 @@ Update rating architecture docs with:
 
 **Author**: Development Team  
 **Status**: Ready for Implementation  
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Priority**: High (User-facing validation errors)
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> 77b9106 (.)
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> c91c8c3 (.)
-=======
-**Priority**: High (User-facing validation errors)
->>>>>>> 2025498 (.)

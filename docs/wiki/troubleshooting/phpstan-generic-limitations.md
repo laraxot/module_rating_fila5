@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "PHPStan Generic Type Limitations in Laravel"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "phpstan generic limitations"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # PHPStan Generic Type Limitations in Laravel
 
 ## Problem
@@ -36,10 +24,6 @@ PHPStan/Larastan can't fully resolve Laravel's generic relationship types when u
 - Interface contracts with generic return types
 - `static::class` in generic type parameters
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Workaround attuale (HasRatingsTrait)
 
 Il trait vivo è `HasRatingsTrait` (`@template TModel of Model`). Sull'host, finché **non** sta su `Ptv\BaseScheda` (story 7.2 ancora non implementata):
@@ -55,26 +39,6 @@ Consumer: `IndennitaResponsabilita`, `LettF`, `LettI` (valutatore che compila vo
 
 - `Modules/Rating/app/Models/Contracts/HasRatingContract.php` — contratto legacy
 - `Modules/Rating/app/Models/Traits/HasRatingsTrait.php` — SSoT attuale
-=======
-## Files Affected
-- `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
-- `Modules/Rating/app/Models/Traits/HasRating.php`
->>>>>>> e8cf105 (Check & fix styling)
-=======
-## Files Affected
-- `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
-- `Modules/Rating/app/Models/Traits/HasRating.php`
->>>>>>> 77b9106 (.)
-=======
-## Files Affected
-- `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
-- `Modules/Rating/app/Models/Traits/HasRating.php`
->>>>>>> c91c8c3 (.)
-=======
-## Files Affected
-- `Modules/Rating/app/Models/Contracts/HasRatingContract.php`
-- `Modules/Rating/app/Models/Traits/HasRating.php`
->>>>>>> 2025498 (.)
 
 ## Workaround
 This is a **PHPStan/Larastan limitation**, not a code bug. The code works correctly at runtime.

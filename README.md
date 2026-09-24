@@ -1,75 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](composer.json)
 [![Laravel](https://img.shields.io/badge/Laravel-%5E13.0-FF2D20.svg)](../../composer.json)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%20max%2C%200%20errori-brightgreen.svg)](../../phpstan.neon)
 [![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fd7a600 (.)
-=======
-=======
->>>>>>> laraxot/dev
-=======
-=======
-# ⭐ Rating
-
->>>>>>> e8cf105 (Check & fix styling)
-=======
-# ⭐ Rating
-
->>>>>>> 77b9106 (.)
-=======
-# ⭐ Rating
-
->>>>>>> c91c8c3 (.)
-=======
-# ⭐ Rating
-
->>>>>>> 2025498 (.)
-[![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 
 > Non ogni valutazione ha gli stessi campi. Un rating su un servizio, uno su
 > una persona, uno su un fornitore hanno forme diverse — Rating esiste per
@@ -172,19 +107,6 @@ cd laravel
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 ## Scopo del modulo
 
 Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartiene:
@@ -193,84 +115,3 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 ---
 
 **Modulo** `rating` · licenza MIT
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
-=======
-**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
-=======
-**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
->>>>>>> laraxot/dev
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
-
-> **Valuta qualsiasi cosa — una volta sola, bene.** Rating polimorfico, like, statistiche in tempo reale.
-
----
-
-## Perché esiste
-
-Feedback e soddisfazione su servizi, contenuti, operatori.
-
-## Superpoteri
-
-- Trait `HasRating` riusabile
-- Queueable Actions per aggregati
-- Filament Resources complete
-- PHPStan 10 e test suite
-
-## Certificazioni
-
-| Certificazione | Stato |
-|----------------|-------|
-| PHPStan livello 10 | Target progetto |
-| `declare(strict_types=1)` | Su nuovo codice PHP |
-| Filament 5 + XotBase | Admin enterprise |
-| Test PHPUnit / Pest | Suite modulo |
-| Documentazione wiki | Cartella `docs/` |
-
-## Vuoi entrare nel team?
-
-Numeri che **guidano miglioramento** del servizio pubblico.
-
-Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
-
----
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
-**Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)

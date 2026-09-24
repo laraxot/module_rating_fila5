@@ -13,23 +13,7 @@ related:
 
 Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 > Vedi anche → Trigger Map
-=======
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
->>>>>>> 77b9106 (.)
-=======
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
->>>>>>> c91c8c3 (.)
-=======
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
->>>>>>> 2025498 (.)
 
 ## Regola
 
@@ -50,47 +34,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/index.md)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> 77b9106 (.)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> c91c8c3 (.)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> 2025498 (.)
+- Per Commands globali, consulta il [wiki root](../../../../../../docs/wiki/commands/INDEX.md)
 
 ## Aggiungere una Nuova COMMANDS
 

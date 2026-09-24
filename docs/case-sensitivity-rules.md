@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Case Sensitivity Rules - Rating Module"
 type: rule
@@ -13,14 +9,6 @@ related:
   - "./changelog.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Case Sensitivity Rules - Rating Module
 
 ## Problema / Problem
