@@ -6,7 +6,15 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "user research"
 related:
+<<<<<<< HEAD
   - "./00-index.md"
+=======
+<<<<<<< HEAD
+  - "./00-index.md"
+=======
+  - "./00-INDEX.md"
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 
 # User Research: Rating Module

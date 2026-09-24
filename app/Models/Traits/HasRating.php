@@ -50,7 +50,11 @@ trait HasRating
     }
 
     /**
+<<<<<<< HEAD
      * @return array<int, array<string, mixed>>
+=======
+     * @return array<int, non-empty-array<string, mixed>>
+>>>>>>> laraxot/dev
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -61,7 +65,11 @@ trait HasRating
             ->get();
         // ->toArray()
 
+<<<<<<< HEAD
         /** @var array<int, array<string, mixed>> $ratings_array */
+=======
+        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
+>>>>>>> laraxot/dev
         $ratings_array = [];
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
@@ -103,7 +111,11 @@ trait HasRating
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
+<<<<<<< HEAD
             if ($b === 0) {
+=======
+            if (0 === $b) {
+>>>>>>> laraxot/dev
                 $b = 1;
             }
 
@@ -141,7 +153,11 @@ trait HasRating
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
+<<<<<<< HEAD
         if ($rating_id !== null) {
+=======
+        if (null !== $rating_id) {
+>>>>>>> laraxot/dev
             $query->where('rating_id', $rating_id);
         }
 
