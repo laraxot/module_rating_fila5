@@ -56,10 +56,10 @@ qmd search "<topic>"
 \`\`\`
 ./laravel/Modules/Rating/docs/
 └── wiki/                    # Knowledge base locale
-    ├── rules/INDEX.md      # Indice rules modulo-specifiche
-    ├── skills/INDEX.md     # Indice skills modulo-specifiche
-    ├── commands/INDEX.md   # Indici commands
-    └── memories/INDEX.md   # Indice memories
+    ├── rules/index.md      # Indice rules modulo-specifiche (esiste anche INDEX.md, case-duplicate)
+    ├── skills/index.md     # Indice skills modulo-specifiche (esiste anche INDEX.md, case-duplicate)
+    ├── commands/index.md   # Indici commands (esiste anche INDEX.md, case-duplicate)
+    └── memories/index.md   # Indice memories (esiste anche INDEX.md, case-duplicate)
 \`\`\`
 
 ## Quick Reference
