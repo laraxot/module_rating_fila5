@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Rating\Tests\Unit;
+
+use Modules\Rating\Datas\RatingData;
+use Modules\Rating\Models\Rating;
+use Modules\Rating\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
+
+describe('RatingData::formFieldLabel', function (): void {
+    test('preferisce txt a title e toglie HTML', function (): void {
+<<<<<<< .merge_file_l8PWwJ
+        $rating = new Rating;
+=======
+        $rating = new Rating();
+>>>>>>> .merge_file_61RDTC
+        $rating->forceFill(['id' => 1, 'title' => 'Ruolo', 'txt' => 'Ruolo <b>organizzativo</b>']);
+
+        Assert::assertSame('Ruolo organizzativo', RatingData::formFieldLabel($rating));
+    });
+
+    test('usa title se txt assente', function (): void {
+<<<<<<< .merge_file_l8PWwJ
+        $rating = new Rating;
+=======
+        $rating = new Rating();
+>>>>>>> .merge_file_61RDTC
+        $rating->forceFill(['id' => 2, 'title' => 'Criterio']);
+
+        Assert::assertSame('Criterio', RatingData::formFieldLabel($rating));
+    });
+});
