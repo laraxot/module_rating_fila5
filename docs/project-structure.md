@@ -18,6 +18,10 @@ tags: [structure, architecture, module]
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 │   │   ├── 00-index.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -29,13 +33,47 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── index.md
+<<<<<<< HEAD
+=======
+=======
+│   │   ├── 00-INDEX.md          # Indice regole
+│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
+│   │   └── *.md                 # Regole specifiche modulo
+│   ├── skills/                   # Skill progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── commands/                 # Comandi progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── memories/                 # Memorie progettuali
+│   │   ├── INDEX.md
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
+=======
+<<<<<<< HEAD
+<<<<<<<< HEAD:docs/project-structure.md
+├── architecture.md               # (opzionale) Architettura modulo
+========
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+├── architecture.md               # (opzionale) Architettura modulo
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+>>>>>>>> laraxot/dev:docs/PROJECT-STRUCTURE.md
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -107,7 +145,15 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files (già creati)
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
+=======
+<<<<<<< HEAD
+cp docs/wiki/rules/index.md docs/wiki/rules/
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)
@@ -120,6 +166,10 @@ git commit -m "docs: add wiki structure for Rating"
 
 ---
 *Pattern: On-Demand | Source: docs/wiki/*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 
 
 ---
@@ -229,3 +279,8 @@ git commit -m "docs: add wiki structure for Rating"
 
 ---
 *Pattern: On-Demand | Source: docs/wiki/*
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

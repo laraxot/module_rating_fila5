@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_jYpHXW
+=======
+>>>>>>> laraxot/dev
 ---
 title: "License"
 type: guide
@@ -7,6 +12,10 @@ updated: 2026-07-14
 qmd: "license"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> .merge_file_j0RwyC
+>>>>>>> laraxot/dev
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
