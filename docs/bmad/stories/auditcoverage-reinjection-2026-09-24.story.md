@@ -53,3 +53,17 @@ Pest: skip ambientale — DB 10.100.200.53 irraggiungibile (vedi story Xot); hos
 - `docs/sprint-status.yaml` sotto lock `opencode-phpstan`: voce da aggiungere, e le
   righe `Rating/5.228…` / `Rating/rating-xls-fields-move-to-ratingdata` ("resta nel trait")
   sono superate — la sede canonica è `RatingData` (architecture `rating-data-export-methods.md`).
+
+## Secondo incidente (20:40) — harness Xot cancellati
+
+Rerun di verifica: **394 file_errors** in 14 moduli, 342 `class.notFound` su
+`Modules\Xot\Tests\{FilamentSchemaCoverage,ModuleDeepCoverage,ModuleBusinessCoverage,ModuleExecuteCoverage,ModuleRemainingCoverage}`.
+I 5 file erano cancellati nel working tree Xot (non committato, nessun lock, HEAD Xot
+fermo alle 20:34 → non un'operazione git). Canon story Xot 5.28: helper **canonici,
+non generati e non eliminabili**. Probabile confusione con lo scaffold vietato
+`AuditCoverage` (nome simile, "coverage padding").
+
+Fix: `git checkout HEAD --` dei 5 file (verbatim, regola recuperare-codice-cancellato),
+lock/unlock per file, `php -l` OK.
+
+Gate finale: `phpstan analyse Modules` → `{"errors":0,"file_errors":0}` exit 0.
