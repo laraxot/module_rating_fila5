@@ -39,11 +39,19 @@ afterEach(function (): void {
  */
 
 /**
+<<<<<<< .merge_file_R5daQH
  * @param  list<Rating>  $children
  */
 function makeRatingWithChildren(array $children): Rating
 {
     $parent = new Rating;
+=======
+ * @param list<Rating> $children
+ */
+function makeRatingWithChildren(array $children): Rating
+{
+    $parent = new Rating();
+>>>>>>> .merge_file_IzKDxU
     $parent->forceFill([
         'id' => 1,
         'title' => 'Criterio con figli',
@@ -57,7 +65,11 @@ function makeRatingWithChildren(array $children): Rating
 
 function makeChildRating(int $id, string $title): Rating
 {
+<<<<<<< .merge_file_R5daQH
     $child = new Rating;
+=======
+    $child = new Rating();
+>>>>>>> .merge_file_IzKDxU
     $child->forceFill(['id' => $id, 'title' => $title]);
 
     return $child;
@@ -90,7 +102,11 @@ function ratingsCollection(BaseRating ...$ratings): EloquentCollection
 
 describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', function (): void {
     test('con figli lo schema e un Fieldset con Select e Textarea', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -108,7 +124,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('Fieldset: columns(2) interno e columnSpan(2) nel form parent', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -121,7 +141,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('le opzioni del Select includono i figli piu la chiave "other" per "altro"', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -150,7 +174,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // su null e selectIsOther() non ritorna mai true. Guardia esplicita: se qualcuno
         // in futuro riporta la costante a '' (e' gia' successo due volte oggi), questo
         // test si accorge prima che arrivi un altro bug report identico.
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -167,7 +195,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('il campo Select mantiene il nome ratings.{id}.pivot.value, la Textarea usa .pivot.note', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -182,7 +214,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('senza figli il campo resta un TextInput numerico, non un Fieldset', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -192,7 +228,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('readonly resta un TextEntry anche con figli', function (): void {
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['is_readonly' => true]);
 
@@ -215,7 +255,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // su isRequired — la Closure poteva essere sbagliata e Pest restava verde.
         // Qui si valuta il comportamento: true su 'other', false su null/id figlio.
         // La Closure riceve Get($select Component), non un path stringa (statePath `data.`).
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -235,8 +279,12 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         Assert::assertInstanceOf(\Closure::class, $required);
 
         $stubGet = static function (mixed $selectValue) use ($select): Get {
+<<<<<<< .merge_file_R5daQH
             return new class($select, $selectValue) extends Get
             {
+=======
+            return new class($select, $selectValue) extends Get {
+>>>>>>> .merge_file_IzKDxU
                 public function __construct(
                     private readonly Component $select,
                     private readonly mixed $selectValue,
@@ -261,7 +309,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     test('il Select con figli valida in(keys) e non RuleEnum numeric', function (): void {
         // Root cause 5.152: ->rules(RuleEnum::ZeroFive) = numeric|min:0|max:5
         // rifiutava la sentinella 'other' prima che la note potesse essere required.
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -321,7 +373,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // un rating con RuleEnum::Null (stringa vuota) o un rule futuro senza "required"
         // avrebbe lasciato il Select scegliibile-o-no senza alcun vincolo. ->required()
         // esplicito lo rende obbligatorio a prescindere dal contenuto di rule.
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['rule' => RuleEnum::Null]);
 
@@ -335,8 +391,12 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('il Fieldset restituito riceve la decorazione host via label, una sola volta', function (): void {
+<<<<<<< .merge_file_R5daQH
         $caller = new class implements RatingsFormCallerContract
         {
+=======
+        $caller = new class implements RatingsFormCallerContract {
+>>>>>>> .merge_file_IzKDxU
             /** @var array<int, class-string> */
             public array $decorated = [];
 
@@ -347,10 +407,19 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
                 return $component instanceof Fieldset ? $component->label('Ruolo') : $component;
             }
 
+<<<<<<< .merge_file_R5daQH
             public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void {}
         };
 
         $host = new RatingsHostStub;
+=======
+            public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void
+            {
+            }
+        };
+
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema($caller, ratingsCollection($parent));
@@ -370,7 +439,11 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // e' un'API distinta da label() — non rende nulla in UI, serve solo
         // all'interpolazione dei messaggi — quindi impostarla nel trait non viola D-1
         // (che vieta solo ->label() sui componenti).
+<<<<<<< .merge_file_R5daQH
         $host = new RatingsHostStub;
+=======
+        $host = new RatingsHostStub();
+>>>>>>> .merge_file_IzKDxU
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['title' => 'Ruolo']);
 
