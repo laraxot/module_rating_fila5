@@ -116,3 +116,4 @@ tests/AuditCoverage/
 .windsurf/
 .devcontainer/
 >>>>>>> e8cf105 (Check & fix styling)
+tests/AuditCoverage/
