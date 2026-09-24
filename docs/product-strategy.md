@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating - Product Strategy"
 type: guide
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Rating - Product Strategy
 
 > Strategia prodotto. Modulo.

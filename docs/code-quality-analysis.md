@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Code Quality Analysis - Rating Module"
 type: concept
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Code Quality Analysis - Rating Module
 
 **Data Analisi**: 2025-01-22  

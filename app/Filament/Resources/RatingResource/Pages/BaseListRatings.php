@@ -5,10 +5,15 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+>>>>>>> 77b9106 (.)
 use Modules\Rating\Filament\Resources\RatingResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -16,8 +21,15 @@ abstract class BaseListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+=======
+
+    /**
+     * @return array<string, mixed>
+     */
+>>>>>>> 77b9106 (.)
     public function getTableColumns(): array
     {
         return [
@@ -44,5 +56,8 @@ abstract class BaseListRatings extends XotBaseListRecords
 
         // TextColumn::make('color'),
     }
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 }

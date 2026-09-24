@@ -14,10 +14,14 @@ use Modules\Xot\Tests\XotBaseTestCase;
  * Base test case for Rating module.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Uses shared sqlite from database.sqlite (no migrate:fresh / RefreshDatabase).
 =======
  * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+ * Uses shared sqlite from fixcity_data.sqlite (no migrate:fresh / RefreshDatabase).
+>>>>>>> 77b9106 (.)
  */
 abstract class TestCase extends XotBaseTestCase
 {
@@ -38,6 +42,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * Lo sqlite condiviso (`database/database.sqlite`) non contiene per forza le tabelle
      * del modulo: le migration non vengono lanciate dai test (mai `RefreshDatabase`).
@@ -56,15 +61,21 @@ abstract class TestCase extends XotBaseTestCase
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
     protected function setUp(): void
     {
         parent::setUp();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $database = self::sharedSqlitePath();
 =======
         $database = database_path('fixcity_data.sqlite');
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+        $database = database_path('fixcity_data.sqlite');
+>>>>>>> 77b9106 (.)
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);

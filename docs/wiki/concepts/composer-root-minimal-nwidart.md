@@ -7,6 +7,7 @@ updated: 2026-06-29
 qmd: "Rating composer dependencies root minimal nwidart merge-plugin"
 issues:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "https://github.com/laraxot/<nome repository>/issues/214"
 discussions:
   - "https://github.com/laraxot/<nome repository>/discussions/215"
@@ -15,6 +16,11 @@ discussions:
 discussions:
   - "https://github.com/laraxot/base_predict_fila5/discussions/215"
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+  - "https://github.com/laraxot/base_predict_fila5/issues/214"
+discussions:
+  - "https://github.com/laraxot/base_predict_fila5/discussions/215"
+>>>>>>> 77b9106 (.)
 related:
   - ../../../Xot/docs/wiki/concepts/composer-root-skeleton-modular.md
   - ../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md
@@ -26,10 +32,14 @@ related:
 ## Regola
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Dipendenze del dominio **Rating** in `Modules/Rating/composer.json`. Il root `laravel/composer.json` resta skeleton; riferimento progetto legacy con debito noto — canonico per domini applicativi esterni in [composer-root-minimal-nwidart](../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md).
 =======
 Dipendenze del dominio **Rating** in `Modules/Rating/composer.json`. Il root `laravel/composer.json` resta skeleton; riferimento FixCity con debito noto — canonico Predict in [composer-root-minimal-nwidart](../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md).
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+Dipendenze del dominio **Rating** in `Modules/Rating/composer.json`. Il root `laravel/composer.json` resta skeleton; riferimento FixCity con debito noto — canonico Predict in [composer-root-minimal-nwidart](../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md).
+>>>>>>> 77b9106 (.)
 
 
 

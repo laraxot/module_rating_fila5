@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Sprint Planning: Rating Module"
 type: guide
@@ -12,6 +13,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # Sprint Planning: Rating Module
 
 ## 🏁 Sprint Goal

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'resource' => [
 <<<<<<< HEAD
@@ -13,6 +14,30 @@ return [
         'group' => [
             'name' => ['label' => 'Admin'],
 =======
+=======
+// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
+// Canon: Modules/Rating/docs/wiki — domain i18n only.
+// File: lang/it/rating.php
+return [
+    // Laraxot — see module docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    // Laraxot module file — see docs/wiki for domain contract.
+    'resource' => [
+>>>>>>> 77b9106 (.)
         'name' => [
             'label' => 'Rating',
         ],
@@ -28,12 +53,16 @@ return [
             'name' => [
                 'label' => 'Admin',
             ],
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
         ],
         'sort' => 33,
         'label' => 'Rating',
     ],
     'fields' => [
+<<<<<<< HEAD
 <<<<<<< HEAD
         'brand' => ['label' => 'Marca'],
         'model' => ['label' => 'Modello'],
@@ -131,6 +160,8 @@ return [
     'exceptions' => [
         'mandatory_data' => ['label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti'],
 =======
+=======
+>>>>>>> 77b9106 (.)
         'brand' => [
             'label' => 'Marca',
         ],
@@ -377,7 +408,10 @@ return [
         'mandatory_data' => [
             'label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti',
         ],
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
     ],
     'label' => 'rating',
 ];

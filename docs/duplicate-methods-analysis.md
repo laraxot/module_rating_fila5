@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Analisi Metodi Duplicati - Modulo Rating"
 type: concept
@@ -18,6 +19,10 @@ related:
 # Analisi Metodi Duplicati - Modulo Rating
 
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+# Analisi Metodi Duplicati - Modulo Rating
+
+>>>>>>> 77b9106 (.)
 **Data Generazione**: 2025-10-15 06:41:17
 **Totale Gruppi di Duplicati**: 
 
@@ -46,6 +51,7 @@ Questo documento identifica i metodi duplicati nel modulo **Rating** che potrebb
 - `Article::user` - [Modules/Blog/app/Models/Article.php:393](Modules/Blog/app/Models/Article.php) (Modulo: Blog)
 - `Comment::user` - [Modules/Blog/app/Models/Comment.php:102](Modules/Blog/app/Models/Comment.php) (Modulo: Blog)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - `Activity::user` - [Modules/LegacyDomain/app/Models/Activity.php:58](Modules/LegacyDomain/app/Models/Activity.php) (Modulo: LegacyDomain)
 - `PushSubscription::user` - [Modules/LegacyDomain/app/Models/PushSubscription.php:64](Modules/LegacyDomain/app/Models/PushSubscription.php) (Modulo: LegacyDomain)
 - `Ticket::user` - [Modules/LegacyDomain/app/Models/Ticket.php:572](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
@@ -54,6 +60,8 @@ Questo documento identifica i metodi duplicati nel modulo **Rating** che potrebb
 - `TicketHour::user` - [Modules/LegacyDomain/app/Models/TicketHour.php:62](Modules/LegacyDomain/app/Models/TicketHour.php) (Modulo: LegacyDomain)
 - `TicketSubscriber::user` - [Modules/LegacyDomain/app/Models/TicketSubscriber.php:51](Modules/LegacyDomain/app/Models/TicketSubscriber.php) (Modulo: LegacyDomain)
 =======
+=======
+>>>>>>> 77b9106 (.)
 - `Activity::user` - [Modules/Fixcity/app/Models/Activity.php:58](Modules/Fixcity/app/Models/Activity.php) (Modulo: Fixcity)
 - `PushSubscription::user` - [Modules/Fixcity/app/Models/PushSubscription.php:64](Modules/Fixcity/app/Models/PushSubscription.php) (Modulo: Fixcity)
 - `Ticket::user` - [Modules/Fixcity/app/Models/Ticket.php:572](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
@@ -61,7 +69,10 @@ Questo documento identifica i metodi duplicati nel modulo **Rating** che potrebb
 - `TicketComment::user` - [Modules/Fixcity/app/Models/TicketComment.php:68](Modules/Fixcity/app/Models/TicketComment.php) (Modulo: Fixcity)
 - `TicketHour::user` - [Modules/Fixcity/app/Models/TicketHour.php:62](Modules/Fixcity/app/Models/TicketHour.php) (Modulo: Fixcity)
 - `TicketSubscriber::user` - [Modules/Fixcity/app/Models/TicketSubscriber.php:51](Modules/Fixcity/app/Models/TicketSubscriber.php) (Modulo: Fixcity)
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 - `TaskComment::user` - [Modules/Job/app/Models/TaskComment.php:70](Modules/Job/app/Models/TaskComment.php) (Modulo: Job)
 - `RatingMorph::user` - [Modules/Rating/app/Models/RatingMorph.php:104](Modules/Rating/app/Models/RatingMorph.php)
 - `AuthenticationLog::user` - [Modules/User/app/Models/AuthenticationLog.php:74](Modules/User/app/Models/AuthenticationLog.php) (Modulo: User)
@@ -134,6 +145,7 @@ public function user(): BelongsTo
 - `BaseMorphPivot::casts` - [Modules/Comment/app/Models/BaseMorphPivot.php:54](Modules/Comment/app/Models/BaseMorphPivot.php) (Modulo: Comment)
 - `BasePivot::casts` - [Modules/Comment/app/Models/BasePivot.php:41](Modules/Comment/app/Models/BasePivot.php) (Modulo: Comment)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - `Activity::casts` - [Modules/LegacyDomain/app/Models/Activity.php:50](Modules/LegacyDomain/app/Models/Activity.php) (Modulo: LegacyDomain)
 - `BaseModel::casts` - [Modules/LegacyDomain/app/Models/BaseModel.php:47](Modules/LegacyDomain/app/Models/BaseModel.php) (Modulo: LegacyDomain)
 - `BasePivot::casts` - [Modules/LegacyDomain/app/Models/BasePivot.php:49](Modules/LegacyDomain/app/Models/BasePivot.php) (Modulo: LegacyDomain)
@@ -144,6 +156,8 @@ public function user(): BelongsTo
 - `Ticket::casts` - [Modules/LegacyDomain/app/Models/Ticket.php:188](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
 - `TicketCategory::casts` - [Modules/LegacyDomain/app/Models/TicketCategory.php:51](Modules/LegacyDomain/app/Models/TicketCategory.php) (Modulo: LegacyDomain)
 =======
+=======
+>>>>>>> 77b9106 (.)
 - `Activity::casts` - [Modules/Fixcity/app/Models/Activity.php:50](Modules/Fixcity/app/Models/Activity.php) (Modulo: Fixcity)
 - `BaseModel::casts` - [Modules/Fixcity/app/Models/BaseModel.php:47](Modules/Fixcity/app/Models/BaseModel.php) (Modulo: Fixcity)
 - `BasePivot::casts` - [Modules/Fixcity/app/Models/BasePivot.php:49](Modules/Fixcity/app/Models/BasePivot.php) (Modulo: Fixcity)
@@ -153,7 +167,10 @@ public function user(): BelongsTo
 - `PushSubscription::casts` - [Modules/Fixcity/app/Models/PushSubscription.php:58](Modules/Fixcity/app/Models/PushSubscription.php) (Modulo: Fixcity)
 - `Ticket::casts` - [Modules/Fixcity/app/Models/Ticket.php:188](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
 - `TicketCategory::casts` - [Modules/Fixcity/app/Models/TicketCategory.php:51](Modules/Fixcity/app/Models/TicketCategory.php) (Modulo: Fixcity)
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 - `BaseModel::casts` - [Modules/Gdpr/app/Models/BaseModel.php:58](Modules/Gdpr/app/Models/BaseModel.php) (Modulo: Gdpr)
 - `BaseMorphPivot::casts` - [Modules/Gdpr/app/Models/BaseMorphPivot.php:67](Modules/Gdpr/app/Models/BaseMorphPivot.php) (Modulo: Gdpr)
 - `BasePivot::casts` - [Modules/Gdpr/app/Models/BasePivot.php:47](Modules/Gdpr/app/Models/BasePivot.php) (Modulo: Gdpr)
@@ -372,10 +389,14 @@ public function scopeWithExtraAttributes(Builder $query): Builder
 **Trovato in  file4 file**:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - `Ticket::profile` - [Modules/LegacyDomain/app/Models/Ticket.php:562](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
 =======
 - `Ticket::profile` - [Modules/Fixcity/app/Models/Ticket.php:562](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+- `Ticket::profile` - [Modules/Fixcity/app/Models/Ticket.php:562](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
+>>>>>>> 77b9106 (.)
 - `RatingMorph::profile` - [Modules/Rating/app/Models/RatingMorph.php:111](Modules/Rating/app/Models/RatingMorph.php)
 - `BaseUser::profile` - [Modules/User/app/Models/BaseUser.php:243](Modules/User/app/Models/BaseUser.php) (Modulo: User)
 - `DeviceUser::profile` - [Modules/User/app/Models/DeviceUser.php:90](Modules/User/app/Models/DeviceUser.php) (Modulo: User)

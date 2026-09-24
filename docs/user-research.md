@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "User Research: Rating Module"
 type: guide
@@ -31,6 +32,8 @@ related:
 
 =======
 >>>>>>> e8cf105 (Check & fix styling)
+=======
+>>>>>>> 77b9106 (.)
 # User Research: Rating Module
 
 ## 🔬 Research Goals
