@@ -83,10 +83,7 @@ trait HasRating
             ->get();
         // ->toArray()
 
-<<<<<<< HEAD
-        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
-=======
->>>>>>> 88e4240 (.)
+/** @var array<int, array<string, mixed>> $ratings_array */
         $ratings_array = [];
         foreach ($ratings as $rating) {
             /** @var array<string, mixed> $rowData */

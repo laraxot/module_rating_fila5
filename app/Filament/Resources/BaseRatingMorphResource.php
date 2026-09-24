@@ -10,8 +10,6 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 abstract class BaseRatingMorphResource extends XotBaseResource
 {
     protected static ?string $model = RatingMorph::class;
-<<<<<<< HEAD
-=======
 
     public static function getFormSchema(): array
     {
@@ -19,5 +17,4 @@ abstract class BaseRatingMorphResource extends XotBaseResource
             // Campi del form
         ];
     }
->>>>>>> 2025498 (.)
 }
