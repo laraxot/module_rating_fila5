@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
-<<<<<<< HEAD
-use Illuminate\Support\Str;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
@@ -18,11 +16,6 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-=======
-use Modules\Rating\Database\Factories\RatingFactory;
-use Modules\Rating\Enums\RuleEnum;
-use Modules\Xot\Contracts\ProfileContract;
->>>>>>> 77b9106 (.)
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -30,21 +23,16 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-<<<<<<< HEAD
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
-=======
->>>>>>> 77b9106 (.)
+use Illuminate\Support\Str;
 
 /**
  * Modules\Rating\Models\BaseRating.
  *
  * Classe base astratta per tutti i modelli Rating nei vari moduli.
  * Fornisce casts, fillable, scope e media conversions condivisi (DRY).
-<<<<<<< HEAD
  * Utilizza HasRecursiveRelationships per l'albero genitore-figlio (adjacency list):
  * children(), parent(), ancestors(), descendants() arrivano dal trait e non si riscrivono.
-=======
->>>>>>> 77b9106 (.)
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
@@ -74,14 +62,10 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property bool|null       $is_disabled
  * @property bool|null       $is_readonly
  * @property int|null        $order_column
-<<<<<<< HEAD
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
  * @property-read mixed      $xls_export_value
-=======
- * @property Model|\Eloquent $linkedTo
->>>>>>> 77b9106 (.)
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -109,7 +93,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @method static RatingFactory factory($count = null, $state = [])
  */
-<<<<<<< HEAD
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
     // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
@@ -140,21 +123,12 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return '#'.(is_scalar($key) ? (string) $key : '');
     }
-=======
-abstract class BaseRating extends BaseModel implements HasMedia
-{
-    use HasSlug;
-    use InteractsWithMedia;
->>>>>>> 77b9106 (.)
 
     /** @var list<string> */
     protected $fillable = [
         'id',
         'extra_attributes',
-<<<<<<< HEAD
         'parent_id',
-=======
->>>>>>> 77b9106 (.)
         'title',
         'color',
         'txt',
@@ -201,19 +175,11 @@ abstract class BaseRating extends BaseModel implements HasMedia
     }
 
     /**
-<<<<<<< HEAD
      * @return MorphTo<Model, BaseRating>
      */
     public function linkedTo(): MorphTo
     {
         return $this->morphTo('model'); // @phpstan-ignore return.type
-=======
-     * @return MorphTo<Model, $this>
-     */
-    public function linkedTo(): MorphTo
-    {
-        return $this->morphTo('model');
->>>>>>> 77b9106 (.)
     }
 
     /**
@@ -249,7 +215,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
             'is_readonly' => 'boolean',
         ];
     }
-<<<<<<< HEAD
+
 
     /**
      * Criterio RichEditor (`txt`) o titolo plain per PDF Html2Pdf.
@@ -259,7 +225,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
     public function getTxtHtml(): string
     {
         $raw = $this->txt;
-        if (! is_string($raw) || '' === $raw) {
+        if (! is_string($raw) || $raw === '') {
             return e((string) ($this->title ?? ''));
         }
 
@@ -281,7 +247,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
         }
 
         $value = $this->pivot->value ?? null;
-        if (null === $value || '' === $value) {
+        if ($value === null || $value === '') {
             return null;
         }
 
@@ -311,7 +277,7 @@ abstract class BaseRating extends BaseModel implements HasMedia
 
             $text = $child->txt ?? $child->title;
 
-            return \is_string($text) && '' !== $text ? strip_tags($text) : '';
+            return \is_string($text) && $text !== '' ? strip_tags($text) : '';
         }
 
         return $this->pivot->value ?? null;
@@ -361,6 +327,4 @@ abstract class BaseRating extends BaseModel implements HasMedia
 
         return $this->children()->exists();
     }
-=======
->>>>>>> 77b9106 (.)
 }

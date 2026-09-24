@@ -4,35 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-use Cknow\Money\Money;
-=======
->>>>>>> fd7a600 (.)
-=======
-use Cknow\Money\Money;
->>>>>>> laraxot/dev
-=======
-use Cknow\Money\Money;
->>>>>>> e8cf105 (Check & fix styling)
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
+use Cknow\Money\Money;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Rating\Models\RatingMorph;
-=======
->>>>>>> fd7a600 (.)
-=======
-use Modules\Rating\Models\RatingMorph;
->>>>>>> laraxot/dev
-=======
-use Modules\Rating\Models\RatingMorph;
->>>>>>> e8cf105 (Check & fix styling)
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\Sluggable\SlugOptions;
@@ -120,20 +98,13 @@ describe('BaseRating (via Rating)', function (): void {
 
         Assert::assertSame($builder, $result);
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)
 
     test('getValueHtml restituisce stringa per valori non Importo', function (): void {
         $rating = new Rating([
             'title' => 'Punteggio',
             'txt' => 'Voto',
         ]);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 42]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -145,7 +116,7 @@ describe('BaseRating (via Rating)', function (): void {
         $rating = new Rating([
             'txt' => 'Importo mensile',
         ]);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 12.5]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -158,7 +129,7 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('getNoteHtml restituisce note pivot quando ci sono figli caricati', function (): void {
         $rating = new Rating(['txt' => 'Criterio']);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 1, 'note' => 'scelta utente']);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect([new Rating(['title' => 'Figlio'])]));
@@ -176,12 +147,4 @@ describe('BaseRating (via Rating)', function (): void {
         $encoded = new Rating(['txt' => '&lt;p&gt;Obiettivo&lt;/p&gt;']);
         Assert::assertSame('<p>Obiettivo</p>', $encoded->getTxtHtml());
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)
 });

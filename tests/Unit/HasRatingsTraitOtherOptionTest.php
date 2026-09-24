@@ -17,27 +17,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\In;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Modules\Rating\Enums\RuleEnum;
-use Modules\Rating\Models\BaseRating;
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
@@ -56,11 +39,11 @@ afterEach(function (): void {
  */
 
 /**
- * @param list<Rating> $children
+ * @param  list<Rating>  $children
  */
 function makeRatingWithChildren(array $children): Rating
 {
-    $parent = new Rating();
+    $parent = new Rating;
     $parent->forceFill([
         'id' => 1,
         'title' => 'Criterio con figli',
@@ -74,7 +57,7 @@ function makeRatingWithChildren(array $children): Rating
 
 function makeChildRating(int $id, string $title): Rating
 {
-    $child = new Rating();
+    $child = new Rating;
     $child->forceFill(['id' => $id, 'title' => $title]);
 
     return $child;
@@ -107,7 +90,7 @@ function ratingsCollection(BaseRating ...$ratings): EloquentCollection
 
 describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', function (): void {
     test('con figli lo schema e un Fieldset con Select e Textarea', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -125,7 +108,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('Fieldset: columns(2) interno e columnSpan(2) nel form parent', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -138,7 +121,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('le opzioni del Select includono i figli piu la chiave "other" per "altro"', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -167,7 +150,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // su null e selectIsOther() non ritorna mai true. Guardia esplicita: se qualcuno
         // in futuro riporta la costante a '' (e' gia' successo due volte oggi), questo
         // test si accorge prima che arrivi un altro bug report identico.
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -184,7 +167,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('il campo Select mantiene il nome ratings.{id}.pivot.value, la Textarea usa .pivot.note', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -199,7 +182,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('senza figli il campo resta un TextInput numerico, non un Fieldset', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -209,7 +192,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('readonly resta un TextEntry anche con figli', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['is_readonly' => true]);
 
@@ -222,27 +205,9 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     test('ratingFieldName accetta una colonna pivot esplicita restando retrocompatibile', function (): void {
         $rating = makeChildRating(7, 'Prova');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
         Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
         Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
-=======
-        Assert::assertSame('ratings.7.pivot.value', RatingsHostStub::ratingFieldName($rating));
-        Assert::assertSame('ratings.7.pivot.value', RatingsHostStub::ratingFieldName($rating, 'value'));
-        Assert::assertSame('ratings.7.pivot.note', RatingsHostStub::ratingFieldName($rating, 'note'));
->>>>>>> fd7a600 (.)
-=======
-        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
-        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
-        Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
->>>>>>> laraxot/dev
-=======
-        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
-        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
-        Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
->>>>>>> e8cf105 (Check & fix styling)
     });
 
     test('la Textarea e required solo quando Get sul Select restituisce other', function (): void {
@@ -250,7 +215,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // su isRequired — la Closure poteva essere sbagliata e Pest restava verde.
         // Qui si valuta il comportamento: true su 'other', false su null/id figlio.
         // La Closure riceve Get($select Component), non un path stringa (statePath `data.`).
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema(null, ratingsCollection($parent));
@@ -270,7 +235,8 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         Assert::assertInstanceOf(\Closure::class, $required);
 
         $stubGet = static function (mixed $selectValue) use ($select): Get {
-            return new class($select, $selectValue) extends Get {
+            return new class($select, $selectValue) extends Get
+            {
                 public function __construct(
                     private readonly Component $select,
                     private readonly mixed $selectValue,
@@ -295,7 +261,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     test('il Select con figli valida in(keys) e non RuleEnum numeric', function (): void {
         // Root cause 5.152: ->rules(RuleEnum::ZeroFive) = numeric|min:0|max:5
         // rifiutava la sentinella 'other' prima che la note potesse essere required.
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([
             makeChildRating(10, 'Ottimo'),
             makeChildRating(11, 'Scarso'),
@@ -355,7 +321,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // un rating con RuleEnum::Null (stringa vuota) o un rule futuro senza "required"
         // avrebbe lasciato il Select scegliibile-o-no senza alcun vincolo. ->required()
         // esplicito lo rende obbligatorio a prescindere dal contenuto di rule.
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['rule' => RuleEnum::Null]);
 
@@ -369,35 +335,22 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     });
 
     test('il Fieldset restituito riceve la decorazione host via label, una sola volta', function (): void {
-        $caller = new class implements RatingsFormCallerContract {
+        $caller = new class implements RatingsFormCallerContract
+        {
             /** @var array<int, class-string> */
             public array $decorated = [];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             public function decorateRatingField(RatingContract $rating, Component $component): Component
-=======
-            public function decorateRatingField(BaseRating $rating, Component $component): Component
->>>>>>> fd7a600 (.)
-=======
-            public function decorateRatingField(RatingContract $rating, Component $component): Component
->>>>>>> laraxot/dev
-=======
-            public function decorateRatingField(RatingContract $rating, Component $component): Component
->>>>>>> e8cf105 (Check & fix styling)
             {
                 $this->decorated[] = $component::class;
 
                 return $component instanceof Fieldset ? $component->label('Ruolo') : $component;
             }
 
-            public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void
-            {
-            }
+            public function recalculateRatingFields(Set $set, Get $get, Collection $readonlyRatings): void {}
         };
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
 
         $schema = $host->getRatingsFormSchema($caller, ratingsCollection($parent));
@@ -417,7 +370,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
         // e' un'API distinta da label() — non rende nulla in UI, serve solo
         // all'interpolazione dei messaggi — quindi impostarla nel trait non viola D-1
         // (che vieta solo ->label() sui componenti).
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $parent = makeRatingWithChildren([makeChildRating(10, 'Ottimo')]);
         $parent->forceFill(['title' => 'Ruolo']);
 
