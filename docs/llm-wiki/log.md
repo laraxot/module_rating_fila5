@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating Activity Log"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "log"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating Activity Log
 
 > **Module**: Rating
@@ -29,47 +17,8 @@ qmd: "log"
 
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-- Created: AGENTS.md (agent instructions)
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Created: AGENTS.md (agent instructions)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
 - Created: agents.md (agent instructions)
-=======
 - Created: AGENTS.md (agent instructions)
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- Created: AGENTS.md (agent instructions)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- Created: AGENTS.md (agent instructions)
->>>>>>> 77b9106 (.)
-=======
-- Created: AGENTS.md (agent instructions)
->>>>>>> c91c8c3 (.)
-=======
-- Created: AGENTS.md (agent instructions)
->>>>>>> 2025498 (.)
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:

@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
-<<<<<<< HEAD
 use Modules\Rating\Datas\RatingData;
-=======
->>>>>>> 2025498 (.)
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
@@ -35,7 +32,6 @@ return new class extends XotBaseMigration {
         // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table): void {
-<<<<<<< HEAD
                 RatingData::updateColumns($table, $this);
 
                 // `updateTimestamps()` resta qui e non dentro RatingData: in questa
@@ -43,39 +39,6 @@ return new class extends XotBaseMigration {
                 // questa riga a crearli su un'installazione nuova. Le migrazioni degli
                 // altri moduli li dichiarano in creazione e non ne hanno bisogno —
                 // e' il motivo per cui l'helper condiviso non li impone a tutti.
-=======
-                if (! $this->hasColumn('title')) {
-                    $table->string('title')->nullable();
-                }
-                if (! $this->hasColumn('slug')) {
-                    $table->string('slug')->nullable()->index();
-                }
-                if (! $this->hasColumn('color')) {
-                    $table->string('color')->nullable();
-                }
-                if (! $this->hasColumn('icon')) {
-                    $table->string('icon')->nullable();
-                }
-                if (! $this->hasColumn('rule')) {
-                    $table->string('rule')->nullable();
-                }
-                if (! $this->hasColumn('txt')) {
-                    $table->string('txt')->nullable();
-                }
-                // @see Modules/Rating/docs/schemaless-attributes-errors.md
-                if (! $this->hasColumn('extra_attributes')) {
-                    $table->schemalessAttributes('extra_attributes');
-                }
-                if (! $this->hasColumn('is_disabled')) {
-                    $table->boolean('is_disabled')->nullable();
-                }
-                if (! $this->hasColumn('is_readonly')) {
-                    $table->boolean('is_readonly')->nullable();
-                }
-                if (! $this->hasColumn('order_column')) {
-                    $table->unsignedInteger('order_column')->nullable()->index();
-                }
->>>>>>> 2025498 (.)
                 $this->updateTimestamps(table: $table, hasSoftDeletes: false);
             }
         );

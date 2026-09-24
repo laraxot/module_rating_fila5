@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Fixtures;
 
-<<<<<<< HEAD
-=======
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
->>>>>>> 88e4240 (.)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -19,31 +15,13 @@ use Modules\Rating\Models\Rating;
 /**
  * Host di test (richiesto da XotBaseModel::getClassName()).
  * Caricato solo dai Unit test via require_once.
-<<<<<<< HEAD
-=======
- *
- * `ratings_by_id` arriva dall'accessor del trait ({@see AbstractRatingsHost});
- * dichiarato qui così Pest/IDE risolvono `data_get($host, 'ratings_by_id…')`
- * senza proprietà fantasma.
- *
- * @property-read EloquentCollection<int|string, BaseRating> $ratings_by_id
->>>>>>> 88e4240 (.)
  */
 class RatingsHostStub extends AbstractRatingsHost
 {
     protected $table = 'ratings_host_stub';
 
     /** @var list<string> */
-<<<<<<< HEAD
     protected $fillable = ['title', 'ratings_avg', 'ratings_count', 'post_type'];
-=======
-    protected $fillable = [
-        'title',
-        'ratings_avg',
-        'ratings_count',
-        'post_type',
-    ];
->>>>>>> 88e4240 (.)
 
     /** @var MorphToMany<Rating, $this, MorphPivot, 'pivot'>|null */
     public ?MorphToMany $forcedMorph = null;

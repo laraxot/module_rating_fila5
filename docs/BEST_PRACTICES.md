@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Best Practices – Rating"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./FALSE_FRIENDS.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Best Practices – Rating
 
 ## Principi DRY/KISS
@@ -37,44 +25,5 @@ related:
 - Copri casi limite come rating inversi.
 
 ## Documentazione
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-- Aggiorna `docs/index.md` con nuovi endpoint.
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
->>>>>>> laraxot/dev
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
 - Collega a moduli correlati come `Review` e `Auth`.
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
-- Collega a moduli correlati come `Review` e `Auth`.
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
-- Collega a moduli correlati come `Review` e `Auth`.
->>>>>>> 77b9106 (.)
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
-- Collega a moduli correlati come `Review` e `Auth`.
->>>>>>> c91c8c3 (.)
-=======
-- Aggiorna `docs/INDEX.md` con nuovi endpoint.
-- Collega a moduli correlati come `Review` e `Auth`.
->>>>>>> 2025498 (.)

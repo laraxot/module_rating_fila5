@@ -9,23 +9,7 @@
     "Stabilizzare il contratto dati delle opzioni"
   ],
   "nonGoals": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "Gestire un dominio applicativo esterno completo"
-=======
-    "Gestire il dominio completo Predict"
->>>>>>> e8cf105 (Check & fix styling)
-=======
-    "Gestire il dominio completo Predict"
->>>>>>> 77b9106 (.)
-=======
-    "Gestire il dominio completo Predict"
->>>>>>> c91c8c3 (.)
-=======
-    "Gestire il dominio completo Predict"
->>>>>>> 2025498 (.)
   ],
   "dependencies": [
     "Xot"

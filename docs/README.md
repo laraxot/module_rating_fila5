@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "Rating Module"
 type: documentation
 module: Rating
@@ -40,90 +36,11 @@ Con figli: **Select + Textarea** sempre; option «altro» = `''`; placeholder = 
 Questo README aveva marker di merge non risolti (`<<<<<<< HEAD`); ripulito 2026-09-16.
 Preferire sempre `docs/bmad/` per lavoro in corso; bozze in `docs/stories/` con
 `ALTRO_KEY='altro'` sono superseded-pointer.
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
-title: "Rating Module Documentation"
-type: documentation
-tags: [module, documentation]
-created: 2026-06-05
-updated: 2026-06-05
----
-
-# Modulo Rating
-
-## Overview
-
-Il modulo **Rating** fa parte dell'ecosistema [PROJECT_NAME] platform.
-
-## Scopo
-
-Questo modulo gestisce [DESCRIZIONE SPECIFICA DA COMPLETARE].
-
-## Struttura
-
-```
-Rating/
-├── app/
-│   ├── Models/
-│   ├── Filament/
-│   └── ...
-├── docs/
-├── lang/
-└── resources/
-```
-
-## Dipendenze
-
-- [Xot Base](../Xot/docs/)
-- [User Module](../User/docs/) (se usa autenticazione)
-- [Tenant Module](../Tenant/docs/) (se multi-tenant)
-
-## Collegamenti
-
-- [Documentazione Root](../../../docs/RATING_MODULE.md)
-- [Regole Architecture](../Xot/docs/architecture/)
-
-## Backlinks
-
-- [Indice Moduli](../README.md)
-
-## TODO
-
-- [ ] Completare descrizione funzionalità
-- [ ] Documentare modelli principali
-- [ ] Documentare risorse Filament
-- [ ] Aggiungere esempi codice
-
-- [Conflict Resolution](conflict-resolution.md)
-
-
-## Standard Rules & Workflow
-
-- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ## Documentation
 
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md) — Pattern per caricamento efficiente
-- [QMD Setup](./QMD-SETUP.md) — Configurazione ricerca locale
-- [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
->>>>>>> 77b9106 (.)
-=======
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
->>>>>>> c91c8c3 (.)
-=======
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
->>>>>>> 2025498 (.)
+- [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
+- [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
+- [Performance](./performance-optimization.md) — Metriche e best practice
+- [Project Structure](./project-structure.md) — Directory layout
+- [Conflict Resolution](./conflict-resolution.md)

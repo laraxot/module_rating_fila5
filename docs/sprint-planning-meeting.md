@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating - Sprint Planning Meeting"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./sprint-planning.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating - Sprint Planning Meeting
 
 > Documento operativo per sprint planning. Modulo.

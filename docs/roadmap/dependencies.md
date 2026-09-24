@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Dipendenze e confini del modulo Rating"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "dependencies"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Dipendenze e confini del modulo Rating
 
 Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa può essere **usato**.
@@ -27,23 +15,7 @@ Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa pu�
 
 ## Dipendenze in ingresso (il Rating dipende da)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Laravel / Framework**: Laravel 13, Eloquent, migrazioni, container.
-=======
-- **Laravel / Framework**: Laravel 12, Eloquent, migrazioni, container.
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- **Laravel / Framework**: Laravel 12, Eloquent, migrazioni, container.
->>>>>>> 77b9106 (.)
-=======
-- **Laravel / Framework**: Laravel 12, Eloquent, migrazioni, container.
->>>>>>> c91c8c3 (.)
-=======
-- **Laravel / Framework**: Laravel 12, Eloquent, migrazioni, container.
->>>>>>> 2025498 (.)
 - **Xot**: classi base Filament (`XotBaseResource`, `XotBasePage`, …), convenzioni di namespace e traduzioni, eventuale `XotBaseMigration`.
 - **Spatie (se in uso)**: es. `spatie/schemaless-attributes` per `extra_attributes` sul modello Rating (vedi [architecture.md](../architecture.md)); versioni allineate al `composer.json` del modulo.
 - **Nessun modulo di dominio applicativo**: Rating non deve dipendere da User, Patient, Cms, ecc. per la sua logica core.

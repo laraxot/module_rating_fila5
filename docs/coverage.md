@@ -2,18 +2,12 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-<<<<<<< HEAD
-updated: 2026-09-08
-=======
 updated: 2026-09-22
->>>>>>> e8cf105 (Check & fix styling)
 qmd: "coverage rating pest misura reale test saltati database"
 ---
 
 # Coverage del modulo Rating
 
-<<<<<<< HEAD
-=======
 ## PHPStan — 22 settembre 2026 (gate post `stuck-rebase-real-divergence-recovery`, commit `d80dc62`)
 
 Baseline dichiarata dal recovery: **9 errori pre-esistenti** su
@@ -56,7 +50,6 @@ fallire subito). Skip ambientale, non un fallimento del fix — il test è DB-fr
 costruzione (fixture `setRawAttributes()`/`setRelation()`), ma il bootstrap `TestCase` di
 Pest lo precede. Nessuna nuova misura di coverage di riga oggi.
 
->>>>>>> e8cf105 (Check & fix styling)
 ## Verifica PHPStan dell'8 settembre 2026
 
 Nessuna nuova misura di coverage. Il preflight trova `app.env=testing` nella cache
@@ -243,8 +236,6 @@ fix — il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi
 | Data | PHPStan Rating | PHPMD | Insights | Pest |
 |---|---|---|---|---|
 | 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip — DB `10.100.200.53:3306` unreachable |
-<<<<<<< HEAD
-=======
 
 ## 2026-09-23 — fix generics.notSubtype su RatingContract
 
@@ -263,4 +254,3 @@ gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa 
 - Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
 
 Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.
->>>>>>> e8cf105 (Check & fix styling)

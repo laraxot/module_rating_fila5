@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Tables\Filters;
 
-use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
 
 /**
  * «La scheda è stata valutata davvero?».
@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @see docs/wiki/rules/filament-reusable-component-owns-visibility.md
  */
-class HasRatingValuesFilter extends TernaryFilter
+class HasRatingValuesFilter extends XotBaseTernaryFilter
 {
     public static function getDefaultName(): ?string
     {

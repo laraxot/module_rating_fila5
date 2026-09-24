@@ -17,11 +17,7 @@ use Modules\Rating\Models\Rating;
 /**
  * Trait RatingTrait.
  */
-<<<<<<< HEAD
 /** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
-=======
-/** @phpstan-ignore trait.unused */
->>>>>>> 2025498 (.)
 trait RatingTrait
 {
     /**
@@ -157,15 +153,6 @@ trait RatingTrait
         $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
-<<<<<<< HEAD
-        // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
-        // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';
-        // $ratingUrl = Panel::make()->get($this)->itemAction('rate_it')->url();
-        $ratingUrl = '#';
-        // http://geek.local/public_html/it/article/prova-articolo?_act=rate
-        /*
-        return $msg.'<a data-href="'.$ratingUrl.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
-=======
         // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
         // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
@@ -173,22 +160,10 @@ trait RatingTrait
         // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
         return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
->>>>>>> 2025498 (.)
         Rate It </a>';
         */
         $title = 'Vota '.$this->title;
 
-<<<<<<< HEAD
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        $btnIframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
-        <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
-        </button>';
-
-        return $msg.$btn.$btnIframe;
-=======
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
@@ -198,6 +173,5 @@ trait RatingTrait
         </button>';
 
         return $msg.$btn.$btn_iframe;
->>>>>>> 2025498 (.)
     }
 }

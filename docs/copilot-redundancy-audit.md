@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Copilot Redundancy Audit"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./core-functionality.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi

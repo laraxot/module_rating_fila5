@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating Module - Product Roadmap"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./PRODUCT_STRATEGY.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating Module - Product Roadmap
 
 **Module:** Rating  

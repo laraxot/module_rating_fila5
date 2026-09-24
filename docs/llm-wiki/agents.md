@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -19,19 +8,10 @@ qmd: "istruzioni agenti LLM wiki modulo"
 issues: []
 discussions: []
 related:
-  - ./coding-agent-manifests.md
+  - ./index.md
+  - ./log.md
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

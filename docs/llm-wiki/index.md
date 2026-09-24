@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating Module Wiki Index"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "index"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating Module Wiki Index
 
 > **Module**: Rating
@@ -63,33 +51,9 @@ _No troubleshooting pages created yet_
 
 ### Related Project Concepts
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Laraxot Architecture
 - Actions Over Services
 - PHPStan Level 10
-=======
-- [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
-- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
-- [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
-- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
-- [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
->>>>>>> 77b9106 (.)
-=======
-- [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
-- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
-- [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
->>>>>>> c91c8c3 (.)
-=======
-- [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
-- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
-- [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
->>>>>>> 2025498 (.)
 
 ## Module's Role in Project
 

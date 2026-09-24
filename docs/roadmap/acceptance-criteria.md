@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Criteri di accettazione per le fasi"
 type: guide
@@ -11,14 +7,6 @@ updated: 2026-07-14
 qmd: "acceptance criteria"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Criteri di accettazione per le fasi
 
 Criteri misurabili e verificabili per considerare completata ogni fase della roadmap.  
@@ -39,23 +27,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 
 - [ ] Ogni modello in `Modules/Rating/Models/` estende `Modules\Rating\Models\BaseModel` (o la classe base indicata in [architecture.md](../architecture.md)).
 - [ ] Relazioni con PHPDoc completo (`@return BelongsTo<...>`, `MorphMany<...>`, ecc.) e type hint di ritorno.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 13 / regole progetto.
-=======
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
->>>>>>> e8cf105 (Check & fix styling)
-=======
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
->>>>>>> 77b9106 (.)
-=======
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
->>>>>>> c91c8c3 (.)
-=======
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
->>>>>>> 2025498 (.)
 
 ### Filament (se presente)
 

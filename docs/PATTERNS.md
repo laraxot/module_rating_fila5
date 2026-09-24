@@ -6,32 +6,9 @@ created: 2026-07-28
 updated: 2026-07-28
 qmd: "rating patterns"
 related:
-<<<<<<< HEAD
-<<<<<<< HEAD
   - "./best-practices.md"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-  - "./best-practices.md"
-=======
-  - "./BEST_PRACTICES.md"
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
-  - "./BEST_PRACTICES.md"
->>>>>>> laraxot/dev
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
-  - "./BEST_PRACTICES.md"
->>>>>>> e8cf105 (Check & fix styling)
   - "./architecture.md"
-  - "./TROUBLESHOOTING.md"
+  - "./troubleshooting.md"
 ---
 
 # Architectural Patterns – Rating
@@ -412,39 +389,7 @@ $validated = $request->validate($rating->rules());
 - [ ] Filament resource created (Resource, List, Form)
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 - [ ] Documentation added to docs/index.md
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [ ] Documentation added to docs/index.md
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-- [ ] Documentation added to docs/INDEX.md
-=======
-<<<<<<< HEAD
-- [ ] Documentation added to docs/index.md
-=======
-- [ ] Documentation added to docs/INDEX.md
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- [ ] Documentation added to docs/index.md
->>>>>>> e8cf105 (Check & fix styling)
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 
@@ -461,43 +406,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 - [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-- [Best Practices](./best-practices.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Best Practices](./best-practices.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-=======
-=======
->>>>>>> fd7a600 (.)
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
->>>>>>> e8cf105 (Check & fix styling)
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

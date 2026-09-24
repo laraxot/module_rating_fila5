@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Code Quality Analysis - Rating Module"
 type: concept
@@ -13,14 +9,6 @@ related:
   - "./code-redundancy-audit.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Code Quality Analysis - Rating Module
 
 **Data Analisi**: 2025-01-22  

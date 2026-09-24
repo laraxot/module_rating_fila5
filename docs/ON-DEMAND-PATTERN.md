@@ -56,70 +56,10 @@ qmd search "<topic>"
 \`\`\`
 ./laravel/Modules/Rating/docs/
 └── wiki/                    # Knowledge base locale
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-    ├── rules/index.md      # Indice rules modulo-specifiche
-    ├── skills/index.md     # Indice skills modulo-specifiche
-    ├── commands/index.md   # Indici commands
-    └── memories/index.md   # Indice memories
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fd7a600 (.)
-=======
-=======
->>>>>>> laraxot/dev
-=======
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
-    ├── rules/INDEX.md      # Indice rules modulo-specifiche
-    ├── skills/INDEX.md     # Indice skills modulo-specifiche
-    ├── commands/INDEX.md   # Indici commands
-    └── memories/INDEX.md   # Indice memories
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
+    ├── rules/index.md      # Indice rules modulo-specifiche (esiste anche INDEX.md, case-duplicate)
+    ├── skills/index.md     # Indice skills modulo-specifiche (esiste anche INDEX.md, case-duplicate)
+    ├── commands/index.md   # Indici commands (esiste anche INDEX.md, case-duplicate)
+    └── memories/index.md   # Indice memories (esiste anche INDEX.md, case-duplicate)
 \`\`\`
 
 ## Quick Reference
@@ -133,47 +73,7 @@ qmd search "<topic>"
 
 ## Regole Critiche per Module
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-1. **Nessun bootstrap pesante** — Non elencare rules in agents.md o CLAUDE.md
-=======
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
->>>>>>> e8cf105 (Check & fix styling)
-=======
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
->>>>>>> 77b9106 (.)
-=======
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
->>>>>>> c91c8c3 (.)
-=======
-1. **Nessun bootstrap pesante** — Non elencare rules in AGENTS.md o CLAUDE.md
->>>>>>> 2025498 (.)
 2. **Carica only what you need** — Ogni task carica max 3-5 file
 3. **Mantieni la wiki aggiornata** — Dopo ogni task, aggiorna ./laravel/Modules/Rating/docs/wiki/log.md
 4. **Rispetta la trigger map** — Se esiste, usala; altrimenti usa qmd search

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Rating Module Configuration"
 type: guide
@@ -13,14 +9,6 @@ related:
   - "./conflict-resolution.md"
 ---
 
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
@@ -40,23 +28,7 @@ This section lists the essential packages required for the module to function co
 ```
 
 *   `spatie/laravel-schemaless-attributes`: Essential for handling flexible, schemaless data structures within the module's Eloquent models.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 *   `laravel/framework`: Specifies compatibility with Laravel 13.x.
-=======
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
->>>>>>> e8cf105 (Check & fix styling)
-=======
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
->>>>>>> 77b9106 (.)
-=======
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
->>>>>>> c91c8c3 (.)
-=======
-*   `laravel/framework`: Specifies compatibility with Laravel 12.x.
->>>>>>> 2025498 (.)
 *   `filament/filament`: Indicates integration with Filament Admin Panel version 5.x.
 
 ### `require-dev` Section
@@ -107,20 +79,4 @@ The `scripts` section defines Composer scripts for common development tasks, inc
 *   `test-coverage`: Executes Pest tests with HTML coverage reporting.
 *   `format`: Formats code using PHP-CS-Fixer.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
-=======
-The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
->>>>>>> e8cf105 (Check & fix styling)
-=======
-The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
->>>>>>> 77b9106 (.)
-=======
-The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
->>>>>>> c91c8c3 (.)
-=======
-The `config` section ensures consistent package sorting and allows necessary Composer plugins. `minimum-stability` is set to `dev` and `prefer-stable` to `true` to allow for development dependencies while preferring stable releases.
->>>>>>> 2025498 (.)

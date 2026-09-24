@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 /.ai*
 /_bmad
 /bashscripts
@@ -33,35 +29,16 @@ graphify-out/
 .cursor~*
 .windsurf~*
 node_modules
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 
 # Regola tests-auditcoverage-forbidden: artefatti audit, mai nel repo
 tests/AuditCoverage/
 audit-coverage/
 .claude-audit/
-<<<<<<< HEAD
-=======
->>>>>>> fd7a600 (.)
-=======
->>>>>>> laraxot/dev
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
 *.jar
 *.log
-*.lock
 package-lock.json
 *.phar
 .git-rewrite
-.php-cs-fixer.cache
-package-lock.json
 vendor/
 node_modules/
 .env
@@ -74,22 +51,13 @@ error_log
 
 *.stackdump
 *.cache
-*.log
-*.lock
 *.bakup
 *.old
 *.old1
-package-lock.json
 
-node_modules
 .git-blame-ignore-revs
-node_modules
 vendor
-.git-blame-ignore-revs
 build/
-vendor/
-build/
-node_modules
 docs/cache/
 cache/
 *:Zone.Identifier
@@ -102,7 +70,6 @@ cache/
 # PHPStan documentation
 docs/phpstan/
 lang/lang/
-_docs/
 _docs/
 
 # Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
@@ -117,32 +84,11 @@ docs/archive/
 *~head
 
 agentdb.rvf
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c91c8c3 (.)
-audit-coverage/
-tests/AuditCoverage/
-.claude-audit/
-.cursor/
 .vscode/
-.windsurf/
-.devcontainer/
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-tests/AuditCoverage/
-=======
 
 # Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
 !tests/
 !tests/**
 
 # claude-audit bridge (non committare)
-audit-coverage/
 tests/AuditCoverage/*
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-=======
->>>>>>> 2025498 (.)
