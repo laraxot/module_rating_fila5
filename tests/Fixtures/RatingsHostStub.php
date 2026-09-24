@@ -21,7 +21,7 @@ use Modules\Rating\Models\Rating;
  * dichiarato qui così Pest/IDE risolvono `data_get($host, 'ratings_by_id…')`
  * senza proprietà fantasma.
  *
- * @property-read EloquentCollection<int|string, BaseRating> $ratings_by_id
+ * @property EloquentCollection<int|string, BaseRating> $ratings_by_id
  */
 class RatingsHostStub extends AbstractRatingsHost
 {
@@ -50,7 +50,8 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-     * @param  class-string<TRelatedModel>  $related
+     * @param class-string<TRelatedModel> $related
+     *
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -123,7 +124,8 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-     * @param  class-string<TRelatedModel>  $related
+     * @param class-string<TRelatedModel> $related
+     *
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)
