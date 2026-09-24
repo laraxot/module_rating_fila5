@@ -1,17 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-=======
-/**
- * ---.
- */
-
->>>>>>> 77b9106 (.)
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
 
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
@@ -26,13 +18,8 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
- * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
- * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
- * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
- * (path form/export, label, colonne della tabella). Non è un accostamento voluto: è il
- * nome `RatingData` che era già occupato quando è servito il secondo concetto.
- * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
- * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
+ * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
+ * Split `RatingBlockData` / entity tracciato a parte.
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -41,13 +28,6 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
-=======
-use Modules\Rating\Enums\SupportedLocale;
-use Spatie\LaravelData\Data;
-
-/**
- * Undocumented class.
->>>>>>> 77b9106 (.)
  */
 class RatingData extends Data
 {
@@ -58,21 +38,11 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
-<<<<<<< HEAD
         public readonly ?int $parent_id = null,
-=======
->>>>>>> 77b9106 (.)
-    ) {
-    }
+    ) {}
 
     /**
-<<<<<<< HEAD
-     * Costruisce il DTO da un payload di form.
-     *
-     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
-     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
-     *
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
     {
@@ -83,9 +53,9 @@ class RatingData extends Data
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
      */
-    public static function ratingValuePath(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
+    public static function ratingValuePath(RatingContract $rating, string $field = 'value'): string
     {
-        return 'ratings_by_id.'.$rating->id.'.pivot.'.$pivotColumn;
+        return 'ratings_by_id.'.$rating->id.'.pivot.'.$field;
     }
 
     /**
@@ -94,7 +64,7 @@ class RatingData extends Data
      *
      * @see BaseRating::getXlsExportValueAttribute()
      */
-    public static function ratingXlsValuePath(RatingContract|BaseRating $rating): string
+    public static function ratingXlsValuePath(RatingContract $rating): string
     {
         return 'ratings_by_id.'.$rating->id.'.xls_export_value';
     }
@@ -107,7 +77,7 @@ class RatingData extends Data
      * per compatibilita: ogni chiamata esistente continua a puntare li; `'note'` e' la
      * sola altra colonna pivot generata oggi (vedi `buildRatingComponent()` nel trait).
      */
-    public static function ratingFieldName(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
+    public static function ratingFieldName(RatingContract $rating, string $pivotColumn = 'value'): string
     {
         return 'ratings.'.$rating->id.'.pivot.'.$pivotColumn;
     }
@@ -135,10 +105,9 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param array<string, mixed>     $where
-     * @param class-string<BaseRating> $ratingClass
-     *
-     * @return array<int|string, string>
+     * @param  array<string, mixed>  $where
+     * @param  class-string<BaseRating>  $ratingClass
+     * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
     {
@@ -147,7 +116,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
+            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
         $ratings->loadMissing('children');
 
@@ -155,9 +124,8 @@ class RatingData extends Data
     }
 
     /**
-     * @param Collection<int, RatingContract>|EloquentCollection<int, RatingContract>|iterable<int, RatingContract> $ratings
-     *
-     * @return array<int|string, string>
+     * @param  iterable<int, RatingContract>  $ratings
+     * @return array<string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
     {
@@ -168,12 +136,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if (null !== $rating->parent_id) {
+            if ($rating->parent_id !== null) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ('' === $label) {
+            if ($label === '') {
                 $label = 'Rating '.$rating->id;
             }
 
@@ -186,9 +154,7 @@ class RatingData extends Data
             if ($children->isNotEmpty()) {
                 $fields[self::ratingValuePath($rating, 'note')] = (string) __(
                     'rating::fields.note_for',
-                    [
-                        'label' => $label,
-                    ],
+                    ['label' => $label],
                 );
             }
         }
@@ -196,19 +162,6 @@ class RatingData extends Data
         return $fields;
     }
 
-    /**
-     * Le colonne di `ratings`, dichiarate una volta sola.
-     *
-     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
-     * si aggiungono solo quelle che mancano. Una lista, due usi: la stessa colonna
-     * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
-     * `text()` in creazione e `string()` nel guard di update).
-     *
-     * ```php
-     * $this->tableCreate(fn (Blueprint $table) => RatingData::updateColumns($table));
-     * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
-     * ```
-     */
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration
@@ -247,21 +200,5 @@ class RatingData extends Data
         if ($missing('parent_id')) {
             $table->unsignedBigInteger('parent_id')->nullable();
         }
-=======
-     * Create from array with type casting.
-     *
-     * @param array<string,mixed> $data
-     */
-    public static function fromArray(array $data): self
-    {
-        return new self(
-            title: is_string($data['title'] ?? '') ? ($data['title'] ?? '') : (is_scalar($data['title'] ?? '') ? (string) ($data['title'] ?? '') : ''),
-            description: is_string($data['description'] ?? '') ? ($data['description'] ?? '') : (is_scalar($data['description'] ?? '') ? (string) ($data['description'] ?? '') : ''),
-            disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
-            position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
-            locale: SupportedLocale::fromString(is_string($data['locale'] ?? 'it') ? ($data['locale'] ?? 'it') : 'it'),
-            image_url: isset($data['image_url']) ? (is_string($data['image_url']) ? $data['image_url'] : null) : null,
-        );
->>>>>>> 77b9106 (.)
     }
 }
