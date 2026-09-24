@@ -54,6 +54,9 @@ Indice operativo del wiki Rating.
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 - [rules/INDEX](./rules/index.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/index.md): skill locali e condivise da caricare on-demand.
 =======
@@ -61,11 +64,14 @@ Indice operativo del wiki Rating.
 - [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 - [rules/INDEX](./rules/INDEX.md): regole locali e root per Rating/XotBase/Filament.
 - [skills/INDEX](./skills/INDEX.md): skill locali e condivise da caricare on-demand.
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
 ## Scopo Rating Module
 
@@ -90,11 +96,17 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))
 
@@ -173,12 +185,18 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> laraxot/dev
 =======
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))

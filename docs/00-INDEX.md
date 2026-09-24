@@ -43,6 +43,12 @@ related:
 
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 =======
@@ -54,9 +60,13 @@ related:
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ---
 

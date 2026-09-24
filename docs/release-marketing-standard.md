@@ -20,6 +20,12 @@ Ogni modulo/tema deve essere pubblicabile, comprensibile e desiderabile: workflo
 - `../.github/workflows/semantic-release.yml`
 - `../.releaserc.json`
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- `../CHANGELOG.md`
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 - `../CHANGELOG.md`
 =======
@@ -31,9 +37,13 @@ Ogni modulo/tema deve essere pubblicabile, comprensibile e desiderabile: workflo
 - `../CHANGELOG.md`
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ## Confidenza
 

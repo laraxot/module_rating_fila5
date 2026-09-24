@@ -20,6 +20,12 @@ docs/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+│   ├── schema.md          # Questo file
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 │   ├── schema.md          # Questo file
 =======
@@ -41,9 +47,13 @@ docs/
 =======
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna

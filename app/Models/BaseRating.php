@@ -10,9 +10,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 =======
 >>>>>>> fd7a600 (.)
+=======
+use Illuminate\Support\Str;
+>>>>>>> laraxot/dev
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
@@ -69,9 +73,13 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property mixed           $xls_export_value
 =======
 >>>>>>> fd7a600 (.)
+=======
+ * @property mixed           $xls_export_value
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -222,6 +230,9 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         ];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 
     /**
      * Criterio RichEditor (`txt`) o titolo plain per PDF Html2Pdf.
@@ -333,6 +344,9 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
         return $this->children()->exists();
     }
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 }

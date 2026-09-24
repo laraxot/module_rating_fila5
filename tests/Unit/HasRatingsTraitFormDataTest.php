@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\HasMany;
 =======
 >>>>>>> fd7a600 (.)
+=======
+use Illuminate\Database\Eloquent\Relations\HasMany;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Mockery\MockInterface;
@@ -25,6 +29,9 @@ afterEach(function (): void {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 /**
  * @param array<string, int|string|null> $payload
  *
@@ -41,14 +48,20 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
     return $relation;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 /*
  * Story Rating/5.145 — refactor: fill/save del pivot ratings.{id}.pivot.{value,note}
  * spostato da CompilaIndennitaResponsabilita (duplicato, parziale, con un cast a 0 buggato)
  * a due metodi generici del trait. Risolve anche il blocker IR/5.140 (issue
  * provtv/module_indennitaresponsabilita_fila5#36) sul pass-through di pivot.note.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
  *
  * Hotfix 2026-09-16: sync/clear usano ratingMorphs() (model_id + alias|FQCN), non
  * updateExistingPivot solo-alias.
@@ -101,11 +114,15 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
 
 describe('HasRatingsTrait::syncRatingsFormData', function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
     test('scrive value numerico e note invariata via ratingMorphs', function (): void {
         $host = new RatingsHostStub();
         $host->forceFill(['id' => 1001]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(7, ['value' => 5, 'note' => 'ok'], 1);
+<<<<<<< HEAD
 =======
     test('scrive value numerico e note invariata', function (): void {
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&MockInterface $relation */
@@ -117,6 +134,8 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host = new RatingsHostStub();
         $host->forcedMorph = $relation;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
         $host->syncRatingsFormData([
             7 => ['pivot' => ['value' => 5, 'note' => 'ok']],
@@ -125,10 +144,14 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
 
     test('normalizza a null la chiave "other" (altro), mai a zero', function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         $host = new RatingsHostStub();
         $host->forceFill(['id' => 1002]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(8, ['value' => null, 'note' => 'motivo'], 1);
+<<<<<<< HEAD
 =======
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&MockInterface $relation */
         $relation = \Mockery::mock(MorphToMany::class);
@@ -139,6 +162,8 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host = new RatingsHostStub();
         $host->forcedMorph = $relation;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
         $host->syncRatingsFormData([
             8 => ['pivot' => ['value' => 'other', 'note' => 'motivo']],
@@ -147,10 +172,14 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
 
     test('normalizza a null un valore non numerico, mai a zero', function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         $host = new RatingsHostStub();
         $host->forceFill(['id' => 1003]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(9, ['value' => null], 1);
+<<<<<<< HEAD
 =======
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&MockInterface $relation */
         $relation = \Mockery::mock(MorphToMany::class);
@@ -161,6 +190,8 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host = new RatingsHostStub();
         $host->forcedMorph = $relation;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
         $host->syncRatingsFormData([
             9 => ['pivot' => ['value' => 'garbage']],
@@ -169,10 +200,14 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
 
     test('value null resta null (nessuna scelta), mai a zero', function (): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
         $host = new RatingsHostStub();
         $host->forceFill(['id' => 1004]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(10, ['value' => null], 1);
+<<<<<<< HEAD
 =======
         /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&MockInterface $relation */
         $relation = \Mockery::mock(MorphToMany::class);
@@ -183,12 +218,17 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host = new RatingsHostStub();
         $host->forcedMorph = $relation;
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 
         $host->syncRatingsFormData([
             10 => ['pivot' => ['value' => null]],
         ]);
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 
     test('se nessuna pivot esiste per questo host, attach una sola volta', function (): void {
         $host = new RatingsHostStub();
@@ -239,6 +279,9 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
 
         $host->clearRatingsFormData(null);
     });
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 });

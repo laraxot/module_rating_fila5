@@ -1,10 +1,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # Rating — Documentation Index
 
 This module's docs are organized under `laravel/Modules/Rating/docs/`.
@@ -12,9 +18,13 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 ## Core Design & Architecture
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+>>>>>>> laraxot/dev
 =======
 # Rating Module — Documentation Index
 
@@ -24,9 +34,13 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 ---
 >>>>>>> laraxot/dev
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 - **Reorderable Table Pattern** (HasXotTable): see IndennitaResponsabilita module docs for the core design; Rating adoption story: `docs/stories/5.96-rating-resource-reordering-adoption.story.md`
 
@@ -36,11 +50,17 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 >>>>>>> fd7a600 (.)
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ## Second Brain References
 
 - Project wiki rules: `docs/wiki/rules/`
@@ -49,14 +69,20 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 - Sprint status: `docs/sprint-status.yaml`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
 =======
 =======
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 =======
 =======
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
 >>>>>>> laraxot/dev
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev

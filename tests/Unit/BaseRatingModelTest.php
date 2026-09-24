@@ -5,18 +5,26 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Cknow\Money\Money;
 =======
 >>>>>>> fd7a600 (.)
+=======
+use Cknow\Money\Money;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Rating\Models\RatingMorph;
 =======
 >>>>>>> fd7a600 (.)
+=======
+use Modules\Rating\Models\RatingMorph;
+>>>>>>> laraxot/dev
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\Sluggable\SlugOptions;
@@ -105,6 +113,9 @@ describe('BaseRating (via Rating)', function (): void {
         Assert::assertSame($builder, $result);
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 
     test('getValueHtml restituisce stringa per valori non Importo', function (): void {
         $rating = new Rating([
@@ -154,6 +165,9 @@ describe('BaseRating (via Rating)', function (): void {
         $encoded = new Rating(['txt' => '&lt;p&gt;Obiettivo&lt;/p&gt;']);
         Assert::assertSame('<p>Obiettivo</p>', $encoded->getTxtHtml());
     });
+<<<<<<< HEAD
 =======
 >>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
 });
