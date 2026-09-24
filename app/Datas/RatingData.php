@@ -1,12 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
-/**
- * ---.
- */
-
->>>>>>> 2025498 (.)
 declare(strict_types=1);
 
 namespace Modules\Rating\Datas;
@@ -25,10 +18,6 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
-<<<<<<< HEAD
- * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
- * Split `RatingBlockData` / entity tracciato a parte.
-=======
  * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
  * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
  * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
@@ -36,7 +25,6 @@ use Webmozart\Assert\Assert;
  * nome `RatingData` che era già occupato quando è servito il secondo concetto.
  * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
  * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
->>>>>>> 88e4240 (.)
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -45,16 +33,6 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
-<<<<<<< HEAD
-=======
-use Modules\Rating\Enums\SupportedLocale;
-use Spatie\LaravelData\Data;
-
-/**
- * Undocumented class.
->>>>>>> 2025498 (.)
-=======
->>>>>>> 88e4240 (.)
  */
 class RatingData extends Data
 {
@@ -65,23 +43,17 @@ class RatingData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 88e4240 (.)
         public readonly ?int $parent_id = null,
-    ) {}
+    ) {
+    }
 
     /**
-<<<<<<< HEAD
-=======
      * Costruisce il DTO da un payload di form.
      *
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
      *
->>>>>>> 88e4240 (.)
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public static function fromArray(array $data): self
     {
@@ -92,9 +64,9 @@ class RatingData extends Data
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
      */
-    public static function ratingValuePath(RatingContract $rating, string $field = 'value'): string
+    public static function ratingValuePath(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
     {
-        return 'ratings_by_id.'.$rating->id.'.pivot.'.$field;
+        return 'ratings_by_id.'.$rating->id.'.pivot.'.$pivotColumn;
     }
 
     /**
@@ -103,7 +75,7 @@ class RatingData extends Data
      *
      * @see BaseRating::getXlsExportValueAttribute()
      */
-    public static function ratingXlsValuePath(RatingContract $rating): string
+    public static function ratingXlsValuePath(RatingContract|BaseRating $rating): string
     {
         return 'ratings_by_id.'.$rating->id.'.xls_export_value';
     }
@@ -116,7 +88,7 @@ class RatingData extends Data
      * per compatibilita: ogni chiamata esistente continua a puntare li; `'note'` e' la
      * sola altra colonna pivot generata oggi (vedi `buildRatingComponent()` nel trait).
      */
-    public static function ratingFieldName(RatingContract $rating, string $pivotColumn = 'value'): string
+    public static function ratingFieldName(RatingContract|BaseRating $rating, string $pivotColumn = 'value'): string
     {
         return 'ratings.'.$rating->id.'.pivot.'.$pivotColumn;
     }
@@ -144,9 +116,10 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param  array<string, mixed>  $where
-     * @param  class-string<BaseRating>  $ratingClass
-     * @return array<string, string>
+     * @param array<string, mixed>     $where
+     * @param class-string<BaseRating> $ratingClass
+     *
+     * @return array<int|string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
     {
@@ -155,7 +128,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
+            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
             ->values();
         $ratings->loadMissing('children');
 
@@ -163,8 +136,9 @@ class RatingData extends Data
     }
 
     /**
-     * @param  iterable<int, RatingContract>  $ratings
-     * @return array<string, string>
+     * @param Collection<int, RatingContract>|EloquentCollection<int, RatingContract>|iterable<int, RatingContract> $ratings
+     *
+     * @return array<int|string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
     {
@@ -175,12 +149,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if ($rating->parent_id !== null) {
+            if (null !== $rating->parent_id) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ($label === '') {
+            if ('' === $label) {
                 $label = 'Rating '.$rating->id;
             }
 
@@ -203,8 +177,6 @@ class RatingData extends Data
         return $fields;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Le colonne di `ratings`, dichiarate una volta sola.
      *
@@ -218,7 +190,6 @@ class RatingData extends Data
      * $this->tableUpdate(fn (Blueprint $table) => RatingData::updateColumns($table, $this));
      * ```
      */
->>>>>>> 88e4240 (.)
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration
@@ -257,25 +228,5 @@ class RatingData extends Data
         if ($missing('parent_id')) {
             $table->unsignedBigInteger('parent_id')->nullable();
         }
-=======
-    ) {
-    }
-
-    /**
-     * Create from array with type casting.
-     *
-     * @param array<string,mixed> $data
-     */
-    public static function fromArray(array $data): self
-    {
-        return new self(
-            title: is_string($data['title'] ?? '') ? ($data['title'] ?? '') : (is_scalar($data['title'] ?? '') ? (string) ($data['title'] ?? '') : ''),
-            description: is_string($data['description'] ?? '') ? ($data['description'] ?? '') : (is_scalar($data['description'] ?? '') ? (string) ($data['description'] ?? '') : ''),
-            disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
-            position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
-            locale: SupportedLocale::fromString(is_string($data['locale'] ?? 'it') ? ($data['locale'] ?? 'it') : 'it'),
-            image_url: isset($data['image_url']) ? (is_string($data['image_url']) ? $data['image_url'] : null) : null,
-        );
->>>>>>> 2025498 (.)
     }
 }
