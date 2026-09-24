@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Rating\Filament\Resources\RatingResource\Pages\BaseListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingsTable;
@@ -43,36 +40,10 @@ test('the column set lives in RatingsTable', function (): void {
         'created_at',
         'updated_at',
     ], array_keys($columns));
-=======
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
-use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
-use Modules\Rating\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class);
-
-test('defines expected table columns without labels', function (): void {
-    $page = new ListRatings();
-    $columns = $page->getTableColumns();
-
-    Assert::assertSame(['id', 'title', 'rule', 'is_disabled', 'is_readonly'], array_keys($columns));
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
 });
 
 test('defines default empty filters and header actions', function (): void {
     $page = new ListRatings();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $filtersMethod = new ReflectionMethod($page, 'getTableFilters');
     $headerMethod = new ReflectionMethod($page, 'getTableHeaderActions');
 
@@ -83,28 +54,10 @@ test('defines default empty filters and header actions', function (): void {
 
     Assert::assertSame([], $filters);
     Assert::assertNotEmpty($headerActions);
-=======
-
-    Assert::assertSame([], $page->getTableFilters());
-    Assert::assertNotEmpty($page->getTableHeaderActions());
->>>>>>> e8cf105 (Check & fix styling)
-=======
-
-    Assert::assertSame([], $page->getTableFilters());
-    Assert::assertNotEmpty($page->getTableHeaderActions());
->>>>>>> 77b9106 (.)
-=======
-
-    Assert::assertSame([], $page->getTableFilters());
-    Assert::assertNotEmpty($page->getTableHeaderActions());
->>>>>>> c91c8c3 (.)
 });
 
 test('defines view edit delete actions and bulk delete', function (): void {
     $page = new ListRatings();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $actionsMethod = new ReflectionMethod($page, 'getTableActions');
     $bulkMethod = new ReflectionMethod($page, 'getTableBulkActions');
 
@@ -112,18 +65,6 @@ test('defines view edit delete actions and bulk delete', function (): void {
     $actions = $actionsMethod->invoke($page);
     /** @var array<string, mixed> $bulk */
     $bulk = $bulkMethod->invoke($page);
-=======
-    $actions = $page->getTableActions();
-    $bulk = $page->getTableBulkActions();
->>>>>>> e8cf105 (Check & fix styling)
-=======
-    $actions = $page->getTableActions();
-    $bulk = $page->getTableBulkActions();
->>>>>>> 77b9106 (.)
-=======
-    $actions = $page->getTableActions();
-    $bulk = $page->getTableBulkActions();
->>>>>>> c91c8c3 (.)
 
     Assert::assertArrayHasKey('view', $actions);
     Assert::assertArrayHasKey('edit', $actions);

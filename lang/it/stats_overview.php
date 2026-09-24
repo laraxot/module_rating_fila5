@@ -2,15 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-// Rating translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// Canon: Modules/Rating/docs/wiki — domain i18n only.
-// File: lang/it/stats_overview.php
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
 return [
     'sections' => [
         'empty' => [

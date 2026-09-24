@@ -24,9 +24,6 @@ enum SupportedLocale: string
             default => self::IT,
         };
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     /** @return array<int|string, string> */
     public static function toArray(): array
@@ -39,10 +36,4 @@ enum SupportedLocale: string
 
         return $result;
     }
-=======
->>>>>>> e8cf105 (Check & fix styling)
-=======
->>>>>>> 77b9106 (.)
-=======
->>>>>>> c91c8c3 (.)
 }

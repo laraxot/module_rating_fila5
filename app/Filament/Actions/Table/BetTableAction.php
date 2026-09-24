@@ -20,19 +20,7 @@ class BetTableAction extends Action
         $this->label('')
             ->tooltip(trans('rating:txt.bet'))
             ->modalWidth('xl')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->schema(static fn (Action $action): array => [
-=======
-            ->schema(fn (Action $action): array => [
->>>>>>> e8cf105 (Check & fix styling)
-=======
-            ->schema(fn (Action $action): array => [
->>>>>>> 77b9106 (.)
-=======
-            ->schema(fn (Action $action): array => [
->>>>>>> c91c8c3 (.)
                 TextInput::make('aa'),
             ]);
     }
