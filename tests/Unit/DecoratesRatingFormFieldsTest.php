@@ -8,11 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
-<<<<<<< HEAD
 use Modules\Rating\Models\Contracts\RatingContract;
-=======
-use Modules\Rating\Models\BaseRating;
->>>>>>> laraxot/dev
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -24,11 +20,7 @@ describe('DecoratesRatingFormFields', function (): void {
         $host = new class {
             use DecoratesRatingFormFields;
 
-<<<<<<< HEAD
             public function decorate(RatingContract $rating, Component $component): Component
-=======
-            public function decorate(BaseRating $rating, Component $component): Component
->>>>>>> laraxot/dev
             {
                 return $this->applyDefaultRatingFieldDecoration($rating, $component);
             }

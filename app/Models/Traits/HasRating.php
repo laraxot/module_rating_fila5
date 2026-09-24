@@ -50,11 +50,7 @@ trait HasRating
     }
 
     /**
-<<<<<<< HEAD
-     * @return array<int, array<string, mixed>>
-=======
-     * @return array<int, non-empty-array<string, mixed>>
->>>>>>> laraxot/dev
+     * @return list<non-empty-array<string, mixed>>
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -65,13 +61,8 @@ trait HasRating
             ->get();
         // ->toArray()
 
-<<<<<<< HEAD
-        /** @var array<int, array<string, mixed>> $ratings_array */
-=======
-        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
->>>>>>> laraxot/dev
         $ratings_array = [];
-        foreach ($ratings as $key => $rating) {
+        foreach ($ratings as $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -86,9 +77,9 @@ trait HasRating
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
             $rowData['effect'] = false;
-            $ratings_array[$key] = $rowData;
+            $ratings_array[] = $rowData;
         }
 
         return $ratings_array;
@@ -111,11 +102,7 @@ trait HasRating
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
-<<<<<<< HEAD
-            if ($b === 0) {
-=======
             if (0 === $b) {
->>>>>>> laraxot/dev
                 $b = 1;
             }
 
@@ -153,11 +140,7 @@ trait HasRating
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
-<<<<<<< HEAD
-        if ($rating_id !== null) {
-=======
         if (null !== $rating_id) {
->>>>>>> laraxot/dev
             $query->where('rating_id', $rating_id);
         }
 
