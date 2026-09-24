@@ -1,4 +1,70 @@
+---
+title: "Rating Architecture"
+type: concept
+tags: [architecture, rating]
+created: 2026-07-14
+updated: 2026-09-22
+qmd: "architecture"
+related:
+  - "./best-practices.md"
+---
+
 # Rating Architecture
+
+Lightweight reference to architecture. See consolidated documentation:
+
+- [README](./README.md) — Overview and module description
+- [FAQ](./faq.md) — Quick answers (implementation, database, Filament, testing, performance, security, troubleshooting, upgrade)
+- [Index](./index.md) — Navigation to wiki analysis
+
+## Core Design
+
+**Polymorphic ratings system** for any Eloquent model.
+
+- One rating per user per entity (unique constraint)
+- 1-5 score scale, optional comments
+- HasRatingsTrait for model integration
+- QueueableAction pattern for business logic
+- Event-driven cache invalidation
+- Multi-language translation support
+
+## Key Tables
+
+```
+ratings (rateable_type, rateable_id, user_id, score, comment, timestamps)
+rating_categories (id, name, description, timestamps)
+```
+
+**Indexes:** (rateable_type, rateable_id), (user_id), (score), (created_at)
+
+## Consumer Pattern
+
+Any module uses Rating via trait:
+
+```php
+use Modules\Rating\Traits\HasRatingsTrait;
+
+class Product extends Model {
+    use HasRatingsTrait;
+}
+
+// Available methods
+$product->ratings;          // Relations
+$product->averageRating();  // Average score
+$product->ratedBy($user);   // Check user rated
+```
+
+**Circular dependency rule:** Rating never imports from consumers (User, Product, Service, Employee). Reverse dependency only (consumer → Rating via trait, Actions, Events).
+
+## Quality Gates
+
+- **PHPStan Level 10** compliance
+- **PHPMD** cleancode, codesize, design rules
+- **PHP Insights** best practices
+- **Pest tests** with 80%+ coverage
+- **Migrations** use XotBaseMigration for tenant-awareness
+
+---
 
 ## 🏗️ System Design
 
@@ -174,7 +240,94 @@ trait HasRatingsTrait
 }
 ```
 
-### 3. **RuleEnum** - Validation Rules Standardization
+#### 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
+
+##### Purpose
+Estrarre la generazione dello schema del form dei rating nel trait `HasRatingsTrait` per riutilizzo DRY tra i moduli che lo compongono.
+
+##### Implementation
+
+```php
+// In HasRatingsTrait
+public function getRatingsFormSchema(?object $caller = null): array
+{
+    $ratings = $this->ratings;
+    $schema = [];
+    $readonlyFields = $ratings->where('is_readonly', true);
+
+    foreach ($ratings as $rating) {
+        $fieldname = 'ratings.' . $rating->id . '.pivot.value';
+        $label = strip_tags((string) ($rating->txt ?? $rating->title));
+        $readOnly = (bool) ($rating->is_readonly ?? false);
+
+        if (! $readOnly) {
+            $item = TextInput::make($fieldname)
+                ->label($label)
+                ->numeric()
+                ->nullable()
+                ->columns(2)
+                ->inlineLabel()
+                ->live(onBlur: true)
+                ->rules((string) ($rating->rule?->value ?? ''));
+
+            if ($caller && method_exists($caller, 'recalculateReadonlyFields')) {
+                $item->afterStateUpdated(function (Set $set, Get $get) use ($caller, $readonlyFields): void {
+                    $caller->recalculateReadonlyFields($set, $get, $readonlyFields);
+                });
+            }
+        } else {
+            $item = TextEntry::make($fieldname)
+                ->label($label)
+                ->inlineLabel()
+                ->default(Arr::get($this->data ?? [], $fieldname, 0));
+
+            // Formattazione specifica del modulo (es. Importo -> money)
+            if (Str::contains($label, 'Importo') && method_exists($item, 'money')) {
+                $item->money('EUR'); // Configurabile via $caller
+            }
+        }
+        $schema[] = $item;
+    }
+
+    return $schema;
+}
+```
+
+> Nota: la firma corrente in `app/Models/Traits/HasRatingsTrait.php` tipizza `$caller` come `?RatingsFormCallerContract` (non `?object`) e accetta anche `?EloquentCollection $ratings`; lo snippet sopra è illustrativo del pattern, non un copia-incolla letterale del sorgente attuale — verificare il file per la firma esatta prima di riusarlo.
+
+##### Usage in Module Pages
+
+```php
+// In module page (es. CompilaIndennitaResponsabilita)
+protected function getFormSchema(): array
+{
+    return array_merge(
+        [
+            DatePicker::make('dal'),
+            DatePicker::make('al'),
+            Textarea::make('note')->columnSpanFull(),
+        ],
+        $this->getRatingsFormSchema($this) // Passa $this come $caller
+    );
+}
+
+// I metodi di calcolo specifici del modulo restano nel page
+public function getTot(Get $get): int { /* ... */ }
+public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
+```
+
+##### Why This Pattern
+- **DRY**: Elimina il loop duplicato `foreach ($this->ratings as $rating)`
+- **KISS**: Il page implementa solo i calcoli specifici (`getTot`, `getImporto*`)
+- **SOLID**: Il trait gestisce la logica di presentazione, il page la business logic
+- **Safe**: `$caller` è opzionale; il trait funziona anche senza
+- **Extensible**: I moduli possono iniettare comportamenti tramite `$caller` senza modificare il trait
+
+##### Related Stories
+- 5.90: resolveRatingClass() vs getClassName()
+- 5.91: getRatingsFormSchema con parametro $caller
+
+### 4. **RuleEnum** - Validation Rules Standardization
 ```php
 <?php
 
@@ -381,6 +534,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 - **Laravel Pint**: Code formatting automatico
 - **Pest Testing**: 100% coverage per nuove funzionalità
 - **Type Safety**: Strict typing in tutti i metodi
+- **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
 
 ### Documentation Standards
 - **PHPDoc Completo**: Ogni metodo e classe documentata
@@ -424,8 +578,26 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 6. **[Performance](#performance-patterns)** - Ottimizzazioni
 7. **[API Reference](#api-reference)** - Dettagli metodi
 
+Vedi anche: [FAQ](./faq.md) per guida per-argomento e [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/) per l'analisi wiki correlata.
+
+---
+
+## Note storiche (assorbite da un vecchio `ARCHITECTURE.md` di root)
+
+Contenuto di un precedente `ARCHITECTURE.md` di root, assorbito qui durante la risoluzione di un conflitto di merge non risolto (2026-09-22). Non verificato riga per riga contro il codice attuale: trattarlo come promemoria storico, non come fonte di verità (per quella vedi le sezioni sopra, che riflettono il codice in `app/Models/Traits/HasRatingsTrait.php`).
+
+- **Rating Model**: Core rating entity
+- **Review System**: User-submitted reviews with moderation
+- **Aggregation**: Rating calculations and statistics
+- **Display Components**: Star display widgets
+- Rating aggregation (average, count)
+- User-specific ratings (prevent duplicate)
+- Rateable trait for other models
+- Filament admin interface for moderation
+- Statistics dashboard widget
+
 ---
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
-**Ultimo aggiornamento**: 2024-02-11
+**Ultimo aggiornamento**: 2026-09-22 (merge conflict risolto; contenuto invariato nella sostanza, solo unificato)

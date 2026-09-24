@@ -1,3 +1,12 @@
+---
+title: "Dipendenze e confini del modulo Rating"
+type: guide
+tags: [dependencies, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "dependencies"
+---
+
 # Dipendenze e confini del modulo Rating
 
 Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa può essere **usato**.
@@ -6,7 +15,7 @@ Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa pu�
 
 ## Dipendenze in ingresso (il Rating dipende da)
 
-- **Laravel / Framework**: Laravel 12, Eloquent, migrazioni, container.
+- **Laravel / Framework**: Laravel 13, Eloquent, migrazioni, container.
 - **Xot**: classi base Filament (`XotBaseResource`, `XotBasePage`, …), convenzioni di namespace e traduzioni, eventuale `XotBaseMigration`.
 - **Spatie (se in uso)**: es. `spatie/schemaless-attributes` per `extra_attributes` sul modello Rating (vedi [architecture.md](../architecture.md)); versioni allineate al `composer.json` del modulo.
 - **Nessun modulo di dominio applicativo**: Rating non deve dipendere da User, Patient, Cms, ecc. per la sua logica core.
