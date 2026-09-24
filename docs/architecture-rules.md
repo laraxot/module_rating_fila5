@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Architectural Rules & Guidelines"
 type: rule
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Architectural Rules & Guidelines
 
 This module adheres to the **Laraxot Architecture** and **Super Cow Methodology**.

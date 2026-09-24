@@ -22,6 +22,7 @@ THE SOFTWARE.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>
@@ -49,3 +50,5 @@ THE SOFTWARE.
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

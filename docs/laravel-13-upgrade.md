@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Upgrade Laravel 13 - Rating 🐄✨"
 type: guide
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Upgrade Laravel 13 - Rating 🐄✨
 
 ## 🎯 Visione Architetturale

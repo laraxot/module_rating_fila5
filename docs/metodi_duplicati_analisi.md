@@ -8,6 +8,7 @@ See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ---
 
@@ -26,3 +27,5 @@ See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLI
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Sprint Planning: Rating Module"
 type: guide
@@ -18,6 +19,8 @@ related:
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Sprint Planning: Rating Module
 
 ## 🏁 Sprint Goal

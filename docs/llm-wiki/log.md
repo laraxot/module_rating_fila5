@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "Rating Activity Log"
 type: guide
@@ -16,6 +17,8 @@ qmd: "log"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 # Rating Activity Log
 
 > **Module**: Rating
@@ -26,6 +29,7 @@ qmd: "log"
 
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,6 +67,9 @@ qmd: "log"
 =======
 - Created: AGENTS.md (agent instructions)
 >>>>>>> c91c8c3 (.)
+=======
+- Created: AGENTS.md (agent instructions)
+>>>>>>> 2025498 (.)
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:

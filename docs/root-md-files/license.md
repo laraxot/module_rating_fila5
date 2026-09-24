@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 title: "License"
 type: guide
@@ -16,6 +17,8 @@ qmd: "license"
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

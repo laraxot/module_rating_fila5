@@ -23,6 +23,7 @@ docs/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 │   ├── schema.md          # Questo file
 =======
 <<<<<<< HEAD
@@ -51,6 +52,9 @@ docs/
 =======
 │   ├── SCHEMA.md          # Questo file
 >>>>>>> c91c8c3 (.)
+=======
+│   ├── SCHEMA.md          # Questo file
+>>>>>>> 2025498 (.)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -65,6 +69,7 @@ docs/
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Cross-ref: `Link`
 =======
 - Cross-ref: `[Link](../concepts/name.md)`
@@ -75,4 +80,7 @@ docs/
 =======
 - Cross-ref: `[Link](../concepts/name.md)`
 >>>>>>> c91c8c3 (.)
+=======
+- Cross-ref: `[Link](../concepts/name.md)`
+>>>>>>> 2025498 (.)
 - NON modificare mai `docs/raw/`

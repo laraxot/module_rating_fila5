@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 ---
@@ -141,6 +142,9 @@ related:
 =======
 # Rating Architecture
 >>>>>>> c91c8c3 (.)
+=======
+# Rating Architecture
+>>>>>>> 2025498 (.)
 
 ## 🏗️ System Design
 
@@ -322,6 +326,7 @@ trait HasRatingsTrait
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 #### 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
@@ -430,6 +435,9 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 ### 3. **RuleEnum** - Validation Rules Standardization
 >>>>>>> c91c8c3 (.)
+=======
+### 3. **RuleEnum** - Validation Rules Standardization
+>>>>>>> 2025498 (.)
 ```php
 <?php
 
@@ -642,6 +650,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Migrations**: XotBaseMigration per tenant-awareness (vedi Core Design)
 =======
 >>>>>>> laraxot/dev
@@ -658,6 +667,8 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 
 ### Documentation Standards
 - **PHPDoc Completo**: Ogni metodo e classe documentata
@@ -707,6 +718,7 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> laraxot/dev
 Vedi anche: [FAQ](./faq.md) per guida per-argomento e [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/) per l'analisi wiki correlata.
@@ -740,10 +752,13 @@ Contenuto di un precedente `ARCHITECTURE.md` di root, assorbito qui durante la r
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 ---
 
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -892,3 +907,6 @@ public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
 =======
 **Ultimo aggiornamento**: 2024-02-11
 >>>>>>> c91c8c3 (.)
+=======
+**Ultimo aggiornamento**: 2024-02-11
+>>>>>>> 2025498 (.)

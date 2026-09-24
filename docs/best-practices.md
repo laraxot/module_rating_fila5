@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 title: "Best practices — Rating"
 type: guide
 tags: [best-practices, rating]
@@ -38,6 +39,8 @@ errore (contenuto plausibile ma non verificato riga per riga sul codice).
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)
 module: theme
 topic: best-practices
 canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
@@ -46,8 +49,11 @@ canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e8cf105 (Check & fix styling)
 =======
 >>>>>>> 77b9106 (.)
 =======
 >>>>>>> c91c8c3 (.)
+=======
+>>>>>>> 2025498 (.)

@@ -9,6 +9,7 @@ owner: "Rating"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 issue: "https://github.com/provtv/<nome repository>/issues/150"
 =======
 issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/150"
@@ -19,6 +20,9 @@ issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/150"
 =======
 issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/150"
 >>>>>>> c91c8c3 (.)
+=======
+issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/150"
+>>>>>>> 2025498 (.)
 ---
 
 # Code redundancy audit — Rating
@@ -91,6 +95,7 @@ Ridurre rumore, duplicazione e ambiguita' nel codice di questo module, senza per
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 - AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
@@ -124,6 +129,9 @@ Ridurre rumore, duplicazione e ambiguita' nel codice di questo module, senza per
 =======
 - AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
 >>>>>>> c91c8c3 (.)
+=======
+- AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
+>>>>>>> 2025498 (.)
 - I descrittori architetturali navigabili riducono i passi di localizzazione: ogni owner dovrebbe avere mappa scopo -> file chiave.
 - AI utile = recupero mirato, non pre-caricamento: report atomici, QMD, issue e log.
 
