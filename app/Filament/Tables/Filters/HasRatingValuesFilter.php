@@ -59,7 +59,7 @@ class HasRatingValuesFilter extends XotBaseTernaryFilter
      * sul pivot, e `ratings()` vede una sola delle due forme di `model_type` presenti
      * in tabella. Con la relazione sbagliata il filtro risponderebbe 1 invece di 147.
      *
-     * @param Builder<Model> $rows
+     * @param  Builder<Model>  $rows
      */
     protected function constrainToValued(Builder $rows): void
     {
