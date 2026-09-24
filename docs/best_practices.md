@@ -16,10 +16,13 @@
 ## Documentazione
 <<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
+<<<<<<< HEAD
 - Collega a moduli correlati come `Review` e `Auth`.
 =======
 <<<<<<< HEAD
 - Aggiorna `docs/index.md` con nuovi endpoint.
+=======
+>>>>>>> fd7a600 (.)
 =======
 - Aggiorna `docs/INDEX.md` con nuovi endpoint.
 <<<<<<< HEAD:docs/best_practices.md
@@ -28,4 +31,7 @@
 >>>>>>> laraxot/dev
 - Collega a moduli correlati come `Review` e `Auth`.
 >>>>>>> laraxot/dev:docs/BEST_PRACTICES.md
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)

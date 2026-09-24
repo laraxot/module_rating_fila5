@@ -19,9 +19,12 @@ tags: [structure, architecture, module]
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 │   │   ├── 00-index.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -34,7 +37,10 @@ tags: [structure, architecture, module]
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── index.md
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> fd7a600 (.)
 =======
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
@@ -48,7 +54,10 @@ tags: [structure, architecture, module]
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
@@ -59,11 +68,16 @@ tags: [structure, architecture, module]
 ├── architecture.md               # (opzionale) Architettura modulo
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
 =======
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -139,11 +153,16 @@ mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,t
 cp docs/wiki/rules/index.md docs/wiki/rules/
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
 =======
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)

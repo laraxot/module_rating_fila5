@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Fixtures;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+=======
+>>>>>>> fd7a600 (.)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
@@ -16,28 +19,36 @@ use Modules\Rating\Models\Rating;
 /**
  * Host di test (richiesto da XotBaseModel::getClassName()).
  * Caricato solo dai Unit test via require_once.
+<<<<<<< HEAD
  *
  * `ratings_by_id` arriva dall'accessor del trait ({@see AbstractRatingsHost});
  * dichiarato qui così Pest/IDE risolvono `data_get($host, 'ratings_by_id…')`
  * senza proprietà fantasma.
  *
  * @property EloquentCollection<int|string, BaseRating> $ratings_by_id
+=======
+>>>>>>> fd7a600 (.)
  */
 class RatingsHostStub extends AbstractRatingsHost
 {
     protected $table = 'ratings_host_stub';
 
     /** @var list<string> */
+<<<<<<< HEAD
     protected $fillable = [
         'title',
         'ratings_avg',
         'ratings_count',
         'post_type',
     ];
+=======
+    protected $fillable = ['title', 'ratings_avg', 'ratings_count', 'post_type'];
+>>>>>>> fd7a600 (.)
 
     /** @var MorphToMany<Rating, $this, MorphPivot, 'pivot'>|null */
     public ?MorphToMany $forcedMorph = null;
 
+<<<<<<< HEAD
     /**
      * Relazione forzata dai test: `ratingMorphs()` la legge come
      * `HasMany<MorphPivot, ...>`, `hasMany(Rating::class)`/`ratingObjectives()`
@@ -45,6 +56,9 @@ class RatingsHostStub extends AbstractRatingsHost
      *
      * @var HasMany<MorphPivot, static>|HasMany<Rating, static>|null
      */
+=======
+    /** @var HasMany<Rating, $this>|null */
+>>>>>>> fd7a600 (.)
     public ?HasMany $forcedHasMany = null;
 
     /**
@@ -105,6 +119,7 @@ class RatingsHostStub extends AbstractRatingsHost
     }
 
     /**
+<<<<<<< HEAD
      * Evita Rating::getClassName()/guessMorphPivot nei unit (backtrace fragile).
      *
      * @return HasMany<MorphPivot, static>
@@ -122,6 +137,8 @@ class RatingsHostStub extends AbstractRatingsHost
     }
 
     /**
+=======
+>>>>>>> fd7a600 (.)
      * @template TRelatedModel of Model
      *
      * @param class-string<TRelatedModel> $related

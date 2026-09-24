@@ -23,11 +23,16 @@ docs/
 │   ├── schema.md          # Questo file
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 │   ├── schema.md          # Questo file
 =======
 │   ├── SCHEMA.md          # Questo file
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+│   ├── SCHEMA.md          # Questo file
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna

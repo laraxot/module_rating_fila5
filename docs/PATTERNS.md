@@ -10,11 +10,16 @@ related:
   - "./best-practices.md"
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
   - "./best-practices.md"
 =======
   - "./BEST_PRACTICES.md"
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+  - "./BEST_PRACTICES.md"
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
 ---
@@ -398,9 +403,12 @@ $validated = $request->validate($rating->rules());
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [ ] Documentation added to docs/index.md
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> fd7a600 (.)
 - [ ] Documentation added to docs/INDEX.md
 =======
 <<<<<<< HEAD
@@ -409,7 +417,10 @@ $validated = $request->validate($rating->rules());
 - [ ] Documentation added to docs/INDEX.md
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 
@@ -432,13 +443,19 @@ $validated = $request->validate($rating->rules());
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
 =======
+=======
+>>>>>>> fd7a600 (.)
 - [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
 >>>>>>> laraxot/dev
+<<<<<<< HEAD
 >>>>>>> laraxot/dev
+=======
+>>>>>>> fd7a600 (.)
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

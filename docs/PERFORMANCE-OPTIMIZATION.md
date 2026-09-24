@@ -22,11 +22,16 @@ related:
 - 150+ rules embeddate in agents.md
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 - 150+ rules embeddate in agents.md
 =======
 - 150+ rules embeddate in AGENTS.md
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+- 150+ rules embeddate in AGENTS.md
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 + 0 rules embeddate — tutte on-demand
 \`\`\`
 
@@ -55,11 +60,16 @@ related:
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 =======
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 >>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
+=======
+Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
