@@ -13,14 +13,22 @@ uses(TestCase::class);
 
 describe('RatingData::formFieldLabel', function (): void {
     test('preferisce txt a title e toglie HTML', function (): void {
+<<<<<<< HEAD
         $rating = new Rating;
+=======
+        $rating = new Rating();
+>>>>>>> laraxot/dev
         $rating->forceFill(['id' => 1, 'title' => 'Ruolo', 'txt' => 'Ruolo <b>organizzativo</b>']);
 
         Assert::assertSame('Ruolo organizzativo', RatingData::formFieldLabel($rating));
     });
 
     test('usa title se txt assente', function (): void {
+<<<<<<< HEAD
         $rating = new Rating;
+=======
+        $rating = new Rating();
+>>>>>>> laraxot/dev
         $rating->forceFill(['id' => 2, 'title' => 'Criterio']);
 
         Assert::assertSame('Criterio', RatingData::formFieldLabel($rating));

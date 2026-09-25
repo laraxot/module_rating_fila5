@@ -38,7 +38,12 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
+<<<<<<< HEAD
      * @param  class-string<TRelatedModel>  $related
+=======
+     * @param class-string<TRelatedModel> $related
+     *
+>>>>>>> laraxot/dev
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -111,7 +116,12 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
+<<<<<<< HEAD
      * @param  class-string<TRelatedModel>  $related
+=======
+     * @param class-string<TRelatedModel> $related
+     *
+>>>>>>> laraxot/dev
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)
