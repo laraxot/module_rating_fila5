@@ -4,13 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
-<<<<<<< HEAD
-use Modules\Rating\Models\Rating;
-use Modules\Rating\Datas\RatingData;
-=======
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\Rating;
->>>>>>> laraxot/dev
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 

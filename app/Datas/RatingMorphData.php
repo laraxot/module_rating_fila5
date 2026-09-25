@@ -27,8 +27,7 @@ class RatingMorphData extends Data
         public readonly ?float $reward = null,
         public readonly ?Carbon $created_at = null,
         public readonly ?Carbon $updated_at = null,
-    ) {
-    }
+    ) {}
 
     // ──────────────────────────────────────────────────────────────────────────
     // Schema della tabella pivot `rating_morph` — pattern SchedaData / NestedSet::columns()

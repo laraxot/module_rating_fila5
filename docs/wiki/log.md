@@ -43,12 +43,14 @@ qmd: "log"
 
 - Aggiornati `index.md`/`INDEX.md`, `rules/index.md`/`INDEX.md` e `skills/index.md`/`INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
 
+### [2026-09-24 22:10:07 UTC] UPDATE | Decisione BMAD cluster Like e DecoratesRatingFormFields
+
+- Verifica: nessuna migration `likes` e nessun caller production di `Like`, `HasLikes` o `HasLikeContract`; il cluster viene rimosso senza creare una persistenza fittizia.
+- `DecoratesRatingFormFields`: storia cross-modulo conservata, ma nessun host production/astratto conforme nel checkout; trait e test rimossi, nessun probe e nessun nuovo `@phpstan-ignore`.
+- Test e fixture strettamente collegati rimossi; PHPStan mirato Rating con cache isolata: 0 errori; `php -l` e `git diff --check` sugli file owned: OK.
+- Pest non ha raggiunto le asserzioni per il blocco DB MySQL `predict_data_test` (access denied); QMD non era disponibile, quindi ho usato wiki/BMAD e grep globale.
+
 ---
 
-**Last Activity:** 2026-05-12 08:19:00 UTC  
-**Total Operations:** 3
-
-### [2026-09-25] phpstan | Rating
-
-- Dichiarata la dipendenza runtime `cknow/laravel-money:^8.5` usata da `BaseRating::getValueHtml()`; Composer ha installato `cknow/laravel-money 8.5.0` e `moneyphp/money 4.9.0`.
-- `./vendor/bin/phpstan analyse Modules/Rating` → 0 errori.
+**Last Activity:** 2026-09-24 22:10:07 UTC
+**Total Operations:** 4

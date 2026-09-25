@@ -32,8 +32,3 @@ Residuo merge: `if()` vuoto in `BaseRating::getValueHtml()` → parse error PHPS
 - Pest BaseRatingModelTest: see session
 - hasChildRatings() per evitare query in unit test
 
-## Session update — 2026-09-25
-
-- Dichiarata `cknow/laravel-money:^8.5` in `Modules/Rating/composer.json`, allineata al metodo `getValueHtml()` già previsto da questa story.
-- `composer update -W` installa `cknow/laravel-money 8.5.0` e `moneyphp/money 4.9.0`.
-- PHPStan mirato `analyse Modules/Rating` passa con zero errori.
