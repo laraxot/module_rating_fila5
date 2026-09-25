@@ -6,7 +6,6 @@ namespace Modules\Rating\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Rating\Enums\RuleEnum;
-use Modules\Rating\Models\BaseRating;
 
 /**
  * Factory condivisa dei `Rating`.
@@ -49,7 +48,7 @@ abstract class BaseRatingFactory extends Factory
      * Stato di default **utile**: un rating mostrabile e validabile.
      *
      * `slug` non compare: lo genera Spatie Sluggable da `title`
-     * ({@see BaseRating::getSlugOptions()}). Valorizzarlo a mano
+     * ({@see \Modules\Rating\Models\BaseRating::getSlugOptions()}). Valorizzarlo a mano
      * significherebbe testare un valore che in produzione nessuno scrive.
      *
      * @return array<string, mixed>

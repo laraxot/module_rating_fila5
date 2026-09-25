@@ -25,7 +25,7 @@ uses(TestCase::class);
  * campo e sostituisce la label esplicita. Un array a chiavi numeriche è una regressione,
  * non uno stile diverso.
  *
- * @param  array<array-key, mixed>  $schema
+ * @param array<array-key, mixed> $schema
  */
 function ratingAssertKeyedSchema(array $schema, string $tipo): void
 {
@@ -47,7 +47,7 @@ test('le tabelle espongono colonne indicizzate per campo', function (): void {
     ];
 
     foreach ($classi as $classe) {
-        $tabella = new $classe;
+        $tabella = new $classe();
         $colonne = $tabella->getTableColumns();
 
         ratingAssertKeyedSchema($colonne, $classe);
@@ -65,7 +65,7 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
     ];
 
     foreach ($classi as $classe) {
-        $tabella = new $classe;
+        $tabella = new $classe();
         $actionsMethod = new \ReflectionMethod($tabella, 'getTableActions');
 
         Assert::assertIsArray($tabella->getTableFilters());
@@ -77,7 +77,7 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
 test('RatingsTable copre i campi anagrafici del rating', function (): void {
     Assert::assertSame(
         ['id', 'title', 'slug', 'rule', 'is_disabled', 'is_readonly', 'order_column', 'created_at', 'updated_at'],
-        array_keys((new RatingsTable)->getTableColumns()),
+        array_keys((new RatingsTable())->getTableColumns()),
     );
 });
 
