@@ -3,7 +3,7 @@ title: "Rating Module - PHPStan Type Compliance"
 type: concept
 tags: [rating, phpstan, types, compliance, quality, static-analysis]
 created: 2026-06-10
-updated: 2026-08-24
+updated: 2026-09-24
 qmd: "rating module phpstan level max zero errors HasRatingsTrait trait.unused isolation"
 related:
   - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
@@ -15,8 +15,13 @@ related:
 ## Status
 
 `analyse Modules/Rating` (story 4.26, 2026-08-24): **[OK] No errors**. Famiglia E
-chiusa con guardie/`Assert::` sugli host stub, non con cast. `HasLikes` tipizza
-`Like` perché la classe esiste nel tree (fixture FQCN). `phpstan.neon` intoccato.
+chiusa con guardie/`Assert::` sugli host stub, non con cast. `HasLikes` tipizzava
+`Like` perché la classe esisteva nel tree (fixture FQCN). `phpstan.neon` intoccato.
+
+La verifica BMAD del 2026-09-24 ha rimosso il cluster `Like`/`HasLikes`/
+`HasLikeContract` e `DecoratesRatingFormFields`: non esistono migration `likes`, caller
+production o host conforme al contratto. Il riferimento storico a `HasLikes` qui sopra
+non autorizza a ricreare il cluster; non sono stati aggiunti probe o ignore.
 
 `analyse Modules` resta il gate canonico: sul sottoalbero `typeCoverage` può spegnersi.
 

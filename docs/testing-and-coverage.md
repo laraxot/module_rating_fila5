@@ -6,7 +6,7 @@ category: testing
 status: active
 version: 1.2.0
 language: it-IT
-updated_at: 2026-08-24
+updated_at: 2026-09-24
 related:
   - ../../../../bashscripts/docs/prompts/03-quality-gates.md
   - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
@@ -75,21 +75,28 @@ Al **100 % statement** (5.26): tutto `Modules/Rating/app`, inclusi `HasRatingsTr
 `HasLikes`, `BaseRating::scopeWithExtraAttributes`, policy `isOwner`, action sum con
 `rating_id`, widget StatsOverview con/senza record.
 
-### HasLikes e fixture `Like`
+### Storico — HasLikes e fixture `Like`
 
-`HasLikes` referenzia `Modules\Rating\Models\Like`; in questa installazione il contratto è
-esercitato dalla fixture `tests/Unit/Fixtures/Like.php`, caricata esplicitamente dal test e
-dichiarata con lo stesso FQCN. Il namespace è parte del contratto: spostarlo sotto
-`Modules\Rating\Tests` rende la relazione nativa irrisolvibile sia a runtime sia per
-PHPStan. **Nessun exclude** in `phpunit.xml`: il codice è raggiungibile e testato.
+`HasLikes` referenziava `Modules\Rating\Models\Like`; nella campagna storica il contratto
+era esercitato dalla fixture `tests/Unit/Fixtures/Like.php`, caricata esplicitamente dal
+test e dichiarata con lo stesso FQCN. Il namespace era parte del contratto: spostarlo
+sotto `Modules\Rating\Tests` rendeva la relazione nativa irrisolvibile sia a runtime sia
+per PHPStan. **Nessun exclude** in `phpunit.xml`: il codice era raggiungibile e testato.
 
 Host stub per `HasRatingsTrait`: `tests/Unit/Fixtures/RatingsHostStub.php` nel namespace
-`Modules\Rating\Models\` (necessario a `XotBaseModel::getClassName()` che cerca `Models\`
+`Modules\Rating\Models\` (necessario a `XotBaseModel::getClassName()` che cerca `Modules\`
 nello stack). Estende `AbstractRatingsHost`, non `Model` nudo: così gli accessor e le
-relazioni non arrivano a PHPStan come `mixed` (famiglia E, story 4.26). **Nessun file
-test cancellato** — solo guardie e generics.
+relazioni non arrivano a PHPStan come `mixed` (famiglia E, story 4.26). All'epoca
+**nessun file test era stato cancellato** — solo guardie e generics.
 
 Story campagna: [`docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md`](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md).
+
+### Stato corrente — 2026-09-24
+
+La verifica BMAD ha rimosso `Like`, `HasLikes`, `HasLikeContract`, la factory e i test/
+fixture collegati: non esiste una migration `likes` né un caller production. Il paragrafo
+sopra resta come storia della campagna 5.26, non come contratto di esistenza. La decisione
+e le prove correnti sono in [`scopo.md`](scopo.md).
 
 `--coverage-filter` **non** sposta il perimetro: Pest lo accetta e lo ignora.
 

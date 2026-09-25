@@ -30,10 +30,7 @@ use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-<<<<<<< HEAD
 use RuntimeException;
-=======
->>>>>>> laraxot/dev
 use Webmozart\Assert\Assert;
 
 /**
@@ -122,19 +119,11 @@ trait HasRatingsTrait
         $pivots = $this->ratingMorphs;
 
         /** @var EloquentCollection<int|string, BaseRating> $result */
-<<<<<<< HEAD
         $result = new EloquentCollection;
 
         foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
             /** @var MorphPivot $pivot */
             $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null) ?? $group->first();
-=======
-        $result = new EloquentCollection();
-
-        foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
-            /** @var MorphPivot $pivot */
-            $pivot = $group->first(static fn (MorphPivot $p): bool => null !== $p->getAttribute('value')) ?? $group->first();
->>>>>>> laraxot/dev
 
             $rating = $ratings->get($ratingId);
             if (! $rating instanceof BaseRating) {
@@ -144,19 +133,11 @@ trait HasRatingsTrait
                 try {
                     /** @var class-string<BaseRating> $related */
                     $related = Rating::getClassName();
-<<<<<<< HEAD
                 } catch (RuntimeException) {
                     $related = Rating::class;
                 }
                 Assert::implementsInterface($related, RatingContract::class);
                 $rating = new $related;
-=======
-                } catch (\RuntimeException) {
-                    $related = Rating::class;
-                }
-                Assert::implementsInterface($related, RatingContract::class);
-                $rating = new $related();
->>>>>>> laraxot/dev
                 $rating->setRawAttributes(['id' => $ratingId]);
             }
 
@@ -203,12 +184,7 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
      * @param  Builder<TModel>  $query
-=======
-     * @param Builder<TModel> $query
-     *
->>>>>>> laraxot/dev
      * @return Builder<TModel>
      */
     public function scopeWithRating(Builder $query): Builder
@@ -261,12 +237,7 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
      * @param  array<string, mixed>  $filters
-=======
-     * @param array<string, mixed> $filters
-     *
->>>>>>> laraxot/dev
      * @return Collection<int, BaseRating>
      */
     public function getRatingsWhere(array $filters): Collection
@@ -286,12 +257,7 @@ trait HasRatingsTrait
     /**
      * Sync pivot verso rating che matchano extra_attributes.
      *
-<<<<<<< HEAD
      * @param  array<string, mixed>  $where
-=======
-     * @param array<string, mixed> $where
-     *
->>>>>>> laraxot/dev
      * @return Collection<int, BaseRating>
      */
     public function syncRatingsWhere(array $where): Collection
@@ -310,11 +276,7 @@ trait HasRatingsTrait
         /** @var list<int|string> $ratingIds */
         $ratingIds = $ratings->pluck('id')->all();
 
-<<<<<<< HEAD
         if ($ratingIds !== []) {
-=======
-        if ([] !== $ratingIds) {
->>>>>>> laraxot/dev
             // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
             // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
@@ -385,11 +347,7 @@ trait HasRatingsTrait
      */
     private static function selectIsOther(mixed $selectValue): bool
     {
-<<<<<<< HEAD
         return $selectValue === self::OTHER_OPTION_KEY;
-=======
-        return self::OTHER_OPTION_KEY === $selectValue;
->>>>>>> laraxot/dev
     }
 
     /**
@@ -399,23 +357,14 @@ trait HasRatingsTrait
      * Pubblico perche' chi somma deve escludere le stesse righe: vedi `getTot()` di
      * IndennitaResponsabilita. Due definizioni di «opzione» prima o poi divergono.
      *
-<<<<<<< HEAD
      * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
-=======
-     * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
-     *
->>>>>>> laraxot/dev
      * @return Collection<int, BaseRating>
      */
     public function ratingFormFields(?EloquentCollection $ratings = null): Collection
     {
         return ($ratings ?? $this->ratings)
             ->unique('id')
-<<<<<<< HEAD
             ->reject(static fn (RatingContract $row): bool => $row->parent_id !== null);
-=======
-            ->reject(static fn (RatingContract $row): bool => null !== $row->parent_id);
->>>>>>> laraxot/dev
     }
 
     /**
@@ -433,12 +382,7 @@ trait HasRatingsTrait
      * duplicato (parziale, solo `value`) dentro
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
-<<<<<<< HEAD
      * @param  array<string, mixed>  $data
-=======
-     * @param array<string, mixed> $data
-     *
->>>>>>> laraxot/dev
      * @return array<string, mixed>
      */
     public function hydrateRatingsFormData(array $data): array
@@ -451,11 +395,7 @@ trait HasRatingsTrait
             $value = $rating->pivot->value;
             $note = $rating->pivot->note;
 
-<<<<<<< HEAD
             if ($value === null && filled($note)) {
-=======
-            if (null === $value && filled($note)) {
->>>>>>> laraxot/dev
                 $value = self::OTHER_OPTION_KEY;
             }
 
@@ -483,19 +423,11 @@ trait HasRatingsTrait
      * `updateExistingPivot` da solo: vede solo `getMorphClass()` e lascia orfani i FQCN
      * (o crea duplicati alias). Mai un update globale su `rating_id` senza `model_id`.
      *
-<<<<<<< HEAD
      * @param  array<int|string, array{pivot?: array<string, mixed>}>  $ratingsData
      */
     public function syncRatingsFormData(array $ratingsData): void
     {
         if ($this->getKey() === null) {
-=======
-     * @param array<int|string, array{pivot?: array<string, mixed>}> $ratingsData
-     */
-    public function syncRatingsFormData(array $ratingsData): void
-    {
-        if (null === $this->getKey()) {
->>>>>>> laraxot/dev
             throw new \LogicException('syncRatingsFormData richiede un model_id persistito.');
         }
 
@@ -503,11 +435,7 @@ trait HasRatingsTrait
             $pivot = $rating['pivot'] ?? [];
             $value = $pivot['value'] ?? null;
 
-<<<<<<< HEAD
             $value = ($value === self::OTHER_OPTION_KEY || $value === null)
-=======
-            $value = (self::OTHER_OPTION_KEY === $value || null === $value)
->>>>>>> laraxot/dev
                 ? null
                 : (is_numeric($value) ? $value : null);
 
@@ -515,11 +443,7 @@ trait HasRatingsTrait
             $payload = ['value' => $value];
             if (array_key_exists('note', $pivot)) {
                 $note = $pivot['note'];
-<<<<<<< HEAD
                 $payload['note'] = is_string($note) || $note === null ? $note : null;
-=======
-                $payload['note'] = is_string($note) || null === $note ? $note : null;
->>>>>>> laraxot/dev
             }
 
             $updated = $this->ratingMorphs()
@@ -527,11 +451,7 @@ trait HasRatingsTrait
                 ->update($payload);
 
             // Nessuna riga per questo host+rating: crea UNA sola pivot con morph corrente.
-<<<<<<< HEAD
             if ($updated === 0) {
-=======
-            if (0 === $updated) {
->>>>>>> laraxot/dev
                 $this->ratings()->attach($id, $payload);
             }
         }
@@ -547,11 +467,7 @@ trait HasRatingsTrait
      */
     public function clearEvaluation(): void
     {
-<<<<<<< HEAD
         if ($this->getKey() === null) {
-=======
-        if (null === $this->getKey()) {
->>>>>>> laraxot/dev
             throw new \LogicException('clearEvaluation richiede un model_id persistito.');
         }
 
@@ -567,11 +483,7 @@ trait HasRatingsTrait
      * sempre `model_id` di `$this`; la collection e' ignorata di proposito (KISS:
      * azzerare tutta la relazione ratings del record, non un sottoinsieme fragile).
      *
-<<<<<<< HEAD
      * @param  EloquentCollection<int, BaseRating>|null  $ratings  ignorato (BC firma)
-=======
-     * @param EloquentCollection<int, BaseRating>|null $ratings ignorato (BC firma)
->>>>>>> laraxot/dev
      */
     public function clearRatingsFormData(?EloquentCollection $ratings = null): void
     {
@@ -579,12 +491,7 @@ trait HasRatingsTrait
     }
 
     /**
-<<<<<<< HEAD
      * @param  EloquentCollection<int, BaseRating>|null  $ratings  se null usa `$this->ratings`
-=======
-     * @param EloquentCollection<int, BaseRating>|null $ratings se null usa `$this->ratings`
-     *
->>>>>>> laraxot/dev
      * @return array<string, Component> indicizzato per nome di campo
      */
     public function getRatingsFormSchema(?RatingsFormCallerContract $caller = null, ?EloquentCollection $ratings = null): array
@@ -618,11 +525,7 @@ trait HasRatingsTrait
      * dato e gancio di ricalcolo sono in coda, scritti una volta sola: quando il gancio
      * viveva dentro il ramo del `TextInput`, il `Select` aggiunto dopo e' nato muto.
      *
-<<<<<<< HEAD
      * @param  Collection<int, RatingContract>  $readonlyRatings
-=======
-     * @param Collection<int, RatingContract> $readonlyRatings
->>>>>>> laraxot/dev
      */
     private function buildRatingComponent(
         RatingContract $rating,
@@ -631,11 +534,7 @@ trait HasRatingsTrait
     ): Component {
         $field = RatingData::ratingFieldName($rating);
 
-<<<<<<< HEAD
         if ($rating->is_readonly === true) {
-=======
-        if (true === $rating->is_readonly) {
->>>>>>> laraxot/dev
             return TextEntry::make($field)->inlineLabel();
         }
 
@@ -659,11 +558,7 @@ trait HasRatingsTrait
         // («ratings.52.pivot.value»). API distinta da label() → non viola D-1 (5.151).
         $humanName = RatingData::formFieldLabel($rating);
 
-<<<<<<< HEAD
         if ($options === []) {
-=======
-        if ([] === $options) {
->>>>>>> laraxot/dev
             return TextInput::make($field)
                 ->numeric()
                 ->live(onBlur: true)
