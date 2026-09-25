@@ -44,7 +44,8 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
-    ) {}
+    ) {
+    }
 
     /**
      * Costruisce il DTO da un payload di form.
@@ -52,7 +53,7 @@ class RatingData extends Data
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
      *
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public static function fromArray(array $data): self
     {
@@ -115,8 +116,9 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param  array<string, mixed>  $where
-     * @param  class-string<BaseRating>  $ratingClass
+     * @param array<string, mixed>     $where
+     * @param class-string<BaseRating> $ratingClass
+     *
      * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
@@ -126,7 +128,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
+            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
             ->values();
         $ratings->loadMissing('children');
 
@@ -134,7 +136,8 @@ class RatingData extends Data
     }
 
     /**
-     * @param  iterable<int, RatingContract>  $ratings
+     * @param iterable<int, RatingContract> $ratings
+     *
      * @return array<string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
@@ -146,12 +149,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if ($rating->parent_id !== null) {
+            if (null !== $rating->parent_id) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ($label === '') {
+            if ('' === $label) {
                 $label = 'Rating '.$rating->id;
             }
 
