@@ -64,7 +64,11 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
+<<<<<<< HEAD
  * @property-read mixed      $xls_export_value
+=======
+ * @property mixed           $xls_export_value
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -223,7 +227,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     public function getTxtHtml(): string
     {
         $raw = $this->txt;
+<<<<<<< HEAD
         if (! is_string($raw) || $raw === '') {
+=======
+        if (! is_string($raw) || '' === $raw) {
+>>>>>>> laraxot/dev
             return e((string) ($this->title ?? ''));
         }
 
@@ -245,7 +253,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         }
 
         $value = $this->pivot->value ?? null;
+<<<<<<< HEAD
         if ($value === null || $value === '') {
+=======
+        if (null === $value || '' === $value) {
+>>>>>>> laraxot/dev
             return null;
         }
 
@@ -275,7 +287,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
             $text = $child->txt ?? $child->title;
 
+<<<<<<< HEAD
             return \is_string($text) && $text !== '' ? strip_tags($text) : '';
+=======
+            return \is_string($text) && '' !== $text ? strip_tags($text) : '';
+>>>>>>> laraxot/dev
         }
 
         return $this->pivot->value ?? null;

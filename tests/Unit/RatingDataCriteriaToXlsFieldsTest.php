@@ -14,7 +14,11 @@ uses(TestCase::class);
 
 describe('RatingData::criteriaToXlsFields (story 18.60 / 5.230)', function (): void {
     test('criterio foglia: solo path xls_export_value con label da txt', function (): void {
+<<<<<<< HEAD
         $rating = new Rating;
+=======
+        $rating = new Rating();
+>>>>>>> laraxot/dev
         $rating->forceFill([
             'id' => 10,
             'txt' => 'Punteggio',
@@ -34,10 +38,17 @@ describe('RatingData::criteriaToXlsFields (story 18.60 / 5.230)', function (): v
     });
 
     test('criterio con figli: path valore + colonna note', function (): void {
+<<<<<<< HEAD
         $child = new Rating;
         $child->forceFill(['id' => 11, 'parent_id' => 20, 'txt' => 'Opzione A']);
 
         $parent = new Rating;
+=======
+        $child = new Rating();
+        $child->forceFill(['id' => 11, 'parent_id' => 20, 'txt' => 'Opzione A']);
+
+        $parent = new Rating();
+>>>>>>> laraxot/dev
         $parent->forceFill([
             'id' => 20,
             'txt' => '<b>Ruolo</b>',
@@ -54,7 +65,11 @@ describe('RatingData::criteriaToXlsFields (story 18.60 / 5.230)', function (): v
     });
 
     test('righe con parent_id (opzioni Select) non diventano colonne', function (): void {
+<<<<<<< HEAD
         $option = new Rating;
+=======
+        $option = new Rating();
+>>>>>>> laraxot/dev
         $option->forceFill([
             'id' => 30,
             'txt' => 'Opzione',
