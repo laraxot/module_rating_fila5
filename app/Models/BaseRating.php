@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
@@ -36,34 +37,34 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @see /Modules/Rating/docs/schemaless-attributes-errors.md
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
- * @property RuleEnum $rule
+ * @property RuleEnum                                          $rule
  *
  * @method static Builder|BaseRating newModelQuery()
  * @method static Builder|BaseRating newQuery()
  * @method static Builder|BaseRating query()
  * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  *
- * @property int $id
- * @property int $user_id
- * @property float $value
- * @property string|null $related_type
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $deleted_by
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property int|null $post_id
- * @property string|null $title
- * @property string|null $color
- * @property string|null $icon
- * @property string|null $txt
- * @property bool|null $is_disabled
- * @property bool|null $is_readonly
- * @property int|null $order_column
- * @property int|null $parent_id
- * @property Model|Eloquent $linkedTo
+ * @property int             $id
+ * @property int             $user_id
+ * @property float           $value
+ * @property string|null     $related_type
+ * @property string|null     $created_by
+ * @property string|null     $updated_by
+ * @property string|null     $deleted_by
+ * @property Carbon|null     $created_at
+ * @property Carbon|null     $updated_at
+ * @property int|null        $post_id
+ * @property string|null     $title
+ * @property string|null     $color
+ * @property string|null     $icon
+ * @property string|null     $txt
+ * @property bool|null       $is_disabled
+ * @property bool|null       $is_readonly
+ * @property int|null        $order_column
+ * @property int|null        $parent_id
+ * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
- * @property-read float|int|string|null $xls_export_value
+ * @property-read mixed      $xls_export_value
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -83,9 +84,9 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|BaseRating whereUpdatedBy($value)
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
- * @property int|null $media_count
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
+ * @property int|null                                          $media_count
+ * @property ProfileContract|null                              $creator
+ * @property ProfileContract|null                              $updater
  *
  * @mixin Eloquent
  *
@@ -93,6 +94,10 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  */
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
+    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
+    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
+    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
+    // due relazioni scritte a mano non possono dare.
     use HasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
@@ -109,7 +114,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     {
         $title = $this->getAttribute('title');
 
-        if (is_string($title) && $title !== '') {
+        if (is_string($title) && '' !== $title) {
             return $title;
         }
 
@@ -146,13 +151,14 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      * @see https://github.com/spatie/laravel-schemaless-attributes
      * @see /Modules/Rating/docs/schemaless-attributes-errors.md
      *
-     * @param  Builder<BaseRating>  $query
-     * @param  array<string, mixed>|string  $attributes
+     * @param Builder<BaseRating>         $query
+     * @param array<string, mixed>|string $attributes
+     *
      * @return Builder<BaseRating>
      */
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
     {
-        if (is_string($attributes) && $value !== null) {
+        if (is_string($attributes) && null !== $value) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
             return $query->where("extra_attributes->{$attributes}", $value);
         }
@@ -168,11 +174,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     }
 
     /**
-     * @return MorphTo<Model, $this>
+     * @return MorphTo<Model, BaseRating>
      */
     public function linkedTo(): MorphTo
     {
-        return $this->morphTo('model');
+        return $this->morphTo('model'); // @phpstan-ignore return.type
     }
 
     /**
@@ -259,7 +265,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      * Valore per `data_get(..., 'ratings_by_id.{id}.xls_export_value')` in export XLS/XLSX.
      * Padre con figli → txt/title del figlio; foglia → pivot.value numerico.
      */
-    public function getXlsExportValueAttribute(): float|int|string|null
+    public function getXlsExportValueAttribute(): mixed
     {
         if ($this->hasChildRatings()) {
             $child = $this->resolveSelectedChild();
@@ -276,12 +282,12 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     }
 
     /**
-     * Valore pronto per il PDF; gli importi EUR sono formattati come stringa.
+     * HTML o Money per il valore pivot (usato in PDF scheda IR).
      */
-    public function getValueHtml(): string
+    public function getValueHtml(): string|\Cknow\Money\Money
     {
-        if (str_contains((string) ($this->txt ?? $this->title ?? ''), 'Importo')) {
-            return number_format((float) ($this->pivot->value ?? 0), 2, ',', '.').' €';
+        if (Str::contains((string) ($this->txt ?? $this->title ?? ''), 'Importo')) {
+            return money((int) round((float) $this->pivot->value * 100), 'EUR');
         }
 
         $child = $this->resolveSelectedChild();
@@ -297,7 +303,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      */
     public function getNoteHtml(): ?string
     {
-        if (str_contains((string) ($this->txt ?? $this->title ?? ''), 'Importo')) {
+        if (Str::contains((string) ($this->txt ?? $this->title ?? ''), 'Importo')) {
             return null;
         }
 

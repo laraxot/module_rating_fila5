@@ -23,12 +23,13 @@ class RatingBlockData extends Data
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
-    ) {}
+    ) {
+    }
 
     /**
      * Da un array grezzo verso un DTO tipizzato.
      *
-     * @param  array<string,mixed>  $data
+     * @param array<string,mixed> $data
      */
     public static function fromArray(array $data): self
     {

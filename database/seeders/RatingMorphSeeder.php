@@ -13,7 +13,7 @@ class RatingMorphSeeder extends Seeder
 {
     public function run(): void
     {
-        if ($this->command !== null) {
+        if (null !== $this->command) {
             $this->command->info('RatingMorphSeeder: pivot demo demandato ai seeder del dominio consumer.');
         }
     }
