@@ -4,7 +4,7 @@ type: concept
 module: Rating
 status: active
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-09-24
 tags: [scopo, confini, valutazioni, schemaless, classi-base, filament, dipendenze]
 qmd: "scopo rating valutazioni schemaless classi base foglie tabelle filament confini dipendenze"
 ---
@@ -161,6 +161,20 @@ al primo `Like::query()`.
 cd laravel && grep -rl "'likes'" --include=*.php Modules/*/database/migrations database/migrations | wc -l   # oggi 0
 ```
 
+#### Decisione BMAD del 2026-09-24
+
+La verifica ha scelto la seconda strada: in tutto il repository non esiste una migration
+`likes` e non esiste alcun caller production di `Like`, `HasLikes` o
+`HasLikeContract`. Il cluster e i suoi test/fixture sono quindi rimossi; la cronologia
+Git e le pagine BMAD restano conservate come fonti.
+
+Anche `DecoratesRatingFormFields` è risultato privo di consumer nel checkout: la sua
+storia cross-modulo con Compila/IndennitaResponsabilita resta documentata, ma non esiste
+un `use` del trait né un host production/astratto Filament conforme a
+`RatingsFormCallerContract` (`AbstractRatingsHost` è un model host, non una page). Non
+è stato creato alcun probe: il trait e il suo test sono rimossi, senza aggiungere
+`@phpstan-ignore`.
+
 ### 4. Un solo `RatingData`, sotto `Datas/`
 
 Cancellare `app/DataObjects/RatingData.php` e, se la validazione `0 <= score <= 5` ha
@@ -218,7 +232,7 @@ find Modules/Rating/app/Filament/Resources/*/Tables -name '*.php' | wc -l    # o
 grep -rn 'extends RelationManager\b' --include=*.php Modules/Rating/app | wc -l   # oggi 2, obiettivo 0
 
 # 4. 1 modello = 1 migrazione, in entrambe le direzioni
-ls Modules/Rating/app/Models/*.php | wc -l                                   # oggi 8 (5 astratti/base + 3 concreti)
+ls Modules/Rating/app/Models/*.php | wc -l                                   # oggi 7 (5 astratti/base + 2 concreti)
 ls Modules/Rating/database/migrations/*.php | wc -l                          # oggi 2: ratings + rating_morph
 grep -rl "'likes'" --include=*.php Modules/*/database/migrations database/migrations | wc -l   # oggi 0: Like non ha tabella
 
