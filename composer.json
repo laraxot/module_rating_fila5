@@ -42,7 +42,8 @@
     },
     "require": {
         "spatie/laravel-schemaless-attributes": "*",
-        "php": "^8.3"
+        "php": "^8.3",
+        "cknow/laravel-money": "^8.5"
     },
     "repositories": [
         {
