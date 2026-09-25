@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('applica i default del costruttore', function (): void {
-    $data = new RatingData;
+    $data = new RatingData();
 
     Assert::assertSame('', $data->title);
     Assert::assertSame('', $data->description);

@@ -7,8 +7,7 @@ use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     protected ?string $model_class = RatingMorph::class;
 
     public function up(): void
