@@ -32,5 +32,9 @@ docs/
 
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
+<<<<<<< HEAD
 - Cross-ref: `Link`
+=======
+- Cross-ref: `[Link](../concepts/name.md)`
+>>>>>>> laraxot/dev
 - NON modificare mai `docs/raw/`

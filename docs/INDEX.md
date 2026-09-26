@@ -7,6 +7,10 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 
 ---
 
+## ⚠️ Architectural Rules
+
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+
 ## Core Design & Architecture
 
 - **Reorderable Table Pattern** (HasXotTable): see IndennitaResponsabilita module docs for the core design; Rating adoption story: `docs/stories/5.96-rating-resource-reordering-adoption.story.md`
@@ -15,8 +19,11 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 
 - `docs/stories/5.96-rating-resource-reordering-adoption.story.md` — QA + verification for reordering in RatingResource
 
+<<<<<<< HEAD
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
 
+=======
+>>>>>>> laraxot/dev
 ## Second Brain References
 
 - Project wiki rules: `docs/wiki/rules/`
