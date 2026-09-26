@@ -24,19 +24,4 @@ enum SupportedLocale: string
             default => self::IT,
         };
     }
-<<<<<<< HEAD
-
-    /** @return array<int|string, string> */
-    public static function toArray(): array
-    {
-        $cases = self::cases();
-        $result = [];
-        foreach ($cases as $item) {
-            $result[(string) $item->value] = (string) $item->getLabel();
-        }
-
-        return $result;
-    }
-=======
->>>>>>> laraxot/dev
 }

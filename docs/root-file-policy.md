@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "Root file policy"
 type: rule
@@ -11,7 +9,6 @@ related:
   - "./root-files-hygiene.md"
 ---
 
->>>>>>> laraxot/dev
 # Root file policy
 
 Updated: 2026-07-08

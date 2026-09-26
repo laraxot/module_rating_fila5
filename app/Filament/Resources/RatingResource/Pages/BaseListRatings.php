@@ -4,19 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
-<<<<<<< HEAD
-=======
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
->>>>>>> laraxot/dev
 use Modules\Rating\Filament\Resources\RatingResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 abstract class BaseListRatings extends XotBaseListRecords
 {
     protected static string $resource = RatingResource::class;
-<<<<<<< HEAD
-=======
 
     /**
      * @return array<string, mixed>
@@ -38,5 +33,4 @@ abstract class BaseListRatings extends XotBaseListRecords
                 ->boolean(),
         ];
     }
->>>>>>> laraxot/dev
 }

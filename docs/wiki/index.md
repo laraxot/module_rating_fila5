@@ -11,15 +11,9 @@ issues:
 discussions:
   - "https://github.com/laraxot/platform/discussions/273"
 related:
-<<<<<<< HEAD
-  - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
-  - ../../../../docs/wiki/bmad/architecture.md
-  - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
-=======
   - ../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
   - ../../../../../docs/wiki/bmad/architecture.md
   - ../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
->>>>>>> laraxot/dev
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
 ---
 
@@ -27,15 +21,9 @@ related:
 
 ## AI / second brain
 
-<<<<<<< HEAD
-- [hackernoon-ai-coding-tips-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
-- [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
-- [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
-=======
 - [hackernoon-ai-coding-tips-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
->>>>>>> laraxot/dev
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
@@ -55,13 +43,8 @@ Indice operativo del wiki Rating.
 
 ## Regole collegate
 
-<<<<<<< HEAD
-- [forbidden-folders-rule](../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
-- [llm-wiki-standard](../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
-=======
 - [forbidden-folders-rule](../../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
 - [llm-wiki-standard](../../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
->>>>>>> laraxot/dev
 
 ## On-Demand Entry Points
 

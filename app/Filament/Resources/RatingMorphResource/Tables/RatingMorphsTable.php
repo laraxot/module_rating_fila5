@@ -20,13 +20,8 @@ class RatingMorphsTable extends XotBaseResourceTable
             'rating' => TextColumn::make('rating')->sortable()->searchable(),
             'rating_id' => TextColumn::make('rating_id')->sortable(),
             'user_id' => TextColumn::make('user_id')->searchable()->sortable(),
-<<<<<<< HEAD
-            'ratingable_type' => TextColumn::make('ratingable_type')->label('Type')->sortable(),
-            'ratingable_id' => TextColumn::make('ratingable_id')->label('ID')->sortable(),
-=======
             'ratingable_type' => TextColumn::make('ratingable_type')->sortable(),
             'ratingable_id' => TextColumn::make('ratingable_id')->sortable(),
->>>>>>> laraxot/dev
             'model_type' => TextColumn::make('model_type')->searchable()->sortable(),
             'model_id' => TextColumn::make('model_id')->searchable()->sortable(),
             'value' => TextColumn::make('value')->sortable(),
