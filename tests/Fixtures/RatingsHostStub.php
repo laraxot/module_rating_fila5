@@ -38,16 +38,7 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-<<<<<<< HEAD
-<<<<<<< .merge_file_m4CG3P
      * @param  class-string<TRelatedModel>  $related
-=======
-     * @param class-string<TRelatedModel> $related
-     *
->>>>>>> .merge_file_FlcIoI
-=======
-     * @param  class-string<TRelatedModel>  $related
->>>>>>> laraxot/dev
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -120,16 +111,7 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-<<<<<<< HEAD
-<<<<<<< .merge_file_m4CG3P
      * @param  class-string<TRelatedModel>  $related
-=======
-     * @param class-string<TRelatedModel> $related
-     *
->>>>>>> .merge_file_FlcIoI
-=======
-     * @param  class-string<TRelatedModel>  $related
->>>>>>> laraxot/dev
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)

@@ -18,10 +18,6 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
-<<<<<<< HEAD
- * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
- * Split `RatingBlockData` / entity tracciato a parte.
-=======
  * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
  * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
  * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
@@ -29,7 +25,6 @@ use Webmozart\Assert\Assert;
  * nome `RatingData` che era già occupato quando è servito il secondo concetto.
  * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
  * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
->>>>>>> laraxot/dev
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -49,13 +44,6 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
-<<<<<<< HEAD
-    ) {
-    }
-
-    /**
-     * @param array<string, mixed> $data
-=======
     ) {}
 
     /**
@@ -65,7 +53,6 @@ class RatingData extends Data
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
      *
      * @param  array<string, mixed>  $data
->>>>>>> laraxot/dev
      */
     public static function fromArray(array $data): self
     {
@@ -128,9 +115,8 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param array<string, mixed>     $where
-     * @param class-string<BaseRating> $ratingClass
-     *
+     * @param  array<string, mixed>  $where
+     * @param  class-string<BaseRating>  $ratingClass
      * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
@@ -140,7 +126,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
+            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
         $ratings->loadMissing('children');
 
@@ -148,8 +134,7 @@ class RatingData extends Data
     }
 
     /**
-     * @param iterable<int, RatingContract> $ratings
-     *
+     * @param  iterable<int, RatingContract>  $ratings
      * @return array<string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
@@ -161,12 +146,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if (null !== $rating->parent_id) {
+            if ($rating->parent_id !== null) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ('' === $label) {
+            if ($label === '') {
                 $label = 'Rating '.$rating->id;
             }
 
@@ -187,8 +172,6 @@ class RatingData extends Data
         return $fields;
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Le colonne di `ratings`, dichiarate una volta sola.
      *
@@ -197,7 +180,6 @@ class RatingData extends Data
      * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
      * `text()` in creazione e `string()` nel guard di update).
      */
->>>>>>> laraxot/dev
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration

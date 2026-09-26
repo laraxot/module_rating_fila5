@@ -10,12 +10,8 @@ related:
   - ./CHANGELOG.md
 ---
 
-<<<<<<< HEAD
-See canonical documentation: ../../../Themes/docs/shared-components/CHANGELOG.md
-=======
 # Changelog — pointer
 
 Il changelog canonico del modulo Rating è **[CHANGELOG.md](./CHANGELOG.md)**.
 
 Il vecchio rimando a `../../../Themes/docs/shared-components/CHANGELOG.md` puntava a un file inesistente (verificato 2026-09-24).
->>>>>>> laraxot/dev
