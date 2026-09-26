@@ -13,7 +13,6 @@ use Illuminate\Support\Str;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
-use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -65,7 +64,11 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
+<<<<<<< HEAD
  * @property mixed           $xls_export_value
+=======
+ * @property-read mixed      $xls_export_value
+>>>>>>> laraxot/dev
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)

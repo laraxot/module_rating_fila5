@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_pGy5ov
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
@@ -15,6 +16,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
 >>>>>>> .merge_file_3S6Le7
+=======
+use Cknow\Money\Money;
+use Illuminate\Database\Eloquent\Builder;
+use Mockery;
+use Modules\Rating\Enums\RuleEnum;
+>>>>>>> laraxot/dev
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
@@ -111,11 +118,15 @@ describe('BaseRating (via Rating)', function (): void {
             'title' => 'Punteggio',
             'txt' => 'Voto',
         ]);
+<<<<<<< HEAD
 <<<<<<< .merge_file_pGy5ov
         $pivot = new RatingMorph;
 =======
         $pivot = new RatingMorph();
 >>>>>>> .merge_file_3S6Le7
+=======
+        $pivot = new RatingMorph();
+>>>>>>> laraxot/dev
         $pivot->setRawAttributes(['value' => 42]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -127,11 +138,15 @@ describe('BaseRating (via Rating)', function (): void {
         $rating = new Rating([
             'txt' => 'Importo mensile',
         ]);
+<<<<<<< HEAD
 <<<<<<< .merge_file_pGy5ov
         $pivot = new RatingMorph;
 =======
         $pivot = new RatingMorph();
 >>>>>>> .merge_file_3S6Le7
+=======
+        $pivot = new RatingMorph();
+>>>>>>> laraxot/dev
         $pivot->setRawAttributes(['value' => 12.5]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -144,11 +159,15 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('getNoteHtml restituisce note pivot quando ci sono figli caricati', function (): void {
         $rating = new Rating(['txt' => 'Criterio']);
+<<<<<<< HEAD
 <<<<<<< .merge_file_pGy5ov
         $pivot = new RatingMorph;
 =======
         $pivot = new RatingMorph();
 >>>>>>> .merge_file_3S6Le7
+=======
+        $pivot = new RatingMorph();
+>>>>>>> laraxot/dev
         $pivot->setRawAttributes(['value' => 1, 'note' => 'scelta utente']);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect([new Rating(['title' => 'Figlio'])]));
