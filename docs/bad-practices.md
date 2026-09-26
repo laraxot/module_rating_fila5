@@ -6,7 +6,11 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
+<<<<<<< HEAD
   - "./BEST_PRACTICES.md"
+=======
+  - "./best-practices.md"
+>>>>>>> laraxot/dev
 ---
 
 # Bad Practices – Rating

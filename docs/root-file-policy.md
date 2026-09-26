@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Root file policy"
+type: rule
+tags: [root, file, policy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "root file policy"
+related:
+  - "./root-files-hygiene.md"
+---
+
+>>>>>>> laraxot/dev
 # Root file policy
 
 Updated: 2026-07-08

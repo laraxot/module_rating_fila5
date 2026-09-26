@@ -9,6 +9,10 @@ use Modules\Rating\Models\Rating;
 
 /**
  * Rating base Sì/No — schema ratings (title, color) usati da seeder di dominio.
+<<<<<<< HEAD
+=======
+ * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
+>>>>>>> laraxot/dev
  */
 class RatingSeeder extends Seeder
 {
