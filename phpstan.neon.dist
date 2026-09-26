@@ -14,3 +14,6 @@ parameters:
 
     checkMissingIterableValueType: false
 
+    ignoreErrors:
+        - '#Trait Modules\\Rating\\Models\\Traits\\HasRating is used zero times#'
+

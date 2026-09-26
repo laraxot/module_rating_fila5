@@ -4,19 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Tables\Filters;
 
-<<<<<<< HEAD
-use Filament\Tables\Filters\TernaryFilter;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-<<<<<<< .merge_file_maxxgz
-use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
-=======
->>>>>>> .merge_file_mPMHDt
-=======
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
->>>>>>> laraxot/dev
 
 /**
  * «La scheda è stata valutata davvero?».
@@ -36,11 +26,7 @@ use Modules\Xot\Filament\Tables\Filters\XotBaseTernaryFilter;
  *
  * @see docs/wiki/rules/filament-reusable-component-owns-visibility.md
  */
-<<<<<<< HEAD
-class HasRatingValuesFilter extends TernaryFilter
-=======
 class HasRatingValuesFilter extends XotBaseTernaryFilter
->>>>>>> laraxot/dev
 {
     public static function getDefaultName(): ?string
     {

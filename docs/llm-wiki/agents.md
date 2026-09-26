@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "Agent instructions"
 type: reference
@@ -14,7 +12,6 @@ related:
   - ./log.md
 ---
 
->>>>>>> laraxot/dev
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "Root files hygiene"
 type: guide
@@ -11,7 +9,6 @@ related:
   - "./schema.md"
 ---
 
->>>>>>> laraxot/dev
 # Root files hygiene
 
 ## 2026-07-08 16:51

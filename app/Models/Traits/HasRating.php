@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-<<<<<<< HEAD
-=======
 use Illuminate\Database\Eloquent\Model;
->>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
