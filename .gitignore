@@ -81,3 +81,5 @@ vendor/
 /.windsurf/
 .windsurf~*
 *:Zone.Identifier
+test-results/
+rating.code-workspace
