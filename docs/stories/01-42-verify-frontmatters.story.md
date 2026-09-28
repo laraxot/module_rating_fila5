@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: rating-story-01-42-verify-frontmatters
 slug: 01-42-verify-frontmatters
 title: "Verifica frontmatters — tutte le story BMAD hanno GitHub links corretti"

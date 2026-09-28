@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "FRAMEWORKS"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "FRAMEWORKS"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Rating — Framework Integration Notes
 
 Integration guidelines for caveman, graphify, bmad-method, headroom, ponytail.
@@ -33,4 +47,15 @@ Efficiency principles:
 - Simplification opportunities: [TBD]
 
 ---
+<<<<<<< HEAD
+=======
+title: "FRAMEWORKS"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "FRAMEWORKS"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 *Generated: 2026-08-04*

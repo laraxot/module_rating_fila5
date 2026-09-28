@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "criteri a scelta multipla"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "criteri a scelta multipla"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Criteri a scelta: opzioni in JSON, figli del criterio, o altro
 
 ## Risposta breve
