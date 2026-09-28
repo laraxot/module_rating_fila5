@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Raw Sources — Rating"
 type: guide
 tags: [index, rating]

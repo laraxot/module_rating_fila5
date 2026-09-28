@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 id: rating-story-01-41-hasratin​gs-trait-correction
 slug: 01-41-hasratin​gs-trait-correction
 title: "HasRatingsTrait — Apply user correction: replace resolveRatingClass with getClassName"

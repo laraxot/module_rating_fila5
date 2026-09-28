@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Architectural Rules & Guidelines"
 type: rule
 tags: [architecture, rules, rating]

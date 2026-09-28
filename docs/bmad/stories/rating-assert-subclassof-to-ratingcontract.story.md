@@ -1,3 +1,14 @@
+---
+title: "rating assert subclassof to ratingcontract.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating assert subclassof to ratingcontract.story"
+issues: []
+discussions: []
+---
+
 # Story — `Assert::subclassOf(BaseRating)` → `Assert::implementsInterface(RatingContract)`
 
 **Status**: done

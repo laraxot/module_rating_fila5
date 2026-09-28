@@ -1,4 +1,7 @@
 ---
+qmd: "schemaless attributes casts"
+issues: []
+discussions: []
 title: "Schemaless Attributes casts nota"
 type: concept
 tags: [docs, migrated-from-txt]

@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "index"
+issues: []
+discussions: []
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating

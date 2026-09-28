@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "rating-xls-export-spread-vs-array-merge"
 type: story
 module: Rating

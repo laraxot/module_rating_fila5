@@ -1,4 +1,9 @@
 ---
+type: note
+tags: [documentation]
+qmd: "rating altro option conditional textarea design.story"
+issues: []
+discussions: []
 title: "Design: opzione 'altro' con textarea obbligatoria nel Select dei rating figli"
 epic: "5"
 slug: rating-altro-option-conditional-textarea-design

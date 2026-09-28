@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Architectural Patterns – Rating"
 type: guide
 tags: [patterns, architecture, rating]

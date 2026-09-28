@@ -1,4 +1,8 @@
 ---
+type: note
+tags: [documentation]
+issues: []
+discussions: []
 id: "rating-readme-conflict-markers"
 title: "Rating: marker nidificati in README"
 status: review

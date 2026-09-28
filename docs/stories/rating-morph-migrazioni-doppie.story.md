@@ -1,4 +1,12 @@
 ---
+title: "rating morph migrazioni doppie.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating morph migrazioni doppie.story"
+issues: []
+discussions: []
 name: rating-morph-migrazioni-doppie
 description: "Rating ha due migrazioni vive per la stessa tabella rating_morph, con disegni della colonna user incompatibili, ed entrambe risultano eseguite. Story aperta PRIMA del lavoro: da validare e da rivendicare."
 metadata:

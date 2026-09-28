@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating - Product Roadmap"
 type: guide
 tags: [product, roadmap, rating]

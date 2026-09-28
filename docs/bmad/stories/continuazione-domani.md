@@ -1,4 +1,10 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "continuazione domani"
+issues: []
+discussions: []
 title: "Continuazione BMAD — Domani (post prompt 04)"
 type: module-fix
 scope: Rating

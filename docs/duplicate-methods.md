@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Metodi duplicati — Rating"
 type: guide
 tags: [duplicate, methods, rating]

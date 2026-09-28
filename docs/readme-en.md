@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "⭐ Rating — English presentation"
 type: guide
 tags: [readme, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Conflict Resolution — Module Rating"
 type: guide
 tags: [conflict, resolution, rating]

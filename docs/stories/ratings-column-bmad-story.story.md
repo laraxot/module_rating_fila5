@@ -1,4 +1,10 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ratings column bmad story.story"
+issues: []
+discussions: []
 id: ratings-column-bmad-story
 slug: ratings-column-bmad-story
 title: "Colonna Ratings: introduzione di RatingsColumn in BaseSchedasTable"

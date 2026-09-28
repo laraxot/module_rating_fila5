@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Cyclomatic Complexity Report - Module: Rating"
 type: guide
 tags: [cyclomatic, complexity, report, rating]

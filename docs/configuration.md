@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Module Configuration"
 type: guide
 tags: [configuration, rating]
