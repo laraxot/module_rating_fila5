@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Copilot Redundancy Audit"
 type: guide
 tags: [copilot, redundancy, audit, rating]

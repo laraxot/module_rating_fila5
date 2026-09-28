@@ -1,3 +1,14 @@
+---
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
+---
+
 # Rating Module - Product Strategy
 
 **Module:** Rating  
@@ -7,6 +18,14 @@
 
 ---
 
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
 ## Executive Summary
 
 The Rating module enables authentic user feedback through ratings and reviews, building trust and providing valuable insights for continuous improvement.

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Metriche e obiettivi di qualità"
 type: guide
 tags: [metrics, rating]

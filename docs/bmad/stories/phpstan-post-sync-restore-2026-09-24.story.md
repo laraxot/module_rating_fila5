@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: "Story — PHPStan dopo il sync deprecato: fatal final getFormSchema, AuditCoverage, .gitattributes (2026-09-24)"
 type: story
 module: Rating

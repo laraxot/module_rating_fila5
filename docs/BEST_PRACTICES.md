@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Best Practices – Rating"
 type: guide
 tags: [best, practices, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Architecture"
 type: concept
 tags: [architecture, rating]

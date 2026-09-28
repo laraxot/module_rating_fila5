@@ -1,4 +1,12 @@
 ---
+title: "rating gerarchia parent id e figli in edit.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating gerarchia parent id e figli in edit.story"
+issues: []
+discussions: []
 name: rating-gerarchia-parent-id-e-figli-in-edit
 description: "parent_id su ratings per laravel-adjacency-list e gestione dei figli nella pagina edit. Story aperta PRIMA del lavoro: la colonna esiste in una sola installazione e senza migrazione, il trait non e' applicato, i dati gerarchici sono zero."
 metadata:

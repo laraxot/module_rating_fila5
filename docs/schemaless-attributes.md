@@ -1,3 +1,14 @@
+---
+title: "schemaless attributes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schemaless attributes"
+issues: []
+discussions: []
+---
+
 # Schemaless Attributes — Rating Module
 
 **Package**: [`spatie/laravel-schemaless-attributes`](https://github.com/spatie/laravel-schemaless-attributes)
@@ -5,6 +16,14 @@
 
 ---
 
+title: "schemaless attributes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schemaless attributes"
+issues: []
+discussions: []
 ## Architecture
 
 ```

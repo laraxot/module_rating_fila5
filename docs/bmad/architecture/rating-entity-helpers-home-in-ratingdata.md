@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Helper rating (label/path/fieldName) — sede RatingData"
 type: architecture
 module: Rating

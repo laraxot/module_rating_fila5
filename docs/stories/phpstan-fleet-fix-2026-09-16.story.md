@@ -1,4 +1,10 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+qmd: "phpstan fleet fix 2026 09 16.story"
+issues: []
+discussions: []
 id: Rating/phpstan-fleet-fix-2026-09-16
 title: "PHPStan fleet fix 2026-09-16 (Rating)"
 status: done

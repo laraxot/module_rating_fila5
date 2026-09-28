@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog"
 type: guide
 tags: [changelog, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Upgrade Laravel 13 - Rating 🐄✨"
 type: guide
 tags: [laravel, upgrade, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Sprint Planning: Rating Module"
 type: guide
 tags: [sprint, planning, rating]

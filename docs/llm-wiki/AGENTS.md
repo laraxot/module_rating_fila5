@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Module LLM Wiki Agent Instructions"
 type: guide
 tags: [agents, rating]

@@ -1,3 +1,14 @@
+---
+title: "rating statics to ratingdata consolidation.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating statics to ratingdata consolidation.story"
+issues: []
+discussions: []
+---
+
 # Story — consolidamento helper statici: trait → `RatingData`
 
 **Status**: done

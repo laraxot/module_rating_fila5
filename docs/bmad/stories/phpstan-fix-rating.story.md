@@ -1,4 +1,8 @@
 ---
+type: note
+tags: [documentation]
+issues: []
+discussions: []
 id: Rating/phpstan-fix-rating
 title: "PHPStan level max — RatingsHostStub::$forcedHasMany union type"
 status: done

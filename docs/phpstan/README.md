@@ -1,3 +1,14 @@
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+---
+
 # Analisi PHPStan per il modulo Rating
 
 Data: Wed Sep 23 13:58:27 CEST 2026

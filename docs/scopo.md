@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating — scopo, confini e come servirlo meglio"
 type: concept
 module: Rating

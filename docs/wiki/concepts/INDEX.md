@@ -1,4 +1,7 @@
 ---
+qmd: "INDEX"
+issues: []
+discussions: []
 title: "concepts index — Rating"
 type: index
 tags: [concepts, Rating]

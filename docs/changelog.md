@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog (pointer)"
 type: reference
 tags: [changelog, pointer, rating]

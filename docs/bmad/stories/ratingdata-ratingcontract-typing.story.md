@@ -1,3 +1,14 @@
+---
+title: "ratingdata ratingcontract typing.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ratingdata ratingcontract typing.story"
+issues: []
+discussions: []
+---
+
 > **SUPERSEDED (2026-09-23)** — bozza pre-correzione dello stesso lavoro.
 > Canon: [`5.232-ratingcontract-check-getxlsfields`](./5.232-ratingcontract-check-getxlsfields.story.md) (Assert::implementsInterface), [`5.233-formfieldlabel-ratingcontract-typehint`](./5.233-formfieldlabel-ratingcontract-typehint.story.md) (RatingContract sulle firme), [`5.234-ratingdata-ratingclass-required-revert-backtrace`](./5.234-ratingdata-ratingclass-required-revert-backtrace.story.md) ($ratingClass required, no backtrace).
 
