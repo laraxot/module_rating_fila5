@@ -1,4 +1,12 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+created: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Rating Module"
 type: documentation
 module: Rating

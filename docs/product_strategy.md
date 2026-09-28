@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Rating Module - Product Strategy
 
 **Module:** Rating  
@@ -7,6 +21,17 @@
 
 ---
 
+<<<<<<< HEAD
+=======
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 ## Executive Summary
 
 The Rating module enables authentic user feedback through ratings and reviews, building trust and providing valuable insights for continuous improvement.

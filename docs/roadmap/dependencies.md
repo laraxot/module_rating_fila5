@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Dipendenze e confini del modulo Rating"
 type: guide
 tags: [dependencies, rating]

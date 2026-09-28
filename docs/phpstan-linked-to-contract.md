@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "PHPStan: contratto linkedTo e attributo parent_id nei test"
 type: memory
 status: active

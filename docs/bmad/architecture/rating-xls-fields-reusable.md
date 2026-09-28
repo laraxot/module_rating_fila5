@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Dove mettere le colonne XLS dei rating (catalogo)"
 type: architecture
 module: Rating
