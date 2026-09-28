@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /.ai*
 /_bmad
 /bashscripts
@@ -93,7 +92,6 @@ agentdb.rvf
 
 # claude-audit bridge (non committare)
 tests/AuditCoverage/*
-=======
 
 *~BASE
 *~head
@@ -179,4 +177,3 @@ vendor/
 *:Zone.Identifier
 test-results/
 rating.code-workspace
->>>>>>> laraxot/dev
