@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Brainstorm — home di ratingXlsFields vs RatingData"
 type: brainstorming
 module: Rating

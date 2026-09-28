@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: Rating/phpstan-fix-rating
 title: "PHPStan level max — RatingsHostStub::$forcedHasMany union type"
 status: done

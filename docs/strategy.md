@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Product Strategy: Rating Module"
 type: guide
 tags: [strategy, rating]

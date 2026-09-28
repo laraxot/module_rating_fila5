@@ -1,4 +1,12 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+created: 2026-09-26
+qmd: "rating data export methods.story"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "rating-data-export-methods"
 type: story
 module: Rating

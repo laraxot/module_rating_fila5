@@ -1,4 +1,13 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "schema"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Module Schema"
 module: "Rating"
 created: "2026-04-15T08:28:47Z"

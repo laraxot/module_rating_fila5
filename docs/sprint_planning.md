@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Rating Module - Sprint Planning
 
 **Module:** Rating  
@@ -6,6 +20,17 @@
 
 ---
 
+<<<<<<< HEAD
+=======
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 ## Sprint Goal
 
 Implement core rating and review system with moderation capabilities.

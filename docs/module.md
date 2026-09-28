@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Rating Module — Doctrine"
 type: doctrine
 tags: [rating, feedback, module-doctrine]

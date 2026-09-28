@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Rating Module — Documentation Index
 
 **Last updated:** 2026-07-28  
@@ -7,6 +21,17 @@ This module's docs are organized under `laravel/Modules/Rating/docs/`.
 
 ---
 
+<<<<<<< HEAD
+=======
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 ## ⚠️ Architectural Rules
 
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.

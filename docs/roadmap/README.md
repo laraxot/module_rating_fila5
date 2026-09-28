@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Rating Module Roadmap
 
 > "Rating and evaluation system for the Laraxot ecosystem with support for reviews, ratings, and feedback."
@@ -57,3 +71,14 @@ Provide a **flexible rating system** that supports:
 
 ---
 
+<<<<<<< HEAD
+=======
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev

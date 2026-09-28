@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Helper rating: tipizzare RatingContract, non BaseRating"
 type: rule
 module: Rating

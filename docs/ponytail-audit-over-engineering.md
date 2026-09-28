@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Ponytail audit — Rating (over-engineering)"
 type: guide
 tags: [ponytail, audit, over, engineering, rating]

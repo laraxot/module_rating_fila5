@@ -1,4 +1,8 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "git multi org sync handoff"
+>>>>>>> laraxot/dev
 title: "Handoff multi-org sync (STORY-003)"
 type: handoff
 tags: [git, multi-org, bmad, story-003]

@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "schemaless attributes errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schemaless attributes errors"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Schemaless Attributes - Errori e Correzioni
 
 **Modulo**: Rating
@@ -6,6 +20,17 @@
 
 ---
 
+<<<<<<< HEAD
+=======
+title: "schemaless attributes errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schemaless attributes errors"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 ## Errori Trovati
 
 ### 1. Rating estende BaseModel invece di BaseRating (DRY Violation)
@@ -118,6 +143,7 @@ Rating::where('extra_attributes->anno', 2024)->get();
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Via HasRatingsTrait (host model): syncRatingsWhere chiama
 // Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
 
@@ -129,6 +155,15 @@ Rating::where('extra_attributes->anno', 2024)->get();
 >>>>>>> c91c8c3 (.)
 =======
 >>>>>>> 2025498 (.)
+=======
+// Via HasRatingsTrait (host model): syncRatingsWhere chiama
+// Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
+
+---
+---
+---
+---
+>>>>>>> laraxot/dev
 // 4. Set attributes:
 $rating->extra_attributes->set('anno', 2024);
 $rating->save(); // OBBLIGATORIO!

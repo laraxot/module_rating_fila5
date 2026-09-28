@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Git LFS vietato: linea guida e prototipo .gitattributes"
 type: guideline
 module: Rating

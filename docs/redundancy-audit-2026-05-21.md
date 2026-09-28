@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+updated: 2026-09-26
+qmd: "redundancy audit 2026 05 21"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Rating redundancy audit 2026-05-21"
 type: audit
 module: Rating

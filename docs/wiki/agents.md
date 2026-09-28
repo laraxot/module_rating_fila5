@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Agent instructions (pointer)"
 type: reference
 tags: [agents, pointer]

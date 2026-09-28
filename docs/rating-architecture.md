@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
 tags: [rating, architecture]

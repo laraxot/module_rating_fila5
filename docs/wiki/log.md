@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Activity Log — Rating"
 type: guide
 tags: [log, rating]
@@ -47,3 +52,12 @@ qmd: "log"
 
 **Last Activity:** 2026-05-12 08:19:00 UTC  
 **Total Operations:** 3
+<<<<<<< HEAD
+=======
+
+---
+
+## [2026-09-25] phpstan | HasRatingsTrait staticMethod.notFound fix
+- `tests/Unit/HasRatingsTraitFormFieldLabelTest.php`: removed calls to undefined `HasRatingsTrait::formFieldLabel()` static method; tests now instantiate `Rating` and call instance methods.
+- Cleared 2 `staticMethod.notFound` errors.
+>>>>>>> laraxot/dev

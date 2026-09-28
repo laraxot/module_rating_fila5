@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Changelog (pointer)"
 type: reference
 tags: [changelog, pointer, rating]

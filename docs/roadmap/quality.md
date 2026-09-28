@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Checklist Qualità Modulo Rating"
 type: guide
 tags: [quality, rating]

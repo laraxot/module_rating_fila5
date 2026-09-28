@@ -1,4 +1,13 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ratings value field types"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: ratings-value-field-types
 title: "Analisi: tipi di campo per value in rating_morph (intero, decimal, select, radio, testo, condizionale)"
 description: "Brainstorming sui tipi di campo value per la tabella rating_morph, senza implementare codice"

@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+updated: 2026-09-26
+qmd: "duplicate ratings table migrations"
+discussions: []
+>>>>>>> laraxot/dev
 title: "RatingTable gemelle e doppia migration ratings"
 type: redundancy
 owner: Modules/Rating

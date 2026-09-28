@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Copilot Redundancy Audit"
 type: guide
 tags: [copilot, redundancy, audit, rating]

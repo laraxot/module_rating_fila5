@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Conflict Resolution — Module Rating"
 type: guide
 tags: [conflict, resolution, rating]

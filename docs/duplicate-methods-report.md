@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 type: guide
 tags: [duplicate, methods, report, rating]

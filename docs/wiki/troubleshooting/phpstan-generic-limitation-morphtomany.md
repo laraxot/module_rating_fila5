@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "phpstan generic limitation morphtomany"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []

@@ -1,4 +1,12 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+updated: 2026-09-26
+qmd: "PHPSTAN L10"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: PHPStan Level 10 Compliance — Rating Module
 module: Rating
 type: quality-gate

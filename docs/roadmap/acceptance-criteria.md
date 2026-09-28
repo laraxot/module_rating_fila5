@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Criteri di accettazione per le fasi"
 type: guide
 tags: [acceptance, criteria, rating]

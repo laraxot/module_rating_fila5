@@ -1,4 +1,15 @@
 ---
+<<<<<<< HEAD
+=======
+title: "criteri tipo di risposta e opzioni.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "criteri tipo di risposta e opzioni.story"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 name: criteri-tipo-di-risposta-e-opzioni
 description: "Due analisi accoppiate: dove vivono le opzioni di un criterio a scelta, e come si dichiara il tipo di risposta (numerico, scelta, testo) con la regola condizionale «Altro → testo obbligatorio». Solo brainstorming: nessun codice, decisioni in capo all'utente."
 metadata:

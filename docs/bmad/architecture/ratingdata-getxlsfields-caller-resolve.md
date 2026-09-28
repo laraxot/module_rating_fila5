@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "RatingData::getXlsFields($where) — resolve subclass dal backtrace statico"
 type: architecture
 module: Rating

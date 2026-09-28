@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "faq"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Rating Module - FAQ"
 type: reference
 tags: [faq, questions, answers, help]

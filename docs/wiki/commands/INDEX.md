@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "INDEX"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Commands Index"
 type: index
 created: 2026-05-11
