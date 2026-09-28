@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Activity Log"
 type: guide
 tags: [log, rating]

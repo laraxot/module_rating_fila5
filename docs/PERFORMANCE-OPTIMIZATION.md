@@ -1,4 +1,7 @@
 ---
+qmd: "PERFORMANCE OPTIMIZATION"
+issues: []
+discussions: []
 title: "Performance Optimization — Module Rating"
 type: documentation
 created: 2026-05-11

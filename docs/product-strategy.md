@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating - Product Strategy"
 type: guide
 tags: [product, strategy, rating]

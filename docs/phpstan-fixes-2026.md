@@ -1,3 +1,14 @@
+---
+title: "phpstan fixes 2026 01"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes 2026 01"
+issues: []
+discussions: []
+---
+
 # PHPStan Fixes - Modulo Rating
 
 **Data**: 2026-01-27  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "phpstan fixes 2026 01"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes 2026 01"
+issues: []
+discussions: []
 ## Correzioni Applicate
 
 ### 1. Conversione `$casts` in `casts()` (Laravel 12+)

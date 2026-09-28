@@ -1,4 +1,7 @@
 ---
+qmd: "bugfix supported locale translation and morph table name"
+issues: []
+discussions: []
 title: "SupportedLocale label mancante + hardcoded table name errato in test"
 type: bugfix
 module: Rating

@@ -1,4 +1,7 @@
 ---
+qmd: "phpstan generic limitation morphtomany"
+issues: []
+discussions: []
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []

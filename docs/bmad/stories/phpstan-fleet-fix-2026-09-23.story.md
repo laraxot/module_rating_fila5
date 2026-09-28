@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: "PHPStan fleet fix 2026-09-23 — generics.notSubtype su RatingContract"
 type: story
 module: Rating

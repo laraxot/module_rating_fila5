@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "User Research: Rating Module"
 type: guide
 tags: [user, research, rating]

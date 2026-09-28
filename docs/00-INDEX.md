@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "📚 RATING Module - Documentation Index"
 type: guide
 tags: [index, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Agent instructions (pointer)"
 type: reference
 tags: [agents, pointer]

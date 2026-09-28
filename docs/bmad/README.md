@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
 title: "BMAD Rating — Select altro / note"
 type: index
 module: Rating

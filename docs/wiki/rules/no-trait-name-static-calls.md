@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Mai TraitName::staticMethod — preferisci Data/classe concreta"
 type: rule
 module: Rating

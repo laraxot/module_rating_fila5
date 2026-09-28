@@ -1,3 +1,14 @@
+---
+title: "rating xls fields ratingclass required.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating xls fields ratingclass required.story"
+issues: []
+discussions: []
+---
+
 # Story — `ratingXlsFields`/`RatingData::getXlsFields`: `$ratingClass` required
 
 **Status**: done

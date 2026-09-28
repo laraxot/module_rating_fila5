@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Troubleshooting – Rating"
 type: guide
 tags: [troubleshooting, debugging, rating]
