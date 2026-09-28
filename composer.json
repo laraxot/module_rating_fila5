@@ -41,10 +41,7 @@
         }
     },
     "require": {
-<<<<<<< HEAD
-=======
         "cknow/laravel-money": "^8.0",
->>>>>>> laraxot/dev
         "spatie/laravel-schemaless-attributes": "*",
         "php": "^8.3"
     },
