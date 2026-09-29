@@ -1,11 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-type: note
-tags: [documentation]
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 id: Rating/quality-gates-phpstan-swarm-2026-09-23
 title: "Swarm quality gates 2026-09-23 — verifica PHPStan Rating (21 agenti paralleli, 1 per modulo)"
 status: done

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
@@ -64,7 +63,7 @@ trait HasRating
 
         /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
         $ratings_array = [];
-        foreach ($ratings as $rating) {
+        foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -79,9 +78,9 @@ trait HasRating
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
+            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
             $rowData['effect'] = false;
-            $ratings_array[] = $rowData;
+            $ratings_array[(int) $key] = $rowData;
         }
 
         return $ratings_array;

@@ -1,17 +1,19 @@
-<<<<<<< HEAD
-=======
+<<<<<<< .merge_file_SsLnbk
 ---
-title: "README"
-type: note
-tags: [documentation]
+title: "Rating — valutazioni flessibili"
+type: module-readme
+module: Rating
+status: active
+tags: [rating, evaluation, module]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-28
 qmd: "README"
 issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> .merge_file_PoVjix
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](composer.json)
@@ -19,6 +21,14 @@ discussions: []
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%20max%2C%200%20errori-brightgreen.svg)](../../phpstan.neon)
 [![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
+[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
+[![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
 
 > Non ogni valutazione ha gli stessi campi. Un rating su un servizio, uno su
 > una persona, uno su un fornitore hanno forme diverse — Rating esiste per
@@ -27,19 +37,11 @@ discussions: []
 Badge verificati l'1 settembre 2026 con `phpstan analyse Modules/Rating` (0
 errori, `level: max`). Rilanciabile: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating`.
 
+<<<<<<< .merge_file_SsLnbk
+=======
 ---
 
-<<<<<<< HEAD
-=======
-title: "README"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
+>>>>>>> .merge_file_PoVjix
 ## Scopo e confini
 
 Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo
@@ -140,3 +142,33 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 ---
 
 **Modulo** `rating` · licenza MIT
+<<<<<<< .merge_file_SsLnbk
+---
+
+## Scheda tecnica verificata (2026-09-28)
+
+| Voce | Valore |
+|---|---|
+| Nome dichiarato | `Rating` |
+| Namespace | `Modules\\Rating\\` |
+| File PHP (escluso vendor) | 172 |
+| File PHP di test | 39 |
+| Aree `app/` rilevate | Actions, Contracts, DataObjects, Datas, Enums, Filament, Models, Providers, View |
+| Migrazioni PHP | 18 |
+| SSoT locale | [`docs/`](docs/) e [`docs/bmad/`](docs/bmad/) |
+
+Questa scheda è un inventario statico, non una dichiarazione di qualità. Per ogni
+modifica eseguire i gate dal progetto Laravel:
+
+```bash
+cd laravel
+php -d memory_limit=2G ./vendor/bin/phpstan analyse Modules/Rating
+./vendor/bin/pest Modules/Rating
+```
+
+La responsabilità del modulo, le decisioni architetturali e le opportunità sono
+documentate negli artefatti BMAD sotto [`docs/bmad/`](docs/bmad/). I numeri vanno
+rigenerati quando il modulo cambia; non copiarli in badge non verificati.
+=======
+**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
+>>>>>>> .merge_file_PoVjix

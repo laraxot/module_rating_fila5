@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating Module - Sprint Planning"
 type: guide
 tags: [sprint, planning, rating]

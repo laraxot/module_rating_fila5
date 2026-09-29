@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Redundancy Report — Modulo Rating"
 type: guide
 tags: [redundancy, report, rating]

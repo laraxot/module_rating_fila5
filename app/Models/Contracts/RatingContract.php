@@ -7,6 +7,7 @@ namespace Modules\Rating\Models\Contracts;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
+use Modules\Rating\Models\BaseRating;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 
 /**
@@ -38,16 +39,25 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  *
  * @phpstan-require-extends Model
  *
- * @property int                    $id
- * @property int|null               $parent_id
- * @property string|null            $title
- * @property string|null            $txt
- * @property string|null            $slug
- * @property bool|null              $is_readonly
- * @property bool|null              $is_disabled
- * @property int|null               $order_column
- * @property Collection<int, Model> $children
- * @property RuleEnum               $rule
+ * Property-override di {@see HasRecursiveRelationshipsContract::$children}: il
+ * contratto base (Xot, generico) tipizza i figli come `Collection<int, Model>`;
+ * i figli di un criterio Rating sono sempre altri criteri (self-join adjacency-list
+ * sulla stessa tabella). Tipo `BaseRating` e non `RatingContract`: il template
+ * `TModel of Model` di `Illuminate\Database\Eloquent\Collection` richiede una
+ * classe reale, un'interfaccia non lo soddisfa nonostante
+ * `@phpstan-require-extends Model` (verificato: `generics.notSubtype`) — eccezione
+ * Eloquent gia' documentata in docs/wiki/rules/rating-contract-over-baserating.md.
+ *
+ * @property int         $id
+ * @property int|null    $parent_id
+ * @property string|null $title
+ * @property string|null $txt
+ * @property string|null $slug
+ * @property bool|null   $is_readonly
+ * @property bool|null   $is_disabled
+ * @property int|null    $order_column
+ * @property RuleEnum    $rule
+ * @property Collection<int, BaseRating> $children
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
 {

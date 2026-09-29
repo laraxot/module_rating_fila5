@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "filament resource zen pattern"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Filament Resource Zen Pattern (Rating Module)"
 type: concept
 sources: []

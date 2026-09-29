@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "on demand pattern"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "On-Demand Pattern — Module Rating"
 type: documentation
 created: 2026-05-11

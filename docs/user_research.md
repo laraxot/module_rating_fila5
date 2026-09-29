@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "user research"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user research"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Rating Module - User Research
 
 **Module:** Rating  
@@ -21,17 +7,6 @@ discussions: []
 
 ---
 
-<<<<<<< HEAD
-=======
-title: "user research"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user research"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 ## Research Goals
 
 1. Understand rating behavior

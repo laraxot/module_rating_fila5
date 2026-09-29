@@ -1,11 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Brainstorming — Select + Textarea sempre; note required su altro"
 type: brainstorming
 module: Rating
