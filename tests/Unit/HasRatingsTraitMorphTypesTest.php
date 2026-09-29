@@ -27,14 +27,11 @@ require_once __DIR__.'/../Fixtures/RatingsHostStiChildStub.php';
  */
 const MORPH_TYPES_TEST_ALIAS = 'ratings_host_stub';
 
-beforeEach(function (): void {
-    $this->previousMorphMap = Relation::morphMap();
-});
-
 afterEach(function (): void {
-    /** @var array<string, class-string> $previous */
-    $previous = $this->previousMorphMap;
-    Relation::morphMap($previous, false);
+    // La morph map e' statica e condivisa fra i test: si toglie solo l'alias aggiunto qui.
+    $map = Relation::morphMap();
+    unset($map[MORPH_TYPES_TEST_ALIAS]);
+    Relation::morphMap($map, false);
     \Mockery::close();
 });
 
