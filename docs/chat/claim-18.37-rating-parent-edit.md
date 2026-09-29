@@ -1,14 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "claim 18.37 rating parent edit"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Claim — Gestione parent_id e figli rating (18.37)"
 status: open
 agent: claude-opus-5-session-base-ptvx-fila5-92 [6a95f1]

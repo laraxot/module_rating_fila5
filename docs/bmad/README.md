@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "BMAD Rating — Select altro / note"
 type: index
 module: Rating

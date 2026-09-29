@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating — bonifica .md con data/timestamp nel nome file"
 type: story
 module: Rating

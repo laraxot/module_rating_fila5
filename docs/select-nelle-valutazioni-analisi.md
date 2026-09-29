@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "select nelle valutazioni analisi"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "select nelle valutazioni analisi"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Un criterio di valutazione con risposta a scelta: analisi
 
 **Stato: brainstorming.** Nessun codice scritto, nessuna decisione presa. Serve a

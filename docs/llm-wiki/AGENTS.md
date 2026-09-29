@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating Module LLM Wiki Agent Instructions"
 type: guide
 tags: [agents, rating]

@@ -1,11 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-qmd: "overview"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Wiki Overview"
 module: "Rating"
 type: overview

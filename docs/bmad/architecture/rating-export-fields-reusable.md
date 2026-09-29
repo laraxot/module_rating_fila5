@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "rating export fields reusable"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "rating export fields reusable"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Architecture — metodo riutilizzabile per getXlsFields dei rating
 
 ## Scopo

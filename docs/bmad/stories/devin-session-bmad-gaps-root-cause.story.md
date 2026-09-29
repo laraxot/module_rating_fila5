@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "devin session bmad gaps root cause.story"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "devin session bmad gaps root cause.story"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Story — Perché Devin ha mancato story BMAD in questa sessione (root cause propria)
 
 **Status**: done

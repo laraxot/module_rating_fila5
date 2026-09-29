@@ -1,15 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "core functionality"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "core functionality"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 module: theme
 topic: core-functionality
 canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "00 index"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "00 index"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  
@@ -41,17 +27,6 @@ discussions: []
 
 ---
 
-<<<<<<< HEAD
-=======
-title: "00 index"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "00 index"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 **Ultimo Aggiornamento**: 2026-03-24
 
 - [Criteri a scelta: opzioni in JSON, figli del criterio, o altro](criteri-a-scelta-multipla.md)

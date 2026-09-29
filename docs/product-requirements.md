@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Product Requirements Document (PRD)"
 type: guide
 tags: [product, requirements, rating]

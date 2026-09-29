@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Helper rating (label/path/fieldName) — sede RatingData"
 type: architecture
 module: Rating

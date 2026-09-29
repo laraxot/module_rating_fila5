@@ -1,11 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Spec implementazione — Select+Textarea value/note (HasRatingsTrait)"
 type: architecture
 module: Rating
