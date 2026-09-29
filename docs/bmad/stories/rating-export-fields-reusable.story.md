@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-qmd: "rating export fields reusable.story"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "rating export fields reusable"
 type: story
 module: Rating

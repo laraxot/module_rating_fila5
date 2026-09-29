@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Code Quality Analysis - Rating Module"
 type: concept
 tags: [code, quality, analysis, rating]

@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "formFieldLabel / ratingXlsValuePath / RatingData::getXlsFields — verdetto"
 type: architecture
 module: Rating

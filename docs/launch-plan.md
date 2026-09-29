@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Product Launch Plan: Rating Module"
 type: guide
 tags: [launch, plan, rating]

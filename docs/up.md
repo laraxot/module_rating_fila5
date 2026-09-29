@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "up"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: 'Up'
 module: Rating
 type: reference
