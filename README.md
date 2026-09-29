@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_QKHcfI
 <<<<<<< .merge_file_SsLnbk
 ---
 title: "Rating — valutazioni flessibili"
@@ -14,6 +15,8 @@ discussions: []
 
 =======
 >>>>>>> .merge_file_PoVjix
+=======
+>>>>>>> .merge_file_3VNwZI
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](composer.json)
@@ -41,7 +44,10 @@ errori, `level: max`). Rilanciabile: `cd laravel && ./vendor/bin/phpstan analyse
 =======
 ---
 
+<<<<<<< .merge_file_QKHcfI
 >>>>>>> .merge_file_PoVjix
+=======
+>>>>>>> .merge_file_3VNwZI
 ## Scopo e confini
 
 Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo
@@ -142,6 +148,7 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 ---
 
 **Modulo** `rating` · licenza MIT
+<<<<<<< .merge_file_QKHcfI
 <<<<<<< .merge_file_SsLnbk
 ---
 
@@ -172,3 +179,6 @@ rigenerati quando il modulo cambia; non copiarli in badge non verificati.
 =======
 **Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
 >>>>>>> .merge_file_PoVjix
+=======
+**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5
+>>>>>>> .merge_file_3VNwZI

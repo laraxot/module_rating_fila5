@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_upKwuy
 <<<<<<< .merge_file_aZ3UR1
 ---
 title: "Rating — Brainstorming BMAD (indice e decisioni)"
@@ -70,6 +71,8 @@ related:
 | Logica export dentro i modelli | accentrata in `app/Datas/RatingData.php` come SSoT |
 | Fill/save del pivot duplicato nel form host | pass-through generico in `HasRatingsTrait` |
 =======
+=======
+>>>>>>> .merge_file_jMp0WM
 # Brainstorming - Modulo Rating
 
 ## Idee iniziali
@@ -92,4 +95,7 @@ related:
 
 - [DOMANDA 1]
 - [DOMANDA 2]
+<<<<<<< .merge_file_upKwuy
 >>>>>>> .merge_file_sRMF9A
+=======
+>>>>>>> .merge_file_jMp0WM
