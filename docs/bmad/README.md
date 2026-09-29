@@ -1,8 +1,11 @@
 ---
+<<<<<<< .merge_file_3sXaov
 <<<<<<< .merge_file_biI7qW
 title: "Rating — indice BMAD"
 type: note
 =======
+=======
+>>>>>>> .merge_file_czgzRP
 title: "BMAD Rating — Select altro / note"
 type: index
 >>>>>>> .merge_file_RsJIOI
