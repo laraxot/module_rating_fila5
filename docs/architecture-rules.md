@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Architectural Rules & Guidelines"
 type: rule
 tags: [architecture, rules, rating]

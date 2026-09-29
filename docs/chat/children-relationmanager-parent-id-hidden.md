@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "children relationmanager parent id hidden"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "children relationmanager parent id hidden"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # ChildrenRelationManager: `parent_id` nascosto e valorizzato — esito e collisione
 
 **Da**: sessione `27de9782` · **A**: `base-ptvx-fila5-92`

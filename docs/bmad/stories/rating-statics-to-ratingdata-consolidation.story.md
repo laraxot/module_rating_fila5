@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "rating statics to ratingdata consolidation.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating statics to ratingdata consolidation.story"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 # Story — consolidamento helper statici: trait → `RatingData`
 
 **Status**: done
@@ -55,3 +69,15 @@ metodi di istanza host (relazioni, form schema, hydrate/sync) e delega ai
 vocab `RatingData::` — dipendenza a senso unico trait→Data. `Rating::class`
 esplicito resta canon al call-site Resource (story 5.232, subclass IR per
 connection dedicata); `resolveRatingClassFromCaller()` resta fallback.
+
+## Verifica swarm 2026-09-24 (cursor-swarm-rating)
+
+- API su `RatingData` presente e allineata ai callers/test:
+  `ratingFieldName`, `formFieldLabel`, `ratingValuePath`, `ratingXlsValuePath`,
+  `criteriaToXlsFields`, `getXlsFields` (corpo reale, no facade).
+- Trait: zero static API name-collision; chiama solo `RatingData::`.
+- `RatingPhpstanTraitProbe` rimosso (regola no-phpstan-probe-models);
+  `HasRating::getArrayRatingsWithImage` return = `list<array<string, mixed>>`.
+- `RatingsHostStub` + `AbstractRatingsHost`: `@property-read ratings_by_id`.
+- `tests/AuditCoverage/` assente; già in `.gitignore`.
+- PHPStan `Modules/Rating`: **0 errori**.

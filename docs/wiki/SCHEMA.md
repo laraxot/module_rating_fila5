@@ -1,4 +1,12 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+updated: 2026-09-26
+qmd: "SCHEMA"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: Wiki Schema
 description: Schema e convenzioni per la manutenzione della wiki
 tags:
@@ -32,5 +40,5 @@ docs/
 
 - File: kebab-case (es. `entity-user.md`)
 - Frontmatter: title, description, tags, created
-- Cross-ref: `Link`
+- Cross-ref: `[Link](../concepts/name.md)`
 - NON modificare mai `docs/raw/`

@@ -25,7 +25,4 @@ abstract class BaseModel extends XotBaseModel
             'updated_at' => 'datetime',
         ];
     }
-
-
-    
 }

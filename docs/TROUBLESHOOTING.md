@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Troubleshooting – Rating"
 type: guide
 tags: [troubleshooting, debugging, rating]

@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "project structure"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Project Structure — Module Rating"
 type: documentation
 created: 2026-05-11
@@ -84,7 +90,7 @@ related:
 
 ### Link Rules
 
-- **Interno modulo**: `[[concepts/page]]` o `link`
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
