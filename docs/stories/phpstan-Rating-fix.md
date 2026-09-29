@@ -1,14 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "phpstan Rating fix"
-type: note
-tags: [documentation]
-updated: 2026-09-26
-qmd: "phpstan Rating fix"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 id: phpstan-Rating-fix
 slug: phpstan-Rating
 scope: [module:Rating, project:<repo progetto>]

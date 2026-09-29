@@ -1,14 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan baserating getvaluehtml.story"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 id: Rating/phpstan-baserating-getvaluehtml
 title: "Parse error getValueHtml su BaseRating"
 status: done

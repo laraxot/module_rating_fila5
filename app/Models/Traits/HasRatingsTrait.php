@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,8 @@ trait HasRatingsTrait
      * pivot, non su `ratings`, quindi `sum('ratings', 'value')` è un errore SQL
      * (`Unknown column 'ratings.value'`).
      *
+     * Le due forme vengono da {@see ratingMorphTypes()}.
+     *
      * @return HasMany<MorphPivot, TModel>
      */
     public function ratingMorphs(): HasMany
@@ -72,9 +75,29 @@ trait HasRatingsTrait
 
         /** @var HasMany<MorphPivot, TModel> $relation */
         $relation = $this->hasMany($pivot::class, 'model_id', $this->getKeyName())
-            ->whereIn('model_type', array_unique([$this->getMorphClass(), static::class]));
+            ->whereIn('model_type', $this->ratingMorphTypes());
 
         return $relation;
+    }
+
+    /**
+     * Le forme di `model_type` con cui questo host sta in `rating_morph`: l'alias della
+     * morph map e il FQCN a cui l'alias punta.
+     *
+     * Il FQCN viene dalla morph map, non da `static::class`: su un figlio STI (Parental,
+     * es. `SchedaDip`) `static::class` e' la classe figlia, mai scritta; le righe
+     * storiche stanno sotto il FQCN del padre. Story `rating-morphs-sti-parent-fqcn`.
+     *
+     * @return list<string>
+     */
+    public function ratingMorphTypes(): array
+    {
+        $morph = $this->getMorphClass();
+
+        return array_values(array_unique([
+            $morph,
+            Relation::getMorphedModel($morph) ?? $morph,
+        ]));
     }
 
     /**
@@ -122,8 +145,7 @@ trait HasRatingsTrait
         $result = new EloquentCollection;
 
         foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
-            /** @var MorphPivot $pivot */
-            $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null) ?? $group->first();
+            $pivot = self::preferredRatingPivot($group);
 
             $rating = $ratings->get($ratingId);
             if (! $rating instanceof BaseRating) {
@@ -147,6 +169,23 @@ trait HasRatingsTrait
         }
 
         return $result;
+    }
+
+    /**
+     * La riga pivot che vale quando lo stesso rating ha una riga per ogni forma di
+     * `model_type`: prima quella con il voto, poi quella con la nota (opzione «altro»,
+     * `value` null di proposito), altrimenti la prima.
+     *
+     * @param  Collection<int, MorphPivot>  $group  righe dello stesso `rating_id`, mai vuoto
+     */
+    private static function preferredRatingPivot(Collection $group): MorphPivot
+    {
+        $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null)
+            ?? $group->first(static fn (MorphPivot $p): bool => filled($p->getAttribute('note')))
+            ?? $group->first();
+        Assert::isInstanceOf($pivot, MorphPivot::class);
+
+        return $pivot;
     }
 
     /**
@@ -277,9 +316,13 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ($ratingIds !== []) {
-            // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
-            // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
+            // Solo le associazioni mancanti nella forma che `ratings()` vede: e' da li'
+            // che nascono i campi del form. Una riga alias vuota accanto a una FQCN con il
+            // voto e' innocua: si legge da ratings_by_id (preferisce il voto) e si scrive
+            // su entrambe le forme via ratingMorphs(). Story `rating-morphs-sti-parent-fqcn`.
             $this->ratings()->syncWithoutDetaching($ratingIds);
+            $this->unsetRelation('ratings');
+            $this->unsetRelation('ratingMorphs');
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -390,7 +433,9 @@ trait HasRatingsTrait
         /** @var array<string, array{pivot: array{value: mixed, note: mixed}}> $ratingsData */
         $ratingsData = [];
 
-        foreach ($this->ratings as $rating) {
+        // ratings_by_id, non ratings: ratings vede solo getMorphClass() e perde il voto
+        // salvato sotto l'altra forma di model_type (scheda 9240, 2026-09-29).
+        foreach ($this->ratings_by_id as $rating) {
             $id = (string) $rating->id;
             $value = $rating->pivot->value;
             $note = $rating->pivot->note;
@@ -455,6 +500,11 @@ trait HasRatingsTrait
                 $this->ratings()->attach($id, $payload);
             }
         }
+
+        // hydrateRatingsFormData() dopo il save rilegge ratingMorphs: se restasse in
+        // memoria quella caricata prima, il form mostrerebbe i voti vecchi.
+        $this->unsetRelation('ratings');
+        $this->unsetRelation('ratingMorphs');
     }
 
     /**
@@ -475,6 +525,9 @@ trait HasRatingsTrait
             'value' => null,
             'note' => null,
         ]);
+
+        $this->unsetRelation('ratings');
+        $this->unsetRelation('ratingMorphs');
     }
 
     /**
@@ -540,15 +593,11 @@ trait HasRatingsTrait
 
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
-        /** @var array<int, string> $options */
-        $options = [];
-        foreach ($rating->children as $child) {
-            if (! $child instanceof RatingContract) {
-                continue;
-            }
-
-            $options[$child->id] = $child->getLabel();
-        }
+        // `RatingContract::$children` e' un property-override (non il generico Xot
+        // `Collection<int, Model>`): tipizzare RatingContract, non BaseRating.
+        $options = $rating->children
+            ->mapWithKeys(static fn (RatingContract $child): array => [$child->id => $child->getLabel()])
+            ->all();
 
         $afterStateUpdated = static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
             $caller?->recalculateRatingFields($set, $get, $readonlyRatings);

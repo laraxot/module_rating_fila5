@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "rating table component"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "rating table component"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Brainstorming — componente Blade riutilizzabile per tabella rating
 
 ## Contesto

@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Fasi di Sviluppo del Modulo Rating"
 type: guide
 tags: [phases, rating]

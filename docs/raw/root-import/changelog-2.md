@@ -1,17 +1,12 @@
-<<<<<<< HEAD
-=======
 ---
-title: "changelog 2"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
+title: "Changelog"
+type: guide
+tags: [changelog, rating]
+created: 2026-07-14
+updated: 2026-07-14
 qmd: "changelog 2"
-issues: []
-discussions: []
 ---
 
->>>>>>> laraxot/dev
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.

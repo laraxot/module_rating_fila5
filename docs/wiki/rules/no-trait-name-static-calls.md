@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Mai TraitName::staticMethod — preferisci Data/classe concreta"
 type: rule
 module: Rating

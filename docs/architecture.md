@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating Architecture"
 type: concept
 tags: [architecture, rating]
@@ -47,7 +42,7 @@ rating_categories (id, name, description, timestamps)
 Any module uses Rating via trait:
 
 ```php
-use Modules\Rating\Models\Traits\HasRatingsTrait;
+use Modules\Rating\Traits\HasRatingsTrait;
 
 class Product extends Model {
     use HasRatingsTrait;
