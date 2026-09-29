@@ -1,34 +1,9 @@
-<<<<<<< HEAD
-=======
----
-title: "graphify map"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "graphify map"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Rating Module — Mappa Graphify
 
 **Versione:** 1.1.0 | **Modulo:** Rating | **Data:** 2026-08-02
 
 ---
 
-<<<<<<< HEAD
-=======
-title: "graphify map"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "graphify map"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 ## 📌 Cosa fa il modulo Rating
 
 Il modulo **Rating** gestisce:

@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Bad Practices – Rating"
 type: guide
 tags: [bad, practices, rating]
@@ -11,7 +6,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
-  - "./best-practices.md"
+  - "./BEST_PRACTICES.md"
 ---
 
 # Bad Practices – Rating

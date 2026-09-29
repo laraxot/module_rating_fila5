@@ -41,7 +41,6 @@
         }
     },
     "require": {
-        "cknow/laravel-money": "^8.0",
         "spatie/laravel-schemaless-attributes": "*",
         "php": "^8.3"
     },

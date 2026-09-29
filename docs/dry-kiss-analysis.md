@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "🐄 DRY & KISS Analysis - Rating"
 type: concept
 tags: [dry, kiss, analysis, rating]

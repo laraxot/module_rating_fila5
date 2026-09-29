@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "README"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](composer.json)
@@ -19,6 +5,14 @@ discussions: []
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%20max%2C%200%20errori-brightgreen.svg)](../../phpstan.neon)
 [![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
+[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
+[![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
 
 > Non ogni valutazione ha gli stessi campi. Un rating su un servizio, uno su
 > una persona, uno su un fornitore hanno forme diverse — Rating esiste per
@@ -29,17 +23,6 @@ errori, `level: max`). Rilanciabile: `cd laravel && ./vendor/bin/phpstan analyse
 
 ---
 
-<<<<<<< HEAD
-=======
-title: "README"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 ## Scopo e confini
 
 Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo
@@ -140,3 +123,4 @@ Perche' esiste, come raggiungere meglio il suo scopo e cosa **non** gli appartie
 ---
 
 **Modulo** `rating` · licenza MIT
+**Modulo** `rating` · **Laraxot** · **Rating Module** · PHPStan 10 · Filament 5

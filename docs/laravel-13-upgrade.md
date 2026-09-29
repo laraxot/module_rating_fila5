@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Upgrade Laravel 13 - Rating 🐄✨"
 type: guide
 tags: [laravel, upgrade, rating]

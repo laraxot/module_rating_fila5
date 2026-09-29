@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Filament Version Declaration — Rating"
 type: guide
 tags: [filament, version, rating]

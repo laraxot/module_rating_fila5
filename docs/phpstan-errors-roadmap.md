@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "PHPStan Level 10 Errors Roadmap - Modulo Rating"
 type: guide
 tags: [phpstan, errors, roadmap, rating]

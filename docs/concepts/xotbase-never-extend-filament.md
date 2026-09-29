@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating — mai Filament\*, sempre XotBase*"
 type: concept
 module: Rating

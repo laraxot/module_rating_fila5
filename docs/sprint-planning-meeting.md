@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating - Sprint Planning Meeting"
 type: guide
 tags: [sprint, planning, meeting, rating]

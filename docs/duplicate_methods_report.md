@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "duplicate methods report"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "duplicate methods report"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione
