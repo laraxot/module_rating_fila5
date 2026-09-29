@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: "rating-readme-conflict-markers"
 title: "Rating: marker nidificati in README"
 status: review

@@ -1,4 +1,15 @@
 ---
+<<<<<<< HEAD
+=======
+title: "rating data migration helper.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating data migration helper.story"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 name: rating-data-migration-helper
 description: "Le colonne di ratings dichiarate una volta sola in RatingData, sul modello di NestedSet::columns(). Tre migrazioni ridotte a una riga ciascuna, idempotenza verificata sulle tabelle vive."
 metadata:

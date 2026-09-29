@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Massimizzare il livello di confidenza"
 type: rule
 tags: [confidence, guidelines, rating]

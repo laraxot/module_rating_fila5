@@ -1,4 +1,13 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating 5.99 review improvements bmad story"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: rating-5.99-review-improvements-bmad-story
 slug: rating-5.99-review-improvements-bmad-story
 title: "Review Rating/5.99 'altro' feature implementation and identified improvements"

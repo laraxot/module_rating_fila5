@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "PHPStan Fixes - Modulo Rating"
 type: guide
 tags: [phpstan, fixes, rating]

@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Product Roadmap - Rating Module"
 type: guide
 tags: [roadmap, rating]

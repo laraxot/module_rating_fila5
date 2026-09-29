@@ -1,4 +1,9 @@
 ---
+<<<<<<< HEAD
+=======
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Architectural Patterns – Rating"
 type: guide
 tags: [patterns, architecture, rating]
@@ -6,9 +11,9 @@ created: 2026-07-28
 updated: 2026-07-28
 qmd: "rating patterns"
 related:
-  - "./BEST_PRACTICES.md"
+  - "./best-practices.md"
   - "./architecture.md"
-  - "./TROUBLESHOOTING.md"
+  - "./troubleshooting.md"
 ---
 
 # Architectural Patterns – Rating
@@ -406,7 +411,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
+- [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
+- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

@@ -1,4 +1,10 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "contracts naming"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Contracts Naming & Placement"
 type: concept
 created: 2026-07-12
