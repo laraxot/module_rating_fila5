@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-qmd: "index"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating

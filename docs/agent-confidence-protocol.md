@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "agent confidence protocol"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Massima confidenza agente"
 type: reference
 status: approved

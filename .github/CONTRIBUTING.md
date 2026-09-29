@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: "CONTRIBUTING"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "CONTRIBUTING"
-issues: []
-discussions: []
----
-
->>>>>>> laraxot/dev
 # Contributing
 
 Contributions are **welcome** and will be fully **credited**.

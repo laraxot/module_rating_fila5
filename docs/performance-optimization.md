@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "performance optimization"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Performance Optimization — Module Rating"
 type: documentation
 created: 2026-05-11

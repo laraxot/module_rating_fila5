@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Rating — copertura model / migration / seeder / factory"
 type: reference
 tags: [rating, models, factory, migration, seeder, pivot, coverage]

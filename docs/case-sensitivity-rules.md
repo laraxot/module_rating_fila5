@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Case Sensitivity Rules - Rating Module"
 type: rule
 tags: [case, sensitivity, rules, rating]

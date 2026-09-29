@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "schemaless attributes casts"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Schemaless Attributes casts nota"
 type: concept
 tags: [docs, migrated-from-txt]

@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "PHPStan Generic Type Limitations in Laravel"
 type: guide
 tags: [phpstan, generic, limitations, rating]

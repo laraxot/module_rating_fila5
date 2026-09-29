@@ -1,10 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-qmd: "no rm no archive use old suffix"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "No rm, no archive folders, use .old suffix"
 type: rule
 module: Rating

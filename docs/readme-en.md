@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "⭐ Rating — English presentation"
 type: guide
 tags: [readme, rating]

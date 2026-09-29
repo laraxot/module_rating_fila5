@@ -1,101 +1,90 @@
 ---
-<<<<<<< HEAD
+<<<<<<< .merge_file_biI7qW
+title: "Rating — indice BMAD"
+type: note
 =======
-tags: [documentation]
-created: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "BMAD Rating — Select altro / note"
 type: index
+>>>>>>> .merge_file_RsJIOI
 module: Rating
-updated: 2026-09-16
+tags:
+  - bmad
+  - rating
+  - indice
+created: 2026-09-28
+updated: 2026-09-28
+qmd: "rating bmad indice documentazione rating morph trait"
+related:
+  - architecture.md
+  - architecture/module-boundary.md
+  - brainstorming.md
+  - epics/rating-export-ssot.md
+  - quick-reference.md
+  - setup-guide.md
 ---
 
-# BMAD — Rating Select «altro»
+# Rating — indice BMAD
 
-Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select + Textarea)**, note obbligatoria solo su «altro».
+> **SUMMARY** — Indice dei documenti BMAD del modulo `Rating` (`laravel/Modules/Rating`).
+> Il modulo gestisce catalogo dei rating, pivot `RatingMorph` su host polimorfici, trait
+> `HasRatingsTrait` per i form e l'export XLS centralizzato in `RatingData`.
+> I path sono relativi a `laravel/Modules/Rating/docs/bmad/`.
 
-## Contratto rapido (canon 2026-09-16)
+## Documenti canonici
 
-1. Con figli: **Select + Textarea sempre visibili**, affiancati (2 colonne) in un `Fieldset`
-   Filament (`Fieldset::setUp()` chiama già `columns(2)` di suo — vedi
-   [layouts#fieldset-component](https://filamentphp.com/docs/5.x/schemas/layouts#fieldset-component);
-   `columnSpan(2)` sul wrapper così nel form parent a 2 colonne il blocco le occupa entrambe).
-   Select è `->required()` (no `nullable()`, tensione contraddittoria con required).
-   Un tentativo intermedio con `Section` è stato scartato (niente `columns(2)` di default,
-   pensata per aree più grandi/collassabili, non per una coppia di campi sempre accoppiati).
-2. Select → `pivot.value`; Textarea → `pivot.note` (`ratingFieldName(..., 'note')`).
-3. Textarea **required** solo se è selezionata l'opzione «altro»; **mai** nascosta (un
-   tentativo di nasconderla finché non si sceglie «altro» è stato scartato su richiesta
-   esplicita dell'utente — deve vedersi sempre).
-4. «Altro» in coda alle options: chiave **`'other'`** (`OTHER_OPTION_KEY`). Placeholder Select → stato **`null`**. Label = `trans('rating::fields.altro')`.
-   La vecchia sentinella `''` collassava a `null` via `blank('')` in `select.js`
-   (vendor `OptionStateCast.php:17,62` → `if ($this->isNullable && blank($state)) { return null; }`),
-   quindi `selectIsOther()` non scattava mai a runtime e la Textarea non diventava mai obbligatoria.
-   `'other'` è stringa non vuota → non passa `blank()` → resta distinguibile per tutto il ciclo JS→Livewire→PHP.
-   Fix 2026-09-16.
-5. Gate: `selectIsOther($value)` → `$value === 'other'` (=== `OTHER_OPTION_KEY`). **Mai** `blank()`.
-   Textarea: `$get($select)` sul **Component** Select (non path `isAbsolute` — toglie `data.`).
-6. Select con figli: validazione **`Rule::in(chiavi options)`**, **non** `RuleEnum` numeric
-   (altrimenti `'other'` fallisce prima che la note sia required — story **5.152** / **5.156**).
-7. Identificatori codice **inglese**; host decora con `->label($label)` sul `Fieldset` (stesso
-   pattern di `->label()` sui `Field` singoli — `Fieldset` usa lo stesso trait `HasLabel`).
-8. **Pass-through pivot generico nel trait** (2026-09-16, story 5.147): `hydrateRatingsFormData()`/
-   `syncRatingsFormData()` — fill/save di `value`+`note` per qualunque host, incluso il remap
-   dell'opzione «altro» e la normalizzazione `''`/`null` → `null` (mai `0`). Prima duplicato
-   (parziale, con bug) in `CompilaIndennitaResponsabilita.php`.
-
-## Navigazione
-
-| Artefatto | Path |
+| Documento | Path |
 |-----------|------|
-| Architecture (SSoT contratto) | [architecture/rating-select-altro-note.md](architecture/rating-select-altro-note.md) |
-| **Spec codice proposto** | [architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) |
-| Epic | [epics/rating-select-altro.md](epics/rating-select-altro.md) |
-| Brainstorming | [brainstorming/rating-select-altro-note-obbligatoria.md](brainstorming/rating-select-altro-note-obbligatoria.md) |
-| Story 5.99 | [stories/5.99-select-altro-note-obbligatoria.story.md](stories/5.99-select-altro-note-obbligatoria.story.md) |
-| Story 5.141 D-8 filtro | [stories/5.141-has-rating-values-filter-note.story.md](stories/5.141-has-rating-values-filter-note.story.md) |
-| Story 5.142 review gate | [stories/5.142-review-gate-select-altro-impl.story.md](stories/5.142-review-gate-select-altro-impl.story.md) |
-| Story 5.143 lang altro | [stories/5.143-lang-fields-altro.story.md](stories/5.143-lang-fields-altro.story.md) |
-| Story 5.144 rename EN | [stories/5.144-rename-select-is-other.story.md](stories/5.144-rename-select-is-other.story.md) |
-| Story 5.146 Section/Fieldset UI | [stories/5.146-select-textarea-section-ui.story.md](stories/5.146-select-textarea-section-ui.story.md) |
-| **Story 5.147 pivot fill/save nel trait** | [stories/5.147-hydrate-sync-ratings-form-data.story.md](stories/5.147-hydrate-sync-ratings-form-data.story.md) |
-| Story 5.148 Fieldset UI | [stories/5.148-fieldset-always-visible-two-columns.story.md](stories/5.148-fieldset-always-visible-two-columns.story.md) |
-| Story 5.149 confine Compila↔trait | [stories/5.149-compila-vs-trait-reusable-boundary.story.md](stories/5.149-compila-vs-trait-reusable-boundary.story.md) |
-| Story 5.151 validation UI | [stories/5.151-human-validation-attribute.story.md](stories/5.151-human-validation-attribute.story.md) |
-| Design SSoT | [../stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
-| Smoke IR | [../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md](../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md) |
+| Architettura (indice) | [architecture.md](architecture.md) |
+| Architettura — confini di modulo | [architecture/module-boundary.md](architecture/module-boundary.md) |
+| Brainstorming (indice) | [brainstorming.md](brainstorming.md) |
+| Epic — export SSoT | [epics/rating-export-ssot.md](epics/rating-export-ssot.md) |
+| Epic — opzione «altro» | [epics/rating-select-altro.md](epics/rating-select-altro.md) |
+| Epic — roadmap | [epics/module-roadmap.md](epics/module-roadmap.md) |
+| Quick reference | [quick-reference.md](quick-reference.md) |
+| Setup guide | [setup-guide.md](setup-guide.md) |
 
-## GitHub
+## Shard di architettura
 
-| | |
-|--|--|
-| Design | https://github.com/laraxot/module_rating_fila5/issues/57 |
-| Impl | https://github.com/laraxot/module_rating_fila5/issues/58 |
-| Discussion | https://github.com/laraxot/module_rating_fila5/discussions/59 |
-| D-8 filtro | https://github.com/laraxot/module_rating_fila5/issues/60 |
-| Review gate impl | https://github.com/laraxot/module_rating_fila5/issues/61 |
-| Lang fields.altro | https://github.com/laraxot/module_rating_fila5/issues/62 |
-| Rename EN identifiers | https://github.com/laraxot/module_rating_fila5/issues/63 |
-| Section/Fieldset UI Select+note | https://github.com/laraxot/module_rating_fila5/issues/64 |
-| **Refactor pivot fill/save → trait** | https://github.com/laraxot/module_rating_fila5/issues/65 |
-| Confine Compila↔trait (5.149) | https://github.com/laraxot/module_rating_fila5/issues/67 |
-| IR Compila (pass-through pivot) | https://github.com/provtv/module_indennitaresponsabilita_fila5/issues/36 |
-| IR Compila review (host+label EN) | https://github.com/provtv/module_indennitaresponsabilita_fila5/issues/37 |
+| Shard | Oggetto |
+|-------|---------|
+| [architecture/rating-select-altro-note.md](architecture/rating-select-altro-note.md) | contratto nota obbligatoria su «altro» |
+| [architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) | spec del codice per select + textarea |
+| [architecture/rating-data-export-methods.md](architecture/rating-data-export-methods.md) | metodi export di `RatingData` |
+| [architecture/ratingdata-getxlsfields-caller-resolve.md](architecture/ratingdata-getxlsfields-caller-resolve.md) | risoluzione del caller di `getXlsFields()` |
+| [architecture/rating-entity-helpers-home-in-ratingdata.md](architecture/rating-entity-helpers-home-in-ratingdata.md) | home degli helper sull'entita |
+| [architecture/rating-export-fields-reusable.md](architecture/rating-export-fields-reusable.md) | campi export riusabili |
+| [architecture/rating-xls-fields-reusable.md](architecture/rating-xls-fields-reusable.md) | campi XLS riusabili |
+| [architecture/rating-table-component.md](architecture/rating-table-component.md) | componente tabella rating |
+| [architecture/form-field-label-and-xls-path-home.md](architecture/form-field-label-and-xls-path-home.md) | label campo form e path XLS |
 
-## Stub superseded / anti-drift
+## Shard di brainstorming
 
-| File | Nota |
+| Shard | Oggetto |
+|-------|---------|
+| [brainstorming/rating-select-altro-note-obbligatoria.md](brainstorming/rating-select-altro-note-obbligatoria.md) | nota obbligatoria su «altro» |
+| [brainstorming/rating-data-export-methods.md](brainstorming/rating-data-export-methods.md) | metodi export |
+| [brainstorming/rating-export-fields-reusable.md](brainstorming/rating-export-fields-reusable.md) | riusabilita campi export |
+| [brainstorming/rating-table-component.md](brainstorming/rating-table-component.md) | componente tabella |
+| [brainstorming/rating-xls-fields-home.md](brainstorming/rating-xls-fields-home.md) | home dei campi XLS |
+| [brainstorming/module-opportunities.md](brainstorming/module-opportunities.md) | opportunita di modulo |
+
+## Codice del modulo in mappa rapida
+
+| Area | Path |
 |------|------|
-| [brainstorming/rating-other-option-note-required.md](brainstorming/rating-other-option-note-required.md) | Pointer EN obsoleto |
-| [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
-| [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
-| [../../../../docs/stories/5.109-…](../../../../docs/stories/5.109-rating-conditional-textarea-altro.md) | is_altro/migration → superseded |
-| [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146) — se citi "5.145" verifica su disco quale intendi |
-| `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge — non SSoT; vedi [../index.md](../index.md) |
+| Modelli | `app/Models/` — `BaseRating.php`, `Rating.php`, `BaseRatingMorph.php`, `RatingMorph.php`, `BaseMorphPivot.php`, `Like.php`, `AbstractRatingsHost.php`, `BaseModel.php`, `Traits/HasRatingsTrait.php`, `Traits/HasRating.php`, `Traits/HasLikes.php`, `Contracts/RatingContract.php`, `Contracts/HasRatingContract.php` |
+| Dati | `app/Datas/RatingData.php`, `app/Datas/RatingMorphData.php`, `app/Datas/RatingBlockData.php`, `app/DataObjects/RatingData.php` |
+| Enums | `app/Enums/RuleEnum.php`, `app/Enums/SupportedLocale.php` |
+| Action | `app/Actions/HasRating/GetCountByModelRatingIdAction.php`, `GetRatingOptsByModelAction.php`, `GetSumByModelRatingIdAction.php` |
+| Filament | `app/Filament/Resources/RatingResource.php`, `RatingMorphResource.php`, `BaseRatingResource.php`, `app/Filament/Resources/HasRatingResource/` (solo RelationManagers e Widgets), `BaseRatingMorphResource.php`, `app/Filament/Forms/Components/RatingsSection.php`, `app/Filament/Concerns/DecoratesRatingFormFields.php`, `app/Filament/Tables/Columns/RatingsColumn.php`, `app/Filament/Tables/Filters/HasRatingValuesFilter.php` |
+| Provider | `app/Providers/RatingServiceProvider.php`, `app/Providers/Filament/AdminPanelProvider.php`, `app/Providers/EventServiceProvider.php`, `app/Providers/RouteServiceProvider.php` |
+| Config | `config/config.php` (solo `name`, `icon`, `navigation_sort`) |
+| Lang | `lang/it/rating.php`, `lang/it/ratings.php`, `lang/it/fields.php`, `lang/it/enums.php`, `lang/it/rule_enum.php`, `lang/it/rating_form.php`, `lang/it/rating_infolist.php`, `lang/it/rating_morph.php`, `lang/it/ratings_section.php`, `lang/it/child.php`, `lang/it/has_rating_values.php`, `lang/it/favorites.php` |
+| Test | `tests/Unit/` (27 file), `tests/Feature/RatingApiTest.php`, `tests/Fixtures/` |
+| Database | `database/migrations/` (6 attive + 2 in `_archive_redundant/` + 2 in `_bak/`), `database/factories/`, `database/seeders/` |
+| Routes | `routes/web.php`, `routes/api.php` — entrambi contengono solo `declare(strict_types=1);`: nessuna rotta dichiarata |
 
-**Regola swarm:** se un agente rivendica «utente ha confermato `'altro'` stringa», verificare
-`docs/prompts/01.md` (*chiave "" o null*) e i commenti **più recenti** su #57/#58 prima di
-riscrivere il pack. Canone: `'other'` + placeholder `null` + `selectIsOther`.
+## Metodo di riferimento
+
+- [../../../Xot/docs/bmad-method.md](../../../Xot/docs/bmad-method.md)
+- [../../../Xot/docs/bmad/stories/5.249-bmad-docs-fleet-completion.story.md](../../../Xot/docs/bmad/stories/5.249-bmad-docs-fleet-completion.story.md)

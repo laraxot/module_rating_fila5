@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "📚 RATING Module - Documentation Index"
 type: guide
 tags: [index, rating]

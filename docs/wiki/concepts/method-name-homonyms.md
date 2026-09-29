@@ -1,12 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-tags: [documentation]
-created: 2026-09-26
-qmd: "method name homonyms"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "censimento omonimi metodi — modulo Rating"
 type: analysis
 module: Rating

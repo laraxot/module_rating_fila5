@@ -1,15 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "metodi duplicati analisi"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "metodi duplicati analisi"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 module: theme
 topic: metodi_duplicati_analisi
 canonical: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md

@@ -18,13 +18,8 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
- * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
- * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
- * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
- * (path form/export, label, colonne della tabella). Non è un accostamento voluto: è il
- * nome `RatingData` che era già occupato quando è servito il secondo concetto.
- * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
- * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
+ * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
+ * Split `RatingBlockData` / entity tracciato a parte.
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -47,11 +42,6 @@ class RatingData extends Data
     ) {}
 
     /**
-     * Costruisce il DTO da un payload di form.
-     *
-     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
-     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
-     *
      * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
@@ -172,14 +162,6 @@ class RatingData extends Data
         return $fields;
     }
 
-    /**
-     * Le colonne di `ratings`, dichiarate una volta sola.
-     *
-     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
-     * si aggiungono solo quelle che mancano. Una lista, due usi: la stessa colonna
-     * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
-     * `text()` in creazione e `string()` nel guard di update).
-     */
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration

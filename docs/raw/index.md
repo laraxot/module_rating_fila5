@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Raw Sources — Rating"
 type: guide
 tags: [index, rating]
@@ -41,7 +36,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Schema di riferimento
 
-→ `docs/.schema/wiki-schema.md` (root progetto)
+→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 
 ---

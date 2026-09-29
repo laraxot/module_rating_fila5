@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "False Friends – Rating"
 type: guide
 tags: [false, friends, rating]

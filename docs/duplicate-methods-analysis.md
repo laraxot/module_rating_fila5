@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Analisi Metodi Duplicati - Modulo Rating"
 type: concept
 tags: [duplicate, methods, analysis, rating, legacy]

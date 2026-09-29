@@ -1,9 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Metodi duplicati — Rating"
 type: guide
 tags: [duplicate, methods, rating]
