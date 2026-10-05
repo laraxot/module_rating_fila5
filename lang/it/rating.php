@@ -7,7 +7,7 @@ return [
         'name' => ['label' => 'Rating'],
     ],
     'navigation' => [
-        'name' => ['label' => 'Rating'],
+        'name' => ['label' => 'Valutazione'],
         'plural' => ['label' => 'Rating'],
         'group' => [
             'name' => ['label' => 'Admin'],
@@ -36,7 +36,7 @@ return [
         'id' => ['label' => 'id', 'placeholder' => 'id', 'helper_text' => '', 'description' => 'id'],
         'title' => ['label' => 'title', 'placeholder' => 'title', 'helper_text' => '', 'description' => 'title'],
         'color' => ['label' => 'color', 'placeholder' => 'color', 'helper_text' => '', 'description' => 'color'],
-        'rating' => ['label' => 'rating', 'description' => 'rating', 'helper_text' => '', 'placeholder' => 'rating'],
+        'rating' => ['label' => 'Valutazione', 'description' => 'Valutazione', 'helper_text' => '', 'placeholder' => 'Valutazione'],
         'view' => ['label' => 'view', 'placeholder' => 'view', 'helper_text' => '', 'description' => 'view'],
         'anno' => ['label' => 'anno'],
         'type' => ['label' => 'type'],
@@ -112,5 +112,5 @@ return [
     'exceptions' => [
         'mandatory_data' => ['label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti'],
     ],
-    'label' => 'rating',
+    'label' => 'Valutazione',
 ];
