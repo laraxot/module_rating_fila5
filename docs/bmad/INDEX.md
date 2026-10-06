@@ -1,25 +1,34 @@
 # Rating Module — Documentation Index
 
-**Last updated:** 2026-07-28  
-**Stats:** 151 files | 18 categories | 16+ indexed resources
+## Core Purpose
 
-This module's docs are organized under `laravel/Modules/Rating/docs/`.
+- **[purpose.md](purpose.md)** — Module scope, why it exists, and improvement goals
 
----
+## Architecture & Design
 
-## Core Design & Architecture
+- **[architecture.md](architecture.md)** — Technical design and patterns
+- **[bmad/README.md](bmad/README.md)** — Active BMAD work (current stories, decisions)
 
-- **Reorderable Table Pattern** (HasXotTable): see IndennitaResponsabilita module docs for the core design; Rating adoption story: `docs/stories/5.96-rating-resource-reordering-adoption.story.md`
+## Key Concepts
 
-## Module-specific Docs
+- **[criteri-a-scelta-multipla.md](criteri-a-scelta-multipla.md)** — Multiple-choice criteria patterns
+- **[concepts/](concepts/)** — Concept documentation
 
-- `docs/stories/5.96-rating-resource-reordering-adoption.story.md` — QA + verification for reordering in RatingResource
+## Active Work
 
-- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+- **[bmad/stories/](bmad/stories/)** — Completed work and stories
+- **[bmad/](bmad/)** — BMAD methodology directory (brainstorm, model, action, deliver)
 
-## Second Brain References
+## Knowledge Base
 
-- Project wiki rules: `docs/wiki/rules/`
-- BMAD stories: `docs/bmad/stories/`
-- Architecture decisions: `docs/architecture-decisions/` (root)
-- Sprint status: `docs/sprint-status.yaml`
+- **[wiki/](wiki/)** — Long-term knowledge base and patterns
+- **[raw/](raw/)** — Raw data and exploratory notes
+
+## Tools & Reference
+
+- **[prd.json](prd.json)** — Product requirements snapshot
+- **[prompts/](prompts/)** — Prompt templates for development
+- **[roadmap/](roadmap/)** — Feature roadmap
+- **[schema/](schema/)** — Database schema documentation
+- **[screenshots/](screenshots/)** — UI reference images
+- **[workflows/](workflows/)** — Development workflows
