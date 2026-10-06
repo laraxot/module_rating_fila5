@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Datas;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Collection;
 use Modules\Rating\Enums\SupportedLocale;
@@ -114,11 +117,16 @@ class RatingData extends Data
     {
         Assert::implementsInterface($ratingClass, RatingContract::class);
 
+<<<<<<< HEAD
         /** @var Builder<BaseRating> $query */
         $query = $ratingClass::withExtraAttributes($where);
 
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $query->ordered()->get();
+=======
+        /** @var EloquentCollection<int, BaseRating> $ratings */
+        $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
+>>>>>>> laraxot/dev
         $ratings = $ratings
             ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
@@ -156,6 +164,7 @@ class RatingData extends Data
                 : Collection::make();
 
             if ($children->isNotEmpty()) {
+<<<<<<< HEAD
                 $noteLabelRaw = __(
                     'rating::fields.note_for',
                     ['label' => $label],
@@ -164,6 +173,12 @@ class RatingData extends Data
                 if (is_string($noteLabelRaw)) {
                     $fields[self::ratingValuePath($rating, 'note')] = $noteLabelRaw;
                 }
+=======
+                $fields[self::ratingValuePath($rating, 'note')] = (string) __(
+                    'rating::fields.note_for',
+                    ['label' => $label],
+                );
+>>>>>>> laraxot/dev
             }
         }
 
@@ -194,7 +209,11 @@ class RatingData extends Data
             $table->text('txt')->nullable();
         }
         if ($missing('extra_attributes')) {
+<<<<<<< HEAD
             $table->json('extra_attributes');
+=======
+            $table->schemalessAttributes('extra_attributes');
+>>>>>>> laraxot/dev
         }
         if ($missing('is_disabled')) {
             $table->boolean('is_disabled')->nullable();

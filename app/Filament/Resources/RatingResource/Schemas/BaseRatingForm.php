@@ -56,10 +56,14 @@ abstract class BaseRatingForm extends XotBaseResourceForm
                             return $query->whereKeyNot($record->getKey());
                         }
 
+<<<<<<< HEAD
                         /** @var Builder $result */
                         $result = $query->whereNotIn('id', $record->descendantsAndSelf()->pluck('id'));
 
                         return $result;
+=======
+                        return $query->whereNotIn('id', $record->descendantsAndSelf()->pluck('id'));
+>>>>>>> laraxot/dev
                     }
                 )
                 ->searchable()
