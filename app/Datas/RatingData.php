@@ -127,7 +127,7 @@ class RatingData extends Data
      * @param  iterable<int, RatingContract>  $ratings
      * @return array<string, string>
      */
-    public static function criteriaToXlsFields(iterable $ratings): array<string, string>
+    public static function criteriaToXlsFields(iterable $ratings): array
     {
         if ($ratings instanceof EloquentCollection) {
             $ratings->loadMissing('children');
@@ -152,7 +152,7 @@ class RatingData extends Data
                 : Collection::make();
 
             if ($children->isNotEmpty()) {
-                $noteLabelRaw = __(
+                $noteLabelRaw = (string) __(
                     'rating::fields.note_for',
                     ['label' => $label],
                 );

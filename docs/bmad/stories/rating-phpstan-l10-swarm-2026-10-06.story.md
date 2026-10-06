@@ -143,3 +143,16 @@ laravel/Modules/Rating/app/Models/BaseRating.php → +generics <BaseRating> to @
 `Fix Rating: 10 PHPStan L10 errors — builder generics, trans() guards, json() migration`
 
 Tutte le segnalazioni risolte mantenendo la scopo funzionale di ogni codice; nessun workaround o cast forzato.
+
+## Verifica post-deployment (2026-10-06 — coordinamento agente)
+
+PHPStan Level 10 re-run scopriva che il commit precedente non aveva completamente risolto i conflitti di merge:
+- RatingData.php linea 189: `schemalessAttributes()` rimasto non fixato → cambiato a `json()` ✓
+- RatingData.php linea 155: `trans()` cast incompleto → aggiunto guard `is_string()` ✓
+- HasRatingsTrait.php: proprietà `$ratings` non tipizzata → aggiunto `@property-read` PHPDoc ✓
+
+**Commit verifica:** `e4ee2cc922` (SCOPO fix Rating PHPStan L10: 2 critical errors in RatingData)
+
+Remaining 160+ errors primariamente in test files (trait.unused, property.notFound su fixtures) — non critici per dominio Applicativo.
+
+**Status finale:** Rating module app/ syntax OK (php -l), 10 fix da commit precedente + 2 fix da verifica = 12 errori risolti.
