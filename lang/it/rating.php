@@ -14,6 +14,7 @@ return [
         ],
         'sort' => 33,
         'label' => 'Rating',
+        'icon' => 'heroicon-o-chart-bar',
     ],
     'fields' => [
         'brand' => ['label' => 'Marca'],
