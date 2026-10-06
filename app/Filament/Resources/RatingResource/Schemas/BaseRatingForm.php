@@ -53,14 +53,10 @@ abstract class BaseRatingForm extends XotBaseResourceForm
                         }
 
                         if (! $record instanceof HasRecursiveRelationshipsContract) {
-                            /** @var Builder $q */
-                            $q = $query->whereKeyNot($record->getKey());
-                            return $q;
+                            return $query->whereKeyNot($record->getKey());
                         }
 
-                        /** @var Builder $q */
-                        $q = $query->whereNotIn('id', $record->descendantsAndSelf()->pluck('id'));
-                        return $q;
+                        return $query->whereNotIn('id', $record->descendantsAndSelf()->pluck('id'));
                     }
                 )
                 ->searchable()
