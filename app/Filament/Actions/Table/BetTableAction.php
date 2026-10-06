@@ -17,25 +17,12 @@ class BetTableAction extends Action
     {
         parent::setUp();
         $this->translateLabel();
-<<<<<<< HEAD
-        
-        $tooltip = trans('rating:txt.bet');
-        if (is_string($tooltip)) {
-            $this->label('')
-                ->tooltip($tooltip)
-                ->modalWidth('xl')
-                ->schema(static fn (Action $action): array => [
-                    TextInput::make('aa'),
-                ]);
-        }
-=======
         $this->label('')
             ->tooltip(trans('rating:txt.bet'))
             ->modalWidth('xl')
             ->schema(static fn (Action $action): array => [
                 TextInput::make('aa'),
             ]);
->>>>>>> laraxot/dev
     }
 
     public static function getDefaultName(): ?string
