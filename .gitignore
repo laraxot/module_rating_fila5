@@ -1,0 +1,63 @@
+/.ai*
+/_bmad
+/bashscripts
+/_docs
+/docs/archive
+/docs/legacy
+*.lock
+.php-cs-fixer.cache
+.vscode
+
+# Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
+# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
+# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+.cursor/
+.devcontainer/
+.windsurf/
+/rector.php
+/phpinsights.php
+rector.php
+graphify-out/
+
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+/.cursor
+/.cursor/
+/.windsurf
+/.windsurf/
+/.vscode
+/.vscode/
+.cursor~*
+.windsurf~*
+node_modules
+docs/phpstan/
+
+# Cartelle vietate in root modulo (direttiva utente: vanno cancellate)
+/bashscripts/
+/graphify-out/
+/tools/
+/scripts/
+/.agents/
+/.claude-audit/
+/build/
+/.claude/
+/.codex/
+/.opencode/
+/tests/graphify-out/
+bashscripts
+graphify-out
+tools
+scripts
+.agents
+.claude-audit
+build
+.claude
+/.github/skills/
+.github/skills
+docs/graphify
+resources/lang
+
+# docs/chat — coordination notes replaced by BMAD stories in docs/bmad/
+docs/chat
+
+# Laraxot — app/Application forbidden (belongs to laravel/app/, not module app/)
+app/Application
