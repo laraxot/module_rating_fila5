@@ -114,7 +114,7 @@ class RatingData extends Data
         Assert::implementsInterface($ratingClass, RatingContract::class);
 
         /** @var EloquentCollection<int, BaseRating> $ratings */
-        $ratings = $ratingClass::withExtraAttributes($where)->orderBy('order_column')->get();
+        $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
             ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
