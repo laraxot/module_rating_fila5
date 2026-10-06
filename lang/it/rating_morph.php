@@ -13,7 +13,7 @@ return [
         ],
         'label' => 'Rating Morph',
         'sort' => 6,
-        'icon' => 'heroicon-o-star',
+        'icon' => 'heroicon-o-chart-pie',
     ],
     'fields' => [
         'name' => [

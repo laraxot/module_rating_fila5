@@ -28,21 +28,6 @@ trait HasRating
                 continue;
             }
 
-            $options[(int) $rating->id] = (string) $rating->title;
-        }
-
-        return $options;
-    }
-
-    /** @return array<int, string> */
-    public function getOptionRatingsIdColor(): array
-    {
-        $options = [];
-        foreach ($this->ratings()->where('user_id', null)->get() as $rating) {
-            if (! $rating instanceof Rating) {
-                continue;
-            }
-
             $options[(int) $rating->id] = (string) $rating->color;
         }
 
