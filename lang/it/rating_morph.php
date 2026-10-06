@@ -13,11 +13,7 @@ return [
         ],
         'label' => 'Rating Morph',
         'sort' => 6,
-<<<<<<< HEAD
         'icon' => 'heroicon-o-chart-pie',
-=======
-        'icon' => 'heroicon-o-star',
->>>>>>> laraxot/dev
     ],
     'fields' => [
         'name' => [
