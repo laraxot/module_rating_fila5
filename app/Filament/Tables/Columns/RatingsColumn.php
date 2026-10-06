@@ -37,12 +37,16 @@ class RatingsColumn extends XotBaseTextColumn
     public static function make(?string $name = null): static
     {
         return parent::make($name ?? 'ratings')
+<<<<<<< HEAD
             ->counts(['ratingMorphs as rating_morphs_count' => static function (Builder $query): Builder {
                 /** @var Builder $result */
                 $result = $query->select(DB::raw('count(distinct rating_id)'));
 
                 return $result;
             }])
+=======
+            ->counts(['ratingMorphs as rating_morphs_count' => static fn (Builder $query): Builder => $query->select(DB::raw('count(distinct rating_id)'))])
+>>>>>>> laraxot/dev
             ->sum('ratingMorphs', 'value')
             ->state(static fn (Model $record): string => static::describe($record))
             ->badge()
@@ -68,12 +72,20 @@ class RatingsColumn extends XotBaseTextColumn
         $criteria = is_numeric($count) ? (int) $count : 0;
 
         if (! static::isRated($record)) {
+<<<<<<< HEAD
             return (string) trans('rating::ratings.state.not_rated', ['count' => $criteria]);
+=======
+            return trans('rating::ratings.state.not_rated', ['count' => $criteria]);
+>>>>>>> laraxot/dev
         }
 
         $sum = $record->getAttribute('rating_morphs_sum_value');
 
+<<<<<<< HEAD
         return (string) trans('rating::ratings.state.rated', [
+=======
+        return trans('rating::ratings.state.rated', [
+>>>>>>> laraxot/dev
             'count' => $criteria,
             'total' => is_numeric($sum) ? (string) (0 + $sum) : '0',
         ]);

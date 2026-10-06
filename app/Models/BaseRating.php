@@ -40,11 +40,18 @@ use Illuminate\Support\Str;
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra_attributes
  * @property RuleEnum                                          $rule
  *
+<<<<<<< HEAD
  * @method static Builder<BaseRating> newModelQuery()
  * @method static Builder<BaseRating> newQuery()
  * @method static Builder<BaseRating> query()
  * @method static Builder<BaseRating> withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
  * @method static Builder<BaseRating> ordered()
+=======
+ * @method static Builder|BaseRating newModelQuery()
+ * @method static Builder|BaseRating newQuery()
+ * @method static Builder|BaseRating query()
+ * @method static Builder|BaseRating withExtraAttributes(array<string, mixed>|string $attributes = [], mixed $value = null)
+>>>>>>> laraxot/dev
  *
  * @property int             $id
  * @property int             $user_id
@@ -68,6 +75,7 @@ use Illuminate\Support\Str;
  * @property BaseRatingMorph $pivot
  * @property-read mixed      $xls_export_value
  *
+<<<<<<< HEAD
  * @method static Builder<BaseRating> whereColor($value)
  * @method static Builder<BaseRating> whereCreatedAt($value)
  * @method static Builder<BaseRating> whereCreatedBy($value)
@@ -84,6 +92,24 @@ use Illuminate\Support\Str;
  * @method static Builder<BaseRating> whereTxt($value)
  * @method static Builder<BaseRating> whereUpdatedAt($value)
  * @method static Builder<BaseRating> whereUpdatedBy($value)
+=======
+ * @method static Builder|BaseRating whereColor($value)
+ * @method static Builder|BaseRating whereCreatedAt($value)
+ * @method static Builder|BaseRating whereCreatedBy($value)
+ * @method static Builder|BaseRating whereDeletedBy($value)
+ * @method static Builder|BaseRating whereIcon($value)
+ * @method static Builder|BaseRating whereId($value)
+ * @method static Builder|BaseRating whereIsDisabled($value)
+ * @method static Builder|BaseRating whereIsReadonly($value)
+ * @method static Builder|BaseRating whereOrderColumn($value)
+ * @method static Builder|BaseRating wherePostId($value)
+ * @method static Builder|BaseRating whereRelatedType($value)
+ * @method static Builder|BaseRating whereRule($value)
+ * @method static Builder|BaseRating whereTitle($value)
+ * @method static Builder|BaseRating whereTxt($value)
+ * @method static Builder|BaseRating whereUpdatedAt($value)
+ * @method static Builder|BaseRating whereUpdatedBy($value)
+>>>>>>> laraxot/dev
  *
  * @property MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                          $media_count
@@ -158,7 +184,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      *
      * @return Builder<BaseRating>
      */
+<<<<<<< HEAD
     public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder<BaseRating>
+=======
+    public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
+>>>>>>> laraxot/dev
     {
         if (is_string($attributes) && null !== $value) {
             // Single attribute with value: withExtraAttributes('anno', 2024)
