@@ -72,3 +72,9 @@ phpstan analyse app --level=10
 - [GitHub Repo](https://github.com/laraxot/module_rating_fila5)
 
 **Status:** ✅ Compliant (2026-08-02)
+
+## Proprieta' magica di una relazione nel trait
+
+`@property-read` su un trait che dichiara una relazione (`ratings()`) deve dire il tipo **caricato**
+(`EloquentCollection<int, BaseRating> $ratings`), non quello della relazione. Dettaglio e caso reale:
+`bmad/stories/rating-phpstan-l10-swarm-2026-10-06.story.md` (sezione Run 4).

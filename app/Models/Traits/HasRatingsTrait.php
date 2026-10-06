@@ -43,7 +43,7 @@ use Webmozart\Assert\Assert;
  * @template TModel of Model
  *
  * @phpstan-require-extends Model
- * @property-read MorphToMany<BaseRating> $ratings Relazione polimorfca su rating
+ * @property-read EloquentCollection<int, BaseRating> $ratings Il risultato di `ratings()` (la relazione e' il metodo, la proprieta' e' la collection caricata)
  */
 trait HasRatingsTrait
 {

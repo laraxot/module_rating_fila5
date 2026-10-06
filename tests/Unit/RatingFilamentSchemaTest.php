@@ -37,22 +37,34 @@ function ratingAssertKeyedSchema(array $schema, string $tipo): void
     }
 }
 
-test('le tabelle espongono colonne indicizzate per campo', function (): void {
-    /** @var list<class-string<XotBaseResourceTable>> $classi */
-    $classi = [
+/**
+ * @return list<class-string<XotBaseResourceTable>>
+ */
+function ratingResourceTables(): array
+{
+    return [
         RatingsTable::class,
         RatingTable::class,
         RatingMorphsTable::class,
         RatingMorphTable::class,
     ];
+}
 
-    foreach ($classi as $classe) {
-        $tabella = new $classe();
-        $colonne = $tabella->getTableColumns();
+test('le tabelle espongono colonne indicizzate per campo', function (): void {
+    foreach (ratingResourceTables() as $classe) {
+        $colonne = (new $classe())->getTableColumns();
 
         ratingAssertKeyedSchema($colonne, $classe);
+        Assert::assertContainsOnlyInstancesOf(Column::class, $colonne);
+    }
+});
+
+test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void {
+    foreach (ratingResourceTables() as $classe) {
+        $tabella = new $classe();
+
         Assert::assertIsArray($tabella->getTableFilters());
-        Assert::assertIsArray($actionsMethod->invoke($tabella));
+        Assert::assertIsArray($tabella->getTableActions());
         Assert::assertIsArray($tabella->getTableBulkActions());
     }
 });

@@ -23,7 +23,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
 use Illuminate\Support\Str;
 
 /**
@@ -99,7 +99,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
     // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
     // due relazioni scritte a mano non possono dare.
-    use HasRecursiveRelationships;
+    use TypedHasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
     use SortableTrait;
@@ -122,6 +122,17 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         $key = $this->getKey();
 
         return '#'.(is_scalar($key) ? (string) $key : '');
+    }
+
+    /**
+     * Get the name of the parent key column required by {@see HasRecursiveRelationshipsContract}.
+     * Overrides vendor trait method to enforce strict return type signature.
+     *
+     * @return string
+     */
+    public function getParentKeyName(): string
+    {
+        return 'parent_id';
     }
 
     /** @var list<string> */
