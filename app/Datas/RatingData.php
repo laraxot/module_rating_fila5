@@ -114,7 +114,7 @@ class RatingData extends Data
         Assert::implementsInterface($ratingClass, RatingContract::class);
 
         /** @var EloquentCollection<int, BaseRating> $ratings */
-        $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
+        $ratings = $ratingClass::withExtraAttributes($where)->orderBy('order_column')->get();
         $ratings = $ratings
             ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
@@ -152,10 +152,14 @@ class RatingData extends Data
                 : Collection::make();
 
             if ($children->isNotEmpty()) {
-                $fields[self::ratingValuePath($rating, 'note')] = (string) __(
+                $noteLabelRaw = (string) __(
                     'rating::fields.note_for',
                     ['label' => $label],
                 );
+
+                if (is_string($noteLabelRaw)) {
+                    $fields[self::ratingValuePath($rating, 'note')] = $noteLabelRaw;
+                }
             }
         }
 
@@ -186,7 +190,7 @@ class RatingData extends Data
             $table->text('txt')->nullable();
         }
         if ($missing('extra_attributes')) {
-            $table->schemalessAttributes('extra_attributes');
+            $table->json('extra_attributes');
         }
         if ($missing('is_disabled')) {
             $table->boolean('is_disabled')->nullable();
