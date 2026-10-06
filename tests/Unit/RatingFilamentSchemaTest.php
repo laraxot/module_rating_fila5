@@ -51,6 +51,26 @@ test('le tabelle espongono colonne indicizzate per campo', function (): void {
         $colonne = $tabella->getTableColumns();
 
         ratingAssertKeyedSchema($colonne, $classe);
+<<<<<<< HEAD
+=======
+        Assert::assertContainsOnlyInstancesOf(Column::class, $colonne);
+    }
+});
+
+test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void {
+    /** @var list<class-string<XotBaseResourceTable>> $classi */
+    $classi = [
+        RatingsTable::class,
+        RatingTable::class,
+        RatingMorphsTable::class,
+        RatingMorphTable::class,
+    ];
+
+    foreach ($classi as $classe) {
+        $tabella = new $classe();
+        $actionsMethod = new \ReflectionMethod($tabella, 'getTableActions');
+
+>>>>>>> laraxot/dev
         Assert::assertIsArray($tabella->getTableFilters());
         Assert::assertIsArray($actionsMethod->invoke($tabella));
         Assert::assertIsArray($tabella->getTableBulkActions());

@@ -14,7 +14,10 @@ return [
         ],
         'sort' => 33,
         'label' => 'Rating',
+<<<<<<< HEAD
         'icon' => 'heroicon-o-chart-bar',
+=======
+>>>>>>> laraxot/dev
     ],
     'fields' => [
         'brand' => ['label' => 'Marca'],
