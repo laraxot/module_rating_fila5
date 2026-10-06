@@ -156,3 +156,25 @@ PHPStan Level 10 re-run scopriva che il commit precedente non aveva completament
 Remaining 160+ errors primariamente in test files (trait.unused, property.notFound su fixtures) — non critici per dominio Applicativo.
 
 **Status finale:** Rating module app/ syntax OK (php -l), 10 fix da commit precedente + 2 fix da verifica = 12 errori risolti.
+
+## Run 4 swarm-rating (2026-10-06): 6 errori su 6 risolti
+
+Claim: agente `swarm-rating`, lock su 3 file + questa story. Related: `../../../../Xot/docs/bmad/stories/2026-10-06-phpstan-modules-level10.story.md`.
+
+### Correzione alla verifica precedente
+Il `@property-read MorphToMany<BaseRating> $ratings` aggiunto al trait in `2a233cbdc9` **mentiva**: `$host->ratings` e' la collection caricata, `MorphToMany` e' `$host->ratings()`. Spegneva un errore e ne creava due (`keyBy()` e `unique()` su una relazione), visibili solo in contesto di classe host.
+
+### File
+- `HasRatingsTrait.php` (due errori, un'unica causa). Scopo: relazioni rating polimorfe su un host, indicizzazione per id, campi del form. Fix: `@property-read EloquentCollection<int, BaseRating> $ratings`. Non serve `@phpstan-require-implements`: `morphToManyX`/`guessMorphPivot` (Xot `RelationX`) sono gia' risolti dall'host; nessun errore li riguardava.
+- `BaseRatingForm.php` (due errori). Scopo: `parent_id` non deve offrire il record stesso ne' i suoi discendenti (prevenzione anelli). I `@var Builder $q` erano inutili (il Builder del closure e' gia' tipizzato, `whereKeyNot`/`whereNotIn` ritornano `$this`) e senza generics: rimossi, ritorno diretto, stessa query.
+- `RatingFilamentSchemaTest.php` (due errori). Il merge `06a6d272c2` aveva fuso due test: sparita la definizione di `$actionsMethod` e la `assertContainsOnlyInstancesOf(Column::class)` (l'`use Column` era rimasto orfano). Il test non verificava piu' filtri/azioni. Ripristinati due test separati su un helper condiviso `ratingResourceTables()`; `getTableActions()` e' pubblico (`HasXotTable`), niente piu' Reflection.
+
+### Verifica
+- `php -l` ok; `phpstan analyse` mirato su trait + `AbstractRatingsHost` + `BaseScheda` (Ptv) + form + test: 0 errori.
+- Pest sul test: muto fino al timeout 120s (NON e' un verde). Verifica alternativa: script che avvia l'app e chiama sulle 4 tabelle `getTableColumns/Filters/Actions/BulkActions`: colonne indicizzate per stringa, tutte `Column`, il resto `array`.
+
+### Da segnalare (non toccato, file di altri agenti)
+`BaseRating::getParentKeyName()` hard-coded `'parent_id'` e' ridondante con `TypedHasRecursiveRelationships::getParentKeyName()` e ne aggira il delegare al vendor.
+
+### Lezione
+Un `@property`/`@property-read` su un trait non deve riscrivere il tipo di una relazione gia' dichiarata dal metodo: la proprieta' magica e' la collection, il metodo e' la relazione. Un docblock che "calma" PHPStan senza dire la verita' sposta l'errore nel contesto dell'host.
