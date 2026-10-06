@@ -18,6 +18,19 @@ use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use PHPUnit\Framework\Assert;
 
+/**
+ * @return list<class-string<XotBaseResourceTable>>
+ */
+function ratingResourceTables(): array
+{
+    return [
+        RatingsTable::class,
+        RatingTable::class,
+        RatingMorphsTable::class,
+        RatingMorphTable::class,
+    ];
+}
+
 uses(TestCase::class);
 
 /**
@@ -37,22 +50,11 @@ function ratingAssertKeyedSchema(array $schema, string $tipo): void
     }
 }
 
-/**
- * @return list<class-string<XotBaseResourceTable>>
- */
-function ratingResourceTables(): array
-{
-    return [
-        RatingsTable::class,
-        RatingTable::class,
-        RatingMorphsTable::class,
-        RatingMorphTable::class,
-    ];
-}
-
 test('le tabelle espongono colonne indicizzate per campo', function (): void {
     foreach (ratingResourceTables() as $classe) {
         $colonne = (new $classe())->getTableColumns();
+        /** @var array<string, Column> $colonne */
+        $colonne = $colonne;
 
         ratingAssertKeyedSchema($colonne, $classe);
         Assert::assertContainsOnlyInstancesOf(Column::class, $colonne);
@@ -62,6 +64,8 @@ test('le tabelle espongono colonne indicizzate per campo', function (): void {
 test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void {
     foreach (ratingResourceTables() as $classe) {
         $tabella = new $classe();
+        /** @var XotBaseResourceTable $tabella */
+        $tabella = $tabella;
 
         Assert::assertIsArray($tabella->getTableFilters());
         Assert::assertIsArray($tabella->getTableActions());
