@@ -1,5 +1,4 @@
 ---
-<<<<<<< .merge_file_Qk6MBl
 title: "Rating — Quick Reference"
 type: note
 module: Rating
@@ -8,7 +7,7 @@ tags:
   - rating
   - quick-reference
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-07
 qmd: "rating quick reference trait ratingdata risorse filament test"
 related:
   - README.md
@@ -110,128 +109,50 @@ Metodi chiave di `RatingData`: `ratingValuePath()`, `ratingXlsValuePath()`, `rat
 | Filament | `tests/Unit/RatingFilamentSchemaTest.php`, `RatingFilamentExtendedTest.php`, `RatingFilamentRelationManagerTest.php` |
 | Modelli | `tests/Unit/BaseRatingModelTest.php`, `RatingMorphModelTest.php` |
 | API | `tests/Feature/RatingApiTest.php` |
-=======
-title: "Rating — BMAD Quick Reference"
-description: "Comandi rapidi BMAD per il modulo Rating"
-module: "Rating"
-alias: "rating"
-documentation_date: "2026-09-29"
-bmad_version: "6.2.0"
----
 
-# Rating — BMAD Quick Reference
+## Enum
 
-## Comandi Rapidi
+- `RuleEnum` (`app/Enums/RuleEnum.php`): regole di validazione Laravel, non opzioni. Casi: `Null` (`''`), `ZeroFour`, `ZeroFive`, `ZeroSix`, `ZeroOrMin4Max25`, `NullableNumericMin0Max25`.
+- `SupportedLocale` (`app/Enums/SupportedLocale.php`): `IT` (`it`), `EN` (`en`).
 
-### Help
+## Altri simboli del modulo
 
-```bash
-bmad-help
-```
+- Trait in `app/Models/Traits/`: `HasRatingsTrait` (form pivot), `HasRating`, `HasLikes`, `RatingTrait`.
+- Resource base in `app/Filament/Resources/`: `BaseRatingResource`, `BaseRatingMorphResource`, oltre a `RatingResource` e `RatingMorphResource`.
+- `app/Aggregates/BettableAggregate.to_predict` e `BettableAggregate.to_rating`: due file non PHP (estensione `.to_*`) con una `AggregateRoot` Spatie EventSourcing vuota; non sono stati di un host e non sono autoloadati.
 
-### Workflow Rating
+## Pattern del modulo
 
-```bash
-# Phase 1
-bmad-domain-research      # Studio dominio: valutazioni, opzioni, note
-bmad-technical-research   # Fattibilità attributi schemaless e morph pivot
-
-# Phase 2
-bmad-create-prd           # PRD: rating, opzioni, aggregati, «altro»
-bmad-create-architecture  # Architettura BaseRating ↔ BaseRatingMorph ↔ host
-
-# Phase 3
-bmad-create-epics-and-stories            # Epic: trait host, pivot, form rating
-bmad-check-implementation-readiness      # Quality gate
-
-# Phase 4
-bmad-sprint-planning      # Sprint iniziale
-bmad-create-story         # Story: RatingMorphResource
-bmad-dev-story            # Implementazione
-bmad-code-review          # Review con focus regole e pivot
-```
-
-### Agenti per Rating
-
-| Agente | Skill | Scopo |
-|--------|-------|-------|
-| Mary (analyst) | `skill: "bmad-agent-analyst"` | ricerca modelli di valutazione |
-| John (pm) | `skill: "bmad-agent-pm"` | PRD regole e scale |
-| Winston (architect) | `skill: "bmad-agent-architect"` | architettura morph e schemaless |
-| Amelia (dev) | `skill: "bmad-agent-dev"` | implementazione trait e Action |
-| Quinn (qa) | `skill: "bmad-agent-qa"` | test regole, pivot, «altro» |
-
-## Classi Chiave
-
-### Contracts
-
-| Contract | Ruolo |
-|---|---|
-| `app/Models/Contracts/RatingContract` | Contratto del modello rating — **usare questo nelle firme** |
-| `app/Models/Contracts/HasRatingContract` | Host che espone rating |
-| `app/Contracts/HasLikeContract` | Host che espone like |
-| `app/Contracts/RatingsFormCallerContract` | Caller del form rating |
-
-### Enums (`app/Enums/`)
-
-- `RuleEnum` → `Null` (`''`), `ZeroFour`, `ZeroFive`, `ZeroSix`,
-  `ZeroOrMin4Max25`, `NullableNumericMin0Max25` — regole di validazione
-- `SupportedLocale` → `it`, `en`
-
-### Actions (`app/Actions/`)
-
-| Action | Ruolo |
-|---|---|
-| `GetCountByModelRatingIdAction` | Conteggio rating per host |
-| `GetSumByModelRatingIdAction` | Somma rating per host |
-| `GetRatingOptsByModelAction` | Opzioni disponibili per un host |
-| `HasRating/` | Sottodominio `HasRating` |
-
-### Models (`app/Models/`)
-
-- `BaseRating`, `BaseRatingMorph` — basi riusabili dai moduli host
-- `Rating`, `RatingMorph` — implementazioni concrete
-- `AbstractRatingsHost`, `Like` — aggregato e like
-- **Traits**: `HasRatingsTrait` (form pivot), `HasRating`, `HasLikes`, `RatingTrait`
-- **Aggregates**: `BettableAggregate` (stati `to_predict`, `to_rating`)
-
-### Filament 5
-
-- **Resources**: `RatingResource`, `RatingMorphResource`, `BaseRatingResource`,
-  `BaseRatingMorphResource`, `HasRatingResource`
-- **Widget**: `StatsOverview`
-- **Extra**: `Blocks/`, `Sections/`, `Forms/`, `Concerns/`, `Tables/`, `RelationManagers/`
-
-## Pattern del Modulo
-
-- Con figli: **Select + Textarea sempre visibili** in un `Fieldset` a 2 colonne;
-  `Fieldset::setUp()` imposta già `columns(2)`, usare `columnSpan(2)` sul wrapper
-- Select → `pivot.value`; Textarea → `pivot.note` via `ratingFieldName(..., 'note')`
-- «Altro» = chiave `'other'` (`OTHER_OPTION_KEY`), **mai** `''` (la stringa vuota
-  collassa a `null` e la nota non diventa mai obbligatoria)
-- Gate: `selectIsOther($value)` → `$value === 'other'`; **mai** `blank()`
-- Validazione Select con figli: `Rule::in(chiavi options)`, **non** `RuleEnum`
-- Fill/save generico: `hydrateRatingsFormData()` / `syncRatingsFormData()`
-- Tipizzare su `RatingContract`, mai su `BaseRating`
+- Criterio con figli: Select e Textarea sempre visibili in un `Fieldset`; `Fieldset::setUp()` imposta gia `columns(2)`, quindi si usa `columnSpan(2)` sul wrapper (vedi `HasRatingsTrait`, blocco `Fieldset::make()`).
+- Select scrive `pivot.value`; Textarea scrive `pivot.note` tramite `ratingFieldName(..., 'note')`.
+- Opzione «altro» = chiave `'other'` (`OTHER_OPTION_KEY`), mai `''`: la stringa vuota collassa a `null` e la nota non diventa obbligatoria.
+- Il gate e' `selectIsOther($value)`, cioe' `$value === 'other'`; mai `blank()`.
+- Validazione della Select con figli: `Rule::in(chiavi delle options)`, non `RuleEnum`.
+- Fill e save generici: `hydrateRatingsFormData()` e `syncRatingsFormData()`; gli host non duplicano il pivot.
+- Nelle firme tipizzare su `RatingContract` (o `HasRatingContract`), mai su `BaseRating`.
 
 ## Verifica
 
 ```bash
 cd laravel
-
 php -d memory_limit=2G ./vendor/bin/phpstan analyse Modules/Rating
 ./vendor/bin/pest Modules/Rating
 ./vendor/bin/pint
 ```
 
-## Quick Flow
+Sull'host `10.100.200.15` non si lanciano test Pest.
 
-```bash
-bmad-quick-dev "Aggiungi opzione «altro» a un nuovo rating con figli"
-bmad-quick-spec "Specifica regola di validazione scala 0-25"
-```
+## Comandi BMAD per Rating
 
----
+Flusso consigliato (help: `bmad-help`):
 
-*Rating · BMAD Quick Reference · data 2026-09-29*
->>>>>>> .merge_file_XDQbg5
+| Fase | Comandi |
+|---|---|
+| 1 Analisi | `bmad-domain-research` (valutazioni, opzioni, note), `bmad-technical-research` (attributi schemaless, morph pivot) |
+| 2 Pianificazione | `bmad-create-prd`, `bmad-create-architecture` (BaseRating, BaseRatingMorph, host) |
+| 3 Soluzione | `bmad-create-epics-and-stories`, `bmad-check-implementation-readiness` |
+| 4 Implementazione | `bmad-sprint-planning`, `bmad-create-story`, `bmad-dev-story`, `bmad-code-review` |
+
+Agenti: Mary (`bmad-agent-analyst`), John (`bmad-agent-pm`), Winston (`bmad-agent-architect`), Amelia (`bmad-agent-dev`), Quinn (`bmad-agent-qa`).
+Scorciatoie: `bmad-quick-dev "<richiesta>"`, `bmad-quick-spec "<richiesta>"`.
+Le story vanno in `docs/bmad/stories/` di questo modulo.
