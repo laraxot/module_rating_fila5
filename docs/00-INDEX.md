@@ -40,6 +40,18 @@ related:
 | [RATING-2.2](stories/2.2.phpstan-rating-test-contracts.story.md) | review | Contratti statici trait e fixture |
 | [RATING-2.3](stories/2.3.phpstan-rating-tail-contracts.story.md) | review | Ultimi 11 findings nei test Rating: cold module a zero |
 | [4.26 coda](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md) | review | PHPStan modulo a zero (E+F) |
+| [rating-morphs-sti-parent-fqcn](bmad/stories/rating-morphs-sti-parent-fqcn.story.md) | done | `ratingMorphTypes()` su figlio STI: alias + FQCN del padre (ripristinata 2026-10-07) |
+
+## Documentazione BMAD del modulo
+
+Aggiornata il 2026-10-07 dopo la risoluzione dei marker di merge nei docs (versioni composte, non scelte a un lato).
+
+- [Brainstorming](bmad/brainstorming.md): decisioni, questioni aperte, opzioni scartate.
+- [Architecture](bmad/architecture.md)
+- [Quick reference](bmad/quick-reference.md)
+- [Setup guide](bmad/setup-guide.md)
+- Story: cartella [bmad/stories/](bmad/stories/).
+- Cluster PHPStan L10 Rating e Xot: [cluster-3-rating-xot-phpstan-l10-2026-10-06.story.md](bmad/stories/cluster-3-rating-xot-phpstan-l10-2026-10-06.story.md).
 
 ## 🔗 Riferimenti
 
