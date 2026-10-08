@@ -41,6 +41,7 @@ related:
 | [RATING-2.3](stories/2.3.phpstan-rating-tail-contracts.story.md) | review | Ultimi 11 findings nei test Rating: cold module a zero |
 | [4.26 coda](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md) | review | PHPStan modulo a zero (E+F) |
 | [rating-morphs-sti-parent-fqcn](bmad/stories/rating-morphs-sti-parent-fqcn.story.md) | done | `ratingMorphTypes()` su figlio STI: alias + FQCN del padre (ripristinata 2026-10-07) |
+| [2026-10-08 PHPStan RatingMorphData](stories/2026-10-08-phpstan-rating-morph-data-missing.story.md) | done | Closure `$missing` morta (duplicava `addIfMissing()`), tornata con un merge |
 
 ## Documentazione BMAD del modulo
 

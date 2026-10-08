@@ -62,8 +62,6 @@ class RatingMorphData extends Data
      */
     public static function updateColumns(Blueprint $table, XotBaseMigration $migration): void
     {
-        $missing = static fn (string $column): bool => ! $migration->hasColumn($column);
-
         self::addIfMissing($migration, 'value', static fn () => $table->integer('value')->nullable());
         self::addIfMissing($migration, 'note', static fn () => $table->text('note')->nullable());
         self::addIfMissing($migration, 'is_winner', static fn () => $table->boolean('is_winner')->default(false));
