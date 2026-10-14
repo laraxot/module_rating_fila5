@@ -8,6 +8,7 @@ module: "Rating"
 type: overview
 created: "2026-04-15T08:28:47Z"
 updated: "2026-04-15T08:28:47Z"
+status: draft
 ---
 
 # Rating Wiki Overview

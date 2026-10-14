@@ -6,9 +6,10 @@ created: 2026-07-28
 updated: 2026-07-28
 qmd: "rating troubleshooting"
 related:
-  - "./PATTERNS.md"
+  - "./patterns.md"
   - "./architecture.md"
   - "./wiki/troubleshooting/"
+status: draft
 ---
 
 # Troubleshooting – Rating
@@ -105,7 +106,7 @@ assert($model->ratings->isEmpty()); // No ratings yet
 - Define computed properties with explicit return types
 
 **Reference:**
-- [PATTERNS.md — Score Aggregation](./PATTERNS.md#3-score-aggregation-pattern)
+- [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
 - Laravel docs: Aggregates
 
 ---
@@ -151,7 +152,7 @@ assert($rating->ratable !== null);
 
 **Reference:**
 - Laravel Migrations: Foreign Keys
-- [PATTERNS.md — Polymorphic Rating](./PATTERNS.md#1-polymorphic-rating-pattern)
+- [PATTERNS.md — Polymorphic Rating](./patterns.md#1-polymorphic-rating-pattern)
 
 ---
 
@@ -195,7 +196,7 @@ $ratings = $model->fresh('ratings')->ratings;
 
 **Reference:**
 - Laravel Eager Loading
-- [PATTERNS.md — Score Aggregation](./PATTERNS.md#3-score-aggregation-pattern)
+- [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
 
 ---
 
@@ -256,7 +257,7 @@ assert($rating->rated_at !== null);
 - Test rating creation from CLI
 
 **Reference:**
-- [PATTERNS.md — Audit Trail](./PATTERNS.md#2-audit-trail-pattern)
+- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
 - Laravel Queue documentation
 
 ---
@@ -327,7 +328,7 @@ $schedule->daily(new ArchiveOldAuditLogsJob());
 - Monitor JSON column size
 
 **Reference:**
-- [PATTERNS.md — Audit Trail](./PATTERNS.md#2-audit-trail-pattern)
+- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
 - Laravel Scheduled Tasks
 
 ---
@@ -459,7 +460,7 @@ assert(Rating::count() === 1);
 - Test concurrent operations
 
 **Reference:**
-- [PATTERNS.md — Audit Trail](./PATTERNS.md#2-audit-trail-pattern)
+- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
 - Laravel Database Transactions
 
 ---
@@ -527,7 +528,7 @@ $this->post('/ratings', ['category' => 'technical'])
 - Test category filtering
 
 **Reference:**
-- [PATTERNS.md — Category Management](./PATTERNS.md#4-category-management-pattern)
+- [PATTERNS.md — Category Management](./patterns.md#4-category-management-pattern)
 - PHP Enums documentation
 
 ---
@@ -551,9 +552,9 @@ $this->post('/ratings', ['category' => 'technical'])
 ## Need Help?
 
 - **Architecture issues** → [architecture.md](./architecture.md)
-- **Design patterns** → [PATTERNS.md](./PATTERNS.md)
+- **Design patterns** → [PATTERNS.md](./patterns.md)
 - **Code style** → [BEST_PRACTICES.md](./BEST_PRACTICES.md)
 - **Wiki concepts** → [wiki/](./wiki/)
 - **PHPStan errors** → Prefix with `phpstan` in QMD: `qmd search "phpstan rating"`
 
-**Last resort:** Check [INDEX_GENERATED.md](./INDEX_GENERATED.md) for all 151 documentation files.
+**Last resort:** Check [INDEX_GENERATED.md](../INDEX_GENERATED.md) for all 151 documentation files.

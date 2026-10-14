@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating assert subclassof to ratingcontract.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Story — `Assert::subclassOf(BaseRating)` → `Assert::implementsInterface(RatingContract)`

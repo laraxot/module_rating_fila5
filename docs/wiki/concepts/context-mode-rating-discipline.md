@@ -7,6 +7,7 @@ type: "rule"
 tags: [rating, context-mode, filament-zen]
 created: 2026-05-12
 updated: 2026-05-12
+status: draft
 ---
 
 # Rating Module — Context-Mode Discipline

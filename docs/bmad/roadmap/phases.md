@@ -5,6 +5,7 @@ tags: [phases, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "phases"
+status: draft
 ---
 
 # Fasi di Sviluppo del Modulo Rating

@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "MIGRATIONS"
 related:
   - "./ON-DEMAND-PATTERN.md"
+status: draft
 ---
 
 # Rating Module — Migrations

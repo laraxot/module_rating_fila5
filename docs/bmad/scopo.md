@@ -240,6 +240,6 @@ ls Modules/Rating/app/Services 2>/dev/null | wc -l                           # o
 
 - [quality-audit.md](quality-audit.md) — i numeri di qualità già misurati
 - [Sigma — scopo](../../Sigma/docs/scopo.md) — la stessa disciplina su un altro modulo di piattaforma
-- [parental-sti-filament-schemas](../../../../docs/wiki/rules/parental-sti-filament-schemas.md) — perché ogni figlio ha bisogno delle proprie classi Schema
-- [migration-filename-from-model-name](../../../../docs/wiki/rules/migration-filename-from-model-name.md) — 1 modello = 1 migrazione
+- [parental-sti-filament-schemas](../../../../../docs/wiki/rules/parental-sti-filament-schemas.md) — perché ogni figlio ha bisogno delle proprie classi Schema
+- [migration-filename-from-model-name](../../../../../docs/wiki/rules/migration-filename-from-model-name.md) — 1 modello = 1 migrazione
 - [architecture.md](architecture.md) — l'architettura già documentata

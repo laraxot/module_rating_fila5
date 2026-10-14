@@ -9,6 +9,7 @@ related:
   - "./BEST_PRACTICES.md"
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
+status: draft
 ---
 
 # Architectural Patterns – Rating

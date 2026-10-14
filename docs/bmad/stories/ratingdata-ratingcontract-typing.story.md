@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "ratingdata ratingcontract typing.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 > **SUPERSEDED (2026-09-23)** — bozza pre-correzione dello stesso lavoro.

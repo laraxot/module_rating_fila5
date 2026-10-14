@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "phpstan fixes"
 related:
   - "./ponytail-audit-over-engineering.md"
+status: draft
 ---
 
 # PHPStan Fixes - Modulo Rating

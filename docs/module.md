@@ -10,6 +10,7 @@ qmd: "Rating module doctrine BMAD analysis purpose religion philosophy policy wh
 related:
   - "../../Xot/docs/module.md"
   - "../../Comment/docs/module.md"
+status: draft
 ---
 
 # Rating Module — Doctrine

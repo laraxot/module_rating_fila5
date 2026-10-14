@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "BEST PRACTICES"
 related:
   - "./FALSE_FRIENDS.md"
+status: draft
 ---
 
 # Best Practices – Rating

@@ -8,6 +8,7 @@ title: "BMAD Rating — Select altro / note"
 type: index
 module: Rating
 updated: 2026-09-16
+status: draft
 ---
 
 # BMAD — Rating Select «altro»
@@ -63,7 +64,7 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 | Story 5.149 confine Compila↔trait | [stories/5.149-compila-vs-trait-reusable-boundary.story.md](stories/5.149-compila-vs-trait-reusable-boundary.story.md) |
 | Story 5.151 validation UI | [stories/5.151-human-validation-attribute.story.md](stories/5.151-human-validation-attribute.story.md) |
 | Design SSoT | [../stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
-| Smoke IR | [../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md](../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md) |
+| Smoke IR | ../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md _(riferimento non presente nel repository, verificato 2026-10-14)_ |
 
 ## GitHub
 
@@ -86,10 +87,10 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 
 | File | Nota |
 |------|------|
-| [brainstorming/rating-other-option-note-required.md](brainstorming/rating-other-option-note-required.md) | Pointer EN obsoleto |
+| brainstorming/rating-other-option-note-required.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Pointer EN obsoleto |
 | [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
 | [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
-| [../../../../docs/stories/5.109-…](../../../../docs/stories/5.109-rating-conditional-textarea-altro.md) | is_altro/migration → superseded |
+| ../../../../docs/stories/5.109-… _(riferimento non presente nel repository, verificato 2026-10-14)_ | is_altro/migration → superseded |
 | [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146) — se citi "5.145" verifica su disco quale intendi |
 | `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge — non SSoT; vedi [../index.md](../index.md) |
 

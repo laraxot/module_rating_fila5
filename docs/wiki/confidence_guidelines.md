@@ -1,3 +1,11 @@
+---
+title: "Massimizzare il livello di confidenza"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "massimizzare il livello di confidenza rating"
+---
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.

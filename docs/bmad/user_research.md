@@ -1,3 +1,11 @@
+---
+title: "Rating Module - User Research"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - user research rating"
+---
 # Rating Module - User Research
 
 **Module:** Rating  

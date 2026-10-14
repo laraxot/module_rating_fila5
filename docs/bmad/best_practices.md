@@ -1,3 +1,11 @@
+---
+title: "Best Practices – Rating"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "best practices   rating rating"
+---
 # Best Practices – Rating
 
 ## Principi DRY/KISS

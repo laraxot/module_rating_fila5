@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
   - "./best-practices.md"
+status: draft
 ---
 
 # Bad Practices – Rating

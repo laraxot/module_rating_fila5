@@ -10,6 +10,7 @@ qmd: "rating changelog pointer canonical"
 canonical: ./CHANGELOG.md
 related:
   - ./CHANGELOG.md
+status: stub
 ---
 
 # Changelog — pointer

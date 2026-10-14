@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: file-naming-rules
 canonical: ../../../Themes/docs/shared-components/file-naming-rules.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/file-naming-rules.md

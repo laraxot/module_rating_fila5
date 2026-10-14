@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating export fields reusable"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Architecture — metodo riutilizzabile per getXlsFields dei rating

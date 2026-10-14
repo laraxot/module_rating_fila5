@@ -9,6 +9,7 @@ updated: 2026-08-02
 qmd: "duplicate methods analysis"
 related:
   - "./duplicate_methods.md"
+status: draft
 ---
 
 # Analisi Metodi Duplicati - Modulo Rating

@@ -11,6 +11,7 @@ updated: 2026-07-27
 related:
   - ../../Xot/docs/testing/pest-globally-blocked-sqlite-connection-collision.md
   - ../../../../docs/chat/phpstan-modules-zero.md
+status: draft
 ---
 
 # Rating — 3 fix in questa sessione
