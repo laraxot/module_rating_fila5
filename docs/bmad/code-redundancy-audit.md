@@ -7,6 +7,7 @@ created: "2026-05-26"
 updated: "2026-05-26"
 owner: "Rating"
 issue: "https://github.com/provtv/<nome repository>/issues/150"
+qmd: "code redundancy audit   rating rating"
 ---
 
 # Code redundancy audit — Rating

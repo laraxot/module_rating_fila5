@@ -9,6 +9,7 @@ updated: 2026-09-22
 qmd: "architecture"
 related:
   - "./best-practices.md"
+status: draft
 ---
 
 # Rating Architecture

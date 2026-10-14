@@ -1,3 +1,11 @@
+---
+title: "Bad Practices – Rating"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "bad practices   rating rating"
+---
 # Bad Practices – Rating
 
 ## ❌ Calcolare la media in query N+1

@@ -4,6 +4,8 @@ type: guideline
 module: Rating
 updated: 2026-09-01
 qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable HasXotTable list page rating"
+status: draft
+tags: [docs, rating, bmad]
 ---
 
 # La tabella si configura nella Table class, non nella pagina

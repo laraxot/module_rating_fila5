@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "roadmap miglioramenti"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Roadmap — Rating, il modulo più piccolo con la coscienza più pulita

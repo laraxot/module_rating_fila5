@@ -11,6 +11,10 @@ acceptance_criteria:
   - Second brain updated with architectural patterns discovered
 assigned_to: cluster-3-agent (parallel subagent strategy)
 parent_story: phpstan-fleet-remediation-2026-10-06.story.md
+type: story
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "cluster 3: phpstan l10 rating + xot rating"
 ---
 
 # Cluster 3: PHPStan L10 Rating + Xot

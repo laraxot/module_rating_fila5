@@ -1,3 +1,11 @@
+---
+title: "Epics e User Stories - Modulo Rating"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "epics e user stories - modulo rating rating"
+---
 # Epics e User Stories - Modulo Rating
 
 ## Epics

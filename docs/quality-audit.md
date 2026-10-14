@@ -8,6 +8,7 @@ type: report
 module: Rating
 updated: 2026-09-01
 qmd: "audit qualita rating phpstan phpmd phpinsights pest coverage soppressioni collisioni case"
+status: draft
 ---
 
 # Audit di qualita — modulo Rating

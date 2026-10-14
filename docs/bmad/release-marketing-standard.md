@@ -6,6 +6,7 @@ tags: [release, semantic-versioning, changelog, readme, marketing]
 created: "2026-05-26"
 updated: "2026-05-26"
 issue: "https://github.com/provtv/<nome repository>/issues/153"
+qmd: "release e readme marketing   rating rating"
 ---
 
 # Release e README marketing — Rating

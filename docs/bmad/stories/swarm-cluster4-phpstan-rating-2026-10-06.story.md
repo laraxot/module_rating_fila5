@@ -9,6 +9,8 @@ track: quality/phpstan
 related:
   - phpstan-fleet-fix-2026-09-23.story.md
 qmd: "swarm cluster4 phpstan Rating BaseRatingMorphPolicy ignore unmatchedLine BaseRatingPolicy leaf unused imports"
+updated: 2026-10-07
+tags: [docs, rating, bmad]
 ---
 
 # Swarm cluster-4 — Rating: 1 errore reale SSoT + completamento refactor 8.22

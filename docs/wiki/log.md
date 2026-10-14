@@ -7,6 +7,7 @@ tags: [log, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "log"
+status: draft
 ---
 
 # Activity Log — Rating
@@ -55,3 +56,9 @@ qmd: "log"
 ## [2026-09-25] phpstan | HasRatingsTrait staticMethod.notFound fix
 - `tests/Unit/HasRatingsTraitFormFieldLabelTest.php`: removed calls to undefined `HasRatingsTrait::formFieldLabel()` static method; tests now instantiate `Rating` and call instance methods.
 - Cleared 2 `staticMethod.notFound` errors.
+
+## [2026-10-14] docs | verifica degli ingressi contro il codice
+
+- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota di canonicita'. `INDEX.md`, `00-index.md`, `rating-architecture.md`, `up.md` segnati `stale`.
+- Verificato: uso reale in Fixcity (`SubmitCitizenTicketRatingAction`) e Blog; il modulo IndennitaResponsabilita citato dai docs non esiste; 11 rotte, tutte del pannello Filament `rating/admin`; Pest su DB usa-e-getta: 182 falliti per `SQLiteDatabaseDoesNotExistException`.
+- Link rotti negli indici (criterio audit): 59 -> 0. Story: `stories/2026-10-14-docs-rating-verifica-ingressi.story.md`.

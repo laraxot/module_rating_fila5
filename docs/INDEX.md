@@ -7,7 +7,10 @@ updated: 2026-09-26
 qmd: "INDEX"
 issues: []
 discussions: []
+status: stale
 ---
+
+> Nota 2026-10-14 (docs-audit): Statistiche ferme a luglio ('151 files | 18 categories'): oggi la cartella ha 588 file .md. Indice canonico: 00-INDEX.md (aggiornato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
 
 # Rating Module — Documentation Index
 
@@ -17,15 +20,6 @@ discussions: []
 This module's docs are organized under `laravel/Modules/Rating/docs/`.
 
 ---
-
-title: "INDEX"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "INDEX"
-issues: []
-discussions: []
 ## ⚠️ Architectural Rules
 
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.

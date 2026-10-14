@@ -12,6 +12,7 @@ related:
   - 18.56-ratings-by-id-accessor.story.md
   - 5.147-hydrate-sync-ratings-form-data.story.md
   - 5.162-clear-ratings-scoped-to-model-id.story.md
+tags: [docs, rating, bmad]
 ---
 
 # ratingMorphs su figlio STI: alias e FQCN del padre

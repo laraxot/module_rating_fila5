@@ -7,7 +7,8 @@ updated: 2026-09-05
 qmd: "Rating module doctrine BMAD analysis purpose religion philosophy policy why zen gap enhancements split merge"
 related:
   - "../../Xot/docs/module.md"
-  - "../../Comment/docs/module.md"
+  - "../../../Comment/docs/module.md"
+status: draft
 ---
 
 # Rating Module — Doctrine

@@ -4,6 +4,9 @@ module: Rating
 type: quality-gate
 status: complete
 created: 2026-08-02
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "phpstan level 10 compliance   rating module rating"
 ---
 
 # PHPStan Level 10 Compliance — Rating Module
@@ -68,7 +71,7 @@ phpstan analyse app --level=10
 
 ## Related Docs
 
-- [`phpstan-l10-compliance.md`](../../../docs/wiki/rules/phpstan-l10-compliance.md)
+- [`phpstan-l10-compliance.md`](../../../../../docs/wiki/rules/phpstan-l10-compliance.md)
 - [GitHub Repo](https://github.com/laraxot/module_rating_fila5)
 
 **Status:** ✅ Compliant (2026-08-02)

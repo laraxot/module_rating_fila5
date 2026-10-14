@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan swarm 2026"
 issues: []
 discussions: []
+status: draft
 ---
 
 # PHPStan swarm — Rating (2026-09-07)

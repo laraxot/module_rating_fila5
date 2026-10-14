@@ -11,8 +11,8 @@ status: backlog
 track: docs-hygiene
 qmd: "docs filename no date timestamp bonifica rating"
 related:
-  - ../../../../../docs/sprint-status.yaml
-  - ../../../Xot/docs/bmad/stories/docs-filename-no-date-bonifica-xot.story.md
+  - ../../../../../../docs/sprint-status.yaml
+  - ../../../../Xot/docs/bmad/stories/docs-filename-no-date-bonifica-xot.story.md
 ---
 
 # Rating — .md senza data/timestamp nel nome (batch trovato 2026-09-22)

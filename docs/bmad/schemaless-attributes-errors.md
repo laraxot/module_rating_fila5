@@ -1,3 +1,11 @@
+---
+title: "Schemaless Attributes - Errori e Correzioni"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "schemaless attributes - errori e correzioni rating"
+---
 # Schemaless Attributes - Errori e Correzioni
 
 **Modulo**: Rating

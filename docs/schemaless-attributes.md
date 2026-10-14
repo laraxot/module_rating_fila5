@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "schemaless attributes"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Schemaless Attributes — Rating Module
@@ -15,15 +16,6 @@ discussions: []
 **Status**: ✅ CORRECT (Rating extends BaseRating)
 
 ---
-
-title: "schemaless attributes"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "schemaless attributes"
-issues: []
-discussions: []
 ## Architecture
 
 ```

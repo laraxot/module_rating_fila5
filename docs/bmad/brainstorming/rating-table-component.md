@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating table component"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Brainstorming — componente Blade riutilizzabile per tabella rating

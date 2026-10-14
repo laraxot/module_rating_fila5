@@ -5,6 +5,7 @@ tags: [index, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "index"
+status: draft
 ---
 
 # Rating Module Wiki Index
@@ -59,4 +60,4 @@ _No troubleshooting pages created yet_
 
 _Rating provides specific functionality for the Laraxot ecosystem._
 
-See [project wiki](../../docs/wiki/index.md) for cross-module integration.
+See [project wiki](../index.md) for cross-module integration.

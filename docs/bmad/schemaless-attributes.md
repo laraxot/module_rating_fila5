@@ -1,3 +1,11 @@
+---
+title: "Schemaless Attributes — Rating Module"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "schemaless attributes   rating module rating"
+---
 # Schemaless Attributes — Rating Module
 
 **Package**: [`spatie/laravel-schemaless-attributes`](https://github.com/spatie/laravel-schemaless-attributes)

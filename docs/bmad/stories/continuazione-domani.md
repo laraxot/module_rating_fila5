@@ -34,7 +34,7 @@ related:
 1. **P0** [`5.242`](./5.242-close-ratingcontract-closures-and-align-index.story.md) — chiudi formalità 5.240
 2. **P1** [`5.243`](./5.243-sprint-architecture-post-ratingdata-residual.story.md) — sprint/architecture stale
 3. **P2** [`5.245`](./5.245-ratings-by-id-hoststub-harness-verify.story.md) — 18.59 harness
-4. Coordinare Xot [`5.247`](../../../Xot/docs/bmad/stories/5.247-tomorrow-pack-export-lazy-and-trigger-map.story.md) (lazy + TRIGGER_MAP)
+4. Coordinare Xot [`5.247`](../../../../Xot/docs/bmad/stories/5.247-tomorrow-pack-export-lazy-and-trigger-map.story.md) (lazy + TRIGGER_MAP)
 
 ## Non rifare
 
