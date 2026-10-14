@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "confidence guidelines"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Massimizzare il livello di confidenza

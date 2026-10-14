@@ -11,6 +11,7 @@ related:
   - "./PATTERNS.md"
   - "./architecture.md"
   - "./wiki/troubleshooting/"
+status: draft
 ---
 
 # Troubleshooting – Rating

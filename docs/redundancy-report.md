@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "redundancy report"
 related:
   - "./release-marketing-standard.md"
+status: draft
 ---
 
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "bad practices"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Bad Practices – Rating

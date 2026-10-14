@@ -8,6 +8,7 @@ discussions: []
 title: "Module Schema"
 module: "Rating"
 created: "2026-04-15T08:28:47Z"
+status: draft
 ---
 
 # Rating Module Schema

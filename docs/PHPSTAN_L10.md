@@ -73,7 +73,7 @@ phpstan analyse app --level=10
 
 ## Related Docs
 
-- [`phpstan-l10-compliance.md`](../../../docs/wiki/rules/phpstan-l10-compliance.md)
+- [`phpstan-l10-compliance.md`](../../../../docs/wiki/rules/phpstan-l10-compliance.md)
 - [GitHub Repo](https://github.com/laraxot/module_rating_fila5)
 
 **Status:** ✅ Compliant (2026-08-02)

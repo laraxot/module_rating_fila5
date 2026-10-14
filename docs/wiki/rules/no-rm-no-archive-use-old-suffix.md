@@ -10,7 +10,8 @@ created: 2026-07-12
 updated: 2026-07-12
 tags: [rating, governance, files, migrations, old-suffix]
 related:
-  - ../../../../../docs/wiki/rules/no-rm-no-archive-use-old-suffix.md
+  - ../../../../../../docs/wiki/rules/no-rm-no-archive-use-old-suffix.md
+status: draft
 ---
 
 # No rm, no archive folders, use .old suffix

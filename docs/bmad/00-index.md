@@ -1,3 +1,11 @@
+---
+title: "RATING Module - Documentation Index"
+type: index
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - documentation index rating"
+---
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  
@@ -22,7 +30,7 @@
 
 ## 🔗 Riferimenti
 
-- [Xot Module](../Xot/docs/00-index.md) - Base classes
+- [Xot Module](../../../Xot/docs/00-INDEX.md) - Base classes
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ---

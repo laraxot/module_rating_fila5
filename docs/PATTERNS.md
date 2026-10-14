@@ -11,6 +11,7 @@ related:
   - "./best-practices.md"
   - "./architecture.md"
   - "./troubleshooting.md"
+status: draft
 ---
 
 # Architectural Patterns – Rating

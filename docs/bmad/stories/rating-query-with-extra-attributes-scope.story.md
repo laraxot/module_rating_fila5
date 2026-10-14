@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating query with extra attributes scope.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Story: rating-query-with-extra-attributes-scope

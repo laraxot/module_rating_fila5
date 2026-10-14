@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "code quality analysis"
 related:
   - "./code-redundancy-audit.md"
+status: draft
 ---
 
 # Code Quality Analysis - Rating Module

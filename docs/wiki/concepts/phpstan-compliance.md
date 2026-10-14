@@ -8,8 +8,9 @@ created: 2026-06-10
 updated: 2026-08-24
 qmd: "rating module phpstan level max zero errors HasRatingsTrait trait.unused isolation"
 related:
-  - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
+  - ../../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
   - ../../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
+status: draft
 ---
 
 # Rating Module — PHPStan Type Compliance

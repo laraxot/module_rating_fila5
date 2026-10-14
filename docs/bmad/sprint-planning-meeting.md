@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "sprint planning meeting"
 related:
   - "./sprint-planning.md"
+status: draft
 ---
 
 # Rating - Sprint Planning Meeting

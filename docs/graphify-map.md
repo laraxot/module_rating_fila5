@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "graphify map"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Rating Module — Mappa Graphify
@@ -14,15 +15,6 @@ discussions: []
 **Versione:** 1.1.0 | **Modulo:** Rating | **Data:** 2026-08-02
 
 ---
-
-title: "graphify map"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "graphify map"
-issues: []
-discussions: []
 ## 📌 Cosa fa il modulo Rating
 
 Il modulo **Rating** gestisce:

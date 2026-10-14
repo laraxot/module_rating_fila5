@@ -15,6 +15,7 @@ related:
   - architecture/rating-select-altro-note.md
   - brainstorming/rating-select-altro-note-obbligatoria.md
   - epics/rating-export-ssot.md
+status: draft
 ---
 
 # Rating — Brainstorming

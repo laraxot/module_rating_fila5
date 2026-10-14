@@ -1,3 +1,11 @@
+---
+title: "Che tipo di risposta vuole un criterio: analisi"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "che tipo di risposta vuole un criterio: analisi rating"
+---
 # Che tipo di risposta vuole un criterio: analisi
 
 **Stato: brainstorming.** Nessun codice, nessuna decisione. Segue e completa

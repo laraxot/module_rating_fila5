@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "INDEX GENERATED"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Rating Module Documentation Index
@@ -228,9 +229,9 @@ Machine learning and documentation knowledge base:
 
 Consolidated root-level markdown documentation:
 
-- [changelog-1.md](root-md-files/changelog-1.md)
+- [changelog-1.md](raw/root-import/changelog-1.md)
 - [changelog.md](root-md-files/changelog.md)
-- [license-1.md](root-md-files/license-1.md)
+- [license-1.md](raw/root-import/license-1.md)
 - [license.md](root-md-files/license.md)
 
 ### Archive (3 files)
@@ -249,15 +250,6 @@ Additional archived content:
 - [license.md](archived/license.md)
 
 ---
-
-title: "INDEX GENERATED"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "INDEX GENERATED"
-issues: []
-discussions: []
 ## Recently Updated
 
 **Last 20 files by modification date**

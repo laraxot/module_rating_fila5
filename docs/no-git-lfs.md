@@ -8,6 +8,7 @@ type: guideline
 module: Rating
 updated: 2026-09-01
 qmd: "git lfs vietato gitattributes prototipo binari blob normali rating puntatori immagini"
+status: draft
 ---
 
 # Git LFS non si usa in questo progetto

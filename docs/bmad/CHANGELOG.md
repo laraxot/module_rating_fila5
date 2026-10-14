@@ -1,3 +1,11 @@
+---
+title: "Changelog"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "changelog rating"
+---
 # Changelog
 
 All notable changes to this project will be documented in this file.

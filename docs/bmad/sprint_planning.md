@@ -1,3 +1,11 @@
+---
+title: "Rating Module - Sprint Planning"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - sprint planning rating"
+---
 # Rating Module - Sprint Planning
 
 **Module:** Rating  

@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "ponytail audit over engineering"
 related:
   - "./prd.md"
+status: draft
 ---
 
 # Ponytail audit — Rating (over-engineering)

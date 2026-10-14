@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "case sensitivity rules"
 related:
   - "./changelog.md"
+status: draft
 ---
 
 # Case Sensitivity Rules - Rating Module

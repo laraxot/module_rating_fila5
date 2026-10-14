@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "strategy"
 related:
   - "./troubleshooting.md"
+status: draft
 ---
 
 # Product Strategy: Rating Module

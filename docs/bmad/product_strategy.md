@@ -1,3 +1,11 @@
+---
+title: "Rating Module - Product Strategy"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - product strategy rating"
+---
 # Rating Module - Product Strategy
 
 **Module:** Rating  

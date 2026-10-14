@@ -8,11 +8,14 @@ version: 1.2.0
 language: it-IT
 updated_at: 2026-08-24
 related:
-  - ../../../../bashscripts/docs/prompts/03-quality-gates.md
-  - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
+  - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
+  - ../../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
   - ../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md
-  - ../../Xot/tests/XotBasePest.php
+  - ../../../Xot/tests/XotBasePest.php
 tags: [pest, coverage, xdebug, phpunit, skip, xotbasepest]
+type: note
+updated: 2026-10-07
+qmd: "rating   test e coverage rating"
 ---
 
 # Rating — test e coverage
@@ -59,7 +62,7 @@ Pest stampa la tabella di coverage solo quando il run esce `0`.
 
 ## XotBasePest (gap aperto — story 3.1)
 
-Il bootstrap [`Modules/Rating/tests/Pest.php`](../tests/Pest.php) deve allinearsi ad ADR-003:
+Il bootstrap [`Modules/Rating/tests/Pest.php`](../../tests/Pest.php) deve allinearsi ad ADR-003:
 
 ```php
 require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
@@ -67,7 +70,7 @@ require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
 
 - **Vietato** `uses(TestCase::class)->in(...)` nel bootstrap (PHPStan `method.internalClass`).
 - Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo.
-- Helper condivisi: prefisso `xot*` da [`XotBasePest.php`](../../Xot/tests/XotBasePest.php).
+- Helper condivisi: prefisso `xot*` da [`XotBasePest.php`](../../../Xot/tests/XotBasePest.php).
 
 Story: [`docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md`](../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md).
 

@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "sprint planning"
 related:
   - "./strategy.md"
+status: draft
 ---
 
 # Sprint Planning: Rating Module

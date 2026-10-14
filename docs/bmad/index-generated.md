@@ -1,3 +1,11 @@
+---
+title: "Rating Module Documentation Index"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module documentation index rating"
+---
 # Rating Module Documentation Index
 
 **Stats**: 151 files | 18 categories | Last update: 2026-07-28 11:34
@@ -63,7 +71,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
-- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit-2026-05-25.md)
+- [copilot-redundancy-audit-2026-05-25.md](../copilot-redundancy-audit-2026-05-25.md)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
 - [core-functionality.md](core-functionality.md)
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
@@ -99,7 +107,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [product-strategy.md](product-strategy.md)
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
-- [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
+- [redundancy-audit-2026-05-21.md](../redundancy-audit-2026-05-21.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
@@ -130,24 +138,24 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [README.md](wiki/README.md)
   - [index.md](wiki/index.md)
   - [log.md](wiki/log.md)
-  - [overview.md](wiki/overview.md)
+  - [overview.md](../wiki/overview.md)
 
 **Concepts** (14 files)
   - [INDEX.md](wiki/concepts/INDEX.md)
   - [index.md](wiki/concepts/index.md)
-  - [composer-root-minimal-nwidart.md](wiki/concepts/composer-root-minimal-nwidart.md)
-  - [context-mode-rating-discipline.md](wiki/concepts/context-mode-rating-discipline.md)
-  - [context-overflow-prevention.md](wiki/concepts/context-overflow-prevention.md)
-  - [duplicate-method-bodies.md](wiki/concepts/duplicate-method-bodies.md)
-  - [filament-resource-zen-pattern.md](wiki/concepts/filament-resource-zen-pattern.md)
-  - [method-name-homonyms.md](wiki/concepts/method-name-homonyms.md)
-  - [organizzativa-money.md](wiki/concepts/organizzativa-money.md)
-  - [phpstan-compliance.md](wiki/concepts/phpstan-compliance.md)
-  - [ponytail-audit.md](wiki/concepts/ponytail-audit.md)
-  - [second-brain-local-discipline.md](wiki/concepts/second-brain-local-discipline.md)
-  - [testing.md](wiki/concepts/testing.md)
-  - [visual-testing-playwright-puppeteer.md](wiki/concepts/visual-testing-playwright-puppeteer.md)
-  - [xotbase-table-columns-enforcement.md](wiki/concepts/xotbase-table-columns-enforcement.md)
+  - [composer-root-minimal-nwidart.md](../wiki/concepts/composer-root-minimal-nwidart.md)
+  - [context-mode-rating-discipline.md](../wiki/concepts/context-mode-rating-discipline.md)
+  - [context-overflow-prevention.md](../wiki/concepts/context-overflow-prevention.md)
+  - [duplicate-method-bodies.md](../wiki/concepts/duplicate-method-bodies.md)
+  - [filament-resource-zen-pattern.md](../wiki/concepts/filament-resource-zen-pattern.md)
+  - [method-name-homonyms.md](../wiki/concepts/method-name-homonyms.md)
+  - [organizzativa-money.md](../wiki/concepts/organizzativa-money.md)
+  - [phpstan-compliance.md](../wiki/concepts/phpstan-compliance.md)
+  - [ponytail-audit.md](../wiki/concepts/ponytail-audit.md)
+  - [second-brain-local-discipline.md](../wiki/concepts/second-brain-local-discipline.md)
+  - [testing.md](../wiki/concepts/testing.md)
+  - [visual-testing-playwright-puppeteer.md](../wiki/concepts/visual-testing-playwright-puppeteer.md)
+  - [xotbase-table-columns-enforcement.md](../wiki/concepts/xotbase-table-columns-enforcement.md)
 
 **Templates** (3 files)
   - [concept.md](wiki/_templates/concept.md)
@@ -157,11 +165,11 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
 **Rules** (2 files)
   - [INDEX.md](wiki/rules/INDEX.md)
   - [index.md](wiki/rules/index.md)
-  - [no-rm-no-archive-use-old-suffix.md](wiki/rules/no-rm-no-archive-use-old-suffix.md)
+  - [no-rm-no-archive-use-old-suffix.md](../wiki/rules/no-rm-no-archive-use-old-suffix.md)
 
 **Troubleshooting** (2 files)
-  - [phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md)
-  - [phpstan-generic-limitations.md](wiki/troubleshooting/phpstan-generic-limitations.md)
+  - [phpstan-generic-limitation-morphtomany.md](../wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md)
+  - [phpstan-generic-limitations.md](../wiki/troubleshooting/phpstan-generic-limitations.md)
 
 **Other** (11 files)
   - [skills/INDEX.md](wiki/skills/INDEX.md)
@@ -170,14 +178,14 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [commands/index.md](wiki/commands/index.md)
   - [memories/INDEX.md](wiki/memories/INDEX.md)
   - [memories/index.md](wiki/memories/index.md)
-  - [how-to/gitmodules-sync-session.md](wiki/how-to/gitmodules-sync-session.md)
-  - [redundancy/duplicate-ratings-table-migrations.md](wiki/redundancy/duplicate-ratings-table-migrations.md)
+  - [how-to/gitmodules-sync-session.md](../wiki/how-to/gitmodules-sync-session.md)
+  - [redundancy/duplicate-ratings-table-migrations.md](../wiki/redundancy/duplicate-ratings-table-migrations.md)
 
 ### Roadmap (7 files)
 
 Strategic planning and vision documents:
 
-- [README.md](roadmap/README.md)
+- [README.md](roadmap/readme.md)
 - [acceptance-criteria.md](roadmap/acceptance-criteria.md)
 - [dependencies.md](roadmap/dependencies.md)
 - [metrics.md](roadmap/metrics.md)
@@ -193,10 +201,10 @@ Raw source documents and import sources:
 - [index.md](raw/index.md)
 
 **Root Import** (5 files)
-  - [changelog-1.md](raw/root-import/changelog-1.md)
+  - [changelog-1.md](../raw/root-import/changelog-1.md)
   - [changelog-2.md](raw/root-import/changelog-2.md)
   - [changelog.md](raw/root-import/changelog.md)
-  - [license-1.md](raw/root-import/license-1.md)
+  - [license-1.md](../raw/root-import/license-1.md)
   - [license.md](raw/root-import/license.md)
 
 ### LLM Wiki (7 files)
@@ -217,9 +225,9 @@ Machine learning and documentation knowledge base:
 
 Consolidated root-level markdown documentation:
 
-- [changelog-1.md](root-md-files/changelog-1.md)
+- [changelog-1.md](../raw/root-import/changelog-1.md)
 - [changelog.md](root-md-files/changelog.md)
-- [license-1.md](root-md-files/license-1.md)
+- [license-1.md](../raw/root-import/license-1.md)
 - [license.md](root-md-files/license.md)
 
 ### Archive (3 files)

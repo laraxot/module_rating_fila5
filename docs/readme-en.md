@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "readme en"
 related:
   - "./redundancy-audit.md"
+status: draft
 ---
 
 # ⭐ Rating — English presentation
@@ -52,7 +53,7 @@ Feedback and satisfaction on services, content, operators.
 
 Numbers that **drive public service improvement**.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

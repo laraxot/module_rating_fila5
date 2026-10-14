@@ -4,6 +4,8 @@ type: report
 module: Rating
 updated: 2026-09-01
 qmd: "cosa migliorare rating phpstan phpmd phpinsights coverage debito priorita"
+status: draft
+tags: [docs, rating, bmad]
 ---
 
 # Cosa migliorare — modulo Rating
@@ -59,5 +61,5 @@ Prima di fidarsi di qualunque numero: il tree deve essere fermo e `vendor/` comp
 php -r 'echo count(require "vendor/composer/autoload_classmap.php");'   # ~25358, non 13041
 ```
 
-Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](../../../../docs/quality-audit.md).
+Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](../quality-audit.md).
 

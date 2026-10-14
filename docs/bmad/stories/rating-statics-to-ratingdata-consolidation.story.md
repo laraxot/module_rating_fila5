@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating statics to ratingdata consolidation.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Story — consolidamento helper statici: trait → `RatingData`

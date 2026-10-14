@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Graphify Knowledge Graph
@@ -76,5 +77,5 @@ For more information about this module, see:
 ## References
 
 - [Graphify Documentation](https://graphify.dev/)
-- [Module Structure Guidelines](../../../../docs/wiki/rules/module-structure.md)
+- Module Structure Guidelines _(riferimento non presente nel repository, verificato 2026-10-14)_
 

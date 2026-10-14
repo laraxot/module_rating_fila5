@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "cleanup rating 2026 09 22.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Story: Cleanup Rating Module

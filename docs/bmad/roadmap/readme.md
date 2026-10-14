@@ -1,3 +1,11 @@
+---
+title: "Rating Module Roadmap"
+type: index
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module roadmap rating"
+---
 # Rating Module Roadmap
 
 > "Rating and evaluation system for the Laraxot ecosystem with support for reviews, ratings, and feedback."

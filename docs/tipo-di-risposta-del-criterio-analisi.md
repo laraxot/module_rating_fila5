@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "tipo di risposta del criterio analisi"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Che tipo di risposta vuole un criterio: analisi

@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "PRODUCT ROADMAP"
 related:
   - "./PRODUCT_STRATEGY.md"
+status: draft
 ---
 
 # Rating Module - Product Roadmap

@@ -13,7 +13,7 @@ status: done
 track: quality/phpstan
 related:
   - ../../../Xot/docs/bmad/stories/gitmodules-sync-2026-09-23.story.md
-  - ../../../Xot/app/Contracts/HasRecursiveRelationshipsContract.php
+  - ../../../../Xot/app/Contracts/HasRecursiveRelationshipsContract.php
 qmd: "phpstan generics notSubtype Collection RatingContract HasRecursiveRelationshipsContract Model interface property children fleet-wide analyse Modules"
 ---
 

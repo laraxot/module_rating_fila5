@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating data export methods"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Brainstorming — spostamento formFieldLabel e ratingXlsValuePath in RatingData

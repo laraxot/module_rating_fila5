@@ -2,6 +2,10 @@
 type: investigation
 title: "Investigation Aggregation Model"
 links: {github_issue: #XXX}
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, investigation]
+qmd: "investigation: aggregation model rating"
 ---
 # Investigation: Aggregation Model
 

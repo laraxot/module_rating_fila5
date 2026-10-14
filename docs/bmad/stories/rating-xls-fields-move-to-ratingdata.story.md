@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "rating xls fields move to ratingdata.story"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Story — `ratingXlsFields` → `RatingData::getXlsFields` (mossa reale, no facade)

@@ -1,3 +1,11 @@
+---
+title: "Roadmap — Rating, il modulo più piccolo con la coscienza più pulita"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "roadmap   rating, il modulo più piccolo con la coscienza più pulita rating"
+---
 # Roadmap — Rating, il modulo più piccolo con la coscienza più pulita
 
 > Numeri misurati: [`docs/cosa-migliorare.md`](cosa-migliorare.md) (80,

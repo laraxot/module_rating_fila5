@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "duplicate methods"
 related:
   - "./duplicate_methods_report.md"
+status: draft
 ---
 
 # Metodi duplicati — Rating

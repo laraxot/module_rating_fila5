@@ -4,28 +4,30 @@ type: guide
 module: Rating
 updated: 2026-09-22
 qmd: rating documentation bmad index
+status: draft
+tags: [docs, rating, bmad]
 ---
 
 # Rating Module — Index
 
 ## Lavoro attivo (BMAD)
 
-→ **[bmad/README.md](bmad/README.md)** — Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
+→ **[bmad/README.md](README.md)** — Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
 
 | Pack | Link |
 |------|------|
-| Architecture | [bmad/architecture/rating-select-altro-note.md](bmad/architecture/rating-select-altro-note.md) |
-| Spec codice | [bmad/architecture/rating-select-altro-implementation-spec.md](bmad/architecture/rating-select-altro-implementation-spec.md) |
-| Story 5.99 | [bmad/stories/5.99-select-altro-note-obbligatoria.story.md](bmad/stories/5.99-select-altro-note-obbligatoria.story.md) |
-| Story 5.141 D-8 | [bmad/stories/5.141-has-rating-values-filter-note.story.md](bmad/stories/5.141-has-rating-values-filter-note.story.md) |
-| Design | [stories/rating-altro-option-conditional-textarea-design.story.md](stories/rating-altro-option-conditional-textarea-design.story.md) |
+| Architecture | [bmad/architecture/rating-select-altro-note.md](architecture/rating-select-altro-note.md) |
+| Spec codice | [bmad/architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) |
+| Story 5.99 | [bmad/stories/5.99-select-altro-note-obbligatoria.story.md](stories/5.99-select-altro-note-obbligatoria.story.md) |
+| Story 5.141 D-8 | [bmad/stories/5.141-has-rating-values-filter-note.story.md](stories/5.141-has-rating-values-filter-note.story.md) |
+| Design | [stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
 
 ## Altri hub
 
 - [README.md](README.md)
 - [architecture.md](architecture.md)
 - [criteri-a-scelta-multipla.md](criteri-a-scelta-multipla.md)
-- [wiki/](wiki/)
+- [wiki/](../wiki/)
 
 ## Debito docs
 

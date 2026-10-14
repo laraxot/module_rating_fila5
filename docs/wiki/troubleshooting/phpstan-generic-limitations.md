@@ -7,6 +7,7 @@ tags: [phpstan, generic, limitations, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "phpstan generic limitations"
+status: draft
 ---
 
 # PHPStan Generic Type Limitations in Laravel

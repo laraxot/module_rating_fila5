@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "criteri a scelta multipla"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Criteri a scelta: opzioni in JSON, figli del criterio, o altro

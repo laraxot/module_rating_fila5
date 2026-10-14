@@ -6,6 +6,7 @@ module: Rating
 created: 2026-09-28
 updated: 2026-09-28
 qmd: "Rating brainstorming rischi opportunità domande aperte"
+tags: [docs, rating, bmad]
 ---
 # Rating — brainstorming
 

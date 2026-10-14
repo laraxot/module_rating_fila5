@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "select nelle valutazioni analisi"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Un criterio di valutazione con risposta a scelta: analisi
