@@ -71,7 +71,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
-- [copilot-redundancy-audit-2026-05-25.md](../copilot-redundancy-audit-2026-05-25.md)
+- [copilot-redundancy-audit-2026-05-25.md](../copilot-redundancy-audit.md)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
 - [core-functionality.md](core-functionality.md)
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
