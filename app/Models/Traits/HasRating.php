@@ -10,7 +10,14 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/** @phpstan-require-extends Model */
+/**
+ * Relazione morph verso {@see Rating} e aggregazioni su {@see RatingMorph}
+ * (scommesse, percentuali, volume crediti) per modelli host (Article, Profile, Fixcity, …).
+ *
+ * @phpstan-require-extends Model
+ *
+ * @property int|string|null $id
+ */
 trait HasRating
 {
     /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
@@ -103,7 +110,7 @@ trait HasRating
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
-            if (0 === $b) {
+            if ($b === 0) {
                 $b = 1;
             }
 
@@ -141,7 +148,7 @@ trait HasRating
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
-        if (null !== $rating_id) {
+        if ($rating_id !== null) {
             $query->where('rating_id', $rating_id);
         }
 
