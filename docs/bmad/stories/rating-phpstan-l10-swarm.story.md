@@ -9,7 +9,7 @@ created: 2026-10-06
 updated: 2026-10-06
 qmd: "Rating PHPStan L10 type hints builder eloquent trans() cast generic"
 related:
-  - quality-gates-phpstan-swarm-2026-09-23.story.md
+  - quality-gates-phpstan-swarm.story.md
 github_issue: BMAD-only, no external issue
 type: story
 tags: [docs, rating, bmad]
@@ -161,7 +161,7 @@ Remaining 160+ errors primariamente in test files (trait.unused, property.notFou
 
 ## Run 4 swarm-rating (2026-10-06): 6 errori su 6 risolti
 
-Claim: agente `swarm-rating`, lock su 3 file + questa story. Related: `../../../../Xot/docs/bmad/stories/2026-10-06-phpstan-modules-level10.story.md`.
+Claim: agente `swarm-rating`, lock su 3 file + questa story. Related: `../../../../Xot/docs/bmad/stories/phpstan-modules-level10.story.md`.
 
 ### Correzione alla verifica precedente
 Il `@property-read MorphToMany<BaseRating> $ratings` aggiunto al trait in `2a233cbdc9` **mentiva**: `$host->ratings` e' la collection caricata, `MorphToMany` e' `$host->ratings()`. Spegneva un errore e ne creava due (`keyBy()` e `unique()` su una relazione), visibili solo in contesto di classe host.
