@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Component;
@@ -10,7 +10,7 @@ use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

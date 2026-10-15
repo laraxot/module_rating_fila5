@@ -36,11 +36,8 @@ trait HasLikes
             return;
         }
 
-        /**
-         * @var Like
-         */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
-        if (null !== $where) {
+        if ($where instanceof Like) {
             $where->delete();
         }
 

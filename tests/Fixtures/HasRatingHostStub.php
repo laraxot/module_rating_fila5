@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Fixtures;
+namespace Tests\Modules\Rating\Fixtures;
 
 use Modules\Rating\Models\BaseModel;
 use Modules\Rating\Models\Traits\HasRating;

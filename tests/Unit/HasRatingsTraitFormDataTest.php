@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Mockery\MockInterface;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Modules\Rating\Tests\Fixtures\RatingsHostStub;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\Fixtures\RatingsHostStub;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

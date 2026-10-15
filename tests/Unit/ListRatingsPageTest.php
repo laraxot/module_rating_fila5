@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Modules\Rating\Filament\Resources\RatingResource\Pages\BaseListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingsTable;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionMethod;
 
