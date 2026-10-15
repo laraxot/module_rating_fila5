@@ -1,3 +1,14 @@
+---
+issues: []
+discussions: []
+title: "Raw Sources — Rating"
+type: guide
+tags: [index, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "index"
+---
+
 # Raw Sources — Rating
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.
@@ -10,7 +21,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 |----------------|------|
 | `docs/*.md` | Documentazione operativa, regole, guide |
 | `docs/stories/` | User stories e specifiche |
-| `docs/superseded/` | Documenti superati ma consultabili |
+| `docs/archived/` | Documenti superati ma consultabili |
 | `docs/raw/` | Dump HTML, JSON, asset di analisi (questa cartella) |
 | `docs/prompts/` | Prompt e istruzioni agentiche |
 
@@ -27,7 +38,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Schema di riferimento
 
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
+→ `docs/.schema/wiki-schema.md` (root progetto)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 
 ---

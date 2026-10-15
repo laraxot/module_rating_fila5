@@ -1,3 +1,17 @@
+---
+issues: []
+discussions: []
+title: "False Friends – Rating"
+type: guide
+tags: [false, friends, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "FALSE FRIENDS"
+related:
+  - "./LICENSE.md"
+status: draft
+---
+
 # False Friends – Rating
 
 | Falso Amico | Perché è fuorviante | Soluzione |

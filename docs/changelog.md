@@ -1,7 +1,20 @@
-# Changelog
+---
+issues: []
+discussions: []
+title: "Changelog (pointer)"
+type: reference
+tags: [changelog, pointer, rating]
+created: 2026-07-14
+updated: 2026-09-24
+qmd: "rating changelog pointer canonical"
+canonical: ./CHANGELOG.md
+related:
+  - ./CHANGELOG.md
+status: stub
+---
 
-All notable changes to `:package_name` will be documented in this file.
+# Changelog — pointer
 
-## 1.0.0 - 202X-XX-XX
+Il changelog canonico del modulo Rating è **[CHANGELOG.md](./CHANGELOG.md)**.
 
-- initial release
+Il vecchio rimando a `../../../Themes/docs/shared-components/CHANGELOG.md` puntava a un file inesistente (verificato 2026-09-24).

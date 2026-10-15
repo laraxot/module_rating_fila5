@@ -1,11 +1,16 @@
 ---
+updated: 2026-09-26
+qmd: "redundancy audit"
+issues: []
+discussions: []
 title: "Rating redundancy audit 2026-05-21"
 type: audit
 module: Rating
 tags: [redundancy, livewire, views]
 created: 2026-05-21
 related:
-  - https://github.com/laraxot/base_fixcity_fila5/issues/89
+  - https://github.com/laraxot/platform/issues/89
+status: draft
 ---
 
 # Rating redundancy audit 2026-05-21
@@ -16,12 +21,12 @@ High-risk findings:
   - `resources/views/livewire/favorite/favorite2.blade.php`
   - `resources/views/livewire/favorite/streamit.blade.php`
 - `favorite.blade.php` and `favorite/default.blade.php` are also byte-identical.
-- `admin/dashboard/item.blade.php` is duplicated with `Modules/Fixcity`.
+- `admin/dashboard/item.blade.php` is duplicated with `Modules/LegacyDomain`.
 - PHP CS Fixer config files duplicate common module boilerplate.
 
 Risk:
 - Livewire view resolution can drift when multiple files imply the same component intent.
-- Dashboard item ownership between Rating and Fixcity is unclear.
+- Dashboard item ownership between Rating and LegacyDomain is unclear.
 
 Suggested cleanup order:
 1. Identify Livewire component class/view mapping, then keep only the resolved view.

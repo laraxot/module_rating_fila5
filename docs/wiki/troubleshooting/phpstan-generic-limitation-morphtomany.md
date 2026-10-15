@@ -1,4 +1,7 @@
 ---
+qmd: "phpstan generic limitation morphtomany"
+issues: []
+discussions: []
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []
@@ -8,6 +11,7 @@ updated: 2026-05-06
 tags: [phpstan, larastan, rating, generic-types, known-limitation]
 related:
   - ../../Xot/docs/wiki/troubleshooting/phpstan-fatal-errors-eloquent-properties.md
+status: draft
 ---
 
 # PHPStan Generic Limitation: MorphToMany with static

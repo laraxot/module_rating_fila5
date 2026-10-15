@@ -1,3 +1,17 @@
+---
+issues: []
+discussions: []
+title: "Rating Module - Sprint Planning"
+type: guide
+tags: [sprint, planning, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "SPRINT PLANNING"
+related:
+  - "./USER_RESEARCH.md"
+status: draft
+---
+
 # Rating Module - Sprint Planning
 
 **Module:** Rating  
