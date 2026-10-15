@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Modules\Rating\Fixtures;
+
+use Illuminate\Database\Eloquent\Model;
+use Modules\Rating\Models\Traits\HasLikes;
+
+/**
+ * Non sovrascrive `likesRelation`: esercita il morphMany del trait (richiede Like stub).
+ */
+final class LikeableNativeRelationStub extends Model
+    public $id = 0;
+{
+    use HasLikes;
+
+    protected $table = 'likeable_native_stub';
+}

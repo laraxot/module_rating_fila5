@@ -1,0 +1,1 @@
+# Test Location Rule — Rating\n- Tests: laravel/tests/Modules/Rating/\n- Fixtures (PHPStan): laravel/Modules/Rating/app/Fixtures/\n- NO laravel/Modules/Rating/tests/\n- BMAD + second brain + ponytail + filament
