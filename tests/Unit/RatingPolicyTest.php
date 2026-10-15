@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Mockery;
 use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Modules\Rating\Tests\Fixtures\RatedModelStub;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\Fixtures\RatedModelStub;
+use Tests\Modules\Rating\TestCase;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;

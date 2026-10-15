@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Illuminate\View\Component;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use Modules\Rating\View\Components\Dashboard\Item;
 use PHPUnit\Framework\Assert;
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Illuminate\Support\Collection;
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

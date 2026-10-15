@@ -35,11 +35,6 @@
             "Modules\\Rating\\Database\\Seeders\\": "database/seeders/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Modules\\Rating\\Tests\\": "tests/"
-        }
-    },
     "require": {
         "cknow/laravel-money": "^8.0",
         "spatie/laravel-schemaless-attributes": "*",

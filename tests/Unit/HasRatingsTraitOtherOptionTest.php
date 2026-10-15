@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -22,8 +22,8 @@ use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Tests\Fixtures\RatingsHostStub;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\Fixtures\RatingsHostStub;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

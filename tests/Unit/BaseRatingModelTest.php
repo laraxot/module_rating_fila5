@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Cknow\Money\Money;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,7 +11,7 @@ use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\Sluggable\SlugOptions;
 

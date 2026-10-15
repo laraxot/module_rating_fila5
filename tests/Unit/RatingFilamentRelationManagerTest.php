@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Contracts\HasTable;
@@ -10,7 +10,7 @@ use Filament\Tables\Table;
 use Mockery\MockInterface;
 use Modules\Rating\Filament\RelationManagers\RatingsRelationManager;
 use Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers\RatingsRelationManager as HasRatingRatingsRelationManager;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

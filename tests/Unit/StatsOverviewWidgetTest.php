@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +16,7 @@ use Modules\Rating\Filament\Resources\HasRatingResource\Widgets\StatsOverview as
 use Modules\Rating\Filament\Widgets\StatsOverview;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Modules\Rating\Models\Rating;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
