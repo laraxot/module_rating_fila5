@@ -27,6 +27,12 @@ Lightweight reference to architecture. See consolidated documentation:
 - One rating per user per entity (unique constraint)
 - 1-5 score scale, optional comments
 - HasRatingsTrait for model integration
+- Trait distinti per scopi diversi (non unificare in merge):
+  - `HasRatingsTrait` — scheda PT / form Filament, morph `model` via `morphToManyX`
+  - `HasRating` — opzioni rating + scommesse (`RatingMorph`), percentuali per utente/volume
+  - `HasLikes` — polymorphic likes (`likesRelation`), cascade on delete
+  - `RatingTrait` — legacy rateit / pivot `post_type` (zero consumer nel monorepo)
+  - `BaseRating` — criterio schemaless, albero `parent_id`, export PDF/XLS
 - QueueableAction pattern for business logic
 - Event-driven cache invalidation
 - Multi-language translation support
