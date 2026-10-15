@@ -11,6 +11,10 @@ use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
 /** @phpstan-require-extends Model */
+<<<<<<< .merge_file_F98TMx
+=======
+/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
+>>>>>>> .merge_file_bEJgpc
 trait HasRating
 {
     /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
