@@ -36,12 +36,6 @@ trait HasLikes
             return;
         }
 
-<<<<<<< .merge_file_0TEQJX
-=======
-        /**
-         * @var Like
-         */
->>>>>>> .merge_file_fowfhU
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
         if ($where instanceof Like) {
             $where->delete();
