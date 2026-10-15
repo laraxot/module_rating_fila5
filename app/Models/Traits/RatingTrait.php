@@ -6,11 +6,6 @@ namespace Modules\Rating\Models\Traits;
 /**
  * Trait to support rating functionality
  */
-<<<<<<< .merge_file_xDvG6q
-class RatingTrait
-{
-    // Basic rating trait implementation
-=======
 /** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 trait RatingTrait
 {
@@ -168,5 +163,4 @@ trait RatingTrait
 
         return $msg.$btn.$btn_iframe;
     }
->>>>>>> .merge_file_TA28DT
 }
