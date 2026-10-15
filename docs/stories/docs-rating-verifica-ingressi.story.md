@@ -8,7 +8,7 @@ module: Rating
 tags: [docs, rating, verifica, indici, link]
 qmd: "rating docs ingressi readme 00-index verifica codice fixcity valutazione cittadino link rotti stale"
 related:
-  - ../../../Fixcity/docs/stories/2026-10-13-dcp-56-organizzazione-docs-moduli-e-temi.story.md
+  - ../../../Fixcity/docs/stories/dcp-56-organizzazione-docs-moduli-e-temi.story.md
 ---
 
 # Rating docs: ingressi verificati contro il codice
@@ -50,7 +50,7 @@ I 3 `unresolved` rimasti sui file toccati sono in documenti segnati `stale`.
 - I documenti falsi si segnano, non si cancellano.
 
 ## Aperto
-- La suite Pest non e' una prova di regressione: serve un database SQLite o la configurazione di test del modulo (memoria `rating-pest-suite-pre-existing-breakage-2026-09-29.md`: 145 passati, 23 falliti).
+- La suite Pest non e' una prova di regressione: serve un database SQLite o la configurazione di test del modulo (memoria `rating-pest-suite-pre-existing-breakage.md`: 145 passati, 23 falliti).
 - 56 collisioni di maiuscole e 65 gruppi di nomi quasi uguali nella radice di `docs/`: DOC-004 e DOC-006, richiedono revisione umana.
 - Il `decision-log.md` e' vuoto.
 - Gli stub con `canonical` verso `Themes/docs/shared-components` non sono riparati (vedi nota di memoria 2026-10-14).

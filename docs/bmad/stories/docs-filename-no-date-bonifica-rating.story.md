@@ -25,12 +25,12 @@ perimetro Rating.
 
 ## Scope
 
-- `docs/redundancy-audit-2026-05-21.md`
+- `docs/redundancy-audit-rating.md`
 - `docs/copilot-redundancy-audit-2026-05-25.md`
-- `docs/stories/phpstan-fleet-fix-2026-09-16.story.md`
+- `docs/stories/phpstan-fleet-fix.story.md`
 - `docs/stories/phpstan-fix-1788762467.story.md`
 - `docs/stories/phpstan-fix-1788768735.story.md`
-- `docs/bmad/stories/cleanup-rating-2026-09-22.story.md`
+- `docs/bmad/stories/cleanup-rating.story.md`
 
 ## Acceptance
 

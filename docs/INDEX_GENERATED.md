@@ -111,7 +111,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [product-strategy.md](product-strategy.md)
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
-- [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
+- [redundancy-audit-2026-05-21.md](redundancy-audit-rating.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
