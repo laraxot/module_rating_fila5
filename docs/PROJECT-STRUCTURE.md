@@ -1,9 +1,13 @@
 ---
+qmd: "PROJECT STRUCTURE"
+issues: []
+discussions: []
 title: "Project Structure — Module Rating"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
+status: draft
 ---
 
 # Project Structure — Module **Rating**
@@ -35,9 +39,18 @@ tags: [structure, architecture, module]
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
-├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+├── architecture.md               # (opzionale) Architettura modulo
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
+
+> Nota (verificata 2026-09-22 via `ls`/`git ls-tree` sul filesystem reale, non per ipotesi):
+> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella — non
+> esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
+> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso — vedi
+> `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
+> tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
+> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`) — vedi
+> `case-sensitivity-rules.md`.
 
 ## File Chiave
 
@@ -95,10 +108,10 @@ graph TD
 ## Riferimenti Globali
 
 - [Project Wiki Root](../../docs/wiki/)
-- [Global Rules](../../docs/wiki/rules/)
-- [Global Skills](../../docs/wiki/skills/)
-- [Global Commands](../../docs/wiki/commands/)
-- [Global Memories](../../docs/wiki/memories/)
+- [Global Rules](wiki/rules)
+- [Global Skills](wiki/skills)
+- [Global Commands](wiki/commands)
+- [Global Memories](wiki/memories)
 
 ## Setup Iniziale (per nuovi moduli)
 

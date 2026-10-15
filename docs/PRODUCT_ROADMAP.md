@@ -1,3 +1,17 @@
+---
+issues: []
+discussions: []
+title: "Rating Module - Product Roadmap"
+type: guide
+tags: [product, roadmap, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "PRODUCT ROADMAP"
+related:
+  - "./PRODUCT_STRATEGY.md"
+status: draft
+---
+
 # Rating Module - Product Roadmap
 
 **Module:** Rating  

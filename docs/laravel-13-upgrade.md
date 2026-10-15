@@ -1,3 +1,17 @@
+---
+issues: []
+discussions: []
+title: "Upgrade Laravel 13 - Rating 🐄✨"
+type: guide
+tags: [laravel, upgrade, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "laravel 13 upgrade"
+related:
+  - "./launch-plan.md"
+status: draft
+---
+
 # Upgrade Laravel 13 - Rating 🐄✨
 
 ## 🎯 Visione Architetturale

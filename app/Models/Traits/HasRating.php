@@ -4,28 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/**
- * Trait HasRating.
- *
- * @see \Modules\Fixcity\Models\Concerns\InteractsWithTicketCitizenRating
- * @see \Modules\Blog\Models\Profile
- * @see \Modules\Blog\Models\Article
- */
+/** @phpstan-require-extends Model */
 trait HasRating
 {
-    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+    /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
     public function ratings(): MorphToMany
     {
-        $pivot = new RatingMorph();
-
-        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
-            ->using(RatingMorph::class)
-            ->withPivot($pivot->getFillable())
-            ->withTimestamps();
+        return $this->morphToManyX(Rating::class, 'model');
     }
 
     /** @return array<int, string> */
@@ -72,7 +63,7 @@ trait HasRating
 
         /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
         $ratings_array = [];
-        foreach ($ratings as $key => $rating) {
+        foreach ($ratings as $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
             // Use in-memory SVG icons instead of fetching external images
@@ -87,9 +78,9 @@ trait HasRating
             $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['svg_icon'] = $svgIcons[count($ratings_array) % count($svgIcons)];
             $rowData['effect'] = false;
-            $ratings_array[$key] = $rowData;
+            $ratings_array[] = $rowData;
         }
 
         return $ratings_array;
@@ -108,7 +99,7 @@ trait HasRating
     {
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
@@ -137,7 +128,7 @@ trait HasRating
             $total_volume = 1;
         }
 
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratings_options) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
             $result[$key] = round($volume * 100 / $total_volume, 0);
         }

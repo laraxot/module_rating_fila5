@@ -1,11 +1,15 @@
 ---
+qmd: "PERFORMANCE OPTIMIZATION"
+issues: []
+discussions: []
 title: "Performance Optimization — Module Rating"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [performance, optimization, tokens, context]
 related:
-  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+  - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+status: draft
 ---
 
 # Performance Optimization — Module **Rating**
@@ -47,6 +51,11 @@ Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei
+
+> Nota: `agents.md`/`AGENTS.md` e `index.md`/`INDEX.md` esistono tuttora come varianti
+> case-duplicate non deduplicate in questo modulo — qui si usa la forma maiuscola per
+> coerenza con `ON-DEMAND-PATTERN.md`/`QMD-SETUP.md` citati più sotto; vedi
+> `case-sensitivity-rules.md`.
 
 ## Metriche Attuali
 
