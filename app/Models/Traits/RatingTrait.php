@@ -1,12 +1,25 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use Modules\Rating\Models\Rating;
+
 /**
- * Trait to support rating functionality
+ * Legacy rating UI (rateit, pivot `rating`, `post_type` / `rating_morph` storico).
+ *
+ * Non confondere con {@see HasRatingsTrait} (scheda PT / morph `model`) né con
+ * {@see HasRating} (scommesse / percentuali per volume).
+ *
+ * @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01)
  */
-/** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 trait RatingTrait
 {
     /**
