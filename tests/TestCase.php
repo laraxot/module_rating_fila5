@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests;
+namespace Tests\Modules\Rating;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Modules\Rating\Providers\RatingServiceProvider;
-use Modules\Xot\Tests\XotBaseTestCase;
+use Tests\Modules\Xot\XotBaseTestCase;
 
 /**
  * Base test case for Rating module.

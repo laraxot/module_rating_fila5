@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Modules\Rating\Tests\Unit;
+namespace Tests\Modules\Rating\Unit;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Mockery;
 use Modules\Rating\Models\Like;
-use Modules\Rating\Tests\Fixtures\LikeableNativeRelationStub;
-use Modules\Rating\Tests\Fixtures\LikeableStub;
-use Modules\Rating\Tests\TestCase;
+use Tests\Modules\Rating\Fixtures\LikeableNativeRelationStub;
+use Tests\Modules\Rating\Fixtures\LikeableStub;
+use Tests\Modules\Rating\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
