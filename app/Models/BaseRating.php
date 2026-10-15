@@ -174,7 +174,6 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     }
 
     /**
-<<<<<<< .merge_file_Daq8JN
      * @return MorphTo<Model, $this>
      */
     public function linkedTo(): MorphTo
@@ -182,13 +181,6 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         // $this e non BaseRating: Larastan inferisce MorphTo<Model, static> — stessa
         // forma di BaseRatingMorph::model() e Like::likeable(), senza ignore (story 5.85).
         return $this->morphTo('model');
-=======
-     * @return MorphTo<Model, BaseRating>
-     */
-    public function linkedTo(): MorphTo
-    {
-        return $this->morphTo('model'); // @phpstan-ignore return.type
->>>>>>> .merge_file_SxOhfz
     }
 
     /**
