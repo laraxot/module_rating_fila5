@@ -14,7 +14,7 @@ qmd: "RatingData ratingFieldName formFieldLabel getXlsFields criteriaToXlsFields
 related:
   - ./rating-statics-to-ratingdata-consolidation.story.md
   - ./5.240-ratingcontract-closures-not-baserating.story.md
-  - ./phpstan-post-sync-restore-2026-09-24.story.md
+  - ./phpstan-post-sync-restore.story.md
 ---
 # ratingdata-api-restore-after-laraxot-sync-2026-09-24
 

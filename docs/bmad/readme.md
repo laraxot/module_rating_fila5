@@ -141,7 +141,7 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 - [phpstan-swarm.md](./phpstan-swarm.md): phpstan swarm 2026 [orfano]
 - [quality-audit.md](./quality-audit.md): Audit di qualita: modulo Rating
 - [redundancy-analysis.md](./redundancy-analysis.md) [orfano] [dup]
-- [redundancy-audit-2026-05-21.md](../redundancy-audit-2026-05-21.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
+- [redundancy-audit-2026-05-21.md](../redundancy-audit-rating.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
 - [redundancy-audit.md](./redundancy-audit.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
 - [redundancy-report.md](./redundancy-report.md): Redundancy Report — Modulo Rating
 - [redundancy_analysis.md](./redundancy_analysis.md) [orfano] [dup]
@@ -287,7 +287,7 @@ Nessun file e' stato toccato. Proposte di destinazione nella story [swarm-phpsta
 - stesso titolo: [duplicate-methods-report.md](./duplicate-methods-report.md), [duplicate_methods_report.md](./duplicate_methods_report.md)
 - stesso titolo: [duplicate-methods.md](./duplicate-methods.md), [duplicate_methods.md](./duplicate_methods.md)
 - stesso titolo: phpstan-fixes-2026-01.md _(riferimento non presente nel repository, verificato 2026-10-14)_, [phpstan-fixes.md](./phpstan-fixes.md)
-- stesso titolo: [redundancy-audit-2026-05-21.md](../redundancy-audit-2026-05-21.md), [redundancy-audit.md](./redundancy-audit.md)
+- stesso titolo: [redundancy-audit-2026-05-21.md](../redundancy-audit-rating.md), [redundancy-audit.md](./redundancy-audit.md)
 
 ### Senza front matter (28)
 

@@ -13,7 +13,7 @@ status: done
 qmd: "phpstan exit 255 cannot override final getFormSchema BaseRatingResource merge_remote_repo_2 gitattributes marker lfs"
 related:
   - ../../../../Xot/docs/bmad/stories/phpstan-analyse-no-path-certify.story.md
-  - ./auditcoverage-reinjection-2026-09-24.story.md
+  - ./auditcoverage-reinjection.story.md
   - ../../../../../../docs/wiki/memories/merge-remote-repo-2-reinjects-conflict-markers.md
 ---
 # phpstan-post-sync-restore-2026-09-24

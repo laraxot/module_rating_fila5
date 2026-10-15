@@ -258,4 +258,4 @@ gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa 
 - PHP Insights sul file → 100/100/100/100.
 - Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
 
-Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.
+Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix.story.md`.

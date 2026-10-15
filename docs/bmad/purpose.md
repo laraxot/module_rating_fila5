@@ -67,4 +67,4 @@ Le classi base indicano un punto di estensione previsto.
 ## Collegamenti
 
 - `docs/wiki/rules/` — convenzioni e pattern
-- `docs/bmad/stories/rating-phpstan-l10-swarm-2026-10-06.story.md` — audit swarm
+- `docs/bmad/stories/rating-phpstan-l10-swarm.story.md` — audit swarm

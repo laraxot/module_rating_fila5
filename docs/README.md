@@ -51,7 +51,7 @@ Ogni affermazione dell'ingresso e' stata confrontata con il codice il 2026-10-14
 1. Nessuna rotta applicativa e nessun controller: `routes/web.php` e `routes/api.php` sono vuoti, `app/Http/*` contiene solo `.gitkeep`. Le uniche rotte (11 in `php artisan route:list --json`, 2026-10-14) sono del pannello Filament `rating/admin`. Non esiste un'interfaccia pubblica di questo modulo: la valutazione del cittadino e' esposta da Fixcity.
 2. Le view `resources/views/livewire/favorite*.blade.php`, `rate/*.blade.php` e `rate_it.blade.php` non hanno classi Livewire in `app/` e nessun file del progetto le richiama con il namespace `rating::` (grep del 2026-10-14): sono residui, non funzioni.
 3. `config/config.php` ha tre chiavi (`name`, `icon`, `navigation_sort`): non ci sono opzioni di comportamento.
-4. Suite Pest non affidabile oggi: su DB usa-e-getta il 2026-10-14 tutti i 182 test falliscono con `SQLiteDatabaseDoesNotExistException` (0 asserzioni); il 2026-09-29 la memoria `bashscripts/ai/wiki/memories/rating-pest-suite-pre-existing-breakage-2026-09-29.md` registrava 145 passati, 23 falliti, 5 saltati.
+4. Suite Pest non affidabile oggi: su DB usa-e-getta il 2026-10-14 tutti i 182 test falliscono con `SQLiteDatabaseDoesNotExistException` (0 asserzioni); il 2026-09-29 la memoria `bashscripts/ai/wiki/memories/rating-pest-suite-pre-existing-breakage.md` registrava 145 passati, 23 falliti, 5 saltati.
 
 ## Quick start
 

@@ -7,7 +7,7 @@ story_id: "swarm-cluster4-phpstan-rating-2026-10-06"
 status: review
 track: quality/phpstan
 related:
-  - phpstan-fleet-fix-2026-09-23.story.md
+  - phpstan-fleet-fix.story.md
 qmd: "swarm cluster4 phpstan Rating BaseRatingMorphPolicy ignore unmatchedLine BaseRatingPolicy leaf unused imports"
 updated: 2026-10-07
 tags: [docs, rating, bmad]
@@ -36,7 +36,7 @@ worktree con corpo svuotato ma `use` orfani.
    da PHPDoc (`HasRating`, `HasRatingsTrait`, `BaseRating:250`,
    `GetSumByModelRatingIdAction:26`, test). Rivalidati contro la SSoT:
    falsi positivi per costruzione — NON toccati (vedi memoria
-   `2026-10-06-swarm-phpstan-peer-findings-vs-ssot-config.md`).
+   `swarm-phpstan-peer-findings-vs-ssot-config.md`).
 
 ## Fix (scopo/funzionalita')
 

@@ -10,7 +10,7 @@ acceptance_criteria:
   - Quality gate: php -l, phpstan, phpmd, Pest (if signature changed)
   - Second brain updated with architectural patterns discovered
 assigned_to: cluster-3-agent (parallel subagent strategy)
-parent_story: phpstan-fleet-remediation-2026-10-06.story.md
+parent_story: phpstan-fleet-remediation.story.md
 type: story
 updated: 2026-10-07
 tags: [docs, rating, bmad]
