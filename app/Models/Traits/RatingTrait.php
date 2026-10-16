@@ -12,14 +12,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Rating\Models\Rating;
 
+// ------ traits ---
+
 /**
- * Legacy rating UI (rateit, pivot `rating`, `post_type` / `rating_morph` storico).
- *
- * Non confondere con {@see HasRatingsTrait} (scheda PT / morph `model`) né con
- * {@see HasRating} (scommesse / percentuali per volume).
- *
- * @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01)
+ * Trait RatingTrait.
  */
+/** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 trait RatingTrait
 {
     /**

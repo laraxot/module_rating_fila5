@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Fixtures;
+namespace Modules\Rating\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -30,7 +30,7 @@ final class LikeableStub extends Model
         }
 
         /** @var MorphMany<Like, $this>&Mockery\MockInterface $fallback */
-        $fallback = \Mockery::mock(MorphMany::class);
+        $fallback = Mockery::mock(MorphMany::class);
         $fallback->shouldReceive('delete')->andReturn(0);
 
         return $fallback;

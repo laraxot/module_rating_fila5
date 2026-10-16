@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating;
+namespace Modules\Rating\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Modules\Rating\Providers\RatingServiceProvider;
-use Tests\Modules\Xot\XotBaseTestCase;
+use Modules\Xot\Tests\XotBaseTestCase;
 
 /**
  * Base test case for Rating module.
@@ -59,7 +59,7 @@ abstract class TestCase extends XotBaseTestCase
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
             }
 

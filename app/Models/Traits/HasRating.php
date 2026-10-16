@@ -10,14 +10,8 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/**
- * Relazione morph verso {@see Rating} e aggregazioni su {@see RatingMorph}
- * (scommesse, percentuali, volume crediti) per modelli host (Article, Profile, Fixcity, …).
- *
- * @phpstan-require-extends Model
- *
- * @property int|string|null $id
- */
+/** @phpstan-require-extends Model */
+/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
 {
     /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
