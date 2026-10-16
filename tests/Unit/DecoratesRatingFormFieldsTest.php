@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Component;
@@ -10,14 +10,15 @@ use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
 use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 describe('DecoratesRatingFormFields', function (): void {
     test('applica label al Fieldset e al Field', function (): void {
-        $host = new class {
+        $host = new class
+        {
             use DecoratesRatingFormFields;
 
             public function decorate(RatingContract $rating, Component $component): Component
@@ -26,7 +27,7 @@ describe('DecoratesRatingFormFields', function (): void {
             }
         };
 
-        $rating = new Rating();
+        $rating = new Rating;
         $rating->forceFill(['id' => 1, 'title' => 'Ruolo', 'txt' => 'Ruolo <i>x</i>']);
 
         $fieldset = $host->decorate($rating, Fieldset::make());

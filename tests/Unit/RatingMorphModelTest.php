@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 describe('RatingMorph / BaseRatingMorph', function (): void {
     test('usa la tabella rating_morph (singolare)', function (): void {
-        Assert::assertSame('rating_morph', (new RatingMorph())->getTable());
+        Assert::assertSame('rating_morph', (new RatingMorph)->getTable());
     });
 
     test('espone le relazioni rating user profile model', function (): void {
-        $morph = new RatingMorph();
+        $morph = new RatingMorph;
 
         Assert::assertSame('rating_id', $morph->rating()->getForeignKeyName());
         Assert::assertSame(Rating::class, $morph->rating()->getRelated()::class);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Fixtures;
+namespace Modules\Rating\Tests\Fixtures;
 
 /**
  * Figlio STI di {@see RatingsHostStub}, con la stessa semantica di Parental
