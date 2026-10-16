@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Table;
@@ -10,9 +10,9 @@ use Modules\Rating\Filament\Actions\Table\BetTableAction;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\EditRatingMorph;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\ListRatingMorphs;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\EditRating;
-use Tests\Modules\Rating\Fixtures\BaseEditRatingStub;
-use Tests\Modules\Rating\Fixtures\BaseRatingsTableStub;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\Fixtures\BaseEditRatingStub;
+use Modules\Rating\Tests\Fixtures\BaseRatingsTableStub;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
@@ -33,7 +33,7 @@ test('BetTableAction configura label e schema modale', function (): void {
 });
 
 test('BaseRatingsTable espone colonne filtri e azioni attese', function (): void {
-    $tabella = new BaseRatingsTableStub();
+    $tabella = new BaseRatingsTableStub;
 
     Assert::assertSame(
         ['id', 'title', 'slug', 'rule', 'is_disabled', 'is_readonly', 'order_column', 'created_at', 'updated_at'],
@@ -53,7 +53,7 @@ test('BaseEditRating espone DeleteAction in header', function (): void {
     $method = new \ReflectionMethod(BaseEditRatingStub::class, 'getActions');
     $method->setAccessible(true);
 
-    $actions = $method->invoke(new BaseEditRatingStub());
+    $actions = $method->invoke(new BaseEditRatingStub);
 
     Assert::assertIsArray($actions);
     Assert::assertCount(1, $actions);
@@ -63,14 +63,14 @@ test('EditRating espone DeleteAction in header', function (): void {
     $method = new \ReflectionMethod(EditRating::class, 'getActions');
     $method->setAccessible(true);
 
-    $actions = $method->invoke(new EditRating());
+    $actions = $method->invoke(new EditRating);
 
     Assert::assertIsArray($actions);
     Assert::assertCount(1, $actions);
 });
 
 test('ListRatingMorphs dichiara colonne e create action', function (): void {
-    $page = new ListRatingMorphs();
+    $page = new ListRatingMorphs;
     $table = $page->table(Table::make($page));
 
     Assert::assertSame(
@@ -90,5 +90,5 @@ test('EditRatingMorph eredita resource RatingMorph', function (): void {
     $method = new \ReflectionMethod(EditRatingMorph::class, 'getActions');
     $method->setAccessible(true);
 
-    Assert::assertIsArray($method->invoke(new EditRatingMorph()));
+    Assert::assertIsArray($method->invoke(new EditRatingMorph));
 });
