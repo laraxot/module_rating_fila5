@@ -36,7 +36,7 @@ function ratingRelationManagerColumnNames(RatingsRelationManager|HasRatingRating
 }
 
 test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function (): void {
-    $manager = new RatingsRelationManager;
+    $manager = new RatingsRelationManager();
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 
@@ -49,7 +49,7 @@ test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function ():
 });
 
 test('HasRatingResource RatingsRelationManager allinea lo schema tabella', function (): void {
-    $manager = new HasRatingRatingsRelationManager;
+    $manager = new HasRatingRatingsRelationManager();
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 
