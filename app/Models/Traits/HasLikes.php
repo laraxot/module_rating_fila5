@@ -21,7 +21,7 @@ trait HasLikes
 
     public function likedBy(?UserContract $user): void
     {
-        if ($user === null) {
+        if (null === $user) {
             return;
         }
 
@@ -32,7 +32,7 @@ trait HasLikes
 
     public function dislikedBy(?UserContract $user): void
     {
-        if ($user === null) {
+        if (null === $user) {
             return;
         }
 
@@ -40,7 +40,7 @@ trait HasLikes
          * @var Like
          */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
-        if ($where !== null) {
+        if (null !== $where) {
             $where->delete();
         }
 
@@ -62,7 +62,7 @@ trait HasLikes
 
     public function isLikedBy(?UserContract $user): bool
     {
-        if ($user === null) {
+        if (null === $user) {
             return false;
         }
 
