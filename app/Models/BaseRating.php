@@ -95,10 +95,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  */
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
-    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
-    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
-    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
-    // due relazioni scritte a mano non possono dare.
+    // The vendor trait is the single source of truth for adjacency-list behavior.
     use HasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
