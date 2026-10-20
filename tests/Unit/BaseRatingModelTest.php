@@ -13,27 +13,27 @@ use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Spatie\Sluggable\SlugOptions;
 
 uses(TestCase::class);
 
 afterEach(function (): void {
-    \Mockery::close();
+    Mockery::close();
 });
 
 describe('BaseRating (via Rating)', function (): void {
     test('getSlugOptions genera slug dal titolo', function (): void {
-        $options = (new Rating())->getSlugOptions();
+        $options = (new Rating)->getSlugOptions();
 
-        Assert::assertInstanceOf(SlugOptions::class, $options);
+        Assert::assertSame(['title'], $options->generateSlugFrom);
+        Assert::assertSame('slug', $options->slugField);
     });
 
     test('registerMediaConversions non solleva eccezioni', function (): void {
-        $rating = new Rating();
+        $rating = new Rating;
 
         $rating->registerMediaConversions(null);
 
-        Assert::assertInstanceOf(Rating::class, $rating);
+        Assert::assertSame(Rating::class, $rating::class);
     });
 
     // La relazione morphTo verso il model valutato non vive su `Rating`: vive su
@@ -58,20 +58,20 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('scopeWithExtraAttributes filtra per chiave singola con valore', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldReceive('where')
             ->once()
             ->with('extra_attributes->anno', 2024)
             ->andReturnSelf();
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, 'anno', 2024);
+        $result = (new Rating)->scopeWithExtraAttributes($builder, 'anno', 2024);
 
         Assert::assertSame($builder, $result);
     });
 
     test('scopeWithExtraAttributes filtra per array di attributi', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldReceive('where')
             ->once()
             ->with('extra_attributes->anno', 2024)
@@ -81,7 +81,7 @@ describe('BaseRating (via Rating)', function (): void {
             ->with('extra_attributes->tipo', 'foo')
             ->andReturnSelf();
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, [
+        $result = (new Rating)->scopeWithExtraAttributes($builder, [
             'anno' => 2024,
             'tipo' => 'foo',
         ]);
@@ -91,10 +91,10 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('scopeWithExtraAttributes senza value su stringa lascia il builder', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldNotReceive('where');
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, 'anno');
+        $result = (new Rating)->scopeWithExtraAttributes($builder, 'anno');
 
         Assert::assertSame($builder, $result);
     });
@@ -104,7 +104,7 @@ describe('BaseRating (via Rating)', function (): void {
             'title' => 'Punteggio',
             'txt' => 'Voto',
         ]);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 42]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -116,7 +116,7 @@ describe('BaseRating (via Rating)', function (): void {
         $rating = new Rating([
             'txt' => 'Importo mensile',
         ]);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 12.5]);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect());
@@ -129,7 +129,7 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('getNoteHtml restituisce note pivot quando ci sono figli caricati', function (): void {
         $rating = new Rating(['txt' => 'Criterio']);
-        $pivot = new RatingMorph();
+        $pivot = new RatingMorph;
         $pivot->setRawAttributes(['value' => 1, 'note' => 'scelta utente']);
         $rating->setRelation('pivot', $pivot);
         $rating->setRelation('children', collect([new Rating(['title' => 'Figlio'])]));

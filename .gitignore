@@ -38,6 +38,7 @@ docs/phpstan/
 error_log
 .git-blame-ignore-revs
 .git-rewrite
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
 graphify-out/
 /.idea
 *.jar
