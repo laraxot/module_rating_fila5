@@ -1,4 +1,7 @@
 ---
+qmd: "xotbase table columns enforcement"
+issues: []
+discussions: []
 title: "XotBaseResourceTable Columns Enforcement — Rating Module"
 type: concept
 sources: []

@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "rating getxlsfields relocation.story"
+issues: []
+discussions: []
 title: "rating-getxlsfields-relocation"
 type: story
 module: Rating

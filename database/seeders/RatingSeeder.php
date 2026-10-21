@@ -9,6 +9,7 @@ use Modules\Rating\Models\Rating;
 
 /**
  * Rating base Sì/No — schema ratings (title, color) usati da seeder di dominio.
+ * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
  */
 class RatingSeeder extends Seeder
 {

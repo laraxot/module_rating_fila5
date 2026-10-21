@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Module — Migrations"
 type: guide
 tags: [migrations, rating]

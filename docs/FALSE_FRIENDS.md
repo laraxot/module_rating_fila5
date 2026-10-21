@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "False Friends – Rating"
 type: guide
 tags: [false, friends, rating]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Checklist Qualità Modulo Rating"
 type: guide
 tags: [quality, rating]

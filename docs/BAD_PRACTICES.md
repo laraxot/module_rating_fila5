@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Bad Practices – Rating"
 type: guide
 tags: [bad, practices, rating]

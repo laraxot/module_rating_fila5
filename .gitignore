@@ -1,63 +1,85 @@
+
+*~BASE
+*~head
+*~HEAD
+*~LOCAL
+*~REMOTE
+agentdb.rvf
 /.ai*
-/_bmad
+audit-coverage/
+*.backup
+*.backup.*
+# Backup files
+*.bak
+*.bakup
 /bashscripts
-/_docs
-/docs/archive
-/docs/legacy
-*.lock
-.php-cs-fixer.cache
-.vscode
-
+/_bmad
+build/
+*.cache
+cache/
 # Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
-# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
-# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+.claude-audit/
+# claude-audit bridge (non committare)
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 .cursor/
-.devcontainer/
-.windsurf/
-/rector.php
-/phpinsights.php
-rector.php
-graphify-out/
-
-# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
 /.cursor
 /.cursor/
-/.windsurf
-/.windsurf/
+.cursor~*
+.devcontainer/
+_docs/
+/_docs
+/docs/archive
+docs/archive/
+docs/cache/
+/docs/legacy
+docs/phpstan/
+.DS_Store
+.env
+error_log
+.git-blame-ignore-revs
+.git-rewrite
+graphify-out/
+/.idea
+*.jar
+lang/lang/
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+*.lock
+*.log
+node_modules
+node_modules/
+*.old
+*.old1
+*.orig
+package-lock.json
+# Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
+*.phar
+.php-cs-fixer.cache
+/phpinsights.php
+.phpintel
+# PHPStan documentation
+.phpunit.result.cache
+/rector.php
+rector.php
+# Regola tests-auditcoverage-forbidden: artefatti audit, mai nel repo
+*.rej
+# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
+*.stackdump
+!tests/
+!tests/**
+tests/AuditCoverage/
+/.vagrant
+vendor
+vendor/
+.vscode
+.vscode/
 /.vscode
 /.vscode/
-.cursor~*
+.windsurf/
+/.windsurf
+/.windsurf/
 .windsurf~*
-node_modules
-docs/phpstan/
-
-# Cartelle vietate in root modulo (direttiva utente: vanno cancellate)
-/bashscripts/
-/graphify-out/
-/tools/
-/scripts/
-/.agents/
-/.claude-audit/
-/build/
-/.claude/
-/.codex/
-/.opencode/
-/tests/graphify-out/
-bashscripts
-graphify-out
-tools
-scripts
-.agents
-.claude-audit
-build
-.claude
-/.github/skills/
-.github/skills
-docs/graphify
-resources/lang
-
-# docs/chat — coordination notes replaced by BMAD stories in docs/bmad/
-docs/chat
-
-# Laraxot — app/Application forbidden (belongs to laravel/app/, not module app/)
-app/Application
+*:Zone.Identifier
+test-results/
+rating.code-workspace

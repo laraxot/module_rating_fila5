@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Dove vive un contratto: app/Contracts o app/Models/Contracts"
 type: concept
 status: active

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Product Roadmap - Rating Module"
 type: guide
 tags: [roadmap, rating]

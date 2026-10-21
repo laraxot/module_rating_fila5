@@ -1,4 +1,7 @@
 ---
+qmd: "faq"
+issues: []
+discussions: []
 title: "Rating Module - FAQ"
 type: reference
 tags: [faq, questions, answers, help]

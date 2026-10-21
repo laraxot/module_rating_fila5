@@ -1,3 +1,14 @@
+---
+title: "roadmap miglioramenti"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap miglioramenti"
+issues: []
+discussions: []
+---
+
 # Roadmap — Rating, il modulo più piccolo con la coscienza più pulita
 
 > Numeri misurati: [`docs/cosa-migliorare.md`](cosa-migliorare.md) (80,

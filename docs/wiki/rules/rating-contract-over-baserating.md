@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Helper rating: tipizzare RatingContract, non BaseRating"
 type: rule
 module: Rating

@@ -1,4 +1,7 @@
 ---
+qmd: "INDEX"
+issues: []
+discussions: []
 title: "concepts index — Rating"
 type: index
 tags: [concepts, Rating]
@@ -8,9 +11,6 @@ updated: 2026-08-24
 
 # Concepts — Rating
 
-- [schemaless-attributes-casts.md](schemaless-attributes-casts.md) — nota casts `extra_attributes` (SchemalessAttributes) su Rating
-
-
-# concepts Index — Rating
-
 Concetti specifici del modulo Rating. Carica on-demand via `qmd search` o consulta il [trigger map root](/docs/wiki/rules/00-TRIGGER_MAP.md).
+
+- [schemaless-attributes-casts.md](schemaless-attributes-casts.md) — nota casts `extra_attributes` (SchemalessAttributes) su Rating

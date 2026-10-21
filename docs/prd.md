@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "PRD: Rating Module"
 type: guide
 tags: [prd, rating]

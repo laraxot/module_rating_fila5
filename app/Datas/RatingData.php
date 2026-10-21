@@ -18,8 +18,13 @@ use Webmozart\Assert\Assert;
 /**
  * DTO per un rating.
  *
- * ATTENZIONE — due concetti nello stesso nome (blocco UI + colonne migration).
- * Split `RatingBlockData` / entity tracciato a parte.
+ * ATTENZIONE — questa classe porta **due concetti** con lo stesso nome. Le proprietà del
+ * costruttore descrivono un blocco di UI (titolo, descrizione, locale, immagine) e sono
+ * usate da `RatingBlockTest`; i metodi statici descrivono invece l'**entità** `ratings`
+ * (path form/export, label, colonne della tabella). Non è un accostamento voluto: è il
+ * nome `RatingData` che era già occupato quando è servito il secondo concetto.
+ * La separazione corretta — `RatingBlockData` per il blocco, `RatingData` per l'entità,
+ * come `SchedaData` sta a `schede` — è tracciata come lavoro a sé.
  *
  * `getXlsFields($where, $ratingClass)` = catalogo export **solo rating**.
  * `$ratingClass` e' **obbligatorio**: nessun backtrace-resolve. IR Rating usa
@@ -42,6 +47,11 @@ class RatingData extends Data
     ) {}
 
     /**
+     * Costruisce il DTO da un payload di form.
+     *
+     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
+     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
+     *
      * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data): self
@@ -114,7 +124,7 @@ class RatingData extends Data
         Assert::implementsInterface($ratingClass, RatingContract::class);
 
         /** @var EloquentCollection<int, BaseRating> $ratings */
-        $ratings = $ratingClass::withExtraAttributes($where)->orderBy('order_column')->get();
+        $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
             ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
@@ -152,20 +162,24 @@ class RatingData extends Data
                 : Collection::make();
 
             if ($children->isNotEmpty()) {
-                $noteLabelRaw = (string) __(
+                $fields[self::ratingValuePath($rating, 'note')] = (string) __(
                     'rating::fields.note_for',
                     ['label' => $label],
                 );
-
-                if (is_string($noteLabelRaw)) {
-                    $fields[self::ratingValuePath($rating, 'note')] = $noteLabelRaw;
-                }
             }
         }
 
         return $fields;
     }
 
+    /**
+     * Le colonne di `ratings`, dichiarate una volta sola.
+     *
+     * `$migration` a `null` significa «tabella nuova, aggiungile tutte»; passandolo,
+     * si aggiungono solo quelle che mancano. Una lista, due usi: la stessa colonna
+     * dichiarata in due posti prima o poi non concorda (era successo: `txt` era
+     * `text()` in creazione e `string()` nel guard di update).
+     */
     public static function updateColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
         $missing = static fn (string $column): bool => ! $migration instanceof XotBaseMigration
@@ -190,7 +204,7 @@ class RatingData extends Data
             $table->text('txt')->nullable();
         }
         if ($missing('extra_attributes')) {
-            $table->json('extra_attributes');
+            $table->schemalessAttributes('extra_attributes');
         }
         if ($missing('is_disabled')) {
             $table->boolean('is_disabled')->nullable();

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Filament Version Declaration — Rating"
 type: guide
 tags: [filament, version, rating]

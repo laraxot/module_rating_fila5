@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Visione del Modulo Rating"
 type: guide
 tags: [vision, rating]

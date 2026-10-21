@@ -3,6 +3,7 @@ title: "Rating Module — Documentation Index"
 type: guide
 module: Rating
 updated: 2026-09-22
+qmd: rating documentation bmad index
 ---
 
 # Rating Module — Index
@@ -42,3 +43,12 @@ Ancora aperto (fuori scope per questo cleanup, non toccare qui):
   root) — vedi `root-files-hygiene.md`.
 - possibile corruzione repo Git (commit mancante, vedi `git fsck`) — da investigare
   prima di qualsiasi rewrite di history su questo modulo.
+
+## Navigazione canonica (2026-10-09)
+
+- [readme.md](readme.md) — orientamento BMAD del modulo.
+- [purpose.md](purpose.md) — scopo e confini.
+- [architecture.md](architecture.md) — architettura verificata.
+- [stories/](stories/) — lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).
+
+`index.md` è l’indice canonico; `INDEX.md` resta storico e non viene spostato.

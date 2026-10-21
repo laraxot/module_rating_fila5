@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Product Requirements Document (PRD)"
 type: guide
 tags: [product, requirements, rating]

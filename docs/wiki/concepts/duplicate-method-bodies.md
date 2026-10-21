@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "corpi metodo duplicati — Rating"
 type: analysis
 module: Rating

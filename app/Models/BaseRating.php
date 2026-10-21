@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Modules\Rating\Database\Factories\RatingFactory;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Contracts\RatingContract;
-use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -24,7 +24,6 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
-use Illuminate\Support\Str;
 
 /**
  * Modules\Rating\Models\BaseRating.
@@ -215,7 +214,6 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
             'is_readonly' => 'boolean',
         ];
     }
-
 
     /**
      * Criterio RichEditor (`txt`) o titolo plain per PDF Html2Pdf.

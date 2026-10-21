@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "RatingData::getXlsFields($where) — resolve subclass dal backtrace statico"
 type: architecture
 module: Rating

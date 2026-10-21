@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Criteri di accettazione per le fasi"
 type: guide
 tags: [acceptance, criteria, rating]

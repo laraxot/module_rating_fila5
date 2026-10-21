@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "overview"
+issues: []
+discussions: []
 title: "Wiki Overview"
 module: "Rating"
 type: overview

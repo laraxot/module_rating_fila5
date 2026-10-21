@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Metodi Duplicati - Modulo Rating"
 type: concept
 tags: [duplicate, methods, analysis, rating, legacy]

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "User Interface"
 type: guide
 tags: [user, interface, rating]

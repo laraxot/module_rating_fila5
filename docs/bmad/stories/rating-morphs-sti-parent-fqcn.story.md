@@ -104,3 +104,34 @@ su entrambe le forme.
 
 Le modifiche sono finite in HEAD del repo Rating tramite i commit automatici `.` di un altro
 processo (`3a9c77f` 11:40, `f2c6332` 11:44), non committate da questa sessione.
+
+## Regressione e ripristino (2026-10-07, PHPStan fase C)
+
+PHPStan segnalava `method.notFound` su `ratingMorphTypes()` (4 chiamate in
+`HasRatingsTraitMorphTypesTest`, righe 65, 72, 78, 82). Non era un problema di visibilita'
+ne' di stub: il metodo **non esisteva piu' nel trait**.
+
+- Causa radice: lo stato del trait in HEAD era quello precedente a questa story (nessun
+  `ratingMorphTypes()`, `ratingMorphs()` ancora su `[getMorphClass(), static::class]`, niente
+  `preferredRatingPivot()`, `hydrateRatingsFormData()` su `$this->ratings`, writer senza
+  `unsetRelation`). Il repo Rating e' stato ricomposto in un unico commit (`821a596`), quindi
+  `git log -S` non mostra quando le modifiche del 2026-09-29 sono state perse. Il test e lo
+  stub STI erano sopravvissuti: documentavano un contratto che il trait non onorava piu'.
+- Fix in avanti, nel trait (la sorgente giusta; test e stub erano corretti):
+  `ratingMorphTypes()` pubblico (alias + `Relation::getMorphedModel(alias)`, senza duplicati),
+  usato da `ratingMorphs()`; `preferredRatingPivot()` (voto, poi nota, poi prima riga) usato da
+  `ratings_by_id`; `hydrateRatingsFormData()` legge da `ratings_by_id`;
+  `syncRatingsFormData()`, `clearEvaluation()`, `syncRatingsWhere()` scaricano `ratings` e
+  `ratingMorphs` via `forgetLoadedRatingRelations()`.
+  `ratingMorphTypes()` e' stato aggiunto per primo da un'altra sessione (task phpstan-errors-29);
+  il resto del contratto e' stato completato qui.
+- Test `HasRatingsTraitFormDataTest` (3 casi di `hydrateRatingsFormData`): alimentati da
+  `ratingMorphs` (helper `hostWithMorphRows`), come previsto da questa story e mai riportato nel
+  file in HEAD.
+- Verifica: `pest` su MorphTypes + FormData + RatingsById + Accessors + OtherOption +
+  FormFieldLabel: 54 passati, 4 falliti. I 4 falliti sono gli stessi del 2026-09-29
+  (`myRatings`, `ratingObjectives`, `syncRatingsWhere` x2: `Unable to resolve caller object for
+  getClassName()`, ambientale, 18.59). MorphTypes: 9 su 9 verdi. PHPStan su trait, 2 test, 2
+  stub: `[OK] No errors`.
+- Nota ambiente: `pest` richiede `DB_CONNECTION=sqlite DB_DATABASE=fixcity_data_test`
+  (il DB MariaDB `fixcity_data_test` non esiste su questa macchina).

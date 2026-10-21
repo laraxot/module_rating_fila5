@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Brainstorm — home di ratingXlsFields vs RatingData"
 type: brainstorming
 module: Rating
