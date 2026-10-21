@@ -1,10 +1,7 @@
 ---
-<<<<<<< HEAD
-=======
 qmd: "INDEX"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
 title: "Rules Index"
 type: "index"
 created: 2026-05-11

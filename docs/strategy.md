@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Product Strategy: Rating Module"
 type: guide
 tags: [strategy, rating]

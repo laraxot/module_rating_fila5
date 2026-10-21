@@ -1,3 +1,14 @@
+---
+title: "rating data export methods"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating data export methods"
+issues: []
+discussions: []
+---
+
 # Brainstorming — spostamento formFieldLabel e ratingXlsValuePath in RatingData
 
 ## Contesto

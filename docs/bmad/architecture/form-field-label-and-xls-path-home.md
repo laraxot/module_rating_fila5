@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "formFieldLabel / ratingXlsValuePath / RatingData::getXlsFields — verdetto"
 type: architecture
 module: Rating

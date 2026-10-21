@@ -1,3 +1,14 @@
+---
+title: "tipo di risposta del criterio analisi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tipo di risposta del criterio analisi"
+issues: []
+discussions: []
+---
+
 # Che tipo di risposta vuole un criterio: analisi
 
 **Stato: brainstorming.** Nessun codice, nessuna decisione. Segue e completa
