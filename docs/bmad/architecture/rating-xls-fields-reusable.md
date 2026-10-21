@@ -18,8 +18,8 @@ related:
   - ../stories/5.149-compila-vs-trait-reusable-boundary.story.md
   - ../stories/rating-query-with-extra-attributes-scope.story.md
   - ../../../../IndennitaResponsabilita/docs/bmad/stories/5.182-delegate-rating-xls-fields.story.md
-  - ../../app/Datas/RatingData.php
-  - ../../app/Models/Traits/HasRatingsTrait.php
+  - ../../../app/Datas/RatingData.php
+  - ../../../app/Models/Traits/HasRatingsTrait.php
 ---
 
 > **Superseded (2026-09-23)** — le opzioni qui scelte (catalogo in

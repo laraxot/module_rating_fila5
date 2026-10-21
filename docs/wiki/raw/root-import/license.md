@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_MmwqRP
+=======
+---
+title: "license"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "license rating"
+---
+>>>>>>> .merge_file_Xfn5oA
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

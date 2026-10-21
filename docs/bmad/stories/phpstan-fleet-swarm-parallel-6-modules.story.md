@@ -9,10 +9,11 @@ track: quality/phpstan
 created: 2026-10-06
 updated: 2026-10-06T14:00:00Z
 related:
-  - ./swarm-cluster4-phpstan-rating-2026-10-06.story.md
+  - ./swarm-cluster4-phpstan-rating.story.md
 issues: []
 discussions: []
 qmd: "PHPStan L10 audit fleet Rating Incentivi User Xot Lang Job parallel swarm subagent vendor-repair"
+tags: [docs, rating, bmad]
 ---
 
 # PHPStan L10 Audit — 6 Moduli in Parallelo (story 8.23)

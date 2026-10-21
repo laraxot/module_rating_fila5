@@ -4,6 +4,11 @@ type: report
 module: Rating
 updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
+<<<<<<< .merge_file_CWu1pq
+=======
+status: draft
+tags: [docs, rating, wiki]
+>>>>>>> .merge_file_QiYbHr
 ---
 
 # Coverage del modulo Rating

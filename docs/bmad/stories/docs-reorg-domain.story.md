@@ -4,6 +4,11 @@ type: story
 module: Rating
 tags: [docs, bmad, rating, reorganization]
 qmd: rating docs reorg domain story
+<<<<<<< .merge_file_TpWZEU
+=======
+status: draft
+updated: 2026-10-09
+>>>>>>> .merge_file_EY3Bvl
 ---
 
 # Story — Indice docs canonico Rating

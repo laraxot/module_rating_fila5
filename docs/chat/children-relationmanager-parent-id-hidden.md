@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "children relationmanager parent id hidden"
 issues: []
 discussions: []
+<<<<<<< .merge_file_ZlsYAt
+=======
+status: draft
+>>>>>>> .merge_file_YWe1wc
 ---
 
 # ChildrenRelationManager: `parent_id` nascosto e valorizzato — esito e collisione

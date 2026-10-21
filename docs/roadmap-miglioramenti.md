@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "roadmap miglioramenti"
 issues: []
 discussions: []
+<<<<<<< .merge_file_dQVGPa
+=======
+status: draft
+>>>>>>> .merge_file_paO59I
 ---
 
 # Roadmap — Rating, il modulo più piccolo con la coscienza più pulita

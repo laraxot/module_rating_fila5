@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "00 INDEX"
 related:
   - "./bad-practices.md"
+status: draft
 ---
 
 # 📚 RATING Module - Documentation Index
@@ -35,13 +36,13 @@ related:
 
 | Story | Stato | Scopo |
 |------|-------|-------|
-| [RATING-2.2](stories/2.2.phpstan-rating-test-contracts.story.md) | review | Contratti statici trait e fixture |
-| [RATING-2.3](stories/2.3.phpstan-rating-tail-contracts.story.md) | review | Ultimi 11 findings nei test Rating: cold module a zero |
-| [4.26 coda](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md) | review | PHPStan modulo a zero (E+F) |
+| [RATING-2.2](../stories/2.2.phpstan-rating-test-contracts.story.md) | review | Contratti statici trait e fixture |
+| [RATING-2.3](../stories/2.3.phpstan-rating-tail-contracts.story.md) | review | Ultimi 11 findings nei test Rating: cold module a zero |
+| 4.26 coda _(riferimento non presente nel repository, verificato 2026-10-14)_ | review | PHPStan modulo a zero (E+F) |
 
 ## 🔗 Riferimenti
 
-- [Xot Module](../Xot/docs/00-index.md) - Base classes
+- [Xot Module](../../../Xot/docs/00-INDEX.md) - Base classes
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ---

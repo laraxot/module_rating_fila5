@@ -22,7 +22,7 @@ scope: [rating]
 audience: [ai-agents, developers, maintainers]
 depends_on:
 - ../docs/stories/ratings-edit-resource-management.md
-- ../../app/Datas/RatingMorphData.php
+- ../app/Datas/RatingMorphData.php
 github:
   repo: <repo progetto>
   repo: base_ptvx_fila5

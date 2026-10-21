@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "rating export fields reusable"
 issues: []
 discussions: []
+<<<<<<< .merge_file_sGVOpA
+=======
+status: draft
+>>>>>>> .merge_file_DLVLm4
 ---
 
 # Brainstorming — metodo riutilizzabile per getXlsFields dei rating
