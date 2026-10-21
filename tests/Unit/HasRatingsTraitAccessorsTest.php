@@ -141,11 +141,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         Auth::shouldReceive('id')->andReturn(7);
 
         /** @var HasMany<MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
-<<<<<<< .merge_file_nzohOQ
-        $hasMany = \Mockery::mock(HasMany::class);
-=======
         $hasMany = Mockery::mock(HasMany::class);
->>>>>>> .merge_file_IwWjok
         $hasMany->shouldReceive('selectRaw')->once()->andReturnSelf();
         $hasMany->shouldReceive('leftJoin')
             ->once()

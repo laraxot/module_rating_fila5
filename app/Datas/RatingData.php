@@ -53,11 +53,7 @@ class RatingData extends Data
      * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
      * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
      *
-<<<<<<< .merge_file_NYwej7
-     * @param  array<string, mixed>  $data
-=======
      * @param array<string, mixed> $data
->>>>>>> .merge_file_xBvyKy
      */
     public static function fromArray(array $data): self
     {
