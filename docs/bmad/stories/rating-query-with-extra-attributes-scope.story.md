@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "rating query with extra attributes scope.story"
 issues: []
 discussions: []
+<<<<<<< .merge_file_86RRab
+=======
+status: draft
+>>>>>>> .merge_file_zNgCd8
 ---
 
 # Story: rating-query-with-extra-attributes-scope

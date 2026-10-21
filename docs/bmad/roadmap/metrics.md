@@ -5,6 +5,10 @@ tags: [metrics, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "metrics"
+<<<<<<< .merge_file_spKaIj
+=======
+status: draft
+>>>>>>> .merge_file_SDYQEr
 ---
 
 # Metriche e obiettivi di qualità

@@ -1,3 +1,11 @@
+---
+title: "Un criterio di valutazione con risposta a scelta: analisi"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "un criterio di valutazione con risposta a scelta: analisi rating"
+---
 # Un criterio di valutazione con risposta a scelta: analisi
 
 **Stato: brainstorming.** Nessun codice scritto, nessuna decisione presa. Serve a

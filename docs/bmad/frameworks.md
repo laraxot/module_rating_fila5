@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_qByfBW
+=======
+---
+title: "Rating — Framework Integration Notes"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating   framework integration notes rating"
+---
+>>>>>>> .merge_file_5yBckQ
 # Rating — Framework Integration Notes
 
 Integration guidelines for caveman, graphify, bmad-method, headroom, ponytail.

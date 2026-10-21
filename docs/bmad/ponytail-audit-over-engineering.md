@@ -7,13 +7,14 @@ updated: 2026-07-14
 qmd: "ponytail audit over engineering"
 related:
   - "./prd.md"
+status: draft
 ---
 
 # Ponytail audit — Rating (over-engineering)
 
 **Ultimo run:** 2026-06-30  
 **Hub:** [../../../../docs/audit/ponytail-audit.md](../../../../docs/audit/ponytail-audit.md)
-**Remediation:** [../../../../docs/project/ponytail-audit-remediation.md](../../../../docs/project/ponytail-audit-remediation.md)
+**Remediation:** [../../../../docs/project/ponytail-audit-remediation.md](../../../../../docs/project/ponytail-audit-remediation.md)
 **GitHub monorepo:** [Issue #221](https://github.com/laraxot/<nome repository>/discussions/228)
 
 ## Esito run 2026-06-30
@@ -24,4 +25,4 @@ Eventuali voci storiche (ActivityLogger, contratti Geo) sono in [docs/audit/pony
 
 ## Collegamenti
 
-- [wiki/concepts/ponytail-audit.md](./wiki/concepts/ponytail-audit.md)
+- [wiki/concepts/ponytail-audit.md](../wiki/concepts/ponytail-audit.md)

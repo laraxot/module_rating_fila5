@@ -7,6 +7,10 @@ updated: 2026-09-02
 qmd: "best practices rating"
 related:
   - "./false-friends.md"
+<<<<<<< .merge_file_Xt0Zjq
+=======
+status: draft
+>>>>>>> .merge_file_ft6aGs
 ---
 
 # Best practices — Rating

@@ -7,6 +7,7 @@ type: index
 tags: [concepts, Rating]
 created: 2026-05-11
 updated: 2026-05-11
+status: draft
 ---
 
 # concepts Index — Rating

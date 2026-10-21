@@ -14,7 +14,7 @@ updated: 2026-10-05
 qmd: "Rating PHPStan forcedHasMany HasMany union MorphPivot Rating fixture stub"
 related:
   - 18.59-ratings-hoststub-getclassname-harness.story.md
-  - ../stories/18.56.ratings-by-id-accessor.story.md
+  - ../../stories/18.56.ratings-by-id-accessor.story.md
 ---
 
 # Story Rating/phpstan-fix-rating

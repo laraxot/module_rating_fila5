@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "criteri a scelta multipla"
 issues: []
 discussions: []
+<<<<<<< .merge_file_bBFtGd
+=======
+status: draft
+>>>>>>> .merge_file_9KuDZz
 ---
 
 # Criteri a scelta: opzioni in JSON, figli del criterio, o altro

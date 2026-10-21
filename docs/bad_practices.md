@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "bad practices"
 issues: []
 discussions: []
+<<<<<<< .merge_file_HT8oeW
+=======
+status: draft
+>>>>>>> .merge_file_At8OEL
 ---
 
 # Bad Practices – Rating

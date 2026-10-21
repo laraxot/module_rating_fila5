@@ -7,6 +7,10 @@ updated: 2026-07-14
 qmd: "confidence guidelines"
 related:
   - "./configuration.md"
+<<<<<<< .merge_file_7LGyXM
+=======
+status: draft
+>>>>>>> .merge_file_TiwQSD
 ---
 
 # Massimizzare il livello di confidenza

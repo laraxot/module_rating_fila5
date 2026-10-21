@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "SPRINT PLANNING"
 related:
   - "./USER_RESEARCH.md"
+status: draft
 ---
 
 # Rating Module - Sprint Planning

@@ -1,3 +1,11 @@
+---
+title: "Rating Module - Product Launch Plan"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - product launch plan rating"
+---
 # Rating Module - Product Launch Plan
 
 **Module:** Rating  

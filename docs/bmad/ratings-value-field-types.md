@@ -25,6 +25,9 @@ created_at: '2026-08-27'
 updated_at: '2026-08-27'
 maintainer: PTVX
 license: project-internal
+type: note
+updated: 2026-10-07
+qmd: "analisi: tipi di campo per `value` in `rating_morph` rating"
 ---
 # Analisi: tipi di campo per `value` in `rating_morph`
 

@@ -11,8 +11,8 @@ status: backlog
 track: docs-hygiene
 qmd: "docs filename no date timestamp bonifica rating"
 related:
-  - ../../../../../docs/sprint-status.yaml
-  - ../../../Xot/docs/bmad/stories/docs-filename-no-date-bonifica-xot.story.md
+  - ../../../../../../docs/sprint-status.yaml
+  - ../../../../Xot/docs/bmad/stories/docs-filename-no-date-bonifica-xot.story.md
 ---
 
 # Rating — .md senza data/timestamp nel nome (batch trovato 2026-09-22)
@@ -25,12 +25,12 @@ perimetro Rating.
 
 ## Scope
 
-- `docs/redundancy-audit-2026-05-21.md`
-- `docs/copilot-redundancy-audit-2026-05-25.md`
-- `docs/stories/phpstan-fleet-fix-2026-09-16.story.md`
-- `docs/stories/phpstan-fix-1788762467.story.md`
-- `docs/stories/phpstan-fix-1788768735.story.md`
-- `docs/bmad/stories/cleanup-rating-2026-09-22.story.md`
+- `docs/redundancy-audit-rating.md`
+- `docs/copilot-redundancy-audit.md`
+- `docs/stories/phpstan-fleet-fix.story.md`
+- `docs/stories/phpstan-fix.story.md`
+- `docs/stories/phpstan-fix-story.story.md`
+- `docs/bmad/stories/cleanup-rating.story.md`
 
 ## Acceptance
 

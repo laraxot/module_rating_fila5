@@ -7,8 +7,16 @@ updated: 2026-09-26
 qmd: "00 index"
 issues: []
 discussions: []
+<<<<<<< .merge_file_dKrfof
 ---
 
+=======
+status: stale
+---
+
+> Nota 2026-10-14 (docs-audit): Copia concorrente del vecchio 00-INDEX.md, senza la tabella delle story. Indice canonico: 00-INDEX.md (aggiornato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+
+>>>>>>> .merge_file_H51PIU
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  
@@ -33,7 +41,11 @@ discussions: []
 
 ## 🔗 Riferimenti
 
+<<<<<<< .merge_file_dKrfof
 - [Xot Module](../Xot/docs/00-index.md) - Base classes
+=======
+- [Xot Module](../../Xot/docs/00-INDEX.md) - Base classes
+>>>>>>> .merge_file_H51PIU
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ---

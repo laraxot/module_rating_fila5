@@ -10,6 +10,10 @@ discussions: []
 module: theme
 topic: api-integration
 canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
+<<<<<<< .merge_file_atCnM3
+=======
+status: stub
+>>>>>>> .merge_file_YiIR1b
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules

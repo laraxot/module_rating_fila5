@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "ponytail audit"
 issues: []
 discussions: []
+<<<<<<< .merge_file_w2Xd7O
+=======
+status: draft
+>>>>>>> .merge_file_uBIb3N
 ---
 
 # Ponytail audit — Rating

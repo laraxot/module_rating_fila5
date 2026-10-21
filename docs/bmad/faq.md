@@ -4,6 +4,8 @@ type: reference
 tags: [faq, questions, answers, help]
 created: 2026-07-14
 updated: 2026-08-04
+status: draft
+qmd: "rating module - faq rating"
 ---
 
 # Rating Module - FAQ

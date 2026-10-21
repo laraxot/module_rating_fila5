@@ -1,10 +1,15 @@
 ---
 title: No AI/tool scaffold directories in module tree
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "perché queste cartelle non devono esistere qui rating"
 ---
 
 # Perché queste cartelle non devono esistere qui
 
-Regola canonica: [module-theme-root-cleanup.md — Rule 5](../../../../docs/wiki/rules/module-theme-root-cleanup.md).
+Regola canonica: [module-theme-root-cleanup.md — Rule 5](../../../../../docs/wiki/rules/module-theme-root-cleanup.md).
 
 Rimosse in questo modulo: `_docs/`, `scripts/`, `bashscripts/`, `docs/archive|archived|legacy|workbench/`, `.circleci/`, `.claude-audit/`, `tests/.claude-audit/`, `_bmad-output/`, `test-results/`, `.devcontainer/`, `.kilocode/`, `.kiro/`, `.ralph/` (dove presenti) e aggiunte al `.gitignore` di questo modulo.
 

@@ -19,10 +19,10 @@ issues:
 discussions:
   - "https://github.com/provtv/module_rating_fila5/discussions/28"
 related:
-  - ../app/Models/Contracts/RatingContract.php
-  - ../app/Contracts/RatingsFormCallerContract.php
+  - ../../app/Models/Contracts/RatingContract.php
+  - ../../app/Contracts/RatingsFormCallerContract.php
   - ./criteri-a-scelta-multipla.md
-  - ./stories/5.92.get-ratings-form-schema-nel-trait.story.md
+  - ../stories/5.92.get-ratings-form-schema-nel-trait.story.md
 maintainer: Laraxot
 license: project-internal
 ---

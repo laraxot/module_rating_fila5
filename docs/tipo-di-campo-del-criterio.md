@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "tipo di campo del criterio"
 issues: []
 discussions: []
+<<<<<<< .merge_file_eDdb5G
+=======
+status: draft
+>>>>>>> .merge_file_WasUS7
 ---
 
 # Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero

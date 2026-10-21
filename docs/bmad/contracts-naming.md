@@ -5,7 +5,9 @@ created: 2026-07-12
 updated: 2026-07-12
 tags: [contract, naming, architecture, laraxot, rating]
 related:
-  - ../../../../docs/wiki/rules/module-contracts-naming-placement.md
+  - ../../../../../docs/wiki/rules/module-contracts-naming-placement.md
+status: draft
+qmd: "contracts naming & placement in rating rating"
 ---
 
 # Contracts Naming & Placement in Rating

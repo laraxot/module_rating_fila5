@@ -4,6 +4,8 @@ type: report
 module: Rating
 updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
+status: draft
+tags: [docs, rating, bmad]
 ---
 
 # Coverage del modulo Rating

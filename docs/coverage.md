@@ -8,6 +8,7 @@ type: report
 module: Rating
 updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
+status: draft
 ---
 
 # Coverage del modulo Rating
@@ -257,4 +258,8 @@ gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa 
 - PHP Insights sul file → 100/100/100/100.
 - Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
 
+<<<<<<< .merge_file_0aSYcD
 Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.
+=======
+Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix.story.md`.
+>>>>>>> .merge_file_Er8ONy

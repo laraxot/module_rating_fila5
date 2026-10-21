@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "graphify map"
 issues: []
 discussions: []
+<<<<<<< .merge_file_NhjueB
+=======
+status: draft
+>>>>>>> .merge_file_XvsTO3
 ---
 
 # Rating Module — Mappa Graphify
@@ -14,6 +18,7 @@ discussions: []
 **Versione:** 1.1.0 | **Modulo:** Rating | **Data:** 2026-08-02
 
 ---
+<<<<<<< .merge_file_NhjueB
 
 title: "graphify map"
 type: note
@@ -23,6 +28,8 @@ updated: 2026-09-26
 qmd: "graphify map"
 issues: []
 discussions: []
+=======
+>>>>>>> .merge_file_XvsTO3
 ## 📌 Cosa fa il modulo Rating
 
 Il modulo **Rating** gestisce:

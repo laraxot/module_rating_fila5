@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "prd"
 related:
   - "./product-launch-plan.md"
+status: draft
 ---
 
 # PRD: Rating Module

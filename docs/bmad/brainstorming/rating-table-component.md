@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "rating table component"
 issues: []
 discussions: []
+<<<<<<< .merge_file_FE60sg
+=======
+status: draft
+>>>>>>> .merge_file_YBvRFa
 ---
 
 # Brainstorming — componente Blade riutilizzabile per tabella rating

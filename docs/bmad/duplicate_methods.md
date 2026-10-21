@@ -1,3 +1,11 @@
+---
+title: "Metodi duplicati — Rating"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "metodi duplicati   rating rating"
+---
 # Metodi duplicati — Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.

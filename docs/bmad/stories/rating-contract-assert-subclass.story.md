@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "rating contract assert subclass.story"
 issues: []
 discussions: []
+<<<<<<< .merge_file_ulZlxO
+=======
+status: draft
+>>>>>>> .merge_file_7zO1eK
 ---
 
 > **SUPERSEDED (2026-09-23)** — bozza pre-correzione dello stesso lavoro.

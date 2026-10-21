@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "ratingdata ratingcontract typing.story"
 issues: []
 discussions: []
+<<<<<<< .merge_file_lC5hYN
+=======
+status: draft
+>>>>>>> .merge_file_PuuI4D
 ---
 
 > **SUPERSEDED (2026-09-23)** — bozza pre-correzione dello stesso lavoro.
