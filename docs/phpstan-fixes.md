@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "PHPStan Fixes - Modulo Rating"
 type: guide
 tags: [phpstan, fixes, rating]

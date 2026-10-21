@@ -63,12 +63,20 @@ class RatingsColumn extends XotBaseTextColumn
         $criteria = is_numeric($count) ? (int) $count : 0;
 
         if (! static::isRated($record)) {
-            return (string) trans('rating::ratings.state.not_rated', ['count' => $criteria]);
+<<<<<<< .merge_file_yYfyDz
+            return (string) (string) trans('rating::ratings.state.not_rated', ['count' => $criteria]);
+=======
+            return trans('rating::ratings.state.not_rated', ['count' => $criteria]);
+>>>>>>> .merge_file_aDiDW0
         }
 
         $sum = $record->getAttribute('rating_morphs_sum_value');
 
-        return (string) trans('rating::ratings.state.rated', [
+<<<<<<< .merge_file_yYfyDz
+        return (string) (string) trans('rating::ratings.state.rated', [
+=======
+        return trans('rating::ratings.state.rated', [
+>>>>>>> .merge_file_aDiDW0
             'count' => $criteria,
             'total' => is_numeric($sum) ? (string) (0 + $sum) : '0',
         ]);

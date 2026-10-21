@@ -1,4 +1,9 @@
 ---
+type: note
+updated: 2026-09-26
+qmd: "schema"
+issues: []
+discussions: []
 title: Wiki Schema
 description: Schema e convenzioni per la manutenzione della wiki
 tags:
@@ -19,6 +24,22 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
+---
+│   ├── schema.md          # Questo file
+---
+│   ├── schema.md          # Questo file
+---
+---
+│   ├── schema.md          # Questo file
+---
+---
+│   ├── schema.md          # Questo file
+---
+│   ├── SCHEMA.md          # Questo file
+---
+---
+---
+---
 │   ├── schema.md          # Questo file
 │   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
 │   ├── concepts/          # Pattern, architettura

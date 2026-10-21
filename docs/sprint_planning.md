@@ -1,3 +1,14 @@
+---
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
+---
+
 # Rating Module - Sprint Planning
 
 **Module:** Rating  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
 ## Sprint Goal
 
 Implement core rating and review system with moderation capabilities.

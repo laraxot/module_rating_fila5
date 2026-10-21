@@ -136,7 +136,6 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - Analysis files: /tmp/*.txt, scratchpad/
 - Next: Detailed review of each Rating error for root cause
 
-<<<<<<< HEAD
 
 ---
 
@@ -488,5 +487,3 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 - No architectural issues found
 - Xot module preparation underway
 
-=======
->>>>>>> laraxot/dev

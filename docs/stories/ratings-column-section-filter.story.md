@@ -1,4 +1,12 @@
 ---
+title: "ratings column section filter.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ratings column section filter.story"
+issues: []
+discussions: []
 name: ratings-column-section-filter
 description: "RatingsColumn, RatingsSection e HasRatingValuesFilter nel modulo Rating: stato della valutazione in una cella, il suo specchio nel form, e il filtro. Un solo criterio di «valutata», aggregati in query, zero N+1."
 metadata:

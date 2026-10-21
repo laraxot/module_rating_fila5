@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating — mai Filament\*, sempre XotBase*"
 type: concept
 module: Rating

@@ -43,7 +43,6 @@ use Webmozart\Assert\Assert;
  * @template TModel of Model
  *
  * @phpstan-require-extends Model
- * @property-read MorphToMany<BaseRating> $ratings Relazione polimorfca su rating
  */
 trait HasRatingsTrait
 {
@@ -66,8 +65,6 @@ trait HasRatingsTrait
      * pivot, non su `ratings`, quindi `sum('ratings', 'value')` è un errore SQL
      * (`Unknown column 'ratings.value'`).
      *
-     * Le due forme vengono da {@see ratingMorphTypes()}.
-     *
      * @return HasMany<MorphPivot, TModel>
      */
     public function ratingMorphs(): HasMany
@@ -82,23 +79,23 @@ trait HasRatingsTrait
     }
 
     /**
-     * Le forme di `model_type` con cui questo host sta in `rating_morph`: l'alias della
-     * morph map e il FQCN a cui l'alias punta.
+     * Return the storage forms used by this host's rating morph rows.
      *
-     * Il FQCN viene dalla morph map, non da `static::class`: su un figlio STI (Parental,
-     * es. `SchedaDip`) `static::class` e' la classe figlia, mai scritta; le righe
-     * storiche stanno sotto il FQCN del padre. Story `rating-morphs-sti-parent-fqcn`.
+     * STI children store the parent's FQCN, while the morph map stores its alias.
+     * Keeping both forms readable preserves historical ratings during migration.
      *
      * @return list<string>
      */
     public function ratingMorphTypes(): array
     {
-        $morph = $this->getMorphClass();
+        $alias = $this->getMorphClass();
+        $morphedModel = Relation::getMorphedModel($alias);
+        $types = [$alias];
+        if (is_string($morphedModel)) {
+            $types[] = $morphedModel;
+        }
 
-        return array_values(array_unique([
-            $morph,
-            Relation::getMorphedModel($morph) ?? $morph,
-        ]));
+        return array_values(array_unique($types));
     }
 
     /**
@@ -173,20 +170,21 @@ trait HasRatingsTrait
     }
 
     /**
-     * La riga pivot che vale quando lo stesso rating ha una riga per ogni forma di
-     * `model_type`: prima quella con il voto, poi quella con la nota (opzione «altro»,
-     * `value` null di proposito), altrimenti la prima.
+     * Fra le righe pivot dello stesso rating (forma alias e forma FQCN) sceglie quella
+     * che porta l'informazione: prima quella col voto, poi quella con la nota (opzione
+     * «altro», `value` null + `note` piena), altrimenti la prima.
      *
-     * @param  Collection<int, MorphPivot>  $group  righe dello stesso `rating_id`, mai vuoto
+     * @param  Collection<int, MorphPivot>  $group  non vuota (viene da un `groupBy`)
      */
     private static function preferredRatingPivot(Collection $group): MorphPivot
     {
-        $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null)
-            ?? $group->first(static fn (MorphPivot $p): bool => filled($p->getAttribute('note')))
+        $preferred = $group->first(static fn (MorphPivot $pivot): bool => $pivot->getAttribute('value') !== null)
+            ?? $group->first(static fn (MorphPivot $pivot): bool => filled($pivot->getAttribute('note')))
             ?? $group->first();
-        Assert::isInstanceOf($pivot, MorphPivot::class);
 
-        return $pivot;
+        Assert::isInstanceOf($preferred, MorphPivot::class);
+
+        return $preferred;
     }
 
     /**
@@ -317,13 +315,10 @@ trait HasRatingsTrait
         $ratingIds = $ratings->pluck('id')->all();
 
         if ($ratingIds !== []) {
-            // Solo le associazioni mancanti nella forma che `ratings()` vede: e' da li'
-            // che nascono i campi del form. Una riga alias vuota accanto a una FQCN con il
-            // voto e' innocua: si legge da ratings_by_id (preferisce il voto) e si scrive
-            // su entrambe le forme via ratingMorphs(). Story `rating-morphs-sti-parent-fqcn`.
+            // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
+            // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
-            $this->unsetRelation('ratings');
-            $this->unsetRelation('ratingMorphs');
+            $this->forgetLoadedRatingRelations();
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -426,6 +421,10 @@ trait HasRatingsTrait
      * duplicato (parziale, solo `value`) dentro
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
+     * Legge da {@see getRatingsByIdAttribute()} e non da `ratings`: il pivot di `ratings`
+     * e' solo la forma alias di `model_type`, spesso la riga vuota accanto a quella
+     * valorizzata sotto il FQCN (scheda 9240: form aperto senza voti).
+     *
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
@@ -434,8 +433,6 @@ trait HasRatingsTrait
         /** @var array<string, array{pivot: array{value: mixed, note: mixed}}> $ratingsData */
         $ratingsData = [];
 
-        // ratings_by_id, non ratings: ratings vede solo getMorphClass() e perde il voto
-        // salvato sotto l'altra forma di model_type (scheda 9240, 2026-09-29).
         foreach ($this->ratings_by_id as $rating) {
             $id = (string) $rating->id;
             $value = $rating->pivot->value;
@@ -502,10 +499,7 @@ trait HasRatingsTrait
             }
         }
 
-        // hydrateRatingsFormData() dopo il save rilegge ratingMorphs: se restasse in
-        // memoria quella caricata prima, il form mostrerebbe i voti vecchi.
-        $this->unsetRelation('ratings');
-        $this->unsetRelation('ratingMorphs');
+        $this->forgetLoadedRatingRelations();
     }
 
     /**
@@ -527,6 +521,15 @@ trait HasRatingsTrait
             'note' => null,
         ]);
 
+        $this->forgetLoadedRatingRelations();
+    }
+
+    /**
+     * Chi scrive il pivot scarica `ratings` e `ratingMorphs` gia' caricati: senza,
+     * la rilettura dopo save/Svuota mostrerebbe i valori di prima della scrittura.
+     */
+    private function forgetLoadedRatingRelations(): void
+    {
         $this->unsetRelation('ratings');
         $this->unsetRelation('ratingMorphs');
     }
@@ -594,11 +597,15 @@ trait HasRatingsTrait
 
         // `getLabel()` e non `title`: e' il model a dire come si chiama, e restituisce
         // sempre una stringa — `pluck('title')` ne restituirebbe anche di nulle.
-        // `RatingContract::$children` e' un property-override (non il generico Xot
-        // `Collection<int, Model>`): tipizzare RatingContract, non BaseRating.
-        $options = $rating->children
-            ->mapWithKeys(static fn (RatingContract $child): array => [$child->id => $child->getLabel()])
-            ->all();
+        /** @var array<int, string> $options */
+        $options = [];
+        foreach ($rating->children as $child) {
+            if (! $child instanceof RatingContract) {
+                continue;
+            }
+
+            $options[$child->id] = $child->getLabel();
+        }
 
         $afterStateUpdated = static function (Set $set, Get $get) use ($caller, $readonlyRatings): void {
             $caller?->recalculateRatingFields($set, $get, $readonlyRatings);

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Dipendenze e confini del modulo Rating"
 type: guide
 tags: [dependencies, rating]

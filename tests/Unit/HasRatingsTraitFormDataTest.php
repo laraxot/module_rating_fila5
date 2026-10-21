@@ -39,22 +39,33 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
 }
 
 /**
- * Riga pivot `rating_morph` come la legge `ratings_by_id` (via `ratingMorphs`, entrambe
- * le forme di `model_type`): e' la fonte di `hydrateRatingsFormData()`.
+ * Host con le sole righe pivot `rating_morph` caricate: `hydrateRatingsFormData()` legge
+ * da `ratings_by_id`, cioe' da `ratingMorphs` (entrambe le forme di `model_type`).
+ *
+ * @param  list<array{0: int, 1: int|float|null, 2: string|null}>  $rows  [rating_id, value, note]
  */
-function formDataPivot(int $ratingId, int|float|null $value, ?string $note): RatingMorph
+function hostWithMorphRows(array $rows): RatingsHostStub
 {
-    $pivot = new RatingMorph;
-    $pivot->setRawAttributes([
-        'rating_id' => $ratingId,
-        'value' => $value,
-        'note' => $note,
-    ]);
+    $morphs = array_map(static function (array $row): RatingMorph {
+        $pivot = new RatingMorph;
+        $pivot->setRawAttributes([
+            'rating_id' => $row[0],
+            'model_type' => RatingsHostStub::class,
+            'value' => $row[1],
+            'note' => $row[2],
+        ]);
 
-    return $pivot;
+        return $pivot;
+    }, $rows);
+
+    $host = new RatingsHostStub;
+    $host->setRelation('ratings', new EloquentCollection);
+    $host->setRelation('ratingMorphs', new EloquentCollection($morphs));
+
+    return $host;
 }
 
-/**
+/*
  * Story Rating/5.145 — refactor: fill/save del pivot ratings.{id}.pivot.{value,note}
  * spostato da CompilaIndennitaResponsabilita (duplicato, parziale, con un cast a 0 buggato)
  * a due metodi generici del trait. Risolve anche il blocker IR/5.140 (issue
@@ -65,12 +76,7 @@ function formDataPivot(int $ratingId, int|float|null $value, ?string $note): Rat
  */
 describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     test('mappa value e note per ogni riga gia caricata', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
-        $host->setRelation('ratingMorphs', new EloquentCollection([
-            formDataPivot(1, 5, null),
-            formDataPivot(2, null, null),
-        ]));
+        $host = hostWithMorphRows([[1, 5, null], [2, null, null]]);
 
         $data = $host->hydrateRatingsFormData(['dal' => 'x']);
 
@@ -82,11 +88,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('rimappa value null + note valorizzata sulla chiave "other" (altro)', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
-        $host->setRelation('ratingMorphs', new EloquentCollection([
-            formDataPivot(3, null, 'motivo libero'),
-        ]));
+        $host = hostWithMorphRows([[3, null, 'motivo libero']]);
 
         $data = $host->hydrateRatingsFormData([]);
 
@@ -96,11 +98,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('non rimappa se value e un numero reale, anche zero', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
-        $host->setRelation('ratingMorphs', new EloquentCollection([
-            formDataPivot(4, 0, 'commento'),
-        ]));
+        $host = hostWithMorphRows([[4, 0, 'commento']]);
 
         $data = $host->hydrateRatingsFormData([]);
 

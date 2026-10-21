@@ -1,5 +1,4 @@
 ---
-<<<<<<< .merge_file_WBienD
 title: "Rating — Setup Guide"
 type: note
 module: Rating
@@ -8,7 +7,7 @@ tags:
   - rating
   - setup
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-07
 qmd: "rating setup provider config migrate seed test"
 related:
   - README.md
@@ -47,7 +46,7 @@ connessione standard, mentre le concrete in altri moduli sono su connessioni ded
 
 ## 3. Migrazioni
 
-Miglrazioni attive in `database/migrations/`:
+Migrazioni attive in `database/migrations/`:
 
 | File | Oggetto |
 |------|---------|
@@ -97,107 +96,46 @@ Nota di progetto: sull'host `10.100.200.15` non si lanciano test (dati sacri).
 `app/Filament/Pages/Dashboard.php`, `app/Filament/Blocks/Rating.php` e
 `app/Filament/Widgets/StatsOverview.php` compongono la vista dashboard del modulo; la traduzione
 dell'etichetta dashboard e' in `lang/it/admin_panel_provider.php`.
-=======
-title: "Rating — BMAD Setup Guide"
-description: "Setup e configurazione BMAD per il modulo Rating"
-module: "Rating"
-alias: "rating"
-documentation_date: "2026-09-29"
-bmad_version: "6.2.0"
----
 
-# Rating — BMAD Setup Guide
+## 8. Dipendenze runtime
 
-## Scopo
+`spatie/laravel-schemaless-attributes` e PHP `^8.3` (`composer.json`). Verificare che la colonna JSON degli attributi sia valorizzata sulle tabelle host.
 
-Rendere ripetibile e verificabile l'uso del BMAD Method per il modulo Rating.
+## 9. Regole del modulo
 
-## Passi di Setup
+Buone pratiche:
 
-```bash
-# 1. Dipendenze (da laravel/)
-composer install
+- Documentare prima di implementare (PRD prima del codice).
+- Estendere XotBase: modelli da `BaseModel`, pivot da `BaseMorphPivot`, resource da `Base*Resource`, mai Filament diretto.
+- Actions e non Services: logica in `app/Actions/` con `execute()`.
+- PHPStan al livello massimo, nessun `ignoreErrors`, `phpstan.neon` non si modifica.
+- Traduzioni da file, mai label hardcoded; array PHP con una chiave per riga.
+- Tipizzare su `RatingContract` e `HasRatingContract`, mai su `BaseRating`.
 
-# 2. Variabili d'ambiente
-cp .env.example .env
-php artisan key:generate
+Da evitare:
 
-# 3. Attributi schemaless (rating, percentuali, attributi liberi)
-#    pacchetto: spatie/laravel-schemaless-attributes
-#    verificare che la colonna JSON sia valorizzata sulle tabelle host
+- Usare `''` come sentinella per «altro» (collassa a `null`, la nota non diventa obbligatoria).
+- Usare `RuleEnum` sulla Select con figli (usare `Rule::in`).
+- Duplicare fill e save del pivot negli host (esiste `HasRatingsTrait`).
+- Creare Services.
 
-# 4. Provider (da composer.json extra.laravel.providers)
-#    Modules\Rating\Providers\RatingServiceProvider
-#    Modules\Rating\Providers\RouteServiceProvider
-#    Modules\Rating\Providers\Filament\AdminPanelProvider
+## 10. False friends
 
-# 5. Cache e asset
-composer clear
-composer fix-storage
-```
-
-Dipendenze runtime: `spatie/laravel-schemaless-attributes`, PHP `^8.3`.
-
-> **Dati sacri**: mai `migrate:fresh`, mai `--force`, mai `RefreshDatabase`.
-> Solo migrate additivi. Su host `10.100.200.15` non si lanciano test Pest.
-
-## Cosa è "BMAD" qui (Business Logic)
-
-In questo modulo, BMAD serve a:
-- **Garantire correttezza del pivot**: `value` + `note` sono l'unico contratto tra Rating e host
-- **Supportare il code review**: la semantica di «altro» (chiave `'other'`, nota obbligatoria)
-  è una decisione, va documentata e non reinventata per host
-- **Abilitare il debug**: `BettableAggregate` dice in che stato è un host (`to_predict`, `to_rating`)
-- **Governare l'evoluzione**: gli host non duplicano il form, usano `HasRatingsTrait`
-
-## Best Practices (Pratiche Giuste)
-
-- Documentare prima di implementare: PRD prima di codice
-- Estendere XotBase: modelli da `BaseModel`, pivot da `BaseMorphPivot`
-- Estendere le `Base*Resource`, mai Filament diretto
-- Actions, non Services: logica in `Actions/` con `execute()`
-- PHPStan Level max: nessun `ignoreErrors`
-- Traduzioni dai file: mai label hardcoded
-- Array PHP: una chiave per riga
-- Tipizzare su `RatingContract` / `HasRatingContract`, mai su `BaseRating`
-
-## Bad Practices (Pratiche Sbagliate — Mai Fare)
-
-- Mai estendere Filament direttamente
-- Mai silenziare PHPStan
-- Mai hardcode label
-- Mai creare Services
-- Mai modificare `phpstan.neon`
-- Mai usare `''` come sentinella per «altro»: collassa a `null` e rompe la nota obbligatoria
-- Mai usare `RuleEnum` sulla Select con figli
-- Mai duplicare fill/save del pivot negli host: esiste `HasRatingsTrait`
-
-## False Friends (Falsi Amici)
-
-| Termine | Sembra Significare | In Realtà Significa |
+| Termine | Sembra | In realta |
 |---|---|---|
-| **Rating** | Valutazione | Definizione di un insieme di opzioni (con i suoi figli) |
-| **RatingMorph** | Relazione | Pivot con `value` + `note` tra rating e host |
-| **RuleEnum** | Enum qualunque | Enum di **regole di validazione** (stringhe di Laravel), non di opzioni |
-| **BaseRating / BaseRatingMorph** | Classi base | Basi riusabili dai moduli host |
-| **HasRating / HasRatingsTrait** | Due trait simili | Il primo espone il rating, il secondo gestisce il form pivot |
-| **Service** | Servizio generico | **Vietato** in Xot — usare `Actions` |
+| Rating | una valutazione | la definizione di un insieme di opzioni, con i suoi figli |
+| RatingMorph | una relazione | il pivot con `value` e `note` tra rating e host |
+| RuleEnum | enum di opzioni | enum di regole di validazione Laravel |
+| BaseRating, BaseRatingMorph | classi base generiche | basi riusabili dai moduli host |
+| HasRating, HasRatingsTrait | due trait simili | il primo espone il rating, il secondo gestisce il form pivot |
+| Service | servizio generico | vietato in Xot, si usano le Actions |
 
-## Struttura Directory (Canonical)
+## 11. Struttura directory
 
-- **`app/Actions/`**: `GetCountByModelRatingIdAction`, `GetSumByModelRatingIdAction`,
-  `GetRatingOptsByModelAction`, `HasRating/`
-- **`app/Models/`**: `BaseRating`, `BaseRatingMorph`, `Rating`, `RatingMorph`,
-  `AbstractRatingsHost`, `Like` + `Contracts/` + `Traits/`
-- **`app/Aggregates/BettableAggregate/`**: stati `to_predict`, `to_rating`
-- **`app/Enums/`**: `RuleEnum`, `SupportedLocale`
-- **`app/Filament/`**: `RatingResource`, `RatingMorphResource`, `Base*Resource`,
-  `HasRatingResource`, `StatsOverview`, `Blocks/`, `Sections/`, `Concerns/`
-- **`database/migrations/`**: `ratings`, `rating_morph` (con `percentage`) — schema incrementale
-- **`lang/it/`**: chiavi di traduzione
-- **`docs/bmad/`**: questa documentazione
-
----
-
-*Rating · BMAD Setup Guide · data 2026-09-29*
->>>>>>> .merge_file_rTyJ0w
+- `app/Actions/`: `HasRating/` e le action di conteggio, somma e opzioni.
+- `app/Models/`: basi e concrete, `Contracts/`, `Traits/`.
+- `app/Enums/`: `RuleEnum`, `SupportedLocale`.
+- `app/Filament/`: resource, `Forms/`, `Concerns/`, `Tables/`, `Blocks/`, `Widgets/`, `RelationManagers/`.
+- `database/migrations/`: `ratings` e `rating_morph` (con `percentage`), schema incrementale.
+- `lang/it/`: chiavi di traduzione.
+- `docs/bmad/`: questa documentazione.

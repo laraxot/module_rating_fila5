@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Dove mettere le colonne XLS dei rating (catalogo)"
 type: architecture
 module: Rating

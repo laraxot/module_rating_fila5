@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "rating select altro"
+issues: []
+discussions: []
 title: "Epic — Select + Textarea value/note"
 type: epic
 module: Rating
