@@ -11,6 +11,10 @@ related:
   - "./best-practices.md"
   - "./architecture.md"
   - "./troubleshooting.md"
+<<<<<<< .merge_file_ppTWJD
+=======
+status: draft
+>>>>>>> .merge_file_TaNFcH
 ---
 
 # Architectural Patterns – Rating

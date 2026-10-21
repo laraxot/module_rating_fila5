@@ -13,6 +13,7 @@ issues:
 related:
   - ../../redundancy-report.md
   - ../../../docs/redundancy-report.md
+status: draft
 ---
 
 # Tabelle Filament e migration `ratings`

@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "license"
 issues: []
 discussions: []
+<<<<<<< .merge_file_SPC7kZ
+=======
+status: draft
+>>>>>>> .merge_file_gYLj6Z
 ---
 
 The MIT License (MIT)

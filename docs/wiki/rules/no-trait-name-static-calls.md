@@ -10,8 +10,8 @@ created: 2026-09-23
 updated: 2026-09-23
 qmd: "HasRatingsTrait::static anti-pattern RatingData Spatie Data"
 related:
-  - ../architecture/rating-entity-helpers-home-in-ratingdata.md
-  - ../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
+  - ../../bmad/architecture/rating-entity-helpers-home-in-ratingdata.md
+  - ../../bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
   - ../../../../../../bashscripts/ai/wiki/memories/improve-migliorabile-bugs-always-bmad.md
 ---
 

@@ -5,6 +5,10 @@ tags: [agents, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "AGENTS"
+<<<<<<< .merge_file_wb38w3
+=======
+status: draft
+>>>>>>> .merge_file_5XCn0S
 ---
 
 # Rating Module LLM Wiki Agent Instructions

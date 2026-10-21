@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "rating table component"
 issues: []
 discussions: []
+<<<<<<< .merge_file_r0crew
+=======
+status: draft
+>>>>>>> .merge_file_qu3ZNY
 ---
 
 # Componente Blade riutilizzabile per tabella rating

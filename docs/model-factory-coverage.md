@@ -7,6 +7,7 @@ tags: [rating, models, factory, migration, seeder, pivot, coverage]
 created: 2026-07-24
 updated: 2026-07-24
 qmd: "Rating models migration seeder factory coverage pivot morph audit"
+status: draft
 ---
 
 # Rating — copertura Model → Migration / Seeder / Factory

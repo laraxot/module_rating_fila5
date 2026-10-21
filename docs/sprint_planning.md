@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "sprint planning"
 issues: []
 discussions: []
+<<<<<<< .merge_file_qGmeIo
+=======
+status: draft
+>>>>>>> .merge_file_w0qGIz
 ---
 
 # Rating Module - Sprint Planning
@@ -16,6 +20,7 @@ discussions: []
 **Version:** 1.0.0
 
 ---
+<<<<<<< .merge_file_qGmeIo
 
 title: "sprint planning"
 type: note
@@ -25,6 +30,8 @@ updated: 2026-09-26
 qmd: "sprint planning"
 issues: []
 discussions: []
+=======
+>>>>>>> .merge_file_w0qGIz
 ## Sprint Goal
 
 Implement core rating and review system with moderation capabilities.

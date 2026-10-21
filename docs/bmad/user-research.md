@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "user research"
 related:
   - "./00-INDEX.md"
+status: draft
 ---
 
 # User Research: Rating Module

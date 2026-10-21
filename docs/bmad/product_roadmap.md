@@ -1,3 +1,11 @@
+---
+title: "Rating Module - Product Roadmap"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module - product roadmap rating"
+---
 # Rating Module - Product Roadmap
 
 **Module:** Rating  

@@ -1,3 +1,11 @@
+---
+title: "Report: Metodi con nome duplicato nei moduli e nei temi"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "report: metodi con nome duplicato nei moduli e nei temi rating"
+---
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione

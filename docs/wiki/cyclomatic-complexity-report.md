@@ -7,6 +7,10 @@ updated: 2026-07-14
 qmd: "cyclomatic complexity report"
 related:
   - "./data-models.md"
+<<<<<<< .merge_file_5G5vl1
+=======
+status: draft
+>>>>>>> .merge_file_ljMJDv
 ---
 
 # Cyclomatic Complexity Report - Module: Rating

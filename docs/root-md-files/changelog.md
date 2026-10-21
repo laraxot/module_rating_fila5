@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_GXaZrw
+=======
+---
+title: "Changelog"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, rating, root-md-files]
+qmd: "changelog rating"
+---
+>>>>>>> .merge_file_SAynwm
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.

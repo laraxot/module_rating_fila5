@@ -9,6 +9,10 @@ updated: 2026-09-23
 qmd: "rating wiki agents pointer AGENTS canonical"
 related:
   - ./AGENTS.md
+<<<<<<< .merge_file_YSF5c8
+=======
+status: stub
+>>>>>>> .merge_file_zW2gwl
 ---
 
 # Pointer — canonical agent instructions

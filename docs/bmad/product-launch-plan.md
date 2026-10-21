@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "product launch plan"
 related:
   - "./product-requirements.md"
+status: draft
 ---
 
 # Rating - Product Launch Plan

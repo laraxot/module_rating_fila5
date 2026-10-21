@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "product launch plan"
 issues: []
 discussions: []
+<<<<<<< .merge_file_36bUFB
+=======
+status: draft
+>>>>>>> .merge_file_9msZ0U
 ---
 
 # Rating Module - Product Launch Plan
@@ -17,6 +21,7 @@ discussions: []
 **Owner:** Product Team
 
 ---
+<<<<<<< .merge_file_36bUFB
 
 title: "product launch plan"
 type: note
@@ -26,6 +31,8 @@ updated: 2026-09-26
 qmd: "product launch plan"
 issues: []
 discussions: []
+=======
+>>>>>>> .merge_file_9msZ0U
 ## Launch Objectives
 
 1. **Product:** Deploy rating and review system

@@ -12,6 +12,7 @@ qmd: "rating setup provider config migrate seed test"
 related:
   - README.md
   - quick-reference.md
+status: draft
 ---
 
 # Rating — Setup Guide

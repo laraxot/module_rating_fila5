@@ -4,6 +4,12 @@ module: Rating
 type: quality-gate
 status: complete
 created: 2026-08-02
+<<<<<<< .merge_file_QH3pmG
+=======
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "phpstan level 10 compliance   rating module rating"
+>>>>>>> .merge_file_OFyRiT
 ---
 
 # PHPStan Level 10 Compliance — Rating Module
@@ -68,7 +74,11 @@ phpstan analyse app --level=10
 
 ## Related Docs
 
+<<<<<<< .merge_file_QH3pmG
 - [`phpstan-l10-compliance.md`](../../../docs/wiki/rules/phpstan-l10-compliance.md)
+=======
+- [`phpstan-l10-compliance.md`](../../../../../docs/wiki/rules/phpstan-l10-compliance.md)
+>>>>>>> .merge_file_OFyRiT
 - [GitHub Repo](https://github.com/laraxot/module_rating_fila5)
 
 **Status:** ✅ Compliant (2026-08-02)
@@ -77,4 +87,8 @@ phpstan analyse app --level=10
 
 `@property-read` su un trait che dichiara una relazione (`ratings()`) deve dire il tipo **caricato**
 (`EloquentCollection<int, BaseRating> $ratings`), non quello della relazione. Dettaglio e caso reale:
+<<<<<<< .merge_file_QH3pmG
 `bmad/stories/rating-phpstan-l10-swarm-2026-10-06.story.md` (sezione Run 4).
+=======
+`bmad/stories/rating-phpstan-l10-swarm.story.md` (sezione Run 4).
+>>>>>>> .merge_file_OFyRiT

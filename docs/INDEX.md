@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "INDEX"
 issues: []
 discussions: []
+<<<<<<< .merge_file_VYIoes
 ---
 
 # Rating Module — Documentation Index
@@ -26,6 +27,21 @@ updated: 2026-09-26
 qmd: "INDEX"
 issues: []
 discussions: []
+=======
+status: stale
+---
+
+> Nota 2026-10-14 (docs-audit): Statistiche ferme a luglio ('151 files | 18 categories'): oggi la cartella ha 588 file .md. Indice canonico: 00-INDEX.md (aggiornato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+
+# Rating Module — Documentation Index
+
+**Last updated:** 2026-07-28  
+**Stats:** 151 files | 18 categories | 16+ indexed resources
+
+This module's docs are organized under `laravel/Modules/Rating/docs/`.
+
+---
+>>>>>>> .merge_file_wUCHKC
 ## ⚠️ Architectural Rules
 
 - **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.

@@ -3,6 +3,12 @@ title: "Rating Module"
 type: documentation
 module: Rating
 updated: 2026-09-16
+<<<<<<< .merge_file_oOw2Gj
+=======
+status: draft
+tags: [docs, rating, bmad]
+qmd: "rating module rating"
+>>>>>>> .merge_file_DoZ41b
 ---
 
 # Rating Module
@@ -14,15 +20,25 @@ Sistema di criteri di valutazione polimorfici (`ratings` / `rating_morph`) usato
 
 | Area | Path |
 |------|------|
+<<<<<<< .merge_file_oOw2Gj
 | **BMAD attivo** (Select «altro» + note) | [bmad/README.md](bmad/README.md) |
 | Architecture / index generici | [architecture.md](architecture.md) · [index.md](index.md) |
 | Design Select+Textarea | [stories/rating-altro-option-conditional-textarea-design.story.md](stories/rating-altro-option-conditional-textarea-design.story.md) |
+=======
+| **BMAD attivo** (Select «altro» + note) | [bmad/README.md](README.md) |
+| Architecture / index generici | [architecture.md](architecture.md) · [index.md](index.md) |
+| Design Select+Textarea | [stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
+>>>>>>> .merge_file_DoZ41b
 | Criteri a scelta | [criteri-a-scelta-multipla.md](criteri-a-scelta-multipla.md) |
 
 ## Canon UI (2026-09-16) — una riga
 
 Con figli: **Select + Textarea** sempre; option «altro» = `''`; placeholder = `null`;
+<<<<<<< .merge_file_oOw2Gj
 `note` required solo se `selectIsOther === ''`. Dettaglio: [bmad/](bmad/README.md).
+=======
+`note` required solo se `selectIsOther === ''`. Dettaglio: [bmad/](README.md).
+>>>>>>> .merge_file_DoZ41b
 
 ## GitHub (pack attuale)
 
@@ -45,22 +61,35 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 
 ### Entry point e struttura
 
+<<<<<<< .merge_file_oOw2Gj
 - Modulo o tema: [../README.md](../README.md) (vetrina), [../../Xot/docs/README.md](../../Xot/docs/README.md) (docs del modulo base Xot)
+=======
+- Modulo o tema: [../README.md](../README.md) (vetrina), [../../Xot/docs/README.md](../../../Xot/docs/README.md) (docs del modulo base Xot)
+>>>>>>> .merge_file_DoZ41b
 - [INDEX.md](./INDEX.md): indice gia' presente
 - [purpose.md](./purpose.md): scopo (esiste anche l'equivalente italiano/inglese, possibile duplicato)
 - [scopo.md](./scopo.md): scopo (esiste anche l'equivalente italiano/inglese, possibile duplicato)
 - Architettura: [architecture.md](./architecture.md)
 - Architettura: [architecture-rules.md](./architecture-rules.md)
+<<<<<<< .merge_file_oOw2Gj
 - Architettura BMAD: [bmad/architecture.md](./bmad/architecture.md)
 - [bmad/README.md](./bmad/README.md)
 - [wiki/index.md](./wiki/index.md)
 - [wiki/README.md](./wiki/README.md)
 - Story BMAD (posizione canonica): [bmad/stories/](./bmad/stories/) (84 file)
+=======
+- Architettura BMAD: [bmad/architecture.md](architecture.md)
+- [bmad/README.md](README.md)
+- [wiki/index.md](../wiki/index.md)
+- [wiki/README.md](../wiki/README.md)
+- Story BMAD (posizione canonica): [bmad/stories/](stories/) (84 file)
+>>>>>>> .merge_file_DoZ41b
 
 ### Sottocartelle
 
 | Cartella | File .md (ricorsivo) | Entry point | Nota |
 | --- | --- | --- | --- |
+<<<<<<< .merge_file_oOw2Gj
 | [bmad/](./bmad/) | 245 | [README.md](./bmad/README.md), [INDEX.md](./bmad/INDEX.md), [index.md](./bmad/index.md) |  |
 | [concepts/](./concepts/) | 1 | nessuno |  |
 | [headroom/](./headroom/) | 1 | [README.md](./headroom/README.md) |  |
@@ -74,6 +103,21 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 | [stories/](./stories/) | 64 | nessuno | legacy: la posizione canonica e' `bmad/stories/` |
 | [wiki/](./wiki/) | 44 | [README.md](./wiki/README.md), [INDEX.md](./wiki/INDEX.md), [index.md](./wiki/index.md) |  |
 | [workflows/](./workflows/) | 1 | nessuno |  |
+=======
+| [bmad/](./) | 245 | [README.md](README.md), [INDEX.md](INDEX.md), [index.md](index.md) |  |
+| [concepts/](./concepts/) | 1 | nessuno |  |
+| [headroom/](../headroom/) | 1 | [README.md](../headroom/README.md) |  |
+| [llm-wiki/](../llm-wiki/) | 6 | [index.md](../llm-wiki/index.md) |  |
+| [logs/](../logs/) | 0 | nessuno |  |
+| [prompts/](../prompts/) | 2 | nessuno |  |
+| [raw/](../raw/) | 8 | [README.md](../raw/README.md), [index.md](../raw/index.md) | materiale grezzo |
+| [roadmap/](./roadmap/) | 7 | [README.md](./roadmap/readme.md) |  |
+| [schema/](../schema/) | 0 | nessuno |  |
+| [screenshots/](../screenshots/) | 0 | nessuno |  |
+| [stories/](./stories/) | 64 | nessuno | legacy: la posizione canonica e' `bmad/stories/` |
+| [wiki/](../wiki/) | 44 | [README.md](../wiki/README.md), [INDEX.md](../wiki/INDEX.md), [index.md](../wiki/index.md) |  |
+| [workflows/](../workflows/) | 1 | nessuno |  |
+>>>>>>> .merge_file_DoZ41b
 
 ### Sovrapposizioni rilevate (nessuna azione eseguita)
 
@@ -91,7 +135,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 - [codex-error-fix.md](./codex-error-fix.md) [orfano]
 - [confidence-guidelines.md](./confidence-guidelines.md): Massimizzare il livello di confidenza [orfano] [dup]
 - [confidence_guidelines.md](./confidence_guidelines.md): Massimizzare il livello di confidenza [orfano] [dup]
+<<<<<<< .merge_file_oOw2Gj
 - [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md) [orfano]
+=======
+- [copilot-redundancy-audit-2026-05-25.md](../copilot-redundancy-audit.md) [orfano]
+>>>>>>> .merge_file_DoZ41b
 - [copilot-redundancy-audit.md](./copilot-redundancy-audit.md): Copilot Redundancy Audit [orfano]
 - [no-ai-tool-scaffold-dirs.md](./no-ai-tool-scaffold-dirs.md): No AI/tool scaffold directories in module tree [orfano]
 - [ponytail-audit-over-engineering.md](./ponytail-audit-over-engineering.md): Ponytail audit — Rating (over-engineering)
@@ -104,8 +152,13 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 - [BEST_PRACTICES.md](./BEST_PRACTICES.md): Best Practices – Rating [dup]
 - [FALSE_FRIENDS.md](./FALSE_FRIENDS.md): False Friends – Rating [orfano] [dup]
 - [METODI_DUPLICATI_ANALISI.md](./METODI_DUPLICATI_ANALISI.md) [orfano] [dup]
+<<<<<<< .merge_file_oOw2Gj
 - [PHPSTAN_L10.md](./PHPSTAN_L10.md): PHPStan Level 10 Compliance — Rating Module [orfano]
 - [QUALITY_REPORT.md](./QUALITY_REPORT.md): Quality Report — Rating [orfano]
+=======
+- [PHPSTAN_L10.md](../PHPSTAN_L10.md): PHPStan Level 10 Compliance — Rating Module [orfano]
+- [QUALITY_REPORT.md](../QUALITY_REPORT.md): Quality Report — Rating [orfano]
+>>>>>>> .merge_file_DoZ41b
 - [REDUNDANCY_ANALYSIS.md](./REDUNDANCY_ANALYSIS.md) [orfano] [dup]
 - [bad-practices.md](./bad-practices.md): Bad Practices – Rating [orfano] [dup]
 - [bad_practices.md](./bad_practices.md): Bad Practices – Rating [orfano] [dup]
@@ -129,7 +182,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 - [metodi_duplicati_analisi.md](./metodi_duplicati_analisi.md) [orfano] [dup]
 - [model-factory-coverage.md](./model-factory-coverage.md): Rating — copertura model / migration / seeder / factory [orfano]
 - [phpstan-errors-roadmap.md](./phpstan-errors-roadmap.md): PHPStan Level 10 Errors Roadmap - Modulo Rating [orfano]
+<<<<<<< .merge_file_oOw2Gj
 - [phpstan-fixes-2026-01.md](./phpstan-fixes-2026-01.md): PHPStan Fixes - Modulo Rating [orfano] [dup]
+=======
+- phpstan-fixes-2026-01.md _(riferimento non presente nel repository, verificato 2026-10-14)_: PHPStan Fixes - Modulo Rating [orfano] [dup]
+>>>>>>> .merge_file_DoZ41b
 - [phpstan-fixes-2026.md](./phpstan-fixes-2026.md): phpstan fixes 2026 01 [orfano]
 - [phpstan-fixes-analysis.md](./phpstan-fixes-analysis.md) [orfano]
 - [phpstan-fixes.md](./phpstan-fixes.md): PHPStan Fixes - Modulo Rating [dup]
@@ -138,7 +195,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 - [phpstan-swarm.md](./phpstan-swarm.md): phpstan swarm 2026 [orfano]
 - [quality-audit.md](./quality-audit.md): Audit di qualita: modulo Rating
 - [redundancy-analysis.md](./redundancy-analysis.md) [orfano] [dup]
+<<<<<<< .merge_file_oOw2Gj
 - [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
+=======
+- [redundancy-audit-2026-05-21.md](../redundancy-audit-rating.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
+>>>>>>> .merge_file_DoZ41b
 - [redundancy-audit.md](./redundancy-audit.md): Rating redundancy audit 2026-05-21 [orfano] [dup]
 - [redundancy-report.md](./redundancy-report.md): Redundancy Report — Modulo Rating
 - [redundancy_analysis.md](./redundancy_analysis.md) [orfano] [dup]
@@ -164,7 +225,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 #### Architettura e pattern (11)
 
 - [ON-DEMAND-PATTERN.md](./ON-DEMAND-PATTERN.md): On-Demand Pattern — Module Rating [dup]
+<<<<<<< .merge_file_oOw2Gj
 - [PATTERNS.md](./PATTERNS.md): Architectural Patterns – Rating
+=======
+- [PATTERNS.md](./patterns.md): Architectural Patterns – Rating
+>>>>>>> .merge_file_DoZ41b
 - [PROJECT-STRUCTURE.md](./PROJECT-STRUCTURE.md): Project Structure — Module Rating [orfano] [dup]
 - [architecture-rules.md](./architecture-rules.md): Architectural Rules & Guidelines [orfano]
 - [architecture.md](./architecture.md): Rating Architecture
@@ -222,7 +287,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 
 #### Configurazione, permessi e confini (4)
 
+<<<<<<< .merge_file_oOw2Gj
 - [FRAMEWORKS.md](./FRAMEWORKS.md): Rating — Framework Integration Notes [orfano]
+=======
+- [FRAMEWORKS.md](./frameworks.md): Rating — Framework Integration Notes [orfano]
+>>>>>>> .merge_file_DoZ41b
 - [binary-assets.md](./binary-assets.md): Asset binari [orfano]
 - [configuration.md](./configuration.md): Rating Module Configuration [orfano]
 - [laravel-13-upgrade.md](./laravel-13-upgrade.md): Upgrade Laravel 13 - Rating 🐄✨ [orfano]
@@ -251,7 +320,11 @@ Sezione generata: raggruppamento euristico per nome e titolo, nessun file e' sta
 
 ### Sospetti duplicati (richiedono approvazione per il consolidamento)
 
+<<<<<<< .merge_file_oOw2Gj
 Nessun file e' stato toccato. Proposte di destinazione nella story [swarm-phpstan-modular-docs-org](../../Xot/docs/bmad/stories/swarm-phpstan-modular-docs-org.story.md).
+=======
+Nessun file e' stato toccato. Proposte di destinazione nella story [swarm-phpstan-modular-docs-org](../../../Xot/docs/bmad/stories/swarm-phpstan-modular-docs-org.story.md).
+>>>>>>> .merge_file_DoZ41b
 
 - contenuto identico: [BAD_PRACTICES.md](./BAD_PRACTICES.md), [bad-practices.md](./bad-practices.md)
 - contenuto identico: [FALSE_FRIENDS.md](./FALSE_FRIENDS.md), [false-friends.md](./false-friends.md)
@@ -283,11 +356,20 @@ Nessun file e' stato toccato. Proposte di destinazione nella story [swarm-phpsta
 - stesso titolo: [USER_RESEARCH.md](./USER_RESEARCH.md), [user_research.md](./user_research.md)
 - stesso titolo: [duplicate-methods-report.md](./duplicate-methods-report.md), [duplicate_methods_report.md](./duplicate_methods_report.md)
 - stesso titolo: [duplicate-methods.md](./duplicate-methods.md), [duplicate_methods.md](./duplicate_methods.md)
+<<<<<<< .merge_file_oOw2Gj
 - stesso titolo: [phpstan-fixes-2026-01.md](./phpstan-fixes-2026-01.md), [phpstan-fixes.md](./phpstan-fixes.md)
 - stesso titolo: [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md), [redundancy-audit.md](./redundancy-audit.md)
 
 ### Senza front matter (28)
 
 [CHANGELOG.md](./CHANGELOG.md), [FRAMEWORKS.md](./FRAMEWORKS.md), [INDEX.md](./INDEX.md), [bad_practices.md](./bad_practices.md), [best_practices.md](./best_practices.md), [binary-assets.md](./binary-assets.md), [code-quality-report.md](./code-quality-report.md), [confidence_guidelines.md](./confidence_guidelines.md), [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md), [criteri-a-scelta-multipla.md](./criteri-a-scelta-multipla.md), [duplicate_methods.md](./duplicate_methods.md), [duplicate_methods_report.md](./duplicate_methods_report.md), [false_friends.md](./false_friends.md), [license.md](./license.md), [metodi-duplicati-analisi.md](./metodi-duplicati-analisi.md), [phpstan-fixes-2026-01.md](./phpstan-fixes-2026-01.md), [phpstan-swarm-2026.md](./phpstan-swarm-2026.md), [product_launch_plan.md](./product_launch_plan.md), [product_roadmap.md](./product_roadmap.md), [product_strategy.md](./product_strategy.md), [roadmap-miglioramenti.md](./roadmap-miglioramenti.md), [schemaless-attributes-errors.md](./schemaless-attributes-errors.md), [schemaless-attributes.md](./schemaless-attributes.md), [select-nelle-valutazioni-analisi.md](./select-nelle-valutazioni-analisi.md), [sprint_planning.md](./sprint_planning.md), [tipo-di-campo-del-criterio.md](./tipo-di-campo-del-criterio.md), [tipo-di-risposta-del-criterio-analisi.md](./tipo-di-risposta-del-criterio-analisi.md), [user_research.md](./user_research.md)
+=======
+- stesso titolo: phpstan-fixes-2026-01.md _(riferimento non presente nel repository, verificato 2026-10-14)_, [phpstan-fixes.md](./phpstan-fixes.md)
+- stesso titolo: [redundancy-audit-2026-05-21.md](../redundancy-audit-rating.md), [redundancy-audit.md](./redundancy-audit.md)
+
+### Senza front matter (28)
+
+[CHANGELOG.md](./CHANGELOG.md), [FRAMEWORKS.md](./frameworks.md), [INDEX.md](./INDEX.md), [bad_practices.md](./bad_practices.md), [best_practices.md](./best_practices.md), [binary-assets.md](./binary-assets.md), [code-quality-report.md](./code-quality-report.md), [confidence_guidelines.md](./confidence_guidelines.md), [copilot-redundancy-audit-2026-05-25.md](../copilot-redundancy-audit.md), [criteri-a-scelta-multipla.md](./criteri-a-scelta-multipla.md), [duplicate_methods.md](./duplicate_methods.md), [duplicate_methods_report.md](./duplicate_methods_report.md), [false_friends.md](./false_friends.md), [license.md](./license.md), [metodi-duplicati-analisi.md](./metodi-duplicati-analisi.md), phpstan-fixes-2026-01.md _(riferimento non presente nel repository, verificato 2026-10-14)_, [phpstan-swarm-2026.md](./phpstan-swarm-2026.md), [product_launch_plan.md](./product_launch_plan.md), [product_roadmap.md](./product_roadmap.md), [product_strategy.md](./product_strategy.md), [roadmap-miglioramenti.md](./roadmap-miglioramenti.md), [schemaless-attributes-errors.md](./schemaless-attributes-errors.md), [schemaless-attributes.md](./schemaless-attributes.md), [select-nelle-valutazioni-analisi.md](./select-nelle-valutazioni-analisi.md), [sprint_planning.md](./sprint_planning.md), [tipo-di-campo-del-criterio.md](./tipo-di-campo-del-criterio.md), [tipo-di-risposta-del-criterio-analisi.md](./tipo-di-risposta-del-criterio-analisi.md), [user_research.md](./user_research.md)
+>>>>>>> .merge_file_DoZ41b
 
 <!-- swarm-docs:index:end -->

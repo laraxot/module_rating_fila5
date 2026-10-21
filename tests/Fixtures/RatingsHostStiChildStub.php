@@ -15,6 +15,6 @@ class RatingsHostStiChildStub extends RatingsHostStub
 {
     public function getMorphClass(): string
     {
-        return (new RatingsHostStub)->getMorphClass();
+        return (new RatingsHostStub())->getMorphClass();
     }
 }

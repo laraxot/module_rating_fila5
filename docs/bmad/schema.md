@@ -2,6 +2,11 @@
 title: "Module Schema"
 module: "Rating"
 created: "2026-04-15T08:28:47Z"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "rating module schema rating"
 ---
 
 # Rating Module Schema

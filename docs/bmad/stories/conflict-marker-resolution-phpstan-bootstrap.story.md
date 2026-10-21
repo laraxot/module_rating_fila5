@@ -7,9 +7,11 @@ story_id: "conflict-marker-resolution-phpstan-bootstrap-2026-10-06"
 status: in_progress
 track: quality/phpstan
 related:
-  - swarm-cluster4-phpstan-rating-2026-10-06.story.md
-  - phpstan-post-sync-restore-2026-09-24.story.md
+  - swarm-cluster4-phpstan-rating.story.md
+  - phpstan-post-sync-restore.story.md
 qmd: "conflict marker HEAD laraxot/dev merge Bootstrap failed syntax error 16 files Rating BaseRating"
+updated: 2026-10-07
+tags: [docs, rating, bmad]
 ---
 
 # Conflict marker resolution — PHPStan bootstrap unblock (story 8.23)

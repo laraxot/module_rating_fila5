@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "devin session bmad gaps root cause.story"
 issues: []
 discussions: []
+<<<<<<< .merge_file_9SuLLO
+=======
+status: draft
+>>>>>>> .merge_file_2soJQs
 ---
 
 # Story — Perché Devin ha mancato story BMAD in questa sessione (root cause propria)

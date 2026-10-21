@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_n4TfRx
+=======
+---
+title: "Asset binari"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "asset binari rating"
+---
+>>>>>>> .merge_file_EonIcD
 # Asset binari
 
 Gli asset binari sono file normali del repository.
