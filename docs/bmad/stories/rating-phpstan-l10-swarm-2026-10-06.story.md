@@ -9,7 +9,7 @@ created: 2026-10-06
 updated: 2026-10-06
 qmd: "Rating PHPStan L10 type hints builder eloquent trans() cast generic"
 related:
-  - quality-gates-phpstan-swarm-2026-09-23.story.md
+  - quality-gates-phpstan-swarm.story.md
 github_issue: BMAD-only, no external issue
 ---
 
