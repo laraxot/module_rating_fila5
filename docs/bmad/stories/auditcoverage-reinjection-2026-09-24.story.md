@@ -12,7 +12,7 @@ story_id: "auditcoverage-reinjection-2026-09-24"
 status: done
 qmd: "AuditCoverage reiniettata merge laraxot dev staticMethod.notFound assertTrue AuditBridgeTest phpstan Rating"
 related:
-  - ../../../../Xot/docs/bmad/stories/phpstan-modules-2026-09-24.story.md
+  - ../../../../Xot/docs/bmad/stories/phpstan-modules-story-analyse-fix-fleet.story.md
   - ../../../../Xot/docs/wiki/concepts/tests-audit-coverage-forbidden.md
   - ../architecture/rating-data-export-methods.md
 ---

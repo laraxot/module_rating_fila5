@@ -88,7 +88,7 @@ phpstan analyse app --level=10
 `@property-read` su un trait che dichiara una relazione (`ratings()`) deve dire il tipo **caricato**
 (`EloquentCollection<int, BaseRating> $ratings`), non quello della relazione. Dettaglio e caso reale:
 <<<<<<< .merge_file_QH3pmG
-`bmad/stories/rating-phpstan-l10-swarm-2026-10-06.story.md` (sezione Run 4).
+`bmad/stories/rating-phpstan-l10-swarm-level-audit-module-errors.story.md` (sezione Run 4).
 =======
 `bmad/stories/rating-phpstan-l10-swarm.story.md` (sezione Run 4).
 >>>>>>> .merge_file_OFyRiT

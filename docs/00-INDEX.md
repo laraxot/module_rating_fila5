@@ -112,7 +112,7 @@ Aggiornata il 2026-10-07 dopo la risoluzione dei marker di merge nei docs (versi
 - [Setup guide](bmad/setup-guide.md)
 - Story: cartella [bmad/stories/](bmad/stories/).
 <<<<<<< .merge_file_7JxUBm
-- Cluster PHPStan L10 Rating e Xot: [cluster-3-rating-xot-phpstan-l10-2026-10-06.story.md](bmad/stories/cluster-3-rating-xot-phpstan-l10-2026-10-06.story.md).
+- Cluster PHPStan L10 Rating e Xot: [cluster-3-rating-xot-phpstan-l10-2026-10-06.story.md](bmad/stories/cluster-3-rating-xot-phpstan-l10-modules.story.md).
 
 ## 🔗 Riferimenti
 

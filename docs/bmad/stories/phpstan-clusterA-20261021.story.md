@@ -11,7 +11,7 @@ updated: 2026-10-21
 tags: [phpstan, cluster-a, swarm, quality, rating]
 qmd: "phpstan cluster a rating zero errori level max verifica 2026-10-21"
 related:
-  - ../../../../Xot/docs/bmad/stories/phpstan-modules-swarm-20261021.story.md
+  - ../../../../Xot/docs/bmad/stories/phpstan-modules-swarm.story.md
   - ./2026-10-21-phpstan-fix-rating.story.md
   - ../filament-blueprint.md
 ---
@@ -21,7 +21,7 @@ related:
 ## Contesto
 
 Cluster A dello swarm PHPStan (Rating, Activity, Media), coordinato da
-`Xot/docs/bmad/stories/phpstan-modules-swarm-20261021.story.md`. Ordine di
+`Xot/docs/bmad/stories/phpstan-modules-swarm.story.md`. Ordine di
 lavorazione del subagent: Activity, Media, Rating. Rating è la piattaforma
 dei contratti `RatingContract`, `BaseRating`, `BaseRatingMorph` e delle basi
 Filament (`BaseRatingForm`, `BaseRatingsTable`, `BaseListRatings`) estese dai

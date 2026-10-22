@@ -20,7 +20,7 @@ tags: [docs, rating, bmad]
 | Spec codice | [bmad/architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) |
 | Story 5.99 | [bmad/stories/5.99-select-altro-note-obbligatoria.story.md](stories/5.99-select-altro-note-obbligatoria.story.md) |
 | Story 5.141 D-8 | [bmad/stories/5.141-has-rating-values-filter-note.story.md](stories/5.141-has-rating-values-filter-note.story.md) |
-| PHPStan cluster A 2026-10-21 | [bmad/stories/phpstan-clusterA-20261021.story.md](stories/phpstan-clusterA-20261021.story.md) |
+| PHPStan cluster A 2026-10-21 | [bmad/stories/phpstan-clusterA-20261021.story.md](stories/phpstan-clusterA.story.md) |
 | Design | [stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
 
 ## Altri hub
