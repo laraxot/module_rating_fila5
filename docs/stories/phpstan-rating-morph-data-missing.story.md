@@ -25,7 +25,7 @@ Azzerare gli errori PHPStan guardando lo scopo. Perimetro: `variable.unused` a `
 
 `$missing` era una copia di quel controllo (la stessa closure usata davvero in `RatingData::updateColumns()`), mai letta fin dal primo commit del file (752ffcc). Nessuna logica persa: ogni colonna e' protetta da `addIfMissing()`.
 
-**Regressione da merge.** La story `docs/bmad/stories/rating-phpstan-l10-swarm-2026-10-06.story.md` dichiara la riga gia' rimossa; il merge 752ffcc (2026-10-07) l'ha riportata. Corretto di nuovo.
+**Regressione da merge.** La story `docs/bmad/stories/rating-phpstan-l10-swarm-level-audit-module-errors.story.md` dichiara la riga gia' rimossa; il merge 752ffcc (2026-10-07) l'ha riportata. Corretto di nuovo.
 
 ## Modifiche
 
