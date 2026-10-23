@@ -8,10 +8,7 @@ updated: "2026-05-26"
 related:
   - "../../Xot/docs/wiki/concepts/agent-confidence-discipline.md"
 issue: "https://github.com/provtv/<nome repository>/issues/152"
-<<<<<<< .merge_file_NghHC5
-=======
 qmd: "disciplina agenti per massimizzare la confidenza rating"
->>>>>>> .merge_file_bycrbu
 ---
 
 # Disciplina agenti per massimizzare la confidenza

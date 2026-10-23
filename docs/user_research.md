@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "user research"
 issues: []
 discussions: []
-<<<<<<< .merge_file_yvIpC5
-=======
 status: draft
->>>>>>> .merge_file_pPJN1b
 ---
 
 # Rating Module - User Research
@@ -21,7 +18,6 @@ status: draft
 **Owner:** Product Team
 
 ---
-<<<<<<< .merge_file_yvIpC5
 
 title: "user research"
 type: note
@@ -31,8 +27,6 @@ updated: 2026-09-26
 qmd: "user research"
 issues: []
 discussions: []
-=======
->>>>>>> .merge_file_pPJN1b
 ## Research Goals
 
 1. Understand rating behavior

@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-<<<<<<< .merge_file_idBEml
-=======
 status: draft
->>>>>>> .merge_file_KYONNL
 ---
 
 # Rating Module Roadmap
@@ -71,7 +68,6 @@ Provide a **flexible rating system** that supports:
 - Export capabilities
 
 ---
-<<<<<<< .merge_file_idBEml
 
 title: "README"
 type: note
@@ -81,5 +77,3 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
-=======
->>>>>>> .merge_file_KYONNL

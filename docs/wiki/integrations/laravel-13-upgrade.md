@@ -9,10 +9,7 @@ updated: 2026-07-14
 qmd: "laravel 13 upgrade"
 related:
   - "./launch-plan.md"
-<<<<<<< .merge_file_W2vcdh
-=======
 status: draft
->>>>>>> .merge_file_wacoBv
 ---
 
 # Upgrade Laravel 13 - Rating 🐄✨

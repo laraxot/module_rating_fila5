@@ -7,10 +7,7 @@ updated: 2026-07-14
 qmd: "case sensitivity rules"
 related:
   - "./changelog.md"
-<<<<<<< .merge_file_RWnv2x
-=======
 status: draft
->>>>>>> .merge_file_GREQ3V
 ---
 
 # Case Sensitivity Rules - Rating Module

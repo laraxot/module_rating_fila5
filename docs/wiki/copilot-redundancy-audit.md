@@ -7,10 +7,7 @@ updated: 2026-07-14
 qmd: "copilot redundancy audit"
 related:
   - "./core-functionality.md"
-<<<<<<< .merge_file_daxwth
-=======
 status: draft
->>>>>>> .merge_file_Syo6fo
 ---
 
 Copilot Redundancy Audit — 2026-05-25

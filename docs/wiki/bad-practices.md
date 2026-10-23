@@ -6,12 +6,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
-<<<<<<< .merge_file_NX6ggu
-  - "./BEST_PRACTICES.md"
-=======
-  - "./best_practices.md"
+  - "./best-practices.md"
 status: draft
->>>>>>> .merge_file_wMyZfO
 ---
 
 # Bad Practices – Rating

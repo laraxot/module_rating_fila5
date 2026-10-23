@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "rating table component reusable.story"
 issues: []
 discussions: []
-<<<<<<< .merge_file_n0TqcM
-=======
 status: draft
->>>>>>> .merge_file_kCMxpq
 ---
 
 # Story: rating-table-component-reusable

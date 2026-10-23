@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "INDEX GENERATED"
 issues: []
 discussions: []
-<<<<<<< .merge_file_Zp73qu
-=======
 status: draft
->>>>>>> .merge_file_1y2GVY
 ---
 
 # Rating Module Documentation Index
@@ -78,11 +75,6 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
-<<<<<<< .merge_file_Zp73qu
-- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit-2026-05-25.md)
-=======
-- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit.md)
->>>>>>> .merge_file_1y2GVY
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
 - [core-functionality.md](core-functionality.md)
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
@@ -118,11 +110,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [product-strategy.md](product-strategy.md)
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
-<<<<<<< .merge_file_Zp73qu
-- [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
-=======
-- [redundancy-audit-2026-05-21.md](redundancy-audit-rating.md)
->>>>>>> .merge_file_1y2GVY
+- [redundancy-audit-rating.md](redundancy-audit-rating.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
@@ -240,15 +228,9 @@ Machine learning and documentation knowledge base:
 
 Consolidated root-level markdown documentation:
 
-<<<<<<< .merge_file_Zp73qu
-- [changelog-1.md](root-md-files/changelog-1.md)
-- [changelog.md](root-md-files/changelog.md)
-- [license-1.md](root-md-files/license-1.md)
-=======
 - [changelog-1.md](raw/root-import/changelog-1.md)
 - [changelog.md](root-md-files/changelog.md)
 - [license-1.md](raw/root-import/license-1.md)
->>>>>>> .merge_file_1y2GVY
 - [license.md](root-md-files/license.md)
 
 ### Archive (3 files)
@@ -267,18 +249,6 @@ Additional archived content:
 - [license.md](archived/license.md)
 
 ---
-<<<<<<< .merge_file_Zp73qu
-
-title: "INDEX GENERATED"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "INDEX GENERATED"
-issues: []
-discussions: []
-=======
->>>>>>> .merge_file_1y2GVY
 ## Recently Updated
 
 **Last 20 files by modification date**

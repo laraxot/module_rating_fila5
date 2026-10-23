@@ -5,10 +5,7 @@ tags: [vision, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "vision"
-<<<<<<< .merge_file_hjoqvv
-=======
 status: draft
->>>>>>> .merge_file_qoIg2s
 ---
 
 # Visione del Modulo Rating
