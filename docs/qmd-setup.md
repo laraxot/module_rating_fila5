@@ -67,11 +67,7 @@ qmd search "form" -c rating  # Solo questo modulo
 ## Riferimenti
 
 - [Global QMD Config](../qmd.md) (root docs)
-<<<<<<< .merge_file_snoS5w
-- [Operational Discipline](../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
-=======
 - [Operational Discipline](../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
->>>>>>> .merge_file_2sKV0m
 - [On-Demand Pattern](./on-demand-pattern.md)
 
 ---

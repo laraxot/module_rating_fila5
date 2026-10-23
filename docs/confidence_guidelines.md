@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "confidence guidelines"
 issues: []
 discussions: []
-<<<<<<< .merge_file_iTolXh
-=======
 status: draft
->>>>>>> .merge_file_wuGX40
 ---
 
 # Massimizzare il livello di confidenza

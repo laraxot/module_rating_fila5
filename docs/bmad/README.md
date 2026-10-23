@@ -8,25 +8,19 @@ title: "BMAD Rating — Select altro / note"
 type: index
 module: Rating
 updated: 2026-09-16
-<<<<<<< .merge_file_POGrV2
-=======
 status: draft
->>>>>>> .merge_file_5GUu2s
 ---
 
 # BMAD — Rating Select «altro»
 
-<<<<<<< .merge_file_POGrV2
-=======
 ## Kit BMAD owner (canonico)
 
-- [BMAD Planning](../bmad-planning.md)
+- [BMAD Planning](./bmad-planning.md)
 - [BMAD Brainstorming](../bmad-brainstorming.md)
 - [Filament blueprint](./filament-blueprint.md)
 - [Project context](./project-context.md)
 - [Decision log](./decision-log.md)
 
->>>>>>> .merge_file_5GUu2s
 Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select + Textarea)**, note obbligatoria solo su «altro».
 
 ## Contratto rapido (canon 2026-09-16)
@@ -78,11 +72,7 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 | Story 5.149 confine Compila↔trait | [stories/5.149-compila-vs-trait-reusable-boundary.story.md](stories/5.149-compila-vs-trait-reusable-boundary.story.md) |
 | Story 5.151 validation UI | [stories/5.151-human-validation-attribute.story.md](stories/5.151-human-validation-attribute.story.md) |
 | Design SSoT | [../stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
-<<<<<<< .merge_file_POGrV2
-| Smoke IR | [../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md](../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md) |
-=======
 | Smoke IR | ../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md _(riferimento non presente nel repository, verificato 2026-10-14)_ |
->>>>>>> .merge_file_5GUu2s
 
 ## GitHub
 
@@ -105,24 +95,13 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 
 | File | Nota |
 |------|------|
-<<<<<<< .merge_file_POGrV2
-| [brainstorming/rating-other-option-note-required.md](brainstorming/rating-other-option-note-required.md) | Pointer EN obsoleto |
-| [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
-| [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
-| [../../../../docs/stories/5.109-…](../../../../docs/stories/5.109-rating-conditional-textarea-altro.md) | is_altro/migration → superseded |
-=======
 | brainstorming/rating-other-option-note-required.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Pointer EN obsoleto |
 | [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
 | [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
 | ../../../../docs/stories/5.109-… _(riferimento non presente nel repository, verificato 2026-10-14)_ | is_altro/migration → superseded |
->>>>>>> .merge_file_5GUu2s
 | [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146) — se citi "5.145" verifica su disco quale intendi |
 | `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge — non SSoT; vedi [../index.md](../index.md) |
 
 **Regola swarm:** se un agente rivendica «utente ha confermato `'altro'` stringa», verificare
 `docs/prompts/01.md` (*chiave "" o null*) e i commenti **più recenti** su #57/#58 prima di
-<<<<<<< .merge_file_POGrV2
 riscrivere il pack. Canone: `'other'` + placeholder `null` + `selectIsOther`.
-=======
-riscrivere il pack. Canone: `'other'` + placeholder `null` + `selectIsOther`.
->>>>>>> .merge_file_5GUu2s

@@ -5,10 +5,7 @@ tags: [dependencies, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "dependencies"
-<<<<<<< .merge_file_kcnL3w
-=======
 status: draft
->>>>>>> .merge_file_6tOh9L
 ---
 
 # Dipendenze e confini del modulo Rating

@@ -1,5 +1,3 @@
-<<<<<<< .merge_file_iOK0CY
-=======
 ---
 title: "Best Practices – Rating"
 type: note
@@ -8,7 +6,6 @@ updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "best practices   rating rating"
 ---
->>>>>>> .merge_file_NMX7r7
 # Best Practices – Rating
 
 ## Principi DRY/KISS

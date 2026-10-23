@@ -9,10 +9,7 @@ related:
   - "./BEST_PRACTICES.md"
   - "./architecture.md"
   - "./TROUBLESHOOTING.md"
-<<<<<<< .merge_file_WGjY9R
-=======
 status: draft
->>>>>>> .merge_file_UDISWK
 ---
 
 # Architectural Patterns – Rating

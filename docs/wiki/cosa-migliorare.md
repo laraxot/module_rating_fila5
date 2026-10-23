@@ -4,11 +4,8 @@ type: report
 module: Rating
 updated: 2026-09-01
 qmd: "cosa migliorare rating phpstan phpmd phpinsights coverage debito priorita"
-<<<<<<< .merge_file_ykoqZp
-=======
 status: draft
 tags: [docs, rating, wiki]
->>>>>>> .merge_file_tZYcII
 ---
 
 # Cosa migliorare — modulo Rating
@@ -64,9 +61,5 @@ Prima di fidarsi di qualunque numero: il tree deve essere fermo e `vendor/` comp
 php -r 'echo count(require "vendor/composer/autoload_classmap.php");'   # ~25358, non 13041
 ```
 
-<<<<<<< .merge_file_ykoqZp
-Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](../../../../docs/quality-audit.md).
-=======
 Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](../quality-audit.md).
->>>>>>> .merge_file_tZYcII
 

@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "ratingdata formfieldlabel contract.story"
 issues: []
 discussions: []
-<<<<<<< .merge_file_HaXccE
-=======
 status: draft
->>>>>>> .merge_file_S1hpBg
 ---
 
 > **SUPERSEDED (2026-09-23)** — bozza pre-correzione dello stesso lavoro.

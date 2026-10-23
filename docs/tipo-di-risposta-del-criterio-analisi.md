@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "tipo di risposta del criterio analisi"
 issues: []
 discussions: []
-<<<<<<< .merge_file_mDugP7
-=======
 status: draft
->>>>>>> .merge_file_81thQZ
 ---
 
 # Che tipo di risposta vuole un criterio: analisi

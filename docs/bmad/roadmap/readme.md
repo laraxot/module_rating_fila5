@@ -1,5 +1,3 @@
-<<<<<<< .merge_file_SwCwkX
-=======
 ---
 title: "Rating Module Roadmap"
 type: index
@@ -8,7 +6,6 @@ updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "rating module roadmap rating"
 ---
->>>>>>> .merge_file_3Uhan6
 # Rating Module Roadmap
 
 > "Rating and evaluation system for the Laraxot ecosystem with support for reviews, ratings, and feedback."

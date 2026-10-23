@@ -25,11 +25,7 @@ status: draft
 - [hackernoon-ai-coding-tips-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
-<<<<<<< .merge_file_Jw3nRR
-- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
-=======
 - ai-harness-module-discipline _(riferimento non presente nel repository, verificato 2026-10-14)_
->>>>>>> .merge_file_0czAz9
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
 
@@ -71,23 +67,14 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 ## Best Practices
 
 - Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
-<<<<<<< .merge_file_Jw3nRR
-- Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../../docs/wiki/concepts/model-casts-phpstan.md))
-- Usare Eloquent polymorphic relations per rating (vedi [eloquent-best-practices](../../../../../docs/wiki/concepts/eloquent-best-practices.md))
-=======
 - Implementare `casts()` method non `$casts` property (vedi model-casts-phpstan _(riferimento non presente nel repository, verificato 2026-10-14)_)
 - Usare Eloquent polymorphic relations per rating (vedi eloquent-best-practices _(riferimento non presente nel repository, verificato 2026-10-14)_)
->>>>>>> .merge_file_0czAz9
 
 ## Bad Practices
 
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
-<<<<<<< .merge_file_Jw3nRR
-- NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../../docs/wiki/concepts/laravel-enums.md))
-=======
 - NON hardcodare rating scale - usare Enums (vedi laravel-enums _(riferimento non presente nel repository, verificato 2026-10-14)_)
->>>>>>> .merge_file_0czAz9
 
 ## False Friends
 

@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "false friends"
 issues: []
 discussions: []
-<<<<<<< .merge_file_8jSdp9
-=======
 status: draft
->>>>>>> .merge_file_R03TP8
 ---
 
 # False Friends – Rating

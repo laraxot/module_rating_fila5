@@ -5,10 +5,7 @@ tags: [acceptance, criteria, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "acceptance criteria"
-<<<<<<< .merge_file_temfFx
-=======
 status: draft
->>>>>>> .merge_file_kwsRHV
 ---
 
 # Criteri di accettazione per le fasi

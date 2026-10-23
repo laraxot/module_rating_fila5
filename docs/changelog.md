@@ -10,10 +10,7 @@ qmd: "rating changelog pointer canonical"
 canonical: ./CHANGELOG.md
 related:
   - ./CHANGELOG.md
-<<<<<<< .merge_file_8hv94A
-=======
 status: stub
->>>>>>> .merge_file_wpJlQJ
 ---
 
 # Changelog — pointer

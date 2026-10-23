@@ -13,11 +13,7 @@ bmad_version: v3.30.1
 updated_at: '2026-09-22'
 status: done
 related:
-<<<<<<< .merge_file_0n1hK1
-  - ../stories/continuazione-domani.md
-=======
   - stories/continuazione-domani.md
->>>>>>> .merge_file_5iV31u
 ---
 
 # Rating — Architettura

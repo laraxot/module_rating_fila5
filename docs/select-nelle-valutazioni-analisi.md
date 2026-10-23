@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "select nelle valutazioni analisi"
 issues: []
 discussions: []
-<<<<<<< .merge_file_BCaEiq
-=======
 status: draft
->>>>>>> .merge_file_y5HXbY
 ---
 
 # Un criterio di valutazione con risposta a scelta: analisi

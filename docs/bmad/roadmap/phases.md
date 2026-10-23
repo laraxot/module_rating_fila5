@@ -5,10 +5,7 @@ tags: [phases, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "phases"
-<<<<<<< .merge_file_cm47G3
-=======
 status: draft
->>>>>>> .merge_file_xzcLkd
 ---
 
 # Fasi di Sviluppo del Modulo Rating

@@ -1,5 +1,3 @@
-<<<<<<< .merge_file_0defsb
-=======
 ---
 title: "Bad Practices – Rating"
 type: note
@@ -8,7 +6,6 @@ updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "bad practices   rating rating"
 ---
->>>>>>> .merge_file_kUKNwN
 # Bad Practices – Rating
 
 ## ❌ Calcolare la media in query N+1

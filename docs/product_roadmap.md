@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "product roadmap"
 issues: []
 discussions: []
-<<<<<<< .merge_file_xs4PUh
-=======
 status: draft
->>>>>>> .merge_file_NY5lRH
 ---
 
 # Rating Module - Product Roadmap
@@ -22,7 +19,6 @@ status: draft
 **Status:** In Development
 
 ---
-<<<<<<< .merge_file_xs4PUh
 
 title: "product roadmap"
 type: note
@@ -32,8 +28,6 @@ updated: 2026-09-26
 qmd: "product roadmap"
 issues: []
 discussions: []
-=======
->>>>>>> .merge_file_NY5lRH
 ## Vision Statement
 
 To create a **comprehensive rating and review system** that builds trust through authentic user feedback, drives quality improvements, and helps users make informed decisions.

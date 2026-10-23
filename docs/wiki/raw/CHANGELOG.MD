@@ -1,5 +1,3 @@
-<<<<<<< .merge_file_8xQifd
-=======
 ---
 title: "Changelog"
 type: note
@@ -8,7 +6,6 @@ updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "changelog rating"
 ---
->>>>>>> .merge_file_kg9qGY
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.

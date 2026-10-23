@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "rating statics to ratingdata consolidation.story"
 issues: []
 discussions: []
-<<<<<<< .merge_file_7ncJWA
-=======
 status: draft
->>>>>>> .merge_file_AWBTLM
 ---
 
 # Story — consolidamento helper statici: trait → `RatingData`

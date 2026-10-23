@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "rating data export methods"
 issues: []
 discussions: []
-<<<<<<< .merge_file_Ci0VyO
-=======
 status: draft
->>>>>>> .merge_file_c0FXXC
 ---
 
 # Architecture — spostamento formFieldLabel e ratingXlsValuePath in RatingData

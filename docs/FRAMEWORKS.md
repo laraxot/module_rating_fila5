@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "FRAMEWORKS"
 issues: []
 discussions: []
-<<<<<<< .merge_file_J7fgrQ
-=======
 status: draft
->>>>>>> .merge_file_p5oUMY
 ---
 
 # Rating — Framework Integration Notes

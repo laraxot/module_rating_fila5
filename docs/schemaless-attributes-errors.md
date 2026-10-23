@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "schemaless attributes errors"
 issues: []
 discussions: []
-<<<<<<< .merge_file_8W8Ya5
-=======
 status: draft
->>>>>>> .merge_file_xyrJon
 ---
 
 # Schemaless Attributes - Errori e Correzioni
@@ -20,7 +17,6 @@ status: draft
 **Status**: FIX APPLICATI
 
 ---
-<<<<<<< .merge_file_8W8Ya5
 
 title: "schemaless attributes errors"
 type: note
@@ -30,8 +26,6 @@ updated: 2026-09-26
 qmd: "schemaless attributes errors"
 issues: []
 discussions: []
-=======
->>>>>>> .merge_file_xyrJon
 ## Errori Trovati
 
 ### 1. Rating estende BaseModel invece di BaseRating (DRY Violation)

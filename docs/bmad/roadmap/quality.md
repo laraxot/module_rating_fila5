@@ -5,10 +5,7 @@ tags: [quality, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "quality"
-<<<<<<< .merge_file_PD2vPR
-=======
 status: draft
->>>>>>> .merge_file_6lw080
 ---
 
 # Checklist Qualità Modulo Rating
