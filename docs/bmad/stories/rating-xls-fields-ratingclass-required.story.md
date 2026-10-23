@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "rating xls fields ratingclass required.story"
 issues: []
 discussions: []
-<<<<<<< .merge_file_PhKf3a
-=======
 status: draft
->>>>>>> .merge_file_TPdhqh
 ---
 
 # Story — `ratingXlsFields`/`RatingData::getXlsFields`: `$ratingClass` required

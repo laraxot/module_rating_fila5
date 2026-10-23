@@ -93,15 +93,8 @@ Preferire sempre `docs/bmad/` per lavoro in corso; bozze in `docs/stories/` con
 
 ## Documentation
 
-<<<<<<< .merge_file_3kJuGL
-- [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
-- [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
-- [Performance](./performance-optimization.md) — Metriche e best practice
-- [Project Structure](./project-structure.md) — Directory layout
-=======
 - [On-Demand Pattern](./on-demand-pattern.md): Pattern per caricamento efficiente
 - [QMD Setup](./qmd-setup.md): Configurazione ricerca locale
 - [Performance](./performance-optimization.md): Metriche e best practice
 - [Project Structure](./project-structure.md): Directory layout
->>>>>>> .merge_file_SNvrTD
 - [Conflict Resolution](./conflict-resolution.md)

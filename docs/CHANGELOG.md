@@ -10,10 +10,7 @@ qmd: "changelog rating"
 related:
   - "./code-quality-analysis.md"
   - "./changelog.md"
-<<<<<<< .merge_file_vbPA0N
-=======
 status: draft
->>>>>>> .merge_file_uPo0yO
 ---
 
 # Changelog

@@ -7,10 +7,7 @@ updated: 2026-07-14
 qmd: "conflict resolution"
 related:
   - "./contracts-naming.md"
-<<<<<<< .merge_file_K6kYPW
-=======
 status: draft
->>>>>>> .merge_file_wAEF6y
 ---
 
 # Conflict Resolution — Module Rating

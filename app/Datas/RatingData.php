@@ -47,17 +47,23 @@ class RatingData extends Data
     ) {
     }
 
-    /**
-     * Costruisce il DTO da un payload di form.
-     *
-     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
-     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
-     *
-     * @param array<string, mixed> $data
-     */
+    /** @param array<string, mixed> $data */
     public static function fromArray(array $data): self
     {
-        return self::from($data);
+        $title = $data['title'] ?? '';
+        $description = $data['description'] ?? '';
+        $locale = $data['locale'] ?? 'it';
+        $imageUrl = $data['image_url'] ?? null;
+
+        return new self(
+            title: is_scalar($title) ? (string) $title : '',
+            description: is_scalar($description) ? (string) $description : '',
+            disabled: (bool) ($data['disabled'] ?? false),
+            position: is_numeric($data['position'] ?? null) ? (int) $data['position'] : 0,
+            locale: SupportedLocale::fromString(is_string($locale) ? $locale : 'it'),
+            image_url: is_string($imageUrl) ? $imageUrl : null,
+            parent_id: is_numeric($data['parent_id'] ?? null) ? (int) $data['parent_id'] : null,
+        );
     }
 
     /**

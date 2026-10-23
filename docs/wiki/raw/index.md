@@ -5,10 +5,7 @@ tags: [index, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "index"
-<<<<<<< .merge_file_rVd3FF
-=======
 status: draft
->>>>>>> .merge_file_9cbwvq
 ---
 
 # Raw Sources — Rating

@@ -7,25 +7,15 @@ created: 2026-07-16
 updated: 2026-07-16
 qmd: "Rating filament never extend Filament class XotBase mirror path"
 related:
-<<<<<<< .merge_file_yH2K0b
-  - ../../../../docs/wiki/rules/xotbase-critical-rules.md
-  - ../../../../docs/wiki/rules/xot-base-filament-widgets.md
-  - ../../../../docs/wiki/memories/xotbase-never-extend-filament.md
-=======
   - ../../../../../../docs/wiki/rules/xotbase-critical-rules.md
   - ../../../../../../docs/wiki/rules/xot-base-filament-widgets.md
   - ../../../../../../docs/wiki/memories/xotbase-never-extend-filament.md
 status: draft
->>>>>>> .merge_file_VaDYFq
 ---
 
 # Mai `Filament\*` — sempre `Modules\Xot\Filament\...\XotBase*`
 
-<<<<<<< .merge_file_yH2K0b
-Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../docs/wiki/rules/xotbase-critical-rules.md).
-=======
 Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../../../docs/wiki/rules/xotbase-critical-rules.md).
->>>>>>> .merge_file_VaDYFq
 
 ## Zen (riassunto)
 

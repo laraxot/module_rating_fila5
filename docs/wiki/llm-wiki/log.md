@@ -5,10 +5,7 @@ tags: [log, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "log"
-<<<<<<< .merge_file_M3qaXq
-=======
 status: draft
->>>>>>> .merge_file_z0P3uU
 ---
 
 # Rating Activity Log

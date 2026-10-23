@@ -7,10 +7,7 @@ updated: 2026-07-14
 qmd: "architecture rules"
 related:
   - "./architecture.md"
-<<<<<<< .merge_file_ckETK5
-=======
 status: draft
->>>>>>> .merge_file_50eSfh
 ---
 
 # Architectural Rules & Guidelines

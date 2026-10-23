@@ -7,10 +7,7 @@ tags: [bmad, rating, feedback]
 qmd: "Rating module product brief PRD architecture UX security epics gaps release"
 issues: ["https://github.com/laraxot/base_fixcity_fila5/issues/383"]
 discussions: ["https://github.com/laraxot/base_fixcity_fila5/discussions/392"]
-<<<<<<< .merge_file_vwG9dn
-=======
 status: draft
->>>>>>> .merge_file_Km03vu
 ---
 # Rating — BMAD dossier
 ## Product brief / PRD

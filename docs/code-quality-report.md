@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "code quality report"
 issues: []
 discussions: []
-<<<<<<< .merge_file_R8c3Xm
-=======
 status: draft
->>>>>>> .merge_file_lzlHVs
 ---
 
 # Code quality — modulo Rating

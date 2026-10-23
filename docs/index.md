@@ -7,21 +7,14 @@ discussions: []
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating
-<<<<<<< .merge_file_xi6ffw
-updated: 2026-09-22
-=======
-updated: 2026-10-14
+updated: 2026-10-23
 status: active
->>>>>>> .merge_file_U2Ph4G
 ---
 
 # Rating Module — Index
 
-<<<<<<< .merge_file_xi6ffw
-=======
-Indice operativo canonico: [00-INDEX.md](./00-INDEX.md) (ruolo delle directory, stato verificato). Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
+Indice operativo: `00-INDEX.md` e' stato rimosso il 2026-10-22 (commit c74fdcb); la copia rimasta [00-index.md](./00-index.md) e' marcata stale. Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
 
->>>>>>> .merge_file_U2Ph4G
 ## Lavoro attivo (BMAD)
 
 → **[bmad/README.md](bmad/README.md)** — Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
@@ -51,13 +44,8 @@ non sono stati deduplicati in questo passaggio: sono fuori scope, tracciati in
 `root-files-hygiene.md`.
 
 Ancora aperto (fuori scope per questo cleanup, non toccare qui):
-<<<<<<< .merge_file_xi6ffw
-- root `README.md` del modulo ha marker di merge non risolti (righe 3-19, 122-133) —
-  file fuori `docs/`, serve una story dedicata.
-=======
 - root `README.md` del modulo aveva marker di merge non risolti (righe 3-19, 122-133). Verifica del 2026-10-14:
   `grep -nE '^<<<<<<<|^=======$|^>>>>>>>' laravel/Modules/Rating/README.md` non trova nulla, il punto e' chiuso.
->>>>>>> .merge_file_U2Ph4G
 - regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`LICENSE.md` duplicati in
   root) — vedi `root-files-hygiene.md`.
 - possibile corruzione repo Git (commit mancante, vedi `git fsck`) — da investigare

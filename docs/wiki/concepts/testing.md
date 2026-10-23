@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "testing"
 issues: []
 discussions: []
-<<<<<<< .merge_file_j8GsOH
-=======
 status: draft
->>>>>>> .merge_file_i1KGd5
 ---
 
 # Testing in Rating

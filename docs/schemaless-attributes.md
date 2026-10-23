@@ -7,10 +7,7 @@ updated: 2026-09-26
 qmd: "schemaless attributes"
 issues: []
 discussions: []
-<<<<<<< .merge_file_5EVtjU
-=======
 status: draft
->>>>>>> .merge_file_yFgVDm
 ---
 
 # Schemaless Attributes — Rating Module
@@ -19,7 +16,6 @@ status: draft
 **Status**: ✅ CORRECT (Rating extends BaseRating)
 
 ---
-<<<<<<< .merge_file_5EVtjU
 
 title: "schemaless attributes"
 type: note
@@ -29,8 +25,6 @@ updated: 2026-09-26
 qmd: "schemaless attributes"
 issues: []
 discussions: []
-=======
->>>>>>> .merge_file_yFgVDm
 ## Architecture
 
 ```
