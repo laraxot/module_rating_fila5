@@ -1,3 +1,11 @@
+---
+title: "Rating — completion backlog"
+type: note
+status: draft
+updated: 2026-10-26
+tags: [docs, rating]
+qmd: "rating   completion backlog rating"
+---
 # Rating — completion backlog
 
 Status: partial and evidence-driven. This file is the canonical owner-local list for future work.

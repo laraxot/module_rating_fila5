@@ -1,6 +1,5 @@
 ---
 title: "Cluster 3: PHPStan L10 Rating + Xot modules"
-status: in_progress
 epic: phpstan-l10-remediation
 acceptance_criteria:
   - Rating: 13 errors → 0 or technical debt documented
@@ -11,6 +10,8 @@ acceptance_criteria:
   - Second brain updated with architectural patterns discovered
 assigned_to: cluster-3-agent (parallel subagent strategy)
 parent_story: phpstan-fleet-remediation-xot-story-md.story.md
+status: superseded
+superseded_by: cluster-3-rating-xot-phpstan-l10.story.md
 ---
 
 # Cluster 3: PHPStan L10 Rating + Xot

@@ -9,8 +9,9 @@ issues:
   - "https://github.com/provtv/module_rating_fila5/issues/14"
 discussions:
   - "https://github.com/provtv/<nome repository>/discussions/204"
-status: draft
 qmd: "handoff   multi-org sync (story-003) rating"
+status: superseded
+superseded_by: ../git-multi-org-sync-handoff.md
 ---
 
 # Handoff — multi-org sync (STORY-003)

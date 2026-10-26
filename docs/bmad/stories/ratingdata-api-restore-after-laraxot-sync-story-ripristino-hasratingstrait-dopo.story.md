@@ -9,12 +9,13 @@ type: story
 module: Rating
 epic: quality
 story_id: "ratingdata-api-restore-after-laraxot-sync-2026-09-24"
-status: done
 qmd: "RatingData ratingFieldName formFieldLabel getXlsFields criteriaToXlsFields regressione sync laraxot/dev merge_remote_repo_2 clearEvaluation ratings_by_id"
 related:
   - ./rating-statics-to-ratingdata-consolidation.story.md
   - ./5.240-ratingcontract-closures-not-baserating.story.md
   - ./phpstan-post-sync-restore-story-dopo-deprecato-fatal.story.md
+status: superseded
+superseded_by: ratingdata-api-restore-after-laraxot-sync.story.md
 ---
 # ratingdata-api-restore-after-laraxot-sync-2026-09-24
 

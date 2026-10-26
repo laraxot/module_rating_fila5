@@ -10,7 +10,8 @@ discussions: []
 module: theme
 topic: source
 canonical: ../../../../../Themes/docs/shared-components/source.md
-status: stub
+status: superseded
+superseded_by: ../../llm-wiki/_templates/source.md
 ---
 
 See canonical documentation: ../../../../../Themes/docs/shared-components/source.md

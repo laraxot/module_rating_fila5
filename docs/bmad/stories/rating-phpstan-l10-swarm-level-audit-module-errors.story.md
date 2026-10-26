@@ -11,6 +11,8 @@ qmd: "Rating PHPStan L10 type hints builder eloquent trans() cast generic"
 related:
   - quality-gates-phpstan-swarm.story.md
 github_issue: BMAD-only, no external issue
+type: story
+tags: [docs, rating, bmad]
 ---
 
 # Story Rating/phpstan-l10-swarm-2026-10-06

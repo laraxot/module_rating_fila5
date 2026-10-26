@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "copilot redundancy audit"
 related:
   - "./core-functionality.md"
-status: draft
+status: superseded
+superseded_by: ../copilot-redundancy-audit.md
 ---
 
 Copilot Redundancy Audit — 2026-05-25

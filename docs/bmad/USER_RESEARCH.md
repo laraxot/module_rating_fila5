@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "USER RESEARCH"
 related:
   - "./agent-confidence-discipline.md"
-status: draft
+status: superseded
+superseded_by: user_research.md
 ---
 
 # Rating Module - User Research

@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "confidence guidelines"
 related:
   - "./configuration.md"
-status: draft
+status: superseded
+superseded_by: ../confidence-guidelines.md
 ---
 
 # Massimizzare il livello di confidenza

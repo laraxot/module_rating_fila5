@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "product requirements"
 related:
   - "./product-roadmap.md"
-status: draft
+status: superseded
+superseded_by: ../product-requirements.md
 ---
 
 # Product Requirements Document (PRD)

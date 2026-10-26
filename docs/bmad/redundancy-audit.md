@@ -6,9 +6,10 @@ tags: [redundancy, livewire, views]
 created: 2026-05-21
 related:
   - https://github.com/laraxot/platform/issues/89
-status: draft
 updated: 2026-10-07
 qmd: "rating redundancy audit 2026-05-21 rating"
+status: superseded
+superseded_by: ../redundancy-audit.md
 ---
 
 # Rating redundancy audit 2026-05-21

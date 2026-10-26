@@ -21,9 +21,9 @@ qmd: "rating module documentation index rating"
 
 The root level contains strategic documents, analyses, and consolidated guides:
 
-- [00-INDEX.md](00-INDEX.md)
+- [00-INDEX.md](00-index.md)
 - [00-index.md](00-index.md)
-- [INDEX.md](INDEX.md)
+- [INDEX.md](index.md)
 - [index.md](index.md)
 - [README.md](README.md)
 - [BEST_PRACTICES.md](BEST_PRACTICES.md)
@@ -252,7 +252,7 @@ Additional archived content:
 
 | Date | File | Category |
 |------|------|----------|
-| 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
+| 2026-07-28 | [00-INDEX.md](00-index.md) | root |
 | 2026-07-28 | [00-index.md](00-index.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |

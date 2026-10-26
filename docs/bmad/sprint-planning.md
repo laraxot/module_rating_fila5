@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "sprint planning"
 related:
   - "./strategy.md"
-status: draft
+status: superseded
+superseded_by: ../sprint-planning.md
 ---
 
 # Sprint Planning: Rating Module

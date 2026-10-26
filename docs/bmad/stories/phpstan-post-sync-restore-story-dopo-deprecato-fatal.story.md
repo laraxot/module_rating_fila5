@@ -9,12 +9,13 @@ type: story
 module: Rating
 epic: quality
 story_id: "phpstan-post-sync-restore-2026-09-24"
-status: done
 qmd: "phpstan exit 255 cannot override final getFormSchema BaseRatingResource merge_remote_repo_2 gitattributes marker lfs"
 related:
   - ../../../../Xot/docs/bmad/stories/phpstan-analyse-no-path-certify.story.md
   - ./auditcoverage-reinjection-story-tests-reiniettata-remote.story.md
   - ../../../../../../docs/wiki/memories/merge-remote-repo-2-reinjects-conflict-markers.md
+status: superseded
+superseded_by: phpstan-post-sync-restore.story.md
 ---
 # phpstan-post-sync-restore-2026-09-24
 

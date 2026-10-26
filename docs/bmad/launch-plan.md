@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "launch plan"
 related:
   - "./license.md"
-status: draft
+status: superseded
+superseded_by: ../launch-plan.md
 ---
 
 # Product Launch Plan: Rating Module

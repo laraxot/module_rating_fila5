@@ -8,8 +8,9 @@ updated: 2026-07-27
 related:
   - ../../Xot/docs/testing/pest-globally-blocked-sqlite-connection-collision.md
   - ../../../../../docs/chat/phpstan-modules-zero.md
-status: draft
 qmd: "rating   3 fix in questa sessione rating"
+status: superseded
+superseded_by: ../bugfix-supported-locale-translation-and-morph-table-name.md
 ---
 
 # Rating — 3 fix in questa sessione

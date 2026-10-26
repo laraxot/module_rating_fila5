@@ -5,7 +5,8 @@ tags: [phases, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "phases"
-status: draft
+status: superseded
+superseded_by: ../../roadmap/phases.md
 ---
 
 # Fasi di Sviluppo del Modulo Rating

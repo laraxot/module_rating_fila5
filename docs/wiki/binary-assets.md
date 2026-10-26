@@ -1,10 +1,11 @@
 ---
 title: "Asset binari"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "asset binari rating"
+status: superseded
+superseded_by: ../binary-assets.md
 ---
 # Asset binari
 

@@ -1,3 +1,11 @@
+---
+title: "Nwidart Test Convention — Rating"
+type: note
+status: draft
+updated: 2026-10-19
+tags: [docs, rating]
+qmd: "nwidart test convention   rating rating"
+---
 # Nwidart Test Convention — Rating
 
 - Tests: `laravel/Modules/Rating/tests/`.

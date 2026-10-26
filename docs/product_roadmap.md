@@ -19,15 +19,6 @@ status: draft
 **Status:** In Development
 
 ---
-
-title: "product roadmap"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product roadmap"
-issues: []
-discussions: []
 ## Vision Statement
 
 To create a **comprehensive rating and review system** that builds trust through authentic user feedback, drives quality improvements, and helps users make informed decisions.

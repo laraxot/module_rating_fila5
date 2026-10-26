@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "PRODUCT STRATEGY"
 related:
   - "./PROJECT-STRUCTURE.md"
-status: draft
+status: superseded
+superseded_by: product_strategy.md
 ---
 
 # Rating Module - Product Strategy

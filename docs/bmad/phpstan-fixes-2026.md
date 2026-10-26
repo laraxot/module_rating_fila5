@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "phpstan fixes 2026 01"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: ../phpstan-fixes-2026.md
 ---
 
 # PHPStan Fixes - Modulo Rating

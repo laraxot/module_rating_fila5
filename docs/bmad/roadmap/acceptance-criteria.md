@@ -5,7 +5,8 @@ tags: [acceptance, criteria, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "acceptance criteria"
-status: draft
+status: superseded
+superseded_by: ../../roadmap/acceptance-criteria.md
 ---
 
 # Criteri di accettazione per le fasi

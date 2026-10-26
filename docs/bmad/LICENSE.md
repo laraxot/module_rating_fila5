@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "LICENSE"
 related:
   - "./METODI_DUPLICATI_ANALISI.md"
-status: draft
+status: superseded
+superseded_by: ../LICENSE.md
 ---
 
 The MIT License (MIT)

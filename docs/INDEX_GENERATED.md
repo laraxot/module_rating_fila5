@@ -25,9 +25,9 @@ status: draft
 
 The root level contains strategic documents, analyses, and consolidated guides:
 
-- [00-INDEX.md](00-INDEX.md)
+- [00-INDEX.md](00-index.md)
 - [00-index.md](00-index.md)
-- [INDEX.md](INDEX.md)
+- [INDEX.md](index.md)
 - [index.md](index.md)
 - [README.md](README.md)
 - [BEST_PRACTICES.md](BEST_PRACTICES.md)
@@ -144,7 +144,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [overview.md](wiki/overview.md)
 
 **Concepts** (14 files)
-  - [INDEX.md](wiki/concepts/INDEX.md)
+  - [INDEX.md](wiki/concepts/index.md)
   - [index.md](wiki/concepts/index.md)
   - [composer-root-minimal-nwidart.md](wiki/concepts/composer-root-minimal-nwidart.md)
   - [context-mode-rating-discipline.md](wiki/concepts/context-mode-rating-discipline.md)
@@ -166,7 +166,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [source.md](wiki/_templates/source.md)
 
 **Rules** (2 files)
-  - [INDEX.md](wiki/rules/INDEX.md)
+  - [INDEX.md](wiki/rules/index.md)
   - [index.md](wiki/rules/index.md)
   - [no-rm-no-archive-use-old-suffix.md](wiki/rules/no-rm-no-archive-use-old-suffix.md)
 
@@ -175,11 +175,11 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [phpstan-generic-limitations.md](wiki/troubleshooting/phpstan-generic-limitations.md)
 
 **Other** (11 files)
-  - [skills/INDEX.md](wiki/skills/INDEX.md)
+  - [skills/INDEX.md](wiki/skills/index.md)
   - [skills/index.md](wiki/skills/index.md)
-  - [commands/INDEX.md](wiki/commands/INDEX.md)
+  - [commands/INDEX.md](wiki/commands/index.md)
   - [commands/index.md](wiki/commands/index.md)
-  - [memories/INDEX.md](wiki/memories/INDEX.md)
+  - [memories/INDEX.md](wiki/memories/index.md)
   - [memories/index.md](wiki/memories/index.md)
   - [how-to/gitmodules-sync-session.md](wiki/how-to/gitmodules-sync-session.md)
   - [redundancy/duplicate-ratings-table-migrations.md](wiki/redundancy/duplicate-ratings-table-migrations.md)
@@ -255,7 +255,7 @@ Additional archived content:
 
 | Date | File | Category |
 |------|------|----------|
-| 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
+| 2026-07-28 | [00-INDEX.md](00-index.md) | root |
 | 2026-07-28 | [00-index.md](00-index.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
