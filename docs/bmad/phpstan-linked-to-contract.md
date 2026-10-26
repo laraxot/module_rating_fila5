@@ -1,11 +1,12 @@
 ---
 title: "PHPStan: contratto linkedTo e attributo parent_id nei test"
 type: memory
-status: active
 created: 2026-09-08
 updated: 2026-09-08
 tags: [phpstan, bmad, second-brain, eloquent, testing]
 qmd: "Rating linkedTo MorphTo model_type model_id parent_id getAttribute generici isolamento test"
+status: superseded
+superseded_by: ../phpstan-linked-to-contract.md
 ---
 
 # Contratto linkedTo e accesso a parent_id

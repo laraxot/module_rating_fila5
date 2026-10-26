@@ -24,7 +24,7 @@ Ogni affermazione dell'ingresso e' stata confrontata con il codice il 2026-10-14
 
 - Namespace `Modules\Rating`, alias `rating`, repository git separato.
 - Provider in `module.json`: `RatingServiceProvider` e `Providers\Filament\AdminPanelProvider`; il primo e' anche in `laravel/config/app.php`. Modulo `true` in `laravel/modules_statuses.json` e nello stato del tenant Fixcity.
-- Indice operativo: [00-INDEX.md](./00-INDEX.md). Architettura del modulo: [ARCHITECTURE.md](../ARCHITECTURE.md) e [architecture.md](./architecture.md).
+- Indice operativo: [00-INDEX.md](./00-index.md). Architettura del modulo: [ARCHITECTURE.md](../ARCHITECTURE.md) e [architecture.md](./architecture.md).
 
 ## Cosa contiene davvero
 

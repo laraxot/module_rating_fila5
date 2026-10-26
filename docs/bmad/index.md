@@ -49,7 +49,7 @@ Ancora aperto (fuori scope per questo cleanup, non toccare qui):
 
 ## Navigazione canonica (2026-10-09)
 
-- [readme.md](readme.md) — orientamento BMAD del modulo.
+- [readme.md](README.md) — orientamento BMAD del modulo.
 - [purpose.md](purpose.md) — scopo e confini.
 - [architecture.md](architecture.md) — architettura verificata.
 - [stories/](stories/) — lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).

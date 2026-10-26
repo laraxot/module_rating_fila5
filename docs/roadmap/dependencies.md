@@ -20,7 +20,7 @@ Relazioni con altri moduli e pacchetti, cosa il modulo **dipende** e da cosa pu√
 
 - **Laravel / Framework**: Laravel 13, Eloquent, migrazioni, container.
 - **Xot**: classi base Filament (`XotBaseResource`, `XotBasePage`, ‚Ä¶), convenzioni di namespace e traduzioni, eventuale `XotBaseMigration`.
-- **Spatie (se in uso)**: es. `spatie/schemaless-attributes` per `extra_attributes` sul modello Rating (vedi [architecture.md](../architecture.md)); versioni allineate al `composer.json` del modulo.
+- **Spatie (se in uso)**: es. `spatie/schemaless-attributes` per `extra_attributes` sul modello Rating (vedi [architecture.md](../../ARCHITECTURE.md)); versioni allineate al `composer.json` del modulo.
 - **Nessun modulo di dominio applicativo**: Rating non deve dipendere da User, Patient, Cms, ecc. per la sua logica core.
 
 ---

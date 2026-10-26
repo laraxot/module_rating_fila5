@@ -1,10 +1,11 @@
 ---
 title: "license"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "license rating"
+status: superseded
+superseded_by: ../../../license.md
 ---
 The MIT License (MIT)
 
