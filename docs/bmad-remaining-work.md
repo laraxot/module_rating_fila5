@@ -8,6 +8,8 @@ updated: 2026-10-26
 tags: [bmad, rating, module, stories, remaining-work]
 related:
   - ../../docs/second-brain/project/bmad-architecture.md
+status: draft
+qmd: "rating module   bmad stories & remaining work rating"
 ---
 
 # Rating Module — BMAD Stories & Remaining Work

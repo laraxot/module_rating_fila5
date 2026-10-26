@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "FRAMEWORKS"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: bmad/frameworks.md
 ---
 
 # Rating — Framework Integration Notes
