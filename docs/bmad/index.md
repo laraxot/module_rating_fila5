@@ -20,6 +20,7 @@ tags: [docs, rating, bmad]
 | Spec codice | [bmad/architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) |
 | Story 5.99 | [bmad/stories/5.99-select-altro-note-obbligatoria.story.md](stories/5.99-select-altro-note-obbligatoria.story.md) |
 | Story 5.141 D-8 | [bmad/stories/5.141-has-rating-values-filter-note.story.md](stories/5.141-has-rating-values-filter-note.story.md) |
+| PHPStan cluster A 2026-10-21 | [bmad/stories/phpstan-clusterA-20261021.story.md](stories/phpstan-clusterA.story.md) |
 | Design | [stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
 
 ## Altri hub
@@ -48,7 +49,7 @@ Ancora aperto (fuori scope per questo cleanup, non toccare qui):
 
 ## Navigazione canonica (2026-10-09)
 
-- [readme.md](readme.md) — orientamento BMAD del modulo.
+- [readme.md](README.md) — orientamento BMAD del modulo.
 - [purpose.md](purpose.md) — scopo e confini.
 - [architecture.md](architecture.md) — architettura verificata.
 - [stories/](stories/) — lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).

@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "laravel 13 upgrade"
 related:
   - "./launch-plan.md"
-status: draft
+status: superseded
+superseded_by: ../laravel-13-upgrade.md
 ---
 
 # Upgrade Laravel 13 - Rating 🐄✨

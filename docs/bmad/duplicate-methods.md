@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "duplicate methods"
 related:
   - "./duplicate_methods_report.md"
-status: draft
+status: superseded
+superseded_by: ../duplicate-methods.md
 ---
 
 # Metodi duplicati — Rating

@@ -5,7 +5,8 @@ tags: [dependencies, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "dependencies"
-status: draft
+status: superseded
+superseded_by: ../../roadmap/dependencies.md
 ---
 
 # Dipendenze e confini del modulo Rating

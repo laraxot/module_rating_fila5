@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Fixtures;
+namespace Modules\Rating\Tests\Fixtures;
 
 use Modules\Rating\Filament\Resources\RatingResource\Tables\BaseRatingsTable;
 

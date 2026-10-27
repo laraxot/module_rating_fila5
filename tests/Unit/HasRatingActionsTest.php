@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Mockery;
@@ -10,7 +10,7 @@ use Modules\Rating\Actions\HasRating\GetCountByModelRatingIdAction;
 use Modules\Rating\Actions\HasRating\GetRatingOptsByModelAction;
 use Modules\Rating\Actions\HasRating\GetSumByModelRatingIdAction;
 use Modules\Rating\Models\Contracts\HasRatingContract;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

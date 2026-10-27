@@ -1,10 +1,11 @@
 ---
 title: "Code quality — modulo Rating"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "code quality   modulo rating rating"
+status: superseded
+superseded_by: ../code-quality-report.md
 ---
 # Code quality — modulo Rating
 
