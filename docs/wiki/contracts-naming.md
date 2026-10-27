@@ -1,36 +1,13 @@
 ---
 title: "Contracts Naming & Placement"
-type: concept
-created: 2026-07-12
-updated: 2026-07-12
-tags: [contract, naming, architecture, laraxot, rating]
-related:
-  - ../../../../../docs/wiki/rules/module-contracts-naming-placement.md
-qmd: "contracts naming & placement in rating rating"
+type: alias
 status: superseded
-superseded_by: ../contracts-naming.md
+canonical: "bmad/contracts-naming.md"
+qmd: "contracts-naming alias superseded"
 ---
 
-# Contracts Naming & Placement in Rating
+# Contracts Naming & Placement
 
-> A contract is an **agreement**, not a PHP keyword. We name it `*Contract` and place it under `app/Contracts/`.
+Documento identico al canonico: [contracts-naming.md](../bmad/contracts-naming.md).
 
-## Rule
-
-- ✅ `app/Contracts/ExampleContract.php`
-- ❌ `app/Interfaces/ExampleInterface.php`
-
-## Why
-
-- `Contract` describes the domain concept (a pact between components).
-- `interface` describes a PHP implementation detail.
-- One folder (`app/Contracts/`) keeps the module language consistent and reduces cognitive noise.
-- Aligned with Laravel `Illuminate\Contracts\*` convention.
-
-## Verification
-
-```bash
-bash bashscripts/tools/check-module-contracts-naming.sh
-```
-
-See the project rule for full rationale: `docs/wiki/rules/module-contracts-naming-placement.md`.
+Canonico: `laravel/Modules/Rating/docs/bmad/contracts-naming.md`. Qui non ci sono istruzioni: seguire il file collegato.

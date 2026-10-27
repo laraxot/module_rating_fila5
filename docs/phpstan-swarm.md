@@ -1,19 +1,13 @@
 ---
 title: "phpstan swarm 2026"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan swarm 2026"
-issues: []
-discussions: []
-status: draft
+type: alias
+status: superseded
+canonical: "bmad/phpstan-swarm.md"
+qmd: "phpstan-swarm alias superseded"
 ---
 
-# PHPStan swarm — Rating (2026-09-07)
-- 815 errori iniziali mappati (subagent PHPStan)
-- Corretto SupportedLocale::toArray() (override esplicito)
-- DB irraggiungibile → Pest saltato
-- Lock mantenuto fino a chiusura su richiesta
-- Second brain aggiornato in docs/chat/quality-gates-swarm.md
+# phpstan swarm 2026
 
+Documento identico al canonico: [phpstan-swarm.md](bmad/phpstan-swarm.md).
+
+Canonico: `laravel/Modules/Rating/docs/bmad/phpstan-swarm.md`. Qui non ci sono istruzioni: seguire il file collegato.
