@@ -1,22 +1,13 @@
 ---
 title: "Copilot Redundancy Audit"
-type: guide
-tags: [copilot, redundancy, audit, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "copilot redundancy audit"
-related:
-  - "./core-functionality.md"
+type: alias
 status: superseded
-superseded_by: ../copilot-redundancy-audit.md
+canonical: "bmad/copilot-redundancy-audit.md"
+qmd: "copilot-redundancy-audit alias superseded"
 ---
 
-Copilot Redundancy Audit — 2026-05-25
+# Copilot Redundancy Audit
 
-Sintesi
-- Documentazione di rating e componenti correlati presente in più posizioni.
+Documento identico al canonico: [copilot-redundancy-audit.md](../bmad/copilot-redundancy-audit.md).
 
-Raccomandazioni
-- Consolidare pattern di rating e API in un documento riutilizzabile e linkarlo nei moduli che ne fanno uso.
-
-Autore: Copilot CLI
+Canonico: `laravel/Modules/Rating/docs/bmad/copilot-redundancy-audit.md`. Qui non ci sono istruzioni: seguire il file collegato.

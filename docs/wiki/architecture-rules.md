@@ -1,28 +1,13 @@
 ---
 title: "Architectural Rules & Guidelines"
-type: rule
-tags: [architecture, rules, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "architecture rules"
-related:
-  - "./architecture.md"
+type: alias
 status: superseded
-superseded_by: ../architecture-rules.md
+canonical: "bmad/architecture-rules.md"
+qmd: "architecture-rules alias superseded"
 ---
 
 # Architectural Rules & Guidelines
 
-This module adheres to the **Laraxot Architecture** and **Super Cow Methodology**.
+Documento identico al canonico: [architecture-rules.md](../bmad/architecture-rules.md).
 
-For strict coding standards, Filament extension rules, and PHPStan guidelines, please refer to the central documentation in the **Xot Module**:
-
--   [Super Cow Methodology](../../Xot/docs/super_cow_methodology.md)
--   [PHP Quality Guide](../../Xot/docs/php_quality_guide.md)
--   [Filament Extension Rules](../../Xot/docs/filament_extension_rules.md)
-
-**Key Principles:**
-1.  **DRY & KISS**: Don't repeat yourself, keep it simple.
-2.  **Zero Errors**: PHPStan Level 10 compliance is mandatory.
-3.  **XotBase**: Always extend `XotBase` classes, never Filament classes directly.
-4.  **Translations**: Use `LangServiceProvider` for automatic label resolution.
+Canonico: `laravel/Modules/Rating/docs/bmad/architecture-rules.md`. Qui non ci sono istruzioni: seguire il file collegato.
