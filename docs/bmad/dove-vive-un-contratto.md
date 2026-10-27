@@ -4,7 +4,6 @@ description: "Un contratto che solo un model puo' implementare sta in app/Models
 type: concept
 document_type: concept
 category: architecture
-status: stable
 version: 1.0.0
 language: it-IT
 module: Rating
@@ -25,6 +24,8 @@ related:
   - ../stories/5.92.get-ratings-form-schema-nel-trait.story.md
 maintainer: Laraxot
 license: project-internal
+status: superseded
+superseded_by: ../dove-vive-un-contratto.md
 ---
 
 # Dove vive un contratto

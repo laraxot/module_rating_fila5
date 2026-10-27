@@ -4,8 +4,9 @@ type: report
 module: Rating
 updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
-status: draft
 tags: [docs, rating, bmad]
+status: superseded
+superseded_by: ../wiki/coverage.md
 ---
 
 # Coverage del modulo Rating

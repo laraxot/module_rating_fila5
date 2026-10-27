@@ -4,8 +4,9 @@ type: report
 module: Rating
 updated: 2026-09-01
 qmd: "cosa migliorare rating phpstan phpmd phpinsights coverage debito priorita"
-status: draft
 tags: [docs, rating, bmad]
+status: superseded
+superseded_by: ../wiki/cosa-migliorare.md
 ---
 
 # Cosa migliorare — modulo Rating

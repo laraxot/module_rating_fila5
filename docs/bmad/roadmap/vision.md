@@ -5,7 +5,8 @@ tags: [vision, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "vision"
-status: draft
+status: superseded
+superseded_by: ../../roadmap/vision.md
 ---
 
 # Visione del Modulo Rating

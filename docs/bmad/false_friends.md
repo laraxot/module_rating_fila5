@@ -1,10 +1,11 @@
 ---
 title: "False Friends – Rating"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "false friends   rating rating"
+status: superseded
+superseded_by: ../false-friends.md
 ---
 # False Friends – Rating
 

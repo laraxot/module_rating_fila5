@@ -13,7 +13,7 @@ status: draft
 # Criteri di accettazione per le fasi
 
 Criteri misurabili e verificabili per considerare completata ogni fase della roadmap.  
-Riferimento architettura: [architecture.md](../architecture.md).
+Riferimento architettura: [architecture.md](../../ARCHITECTURE.md).
 
 ---
 
@@ -28,7 +28,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 
 ### Modelli e relazioni
 
-- [ ] Ogni modello in `Modules/Rating/Models/` estende `Modules\Rating\Models\BaseModel` (o la classe base indicata in [architecture.md](../architecture.md)).
+- [ ] Ogni modello in `Modules/Rating/Models/` estende `Modules\Rating\Models\BaseModel` (o la classe base indicata in [architecture.md](../../ARCHITECTURE.md)).
 - [ ] Relazioni con PHPDoc completo (`@return BelongsTo<...>`, `MorphMany<...>`, ecc.) e type hint di ritorno.
 - [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 13 / regole progetto.
 
@@ -50,7 +50,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 
 ### HasRatingsTrait e pivot
 
-- [ ] Il trait `HasRatingsTrait` è documentato in [architecture.md](../architecture.md) con signature dei metodi e contratti (parametri, ritorni, eccezioni).
+- [ ] Il trait `HasRatingsTrait` è documentato in [architecture.md](../../ARCHITECTURE.md) con signature dei metodi e contratti (parametri, ritorni, eccezioni).
 - [ ] Esiste una tabella pivot (o equivalente) che collega l’entità rateable ai punteggi; migrazione in `database/migrations/` con convenzioni Laraxot (XotBaseMigration se previsto).
 - [ ] Un modello “consumer” (anche solo in test) usa il trait e può associare/disassociare rating e valori senza errori.
 

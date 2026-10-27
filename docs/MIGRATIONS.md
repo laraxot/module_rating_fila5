@@ -9,7 +9,8 @@ updated: 2026-07-14
 qmd: "MIGRATIONS"
 related:
   - "./ON-DEMAND-PATTERN.md"
-status: draft
+status: superseded
+superseded_by: migrations.md
 ---
 
 # Rating Module — Migrations

@@ -1,13 +1,14 @@
 ---
 title: "Code redundancy audit — Rating"
 type: source
-status: draft
 tags: [code-audit, redundancy, dry, second-brain, module]
 created: "2026-05-26"
 updated: "2026-05-26"
 owner: "Rating"
 issue: "https://github.com/provtv/<nome repository>/issues/150"
 qmd: "code redundancy audit   rating rating"
+status: superseded
+superseded_by: ../code-redundancy-audit.md
 ---
 
 # Code redundancy audit — Rating

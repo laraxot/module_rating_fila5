@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Table;
@@ -10,9 +10,9 @@ use Modules\Rating\Filament\Actions\Table\BetTableAction;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\EditRatingMorph;
 use Modules\Rating\Filament\Resources\RatingMorphResource\Pages\ListRatingMorphs;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\EditRating;
-use Tests\Modules\Rating\Fixtures\BaseEditRatingStub;
-use Tests\Modules\Rating\Fixtures\BaseRatingsTableStub;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\Fixtures\BaseEditRatingStub;
+use Modules\Rating\Tests\Fixtures\BaseRatingsTableStub;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);

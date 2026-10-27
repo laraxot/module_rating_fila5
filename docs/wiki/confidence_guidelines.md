@@ -1,10 +1,11 @@
 ---
 title: "Massimizzare il livello di confidenza"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "massimizzare il livello di confidenza rating"
+status: superseded
+superseded_by: ../confidence-guidelines.md
 ---
 # Massimizzare il livello di confidenza
 

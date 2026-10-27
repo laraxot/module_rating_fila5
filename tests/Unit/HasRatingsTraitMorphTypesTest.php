@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Mockery\MockInterface;
 use Modules\Rating\Models\RatingMorph;
-use Tests\Modules\Rating\Fixtures\RatingsHostStiChildStub;
-use Tests\Modules\Rating\Fixtures\RatingsHostStub;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\Fixtures\RatingsHostStiChildStub;
+use Modules\Rating\Tests\Fixtures\RatingsHostStub;
+use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
@@ -47,7 +47,7 @@ function aliasRatingsHostStub(): void
  */
 function morphRow(int $ratingId, string $modelType, int|float|null $value, ?string $note = null): RatingMorph
 {
-    $pivot = new RatingMorph;
+    $pivot = new RatingMorph();
     $pivot->setRawAttributes([
         'rating_id' => $ratingId,
         'model_type' => $modelType,
@@ -62,31 +62,31 @@ describe('HasRatingsTrait::ratingMorphTypes', function (): void {
     test('figlio STI con alias: alias e FQCN del padre, mai la classe figlia', function (): void {
         aliasRatingsHostStub();
 
-        $types = (new RatingsHostStiChildStub)->ratingMorphTypes();
+        $types = (new RatingsHostStiChildStub())->ratingMorphTypes();
 
         Assert::assertSame([MORPH_TYPES_TEST_ALIAS, RatingsHostStub::class], $types);
         Assert::assertNotContains(RatingsHostStiChildStub::class, $types);
     });
 
     test('figlio STI senza alias: solo il FQCN del padre', function (): void {
-        Assert::assertSame([RatingsHostStub::class], (new RatingsHostStiChildStub)->ratingMorphTypes());
+        Assert::assertSame([RatingsHostStub::class], (new RatingsHostStiChildStub())->ratingMorphTypes());
     });
 
     test('host non STI con alias: alias e FQCN', function (): void {
         aliasRatingsHostStub();
 
-        Assert::assertSame([MORPH_TYPES_TEST_ALIAS, RatingsHostStub::class], (new RatingsHostStub)->ratingMorphTypes());
+        Assert::assertSame([MORPH_TYPES_TEST_ALIAS, RatingsHostStub::class], (new RatingsHostStub())->ratingMorphTypes());
     });
 
     test('host non STI senza alias: un solo FQCN, nessun duplicato', function (): void {
-        Assert::assertSame([RatingsHostStub::class], (new RatingsHostStub)->ratingMorphTypes());
+        Assert::assertSame([RatingsHostStub::class], (new RatingsHostStub())->ratingMorphTypes());
     });
 });
 
 describe('HasRatingsTrait::ratings_by_id fra le due forme', function (): void {
     test('con value null su entrambe le righe preferisce quella con la nota (opzione altro)', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             morphRow(52, MORPH_TYPES_TEST_ALIAS, null),
             morphRow(52, RatingsHostStub::class, null, 'motivo libero'),
@@ -98,8 +98,8 @@ describe('HasRatingsTrait::ratings_by_id fra le due forme', function (): void {
 
 describe('HasRatingsTrait::hydrateRatingsFormData fra le due forme', function (): void {
     test('riga alias vuota accanto alla FQCN valorizzata: il form riceve il voto (scheda 9240)', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             morphRow(52, MORPH_TYPES_TEST_ALIAS, null),
             morphRow(52, RatingsHostStub::class, 53),
@@ -116,8 +116,8 @@ describe('HasRatingsTrait::hydrateRatingsFormData fra le due forme', function ()
     });
 
     test('nota su una sola forma: il form riparte da altro', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             morphRow(52, MORPH_TYPES_TEST_ALIAS, null),
             morphRow(52, RatingsHostStub::class, null, 'motivo libero'),
@@ -138,11 +138,11 @@ describe('HasRatingsTrait: chi scrive il pivot invalida le relazioni caricate', 
         $relation->shouldReceive('where')->with('rating_id', 7)->andReturnSelf();
         $relation->shouldReceive('update')->once()->andReturn(2);
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHostStub();
         $host->forceFill(['id' => 9240]);
         $host->exists = true;
         $host->forcedHasMany = $relation;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             morphRow(7, RatingsHostStub::class, 1),
         ]));
@@ -160,11 +160,11 @@ describe('HasRatingsTrait: chi scrive il pivot invalida le relazioni caricate', 
         $relation = \Mockery::mock(HasMany::class);
         $relation->shouldReceive('update')->once()->andReturn(2);
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHostStub();
         $host->forceFill(['id' => 9240]);
         $host->exists = true;
         $host->forcedHasMany = $relation;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             morphRow(7, RatingsHostStub::class, 1),
         ]));

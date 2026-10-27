@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "filament version"
 related:
   - "./file-naming-rules.md"
-status: draft
+status: superseded
+superseded_by: ../filament-version.md
 ---
 
 # Filament Version Declaration — Rating

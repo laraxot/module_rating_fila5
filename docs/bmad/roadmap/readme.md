@@ -1,10 +1,11 @@
 ---
 title: "Rating Module Roadmap"
 type: index
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "rating module roadmap rating"
+status: superseded
+superseded_by: ../../roadmap/README.md
 ---
 # Rating Module Roadmap
 

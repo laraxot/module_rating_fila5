@@ -1,13 +1,14 @@
 ---
 title: "Massima confidenza agente"
 type: reference
-status: approved
 tags: [agents, confidence, verification]
 created: "2026-05-26"
 updated: "2026-05-26"
 related:
   - "../../../../../docs/wiki/rules/agent-confidence-protocol.md"
 qmd: "massima confidenza agente rating"
+status: superseded
+superseded_by: ../wiki/agent-confidence-protocol.md
 ---
 
 # Massima confidenza agente

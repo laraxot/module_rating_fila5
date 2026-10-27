@@ -1,10 +1,11 @@
 ---
 title: "Un criterio di valutazione con risposta a scelta: analisi"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "un criterio di valutazione con risposta a scelta: analisi rating"
+status: superseded
+superseded_by: ../select-nelle-valutazioni-analisi.md
 ---
 # Un criterio di valutazione con risposta a scelta: analisi
 

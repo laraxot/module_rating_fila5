@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Fixtures;
+namespace Modules\Rating\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -38,7 +38,8 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-     * @param  class-string<TRelatedModel>  $related
+     * @param class-string<TRelatedModel> $related
+     *
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -111,7 +112,8 @@ class RatingsHostStub extends AbstractRatingsHost
     /**
      * @template TRelatedModel of Model
      *
-     * @param  class-string<TRelatedModel>  $related
+     * @param class-string<TRelatedModel> $related
+     *
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)

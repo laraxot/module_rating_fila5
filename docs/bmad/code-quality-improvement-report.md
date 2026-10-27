@@ -16,7 +16,8 @@ discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
-status: draft
+status: superseded
+superseded_by: ../code-quality-improvement-report.md
 ---
 
 # Code Quality Improvement Report — Rating

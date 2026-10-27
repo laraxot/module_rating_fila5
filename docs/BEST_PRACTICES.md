@@ -9,7 +9,8 @@ updated: 2026-07-14
 qmd: "BEST PRACTICES"
 related:
   - "./FALSE_FRIENDS.md"
-status: draft
+status: superseded
+superseded_by: best_practices.md
 ---
 
 # Best Practices – Rating

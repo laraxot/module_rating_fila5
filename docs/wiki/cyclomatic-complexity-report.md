@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "cyclomatic complexity report"
 related:
   - "./data-models.md"
-status: draft
+status: superseded
+superseded_by: ../cyclomatic-complexity-report.md
 ---
 
 # Cyclomatic Complexity Report - Module: Rating

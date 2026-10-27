@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "duplicate methods report"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: duplicate-methods-report.md
 ---
 
 # Report: Metodi con nome duplicato nei moduli e nei temi

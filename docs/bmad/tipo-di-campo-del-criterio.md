@@ -1,10 +1,11 @@
 ---
 title: "Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "il tipo di campo di un criterio: intero, decimale, select, radio, testo libero rating"
+status: superseded
+superseded_by: ../tipo-di-campo-del-criterio.md
 ---
 # Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero
 
