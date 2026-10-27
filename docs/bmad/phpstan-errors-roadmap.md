@@ -6,7 +6,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "phpstan errors roadmap"
 related:
-  - "./phpstan-fixes-2026-01.md"
+  - "./phpstan-fixes-modulo-rating.md"
 status: superseded
 superseded_by: ../phpstan-errors-roadmap.md
 ---
