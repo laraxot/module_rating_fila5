@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "conflict resolution"
 related:
   - "./contracts-naming.md"
-status: draft
+status: superseded
+superseded_by: ../conflict-resolution.md
 ---
 
 # Conflict Resolution — Module Rating

@@ -1,10 +1,11 @@
 ---
 title: "Che tipo di risposta vuole un criterio: analisi"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "che tipo di risposta vuole un criterio: analisi rating"
+status: superseded
+superseded_by: ../tipo-di-risposta-del-criterio-analisi.md
 ---
 # Che tipo di risposta vuole un criterio: analisi
 

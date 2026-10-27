@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Unit;
+namespace Modules\Rating\Tests\Unit;
 
+use Illuminate\Database\Eloquent\Model;
 use Mockery;
 use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Tests\Modules\Rating\Fixtures\RatedModelStub;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\Fixtures\RatedModelStub;
+use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
@@ -181,7 +182,7 @@ describe('RatingMorphPolicy', function (): void {
         $morph = new RatingMorph();
         $morph->user_id = 'u-2';
 
-        $ratedModel = new class extends \Illuminate\Database\Eloquent\Model {
+        $ratedModel = new class extends Model {
             protected $table = 'rated_stub';
         };
         // `setAttribute()` invece di `$ratedModel->user_id = ...`: su un model anonimo

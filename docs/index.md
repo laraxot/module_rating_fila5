@@ -7,13 +7,13 @@ discussions: []
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating
-updated: 2026-10-14
+updated: 2026-10-23
 status: active
 ---
 
 # Rating Module — Index
 
-Indice operativo canonico: [00-INDEX.md](./00-INDEX.md) (ruolo delle directory, stato verificato). Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
+Indice operativo: `00-INDEX.md` e' stato rimosso il 2026-10-22 (commit c74fdcb); la copia rimasta [00-index.md](./00-index.md) e' marcata stale. Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
 
 ## Lavoro attivo (BMAD)
 

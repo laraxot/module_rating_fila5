@@ -10,7 +10,7 @@ discussions: []
 status: stale
 ---
 
-> Nota 2026-10-14 (docs-audit): Copia concorrente del vecchio 00-INDEX.md, senza la tabella delle story. Indice canonico: 00-INDEX.md (aggiornato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+> Nota 2026-10-14 (docs-audit): copia concorrente del vecchio 00-INDEX.md, senza la tabella delle story. Aggiornamento 2026-10-23: `00-INDEX.md` e' stato rimosso il 2026-10-22 (commit c74fdcb) e la tabella delle story non e' stata riportata qui; ingresso verificato sul codice: [README.md](./README.md). Contenuto non riscritto, verificare prima di usarlo.
 
 # 📚 RATING Module - Documentation Index
 
@@ -36,19 +36,10 @@ status: stale
 
 ## 🔗 Riferimenti
 
-- [Xot Module](../../Xot/docs/00-INDEX.md) - Base classes
+- [Xot Module](../../Xot/docs/00-index.md) - Base classes
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ---
-
-title: "00 index"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "00 index"
-issues: []
-discussions: []
 **Ultimo Aggiornamento**: 2026-03-24
 
 - [Criteri a scelta: opzioni in JSON, figli del criterio, o altro](criteri-a-scelta-multipla.md)

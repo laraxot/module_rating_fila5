@@ -12,14 +12,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Rating\Models\Rating;
 
+// ------ traits ---
+
 /**
- * Legacy rating UI (rateit, pivot `rating`, `post_type` / `rating_morph` storico).
- *
- * Non confondere con {@see HasRatingsTrait} (scheda PT / morph `model`) né con
- * {@see HasRating} (scommesse / percentuali per volume).
- *
- * @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01)
+ * Trait RatingTrait.
  */
+/** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 trait RatingTrait
 {
     /**
@@ -82,7 +80,8 @@ trait RatingTrait
     // ----- mutators -----
     // *
     /**
-     * @param  float  $value
+     * @param float $value
+     *
      * @return Collection
      */
     public function getMyRatingAttribute($value)
@@ -97,13 +96,13 @@ trait RatingTrait
      */
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         $value = $this->ratings->avg('pivot.rating');
-        if ($value !== null) {
+        if (null !== $value) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
-            if ($this->getKey() !== null) {
+            if (null !== $this->getKey()) {
                 $this->update(['ratings_avg' => $value]);
             }
         }
@@ -113,7 +112,7 @@ trait RatingTrait
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
@@ -122,7 +121,7 @@ trait RatingTrait
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
-        if ($this->getKey() == null) {
+        if (null == $this->getKey()) {
             return $value;
         }
 

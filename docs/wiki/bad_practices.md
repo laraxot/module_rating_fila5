@@ -1,10 +1,11 @@
 ---
 title: "Bad Practices – Rating"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, wiki]
 qmd: "bad practices   rating rating"
+status: superseded
+superseded_by: ../bad-practices.md
 ---
 # Bad Practices – Rating
 

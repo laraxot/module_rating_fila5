@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "user research"
 related:
   - "./00-INDEX.md"
-status: draft
+status: superseded
+superseded_by: ../user-research.md
 ---
 
 # User Research: Rating Module

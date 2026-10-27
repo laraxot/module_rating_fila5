@@ -1,10 +1,11 @@
 ---
 title: "Best Practices – Rating"
 type: note
-status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "best practices   rating rating"
+status: superseded
+superseded_by: ../best_practices.md
 ---
 # Best Practices – Rating
 

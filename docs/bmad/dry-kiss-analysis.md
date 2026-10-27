@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "dry kiss analysis"
 related:
   - "./duplicate-methods-analysis.md"
-status: draft
+status: superseded
+superseded_by: ../dry-kiss-analysis.md
 ---
 
 # 🐄 DRY & KISS Analysis - Rating

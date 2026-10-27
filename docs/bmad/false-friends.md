@@ -7,7 +7,8 @@ updated: 2026-07-14
 qmd: "FALSE FRIENDS"
 related:
   - "./LICENSE.md"
-status: draft
+status: superseded
+superseded_by: ../false-friends.md
 ---
 
 # False Friends – Rating

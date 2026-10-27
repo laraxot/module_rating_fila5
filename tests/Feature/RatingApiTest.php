@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Rating\Feature;
+namespace Modules\Rating\Tests\Feature;
 
 use Modules\Rating\Models\Rating;
-use Tests\Modules\Rating\TestCase;
+use Modules\Rating\Tests\TestCase;
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;

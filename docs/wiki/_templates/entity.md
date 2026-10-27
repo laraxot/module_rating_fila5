@@ -10,7 +10,8 @@ discussions: []
 module: theme
 topic: entity
 canonical: ../../../../../Themes/docs/shared-components/entity-Modules.md
-status: stub
+status: superseded
+superseded_by: ../../llm-wiki/_templates/entity.md
 ---
 
 See canonical documentation: ../../../../../Themes/docs/shared-components/entity-Modules.md

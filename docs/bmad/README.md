@@ -13,6 +13,14 @@ status: draft
 
 # BMAD — Rating Select «altro»
 
+## Kit BMAD owner (canonico)
+
+- [BMAD Planning](./bmad-planning.md)
+- [BMAD Brainstorming](../bmad-brainstorming.md)
+- [Filament blueprint](./filament-blueprint.md)
+- [Project context](./project-context.md)
+- [Decision log](./decision-log.md)
+
 Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select + Textarea)**, note obbligatoria solo su «altro».
 
 ## Contratto rapido (canon 2026-09-16)
