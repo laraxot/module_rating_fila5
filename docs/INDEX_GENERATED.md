@@ -98,7 +98,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [migration-patterns.md](migration-patterns.md)
 - [multi-org-sync-laraxot-provtv.md](multi-org-sync-laraxot-provtv.md)
 - [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md)
-- [phpstan-fixes-2026-01.md](phpstan-fixes-2026-01.md)
+- [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md)
 - [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md)
 - [phpstan-fixes.md](phpstan-fixes.md)
 - [ponytail-audit-over-engineering.md](ponytail-audit-over-engineering.md)

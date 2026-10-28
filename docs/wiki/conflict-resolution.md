@@ -1,25 +1,13 @@
 ---
 title: "Conflict Resolution — Module Rating"
-type: guide
-tags: [conflict, resolution, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflict resolution"
-related:
-  - "./contracts-naming.md"
+type: alias
 status: superseded
-superseded_by: ../conflict-resolution.md
+canonical: "bmad/conflict-resolution.md"
+qmd: "conflict-resolution alias superseded"
 ---
 
 # Conflict Resolution — Module Rating
 
-## Summary
-- **Files resolved**: 1
-- **Strategy**: Keep HEAD/local (ours) side
-- **Root cause**: Nested stash-on-merge conflicts
+Documento identico al canonico: [conflict-resolution.md](../bmad/conflict-resolution.md).
 
-## Config Files
-- composer.json
-
-## Backlinks
-- [Root conflict resolution report](../../../../docs/conflict-resolution-report.md)
+Canonico: `laravel/Modules/Rating/docs/bmad/conflict-resolution.md`. Qui non ci sono istruzioni: seguire il file collegato.

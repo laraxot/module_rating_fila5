@@ -86,3 +86,9 @@ vendor/
 *:Zone.Identifier
 test-results/
 rating.code-workspace
+*.lock
+
+# module-root-hygiene (story module-root-hygiene)
+/.github/skills/
+docs/graphify
+resources/lang
