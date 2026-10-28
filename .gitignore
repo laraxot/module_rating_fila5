@@ -35,6 +35,8 @@ docs/cache/
 docs/phpstan/
 .DS_Store
 .env
+.env.*
+!.env.example
 error_log
 .git-blame-ignore-revs
 .git-rewrite
