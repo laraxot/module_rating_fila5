@@ -36,6 +36,8 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * - `title` e `txt` — il nome tecnico e quello leggibile, che **non sono la stessa cosa**;
  * - `slug` — l'identificativo stabile, l'unico che sopravvive a un rename.
  *
+ * @extends HasRecursiveRelationshipsContract<Model>
+ *
  * @phpstan-require-extends Model
  *
  * @property int                    $id
