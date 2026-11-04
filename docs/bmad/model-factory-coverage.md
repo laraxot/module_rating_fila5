@@ -1,5 +1,5 @@
 ---
-title: "Rating — copertura model / migration / seeder / factory"
+title: "Rating: copertura model / migration / seeder / factory"
 type: reference
 tags: [rating, models, factory, migration, seeder, pivot, coverage]
 created: 2026-07-24
@@ -9,7 +9,7 @@ status: superseded
 superseded_by: ../model-factory-coverage.md
 ---
 
-# Rating — copertura Model → Migration / Seeder / Factory
+# Rating: copertura Model → Migration / Seeder / Factory
 
 Obiettivo: ogni modello concreto (non-pivot / non-astratto) deve avere
 migration + seeder + factory.
@@ -19,11 +19,11 @@ migration + seeder + factory.
 | Modello | Tipo | Tabella | Concreto? | Factory |
 |---|---|---|---|---|
 | `Rating` | `BaseRating` → `BaseModel` → `XotBaseModel` | `ratings` | sì | **`RatingFactory` (definition realistica)** |
-| `RatingMorph` | `BaseMorphPivot` → `MorphPivot` | `rating_morph` | **pivot → skip** | — |
-| `BaseRating` | astratto | — | no (abstract) | — |
-| `BaseRatingMorph` | astratto | — | no (abstract) | — |
-| `BaseModel` | astratto | — | no (abstract) | — |
-| `BaseMorphPivot` | astratto | — | no (abstract) | — |
+| `RatingMorph` | `BaseMorphPivot` → `MorphPivot` | `rating_morph` | **pivot → skip** |: |
+| `BaseRating` | astratto |: | no (abstract) |: |
+| `BaseRatingMorph` | astratto |: | no (abstract) |: |
+| `BaseModel` | astratto |: | no (abstract) |: |
+| `BaseMorphPivot` | astratto |: | no (abstract) |: |
 
 ## Lavoro svolto
 
@@ -36,7 +36,7 @@ migration + seeder + factory.
 
 ## Skip motivati
 
-- **`RatingMorph`** — è un **morph pivot** (`extends BaseMorphPivot extends
+- **`RatingMorph`**: è un **morph pivot** (`extends BaseMorphPivot extends
   Illuminate\Database\Eloquent\Relations\MorphPivot`). `MorphPivot` non usa il trait
   `HasFactory`/`HasXotFactory` e non supporta `Model::factory()`; una factory non è né
   possibile né appropriata per una tabella pivot di collegamento. **Skip da regola
@@ -54,10 +54,10 @@ crea-se-mancante, poi aggiunge/modifica colonne mancanti). Due sole tabelle fisi
 |---|---|---|
 | `2023_01_01_000000_create_ratings_table` | `ratings` | create + column-guard (create/alter ibrida) |
 | `2023_01_01_000005_create_rating_morph_table` | `rating_morph` | create + column-guard (create/alter ibrida) |
-| `2026_03_12_180000_create_ratings_table` | `ratings` | **alter** — re-run idempotente, aggiunge `slug` e colonne mancanti |
+| `2026_03_12_180000_create_ratings_table` | `ratings` | **alter**: re-run idempotente, aggiunge `slug` e colonne mancanti |
 | `2026_03_27_000001_add_percentage_to_rating_morph_table` | `rating_morph` | **alter puro** (`Schema::table` add `percentage` + credit/count) |
-| `2026_03_27_000002_add_percentage_..._on_rating_connection` | `rating_morph` (conn. `rating`) | **alter puro** — stessa alter sulla connessione `rating` |
-| `2026_06_16_000003_create_ratings_table` | `ratings` | **alter** — aggiunge `txt`, `extra_attributes`, `is_disabled`, `is_readonly`, `order_column` |
+| `2026_03_27_000002_add_percentage_..._on_rating_connection` | `rating_morph` (conn. `rating`) | **alter puro**: stessa alter sulla connessione `rating` |
+| `2026_06_16_000003_create_ratings_table` | `ratings` | **alter**: aggiunge `txt`, `extra_attributes`, `is_disabled`, `is_readonly`, `order_column` |
 
 Sintesi: 2 file "create" originari (comunque idempotenti/alter-safe) + 4 file di fatto
 **alter** che estendono nel tempo le due tabelle. Il nome ripetuto `create_ratings_table`

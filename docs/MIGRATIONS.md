@@ -1,7 +1,7 @@
 ---
 issues: []
 discussions: []
-title: "Rating Module — Migrations"
+title: "Rating Module: Migrations"
 type: guide
 tags: [migrations, rating]
 created: 2026-07-14
@@ -13,7 +13,7 @@ status: superseded
 superseded_by: migrations.md
 ---
 
-# Rating Module — Migrations
+# Rating Module: Migrations
 
 ## Overview
 
@@ -44,7 +44,7 @@ Key rules:
 
 ## Migrations
 
-### 2023_01_01_000005 — `create_rating_morph_table.php`
+### 2023_01_01_000005: `create_rating_morph_table.php`
 **Model:** `Rating` (pivot model)
 **Table:** `rating_morph`
 **Connection:** default (or custom from model)
@@ -58,7 +58,7 @@ Initial schema for `rating_morph` pivot table. Creates:
 
 Audit columns added via `updateTimestamps()` with soft deletes.
 
-### 2026_07_15_120003 — `create_rating_morph_table.php`
+### 2026_07_15_120003: `create_rating_morph_table.php`
 **Model:** `RatingMorph`
 **Table:** `rating_morph`
 **Connection:** default (or custom from model)
@@ -70,7 +70,7 @@ Audit columns added via `updateTimestamps()` with soft deletes.
 Both were non-conforming (used `add_` prefix) and duplicated the same operation on the same table. Consolidated into single idempotent `tableCreate()` / `tableUpdate()` flow.
 
 Adds:
-- `percentage` column (decimal(10,3), nullable) — calculated percentage for rating
+- `percentage` column (decimal(10,3), nullable): calculated percentage for rating
 
 The migration is idempotent: if table exists, it uses `tableUpdate()` to add columns only if missing.
 

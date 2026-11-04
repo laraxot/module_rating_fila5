@@ -4,7 +4,7 @@ created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
-title: "Rating — bonifica .md con data/timestamp nel nome file"
+title: "Rating: bonifica .md con data/timestamp nel nome file"
 type: story
 module: Rating
 status: backlog
@@ -15,7 +15,7 @@ related:
   - ../../../../Xot/docs/bmad/stories/docs-filename-no-date-bonifica-xot.story.md
 ---
 
-# Rating — .md senza data/timestamp nel nome (batch trovato 2026-09-22)
+# Rating: .md senza data/timestamp nel nome (batch trovato 2026-09-22)
 
 ## Perche'
 

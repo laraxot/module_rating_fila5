@@ -1,5 +1,5 @@
 ---
-title: "Lacune di completamento — Rating"
+title: "Lacune di completamento: Rating"
 type: audit
 status: open
 created: 2026-10-28
@@ -10,7 +10,7 @@ related:
   - "../../Xot/docs/project-completion-readiness.md"
 ---
 
-# Lacune di completamento — Rating
+# Lacune di completamento: Rating
 
 ## Esito
 
@@ -70,13 +70,13 @@ Lettura read-only delle 149 story locali (`*.story.md`): 89 hanno uno stato dive
 
 ### Esempi prioritari da riconciliare
 
-- `in-progress` — [`01-41-hasratin-gs-trait-correction.story.md`](stories/01-41-hasratin-gs-trait-correction.story.md)
-- `in-progress` — [`01-41-hasratin​gs-trait-correction.story.md`](stories/01-41-hasratin​gs-trait-correction.story.md)
-- `in-progress` — [`01-42-verify-frontmatters.story.md`](stories/01-42-verify-frontmatters.story.md)
-- `in-progress` — [`01.30.rating-readme-agnostic-zshrc.story.md`](stories/01.30.rating-readme-agnostic-zshrc.story.md)
-- `in-progress` — [`2.6.phpstan-silencer-removal-regression-fix.story.md`](stories/2.6.phpstan-silencer-removal-regression-fix.story.md)
-- `in-progress` — [`5.87.rating-contract-usage.story.md`](stories/5.87.rating-contract-usage.story.md)
-- `in-progress` — [`5.93.rating-contract-al-posto-di-baserating.story.md`](stories/5.93.rating-contract-al-posto-di-baserating.story.md)
-- `in-progress` — [`8.24-phpstan-l10-fleet-fix-parallel-level-modules.story.md`](bmad/stories/8.24-phpstan-l10-fleet-fix-parallel-level-modules.story.md)
+- `in-progress`: [`01-41-hasratin-gs-trait-correction.story.md`](stories/01-41-hasratin-gs-trait-correction.story.md)
+- `in-progress`: [`01-41-hasratin​gs-trait-correction.story.md`](stories/01-41-hasratin​gs-trait-correction.story.md)
+- `in-progress`: [`01-42-verify-frontmatters.story.md`](stories/01-42-verify-frontmatters.story.md)
+- `in-progress`: [`01.30.rating-readme-agnostic-zshrc.story.md`](stories/01.30.rating-readme-agnostic-zshrc.story.md)
+- `in-progress`: [`2.6.phpstan-silencer-removal-regression-fix.story.md`](stories/2.6.phpstan-silencer-removal-regression-fix.story.md)
+- `in-progress`: [`5.87.rating-contract-usage.story.md`](stories/5.87.rating-contract-usage.story.md)
+- `in-progress`: [`5.93.rating-contract-al-posto-di-baserating.story.md`](stories/5.93.rating-contract-al-posto-di-baserating.story.md)
+- `in-progress`: [`8.24-phpstan-l10-fleet-fix-parallel-level-modules.story.md`](bmad/stories/8.24-phpstan-l10-fleet-fix-parallel-level-modules.story.md)
 
 Prima di lavorare su questi elementi, verificare lo stato canonico nello sprint status, claim/lock e dipendenze. Una story senza `status` non va considerata automaticamente completata.

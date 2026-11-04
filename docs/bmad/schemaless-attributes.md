@@ -1,12 +1,12 @@
 ---
-title: "Schemaless Attributes — Rating Module"
+title: "Schemaless Attributes: Rating Module"
 type: note
 status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "schemaless attributes   rating module rating"
 ---
-# Schemaless Attributes — Rating Module
+# Schemaless Attributes: Rating Module
 
 **Package**: [`spatie/laravel-schemaless-attributes`](https://github.com/spatie/laravel-schemaless-attributes)
 **Status**: ✅ CORRECT (Rating extends BaseRating)
@@ -23,8 +23,8 @@ Rating (Modules\Rating\Models\Rating)
 ```
 
 `BaseRating` is the single source of truth for:
-- `casts()` — defines `'extra_attributes' => SchemalessAttributes::class`
-- `scopeWithExtraAttributes()` — filters by JSON attributes
+- `casts()`: defines `'extra_attributes' => SchemalessAttributes::class`
+- `scopeWithExtraAttributes()`: filters by JSON attributes
 - `$fillable`, `linkedTo()`, `registerMediaConversions()`
 
 > [!IMPORTANT]
@@ -34,10 +34,10 @@ Rating (Modules\Rating\Models\Rating)
 
 ## Setup Checklist
 
-### 1. Model — Correct Cast
+### 1. Model: Correct Cast
 
 ```php
-// BaseRating.php — inherited by all Rating models
+// BaseRating.php: inherited by all Rating models
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 
 /** @return array<string, string> */
