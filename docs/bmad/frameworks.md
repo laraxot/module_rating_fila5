@@ -1,12 +1,12 @@
 ---
-title: "Rating — Framework Integration Notes"
+title: "Rating: Framework Integration Notes"
 type: note
 status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "rating   framework integration notes rating"
 ---
-# Rating — Framework Integration Notes
+# Rating: Framework Integration Notes
 
 Integration guidelines for caveman, graphify, bmad-method, headroom, ponytail.
 
@@ -22,7 +22,7 @@ Surgical editing patterns:
 ## Architecture (graphify)
 
 Dependency analysis:
-- Module dependencies: [TBD — graphify analysis]
+- Module dependencies: [TBD: graphify analysis]
 - Circular deps: [TBD]
 - Cross-theme usage: [TBD]
 

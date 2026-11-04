@@ -1,7 +1,7 @@
 ---
 issues: []
 discussions: []
-title: "Conflict Resolution — Module Rating"
+title: "Conflict Resolution: Module Rating"
 type: guide
 tags: [conflict, resolution, rating]
 created: 2026-07-14
@@ -12,7 +12,7 @@ related:
 status: draft
 ---
 
-# Conflict Resolution — Module Rating
+# Conflict Resolution: Module Rating
 
 ## Summary
 - **Files resolved**: 1

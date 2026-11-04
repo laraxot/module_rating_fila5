@@ -1,5 +1,5 @@
 ---
-title: "Release e README marketing — Rating"
+title: "Release e README marketing: Rating"
 type: reference
 tags: [release, semantic-versioning, changelog, readme, marketing]
 created: "2026-05-26"
@@ -10,7 +10,7 @@ status: superseded
 superseded_by: ../release-marketing-standard.md
 ---
 
-# Release e README marketing — Rating
+# Release e README marketing: Rating
 
 ## Scopo
 

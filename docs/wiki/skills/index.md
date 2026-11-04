@@ -10,13 +10,13 @@ tags: [skills, rating, filament, xotbase]
 status: draft
 ---
 
-# Skills — Rating Module Wiki
+# Skills: Rating Module Wiki
 
 > Skill on-demand rilevanti per il modulo Rating.
 
 ## Available Skills
 
-- [filament-page-creation](../../../../Xot/docs/wiki/skills/filament-page-creation.md) — skill condivisa Xot per creare page Filament coerenti con XotBase
+- [filament-page-creation](../../../../Xot/docs/wiki/skills/filament-page-creation.md): skill condivisa Xot per creare page Filament coerenti con XotBase
 
 ## Usage
 

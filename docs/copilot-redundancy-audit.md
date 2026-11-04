@@ -12,7 +12,7 @@ related:
 status: draft
 ---
 
-Copilot Redundancy Audit — 2026-05-25
+Copilot Redundancy Audit: 2026-05-25
 
 Sintesi
 - Documentazione di rating e componenti correlati presente in più posizioni.

@@ -10,7 +10,7 @@ discussions: []
 status: draft
 ---
 
-# Brainstorming — componente Blade riutilizzabile per tabella rating
+# Brainstorming: componente Blade riutilizzabile per tabella rating
 
 ## Contesto
 Il blocco Blade per la visualizzazione delle righe di `ratings` (testo, valore, nota con rowspan) è duplicato in più punti (viste schede, esportazioni XLS, viste PDF). Si vuole estrarlo in un componente Blade riutilizzabile.

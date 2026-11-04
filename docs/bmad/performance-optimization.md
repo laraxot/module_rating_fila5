@@ -1,12 +1,12 @@
 ---
-title: "Performance Optimization — Module Rating"
+title: "Performance Optimization: Module Rating"
 type: alias
 status: superseded
 canonical: "bmad/PERFORMANCE-OPTIMIZATION.md"
 qmd: "performance-optimization alias superseded"
 ---
 
-# Performance Optimization — Module Rating
+# Performance Optimization: Module Rating
 
 Documento identico al canonico: [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md).
 

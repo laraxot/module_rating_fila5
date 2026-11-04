@@ -1,5 +1,5 @@
 ---
-title: "Rating — Quick Reference"
+title: "Rating: Quick Reference"
 type: note
 module: Rating
 tags:
@@ -16,9 +16,9 @@ related:
 status: draft
 ---
 
-# Rating — Quick Reference
+# Rating: Quick Reference
 
-> **SUMMARY** — Riferimento rapido del modulo `Rating`: dove sta cosa, quali simboli usare,
+> **SUMMARY**: Riferimento rapido del modulo `Rating`: dove sta cosa, quali simboli usare,
 > quali test leggere prima di toccare il codice. Paths relativi a `laravel/Modules/Rating`.
 
 ## SSoT e contratti
@@ -82,7 +82,7 @@ Metodi chiave di `RatingData`: `ratingValuePath()`, `ratingXlsValuePath()`, `rat
 
 ## Config e provider
 
-- `config/config.php` — solo `name`, `icon`, `navigation_sort`.
+- `config/config.php`: solo `name`, `icon`, `navigation_sort`.
 - Provider: `app/Providers/RatingServiceProvider.php`, `app/Providers/Filament/AdminPanelProvider.php`,
   `app/Providers/RouteServiceProvider.php`, `app/Providers/EventServiceProvider.php`.
 - `routes/web.php` e `routes/api.php` sono vuoti di rotte.

@@ -1,5 +1,5 @@
 ---
-title: "Rating — BMAD dossier"
+title: "Rating: BMAD dossier"
 type: bmad-dossier
 module: Rating
 updated: 2026-10-07
@@ -9,7 +9,7 @@ issues: ["https://github.com/laraxot/base_fixcity_fila5/issues/383"]
 discussions: ["https://github.com/laraxot/base_fixcity_fila5/discussions/392"]
 status: draft
 ---
-# Rating — BMAD dossier
+# Rating: BMAD dossier
 ## Product brief / PRD
 Collect trustworthy polymorphic feedback after an eligible civic outcome.
 ## Architecture / UX / security

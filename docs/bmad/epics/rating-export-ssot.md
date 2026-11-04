@@ -1,5 +1,5 @@
 ---
-title: "Epic 5.249 — Rating: export XLS e path come SSoT in RatingData"
+title: "Epic 5.249: Rating: export XLS e path come SSoT in RatingData"
 type: epic
 module: Rating
 status: active
@@ -19,9 +19,9 @@ related:
   - ../brainstorming.md
 ---
 
-# Epic 5.249 — Rating: export XLS e path come SSoT in `RatingData`
+# Epic 5.249: Rating: export XLS e path come SSoT in `RatingData`
 
-> **SUMMARY** — Epic di rifinitura del lato export del modulo `Rating`: tutti i path di
+> **SUMMARY**: Epic di rifinitura del lato export del modulo `Rating`: tutti i path di
 > valore, le label di form e i campi XLS devono derivare da `app/Datas/RatingData.php`,
 > senza copie nei modelli, nelle colonne Filament o nei form host.
 
