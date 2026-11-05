@@ -1,12 +1,20 @@
 ---
+<<<<<<< .merge_file_4HFx7y
 title: "Performance Optimization — Module Rating"
+=======
+title: "Performance Optimization: Module Rating"
+>>>>>>> .merge_file_EkfueB
 type: alias
 status: superseded
 canonical: "bmad/PERFORMANCE-OPTIMIZATION.md"
 qmd: "performance-optimization alias superseded"
 ---
 
+<<<<<<< .merge_file_4HFx7y
 # Performance Optimization — Module Rating
+=======
+# Performance Optimization: Module Rating
+>>>>>>> .merge_file_EkfueB
 
 Documento identico al canonico: [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md).
 

@@ -1,5 +1,5 @@
 ---
-title: "Rating — brainstorming BMAD"
+title: "Rating: brainstorming BMAD"
 type: brainstorming
 status: active
 module: Rating
@@ -8,7 +8,7 @@ updated: 2026-09-28
 qmd: "Rating brainstorming rischi opportunità domande aperte"
 tags: [docs, rating, bmad]
 ---
-# Rating — brainstorming
+# Rating: brainstorming
 
 ## Punto di partenza
 

@@ -126,7 +126,7 @@ Rating::withExtraAttributes(['anno' => 2024, 'type' => 'performance'])->get();
 Rating::where('extra_attributes->anno', 2024)->get();
 
 // Via HasRatingsTrait (host model): syncRatingsWhere chiama
-// Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
+// Rating::getClassName()::withExtraAttributes($where): class-string del Rating del modulo caller.
 
 ---
 ---

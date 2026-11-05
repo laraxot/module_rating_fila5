@@ -1,12 +1,12 @@
 ---
-title: "BMAD completion pack — Rating"
+title: "BMAD completion pack: Rating"
 type: note
 status: draft
 updated: 2026-10-26
 tags: [docs, rating, bmad]
 qmd: "bmad completion pack   rating rating"
 ---
-# BMAD completion pack — Rating
+# BMAD completion pack: Rating
 
 This is the owner-local BMAD entry point. Cross-owner contracts are in plans/fixcity-completion-architecture.md; the backlog is in docs/completion-backlog.md.
 

@@ -1,12 +1,16 @@
 ---
+<<<<<<< .merge_file_rZW3T9
 title: "Best practices — Rating"
+=======
+title: "Best practices: Rating"
+>>>>>>> .merge_file_F0giZy
 type: alias
 status: superseded
 canonical: "bmad/best-practices.md"
 qmd: "best-practices alias superseded"
 ---
 
-# Best practices — Rating
+# Best practices: Rating
 
 Documento identico al canonico: [best-practices.md](../bmad/best-practices.md).
 

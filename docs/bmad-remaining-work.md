@@ -1,5 +1,5 @@
 ---
-title: "Rating Module — BMAD Stories & Remaining Work"
+title: "Rating Module: BMAD Stories & Remaining Work"
 type: concept
 sources: ["../../AGENTS.md"]
 confidence: medium
@@ -12,14 +12,14 @@ status: draft
 qmd: "rating module   bmad stories & remaining work rating"
 ---
 
-# Rating Module — BMAD Stories & Remaining Work
+# Rating Module: BMAD Stories & Remaining Work
 
 ## Module Overview
 The Rating module provides user and content rating functionality.
 
 ## Remaining Work
 1. PHPStan Zero Verification ✅
-2. Rating Mechanisms — Verify rating models and actions
+2. Rating Mechanisms: Verify rating models and actions
 3. Module Documentation 📋
 4. Test Coverage 📋
 5. BMAD Stories 📋
