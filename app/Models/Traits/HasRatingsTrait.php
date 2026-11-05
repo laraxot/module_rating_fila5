@@ -133,6 +133,11 @@ trait HasRatingsTrait
      */
     public function getRatingsByIdAttribute(): EloquentCollection
     {
+        return $this->getRatingsById();
+    }
+
+    public function getRatingsById(): EloquentCollection
+    {
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $this->ratings->keyBy('id');
 
@@ -258,6 +263,14 @@ trait HasRatingsTrait
      */
     public function getMyRatingAttribute(): Collection
     {
+        return $this->getMyRating();
+    }
+
+    /**
+     * @return Collection<string|int, mixed>
+     */
+    public function getMyRating(): Collection
+    {
         /** @var Collection<int, BaseRating> $myRatings */
         $myRatings = $this->myRatings;
 
@@ -266,12 +279,28 @@ trait HasRatingsTrait
 
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        return (float) ($value ?? 0);
+        return $value ?? $this->getRatingsAvg();
+    }
+
+    /**
+     * Media dei voti salvata nella colonna cache (0 se assente).
+     */
+    public function getRatingsAvg(): float
+    {
+        return (float) ($this->attributes['ratings_avg'] ?? 0);
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        return $value ?? 0;
+        return $value ?? $this->getRatingsCount();
+    }
+
+    /**
+     * Numero di voti salvato nella colonna cache (0 se assente).
+     */
+    public function getRatingsCount(): int
+    {
+        return (int) ($this->attributes['ratings_count'] ?? 0);
     }
 
     /**
