@@ -136,9 +136,14 @@ trait HasRatingsTrait
         return $this->getRatingsById();
     }
 
+    /**
+     * Voti del modello, indicizzati per id.
+     *
+     * @return EloquentCollection<int|string, BaseRating>
+     */
     public function getRatingsById(): EloquentCollection
     {
-        /** @var EloquentCollection<int, BaseRating> $ratings */
+        /** @var EloquentCollection<int|string, BaseRating> $ratings */
         $ratings = $this->ratings->keyBy('id');
 
         /** @var Collection<int, MorphPivot> $pivots */
@@ -287,7 +292,9 @@ trait HasRatingsTrait
      */
     public function getRatingsAvg(): float
     {
-        return (float) ($this->attributes['ratings_avg'] ?? 0);
+        $raw = $this->attributes['ratings_avg'] ?? 0;
+
+        return is_numeric($raw) ? (float) $raw : 0.0;
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
@@ -300,7 +307,9 @@ trait HasRatingsTrait
      */
     public function getRatingsCount(): int
     {
-        return (int) ($this->attributes['ratings_count'] ?? 0);
+        $raw = $this->attributes['ratings_count'] ?? 0;
+
+        return is_numeric($raw) ? (int) $raw : 0;
     }
 
     /**
