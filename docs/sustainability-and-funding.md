@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_dCH441
-title: "Sostenibilità e inbound marketing — Rating"
-=======
 title: "Sostenibilità e inbound marketing: Rating"
->>>>>>> .merge_file_dtpzTo
 type: bmad-pointer
 status: decision-input
 updated: 2026-10-15

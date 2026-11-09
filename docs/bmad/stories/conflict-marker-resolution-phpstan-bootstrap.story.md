@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_DxIKGF
-title: "Conflict marker resolution — PHPStan bootstrap unblock (story 8.23)"
-=======
 title: "Conflict marker resolution: PHPStan bootstrap unblock (story 8.23)"
->>>>>>> .merge_file_uwpJ7r
 type: story
 module: Rating
 epic: quality
@@ -18,11 +14,7 @@ updated: 2026-10-07
 tags: [docs, rating, bmad]
 ---
 
-<<<<<<< .merge_file_DxIKGF
-# Conflict marker resolution — PHPStan bootstrap unblock (story 8.23)
-=======
 # Conflict marker resolution: PHPStan bootstrap unblock (story 8.23)
->>>>>>> .merge_file_uwpJ7r
 
 ## Scopo
 
@@ -37,17 +29,10 @@ per ripristinare bootstrap e abilitare l'esecuzione parallela dell'analisi.
 
 **File con marker:**
 1. PHP (critico, blocca bootstrap):
-<<<<<<< .merge_file_DxIKGF
-   - `app/Models/BaseRating.php:250` — `resolveSelectedChild()`, null check
-   - `app/Models/Policies/BaseRatingMorphPolicy.php:81` — policy guard
-   - `app/Models/Traits/HasRating.php:7, 36, 54` — relazione + accessor
-   - `app/Actions/HasRating/GetSumByModelRatingIdAction.php` — sum logic
-=======
    - `app/Models/BaseRating.php:250`: `resolveSelectedChild()`, null check
    - `app/Models/Policies/BaseRatingMorphPolicy.php:81`: policy guard
    - `app/Models/Traits/HasRating.php:7, 36, 54`: relazione + accessor
    - `app/Actions/HasRating/GetSumByModelRatingIdAction.php`: sum logic
->>>>>>> .merge_file_uwpJ7r
 
 2. Docs (secondario, non blocca):
    - `README.md`, BMAD stories, wiki rules (9 file)
@@ -69,37 +54,21 @@ swarm su cluster 3-4.
 
 **PHP files (priorità 1):**
 
-<<<<<<< .merge_file_DxIKGF
-1. **BaseRating.php:250** — `resolveSelectedChild()`
-=======
 1. **BaseRating.php:250**: `resolveSelectedChild()`
->>>>>>> .merge_file_uwpJ7r
    - HEAD: `if ($value === null)`
    - laraxot/dev: `if ($value === null || $value === '')`
    - **Scelta:** laraxot/dev (più robusto, copre stringa vuota)
 
-<<<<<<< .merge_file_DxIKGF
-2. **BaseRatingMorphPolicy.php:81** — policy authorization
-   - Marker in commento/guard logico
-   - **Scelta:** prende il version che mantiene il check + semantica
-
-3. **HasRating.php** — 3 marker in trait
-=======
 2. **BaseRatingMorphPolicy.php:81**: policy authorization
    - Marker in commento/guard logico
    - **Scelta:** prende il version che mantiene il check + semantica
 
 3. **HasRating.php**: 3 marker in trait
->>>>>>> .merge_file_uwpJ7r
    - Accessor + relazione definition
    - **Scelta:** per ogni blocco, leggi entrambi e assicura che il tratto
      resti funzionale (niente duplicate, niente perdita di signature)
 
-<<<<<<< .merge_file_DxIKGF
-4. **GetSumByModelRatingIdAction.php** — sum query
-=======
 4. **GetSumByModelRatingIdAction.php**: sum query
->>>>>>> .merge_file_uwpJ7r
    - Marker in builder chain
    - **Scelta:** assicura che la query sia valida e non duplici
 

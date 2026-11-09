@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_S5qaou
-title: "Project context — Rating"
-=======
 title: "Project context: Rating"
->>>>>>> .merge_file_tXF3na
 type: constitution
 module: Rating
 track: quick-flow
@@ -18,11 +14,7 @@ related:
   - ./filament-blueprint.md
 ---
 
-<<<<<<< .merge_file_S5qaou
-# Costituzione — Rating
-=======
 # Costituzione: Rating
->>>>>>> .merge_file_tXF3na
 
 Raccogliere feedback polimorfico affidabile dopo un esito civico eleggibile.
 

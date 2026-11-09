@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_bbwZag
-title: "Code quality — modulo Rating"
-=======
 title: "Code quality: modulo Rating"
->>>>>>> .merge_file_vtzFC8
 type: note
 updated: 2026-10-07
 tags: [docs, rating, bmad]
@@ -11,11 +7,7 @@ qmd: "code quality   modulo rating rating"
 status: superseded
 superseded_by: ../code-quality-report.md
 ---
-<<<<<<< .merge_file_bbwZag
-# Code quality — modulo Rating
-=======
 # Code quality: modulo Rating
->>>>>>> .merge_file_vtzFC8
 
 Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (ruleset codesize+unusedcode), grep mirati (TODO/FIXME/@deprecated, dd()/dump(), facade in app/Actions, extends Filament diretto), rapporto file test/app.
 

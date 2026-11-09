@@ -107,13 +107,8 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 | [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
 | [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
 | ../../../../docs/stories/5.109-… _(riferimento non presente nel repository, verificato 2026-10-14)_ | is_altro/migration → superseded |
-<<<<<<< .merge_file_junCjm
-| [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146) — se citi "5.145" verifica su disco quale intendi |
-| `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge — non SSoT; vedi [../index.md](../index.md) |
-=======
 | [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146): se citi "5.145" verifica su disco quale intendi |
 | `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge: non SSoT; vedi [../index.md](../index.md) |
->>>>>>> .merge_file_kk8ubA
 
 **Regola swarm:** se un agente rivendica «utente ha confermato `'altro'` stringa», verificare
 `docs/prompts/01.md` (*chiave "" o null*) e i commenti **più recenti** su #57/#58 prima di

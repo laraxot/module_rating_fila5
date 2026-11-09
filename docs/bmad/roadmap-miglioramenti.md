@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_qY7JQd
-title: "Roadmap — Rating, il modulo più piccolo con la coscienza più pulita"
-=======
 title: "Roadmap: Rating, il modulo più piccolo con la coscienza più pulita"
->>>>>>> .merge_file_MnFT1Z
 type: note
 updated: 2026-10-07
 tags: [docs, rating, bmad]
@@ -11,11 +7,7 @@ qmd: "roadmap   rating, il modulo più piccolo con la coscienza più pulita rati
 status: superseded
 superseded_by: ../roadmap-miglioramenti.md
 ---
-<<<<<<< .merge_file_qY7JQd
-# Roadmap — Rating, il modulo più piccolo con la coscienza più pulita
-=======
 # Roadmap: Rating, il modulo più piccolo con la coscienza più pulita
->>>>>>> .merge_file_MnFT1Z
 
 > Numeri misurati: [`docs/cosa-migliorare.md`](cosa-migliorare.md) (80,
 > 2026-09-01): PHPStan 0, PHPMD app/ 38 ⚠, Code 97.6, Arch 78.6, 125 casi

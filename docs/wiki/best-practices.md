@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_tuqht0
-title: "Best practices — Rating"
-=======
 title: "Best practices: Rating"
->>>>>>> .merge_file_mk4uTQ
 type: alias
 status: superseded
 canonical: "bmad/best-practices.md"

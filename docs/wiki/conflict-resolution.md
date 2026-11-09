@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_ZT7Rdc
-title: "Conflict Resolution — Module Rating"
-=======
 title: "Conflict Resolution: Module Rating"
->>>>>>> .merge_file_Hg6LNw
 type: alias
 status: superseded
 canonical: "bmad/conflict-resolution.md"

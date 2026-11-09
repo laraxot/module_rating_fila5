@@ -18,19 +18,11 @@ status: draft
 - **Quality Gates**: PHPStan, Pint, Rating-specific quality checks
 
 ## Tasks
-<<<<<<< .merge_file_LbGQRV
-1. **Understand** — Review Rating module structure, RatingResource, RatingPolicy
-2. **Plan** — Identify duplicate Rating files, optimize Rating table, fix PHPStan issues
-3. **Implement** — Clean up Rating artifacts, fix table column names, remove dead code
-4. **Verify** — Run `phpstan analyse Modules/Rating`, `pint`, `phpmd`
-5. **Document** — Update sprint-status.yaml, add to docs/bmad-stories
-=======
 1. **Understand**: Review Rating module structure, RatingResource, RatingPolicy
 2. **Plan**: Identify duplicate Rating files, optimize Rating table, fix PHPStan issues
 3. **Implement**: Clean up Rating artifacts, fix table column names, remove dead code
 4. **Verify**: Run `phpstan analyse Modules/Rating`, `pint`, `phpmd`
 5. **Document**: Update sprint-status.yaml, add to docs/bmad-stories
->>>>>>> .merge_file_9udL3G
 
 ## References
 - Rating/docs/architecture.md

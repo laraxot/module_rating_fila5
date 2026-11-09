@@ -106,11 +106,7 @@ assert($model->ratings->isEmpty()); // No ratings yet
 - Define computed properties with explicit return types
 
 **Reference:**
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
-=======
 - [PATTERNS.md: Score Aggregation](./patterns.md#3-score-aggregation-pattern)
->>>>>>> .merge_file_bL3m6S
 - Laravel docs: Aggregates
 
 ---
@@ -156,11 +152,7 @@ assert($rating->ratable !== null);
 
 **Reference:**
 - Laravel Migrations: Foreign Keys
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Polymorphic Rating](./patterns.md#1-polymorphic-rating-pattern)
-=======
 - [PATTERNS.md: Polymorphic Rating](./patterns.md#1-polymorphic-rating-pattern)
->>>>>>> .merge_file_bL3m6S
 
 ---
 
@@ -204,11 +196,7 @@ $ratings = $model->fresh('ratings')->ratings;
 
 **Reference:**
 - Laravel Eager Loading
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
-=======
 - [PATTERNS.md: Score Aggregation](./patterns.md#3-score-aggregation-pattern)
->>>>>>> .merge_file_bL3m6S
 
 ---
 
@@ -269,11 +257,7 @@ assert($rating->rated_at !== null);
 - Test rating creation from CLI
 
 **Reference:**
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
-=======
 - [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
->>>>>>> .merge_file_bL3m6S
 - Laravel Queue documentation
 
 ---
@@ -344,11 +328,7 @@ $schedule->daily(new ArchiveOldAuditLogsJob());
 - Monitor JSON column size
 
 **Reference:**
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
-=======
 - [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
->>>>>>> .merge_file_bL3m6S
 - Laravel Scheduled Tasks
 
 ---
@@ -480,11 +460,7 @@ assert(Rating::count() === 1);
 - Test concurrent operations
 
 **Reference:**
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
-=======
 - [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
->>>>>>> .merge_file_bL3m6S
 - Laravel Database Transactions
 
 ---
@@ -552,11 +528,7 @@ $this->post('/ratings', ['category' => 'technical'])
 - Test category filtering
 
 **Reference:**
-<<<<<<< .merge_file_TZCPsU
-- [PATTERNS.md — Category Management](./patterns.md#4-category-management-pattern)
-=======
 - [PATTERNS.md: Category Management](./patterns.md#4-category-management-pattern)
->>>>>>> .merge_file_bL3m6S
 - PHP Enums documentation
 
 ---

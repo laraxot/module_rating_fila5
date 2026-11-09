@@ -12,11 +12,7 @@ tags: [docs, rating, bmad]
 
 ## Lavoro attivo (BMAD)
 
-<<<<<<< .merge_file_cJKTkz
-→ **[bmad/README.md](README.md)** — Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
-=======
 → **[bmad/README.md](README.md)**: Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
->>>>>>> .merge_file_Zxh1j3
 
 | Pack | Link |
 |------|------|
@@ -53,16 +49,9 @@ Ancora aperto (fuori scope per questo cleanup, non toccare qui):
 
 ## Navigazione canonica (2026-10-09)
 
-<<<<<<< .merge_file_cJKTkz
-- [readme.md](README.md) — orientamento BMAD del modulo.
-- [purpose.md](purpose.md) — scopo e confini.
-- [architecture.md](architecture.md) — architettura verificata.
-- [stories/](stories/) — lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).
-=======
 - [readme.md](README.md): orientamento BMAD del modulo.
 - [purpose.md](purpose.md): scopo e confini.
 - [architecture.md](architecture.md): architettura verificata.
 - [stories/](stories/): lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).
->>>>>>> .merge_file_Zxh1j3
 
 `index.md` è l’indice canonico; `INDEX.md` resta storico e non viene spostato.
