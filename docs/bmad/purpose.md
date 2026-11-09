@@ -1,5 +1,5 @@
 ---
-title: "Rating — scopo del modulo e come raggiungerlo meglio"
+title: "Rating: scopo del modulo e come raggiungerlo meglio"
 type: concept
 status: active
 created: 2026-10-06
@@ -12,7 +12,7 @@ discussions:
   - "https://github.com/laraxot/module_rating_fila5/discussions/"
 ---
 
-# Rating — perche' esiste
+# Rating: perche' esiste
 
 ## Lo scopo in una frase
 
@@ -24,7 +24,7 @@ discussions:
 - 34 Action, 15 Widget, 412 file di documentazione
 - Ogni modulo che valuta (Performance, Progressioni, IndennitaResponsabilita) usa Rating tramite trait
 
-## Confini — cosa **non** appartiene a Rating
+## Confini: cosa **non** appartiene a Rating
 
 - Il **calcolo della performance**: dominio di Performance
 - La **valutazione della progressione**: dominio di Progressioni
@@ -66,5 +66,10 @@ Le classi base indicano un punto di estensione previsto.
 
 ## Collegamenti
 
+<<<<<<< .merge_file_wlbfXP
 - `docs/wiki/rules/` — convenzioni e pattern
 - `docs/bmad/stories/rating-phpstan-l10-swarm.story.md` — audit swarm
+=======
+- `docs/wiki/rules/`: convenzioni e pattern
+- `docs/bmad/stories/rating-phpstan-l10-swarm.story.md`: audit swarm
+>>>>>>> .merge_file_pUxvnm

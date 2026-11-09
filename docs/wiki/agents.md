@@ -12,7 +12,7 @@ related:
 status: stub
 ---
 
-# Pointer — canonical agent instructions
+# Pointer: canonical agent instructions
 
 Il documento canonico è **[AGENTS.md](./AGENTS.md)** (bootstrap LLM wiki del modulo Rating).
 

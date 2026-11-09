@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_Evi6KR
 title: "BMAD Planning — Rating"
+=======
+title: "BMAD Planning: Rating"
+>>>>>>> .merge_file_sw8uA9
 type: bmad-planning
 status: active
 module: Rating

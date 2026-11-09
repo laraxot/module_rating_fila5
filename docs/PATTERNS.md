@@ -29,7 +29,7 @@ status: draft
 **Implementation:**
 
 ```php
-// Base trait — centralized in Rating module
+// Base trait: centralized in Rating module
 namespace Modules\Rating\Models\Traits;
 
 trait HasRatingsTrait
@@ -409,7 +409,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
-- [Best Practices](./best-practices.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-- [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism
+- [Best Practices](./best-practices.md): DRY, KISS, clean code
+- [Architecture](./architecture.md): Detailed system design
+- [Troubleshooting](./troubleshooting.md): Common issues & solutions
+- [Wiki Concepts](./wiki/concepts/): Schemaless attributes, polymorphism

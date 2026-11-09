@@ -4,7 +4,11 @@ created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
+<<<<<<< .merge_file_ONWwvm
 title: "Story — tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
+=======
+title: "Story: tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
+>>>>>>> .merge_file_zGFKwq
 type: story
 module: Rating
 epic: quality
@@ -40,7 +44,11 @@ Richiesta utente: sistemare le segnalazioni PHPStan (partite da
 ## Fix
 
 - Nessun edit PHP necessario (race già risolta dal commit `75b7527`).
+<<<<<<< .merge_file_ONWwvm
 - Canon corretto: `Xot/docs/wiki/concepts/tests-audit-coverage-forbidden.md` — `rm -rf`
+=======
+- Canon corretto: `Xot/docs/wiki/concepts/tests-audit-coverage-forbidden.md`: `rm -rf`
+>>>>>>> .merge_file_zGFKwq
   valido solo se non tracciata; se tracciata `git rm` + push al remote del modulo.
 
 ## Gate
@@ -48,7 +56,11 @@ Richiesta utente: sistemare le segnalazioni PHPStan (partite da
 ```text
 phpstan analyse Modules (json) → {"totals":{"errors":0,"file_errors":0}}  exit 0
 ensure-audit-coverage-gitignore.sh --check → nessuna violazione
+<<<<<<< .merge_file_ONWwvm
 Pest: skip ambientale — DB 10.100.200.53 irraggiungibile (vedi story Xot); host 192.168.1.40
+=======
+Pest: skip ambientale: DB 10.100.200.53 irraggiungibile (vedi story Xot); host 192.168.1.40
+>>>>>>> .merge_file_zGFKwq
 ```
 
 ## Aperto
@@ -57,9 +69,15 @@ Pest: skip ambientale — DB 10.100.200.53 irraggiungibile (vedi story Xot); hos
   o il daemon di auto-commit). Finché non è pushato, altri cloni/merge la reiniettano.
 - `docs/sprint-status.yaml` sotto lock `opencode-phpstan`: voce da aggiungere, e le
   righe `Rating/5.228…` / `Rating/rating-xls-fields-move-to-ratingdata` ("resta nel trait")
+<<<<<<< .merge_file_ONWwvm
   sono superate — la sede canonica è `RatingData` (architecture `rating-data-export-methods.md`).
 
 ## Secondo incidente (20:40) — harness Xot cancellati
+=======
+  sono superate: la sede canonica è `RatingData` (architecture `rating-data-export-methods.md`).
+
+## Secondo incidente (20:40): harness Xot cancellati
+>>>>>>> .merge_file_zGFKwq
 
 Rerun di verifica: **394 file_errors** in 14 moduli, 342 `class.notFound` su
 `Modules\Xot\Tests\{FilamentSchemaCoverage,ModuleDeepCoverage,ModuleBusinessCoverage,ModuleExecuteCoverage,ModuleRemainingCoverage}`.

@@ -45,3 +45,7 @@ status: stale
 - [Criteri a scelta: opzioni in JSON, figli del criterio, o altro](criteri-a-scelta-multipla.md)
 
 - [Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero](tipo-di-campo-del-criterio.md)
+
+## Cosa manca per completare
+
+[completion-status.md](./completion-status.md): indicatori misurati, problemi noti e story aperte (2026-10-28).

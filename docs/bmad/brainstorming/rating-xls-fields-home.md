@@ -2,7 +2,7 @@
 tags: [documentation]
 issues: []
 discussions: []
-title: "Brainstorm — home di ratingXlsFields vs RatingData"
+title: "Brainstorm: home di ratingXlsFields vs RatingData"
 type: brainstorming
 module: Rating
 status: closed
@@ -14,7 +14,7 @@ related:
   - ../stories/18.60-rating-xls-fields-catalog.story.md
 ---
 
-# Brainstorm — dove vive il pezzo riusabile
+# Brainstorm: dove vive il pezzo riusabile
 
 ## Domanda
 

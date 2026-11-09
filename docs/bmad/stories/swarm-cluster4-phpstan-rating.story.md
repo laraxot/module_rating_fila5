@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_zjMdAZ
 title: "Swarm cluster-4 PHPStan — Rating: orphan ignore + leaf DRY (story 8.22)"
+=======
+title: "Swarm cluster-4 PHPStan: Rating: orphan ignore + leaf DRY (story 8.22)"
+>>>>>>> .merge_file_LugeO2
 type: story
 module: Rating
 epic: quality
@@ -13,7 +17,11 @@ updated: 2026-10-07
 tags: [docs, rating, bmad]
 ---
 
+<<<<<<< .merge_file_zjMdAZ
 # Swarm cluster-4 — Rating: 1 errore reale SSoT + completamento refactor 8.22
+=======
+# Swarm cluster-4: Rating: 1 errore reale SSoT + completamento refactor 8.22
+>>>>>>> .merge_file_LugeO2
 
 ## Scopo
 
@@ -26,7 +34,11 @@ worktree con corpo svuotato ma `use` orfani.
 ## Errori trovati (gate SSoT = `laravel/phpstan.neon`)
 
 1. `app/Models/Policies/BaseRatingMorphPolicy.php:82`
+<<<<<<< .merge_file_zjMdAZ
    `ignore.unmatchedLine` — `// @phpstan-ignore-next-line
+=======
+   `ignore.unmatchedLine`: `// @phpstan-ignore-next-line
+>>>>>>> .merge_file_LugeO2
    booleanNot.alwaysFalse` orfano: sotto `treatPhpDocTypesAsCertain: false`
    il check non scatta piu', e `reportUnmatchedIgnoredErrors: true` lo
    segnala come errore. La guardia `if (! $ratedModel) return false;`
@@ -35,7 +47,11 @@ worktree con corpo svuotato ma `use` orfani.
 2. Scan peer (config custom piu' stretta, NON SSoT): 13 `always*` su tipi
    da PHPDoc (`HasRating`, `HasRatingsTrait`, `BaseRating:250`,
    `GetSumByModelRatingIdAction:26`, test). Rivalidati contro la SSoT:
+<<<<<<< .merge_file_zjMdAZ
    falsi positivi per costruzione — NON toccati (vedi memoria
+=======
+   falsi positivi per costruzione: NON toccati (vedi memoria
+>>>>>>> .merge_file_LugeO2
    `swarm-phpstan-peer-findings-vs-ssot-config.md`).
 
 ## Fix (scopo/funzionalita')
@@ -63,7 +79,11 @@ worktree con corpo svuotato ma `use` orfani.
   `HasRating.php:61` ignore `alreadyNarrowedType`,
   `RatingTrait.php:20` ignore `trait.unused`: da rivalidare con run SSoT
   (tentativo precedente crashato per file peer ICL transiente, fuori
+<<<<<<< .merge_file_zjMdAZ
   cluster — non toccato). Se unmatched sotto SSoT, rimuovere; se matched
+=======
+  cluster: non toccato). Se unmatched sotto SSoT, rimuovere; se matched
+>>>>>>> .merge_file_LugeO2
   (es. `return.type` su generics `MorphTo`), tenere + debito.
 - Lock detenuti fino a gate completo:
   `RatingPolicy.php`, `RatingMorphPolicy.php`, `BaseRatingMorphPolicy.php`.
