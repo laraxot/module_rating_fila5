@@ -51,11 +51,7 @@ Feedback and satisfaction on services, content, operators.
 
 Numbers that **drive public service improvement**.
 
-<<<<<<< .merge_file_juuWLo
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
-=======
 Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5**: see [STORY-133](../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
->>>>>>> .merge_file_44XNWM
 
 ---
 

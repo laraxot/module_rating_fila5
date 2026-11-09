@@ -4,11 +4,7 @@ tags: [documentation]
 issues: []
 discussions: []
 id: Rating/quality-gates-phpstan-swarm-2026-09-23
-<<<<<<< .merge_file_VWCE1F
-title: "Swarm quality gates 2026-09-23 — verifica PHPStan Rating (21 agenti paralleli, 1 per modulo)"
-=======
 title: "Swarm quality gates 2026-09-23: verifica PHPStan Rating (21 agenti paralleli, 1 per modulo)"
->>>>>>> .merge_file_S7mldJ
 status: done
 module: Rating
 priority: P2
@@ -19,11 +15,7 @@ qmd: "Rating PHPStan swarm quality gates 2026-09-23 conflict markers other modul
 related:
   - 5.157-phpstan-rating-pivot-get-test.story.md
   - phpstan-Rating-fix.md
-<<<<<<< .merge_file_VWCE1F
-github_issue: nessuno creato — nessuna modifica di codice necessaria, solo verifica
-=======
 github_issue: nessuno creato: nessuna modifica di codice necessaria, solo verifica
->>>>>>> .merge_file_S7mldJ
 ---
 
 # Story Rating/quality-gates-phpstan-swarm-2026-09-23
@@ -73,19 +65,11 @@ PHPStan normale:
    (mtime coincidente con l'orario di un altro agente dello swarm attivo su quel modulo).
 2. Riesecuzione successiva: `Cannot make non static method
    Modules\Xot\Filament\Resources\XotBaseResource::getFormSchemaOld() static in class
-<<<<<<< .merge_file_VWCE1F
-   Modules\IndennitaCondizioniLavoro\Filament\Resources\AssenzaResource` — errore fatale
-   in un modulo diverso, causato da un altro agente dello swarm che stava editando in quel
-   momento.
-
-Entrambe le cause sono **fuori scope** (Incentivi, IndennitaCondizioniLavoro — mai toccati,
-=======
    Modules\IndennitaCondizioniLavoro\Filament\Resources\AssenzaResource`: errore fatale
    in un modulo diverso, causato da un altro agente dello swarm che stava editando in quel
    momento.
 
 Entrambe le cause sono **fuori scope** (Incentivi, IndennitaCondizioniLavoro: mai toccati,
->>>>>>> .merge_file_S7mldJ
 per mandato). Confermano il pattern second-brain
 `opencode-peer-collision-conflict-markers-in-place.md`: con 21 agenti paralleli, il
 bootstrap Laravel/Filament (che carica l'intera app per qualunque `phpstan analyse`,
@@ -112,11 +96,7 @@ cd /var/www/_bases/base_ptvx_fila5/laravel && ./vendor/bin/phpstan analyse Modul
 [OK] No errors
 ```
 
-<<<<<<< .merge_file_VWCE1F
-## Second brain — pattern riutilizzabile
-=======
 ## Second brain: pattern riutilizzabile
->>>>>>> .merge_file_S7mldJ
 
 Confermato un pattern già noto (`opencode-peer-collision-conflict-markers-in-place.md`):
 in uno swarm con N agenti paralleli su un monorepo Laravel modulare con panel Filament
@@ -126,9 +106,5 @@ moduli), quindi un errore fatale di sintassi o di tipo in un modulo QUALSIASI fa
 temporaneamente il comando anche per un modulo "innocente" come Rating. Prima di concludere
 che un modulo ha un bug bloccante, verificare lo stack trace: se il frame che fallisce è
 fuori dal path del proprio modulo (qui: `Modules/Incentivi/...` o
-<<<<<<< .merge_file_VWCE1F
-`Modules/IndennitaCondizioniLavoro/...`), non è un problema del modulo assegnato — riprovare
-=======
 `Modules/IndennitaCondizioniLavoro/...`), non è un problema del modulo assegnato: riprovare
->>>>>>> .merge_file_S7mldJ
 e/o segnalare, non "aggiustare" file fuori scope.

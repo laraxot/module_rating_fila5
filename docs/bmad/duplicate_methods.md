@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_ZBAX3M
-title: "Metodi duplicati — Rating"
-=======
 title: "Metodi duplicati: Rating"
->>>>>>> .merge_file_Xk20L1
 type: note
 updated: 2026-10-07
 tags: [docs, rating, bmad]
@@ -11,11 +7,7 @@ qmd: "metodi duplicati   rating rating"
 status: superseded
 superseded_by: ../duplicate-methods.md
 ---
-<<<<<<< .merge_file_ZBAX3M
-# Metodi duplicati — Rating
-=======
 # Metodi duplicati: Rating
->>>>>>> .merge_file_Xk20L1
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.
 

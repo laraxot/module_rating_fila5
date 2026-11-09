@@ -66,10 +66,5 @@ Le classi base indicano un punto di estensione previsto.
 
 ## Collegamenti
 
-<<<<<<< .merge_file_wlbfXP
-- `docs/wiki/rules/` — convenzioni e pattern
-- `docs/bmad/stories/rating-phpstan-l10-swarm.story.md` — audit swarm
-=======
 - `docs/wiki/rules/`: convenzioni e pattern
 - `docs/bmad/stories/rating-phpstan-l10-swarm.story.md`: audit swarm
->>>>>>> .merge_file_pUxvnm

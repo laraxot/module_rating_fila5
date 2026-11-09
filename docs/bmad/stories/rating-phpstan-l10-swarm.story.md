@@ -1,10 +1,6 @@
 ---
 id: Rating/phpstan-l10-swarm-2026-10-06
-<<<<<<< .merge_file_vpFSoA
-title: "PHPStan Level 10 audit swarm (2026-10-06) — Rating module: 10 errors fixed"
-=======
 title: "PHPStan Level 10 audit swarm (2026-10-06): Rating module: 10 errors fixed"
->>>>>>> .merge_file_NjjKR1
 status: done
 module: Rating
 priority: P1
@@ -33,74 +29,42 @@ cd /var/www/_bases/base_ptvx_fila5/laravel && ./vendor/bin/phpstan analyse Modul
 
 ## Errori trovati e fixati (10 totali)
 
-<<<<<<< .merge_file_vpFSoA
-### 1. BetTableAction.php:21 — `trans()` cast to string
-=======
 ### 1. BetTableAction.php:21: `trans()` cast to string
->>>>>>> .merge_file_NjjKR1
 - **Causa**: `tooltip()` si aspetta `string|Htmlable|Closure|null`, ma `trans()` ritorna `array|string`
 - **Fix**: Type guard `is_string()` prima di assegnare a tooltip
 - **Scopo funzionale**: Azione di tabella che mostra un tooltip di scommessa (bet)
 
-<<<<<<< .merge_file_vpFSoA
-### 2. RatingMorphData.php:65 — Variabile `$missing` mai usata
-=======
 ### 2. RatingMorphData.php:65: Variabile `$missing` mai usata
->>>>>>> .merge_file_NjjKR1
 - **Causa**: Closure dichiarata ma non usata nel metodo `updateColumns()`
 - **Fix**: Rimosso, logica di check inlining direttamente nei metodi helper
 - **Scopo funzionale**: Aggiungere colonne al pivot solo se non presenti
 
-<<<<<<< .merge_file_vpFSoA
-### 3. RatingData.php:189 — `schemalessAttributes()` non esiste
-=======
 ### 3. RatingData.php:189: `schemalessAttributes()` non esiste
->>>>>>> .merge_file_NjjKR1
 - **Causa**: Blueprint non ha il metodo `schemalessAttributes()`
 - **Fix**: Cambiato a `->json('extra_attributes')`
 - **Scopo funzionale**: Aggiungere colonna JSON per attributi extra in migration
 
-<<<<<<< .merge_file_vpFSoA
-### 4. RatingsColumn.php:66 & 71 — `trans()` cast in metodo `describe()`
-=======
 ### 4. RatingsColumn.php:66 & 71: `trans()` cast in metodo `describe()`
->>>>>>> .merge_file_NjjKR1
 - **Causa**: Metodo ritorna `string`, ma `trans()` è `array|string`
 - **Fix**: Type guard `is_string()` su `trans()` prima di return
 - **Scopo funzionale**: Descrivere lo stato della valutazione (numero criteri, totale voto)
 
-<<<<<<< .merge_file_vpFSoA
-### 5. RatingsColumn.php:40 — Builder return type in `counts()` closure
-=======
 ### 5. RatingsColumn.php:40: Builder return type in `counts()` closure
->>>>>>> .merge_file_NjjKR1
 - **Causa**: `DB::raw()` in select() fa perdere il type `Eloquent\Builder`, PHPStan vede `Query\Builder`
 - **Fix**: Type hint esplicito `/** @var Builder $result */` prima di return
 - **Scopo funzionale**: Contare i voti distinti per criterio nella colonna table
 
-<<<<<<< .merge_file_vpFSoA
-### 6. BaseRatingForm.php:59 — Builder return type in `relationship()` closure
-=======
 ### 6. BaseRatingForm.php:59: Builder return type in `relationship()` closure
->>>>>>> .merge_file_NjjKR1
 - **Causa**: `whereNotIn()` ritorna `Query\Builder` in certi casi, non `Eloquent\Builder`
 - **Fix**: Type hint `/** @var Builder $result */` per garantire tipo corretto
 - **Scopo funzionale**: Filtrare il parent_id escludendo il record e i suoi discendenti (cycle detection)
 
-<<<<<<< .merge_file_vpFSoA
-### 7. BaseRating.php:43-46 — PHPDoc @method generics mancanti
-=======
 ### 7. BaseRating.php:43-46: PHPDoc @method generics mancanti
->>>>>>> .merge_file_NjjKR1
 - **Causa**: `@method static Builder|BaseRating` non specifica generic type `<BaseRating>`
 - **Fix**: Cambiato a `@method static Builder<BaseRating>`
 - **Scopo funzionale**: Documentazione corretta dei metodi statici query builder
 
-<<<<<<< .merge_file_vpFSoA
-### 8. BaseRating.php:160 — Scope `withExtraAttributes()` return type
-=======
 ### 8. BaseRating.php:160: Scope `withExtraAttributes()` return type
->>>>>>> .merge_file_NjjKR1
 - **Causa**: Metodo scope ritorna `Builder`, PHPStan non vede che è `Builder<BaseRating>`
 - **Fix**: Type hint aggiunto: `-> Builder<BaseRating>`
 - **Scopo funzionale**: Query scope per filtrare per attributi extra JSON
@@ -110,11 +74,7 @@ cd /var/www/_bases/base_ptvx_fila5/laravel && ./vendor/bin/phpstan analyse Modul
 - **Fix**: Aggiunto `@method static Builder<BaseRating> ordered()` al PHPDoc
 - **Scopo funzionale**: Filtrare rating ordinati per colonna order_column (Spatie Sortable)
 
-<<<<<<< .merge_file_vpFSoA
-### 10. RatingData.php:117 & 155 — Type hints e string cast in `getXlsFields()`
-=======
 ### 10. RatingData.php:117 & 155: Type hints e string cast in `getXlsFields()`
->>>>>>> .merge_file_NjjKR1
 - **Causa**: 
   - Linea 117: `$ratingClass::withExtraAttributes($where)->ordered()` → ordered() non trovato senza type hint Builder generico
   - Linea 155: `trans()` ritorna `array|string`, non garantito che sia `string` quando assegnato a array<string, string>
@@ -156,19 +116,11 @@ php -l Modules/Rating/app/Models/BaseRating.php
 - Fix: aggiungere generico al return type, e aggiungere @method tag per metodi derivati da trait
 
 **Lezione 4: Blueprint methods**
-<<<<<<< .merge_file_vpFSoA
-- Laravel Blueprint (migration fluent) non ha `schemalessAttributes()` — è un pacchetto Spatie esterno
-- Usare il metodo nativo corretto: `->json()` per JSON, non `->schemalessAttributes()`
-- Il modello ha il cast Spatie, la migration usa i metodi nativi
-
-## Second brain — no patterns nuovi
-=======
 - Laravel Blueprint (migration fluent) non ha `schemalessAttributes()`: è un pacchetto Spatie esterno
 - Usare il metodo nativo corretto: `->json()` per JSON, non `->schemalessAttributes()`
 - Il modello ha il cast Spatie, la migration usa i metodi nativi
 
 ## Second brain: no patterns nuovi
->>>>>>> .merge_file_NjjKR1
 
 I fix seguono pattern già noti dal progetto:
 - Type hints generici su Builder (memoria: "form-schema-solo-su-form-class.md", "form-column-parity-rule.md")
@@ -190,19 +142,11 @@ laravel/Modules/Rating/app/Models/BaseRating.php → +generics <BaseRating> to @
 
 ## Commit
 
-<<<<<<< .merge_file_vpFSoA
-`Fix Rating: 10 PHPStan L10 errors — builder generics, trans() guards, json() migration`
-
-Tutte le segnalazioni risolte mantenendo la scopo funzionale di ogni codice; nessun workaround o cast forzato.
-
-## Verifica post-deployment (2026-10-06 — coordinamento agente)
-=======
 `Fix Rating: 10 PHPStan L10 errors: builder generics, trans() guards, json() migration`
 
 Tutte le segnalazioni risolte mantenendo la scopo funzionale di ogni codice; nessun workaround o cast forzato.
 
 ## Verifica post-deployment (2026-10-06: coordinamento agente)
->>>>>>> .merge_file_NjjKR1
 
 PHPStan Level 10 re-run scopriva che il commit precedente non aveva completamente risolto i conflitti di merge:
 - RatingData.php linea 189: `schemalessAttributes()` rimasto non fixato → cambiato a `json()` ✓
@@ -211,11 +155,7 @@ PHPStan Level 10 re-run scopriva che il commit precedente non aveva completament
 
 **Commit verifica:** `e4ee2cc922` (SCOPO fix Rating PHPStan L10: 2 critical errors in RatingData)
 
-<<<<<<< .merge_file_vpFSoA
-Remaining 160+ errors primariamente in test files (trait.unused, property.notFound su fixtures) — non critici per dominio Applicativo.
-=======
 Remaining 160+ errors primariamente in test files (trait.unused, property.notFound su fixtures): non critici per dominio Applicativo.
->>>>>>> .merge_file_NjjKR1
 
 **Status finale:** Rating module app/ syntax OK (php -l), 10 fix da commit precedente + 2 fix da verifica = 12 errori risolti.
 

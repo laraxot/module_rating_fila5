@@ -1,9 +1,5 @@
 ---
-<<<<<<< .merge_file_gto4Ys
-title: Story — Indice docs canonico Rating
-=======
 title: Story: Indice docs canonico Rating
->>>>>>> .merge_file_C6CFxV
 type: story
 module: Rating
 tags: [docs, bmad, rating, reorganization]
@@ -12,11 +8,7 @@ status: draft
 updated: 2026-10-09
 ---
 
-<<<<<<< .merge_file_gto4Ys
-# Story — Indice docs canonico Rating
-=======
 # Story: Indice docs canonico Rating
->>>>>>> .merge_file_C6CFxV
 
 **Data:** 2026-10-09 · **Stato:** review
 

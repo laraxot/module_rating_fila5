@@ -1,10 +1,6 @@
 ---
 id: Rating/module-bmad-audit-20260928
-<<<<<<< .merge_file_xqt09z
-title: "Rating — baseline BMAD e analisi completa"
-=======
 title: "Rating: baseline BMAD e analisi completa"
->>>>>>> .merge_file_Oe1j07
 status: ready-for-dev
 module: Rating
 epic: module-governance
@@ -19,11 +15,7 @@ updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "story   rating: baseline bmad rating"
 ---
-<<<<<<< .merge_file_xqt09z
-# Story — Rating: baseline BMAD
-=======
 # Story: Rating: baseline BMAD
->>>>>>> .merge_file_Oe1j07
 
 Come manutentore del modulo Rating, voglio una baseline BMAD verificabile, così da poter pianificare lavoro senza confondere ipotesi, WIP e comportamento osservato.
 
