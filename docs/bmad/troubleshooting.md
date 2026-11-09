@@ -39,7 +39,7 @@ related:
 
 ### 1. Calculation Errors
 
-#### Error Pattern: "Invalid rating value — expected numeric, got string"
+#### Error Pattern: "Invalid rating value: expected numeric, got string"
 
 **Cause:**
 - Rating value not cast to numeric in model
@@ -81,8 +81,8 @@ $sum = $rating->value + 1;  // Should work without error
 - Add PHPStan property types: `@property float $value`
 
 **Reference:**
-- [best-practices.md](./best-practices.md) — DRY rule definitions
-- [architecture.md](./architecture.md) — Rating model casts
+- [best-practices.md](./best-practices.md): DRY rule definitions
+- [architecture.md](./architecture.md): Rating model casts
 
 ---
 
@@ -123,14 +123,18 @@ assert($model->ratings->isEmpty()); // No ratings yet
 - Define computed properties with explicit return types
 
 **Reference:**
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
+=======
+- [PATTERNS.md: Score Aggregation](./patterns.md#3-score-aggregation-pattern)
+>>>>>>> .merge_file_RvH38r
 - Laravel docs: Aggregates
 
 ---
 
 ### 2. Sync Issues
 
-#### Error Pattern: "Ratable relationship broken — orphaned ratings"
+#### Error Pattern: "Ratable relationship broken: orphaned ratings"
 
 **Cause:**
 - Parent model deleted without cascade delete
@@ -169,7 +173,11 @@ assert($rating->ratable !== null);
 
 **Reference:**
 - Laravel Migrations: Foreign Keys
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Polymorphic Rating](./patterns.md#1-polymorphic-rating-pattern)
+=======
+- [PATTERNS.md: Polymorphic Rating](./patterns.md#1-polymorphic-rating-pattern)
+>>>>>>> .merge_file_RvH38r
 
 ---
 
@@ -213,13 +221,17 @@ $ratings = $model->fresh('ratings')->ratings;
 
 **Reference:**
 - Laravel Eager Loading
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Score Aggregation](./patterns.md#3-score-aggregation-pattern)
+=======
+- [PATTERNS.md: Score Aggregation](./patterns.md#3-score-aggregation-pattern)
+>>>>>>> .merge_file_RvH38r
 
 ---
 
 ### 3. Audit Trail Failures
 
-#### Error Pattern: "Audit log missing — no record of who rated"
+#### Error Pattern: "Audit log missing: no record of who rated"
 
 **Cause:**
 - Auth not available during rating creation (queue, CLI)
@@ -274,12 +286,16 @@ assert($rating->rated_at !== null);
 - Test rating creation from CLI
 
 **Reference:**
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
+=======
+- [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
+>>>>>>> .merge_file_RvH38r
 - Laravel Queue documentation
 
 ---
 
-#### Error Pattern: "Schema-less audit JSON grows unbounded — performance degrades"
+#### Error Pattern: "Schema-less audit JSON grows unbounded: performance degrades"
 
 **Cause:**
 - Audit log appends without truncation
@@ -345,14 +361,18 @@ $schedule->daily(new ArchiveOldAuditLogsJob());
 - Monitor JSON column size
 
 **Reference:**
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
+=======
+- [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
+>>>>>>> .merge_file_RvH38r
 - Laravel Scheduled Tasks
 
 ---
 
 ### 4. Permission Errors
 
-#### Error Pattern: "Unauthorized — 403 Forbidden when creating rating"
+#### Error Pattern: "Unauthorized: 403 Forbidden when creating rating"
 
 **Cause:**
 - User policy denies create action
@@ -400,13 +420,13 @@ $this->post('/ratings', ['value' => 3])
 
 **Reference:**
 - Laravel Authorization
-- [architecture.md](./architecture.md) — Policy setup
+- [architecture.md](./architecture.md): Policy setup
 
 ---
 
 ### 5. Duplicate Ratings
 
-#### Error Pattern: "Multiple ratings for same model+rating_id — data integrity violated"
+#### Error Pattern: "Multiple ratings for same model+rating_id: data integrity violated"
 
 **Cause:**
 - No unique constraint on (ratable_id, ratable_type, rating_id, user_id)
@@ -477,14 +497,18 @@ assert(Rating::count() === 1);
 - Test concurrent operations
 
 **Reference:**
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Audit Trail](./patterns.md#2-audit-trail-pattern)
+=======
+- [PATTERNS.md: Audit Trail](./patterns.md#2-audit-trail-pattern)
+>>>>>>> .merge_file_RvH38r
 - Laravel Database Transactions
 
 ---
 
 ### 6. Category Conflicts
 
-#### Error Pattern: "Invalid rating category — does not match enum"
+#### Error Pattern: "Invalid rating category: does not match enum"
 
 **Cause:**
 - Category string doesn't match RatingCategoryEnum cases
@@ -545,7 +569,11 @@ $this->post('/ratings', ['category' => 'technical'])
 - Test category filtering
 
 **Reference:**
+<<<<<<< .merge_file_vc3UCk
 - [PATTERNS.md — Category Management](./patterns.md#4-category-management-pattern)
+=======
+- [PATTERNS.md: Category Management](./patterns.md#4-category-management-pattern)
+>>>>>>> .merge_file_RvH38r
 - PHP Enums documentation
 
 ---

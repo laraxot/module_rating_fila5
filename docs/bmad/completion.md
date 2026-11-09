@@ -1,12 +1,20 @@
 ---
+<<<<<<< .merge_file_EAQ0Wv
 title: "BMAD completion pack — Rating"
+=======
+title: "BMAD completion pack: Rating"
+>>>>>>> .merge_file_HMRTgD
 type: note
 status: draft
 updated: 2026-10-26
 tags: [docs, rating, bmad]
 qmd: "bmad completion pack   rating rating"
 ---
+<<<<<<< .merge_file_EAQ0Wv
 # BMAD completion pack — Rating
+=======
+# BMAD completion pack: Rating
+>>>>>>> .merge_file_HMRTgD
 
 This is the owner-local BMAD entry point. Cross-owner contracts are in plans/fixcity-completion-architecture.md; the backlog is in docs/completion-backlog.md.
 

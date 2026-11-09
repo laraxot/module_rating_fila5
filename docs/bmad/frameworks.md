@@ -1,12 +1,20 @@
 ---
+<<<<<<< .merge_file_9gmOKP
 title: "Rating — Framework Integration Notes"
+=======
+title: "Rating: Framework Integration Notes"
+>>>>>>> .merge_file_zx1bO6
 type: note
 status: draft
 updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "rating   framework integration notes rating"
 ---
+<<<<<<< .merge_file_9gmOKP
 # Rating — Framework Integration Notes
+=======
+# Rating: Framework Integration Notes
+>>>>>>> .merge_file_zx1bO6
 
 Integration guidelines for caveman, graphify, bmad-method, headroom, ponytail.
 
@@ -22,7 +30,7 @@ Surgical editing patterns:
 ## Architecture (graphify)
 
 Dependency analysis:
-- Module dependencies: [TBD — graphify analysis]
+- Module dependencies: [TBD: graphify analysis]
 - Circular deps: [TBD]
 - Cross-theme usage: [TBD]
 

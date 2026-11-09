@@ -11,7 +11,7 @@ status: superseded
 superseded_by: bmad/frameworks.md
 ---
 
-# Rating — Framework Integration Notes
+# Rating: Framework Integration Notes
 
 Integration guidelines for caveman, graphify, bmad-method, headroom, ponytail.
 
@@ -27,7 +27,7 @@ Surgical editing patterns:
 ## Architecture (graphify)
 
 Dependency analysis:
-- Module dependencies: [TBD — graphify analysis]
+- Module dependencies: [TBD: graphify analysis]
 - Circular deps: [TBD]
 - Cross-theme usage: [TBD]
 

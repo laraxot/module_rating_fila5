@@ -22,7 +22,11 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - **Rating**: 13 errors, all false positives (alreadyNarrowedType from PHPDoc)
 - **Xot**: Large module (338 files), full-tree scan timeout, requires scoped strategy
 
+<<<<<<< .merge_file_qhRR3a
 ## Scan Results — Rating Module
+=======
+## Scan Results: Rating Module
+>>>>>>> .merge_file_4sa6oS
 
 **Status**: Complete (13 errors found)
 
@@ -49,7 +53,11 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
   - A) Remove redundant check (if defensive only)
   - B) Remove PHPDoc and let inference work
   - C) Add comment explaining why the redundant check is needed
+<<<<<<< .merge_file_qhRR3a
   - D) Adjust phpstan config (treatPhpDocTypesAsCertain: false) — not recommended
+=======
+  - D) Adjust phpstan config (treatPhpDocTypesAsCertain: false): not recommended
+>>>>>>> .merge_file_4sa6oS
 
 **Pattern 2: Strict comparison after narrowing**
 - Line 250 (BaseRating.php): === between int and ''
@@ -68,7 +76,11 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - Issue: Assertions check types already proven by PHPDoc/return types
 - Fix: Remove assertions (test overhead) or accept as documentation
 
+<<<<<<< .merge_file_qhRR3a
 ## Scan Results — Xot Module
+=======
+## Scan Results: Xot Module
+>>>>>>> .merge_file_4sa6oS
 
 **Status**: Incomplete (module too large for full-tree scan)
 
@@ -78,7 +90,11 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - Strategy: Use app/ directory scan + spot-check key files
 
 **Next step**: Scoped scan targeting known risk areas:
+<<<<<<< .merge_file_qhRR3a
 - XotBase* classes (architecture anchor — read-only)
+=======
+- XotBase* classes (architecture anchor: read-only)
+>>>>>>> .merge_file_4sa6oS
 - Traits in app/Traits/
 - Actions in app/Actions/
 
@@ -86,19 +102,33 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 
 ### Rating Module (Proceed immediately)
 
+<<<<<<< .merge_file_qhRR3a
 1. **Phase 1 — Validation** (this turn):
+=======
+1. **Phase 1: Validation** (this turn):
+>>>>>>> .merge_file_4sa6oS
    - Review each error for PURPOSE
    - Determine root cause (defensive check, missing type hint, config issue, test redundancy)
    - Document findings in story
 
+<<<<<<< .merge_file_qhRR3a
 2. **Phase 2 — Implementation** (parallel subagents):
    - Fix production code (6 errors)
    - Fix test code (7 errors) — document if skipping
+=======
+2. **Phase 2: Implementation** (parallel subagents):
+   - Fix production code (6 errors)
+   - Fix test code (7 errors): document if skipping
+>>>>>>> .merge_file_4sa6oS
    - Lock each file in bashscripts/lock/ during edit
    - Quality gate: `php -l`, `phpstan`, `phpmd` per file
    - Commit with reference to this story
 
+<<<<<<< .merge_file_qhRR3a
 3. **Phase 3 — Verification**:
+=======
+3. **Phase 3: Verification**:
+>>>>>>> .merge_file_4sa6oS
    - Full Rating module re-scan
    - Pest tests if any signature changed
    - Final commit with story closure
@@ -365,7 +395,11 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ---
 
+<<<<<<< .merge_file_qhRR3a
 ## Implementation Complete — Rating Module
+=======
+## Implementation Complete: Rating Module
+>>>>>>> .merge_file_4sa6oS
 
 ### Phase 1 Results: Production Code (6 fixes)
 
@@ -464,7 +498,11 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ---
 
+<<<<<<< .merge_file_qhRR3a
 ## Next Steps — Xot Module
+=======
+## Next Steps: Xot Module
+>>>>>>> .merge_file_4sa6oS
 
 **Status**: Pending (requires scoped scan strategy due to module size)
 
@@ -480,7 +518,11 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ## Diary Update
 
+<<<<<<< .merge_file_qhRR3a
 **2026-10-06 10:30 UTC** — RATING MODULE COMPLETE
+=======
+**2026-10-06 10:30 UTC**: RATING MODULE COMPLETE
+>>>>>>> .merge_file_4sa6oS
 - All 13 errors analyzed and fixed
 - 7 files modified with verified syntax
 - Quality gate ready (php -l: 7/7 pass)

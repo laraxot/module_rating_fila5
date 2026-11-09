@@ -62,7 +62,7 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 |--------|------|-----------|------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
 | [filament-resource-zen-pattern](./concepts/filament-resource-zen-pattern.md) | Concept | Resource Filament senza override `form()`/`table()` | 2026-05-06 |
-| [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files — RatingMorph and Rating populated | 2026-05-07 |
+| [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files: RatingMorph and Rating populated | 2026-05-07 |
 
 ## Best Practices
 

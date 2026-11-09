@@ -14,7 +14,7 @@ related:
   - ../../../../Xot/docs/bmad/stories/cleanup-all-modules.story.md
 ---
 
-# Rating — README con marker nidificati
+# Rating: README con marker nidificati
 
 **Perché.** HEAD README aveva hunk vuoti su HEAD e `<<<<<<<` dentro theirs (badge Laravel 12 vs 13).
 
@@ -22,7 +22,7 @@ related:
 
 Strip marker; togliere badge Laravel 12 (stack = Laravel 13).
 
-**Non toccato:** `tests/Unit/HasRatingsTraitRatingsByIdTest.php` e `.gitattributes` (staged, altra sessione — PHPStan 9 errori lì).
+**Non toccato:** `tests/Unit/HasRatingsTraitRatingsByIdTest.php` e `.gitattributes` (staged, altra sessione: PHPStan 9 errori lì).
 
 ## Gate
 

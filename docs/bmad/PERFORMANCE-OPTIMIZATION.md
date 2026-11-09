@@ -1,5 +1,5 @@
 ---
-title: "Performance Optimization — Module Rating"
+title: "Performance Optimization: Module Rating"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
@@ -11,7 +11,7 @@ status: superseded
 superseded_by: ../performance-optimization.md
 ---
 
-# Performance Optimization — Module **Rating**
+# Performance Optimization: Module **Rating**
 
 ## Ottimizzazioni Applicate
 
@@ -22,7 +22,7 @@ superseded_by: ../performance-optimization.md
 
 \`\`\`diff
 - 150+ rules embeddate in AGENTS.md
-+ 0 rules embeddate — tutte on-demand
++ 0 rules embeddate: tutte on-demand
 \`\`\`
 
 ### 2. Cache Esterna al Repo
@@ -52,7 +52,7 @@ Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 - Non mischia contenuti eterogenei
 
 > Nota: `agents.md`/`AGENTS.md` e `index.md`/`INDEX.md` esistono tuttora come varianti
-> case-duplicate non deduplicate in questo modulo — qui si usa la forma maiuscola per
+> case-duplicate non deduplicate in questo modulo: qui si usa la forma maiuscola per
 > coerenza con `ON-DEMAND-PATTERN.md`/`QMD-SETUP.md` citati più sotto; vedi
 > `case-sensitivity-rules.md`.
 
@@ -83,10 +83,10 @@ if trigger in trigger_map:
 ### Query QMD Efficienti
 
 \`\`\`bash
-# ❌ Troppo generico — risultati enormi
+# ❌ Troppo generico: risultati enormi
 qmd search "form"
 
-# ✅ Specifico — risultati precisi
+# ✅ Specifico: risultati precisi
 qmd search "filament form schema conventions"
 \`\`\`
 
@@ -102,10 +102,10 @@ qmd search "global validation rules"
 
 ## Prossimi Miglioramenti (TODO)
 
-1. **Auto-index rebuild** — Dopo 500 file changes, `qmd index rebuild`
-2. **Hooks pre-task** — Auto-memory sync
-3. **Context-mode batch** — Convertire script in batch exec
-4. **Permissions allowlist** — .claude/settings.json
+1. **Auto-index rebuild**: Dopo 500 file changes, `qmd index rebuild`
+2. **Hooks pre-task**: Auto-memory sync
+3. **Context-mode batch**: Convertire script in batch exec
+4. **Permissions allowlist**: .claude/settings.json
 
 ## Monitoring
 

@@ -4,7 +4,11 @@ created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
+<<<<<<< .merge_file_anExpi
 title: "Story — ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
+=======
+title: "Story: ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
+>>>>>>> .merge_file_ruSkAV
 type: story
 module: Rating
 epic: quality

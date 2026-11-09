@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_i2zGAA
 title: "Rating Module — BMAD Stories & Remaining Work"
+=======
+title: "Rating Module: BMAD Stories & Remaining Work"
+>>>>>>> .merge_file_9AsZtP
 type: concept
 sources: ["../../AGENTS.md"]
 confidence: medium
@@ -12,14 +16,22 @@ status: draft
 qmd: "rating module   bmad stories & remaining work rating"
 ---
 
+<<<<<<< .merge_file_i2zGAA
 # Rating Module — BMAD Stories & Remaining Work
+=======
+# Rating Module: BMAD Stories & Remaining Work
+>>>>>>> .merge_file_9AsZtP
 
 ## Module Overview
 The Rating module provides user and content rating functionality.
 
 ## Remaining Work
 1. PHPStan Zero Verification ✅
+<<<<<<< .merge_file_i2zGAA
 2. Rating Mechanisms — Verify rating models and actions
+=======
+2. Rating Mechanisms: Verify rating models and actions
+>>>>>>> .merge_file_9AsZtP
 3. Module Documentation 📋
 4. Test Coverage 📋
 5. BMAD Stories 📋

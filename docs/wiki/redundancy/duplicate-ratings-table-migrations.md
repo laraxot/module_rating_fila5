@@ -22,8 +22,8 @@ status: draft
 
 Sotto `RatingResource/Tables/`:
 
-- `RatingTable.php` — schema “zen” (title, type, toggle, …)
-- `RatingsTable.php` — colonne id/slug/order/timestamps
+- `RatingTable.php`: schema “zen” (title, type, toggle, …)
+- `RatingsTable.php`: colonne id/slug/order/timestamps
 
 Sotto `RatingMorphResource/Tables/`:
 
