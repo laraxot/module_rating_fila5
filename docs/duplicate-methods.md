@@ -1,7 +1,7 @@
 ---
 issues: []
 discussions: []
-title: "Metodi duplicati — Rating"
+title: "Metodi duplicati: Rating"
 type: guide
 tags: [duplicate, methods, rating]
 created: 2026-07-14
@@ -12,7 +12,7 @@ related:
 status: draft
 ---
 
-# Metodi duplicati — Rating
+# Metodi duplicati: Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.
 

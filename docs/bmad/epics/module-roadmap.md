@@ -1,5 +1,5 @@
 ---
-title: "Rating — epic roadmap BMAD"
+title: "Rating: epic roadmap BMAD"
 type: epic
 status: active
 module: Rating
@@ -8,21 +8,21 @@ updated: 2026-09-28
 qmd: "Rating epic roadmap qualità architettura test documentazione"
 tags: [docs, rating, bmad]
 ---
-# Rating — epic roadmap
+# Rating: epic roadmap
 
-## Epic A — Contratto e architettura
+## Epic A: Contratto e architettura
 
 Documentare API pubbliche, dipendenze, confini e invarianti del modulo.
 
-## Epic B — Qualità verificabile
+## Epic B: Qualità verificabile
 
 Ridurre finding PHPStan, mantenere test Pest eseguibili e registrare evidence ripetibile.
 
-## Epic C — UX e integrazione
+## Epic C: UX e integrazione
 
 Verificare parità Form/Table, traduzioni, autorizzazioni, error handling e integrazioni dichiarate.
 
-## Epic D — Documentazione viva
+## Epic D: Documentazione viva
 
 Collegare ogni decisione a story BMAD, mantenere il second brain e chiudere i duplicati senza cancellare storia.
 

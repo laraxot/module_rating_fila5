@@ -8,7 +8,7 @@ status: draft
 tags: [docs, rating, bmad]
 ---
 
-# Audit di qualita — modulo Rating
+# Audit di qualita: modulo Rating
 
 Misurato il 1 settembre 2026 a tree fermo. Ogni numero viene da un comando
 eseguito, non da una stima; i comandi sono in fondo, cosi la misura si puo
@@ -25,10 +25,10 @@ rifare e contestare.
 | Casi di test per file PHP | 0.91 |
 | `@phpstan-ignore` nel codice | 2 |
 | Rilievi PHPMD su `app/` | 38 *(analisi parziale: abortita in corso)* |
-| PHPInsights — Code | 97.6 % |
-| PHPInsights — Complexity | 100.0 % |
-| PHPInsights — Architecture | 78.6 % |
-| PHPInsights — Style | 93.8 % |
+| PHPInsights: Code | 97.6 % |
+| PHPInsights: Complexity | 100.0 % |
+| PHPInsights: Architecture | 78.6 % |
+| PHPInsights: Style | 93.8 % |
 | File `.md` sotto `docs/` | 169 |
 | `TODO`/`FIXME`/`HACK` | 0 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |

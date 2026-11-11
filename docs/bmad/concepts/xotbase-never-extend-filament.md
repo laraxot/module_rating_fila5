@@ -1,5 +1,5 @@
 ---
-title: "Rating — mai Filament\*, sempre XotBase*"
+title: "Rating: mai Filament\*, sempre XotBase*"
 type: concept
 module: Rating
 tags: [rating, filament, xotbase, architecture]
@@ -13,7 +13,7 @@ related:
 status: draft
 ---
 
-# Mai `Filament\*` — sempre `Modules\Xot\Filament\...\XotBase*`
+# Mai `Filament\*`: sempre `Modules\Xot\Filament\...\XotBase*`
 
 Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../../../docs/wiki/rules/xotbase-critical-rules.md).
 

@@ -1,5 +1,5 @@
 ---
-title: "BMAD Brainstorming — Rating"
+title: "BMAD Brainstorming: Rating"
 type: bmad-brainstorming
 status: synthesized
 module: Rating
@@ -47,7 +47,7 @@ Quando un rating e prova di qualita del servizio e quando e solo rumore post-chi
 | Eliminate | Duplicazioni di verita (second store, Livewire legacy, Controllers) | H | H |
 | Reverse | Progettare dai failure mode privacy/authz prima delle feature | H | H |
 
-## Reverse brainstorming — come romperlo
+## Reverse brainstorming: come romperlo
 
 - Copiare planning Ticket in questo owner (gia successo: stub da correggere).
 - Mettere business rules nel tema o Controllers.
@@ -64,4 +64,4 @@ Quando un rating e prova di qualita del servizio e quando e solo rumore post-chi
 
 ## Prossimo step BMAD
 
-Vedi [bmad-planning.md](./bmad-planning.md) — eseguire la Wave 1 e aggiornare il decision-log owner.
+Vedi [bmad-planning.md](./bmad-planning.md): eseguire la Wave 1 e aggiornare il decision-log owner.

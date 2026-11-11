@@ -92,7 +92,7 @@ app(CreateRatingAction::class)
     ->execute($data);
 ```
 
-No custom Job class needed — QueueableAction handles it.
+No custom Job class needed: QueueableAction handles it.
 
 ## Database Questions
 

@@ -1,5 +1,5 @@
 ---
-title: "Audit traduzioni .navigation — modulo Rating"
+title: "Audit traduzioni .navigation: modulo Rating"
 type: story
 module: Rating
 epic: quality
@@ -18,7 +18,7 @@ tags: [docs, rating, bmad]
 qmd: "audit traduzioni `.navigation`   modulo rating rating"
 ---
 
-# Audit traduzioni `.navigation` — modulo Rating
+# Audit traduzioni `.navigation`: modulo Rating
 
 Task utente 2026-09-29: trovare tutti i file di traduzione con la sottostringa
 `.navigation` o una chiave `'navigation'`, completare/migliorare per ogni
@@ -32,7 +32,7 @@ tabelle nel documento di sintesi cross-modulo:
 `navigation.name.label` da `Rating` non tradotto a `Valutazione`) ma
 **non commitata da questo agente**: il file era già in scrittura concorrente
 da un altro agente (verosimilmente sulla story Xot 5.251/5.253, "seconda
-famiglia" di placeholder — `fields.rating.*` e `label` di primo livello
+famiglia" di placeholder: `fields.rating.*` e `label` di primo livello
 modificati da altri, non da questa sessione). La riga resta scritta e
 disponibile per il commit di chi possiede quella story.
 
@@ -51,4 +51,4 @@ disponibile per il commit di chi possiede quella story.
 
 Confermato: `qmd://concepts/translation-discipline-rule.md`. Pattern nuovo
 scoperto (falso positivo euristica case-insensitive su valori Title Case) da
-consolidare in una memoria Xot condivisa — vedi sintesi cross-modulo §6.
+consolidare in una memoria Xot condivisa: vedi sintesi cross-modulo §6.

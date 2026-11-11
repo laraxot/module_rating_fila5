@@ -9,7 +9,7 @@ status: superseded
 superseded_by: ../wiki/cosa-migliorare.md
 ---
 
-# Cosa migliorare — modulo Rating
+# Cosa migliorare: modulo Rating
 
 Ogni affermazione qui sotto viene da un comando eseguito il 1 settembre 2026, dopo il
 ripristino di `vendor/` a 330 pacchetti. Le misure precedenti a quella data giravano su
@@ -21,9 +21,9 @@ un autoloader dimezzato e non valgono.
 |---|---:|
 | Errori PHPStan (modulo isolato) | 0 |
 | Rilievi PHPMD su `app/` | 38 (sottostima: parse error) |
-| PHPInsights — Code | 97.6 % |
-| PHPInsights — Architecture | 78.6 % |
-| PHPInsights — Style | 93.8 % |
+| PHPInsights: Code | 97.6 % |
+| PHPInsights: Architecture | 78.6 % |
+| PHPInsights: Style | 93.8 % |
 | File PHP | 132 |
 | Casi di test | 125 |
 | Casi di test per file | 0.95 |
@@ -35,7 +35,7 @@ un autoloader dimezzato e non valgono.
 ## Il quadro
 
 Rating ha **`Code 97.6 %`**, il punteggio più alto del progetto, e una coverage
-dell'**80,8 %** — la seconda migliore fra i moduli misurati.
+dell'**80,8 %**: la seconda migliore fra i moduli misurati.
 
 Due dettagli lo tengono sotto la soglia dell'esemplare: **2 parse error PHPMD**, quindi i
 38 rilievi sono una sottostima e non un risultato, e **2 `@phpstan-ignore`** che nessuno ha

@@ -1,7 +1,7 @@
 ---
 issues: []
 discussions: []
-title: "Raw Sources — Rating"
+title: "Raw Sources: Rating"
 type: guide
 tags: [index, rating]
 created: 2026-07-14
@@ -9,7 +9,7 @@ updated: 2026-07-14
 qmd: "index"
 ---
 
-# Raw Sources — Rating
+# Raw Sources: Rating
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.
 
@@ -32,9 +32,9 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Dove va la sintesi
 
-→ `docs/wiki/index.md` — catalogo dei nodi di conoscenza
-→ `docs/wiki/log.md` — log append-only degli ingest
-→ `docs/wiki/concepts/`, `entities/`, `summaries/` — pagine wiki tematiche
+→ `docs/wiki/index.md`: catalogo dei nodi di conoscenza
+→ `docs/wiki/log.md`: log append-only degli ingest
+→ `docs/wiki/concepts/`, `entities/`, `summaries/`: pagine wiki tematiche
 
 ## Schema di riferimento
 

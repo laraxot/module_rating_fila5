@@ -1,5 +1,5 @@
 ---
-title: "Rating Module — Documentation Index"
+title: "Rating Module: Documentation Index"
 type: guide
 module: Rating
 updated: 2026-09-22
@@ -8,11 +8,11 @@ status: draft
 tags: [docs, rating, bmad]
 ---
 
-# Rating Module — Index
+# Rating Module: Index
 
 ## Lavoro attivo (BMAD)
 
-→ **[bmad/README.md](README.md)** — Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
+→ **[bmad/README.md](README.md)**: Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
 
 | Pack | Link |
 |------|------|
@@ -32,7 +32,7 @@ tags: [docs, rating, bmad]
 
 ## Debito docs
 
-**2026-09-22 — risolto.** I 38 file sotto `docs/` con marker di merge non risolti
+**2026-09-22: risolto.** I 38 file sotto `docs/` con marker di merge non risolti
 (`<<<<<<<`/`=======`/`>>>>>>>`, incluso `architecture.md`) sono stati fusi e ripuliti
 (verifica: `grep -rl '^<<<<<<< \|^=======$\|^>>>>>>> ' docs/` → nessun risultato).
 Duplicati case-sensitive noti (es. `INDEX.md`/`index.md`, `BEST_PRACTICES.md`/`best_practices.md`)
@@ -40,18 +40,18 @@ non sono stati deduplicati in questo passaggio: sono fuori scope, tracciati in
 `root-files-hygiene.md`.
 
 Ancora aperto (fuori scope per questo cleanup, non toccare qui):
-- root `README.md` del modulo ha marker di merge non risolti (righe 3-19, 122-133) —
+- root `README.md` del modulo ha marker di merge non risolti (righe 3-19, 122-133) -
   file fuori `docs/`, serve una story dedicata.
 - regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`LICENSE.md` duplicati in
-  root) — vedi `root-files-hygiene.md`.
-- possibile corruzione repo Git (commit mancante, vedi `git fsck`) — da investigare
+  root): vedi `root-files-hygiene.md`.
+- possibile corruzione repo Git (commit mancante, vedi `git fsck`): da investigare
   prima di qualsiasi rewrite di history su questo modulo.
 
 ## Navigazione canonica (2026-10-09)
 
-- [readme.md](README.md) — orientamento BMAD del modulo.
-- [purpose.md](purpose.md) — scopo e confini.
-- [architecture.md](architecture.md) — architettura verificata.
-- [stories/](stories/) — lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).
+- [readme.md](README.md): orientamento BMAD del modulo.
+- [purpose.md](purpose.md): scopo e confini.
+- [architecture.md](architecture.md): architettura verificata.
+- [stories/](stories/): lavoro tracciato, inclusa [docs-reorg-domain](stories/docs-reorg-domain.story.md).
 
 `index.md` è l’indice canonico; `INDEX.md` resta storico e non viene spostato.

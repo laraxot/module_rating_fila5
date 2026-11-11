@@ -33,9 +33,9 @@ This directory contains the knowledge graph for the **Rating** module, generated
 
 ### Key Files
 
-- **graph.json** — Full knowledge graph in JSON format
-- **.graphify_analysis.json** — Analysis metadata and statistics
-- **GRAPH_REPORT.md** — Generated community names and cluster analysis
+- **graph.json**: Full knowledge graph in JSON format
+- **.graphify_analysis.json**: Analysis metadata and statistics
+- **GRAPH_REPORT.md**: Generated community names and cluster analysis
 
 ## Graph Interpretation
 
