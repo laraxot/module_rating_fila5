@@ -4,14 +4,14 @@ updated: 2026-09-26
 qmd: "PHPSTAN L10"
 issues: []
 discussions: []
-title: PHPStan Level 10 Compliance — Rating Module
+title: PHPStan Level 10 Compliance: Rating Module
 module: Rating
 type: quality-gate
 status: complete
 created: 2026-08-02
 ---
 
-# PHPStan Level 10 Compliance — Rating Module
+# PHPStan Level 10 Compliance: Rating Module
 
 ## Summary
 

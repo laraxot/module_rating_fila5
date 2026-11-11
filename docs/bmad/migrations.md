@@ -1,12 +1,12 @@
 ---
-title: "Rating Module — Migrations"
+title: "Rating Module: Migrations"
 type: alias
 status: superseded
 canonical: "bmad/MIGRATIONS.md"
 qmd: "migrations alias superseded"
 ---
 
-# Rating Module — Migrations
+# Rating Module: Migrations
 
 Documento identico al canonico: [MIGRATIONS.md](MIGRATIONS.md).
 

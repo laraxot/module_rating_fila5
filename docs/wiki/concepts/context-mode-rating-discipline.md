@@ -2,7 +2,7 @@
 qmd: "context mode rating discipline"
 issues: []
 discussions: []
-title: "Rating Module — Context-Mode Discipline"
+title: "Rating Module: Context-Mode Discipline"
 type: "rule"
 tags: [rating, context-mode, filament-zen]
 created: 2026-05-12
@@ -10,11 +10,11 @@ updated: 2026-05-12
 status: draft
 ---
 
-# Rating Module — Context-Mode Discipline
+# Rating Module: Context-Mode Discipline
 
 > Rating module context-mode per Filament resource zen pattern.
 
-## File Wiki Limits — Max 100K
+## File Wiki Limits: Max 100K
 
 ```
 laravel/Modules/Rating/docs/wiki/
