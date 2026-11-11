@@ -5,6 +5,7 @@
 # Git LFS VIETATO. Binari = blob git normali.
 # Mai: filter=lfs / diff=lfs / merge=lfs
 
+# Git LFS is forbidden. Binary files remain normal Git blobs.
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
@@ -12,6 +13,7 @@
 CHANGELOG.md export-ignore
 # Binary files (regular git blobs — NO git-lfs)
 # `binary` + `!filter` azzera eventuali filtri LFS ereditati
+# Binary files are regular Git blobs; !filter disables inherited Git LFS.
 *.png binary !filter
 *.jpg binary !filter
 *.jpeg binary !filter

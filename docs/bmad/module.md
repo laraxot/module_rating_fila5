@@ -1,5 +1,5 @@
 ---
-title: "Rating Module — Doctrine"
+title: "Rating Module: Doctrine"
 type: doctrine
 tags: [rating, feedback, module-doctrine]
 created: 2026-09-05
@@ -12,7 +12,7 @@ status: superseded
 superseded_by: ../module.md
 ---
 
-# Rating Module — Doctrine
+# Rating Module: Doctrine
 
 ## Scope (Scopo)
 

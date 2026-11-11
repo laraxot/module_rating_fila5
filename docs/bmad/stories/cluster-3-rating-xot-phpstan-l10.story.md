@@ -25,7 +25,7 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - **Rating**: 13 errors, all false positives (alreadyNarrowedType from PHPDoc)
 - **Xot**: Large module (338 files), full-tree scan timeout, requires scoped strategy
 
-## Scan Results — Rating Module
+## Scan Results: Rating Module
 
 **Status**: Complete (13 errors found)
 
@@ -52,7 +52,7 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
   - A) Remove redundant check (if defensive only)
   - B) Remove PHPDoc and let inference work
   - C) Add comment explaining why the redundant check is needed
-  - D) Adjust phpstan config (treatPhpDocTypesAsCertain: false) — not recommended
+  - D) Adjust phpstan config (treatPhpDocTypesAsCertain: false): not recommended
 
 **Pattern 2: Strict comparison after narrowing**
 - Line 250 (BaseRating.php): === between int and ''
@@ -71,7 +71,7 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - Issue: Assertions check types already proven by PHPDoc/return types
 - Fix: Remove assertions (test overhead) or accept as documentation
 
-## Scan Results — Xot Module
+## Scan Results: Xot Module
 
 **Status**: Incomplete (module too large for full-tree scan)
 
@@ -81,7 +81,7 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 - Strategy: Use app/ directory scan + spot-check key files
 
 **Next step**: Scoped scan targeting known risk areas:
-- XotBase* classes (architecture anchor — read-only)
+- XotBase* classes (architecture anchor: read-only)
 - Traits in app/Traits/
 - Actions in app/Actions/
 
@@ -89,19 +89,19 @@ This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focus
 
 ### Rating Module (Proceed immediately)
 
-1. **Phase 1 — Validation** (this turn):
+1. **Phase 1: Validation** (this turn):
    - Review each error for PURPOSE
    - Determine root cause (defensive check, missing type hint, config issue, test redundancy)
    - Document findings in story
 
-2. **Phase 2 — Implementation** (parallel subagents):
+2. **Phase 2: Implementation** (parallel subagents):
    - Fix production code (6 errors)
-   - Fix test code (7 errors) — document if skipping
+   - Fix test code (7 errors): document if skipping
    - Lock each file in bashscripts/lock/ during edit
    - Quality gate: `php -l`, `phpstan`, `phpmd` per file
    - Commit with reference to this story
 
-3. **Phase 3 — Verification**:
+3. **Phase 3: Verification**:
    - Full Rating module re-scan
    - Pest tests if any signature changed
    - Final commit with story closure
@@ -368,7 +368,7 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ---
 
-## Implementation Complete — Rating Module
+## Implementation Complete: Rating Module
 
 ### Phase 1 Results: Production Code (6 fixes)
 
@@ -467,7 +467,7 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ---
 
-## Next Steps — Xot Module
+## Next Steps: Xot Module
 
 **Status**: Pending (requires scoped scan strategy due to module size)
 
@@ -483,7 +483,7 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 
 ## Diary Update
 
-**2026-10-06 10:30 UTC** — RATING MODULE COMPLETE
+**2026-10-06 10:30 UTC**: RATING MODULE COMPLETE
 - All 13 errors analyzed and fixed
 - 7 files modified with verified syntax
 - Quality gate ready (php -l: 7/7 pass)

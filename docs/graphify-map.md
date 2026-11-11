@@ -10,7 +10,7 @@ discussions: []
 status: draft
 ---
 
-# Rating Module — Mappa Graphify
+# Rating Module: Mappa Graphify
 
 **Versione:** 1.1.0 | **Modulo:** Rating | **Data:** 2026-08-02
 

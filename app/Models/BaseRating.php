@@ -265,6 +265,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      */
     public function getXlsExportValueAttribute(): mixed
     {
+        return $this->getXlsExportValue();
+    }
+
+    public function getXlsExportValue(): mixed
+    {
         if ($this->hasChildRatings()) {
             $child = $this->resolveSelectedChild();
             if (! $child instanceof self) {

@@ -1,5 +1,5 @@
 ---
-title: "Project context — Rating"
+title: "Project context: Rating"
 type: constitution
 module: Rating
 track: quick-flow
@@ -14,7 +14,7 @@ related:
   - ./filament-blueprint.md
 ---
 
-# Costituzione — Rating
+# Costituzione: Rating
 
 Raccogliere feedback polimorfico affidabile dopo un esito civico eleggibile.
 

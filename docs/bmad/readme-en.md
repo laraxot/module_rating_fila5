@@ -1,5 +1,5 @@
 ---
-title: "⭐ Rating — English presentation"
+title: "⭐ Rating: English presentation"
 type: guide
 tags: [readme, rating]
 created: 2026-07-14
@@ -10,7 +10,7 @@ related:
 status: draft
 ---
 
-# ⭐ Rating — English presentation
+# ⭐ Rating: English presentation
 
 [![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
 [![Laravel 13](https://img.shields.io/badge/Laravel-13-red.svg)](https://laravel.com/)
@@ -22,7 +22,7 @@ status: draft
 [![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
 [![Rating Module](https://img.shields.io/badge/Module-Rating-008758.svg)](#)
 
-> **Rate anything — once, properly.** Polymorphic ratings, likes, real-time stats.
+> **Rate anything: once, properly.** Polymorphic ratings, likes, real-time stats.
 
 ---
 
@@ -51,7 +51,7 @@ Feedback and satisfaction on services, content, operators.
 
 Numbers that **drive public service improvement**.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5**: see [STORY-133](../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

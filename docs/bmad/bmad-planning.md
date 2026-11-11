@@ -1,5 +1,5 @@
 ---
-title: "BMAD Planning — Rating"
+title: "BMAD Planning: Rating"
 type: bmad-planning
 status: active
 module: Rating

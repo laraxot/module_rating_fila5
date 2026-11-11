@@ -10,7 +10,7 @@ discussions: []
 status: draft
 ---
 
-# Story — `Assert::subclassOf(BaseRating)` → `Assert::implementsInterface(RatingContract)`
+# Story: `Assert::subclassOf(BaseRating)` → `Assert::implementsInterface(RatingContract)`
 
 **Status**: done
 **Modulo**: Rating
@@ -19,14 +19,14 @@ status: draft
 
 ## Ordine utente
 
-> Non fare `Assert::subclassOf($ratingClass, BaseRating::class)` — usa il check
+> Non fare `Assert::subclassOf($ratingClass, BaseRating::class)`: usa il check
 > su `RatingContract`, che serve proprio a questo.
 
 ## Perché (il perché autonomo)
 
-- `subclassOf(BaseRating)` chiede «discendi da questa gerarchia concreta» —
+- `subclassOf(BaseRating)` chiede «discendi da questa gerarchia concreta» -
   lega il vincolo al dettaglio implementativo.
-- `implementsInterface(RatingContract)` chiede «sei un criterio» — è la
+- `implementsInterface(RatingContract)` chiede «sei un criterio»: è la
   domanda semantica giusta: `RatingContract` esiste apposta per essere
   consumato da sei moduli su connessioni diverse, senza conoscere la concreta.
 - Il docblock del contratto lo dichiara già: «ha bisogno di sapere che cosa un
