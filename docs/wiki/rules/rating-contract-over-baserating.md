@@ -21,7 +21,7 @@ related:
   - ../../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-# Rating — applicazione della legge generale
+# Rating: applicazione della legge generale
 
 **SSoT progetto:** [`prefer-contracts-over-abstract-classes.md`](../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "Rating — Brainstorming BMAD (indice e decisioni)"
+title: "Rating: Brainstorming BMAD (indice e decisioni)"
 type: note
 module: Rating
 tags:
@@ -18,9 +18,9 @@ related:
 status: draft
 ---
 
-# Rating — Brainstorming
+# Rating: Brainstorming
 
-> **SUMMARY** — Decisioni prese, questioni aperte e opzioni scartate del modulo `Rating`,
+> **SUMMARY**: Decisioni prese, questioni aperte e opzioni scartate del modulo `Rating`,
 > ancorate a file e simboli reali. Il brainstorming di dettaglio per area e' negli shard.
 
 ## Shard

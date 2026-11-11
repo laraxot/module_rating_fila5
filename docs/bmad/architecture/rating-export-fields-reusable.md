@@ -10,7 +10,7 @@ discussions: []
 status: draft
 ---
 
-# Architecture — metodo riutilizzabile per getXlsFields dei rating
+# Architecture: metodo riutilizzabile per getXlsFields dei rating
 
 ## Scopo
 Fornire un metodo riutilizzabile per generare l logica di preparazione dei campi per l'esportazione XLS/XLSX dei rating collegati a un modello host tramite `extra_attributes`.

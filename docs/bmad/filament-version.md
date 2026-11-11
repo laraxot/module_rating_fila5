@@ -1,5 +1,5 @@
 ---
-title: "Filament Version Declaration — Rating"
+title: "Filament Version Declaration: Rating"
 type: guide
 tags: [filament, version, rating]
 created: 2026-07-14
@@ -11,7 +11,7 @@ status: superseded
 superseded_by: ../filament-version.md
 ---
 
-# Filament Version Declaration — Rating
+# Filament Version Declaration: Rating
 
 **Current Version**: Filament v5 (Livewire v4 + Schemas)
 
@@ -27,4 +27,4 @@ All resources, forms, tables, infolists, widgets and actions must follow the v5 
 
 **Last verified**: 2026-05-21
 
-**Firmato:** Cursor Agent (Composer) — template propagato ai package `docs/`
+**Firmato:** Cursor Agent (Composer): template propagato ai package `docs/`
