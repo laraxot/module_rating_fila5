@@ -1,13 +1,15 @@
 ---
 title: "Disciplina agenti per massimizzare la confidenza"
 type: rule
-status: approved
 tags: [agent, confidence, verification]
 created: "2026-05-26"
 updated: "2026-05-26"
 related:
   - "../../Xot/docs/wiki/concepts/agent-confidence-discipline.md"
 issue: "https://github.com/provtv/<nome repository>/issues/152"
+qmd: "disciplina agenti per massimizzare la confidenza rating"
+status: superseded
+superseded_by: ../agent-confidence-discipline.md
 ---
 
 # Disciplina agenti per massimizzare la confidenza

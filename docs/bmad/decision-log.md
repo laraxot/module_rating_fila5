@@ -1,3 +1,11 @@
+---
+title: "Decision Log - Modulo Rating"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "decision log - modulo rating rating"
+---
 # Decision Log - Modulo Rating
 
 ## Formato

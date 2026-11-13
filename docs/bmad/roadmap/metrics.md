@@ -5,6 +5,8 @@ tags: [metrics, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "metrics"
+status: superseded
+superseded_by: ../../roadmap/metrics.md
 ---
 
 # Metriche e obiettivi di qualità

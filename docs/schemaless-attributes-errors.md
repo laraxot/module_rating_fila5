@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "schemaless attributes errors"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Schemaless Attributes - Errori e Correzioni
@@ -16,15 +17,6 @@ discussions: []
 **Status**: FIX APPLICATI
 
 ---
-
-title: "schemaless attributes errors"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "schemaless attributes errors"
-issues: []
-discussions: []
 ## Errori Trovati
 
 ### 1. Rating estende BaseModel invece di BaseRating (DRY Violation)
@@ -134,7 +126,7 @@ Rating::withExtraAttributes(['anno' => 2024, 'type' => 'performance'])->get();
 Rating::where('extra_attributes->anno', 2024)->get();
 
 // Via HasRatingsTrait (host model): syncRatingsWhere chiama
-// Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
+// Rating::getClassName()::withExtraAttributes($where): class-string del Rating del modulo caller.
 
 ---
 ---

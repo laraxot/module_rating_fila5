@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "configuration"
 related:
   - "./conflict-resolution.md"
+status: draft
 ---
 
 # Rating Module Configuration

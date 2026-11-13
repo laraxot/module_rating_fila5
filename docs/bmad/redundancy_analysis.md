@@ -1,7 +1,13 @@
 ---
-module: theme
-topic: REDUNDANCY_ANALYSIS
-canonical: ../../../Themes/docs/shared-components/REDUNDANCY_ANALYSIS.md
+title: "redundancy analysis"
+type: alias
+status: superseded
+canonical: "bmad/redundancy-analysis.md"
+qmd: "redundancy_analysis alias superseded"
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/REDUNDANCY_ANALYSIS.md
+# redundancy analysis
+
+Documento identico al canonico: [redundancy-analysis.md](redundancy-analysis.md).
+
+Canonico: `laravel/Modules/Rating/docs/bmad/redundancy-analysis.md`. Qui non ci sono istruzioni: seguire il file collegato.

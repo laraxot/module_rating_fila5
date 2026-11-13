@@ -1,12 +1,14 @@
 ---
-title: Story — Indice docs canonico Rating
+title: Story: Indice docs canonico Rating
 type: story
 module: Rating
 tags: [docs, bmad, rating, reorganization]
 qmd: rating docs reorg domain story
+status: draft
+updated: 2026-10-09
 ---
 
-# Story — Indice docs canonico Rating
+# Story: Indice docs canonico Rating
 
 **Data:** 2026-10-09 · **Stato:** review
 

@@ -3,7 +3,7 @@ tags: [documentation]
 created: 2026-09-26
 issues: []
 discussions: []
-title: "Brainstorming — Select + Textarea sempre; note required su altro"
+title: "Brainstorming: Select + Textarea sempre; note required su altro"
 type: brainstorming
 module: Rating
 status: decided
@@ -16,7 +16,7 @@ related:
   - ../stories/5.99-select-altro-note-obbligatoria.story.md
 ---
 
-# Brainstorming — chiave option e UI
+# Brainstorming: chiave option e UI
 
 ## Domanda
 
@@ -24,17 +24,17 @@ Come aggiungere «altro» al Select dei rating con figli, con nota obbligatoria?
 
 ## Opzioni
 
-### A — Textarea solo se «altro» (`visible`)
+### A: Textarea solo se «altro» (`visible`)
 
 **Respinta** dall’utente: vuole **sempre** Select + Textarea.
 
-### B — Chiave stringa `'altro'` + dehydrate
+### B: Chiave stringa `'altro'` + dehydrate
 
 Pro: esplicita. Contro: colonna `value` numerica; mapping form↔DB.  
-Adottata in bozze 2026-09-15 e **ri-proposta da agenti paralleli** come «conferma utente» —
+Adottata in bozze 2026-09-15 e **ri-proposta da agenti paralleli** come «conferma utente» -
 **non supportata** dal prompt scritto in `docs/prompts/01.md`.
 
-### C — Option `''` + placeholder `null` + `selectIsOther` ✅
+### C: Option `''` + placeholder `null` + `selectIsOther` ✅
 
 Pro: allinea DB (`value` null); distinzione non-scelto vs altro senza sentinella testuale.  
 Contro mitigato: disciplina `=== ''` (mai `blank()`) + Pest.
@@ -53,4 +53,4 @@ Pass-through `value`+`note` in IR (story 5.140). Preferenza: whitelist esplicita
 
 ## D-8
 
-`HasRatingValuesFilter` + note: issue #60 / story 5.141 — non in 5.99.
+`HasRatingValuesFilter` + note: issue #60 / story 5.141: non in 5.99.

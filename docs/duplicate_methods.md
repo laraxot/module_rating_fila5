@@ -7,9 +7,11 @@ updated: 2026-09-26
 qmd: "duplicate methods"
 issues: []
 discussions: []
+status: superseded
+superseded_by: duplicate-methods.md
 ---
 
-# Metodi duplicati — Rating
+# Metodi duplicati: Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.
 

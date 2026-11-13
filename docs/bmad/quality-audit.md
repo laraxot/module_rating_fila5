@@ -4,9 +4,11 @@ type: report
 module: Rating
 updated: 2026-09-01
 qmd: "audit qualita rating phpstan phpmd phpinsights pest coverage soppressioni collisioni case"
+status: draft
+tags: [docs, rating, bmad]
 ---
 
-# Audit di qualita — modulo Rating
+# Audit di qualita: modulo Rating
 
 Misurato il 1 settembre 2026 a tree fermo. Ogni numero viene da un comando
 eseguito, non da una stima; i comandi sono in fondo, cosi la misura si puo
@@ -23,10 +25,10 @@ rifare e contestare.
 | Casi di test per file PHP | 0.91 |
 | `@phpstan-ignore` nel codice | 2 |
 | Rilievi PHPMD su `app/` | 38 *(analisi parziale: abortita in corso)* |
-| PHPInsights — Code | 97.6 % |
-| PHPInsights — Complexity | 100.0 % |
-| PHPInsights — Architecture | 78.6 % |
-| PHPInsights — Style | 93.8 % |
+| PHPInsights: Code | 97.6 % |
+| PHPInsights: Complexity | 100.0 % |
+| PHPInsights: Architecture | 78.6 % |
+| PHPInsights: Style | 93.8 % |
 | File `.md` sotto `docs/` | 169 |
 | `TODO`/`FIXME`/`HACK` | 0 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |
@@ -116,5 +118,5 @@ scrivendo sul tree, altrimenti la misura e falsa e diversa a ogni run.
 /usr/bin/find Modules -newermt '-70 seconds' -type f | wc -l   # deve dare 0
 ```
 
-Audit complessivo e confronto fra tutte le unita: [`docs/quality-audit.md`](../../../../docs/quality-audit.md) nella root del progetto.
+Audit complessivo e confronto fra tutte le unita: [`docs/quality-audit.md`](../quality-audit.md) nella root del progetto.
 

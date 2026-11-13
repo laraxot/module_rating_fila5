@@ -7,9 +7,10 @@ updated: 2026-09-26
 qmd: "rating data export methods"
 issues: []
 discussions: []
+status: draft
 ---
 
-# Architecture — spostamento formFieldLabel e ratingXlsValuePath in RatingData
+# Architecture: spostamento formFieldLabel e ratingXlsValuePath in RatingData
 
 ## Scopo
 Spostare i metodi statici `formFieldLabel` e `ratingXlsValuePath` da `HasRatingsTrait.php` a `RatingData.php`, perché sono utility di rating e non di relazioni.

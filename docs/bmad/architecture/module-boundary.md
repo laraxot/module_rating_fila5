@@ -1,13 +1,14 @@
 ---
-title: "Rating — architettura BMAD"
+title: "Rating: architettura BMAD"
 type: architecture
 status: active
 module: Rating
 created: 2026-09-28
 updated: 2026-09-28
 qmd: "Rating architettura confini componenti PHP Laravel Filament"
+tags: [docs, rating, bmad]
 ---
-# Rating — architettura
+# Rating: architettura
 
 ## Scopo osservato
 

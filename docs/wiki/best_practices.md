@@ -1,3 +1,12 @@
+---
+title: "Best Practices – Rating"
+type: note
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "best practices   rating rating"
+status: superseded
+superseded_by: ../best_practices.md
+---
 # Best Practices – Rating
 
 ## Principi DRY/KISS

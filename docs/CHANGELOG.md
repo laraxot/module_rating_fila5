@@ -10,6 +10,7 @@ qmd: "changelog rating"
 related:
   - "./code-quality-analysis.md"
   - "./changelog.md"
+status: draft
 ---
 
 # Changelog

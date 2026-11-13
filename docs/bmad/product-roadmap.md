@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "product roadmap"
 related:
   - "./product-strategy.md"
+status: superseded
+superseded_by: ../product-roadmap.md
 ---
 
 # Rating - Product Roadmap

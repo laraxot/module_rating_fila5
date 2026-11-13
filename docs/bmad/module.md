@@ -1,5 +1,5 @@
 ---
-title: "Rating Module — Doctrine"
+title: "Rating Module: Doctrine"
 type: doctrine
 tags: [rating, feedback, module-doctrine]
 created: 2026-09-05
@@ -7,10 +7,12 @@ updated: 2026-09-05
 qmd: "Rating module doctrine BMAD analysis purpose religion philosophy policy why zen gap enhancements split merge"
 related:
   - "../../Xot/docs/module.md"
-  - "../../Comment/docs/module.md"
+  - "../../../Comment/docs/module.md"
+status: superseded
+superseded_by: ../module.md
 ---
 
-# Rating Module — Doctrine
+# Rating Module: Doctrine
 
 ## Scope (Scopo)
 

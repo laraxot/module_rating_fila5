@@ -9,9 +9,10 @@ updated: 2026-09-23
 qmd: "rating wiki agents pointer AGENTS canonical"
 related:
   - ./AGENTS.md
+status: stub
 ---
 
-# Pointer — canonical agent instructions
+# Pointer: canonical agent instructions
 
 Il documento canonico è **[AGENTS.md](./AGENTS.md)** (bootstrap LLM wiki del modulo Rating).
 

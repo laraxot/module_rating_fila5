@@ -1,14 +1,15 @@
 ---
-title: "Quality Report — Rating"
+title: "Quality Report: Rating"
 type: report
 tags: [quality, phpstan, pest, coverage]
 module: Rating
 created: 2026-08-24
 updated: 2026-08-24
 qmd: "Rating quality report phpstan pest coverage test ratio"
+status: draft
 ---
 
-# Quality Report — Rating
+# Quality Report: Rating
 
 Aggiornato: 2026-08-24. Rigenera con: `bashscripts/tools/quality-report.sh Rating`
 

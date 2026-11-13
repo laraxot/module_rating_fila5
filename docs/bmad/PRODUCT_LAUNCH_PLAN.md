@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "PRODUCT LAUNCH PLAN"
 related:
   - "./PRODUCT_ROADMAP.md"
+status: superseded
+superseded_by: product_launch_plan.md
 ---
 
 # Rating Module - Product Launch Plan

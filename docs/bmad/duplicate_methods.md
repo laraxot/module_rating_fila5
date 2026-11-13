@@ -1,4 +1,13 @@
-# Metodi duplicati — Rating
+---
+title: "Metodi duplicati: Rating"
+type: note
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "metodi duplicati   rating rating"
+status: superseded
+superseded_by: ../duplicate-methods.md
+---
+# Metodi duplicati: Rating
 
 Analisi sintetica dei metodi PHP con lo stesso nome all’interno di questo ambito.
 

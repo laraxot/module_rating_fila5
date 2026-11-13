@@ -7,6 +7,7 @@ updated: 2026-07-14
 qmd: "rating architecture"
 related:
   - "./readme-en.md"
+status: draft
 ---
 
 # Rating System - Architecture Analysis & Fixes

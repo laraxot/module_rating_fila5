@@ -9,9 +9,12 @@ issues:
   - "https://github.com/provtv/module_rating_fila5/issues/14"
 discussions:
   - "https://github.com/provtv/<nome repository>/discussions/204"
+qmd: "handoff   multi-org sync (story-003) rating"
+status: superseded
+superseded_by: ../git-multi-org-sync-handoff.md
 ---
 
-# Handoff — multi-org sync (STORY-003)
+# Handoff: multi-org sync (STORY-003)
 
 ## Scopo
 
@@ -35,7 +38,7 @@ Un tree dirty o un remote dietro/avanti **non** è sincronizzato, anche se l’a
 
 1. `cd` owner → `git remote -v` → fetch tutti → merge senza force → push tutti
 2. Dopo edit PHP: phpstan/phpmd/phpinsights scoped (prompt `02-gitmodules-sync.md`)
-3. Mai `git restore` — forward-only
+3. Mai `git restore`: forward-only
 4. UI: non reintrodurre `InteractiveMap` (dominio Geo)
 
 ## Note owner

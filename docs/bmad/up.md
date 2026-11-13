@@ -8,6 +8,8 @@ tags: [migrato-da-txt, rating]
 converted_from: up.txt
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "up rating"
 ---
 
 aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php

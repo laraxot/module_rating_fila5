@@ -4,6 +4,9 @@ type: reference
 tags: [faq, questions, answers, help]
 created: 2026-07-14
 updated: 2026-08-04
+qmd: "rating module - faq rating"
+status: superseded
+superseded_by: ../faq.md
 ---
 
 # Rating Module - FAQ
@@ -89,7 +92,7 @@ app(CreateRatingAction::class)
     ->execute($data);
 ```
 
-No custom Job class needed — QueueableAction handles it.
+No custom Job class needed: QueueableAction handles it.
 
 ## Database Questions
 

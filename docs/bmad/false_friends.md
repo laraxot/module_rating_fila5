@@ -1,3 +1,12 @@
+---
+title: "False Friends – Rating"
+type: note
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "false friends   rating rating"
+status: superseded
+superseded_by: ../false-friends.md
+---
 # False Friends – Rating
 
 | Falso Amico | Perché è fuorviante | Soluzione |

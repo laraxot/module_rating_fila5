@@ -39,7 +39,7 @@ tags:
 - frontmatter-yaml
 - laraxot
 ---
-# RatingsColumn — story BMAD
+# RatingsColumn: story BMAD
 
 ## Contesto
 
@@ -51,7 +51,7 @@ File: `laravel/Modules/Rating/app/Filament/Tables/Columns/RatingsColumn.php`
 
 - Tipo: `TextColumn` Filament 5 esteso (non estendere `Column` generico)
 - Label: "Media valutazioni"
-- Formattazione: `float` con 1 cifra decimale o trattino (`—`) quando vuoto
+- Formattazione: `float` con 1 cifra decimale o trattino (`-`) quando vuoto
 - Ordinabile (usando `ratings_avg` come valore di ordinamento)
 - Non richiede join con tabella separata: usa il campo `ratings_avg` già presente nel modello
 
@@ -71,7 +71,7 @@ class RatingsColumn extends TextColumn
             ->formatStateUsing(static function (?float $state): string {
                 return $state !== null && $state > 0
                     ? number_format($state, 1, '.', ',')
-                    : '—';
+                    : '-';
             })
             ->numeric()
             ->sortable();

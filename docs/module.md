@@ -1,7 +1,7 @@
 ---
 issues: []
 discussions: []
-title: "Rating Module — Doctrine"
+title: "Rating Module: Doctrine"
 type: doctrine
 tags: [rating, feedback, module-doctrine]
 created: 2026-09-05
@@ -10,9 +10,10 @@ qmd: "Rating module doctrine BMAD analysis purpose religion philosophy policy wh
 related:
   - "../../Xot/docs/module.md"
   - "../../Comment/docs/module.md"
+status: draft
 ---
 
-# Rating Module — Doctrine
+# Rating Module: Doctrine
 
 ## Scope (Scopo)
 

@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "configuration"
 related:
   - "./conflict-resolution.md"
+status: superseded
+superseded_by: ../configuration.md
 ---
 
 # Rating Module Configuration

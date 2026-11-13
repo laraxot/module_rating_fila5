@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "architecture rules"
 related:
   - "./architecture.md"
+status: superseded
+superseded_by: ../architecture-rules.md
 ---
 
 # Architectural Rules & Guidelines

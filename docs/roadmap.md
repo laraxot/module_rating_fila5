@@ -9,6 +9,7 @@ updated: 2026-07-14
 qmd: "roadmap"
 related:
   - "./root-file-policy.md"
+status: draft
 ---
 
 # Product Roadmap - Rating Module

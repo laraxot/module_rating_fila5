@@ -13,6 +13,7 @@ issues:
 related:
   - ../../redundancy-report.md
   - ../../../docs/redundancy-report.md
+status: draft
 ---
 
 # Tabelle Filament e migration `ratings`
@@ -21,8 +22,8 @@ related:
 
 Sotto `RatingResource/Tables/`:
 
-- `RatingTable.php` — schema “zen” (title, type, toggle, …)
-- `RatingsTable.php` — colonne id/slug/order/timestamps
+- `RatingTable.php`: schema “zen” (title, type, toggle, …)
+- `RatingsTable.php`: colonne id/slug/order/timestamps
 
 Sotto `RatingMorphResource/Tables/`:
 

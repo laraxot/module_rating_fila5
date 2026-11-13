@@ -4,7 +4,6 @@ title: "Analisi: tipi di campo per value in rating_morph (intero, decimal, selec
 description: "Brainstorming sui tipi di campo value per la tabella rating_morph, senza implementare codice"
 document_type: analysis
 category: ptvx
-status: draft
 version: 1.0.0
 language: it-IT
 project: PTVX
@@ -25,6 +24,11 @@ created_at: '2026-08-27'
 updated_at: '2026-08-27'
 maintainer: PTVX
 license: project-internal
+type: note
+updated: 2026-10-07
+qmd: "analisi: tipi di campo per `value` in `rating_morph` rating"
+status: superseded
+superseded_by: ../ratings-value-field-types.md
 ---
 # Analisi: tipi di campo per `value` in `rating_morph`
 

@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "user interface"
 related:
   - "./user-research.md"
+status: superseded
+superseded_by: ../user-interface.md
 ---
 
 ## User Interface - Modulo Rating

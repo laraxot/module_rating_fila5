@@ -2,7 +2,7 @@
 tags: [documentation]
 issues: []
 discussions: []
-title: "Helper rating (label/path/fieldName) — sede RatingData"
+title: "Helper rating (label/path/fieldName): sede RatingData"
 type: architecture
 module: Rating
 status: accepted
@@ -26,4 +26,4 @@ related:
 | relazioni / sync / form schema build | `HasRatingsTrait` | host |
 
 **Trappola:** due path diversi (`ratings.*` form vs `ratings_by_id.*` export) sono
-volontari — non unificarli senza story. Dopo ogni move: sweep caller (5.231).
+volontari: non unificarli senza story. Dopo ogni move: sweep caller (5.231).

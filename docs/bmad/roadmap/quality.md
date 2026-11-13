@@ -5,6 +5,8 @@ tags: [quality, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "quality"
+status: superseded
+superseded_by: ../../roadmap/quality.md
 ---
 
 # Checklist Qualità Modulo Rating

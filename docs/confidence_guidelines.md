@@ -7,6 +7,8 @@ updated: 2026-09-26
 qmd: "confidence guidelines"
 issues: []
 discussions: []
+status: superseded
+superseded_by: confidence-guidelines.md
 ---
 
 # Massimizzare il livello di confidenza

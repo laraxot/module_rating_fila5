@@ -1,3 +1,11 @@
+---
+title: "Schemaless Attributes - Errori e Correzioni"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "schemaless attributes - errori e correzioni rating"
+---
 # Schemaless Attributes - Errori e Correzioni
 
 **Modulo**: Rating
@@ -115,7 +123,7 @@ Rating::withExtraAttributes(['anno' => 2024, 'type' => 'performance'])->get();
 Rating::where('extra_attributes->anno', 2024)->get();
 
 // Via HasRatingsTrait (host model): syncRatingsWhere chiama
-// Rating::getClassName()::withExtraAttributes($where) — class-string del Rating del modulo caller.
+// Rating::getClassName()::withExtraAttributes($where): class-string del Rating del modulo caller.
 
 // 4. Set attributes:
 $rating->extra_attributes->set('anno', 2024);

@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "product strategy"
 related:
   - "./rating-architecture.md"
+status: superseded
+superseded_by: ../product-strategy.md
 ---
 
 # Rating - Product Strategy

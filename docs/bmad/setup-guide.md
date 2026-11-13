@@ -1,5 +1,5 @@
 ---
-title: "Rating — Setup Guide"
+title: "Rating: Setup Guide"
 type: note
 module: Rating
 tags:
@@ -12,11 +12,12 @@ qmd: "rating setup provider config migrate seed test"
 related:
   - README.md
   - quick-reference.md
+status: draft
 ---
 
-# Rating — Setup Guide
+# Rating: Setup Guide
 
-> **SUMMARY** — Come si porta il modulo `Rating` in un ambiente funzionante: provider da
+> **SUMMARY**: Come si porta il modulo `Rating` in un ambiente funzionante: provider da
 > registrare, config, migrazioni, seeders e test. Comandi da eseguire dalla root di `laravel/`.
 
 ## 1. Registrazione provider

@@ -7,9 +7,10 @@ updated: 2026-09-26
 qmd: "rating data export methods"
 issues: []
 discussions: []
+status: draft
 ---
 
-# Brainstorming — spostamento formFieldLabel e ratingXlsValuePath in RatingData
+# Brainstorming: spostamento formFieldLabel e ratingXlsValuePath in RatingData
 
 ## Contesto
 Due metodi statici di `HasRatingsTrait` (`formFieldLabel` e `ratingXlsValuePath`) sono utilizzati in diversi punti (RatingData, CompilaIndennitaResponsabilita, DecoratesRatingFormFields, test). Sono utility su rating, non su relazioni. L'utente suggerisce di spostarli in `RatingData.php`.

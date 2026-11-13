@@ -1,3 +1,12 @@
+---
+title: "Criteri a scelta: opzioni in JSON, figli del criterio, o altro"
+type: note
+updated: 2026-10-07
+tags: [docs, rating, bmad]
+qmd: "criteri a scelta: opzioni in json, figli del criterio, o altro rating"
+status: superseded
+superseded_by: ../criteri-a-scelta-multipla.md
+---
 # Criteri a scelta: opzioni in JSON, figli del criterio, o altro
 
 ## Risposta breve

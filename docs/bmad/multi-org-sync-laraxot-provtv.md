@@ -6,6 +6,8 @@ created: "2026-07-21"
 updated: "2026-07-23"
 related:
   - "../../../bashscripts/tools/prompts/02-gitmodules-sync.md"
+status: draft
+qmd: "sincronizzazione multi-organizzazione (laraxot + provtv) rating"
 ---
 
 # Sincronizzazione multi-organizzazione (laraxot + provtv)
@@ -47,5 +49,5 @@ Niente reset/squash/force per aggirare LFS.
 ### Caso User 2026-07-23 (unrelated)
 
 `module_user_fila5`: `laraxot` tip `3ea7273a` (`0 0`); `provtv` **merge-base vuoto** → STOP (no merge/force).
-Canon: [../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md](../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md).
+Canon: [../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md](../../../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md).
 

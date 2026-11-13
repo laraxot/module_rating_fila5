@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "LICENSE"
 related:
   - "./METODI_DUPLICATI_ANALISI.md"
+status: superseded
+superseded_by: ../LICENSE.md
 ---
 
 The MIT License (MIT)
@@ -36,12 +38,6 @@ THE SOFTWARE.
 <!-- Merged from license.md, which collided with this file on case-insensitive filesystems. -->
 
 ---
-title: "License"
-type: guide
-tags: [license, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "license"
 related:
   - "./merge-conflict-files-list.md"
 ---

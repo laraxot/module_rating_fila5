@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "code quality analysis"
 related:
   - "./code-redundancy-audit.md"
+status: superseded
+superseded_by: ../code-quality-analysis.md
 ---
 
 # Code Quality Analysis - Rating Module
