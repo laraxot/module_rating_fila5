@@ -30,6 +30,24 @@ PHPStan/Pest proporzionati.
 | Marker di conflitto | 0 |
 | Label/tooltip letterali Filament | 1 |
 
+
+## Analisi Funzionale e Scopo di Dominio
+
+### Perché Esiste (Scopo Fondamentale)
+Framework generico polimorfico di rating, scoring e valutazione multidimensionale.
+
+### Valore di Business e Utilità
+Fornisce un motore di valutazione riutilizzabile applicabile a qualsiasi modello (dipendenti, prestazioni, servizi, fornitori).
+
+### Architettura e Pattern Laraxot
+HasRatingsTrait; tabella morph polimorfica  come Source of Truth; calcoli di medie ponderate e ranking.
+
+### Standard di Qualità e Conformità
+- **PHPStan**: Confermato a Level Max con 0 errori.
+- **Filament**: Conformità Filament 5 con estensione delle classi XotBase*.
+- **Naming**: Convenzione kebab-case rigorosa per tutti i documenti e classi PSR-4.
+- **Trans**: Traduzioni dinamiche via Lang, nessun testo hardcoded.
+
 ## Audit per dimensione
 
 ### Architettura e confini

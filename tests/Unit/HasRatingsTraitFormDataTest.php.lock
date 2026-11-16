@@ -1,6 +1,0 @@
-LOCKED at 2026-09-23T12:28:52+02:00
-Task: Xot/5.224-phpstan-analyse-modules
-Agent: cursor-grok
-Session: unknown
-PID: 871225
-PID note: subshell di lock.sh, gia' terminato — NON usarlo per giudicare il lock stale, guarda 'LOCKED at'
