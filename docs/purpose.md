@@ -99,3 +99,8 @@ comportamento proprio estende; non copia la tabella.
 
 - `laravel/Modules/Performance/docs/purpose.md`: principale consumatore
 - `docs/wiki/rules/migration-morphs-polymorphic.md`: convenzione morph
+
+## Documentazione correlata
+
+- [Audit BMAD](./bmad/audit.md)
+- [ECC](./ecc/rating-ecc-audit.md)
