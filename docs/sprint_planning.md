@@ -1,13 +1,16 @@
 ---
-title: "sprint planning"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "sprint planning"
 issues: []
 discussions: []
-status: draft
+title: "Rating Module - Sprint Planning"
+type: guide
+tags: [sprint, planning, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "SPRINT PLANNING"
+related:
+  - "./USER_RESEARCH.md"
+status: superseded
+superseded_by: bmad/sprint_planning.md
 ---
 
 # Rating Module - Sprint Planning
@@ -17,6 +20,7 @@ status: draft
 **Version:** 1.0.0
 
 ---
+
 ## Sprint Goal
 
 Implement core rating and review system with moderation capabilities.

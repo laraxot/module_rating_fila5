@@ -1,12 +1,14 @@
 ---
-title: "bad practices"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "bad practices"
 issues: []
 discussions: []
+title: "Bad Practices – Rating"
+type: guide
+tags: [bad, practices, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "BAD PRACTICES"
+related:
+  - "./BEST_PRACTICES.md"
 status: superseded
 superseded_by: bad-practices.md
 ---

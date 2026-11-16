@@ -1,5 +1,5 @@
 ---
-qmd: "project structure"
+qmd: "PROJECT STRUCTURE"
 issues: []
 discussions: []
 title: "Project Structure: Module Rating"
@@ -7,7 +7,8 @@ type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
-status: draft
+status: superseded
+superseded_by: project-structure.md
 ---
 
 # Project Structure: Module **Rating**
