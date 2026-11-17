@@ -1,3 +1,10 @@
+---
+title: "license"
+qmd: "rating archived license md"
+type: note
+tags: [documentation]
+---
+
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

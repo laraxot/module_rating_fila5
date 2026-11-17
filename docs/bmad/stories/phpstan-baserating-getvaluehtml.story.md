@@ -1,4 +1,5 @@
 ---
+qmd: "rating bmad stories phpstan baserating getvaluehtml story md"
 id: Rating/phpstan-baserating-getvaluehtml
 title: "Parse error getValueHtml su BaseRating"
 status: done

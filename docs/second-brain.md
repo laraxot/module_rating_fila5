@@ -11,9 +11,8 @@ module: theme
 topic: second-brain
 canonical: ../../../Themes/docs/shared-components/second-brain.md
 status: active
-tags: [rating, valuation, phpstan, contract, polymorphic]
-updated: 2026-10-21
-module: Rating
+
+---
 
 # Second brain (Rating: valutazione / rating polimorfico)
 

@@ -1,4 +1,5 @@
 ---
+qmd: "rating stories phpstan rating fix md"
 id: phpstan-Rating-fix
 slug: phpstan-Rating
 scope: [module:Rating, project:<repo progetto>]

@@ -1,3 +1,7 @@
+---
+superseded_by: cleanup-rating.story.md
+---
+
 # Story: Cleanup Rating Module
 
 ## BMAD Method Applied

@@ -1,4 +1,5 @@
 ---
+qmd: "rating wiki concepts index md"
 title: "concepts index — Rating"
 type: index
 tags: [concepts, Rating]

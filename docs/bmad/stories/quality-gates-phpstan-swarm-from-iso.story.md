@@ -1,5 +1,4 @@
----
-id: Rating/quality-gates-phpstan-swarm-2026-09-23
+---id: Rating/quality-gates-phpstan-swarm-2026-09-23
 title: "Swarm quality gates 2026-09-23 — verifica PHPStan Rating (21 agenti paralleli, 1 per modulo)"
 status: done
 module: Rating
@@ -12,6 +11,7 @@ related:
   - 5.157-phpstan-rating-pivot-get-test.story.md
   - phpstan-Rating-fix.md
 github_issue: nessuno creato — nessuna modifica di codice necessaria, solo verifica
+superseded_by: quality-gates-phpstan-swarm.story.md
 ---
 
 # Story Rating/quality-gates-phpstan-swarm-2026-09-23

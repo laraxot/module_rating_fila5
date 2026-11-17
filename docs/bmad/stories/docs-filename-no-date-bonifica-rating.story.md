@@ -39,3 +39,15 @@ perimetro Rating.
       non rename meccanico
 - [ ] Nessun link rotto residuo dopo i rename
 - [ ] `qmd update`
+
+<!-- GateGuard facts: (1) no new doc — edit existing docs-filename-no-date-bonifica-rating.story.md; related Xot docs-md-filename-date-debt; (2) linked from Xot date-debt diary; (3) append diary not create; (4) user: "Append breve esito nella story Xot date-debt e, se esiste, story locale bmad." -->
+
+## Diario 2026-11-17 (wave date-debt)
+
+- `phpstan-swarm-2026.md` → `phpstan-swarm.md`
+- ISO datati → `*-from-iso` (+ alias WT `*-legacy`) con `superseded_by` verso canon
+  (`copilot-redundancy-audit`, `redundancy-audit`, `cleanup-rating`, `auditcoverage-reinjection`,
+  `phpstan-fleet-fix`, `phpstan-post-sync-restore`, `quality-gates-phpstan-swarm`,
+  `ratingdata-api-restore-after-laraxot-sync`).
+- Residui rule-regex: **3** (`phpstan-fixes-2026-01.md`, 2× `phpstan-fix-178876*.story.md`).
+- Nessun delete. Canon: `Xot/.../docs-md-filename-date-debt.story.md`.

@@ -1,4 +1,5 @@
 ---
+qmd: "rating wiki troubleshooting phpstan generic limitation morphtomany md"
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []

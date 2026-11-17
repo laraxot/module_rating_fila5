@@ -1,3 +1,7 @@
+---
+superseded_by: copilot-redundancy-audit.md
+---
+
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi
