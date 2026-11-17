@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Rating — PHPStan (canonico modulo)"
 status: canonical
@@ -21,6 +22,15 @@ Far analizzare Rating al gate max **senza** nascondere errori: i fallimenti PHPS
 Verify (quando host non saturo): `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --memory-limit=-1 --error-format=raw` → **0**.
 
 Root causes: Eloquent PHPDoc `Builder<static>`; `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
+=======
+# PHPStan Fixes - Modulo Rating
+
+## Wave 2026-11-17 — 172 → 0
+
+Verify: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating Modules/Lang --memory-limit=-1 --error-format=raw` → **0**.
+
+Root causes: Eloquent PHPDoc `Builder<static>` (no Larastan in neon); `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
+>>>>>>> laraxot/dev
 
 See also: [wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md).
 
@@ -108,6 +118,7 @@ abstract class BaseModel extends Model
 
 ---
 
+<<<<<<< HEAD
 ## 📊 Correzioni Wave 2026-11-17 (Novembre 2026)
 
 ### 3. Fix MorphToMany generic mismatch via `pivotClass` injection ✅
@@ -153,6 +164,8 @@ public function ratings(): MorphToMany
 
 ---
 
+=======
+>>>>>>> laraxot/dev
 ## 📊 Correzioni Gennaio 2025
 
 ### 2. Rimozione Assert Ridondante ✅

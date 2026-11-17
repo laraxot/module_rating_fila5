@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Rating — best practices"
 type: concept
 tags: [rating, dry, kiss, has-rating]
@@ -38,3 +39,11 @@ Cause tipiche (generics MorphToMany, Builder, Pest harness): [phpstan-fixes.md](
 ## Indice
 
 [index.md](index.md)
+=======
+module: theme
+topic: best-practices
+canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
+>>>>>>> laraxot/dev

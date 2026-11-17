@@ -25,7 +25,11 @@ trait HasRating
      */
     public function ratings(): MorphToMany
     {
+<<<<<<< HEAD
         return $this->morphToManyX(Rating::class, 'model', pivotClass: RatingMorph::class);
+=======
+        return $this->morphToManyX(Rating::class, 'model');
+>>>>>>> laraxot/dev
     }
 
     /**

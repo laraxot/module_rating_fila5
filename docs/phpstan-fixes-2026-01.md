@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 > **Superseded / storico** (nome con data: non creare altri così). Canonico: [phpstan-fixes.md](phpstan-fixes.md). Indice: [index.md](index.md).
 
+=======
+>>>>>>> laraxot/dev
 # PHPStan Fixes - Modulo Rating
 
 **Data**: 2026-01-27  
 **Modulo**: Rating  
+<<<<<<< HEAD
 **Status**: ✅ **COMPLETATO - 0 Errori** (snapshot)
+=======
+**Status**: ✅ **COMPLETATO - 0 Errori**
+>>>>>>> laraxot/dev
 
 ---
 
