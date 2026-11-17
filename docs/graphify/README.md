@@ -1,15 +1,3 @@
----
-title: "README"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "README"
-issues: []
-discussions: []
-status: draft
----
-
 # Graphify Knowledge Graph
 
 ## Overview
@@ -33,9 +21,9 @@ This directory contains the knowledge graph for the **Rating** module, generated
 
 ### Key Files
 
-- **graph.json**: Full knowledge graph in JSON format
-- **.graphify_analysis.json**: Analysis metadata and statistics
-- **GRAPH_REPORT.md**: Generated community names and cluster analysis
+- **graph.json** — Full knowledge graph in JSON format
+- **.graphify_analysis.json** — Analysis metadata and statistics
+- **GRAPH_REPORT.md** — Generated community names and cluster analysis
 
 ## Graph Interpretation
 
@@ -77,5 +65,5 @@ For more information about this module, see:
 ## References
 
 - [Graphify Documentation](https://graphify.dev/)
-- Module Structure Guidelines _(riferimento non presente nel repository, verificato 2026-10-14)_
+- [Module Structure Guidelines](../../../../docs/wiki/rules/module-structure.md)
 

@@ -1,22 +1,18 @@
 ---
-qmd: "index"
-issues: []
-discussions: []
 title: "Skills Index"
 type: "index"
 created: 2026-05-11
 updated: 2026-05-12
 tags: [skills, rating, filament, xotbase]
-status: draft
 ---
 
-# Skills: Rating Module Wiki
+# Skills — Rating Module Wiki
 
 > Skill on-demand rilevanti per il modulo Rating.
 
 ## Available Skills
 
-- [filament-page-creation](../../../../Xot/docs/wiki/skills/filament-page-creation.md): skill condivisa Xot per creare page Filament coerenti con XotBase
+- [filament-page-creation](../../../../Xot/docs/wiki/skills/filament-page-creation.md) — skill condivisa Xot per creare page Filament coerenti con XotBase
 
 ## Usage
 
@@ -26,5 +22,5 @@ qmd search "Rating module skill filament xotbase" --limit 5
 
 ---
 
-**Upstream:** [Root Trigger Map](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
+**Upstream:** [Root Trigger Map](../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 
