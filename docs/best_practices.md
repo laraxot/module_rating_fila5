@@ -1,13 +1,16 @@
 ---
-title: "best practices"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "best practices"
 issues: []
 discussions: []
-status: draft
+title: "Best Practices – Rating"
+type: guide
+tags: [best, practices, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "BEST PRACTICES"
+related:
+  - "./FALSE_FRIENDS.md"
+status: superseded
+superseded_by: best_practices.md
 ---
 
 # Best Practices – Rating

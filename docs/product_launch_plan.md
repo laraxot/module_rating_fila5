@@ -1,13 +1,16 @@
 ---
-title: "product launch plan"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product launch plan"
 issues: []
 discussions: []
-status: draft
+title: "Rating Module - Product Launch Plan"
+type: guide
+tags: [product, launch, plan, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "PRODUCT LAUNCH PLAN"
+related:
+  - "./PRODUCT_ROADMAP.md"
+status: superseded
+superseded_by: bmad/product_launch_plan.md
 ---
 
 # Rating Module - Product Launch Plan
@@ -18,6 +21,7 @@ status: draft
 **Owner:** Product Team
 
 ---
+
 ## Launch Objectives
 
 1. **Product:** Deploy rating and review system

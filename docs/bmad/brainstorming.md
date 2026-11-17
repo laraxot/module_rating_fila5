@@ -61,6 +61,14 @@ status: draft
 | `app/Http/Livewire/` contiene solo `_components.json` | nessun componente Livewire del modulo |
 | La directory `app/Filament/Resources/HasRatingResource/` non contiene alcuna classe Resource | contiene solo `RelationManagers/RatingsRelationManager.php` e `Widgets/StatsOverview.php` |
 
+## Questioni aperte (audit 2026-11-16)
+
+| Domanda | Opzioni | Raccomandazione |
+|---|---|---|
+| Come proteggere `rating_morph` dai doppi? | (a) unique composito in migration nuova; (b) solo controllo applicativo in `HasRatingsTrait` | (a) dopo una query di sola lettura che conti i duplicati esistenti; (b) da solo non regge alla concorrenza |
+| Quale migration è la fonte dello schema? | tenere le 3+3 idempotenti; consolidare in una sola nuova | tenere le vecchie (già eseguite), aggiungere solo la nuova: vedi [audit](./audits/rating-audit.md) RAT-P1-02 |
+| `RatingTrait`/`HasRating` | rimuovere; mantenere come API pubblica | rimuovere dopo `rg` sui moduli consumer: zero consumer oggi |
+
 ## Opzioni scartate
 
 | Opzione | Motivo dello scarto (dal codice/storia) |
