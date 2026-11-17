@@ -4,16 +4,26 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Database\Factories;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Rating\Models\Rating;
 
 /**
- * La forma del dato sta in {@see BaseRatingFactory}, nel modulo che possiede il concetto.
- * Qui si dichiara **solo** il modello: e' quello che porta con se' la connection.
- *
- * @extends BaseRatingFactory<Rating>
+ * @extends Factory<Rating>
  */
-class RatingFactory extends BaseRatingFactory
+class RatingFactory extends Factory
 {
-    /** @var class-string<Rating> */
     protected $model = Rating::class;
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'title' => fake()->words(3, true),
+            'color' => fake()->safeColorName(),
+            'is_disabled' => false,
+            'is_readonly' => false,
+        ];
+    }
 }

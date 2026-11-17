@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
 use Modules\Rating\Filament\Resources\RatingResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-class CreateRating extends BaseCreateRating
+class CreateRating extends XotBaseCreateRecord
 {
     protected static string $resource = RatingResource::class;
 

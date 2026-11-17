@@ -4,6 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\RatingResource\Schemas;
 
-class RatingInfolist extends BaseRatingInfolist
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Component;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
+
+class RatingInfolist extends XotBaseResourceInfolist
 {
+    /**
+     * @return array<string, Component>
+     */
+    public function getInfolistSchema(): array
+    {
+        return [
+            'id' => TextEntry::make('id'),
+            'title' => TextEntry::make('title'),
+            'color' => TextEntry::make('color'),
+            'txt' => TextEntry::make('txt'),
+            'rule' => TextEntry::make('rule'),
+            'is_disabled' => TextEntry::make('is_disabled')->badge(),
+            'is_readonly' => TextEntry::make('is_readonly')->badge(),
+            'order_column' => TextEntry::make('order_column'),
+            'slug' => TextEntry::make('slug'),
+        ];
+    }
 }

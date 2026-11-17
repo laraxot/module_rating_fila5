@@ -1,9 +1,4 @@
 ---
-type: note
-updated: 2026-09-26
-qmd: "SCHEMA"
-issues: []
-discussions: []
 title: Wiki Schema
 description: Schema e convenzioni per la manutenzione della wiki
 tags:
@@ -11,7 +6,6 @@ tags:
   - conventions
   - llm-instructions
 created: 2026-04-15
-status: draft
 ---
 
 # Wiki Schema - Rating
@@ -25,8 +19,7 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
-│   ├── schema.md          # Questo file
-│   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
+│   ├── SCHEMA.md          # Questo file
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna

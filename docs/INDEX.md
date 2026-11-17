@@ -1,16 +1,13 @@
----
-title: "Indice documentazione — Rating"
-type: index
-status: active
-updated: 2026-11-16
-module: Rating
-qmd: "indice docs modulo Rating BMAD ECC purpose"
+# Documentation Index
+
+Modulo: Rating
+
+## File disponibili
+
+<!-- auto-generato: elencare i file .md presenti -->
+
 ---
 
-# Indice — Rating
+## ⚠️ Architectural Rules
 
-- [Purpose](./purpose.md)
-- [BMAD](./bmad/00-index.md)
-- [ECC](./ecc/00-index.md)
-- [Audit](./bmad/audit.md)
-- [Piano di miglioramento](./bmad/piano-miglioramento.md)
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.

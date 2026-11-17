@@ -1,5 +1,4 @@
 ---
-qmd: "rating wiki troubleshooting phpstan generic limitation morphtomany md"
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []
@@ -57,6 +56,6 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 - Project protocol: `laravel/phpstan.neon` is NEVER modified
 
 ## Status
-- **5 remaining PHPStan errors** (as of 2026-05-06)
-- All are generic type false positives in Rating module
-- Code is correct, PHPStan cannot infer `static` in generic context
+- **Wave 2026-11-17**: modulo Rating a **0** errori sul gate `Modules/Rating`+`Modules/Lang`.
+- Contratto: interface `MorphToMany<Rating, Model>`; trait `MorphToMany<Rating, $this>`; host in-module `RateableHost`.
+- Limitazione `static`/invarianza resta nota per analisi cross-module (Blog), non blocca il gate modulo.

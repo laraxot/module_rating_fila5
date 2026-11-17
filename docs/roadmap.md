@@ -1,17 +1,3 @@
----
-issues: []
-discussions: []
-title: "Product Roadmap - Rating Module"
-type: guide
-tags: [roadmap, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap"
-related:
-  - "./root-file-policy.md"
-status: draft
----
-
 # Product Roadmap - Rating Module
 
 ## 🎯 Vision & Strategy

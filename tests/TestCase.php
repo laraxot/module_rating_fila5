@@ -7,59 +7,44 @@ namespace Modules\Rating\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
-use Modules\Rating\Providers\RatingServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Xot\Tests\XotBaseTestCase;
 
 /**
  * Base test case for Rating module.
  *
- * Uses shared sqlite from database.sqlite (no migrate:fresh / RefreshDatabase).
+ * Uses shared sqlite from .env.testing; DatabaseTransactions for isolation.
  */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
     /** @var list<string> */
-    protected $connectionsToTransact = ['rating', 'sqlite', 'xot'];
+    protected $connectionsToTransact = ['sqlite', 'rating', 'user'];
+
+    public ?ListRatings $page = null;
 
     /**
-     * @return array<int, class-string>
+     * @return array<int, class-string<ServiceProvider>>
      */
     protected function getPackageProviders(Application $app): array
     {
-        return [
-            ...parent::getPackageProviders($app),
-            RatingServiceProvider::class,
-        ];
-    }
-
-    /**
-     * Lo sqlite condiviso (`database/database.sqlite`) non contiene per forza le tabelle
-     * del modulo: le migration non vengono lanciate dai test (mai `RefreshDatabase`).
-     * I test che toccano il DB vanno saltati, non falliti: è un blocco d'ambiente.
-     */
-    public static function ratingDbUnavailable(): bool
-    {
-        try {
-            DB::connection('rating')->getPdo();
-
-            return ! DB::connection('rating')->getSchemaBuilder()->hasTable('ratings');
-        } catch (\Throwable) {
-            return true;
-        }
+        return parent::getPackageProviders($app);
     }
 
     protected function setUp(): void
     {
+        $this->prepareSharedSqliteForTesting();
+
         parent::setUp();
 
-        $database = self::sharedSqlitePath();
+        $database = database_path('database.sqlite');
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
-
         foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
             }
 

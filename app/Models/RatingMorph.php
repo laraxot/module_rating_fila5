@@ -7,9 +7,12 @@ namespace Modules\Rating\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 
 /**
  * Modules\Rating\Models\RatingMorph.
@@ -28,21 +31,23 @@ use Modules\Xot\Contracts\UserContract;
  * @property Carbon|null $updated_at
  * @property int|null    $auth_user_id
  *
- * @method static Builder|RatingMorph newModelQuery()
- * @method static Builder|RatingMorph newQuery()
- * @method static Builder|RatingMorph query()
- * @method static Builder|RatingMorph whereAuthUserId($value)
- * @method static Builder|RatingMorph whereCreatedAt($value)
- * @method static Builder|RatingMorph whereCreatedBy($value)
- * @method static Builder|RatingMorph whereDeletedBy($value)
- * @method static Builder|RatingMorph whereId($value)
- * @method static Builder|RatingMorph wherePostId($value)
- * @method static Builder|RatingMorph wherePostType($value)
- * @method static Builder|RatingMorph whereRating($value)
- * @method static Builder|RatingMorph whereRelatedId($value)
- * @method static Builder|RatingMorph whereRelatedType($value)
- * @method static Builder|RatingMorph whereUpdatedAt($value)
- * @method static Builder|RatingMorph whereUpdatedBy($value)
+ * @method static Builder<static> newModelQuery()
+ * @method static Builder<static> newQuery()
+ * @method static Builder<static> query()
+ * @method static RatingMorph create(array<string, mixed> $attributes = [])
+ * @method static Builder<static> where($column, $operator = null, $value = null, $boolean = 'and')
+ * @method static Builder<static> whereAuthUserId($value)
+ * @method static Builder<static> whereCreatedAt($value)
+ * @method static Builder<static> whereCreatedBy($value)
+ * @method static Builder<static> whereDeletedBy($value)
+ * @method static Builder<static> whereId($value)
+ * @method static Builder<static> wherePostId($value)
+ * @method static Builder<static> wherePostType($value)
+ * @method static Builder<static> whereRating($value)
+ * @method static Builder<static> whereRelatedId($value)
+ * @method static Builder<static> whereRelatedType($value)
+ * @method static Builder<static> whereUpdatedAt($value)
+ * @method static Builder<static> whereUpdatedBy($value)
  *
  * @property string|null $user_id
  * @property string|null $model_type
@@ -52,21 +57,21 @@ use Modules\Xot\Contracts\UserContract;
  * @property string|null $note
  * @property string|null $deleted_at
  *
- * @method static Builder|RatingMorph whereDeletedAt($value)
- * @method static Builder|RatingMorph whereIsWinner($value)
- * @method static Builder|RatingMorph whereModelId($value)
- * @method static Builder|RatingMorph whereModelType($value)
- * @method static Builder|RatingMorph whereNote($value)
- * @method static Builder|RatingMorph whereRatingId($value)
- * @method static Builder|RatingMorph whereUserId($value)
- * @method static Builder|RatingMorph whereValue($value)
+ * @method static Builder<static> whereDeletedAt($value)
+ * @method static Builder<static> whereIsWinner($value)
+ * @method static Builder<static> whereModelId($value)
+ * @method static Builder<static> whereModelType($value)
+ * @method static Builder<static> whereNote($value)
+ * @method static Builder<static> whereRatingId($value)
+ * @method static Builder<static> whereUserId($value)
+ * @method static Builder<static> whereValue($value)
  *
  * @property Model|\Eloquent   $model
  * @property Model|null        $profile
  * @property UserContract|null $user
  * @property string            $reward
  *
- * @method static Builder|RatingMorph whereReward($value)
+ * @method static Builder<static> whereReward($value)
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
@@ -87,6 +92,54 @@ use Modules\Xot\Contracts\UserContract;
  *
  * @mixin Eloquent
  */
-class RatingMorph extends BaseRatingMorph
+class RatingMorph extends BaseMorphPivot
 {
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+        'model_id', 'model_type',
+        'rating_id',
+        'user_id',
+        'note',
+        'value',
+        'is_winner',
+        'reward',
+    ];
+    // -------- RELATIONSHIP -----------
+
+    /**
+     * @return BelongsTo<Rating, $this>
+     */
+    public function rating(): BelongsTo
+    {
+        return $this->belongsTo(Rating::class, 'rating_id');
+    }
+
+    /**
+     * @return BelongsTo<\Illuminate\Database\Eloquent\Model&UserContract, $this>
+     */
+    public function user(): BelongsTo
+    {
+        $user_class = XotData::make()->getUserClass();
+
+        return $this->belongsTo($user_class, 'user_id');
+    }
+
+    /**
+     * @return BelongsTo<\Illuminate\Database\Eloquent\Model&ProfileContract, $this>
+     */
+    public function profile(): BelongsTo
+    {
+        $profile_class = XotData::make()->getProfileClass();
+
+        return $this->belongsTo($profile_class, 'user_id', 'user_id');
+    }
+
+    /**
+     * @return MorphTo<Model, $this>
+     */
+    public function model(): MorphTo
+    {
+        return $this->morphTo('model');
+    }
 }
