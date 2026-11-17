@@ -16,18 +16,11 @@ use Modules\Rating\Models\Rating;
 interface HasRatingContract
 {
     /**
-<<<<<<< HEAD
      * `$this` non e' ammesso come TDeclaringModel in un'interfaccia, e `Model` secco e' invariante:
      * l'implementazione (`HasRating`, `$this`) risultava incompatibile. `covariant Model` accetta
      * qualunque host (stesso schema di `UserNotificationsContract`).
      *
      * @return MorphToMany<Rating, covariant Model, \Modules\Rating\Models\RatingMorph, 'pivot'>
-=======
-     * Declaring model is Model: hosts are Eloquent models; $this on interfaces
-     * is not a valid TDeclaringModel for MorphToMany.
-     *
-     * @return MorphToMany<Rating, Model, \Modules\Rating\Models\RatingMorph, 'pivot'>
->>>>>>> laraxot/dev
      */
     public function ratings(): MorphToMany;
 }
