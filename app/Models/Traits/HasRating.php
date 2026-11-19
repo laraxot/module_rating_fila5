@@ -10,10 +10,18 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/** @phpstan-require-extends Model */
+/**
+ * @phpstan-require-extends Model
+ *
+ * @see Modules/Rating/docs/architecture.md
+ */
 trait HasRating
 {
-    /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
+    /**
+     * @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
+     *
+     * @see Modules/Rating/docs/architecture.md
+     */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
@@ -51,6 +59,8 @@ trait HasRating
 
     /**
      * @return array<int, non-empty-array<string, mixed>>
+     *
+     * @see Modules/Rating/docs/architecture.md
      */
     public function getArrayRatingsWithImage(): array
     {

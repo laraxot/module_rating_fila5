@@ -72,7 +72,7 @@ require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
 ```
 
 - **Vietato** `uses(TestCase::class)->in(...)` nel bootstrap (PHPStan `method.internalClass`).
-- Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo.
+- Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo. Perche', e guardia: [ADR pest-testcase-binding-per-file](../../Xot/docs/adr/pest-testcase-binding-per-file.md).
 - Helper condivisi: prefisso `xot*` da [`XotBasePest.php`](../../Xot/tests/XotBasePest.php).
 
 Story: [`docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md`](../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md).
