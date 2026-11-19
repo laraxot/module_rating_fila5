@@ -4,11 +4,7 @@
 
 **Data**: 2026-01-27  
 **Modulo**: Rating  
-<<<<<<< HEAD
 **Status**: ✅ **COMPLETATO - 0 Errori** (snapshot)
-=======
-**Status**: ✅ **COMPLETATO - 0 Errori**
->>>>>>> laraxot/dev
 
 ---
 

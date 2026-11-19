@@ -25,7 +25,7 @@ uses(TestCase::class);
  * campo e sostituisce la label esplicita. Un array a chiavi numeriche è una regressione,
  * non uno stile diverso.
  *
- * @param array<array-key, mixed> $schema
+ * @param  array<array-key, mixed>  $schema
  */
 function ratingAssertKeyedSchema(array $schema, string $tipo): void
 {
@@ -47,7 +47,7 @@ test('le tabelle espongono colonne indicizzate per campo', function (): void {
     ];
 
     foreach ($classi as $classe) {
-        $tabella = new $classe();
+        $tabella = new $classe;
         $colonne = $tabella->getTableColumns();
 
         ratingAssertKeyedSchema($colonne, $classe);
@@ -65,7 +65,7 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
     ];
 
     foreach ($classi as $classe) {
-        $tabella = new $classe();
+        $tabella = new $classe;
         $actionsMethod = new \ReflectionMethod($tabella, 'getTableActions');
 
         Assert::assertIsArray($tabella->getTableFilters());
@@ -77,59 +77,44 @@ test('le tabelle dichiarano filtri e azioni senza esplodere', function (): void 
 test('RatingsTable copre i campi anagrafici del rating', function (): void {
     Assert::assertSame(
         ['id', 'title', 'slug', 'rule', 'is_disabled', 'is_readonly', 'order_column', 'created_at', 'updated_at'],
-        array_keys((new RatingsTable())->getTableColumns()),
+        array_keys((new RatingsTable)->getTableColumns()),
     );
 });
 
 test('i form espongono uno schema indicizzato per campo', function (): void {
-    // @phpstan-ignore-next-line
-    $schema = RatingForm::getFormSchema();
+    // RatingMorphForm non e' piu' uno stub vuoto: BaseRatingMorphForm dichiara rating_id,
+    // value, percentage e note, quindi sta nello stesso controllo di RatingForm.
+    foreach ([new RatingForm, new RatingMorphForm] as $form) {
+        $schema = $form->getFormSchema();
 
-    ratingAssertKeyedSchema($schema, RatingForm::class);
-    Assert::assertContainsOnlyInstancesOf(SchemaComponent::class, $schema);
+        ratingAssertKeyedSchema($schema, $form::class);
+        Assert::assertContainsOnlyInstancesOf(SchemaComponent::class, $schema);
+    }
 });
 
-test('RatingMorphForm è ancora uno stub vuoto', function (): void {
-    // Contratto reale, non desiderato: `getFormSchema()` ritorna `[]` e il create/edit di
-    // RatingMorphResource non renderizza alcun campo, mentre l'infolist della stessa
-    // resource ne dichiara otto. È una lacuna aperta, segnalata in
-    // docs/testing-and-coverage.md: quando verrà colmata, questo test va aggiornato
-    // spostando la classe nel dataset qui sopra.
-    // @phpstan-ignore-next-line
-    Assert::assertSame([], RatingMorphForm::getFormSchema());
+test('il form del rating morph dichiara i campi attesi', function (): void {
+    Assert::assertSame(
+        ['rating_id', 'value', 'percentage', 'note'],
+        array_keys((new RatingMorphForm)->getFormSchema()),
+    );
 });
 
 test('gli infolist espongono uno schema indicizzato per campo', function (): void {
-    /** @var list<class-string> $classi */
-    $classi = [
-        RatingInfolist::class,
-        RatingMorphInfolist::class,
-    ];
-
-    foreach ($classi as $classe) {
-        $schema = $classe::getInfolistSchema();
-        Assert::assertIsArray($schema);
-        ratingAssertKeyedSchema($schema, $classe);
+    foreach ([new RatingInfolist, new RatingMorphInfolist] as $infolist) {
+        ratingAssertKeyedSchema($infolist->getInfolistSchema(), $infolist::class);
     }
 });
 
 test('il form del rating dichiara i campi attesi', function (): void {
     Assert::assertSame(
-        ['title', 'color', 'rule', 'flags', 'txt'],
-        // @phpstan-ignore-next-line
-        array_keys(RatingForm::getFormSchema()),
+        ['title', 'color', 'rule', 'parent_id', 'flags', 'txt'],
+        array_keys((new RatingForm)->getFormSchema()),
     );
 });
 
 test('i form usano una sola colonna e nessuno step wizard', function (): void {
-    /** @var list<class-string> $classi */
-    $classi = [
-        RatingForm::class,
-        RatingMorphForm::class,
-    ];
-
-    foreach ($classi as $classe) {
-        Assert::assertSame(1, $classe::getFormColumns());
-        Assert::assertSame([], $classe::getSteps());
+    foreach ([new RatingForm, new RatingMorphForm] as $form) {
+        Assert::assertSame(1, $form->getFormColumns());
+        Assert::assertSame([], $form->getSteps());
     }
 });
