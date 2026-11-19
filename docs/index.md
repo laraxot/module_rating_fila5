@@ -40,7 +40,7 @@ Gate qualità: livello max da `laravel/phpstan.neon` (procedura: [11-phpstan.md]
 | Ruolo | File |
 |-------|------|
 | **Canonico** | [phpstan-fixes.md](phpstan-fixes.md) — wave recente, cause radice, link troubleshooting |
-| Storico (non aggiornare) | [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-2026-01.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md) |
+| Storico (non aggiornare) | [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md) |
 | Procedura swarm (repo) | [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md) |
 | Story globale | [all-modules-phpstan-zero-errors.story.md](../../../../docs/stories/all-modules-phpstan-zero-errors.story.md) |
 

@@ -10,7 +10,7 @@ related:
 
 # PHPStan — Modulo Rating (canonico)
 
-> Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-2026-01.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+> Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
 
 ## Scopo
 

@@ -9,7 +9,7 @@ superseded_by: phpstan-fleet-fix.story.md
 
 # Claim
 
-Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm-2026-09-16.story.md) e peer base-ptvx-fila5-c5.
+Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm.story.md) e peer base-ptvx-fila5-c5.
 
 # Esito
 
