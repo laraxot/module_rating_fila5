@@ -6,15 +6,10 @@ namespace Modules\Rating\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-/**
- * Pivot rating_morph owner del dominio consumer — seed demandato ai seeder del dominio consumer.
- */
 class RatingMorphSeeder extends Seeder
 {
     public function run(): void
     {
-        if (null !== $this->command) {
-            $this->command->info('RatingMorphSeeder: pivot demo demandato ai seeder del dominio consumer.');
-        }
+        // Stub per parità modulo — i dati sono sacri, mai migrate:fresh.
     }
 }

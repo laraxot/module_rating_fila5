@@ -15,10 +15,12 @@ return [
         'plural' => [
             'label' => 'Rating',
         ],
-        'group' => 'Opzioni di voto',
+        'group' => [
+            'name' => [
+                'label' => 'Admin',
+            ],
+        ],
         'sort' => 33,
-        'label' => 'Rating',
-        'icon' => 'heroicon-o-star',
     ],
     'fields' => [
         'brand' => [
@@ -29,9 +31,6 @@ return [
         ],
         'description' => [
             'label' => 'Descrizione',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
         ],
         'serial_number' => [
             'label' => 'Numero di serie',
@@ -64,92 +63,39 @@ return [
             'label' => 'Nome',
         ],
         'is_disabled' => [
-            'label' => 'Disattivato',
+            'label' => 'is_disabled',
         ],
         'is_readonly' => [
-            'label' => 'Sola lettura',
+            'label' => 'is_readonly',
         ],
         '_tpl' => [
-            'label' => ' tpl',
+            'label' => '_tpl',
         ],
         'ratings' => [
-            'label' => 'Opzioni',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
+            'label' => 'ratings',
         ],
         'id' => [
-            'label' => 'ID',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
+            'label' => 'id',
         ],
         'title' => [
-            'label' => 'Titolo',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
+            'label' => 'title',
         ],
         'color' => [
-            'label' => 'Colore',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
+            'label' => 'color',
         ],
         'rating' => [
-            'label' => 'Opzione',
-            'description' => '',
-            'helper_text' => '',
-            'placeholder' => '',
+            'label' => 'rating',
+            'description' => 'rating',
+            'helper_text' => 'rating',
         ],
         'view' => [
-            'label' => 'Vista',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
+            'label' => 'view',
         ],
         'anno' => [
-            'label' => 'Anno',
+            'label' => 'anno',
         ],
         'type' => [
-            'label' => 'Tipo',
-        ],
-        'rule' => [
-            'label' => 'Regola',
-        ],
-        'disabled' => [
-            'label' => 'Disattivato',
-            'placeholder' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'slug' => [
-            'label' => 'Indirizzo (slug)',
-        ],
-        'order_column' => [
-            'label' => 'Ordine',
-        ],
-        'created_at' => [
-            'label' => 'Creato il',
-        ],
-        'updated_at' => [
-            'label' => 'Aggiornato il',
-        ],
-        'pivot' => [
-            'user' => [
-                'name' => [
-                    'label' => 'Nome',
-                ],
-            ],
-        ],
-        'value' => [
-            'label' => 'Valore',
-        ],
-        'is_winner' => [
-            'label' => 'Is winner',
-        ],
-        'reward' => [
-            'label' => 'Reward',
+            'label' => 'type',
         ],
     ],
     'actions' => [
@@ -226,89 +172,14 @@ return [
             ],
         ],
         'delete' => [
-            'tooltip' => '',
+            'tooltip' => 'delete',
             'icon' => 'delete',
-            'label' => 'Elimina',
+            'label' => 'delete',
         ],
         'edit' => [
-            'tooltip' => '',
+            'tooltip' => 'edit',
             'icon' => 'edit',
-            'label' => 'Modifica',
-        ],
-        'create' => [
-            'label' => 'Nuovo',
-            'icon' => 'create',
-            'tooltip' => '',
-        ],
-        'layout' => [
-            'label' => 'Vista',
-            'icon' => 'layout',
-            'tooltip' => '',
-        ],
-        'view' => [
-            'label' => 'Vista',
-            'icon' => 'view',
-            'tooltip' => '',
-        ],
-        'logout' => [
-            'tooltip' => '',
-            'icon' => 'logout',
-            'label' => 'Esci',
-        ],
-        'cancel' => [
-            'tooltip' => '',
-            'icon' => 'cancel',
-            'label' => 'Annulla',
-        ],
-        'createAnother' => [
-            'tooltip' => '',
-            'icon' => 'createAnother',
-            'label' => 'Salva e crea un altro',
-        ],
-        'profile' => [
-            'tooltip' => '',
-            'icon' => 'profile',
-            'label' => 'Profile',
-        ],
-        'save' => [
-            'label' => 'Salva',
-            'icon' => 'save',
-            'tooltip' => '',
-        ],
-        'applyFilters' => [
-            'label' => 'Applica filtri',
-            'icon' => 'applyFilters',
-            'tooltip' => '',
-        ],
-        'openFilters' => [
-            'label' => 'Filtri',
-            'icon' => 'openFilters',
-            'tooltip' => '',
-        ],
-        'resetFilters' => [
-            'label' => 'Azzera filtri',
-            'icon' => 'resetFilters',
-            'tooltip' => '',
-        ],
-        'applyTableColumnManager' => [
-            'label' => 'Applica colonne',
-            'icon' => 'applyTableColumnManager',
-            'tooltip' => '',
-        ],
-        'openColumnManager' => [
-            'label' => 'Scegli colonne',
-            'icon' => 'openColumnManager',
-            'tooltip' => '',
-        ],
-        'resetColumnManager' => [
-            'label' => 'Ripristina colonne',
-            'icon' => 'resetColumnManager',
-            'tooltip' => '',
-        ],
-        'reorderRecords' => [
-            'label' => 'Riordina',
-            'icon' => 'reorderRecords',
-            'tooltip' => '',
+            'label' => 'edit',
         ],
     ],
     'widgets' => [
@@ -321,5 +192,4 @@ return [
             'label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti',
         ],
     ],
-    'label' => 'rating',
 ];

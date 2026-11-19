@@ -47,45 +47,6 @@ return [
             'label' => 'Seleziona Tutti',
             'message' => 'Seleziona tutti gli elementi disponibili',
         ],
-        'id' => [
-            'label' => 'id',
-        ],
-        'rating_id' => [
-            'label' => 'rating_id',
-        ],
-        'model_type' => [
-            'label' => 'model_type',
-        ],
-        'model_id' => [
-            'label' => 'model_id',
-        ],
-        'user_id' => [
-            'label' => 'user_id',
-        ],
-        'value' => [
-            'label' => 'value',
-        ],
-        'note' => [
-            'label' => 'note',
-        ],
-        'is_winner' => [
-            'label' => 'is_winner',
-        ],
-        'reward' => [
-            'label' => 'reward',
-        ],
-        'created_at' => [
-            'label' => 'created_at',
-        ],
-        'rating' => [
-            'label' => 'rating',
-        ],
-        'ratingable_type' => [
-            'label' => 'ratingable_type',
-        ],
-        'ratingable_id' => [
-            'label' => 'ratingable_id',
-        ],
     ],
     'actions' => [
         'import' => [
@@ -127,8 +88,6 @@ return [
                 'success' => 'Elemento eliminato con successo',
                 'error' => 'Errore durante l\'eliminazione',
             ],
-            'icon' => 'delete',
-            'tooltip' => 'delete',
         ],
         'edit' => [
             'label' => 'Modifica',
@@ -137,8 +96,6 @@ return [
                 'success' => 'Modifica salvata con successo',
                 'error' => 'Errore durante il salvataggio',
             ],
-            'icon' => 'edit',
-            'tooltip' => 'edit',
         ],
         'create' => [
             'label' => 'Crea',
@@ -147,52 +104,10 @@ return [
                 'success' => 'Elemento creato con successo',
                 'error' => 'Errore durante la creazione',
             ],
-            'icon' => 'create',
-            'tooltip' => 'create',
         ],
         'logout' => [
             'tooltip' => 'logout',
             'icon' => 'logout',
-        ],
-        'view' => [
-            'label' => 'view',
-            'icon' => 'view',
-            'tooltip' => 'view',
-        ],
-        'layout' => [
-            'label' => 'layout',
-            'icon' => 'layout',
-            'tooltip' => 'layout',
-        ],
-        'applyFilters' => [
-            'label' => 'applyFilters',
-            'icon' => 'applyFilters',
-            'tooltip' => 'applyFilters',
-        ],
-        'openFilters' => [
-            'label' => 'openFilters',
-            'icon' => 'openFilters',
-            'tooltip' => 'openFilters',
-        ],
-        'resetFilters' => [
-            'label' => 'resetFilters',
-            'icon' => 'resetFilters',
-            'tooltip' => 'resetFilters',
-        ],
-        'applyTableColumnManager' => [
-            'label' => 'applyTableColumnManager',
-            'icon' => 'applyTableColumnManager',
-            'tooltip' => 'applyTableColumnManager',
-        ],
-        'openColumnManager' => [
-            'label' => 'openColumnManager',
-            'icon' => 'openColumnManager',
-            'tooltip' => 'openColumnManager',
-        ],
-        'resetColumnManager' => [
-            'label' => 'resetColumnManager',
-            'icon' => 'resetColumnManager',
-            'tooltip' => 'resetColumnManager',
         ],
     ],
 ];

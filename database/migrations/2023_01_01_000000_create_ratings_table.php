@@ -47,7 +47,8 @@ return new class extends XotBaseMigration {
                 }
                 // @see Modules/Rating/docs/schemaless-attributes-errors.md
                 if (! $this->hasColumn('extra_attributes')) {
-                    $table->schemalessAttributes('extra_attributes');
+                    // SchemalessAttributes macro == json column; json keeps PHPStan + runtime aligned.
+                    $table->json('extra_attributes')->nullable();
                 }
                 if (! $this->hasColumn('is_disabled')) {
                     $table->boolean('is_disabled')->nullable();

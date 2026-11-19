@@ -1,7 +1,4 @@
 ---
-qmd: "agent confidence protocol"
-issues: []
-discussions: []
 title: "Massima confidenza agente"
 type: reference
 status: approved

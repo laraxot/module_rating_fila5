@@ -4,26 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-/**
- * Orchestratore Rating — N modelli owner = N {Model}Seeder (regola Laraxot).
- */
 class RatingDatabaseSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        if (null !== $this->command) {
-            $this->command->info('RatingDatabaseSeeder: entity seeders…');
-        }
+        Model::unguard();
 
-        $this->call([
-            RatingSeeder::class,
-            RatingMorphSeeder::class,
-        ]);
-
-        if (null !== $this->command) {
-            $this->command->info('RatingDatabaseSeeder: completato.');
-        }
+        // $this->call("OthersTableSeeder");
     }
 }
