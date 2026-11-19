@@ -32,6 +32,12 @@ test('BetTableAction configura label e schema modale', function (): void {
     Assert::assertSame('', $action->getLabel());
 });
 
+/*
+ * `BaseRatingsTableStub` dichiara la sua Resource (`getResource()`): fuori da `{Resource}\Tables\`
+ * l'asserzione di `XotBaseResourceTable` fallisce, ed e' giusto che fallisca.
+ *
+ * @see Modules/Rating/docs/filament-table-architecture.md
+ */
 test('BaseRatingsTable espone colonne filtri e azioni attese', function (): void {
     $tabella = new BaseRatingsTableStub;
 
@@ -48,7 +54,9 @@ test('BaseRatingsTable espone colonne filtri e azioni attese', function (): void
     $actions = $actionsMethod->invoke($tabella);
     Assert::assertIsArray($actions);
     Assert::assertArrayHasKey('edit', $actions);
-    Assert::assertArrayHasKey('bulk', $tabella->getTableBulkActions());
+    // 'delete' dall'hook di HasXotTable: l'override con il gruppo 'bulk' e' stato tolto da
+    // BaseRatingsTable il 2026-10-15 (Rating feed303).
+    Assert::assertArrayHasKey('delete', $tabella->getTableBulkActions());
 });
 
 test('BaseEditRating espone DeleteAction in header', function (): void {
@@ -71,12 +79,19 @@ test('EditRating espone DeleteAction in header', function (): void {
     Assert::assertCount(1, $actions);
 });
 
+/*
+ * La list page non configura la tabella (`ListRecords::table()` restituisce la Table cosi' com'e'):
+ * la costruisce la Resource via `getTableClass()`, come fa Filament in `makeTable()`.
+ * Le colonne sono quelle di `rating_morph`: `ratingable_*` non esistono nello schema.
+ *
+ * @see Modules/Rating/docs/filament-table-architecture.md
+ */
 test('ListRatingMorphs dichiara colonne e create action', function (): void {
     $page = new ListRatingMorphs;
-    $table = $page->table(Table::make($page));
+    $table = ListRatingMorphs::getResource()::table(Table::make($page));
 
     Assert::assertSame(
-        ['id', 'rating', 'ratingable_type', 'ratingable_id', 'created_at', 'updated_at'],
+        ['id', 'rating.title', 'rating_id', 'user_id', 'model_type', 'model_id', 'value', 'note', 'is_winner', 'reward', 'created_at', 'updated_at'],
         array_keys($table->getColumns()),
     );
 
