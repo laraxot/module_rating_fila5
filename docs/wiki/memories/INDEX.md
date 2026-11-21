@@ -1,4 +1,5 @@
 ---
+qmd: "rating wiki memories index md"
 title: "Memories Index"
 type: index
 created: 2026-05-11

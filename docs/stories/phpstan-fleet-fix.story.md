@@ -1,4 +1,5 @@
 ---
+qmd: "rating stories phpstan fleet fix story md"
 id: Rating/phpstan-fleet-fix-2026-09-16
 title: "PHPStan fleet fix 2026-09-16 (Rating)"
 status: done

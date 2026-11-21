@@ -1,4 +1,5 @@
 ---
+qmd: "rating dataobjects archived duplicate md"
 title: DataObjects/RatingData archiviata — duplicato morto, usare Datas
 type: decision
 tags: [datas, dto, archive, duplicate, naming]

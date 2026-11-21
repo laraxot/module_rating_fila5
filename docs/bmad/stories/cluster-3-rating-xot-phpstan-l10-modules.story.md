@@ -1,4 +1,5 @@
 ---
+qmd: "rating bmad stories cluster 3 rating xot phpstan l10 modules story md"
 title: "Cluster 3: PHPStan L10 Rating + Xot modules"
 epic: phpstan-l10-remediation
 acceptance_criteria:

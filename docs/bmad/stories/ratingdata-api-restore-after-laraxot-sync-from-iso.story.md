@@ -1,5 +1,4 @@
----
-title: "Story — ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
+---title: "Story — ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
 type: story
 module: Rating
 epic: quality
@@ -9,7 +8,8 @@ qmd: "RatingData ratingFieldName formFieldLabel getXlsFields criteriaToXlsFields
 related:
   - ./rating-statics-to-ratingdata-consolidation.story.md
   - ./5.240-ratingcontract-closures-not-baserating.story.md
-  - ./phpstan-post-sync-restore-2026-09-24.story.md
+  - ./phpstan-post-sync-restore-from-iso.story.md
+superseded_by: ratingdata-api-restore-after-laraxot-sync.story.md
 ---
 # ratingdata-api-restore-after-laraxot-sync-2026-09-24
 

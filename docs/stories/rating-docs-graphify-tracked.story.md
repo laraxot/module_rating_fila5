@@ -1,4 +1,5 @@
 ---
+qmd: "rating stories rating docs graphify tracked story md"
 id: rating-docs-graphify-tracked
 title: "Rimuovere docs/graphify tracciato in Rating"
 type: story

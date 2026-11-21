@@ -1,5 +1,4 @@
----
-title: "Story — tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
+---title: "Story — tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
 type: story
 module: Rating
 epic: quality
@@ -10,6 +9,7 @@ related:
   - ../../../../Xot/docs/bmad/stories/phpstan-modules-2026-09-24.story.md
   - ../../../../Xot/docs/wiki/concepts/tests-audit-coverage-forbidden.md
   - ../architecture/rating-data-export-methods.md
+superseded_by: auditcoverage-reinjection.story.md
 ---
 # auditcoverage-reinjection-2026-09-24
 

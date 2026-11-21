@@ -1,4 +1,5 @@
 ---
+qmd: "rating completion status md"
 title: "Rating: cosa manca per completare"
 type: status
 module: Rating
