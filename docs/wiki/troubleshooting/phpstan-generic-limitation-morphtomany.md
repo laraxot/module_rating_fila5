@@ -1,4 +1,8 @@
 ---
+<<<<<<< .merge_file_C2NBPS
+=======
+qmd: "rating wiki troubleshooting phpstan generic limitation morphtomany md"
+>>>>>>> .merge_file_rkzngL
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []
