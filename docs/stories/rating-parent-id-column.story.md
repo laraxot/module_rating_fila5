@@ -1,4 +1,5 @@
 ---
+qmd: "rating stories rating parent id column story md"
 title: "Colonna parent_id per gli alberi di criteri"
 status: backlog
 module: Rating (owner)

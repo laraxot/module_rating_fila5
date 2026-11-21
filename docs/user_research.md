@@ -1,13 +1,16 @@
 ---
-title: "user research"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user research"
 issues: []
 discussions: []
-status: draft
+title: "Rating Module - User Research"
+type: guide
+tags: [user, research, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "USER RESEARCH"
+related:
+  - "./agent-confidence-discipline.md"
+status: superseded
+superseded_by: bmad/user_research.md
 ---
 
 # Rating Module - User Research
@@ -18,6 +21,7 @@ status: draft
 **Owner:** Product Team
 
 ---
+
 ## Research Goals
 
 1. Understand rating behavior

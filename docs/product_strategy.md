@@ -1,13 +1,16 @@
 ---
-title: "product strategy"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product strategy"
 issues: []
 discussions: []
-status: draft
+title: "Rating Module - Product Strategy"
+type: guide
+tags: [product, strategy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "PRODUCT STRATEGY"
+related:
+  - "./PROJECT-STRUCTURE.md"
+status: superseded
+superseded_by: bmad/product_strategy.md
 ---
 
 # Rating Module - Product Strategy
@@ -18,6 +21,7 @@ status: draft
 **Owner:** Product Team
 
 ---
+
 ## Executive Summary
 
 The Rating module enables authentic user feedback through ratings and reviews, building trust and providing valuable insights for continuous improvement.

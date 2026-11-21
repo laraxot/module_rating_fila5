@@ -33,6 +33,8 @@ use Webmozart\Assert\Assert;
  * asincrono (`XotBaseExporter::resolveColumns()`) ricostruisce lo stack dopo
  * la deserializzazione del job, senza il frame originale del Resource.
  * Canon: `docs/bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md`.
+ *
+ * @see Modules/Rating/docs/wiki/rules/rating-contract-over-baserating.md
  */
 class RatingData extends Data
 {
@@ -44,8 +46,7 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
-    ) {
-    }
+    ) {}
 
     /** @param array<string, mixed> $data */
     public static function fromArray(array $data): self
@@ -69,6 +70,8 @@ class RatingData extends Data
     /**
      * Percorso `data_get` del campo pivot di un rating sull'host
      * (es. `ratings_by_id.52.pivot.value`).
+     *
+     * @see Modules/Rating/docs/wiki/rules/rating-contract-over-baserating.md
      */
     public static function ratingValuePath(RatingContract $rating, string $field = 'value'): string
     {
@@ -93,6 +96,8 @@ class RatingData extends Data
      * salva le pivot: se cambia, cambia in un posto solo. `$pivotColumn` resta `'value'`
      * per compatibilita: ogni chiamata esistente continua a puntare li; `'note'` e' la
      * sola altra colonna pivot generata oggi (vedi `buildRatingComponent()` nel trait).
+     *
+     * @see Modules/Rating/docs/wiki/rules/rating-contract-over-baserating.md
      */
     public static function ratingFieldName(RatingContract $rating, string $pivotColumn = 'value'): string
     {
@@ -109,6 +114,8 @@ class RatingData extends Data
      * Sede: funzione pura di `$rating`, nessuna dipendenza dall'host — per questo
      * qui e non in `HasRatingsTrait` (trait per gli host, non per l'entità rating).
      * Canon: `docs/bmad/architecture/rating-entity-helpers-home-in-ratingdata.md`.
+     *
+     * @see Modules/Rating/docs/wiki/rules/rating-contract-over-baserating.md
      */
     public static function formFieldLabel(RatingContract $rating): string
     {
@@ -122,9 +129,8 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param array<string, mixed>     $where
-     * @param class-string<BaseRating> $ratingClass
-     *
+     * @param  array<string, mixed>  $where
+     * @param  class-string<BaseRating>  $ratingClass
      * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
@@ -134,7 +140,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
+            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
             ->values();
         $ratings->loadMissing('children');
 
@@ -142,9 +148,10 @@ class RatingData extends Data
     }
 
     /**
-     * @param iterable<int, RatingContract> $ratings
-     *
+     * @param  iterable<int, RatingContract>  $ratings
      * @return array<string, string>
+     *
+     * @see Modules/Rating/docs/wiki/rules/rating-contract-over-baserating.md
      */
     public static function criteriaToXlsFields(iterable $ratings): array
     {
@@ -155,12 +162,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if (null !== $rating->parent_id) {
+            if ($rating->parent_id !== null) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ('' === $label) {
+            if ($label === '') {
                 $label = 'Rating '.$rating->id;
             }
 

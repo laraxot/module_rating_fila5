@@ -1,36 +1,25 @@
 ---
-id: Rating/module-bmad-audit-20260928
-title: "Rating: baseline BMAD e analisi completa"
-status: ready-for-dev
+title: "Module BMAD audit — Rating"
+status: review
+updated: 2026-11-16
 module: Rating
-epic: module-governance
-priority: P1
-created: 2026-09-28
-references:
-  - ../architecture/module-boundary.md
-  - ../brainstorming/module-opportunities.md
-  - ../epics/module-roadmap.md
-type: story
-updated: 2026-10-07
-tags: [docs, rating, bmad]
-qmd: "story   rating: baseline bmad rating"
+bmad: true
+qmd: "story BMAD audit modulo Rating inventario gate finding P1 rating_morph PHPStan Pest skip"
 ---
-# Story: Rating: baseline BMAD
 
-Come manutentore del modulo Rating, voglio una baseline BMAD verificabile, così da poter pianificare lavoro senza confondere ipotesi, WIP e comportamento osservato.
+# Story: audit BMAD del modulo Rating
 
-## Acceptance criteria
+**Scopo:** sapere se il dato valutativo condiviso dalle schede è protetto dal database, prima di toccare codice.
 
-- [ ] Confermare API pubblica e confini con riferimenti a codice reale.
-- [ ] Inventariare i flussi critici e collegarli a test Pest.
-- [ ] Misurare PHPStan/Pest nel contesto stabile del modulo.
-- [ ] Registrare dipendenze, rischi e decisioni nel modulo.
-- [ ] Aggiornare lo stato reale in `docs/sprint-status.yaml`.
+## Acceptance
 
-## Task
+- [x] Inventario source-first misurato (2026-11-16) in [audits/rating-audit.md](../audits/rating-audit.md).
+- [x] Finding P0/P1/P2 con `path:line`: 0 / 2 / 7.
+- [x] Pack docs allineato: [audit](../audit.md), [epics](../epics.md), [decision-log](../decision-log.md), [architecture](../architecture.md), [ECC](../../ecc/rating-ecc-audit.md).
+- [x] PHPStan `Modules/Rating`: 0 errori (level max).
+- [ ] Pest modulo eseguito: **bloccato** (run completo timeout 420 s; singolo test >150 s a 1% CPU; `10.100.200.53:3306` irraggiungibile).
+- [ ] P1 chiusi con regressione (Epic A in [epics](../epics.md)): migration additiva con unique e morphMap.
 
-- [ ] Revisione architettura.
-- [ ] Brainstorming con stakeholder.
-- [ ] Decomposizione epic in story più piccole.
-- [ ] Quality gate e second-brain write-back.
+## Esito
 
+Audit chiuso come documentazione; nessun codice o DB modificato. Prossime story: `rating-morph-integrita` (con query di sola lettura su duplicati/orfani prima della migration) e `rating-pulizia-residui` (da aprire in `docs/sprint-status.yaml`).

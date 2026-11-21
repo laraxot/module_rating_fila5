@@ -1,13 +1,16 @@
 ---
-title: "product roadmap"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product roadmap"
 issues: []
 discussions: []
-status: draft
+title: "Rating Module - Product Roadmap"
+type: guide
+tags: [product, roadmap, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "PRODUCT ROADMAP"
+related:
+  - "./PRODUCT_STRATEGY.md"
+status: superseded
+superseded_by: bmad/product_roadmap.md
 ---
 
 # Rating Module - Product Roadmap
@@ -19,6 +22,7 @@ status: draft
 **Status:** In Development
 
 ---
+
 ## Vision Statement
 
 To create a **comprehensive rating and review system** that builds trust through authentic user feedback, drives quality improvements, and helps users make informed decisions.

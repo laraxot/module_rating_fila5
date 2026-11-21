@@ -10,11 +10,18 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/** @phpstan-require-extends Model */
-/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
+/**
+ * @phpstan-require-extends Model
+ *
+ * @see Modules/Rating/docs/architecture.md
+ */
 trait HasRating
 {
-    /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
+    /**
+     * @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'>
+     *
+     * @see Modules/Rating/docs/architecture.md
+     */
     public function ratings(): MorphToMany
     {
         return $this->morphToManyX(Rating::class, 'model');
@@ -52,6 +59,8 @@ trait HasRating
 
     /**
      * @return array<int, non-empty-array<string, mixed>>
+     *
+     * @see Modules/Rating/docs/architecture.md
      */
     public function getArrayRatingsWithImage(): array
     {
@@ -89,7 +98,7 @@ trait HasRating
 
     public function getBettingUsers(): int
     {
-        return RatingMorph::where('model_id', $this->id)
+        return RatingMorph::where('model_id', $this->getKey())
             ->where('user_id', '!=', null)
             ->distinct('user_id')
             ->count('user_id');
@@ -101,14 +110,14 @@ trait HasRating
         $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
         foreach (array_keys($ratings_options) as $key) {
-            $b = RatingMorph::where('model_id', $this->id)
+            $b = RatingMorph::where('model_id', $this->getKey())
                 ->where('user_id', '!=', null)
                 ->count();
-            if (0 === $b) {
+            if ($b === 0) {
                 $b = 1;
             }
 
-            $a = RatingMorph::where('model_id', $this->id)
+            $a = RatingMorph::where('model_id', $this->getKey())
                 ->where('user_id', '!=', null)
                 ->where('rating_id', $key)
                 ->count();
@@ -139,10 +148,10 @@ trait HasRating
 
     public function getVolumeCredit(?int $rating_id = null): float
     {
-        $query = RatingMorph::where('model_id', $this->id)
+        $query = RatingMorph::where('model_id', $this->getKey())
             ->where('user_id', '!=', null);
 
-        if (null !== $rating_id) {
+        if ($rating_id !== null) {
             $query->where('rating_id', $rating_id);
         }
 

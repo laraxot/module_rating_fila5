@@ -20,8 +20,8 @@ discussions:
 
 ## L'evidenza
 
-- `RatingMorphTrait`, `HasRatingsTrait`: relazione polimorfca su `ratings` e `rating_morph`
-- 34 Action, 15 Widget, 412 file di documentazione
+- `HasRatingsTrait` + `HasRatingContract`: relazione polimorfica su `ratings` e `rating_morph` (`RatingMorphTrait` non esiste nel codice, verificato con `rg`)
+- 3 Action, 2 Widget, 4 Resource, 76 PHP in `app/`, 602 file di documentazione (misure 2026-11-16)
 - Ogni modulo che valuta (Performance, Progressioni, IndennitaResponsabilita) usa Rating tramite trait
 
 ## Confini: cosa **non** appartiene a Rating

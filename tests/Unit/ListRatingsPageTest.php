@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Modules\Rating\Filament\Resources\RatingResource;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\BaseListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingsTable;
@@ -18,7 +19,7 @@ uses(TestCase::class);
 test('page no longer owns the column set', function (): void {
     // Le colonne sono state spostate nelle classi sotto Tables/: qui resta solo
     // l'ereditarieta' da XotBaseListRecords, che non ne dichiara nessuna.
-    $page = new ListRatings();
+    $page = new ListRatings;
     $method = new ReflectionMethod(BaseListRatings::class, 'getTableColumns');
     /** @var array<string, mixed> $columns */
     $columns = $method->invoke($page);
@@ -27,7 +28,7 @@ test('page no longer owns the column set', function (): void {
 });
 
 test('the column set lives in RatingsTable', function (): void {
-    $columns = (new RatingsTable())->getTableColumns();
+    $columns = (new RatingsTable)->getTableColumns();
 
     Assert::assertSame([
         'id',
@@ -42,29 +43,27 @@ test('the column set lives in RatingsTable', function (): void {
     ], array_keys($columns));
 });
 
+/*
+ * Filtri e azioni, come le colonne, li dichiara `RatingsTable` (la Table class che
+ * `RatingResource::getTableClass()` sceglie): gli hook `getTable*()` di `XotBaseListRecords`
+ * restituiscono `[]` per contratto, e invocarli sulla pagina misurava il posto sbagliato.
+ *
+ * @see Modules/Rating/docs/filament-table-architecture.md
+ */
 test('defines default empty filters and header actions', function (): void {
-    $page = new ListRatings();
-    $filtersMethod = new ReflectionMethod($page, 'getTableFilters');
-    $headerMethod = new ReflectionMethod($page, 'getTableHeaderActions');
+    Assert::assertSame(RatingsTable::class, RatingResource::getTableClass());
 
-    /** @var array<string, mixed> $filters */
-    $filters = $filtersMethod->invoke($page);
-    /** @var array<string, mixed> $headerActions */
-    $headerActions = $headerMethod->invoke($page);
+    $table = new RatingsTable;
 
-    Assert::assertSame([], $filters);
-    Assert::assertNotEmpty($headerActions);
+    Assert::assertSame([], $table->getTableFilters());
+    Assert::assertNotEmpty($table->getTableHeaderActions());
 });
 
 test('defines view edit delete actions and bulk delete', function (): void {
-    $page = new ListRatings();
-    $actionsMethod = new ReflectionMethod($page, 'getTableActions');
-    $bulkMethod = new ReflectionMethod($page, 'getTableBulkActions');
+    $table = new RatingsTable;
 
-    /** @var array<string, mixed> $actions */
-    $actions = $actionsMethod->invoke($page);
-    /** @var array<string, mixed> $bulk */
-    $bulk = $bulkMethod->invoke($page);
+    $actions = $table->getTableActions();
+    $bulk = $table->getTableBulkActions();
 
     Assert::assertArrayHasKey('view', $actions);
     Assert::assertArrayHasKey('edit', $actions);

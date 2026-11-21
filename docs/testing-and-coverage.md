@@ -72,7 +72,7 @@ require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
 ```
 
 - **Vietato** `uses(TestCase::class)->in(...)` nel bootstrap (PHPStan `method.internalClass`).
-- Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo.
+- Ogni file test dichiara `uses(\Modules\Rating\Tests\TestCase::class);` da solo. Perche', e guardia: [ADR pest-testcase-binding-per-file](../../Xot/docs/adr/pest-testcase-binding-per-file.md).
 - Helper condivisi: prefisso `xot*` da [`XotBasePest.php`](../../Xot/tests/XotBasePest.php).
 
 Story: [`docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md`](../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md).
@@ -118,6 +118,18 @@ quality gate. Uno skip **incondizionato** sarebbe invece un test spento per semp
 sono registrate in questa install, che è a architettura Folio/Actions. Il file precedente
 chiamava `skip('…')` dentro `beforeEach`, ma **`skip()` non è una funzione globale di Pest**:
 i cinque test risultavano *failed* con `Call to undefined function`, non skipped.
+
+## Host di test e `getClassName()`
+
+`HasRatingsTrait` risolve il Rating del modulo chiamante con `Rating::getClassName()`, che cerca nel
+`debug_backtrace()` la prima classe con `Models\` nel nome e lancia `RuntimeException` se non c'e'
+(voluto: story 5.90). Per questo:
+
+- `tests/Fixtures/RatingsHostStub` (namespace `Tests\Fixtures`) va bene per accessor e helper che non
+  risolvono la classe; le sue override di `ratings()`/`ratingMorphs()` coprono i casi con relazione forzata;
+- per `myRatings()`, `ratingObjectives()`, `syncRatingsWhere()` e per l'`ownerRecord` dei relation
+  manager si usa `tests/Fixtures/Models/RatingsHost`: sta in un namespace `Models\` e accanto ha
+  `Rating` e `RatingMorph` delle fixture (sottoclassi vuote di quelli del modulo), come un modulo reale.
 
 ## Helper dei test
 
