@@ -1,8 +1,10 @@
+> **Superseded / storico** (nome con data: non creare altri così). Canonico: [phpstan-fixes.md](phpstan-fixes.md). Indice: [index.md](index.md).
+
 # PHPStan Fixes - Modulo Rating
 
 **Data**: 2026-01-27  
 **Modulo**: Rating  
-**Status**: ✅ **COMPLETATO - 0 Errori**
+**Status**: ✅ **COMPLETATO - 0 Errori** (snapshot)
 
 ---
 

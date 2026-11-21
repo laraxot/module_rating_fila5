@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Schema;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\Rating;
+use Modules\Rating\Tests\Fixtures\Models\RatingsHost;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -24,6 +26,14 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 require_once __DIR__.'/../Fixtures/RatingsHostStub.php';
+
+/*
+ * Le relazioni (`myRatings`, `ratingObjectives`, `syncRatingsWhere`) usano `RatingsHost`, che vive in
+ * `Tests\Fixtures\Models\`: `Rating::getClassName()` risolve il Rating del modulo del chiamante e senza
+ * `Models\` nel namespace lancia RuntimeException (voluto, story 5.90).
+ *
+ * @see Modules/Rating/docs/testing-and-coverage.md
+ */
 
 afterEach(function (): void {
     Mockery::close();
@@ -115,10 +125,10 @@ describe('HasRatingsTrait accessors', function (): void {
 
 describe('HasRatingsTrait relazioni e sync', function (): void {
     test('ratings delega a morphToManyX sul modello Rating', function (): void {
-        /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+        /** @var MorphToMany<Rating, RatingsHost, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
         $relation = Mockery::mock(MorphToMany::class);
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedMorph = $relation;
 
         Assert::assertSame($relation, $host->ratings());
@@ -127,11 +137,11 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
     test('myRatings filtra il pivot per Auth::id', function (): void {
         Auth::shouldReceive('id')->andReturn(42);
 
-        /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+        /** @var MorphToMany<Rating, RatingsHost, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
         $relation = Mockery::mock(MorphToMany::class);
         $relation->shouldReceive('wherePivot')->once()->with('user_id', 42)->andReturnSelf();
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedMorph = $relation;
 
         Assert::assertSame($relation, $host->myRatings());
@@ -140,7 +150,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
     test('ratingObjectives costruisce hasMany con aggregati', function (): void {
         Auth::shouldReceive('id')->andReturn(7);
 
-        /** @var HasMany<MorphPivot, RatingsHostStub>&Mockery\MockInterface $hasMany */
+        /** @var HasMany<MorphPivot, RatingsHost>&Mockery\MockInterface $hasMany */
         $hasMany = Mockery::mock(HasMany::class);
         $hasMany->shouldReceive('selectRaw')->once()->andReturnSelf();
         $hasMany->shouldReceive('leftJoin')
@@ -159,7 +169,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         $hasMany->shouldReceive('groupBy')->once()->with('ratings.id')->andReturnSelf();
         $hasMany->shouldReceive('with')->once()->with('post')->andReturnSelf();
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedHasMany = $hasMany;
         $host->setRawAttributes(['id' => 99]);
 
@@ -167,7 +177,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
     });
 
     test('scopeWithRating applica leftJoin su rating_morph', function (): void {
-        /** @var Builder<RatingsHostStub>&Mockery\MockInterface $query */
+        /** @var Builder<RatingsHost>&Mockery\MockInterface $query */
         $query = Mockery::mock(Builder::class);
         $query->shouldReceive('leftJoin')
             ->once()
@@ -182,13 +192,13 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
             })
             ->andReturnSelf();
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
 
         Assert::assertSame($query, $host->scopeWithRating($query));
     });
 
     test('getRatingsWhere applica filtri su extra_attributes', function (): void {
-        /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+        /** @var MorphToMany<Rating, RatingsHost, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
         $relation = Mockery::mock(MorphToMany::class);
         $relation->shouldReceive('where')
             ->once()
@@ -198,7 +208,7 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
             (new Rating)->forceFill(['id' => 1]),
         ]));
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedMorph = $relation;
 
         $result = $host->getRatingsWhere(['anno' => 2024]);
@@ -235,11 +245,12 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
             $table->timestamps();
         });
 
-        /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+        /** @var MorphToMany<Rating, RatingsHost, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
         $relation = Mockery::mock(MorphToMany::class);
         $relation->shouldNotReceive('sync');
+        $relation->shouldNotReceive('syncWithoutDetaching');
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedMorph = $relation;
         $host->setRelation('ratings', collect([]));
 
@@ -282,15 +293,20 @@ describe('HasRatingsTrait relazioni e sync', function (): void {
         ]);
         $rating->save();
 
-        /** @var MorphToMany<Rating, RatingsHostStub, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
+        /** @var MorphToMany<Rating, RatingsHost, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
         $relation = Mockery::mock(MorphToMany::class);
-        $relation->shouldReceive('sync')->once()->with([$rating->id])->andReturn([
+        // syncWithoutDetaching, non sync: sync() stacca le pivot alias/FQCN legacy (commento in
+        // HasRatingsTrait::syncRatingsWhere()). Dopo la sync la relazione caricata viene
+        // dimenticata e `$this->ratings` la ricarica dalla relazione.
+        $relation->shouldNotReceive('sync');
+        $relation->shouldReceive('syncWithoutDetaching')->once()->with([$rating->id])->andReturn([
             'attached' => [$rating->id],
             'detached' => [],
             'updated' => [],
         ]);
+        $relation->shouldReceive('getResults')->once()->andReturn(new EloquentCollection([$rating]));
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHost;
         $host->forcedMorph = $relation;
         $host->setRelation('ratings', collect([$rating]));
 

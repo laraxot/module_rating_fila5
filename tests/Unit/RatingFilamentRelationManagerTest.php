@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Tests\Unit;
 
 use Filament\Tables\Columns\Column;
-use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
-use Mockery\MockInterface;
 use Modules\Rating\Filament\RelationManagers\RatingsRelationManager;
 use Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers\RatingsRelationManager as HasRatingRatingsRelationManager;
+use Modules\Rating\Tests\Fixtures\Models\RatingsHost;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -20,14 +19,19 @@ afterEach(function (): void {
 });
 
 /**
+ * Il relation manager vive dentro la pagina del record: `ownerRecord` e' la proprieta' che
+ * Livewire riempie al mount, e `table()` la legge (`getModelClass()` -> `getRelationship()`).
+ * Qui si assegna l'owner come farebbe il mount, con un host che risolve `ratings()`.
+ *
+ * @see Modules/Rating/docs/testing-and-coverage.md
+ *
  * @return list<string>
  */
 function ratingRelationManagerColumnNames(RatingsRelationManager|HasRatingRatingsRelationManager $manager): array
 {
-    /** @var HasTable&MockInterface $livewire */
-    $livewire = \Mockery::mock(HasTable::class);
+    $manager->ownerRecord = new RatingsHost;
 
-    $table = $manager->table(Table::make($livewire));
+    $table = $manager->table(Table::make($manager));
 
     return array_values(array_map(
         static fn (Column $column): string => $column->getName(),
@@ -36,7 +40,7 @@ function ratingRelationManagerColumnNames(RatingsRelationManager|HasRatingRating
 }
 
 test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function (): void {
-    $manager = new RatingsRelationManager();
+    $manager = new RatingsRelationManager;
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 
@@ -49,7 +53,7 @@ test('RatingsRelationManager dichiara colonne pivot e azioni CRUD', function ():
 });
 
 test('HasRatingResource RatingsRelationManager allinea lo schema tabella', function (): void {
-    $manager = new HasRatingRatingsRelationManager();
+    $manager = new HasRatingRatingsRelationManager;
 
     Assert::assertSame('ratings', $manager::getRelationshipName());
 

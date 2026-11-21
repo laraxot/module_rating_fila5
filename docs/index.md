@@ -1,54 +1,75 @@
 ---
-tags: [documentation]
-created: 2026-09-26
-qmd: "index"
-issues: []
-discussions: []
-title: "Rating Module: Documentation Index"
-type: guide
-module: Rating
-updated: 2026-10-23
-status: active
+title: "Rating — indice documentazione"
+type: index
+tags: [rating, docs, phpstan, index]
+updated: 2026-11-17
+qmd: "rating indice documentazione scopo rating polimorfico HasRating phpstan canonici kebab"
+related:
+  - ./README.md
+  - ./phpstan-fixes.md
+  - ./architecture.md
+  - ./rating-architecture.md
 ---
 
-# Rating Module: Index
+# Rating — indice documentazione
 
-Indice operativo: `00-INDEX.md` e' stato rimosso il 2026-10-22 (commit c74fdcb); la copia rimasta [00-index.md](./00-index.md) e' marcata stale. Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
+**Canonico di navigazione** del modulo. `INDEX.md` e `00-INDEX.md` rimandano qui.
 
-Indice operativo: `00-INDEX.md` e' stato rimosso il 2026-10-22 (commit c74fdcb); la copia rimasta [00-index.md](./00-index.md) e' marcata stale. Questo file e' l'hub del lavoro BMAD sul Select "altro" (2026-09-22). Contenuto reale del codice e limiti: [README.md](./README.md).
+## Scopo (perché esiste)
 
-## Lavoro attivo (BMAD)
+Il modulo **Rating** assegna voti polimorfici a qualsiasi modello (`HasRating` / `HasRatingContract`): un utente vota un'entità una sola volta (o aggiorna il voto), con aggregazioni (media, conteggi) e admin Filament. Non è un “servizio scoring” generico: la logica vive in **Actions** sotto `Actions/HasRating/`, non in un `RatingService`.
 
-→ **[bmad/README.md](bmad/README.md)**: Select «altro» + note (`''` / placeholder `null` / `selectIsOther`).
+Gate qualità: livello max da `laravel/phpstan.neon` (procedura: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md)).
 
-| Pack | Link |
+## Leggere prima
+
+| Tema | File |
 |------|------|
-| Architecture | [bmad/architecture/rating-select-altro-note.md](bmad/architecture/rating-select-altro-note.md) |
-| Spec codice | [bmad/architecture/rating-select-altro-implementation-spec.md](bmad/architecture/rating-select-altro-implementation-spec.md) |
-| Story 5.99 | [bmad/stories/5.99-select-altro-note-obbligatoria.story.md](bmad/stories/5.99-select-altro-note-obbligatoria.story.md) |
-| Story 5.141 D-8 | [bmad/stories/5.141-has-rating-values-filter-note.story.md](bmad/stories/5.141-has-rating-values-filter-note.story.md) |
-| Design | [stories/rating-altro-option-conditional-textarea-design.story.md](stories/rating-altro-option-conditional-textarea-design.story.md) |
+| Panoramica modulo | [README.md](README.md) |
+| Architettura / regole | [architecture.md](architecture.md), [architecture-rules.md](architecture-rules.md), [rating-architecture.md](rating-architecture.md) |
+| Best practice (DRY/KISS) | [best-practices.md](best-practices.md) |
+| PHPStan (stato + cause) | [phpstan-fixes.md](phpstan-fixes.md) |
+| MorphToMany / generics | [wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md) |
+| Schema / schemaless | [schema.md](schema.md), [schemaless-attributes.md](schemaless-attributes.md) |
+| Product (kebab) | [prd.md](prd.md), [product-strategy.md](product-strategy.md), [product-roadmap.md](product-roadmap.md), [product-launch-plan.md](product-launch-plan.md) |
+| Roadmap strutturata | [roadmap/](roadmap/) |
+| Wiki locale | [wiki/index.md](wiki/index.md) |
 
-## Altri hub
+## PHPStan — canonico vs storici
 
-- [README.md](README.md)
-- [architecture.md](architecture.md)
-- [criteri-a-scelta-multipla.md](criteri-a-scelta-multipla.md)
-- [wiki/](wiki/)
+| Ruolo | File |
+|-------|------|
+| **Canonico** | [phpstan-fixes.md](phpstan-fixes.md) — wave recente, cause radice, link troubleshooting |
+| Storico (non aggiornare) | [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md) |
+| Procedura swarm (repo) | [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md) |
+| Story globale | [all-modules-phpstan-zero-errors.story.md](../../../../docs/stories/all-modules-phpstan-zero-errors.story.md) |
 
-## Debito docs
+## Nomi UPPERCASE / alias → kebab (non cancellare in massa)
 
-**2026-09-22: risolto.** I 38 file sotto `docs/` con marker di merge non risolti
-(`<<<<<<<`/`=======`/`>>>>>>>`, incluso `architecture.md`) sono stati fusi e ripuliti
-(verifica: `grep -rl '^<<<<<<< \|^=======$\|^>>>>>>> ' docs/` → nessun risultato).
-Duplicati case-sensitive noti (es. `INDEX.md`/`index.md`, `BEST_PRACTICES.md`/`best_practices.md`)
-non sono stati deduplicati in questo passaggio: sono fuori scope, tracciati in
-`root-files-hygiene.md`.
+I file `UPPER_SNAKE` o `UPPER-KEBAB` restano per link storici; **non** sono SSoT. Preferire i kebab:
 
-Ancora aperto (fuori scope per questo cleanup, non toccare qui):
-- root `README.md` del modulo aveva marker di merge non risolti (righe 3-19, 122-133). Verifica del 2026-10-14:
-  `grep -nE '^<<<<<<<|^=======$|^>>>>>>>' laravel/Modules/Rating/README.md` non trova nulla, il punto e' chiuso.
-- regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`LICENSE.md` duplicati in
-  root): vedi `root-files-hygiene.md`.
-- possibile corruzione repo Git (commit mancante, vedi `git fsck`): da investigare
-  prima di qualsiasi rewrite di history su questo modulo.
+| Alias / legacy | Canonico kebab |
+|----------------|----------------|
+| `BEST_PRACTICES.md` | [best-practices.md](best-practices.md) |
+| `BAD_PRACTICES.md` | (anti-pattern: integrare in best-practices se serve) |
+| `PRODUCT_STRATEGY.md` | [product-strategy.md](product-strategy.md) / [strategy.md](strategy.md) |
+| `PRODUCT_ROADMAP.md` | [product-roadmap.md](product-roadmap.md) / [roadmap.md](roadmap.md) |
+| `PRODUCT_LAUNCH_PLAN.md` | [product-launch-plan.md](product-launch-plan.md) / [launch-plan.md](launch-plan.md) |
+| `SPRINT_PLANNING.md` | [sprint-planning.md](sprint-planning.md) |
+| `USER_RESEARCH.md` | [user-research.md](user-research.md) |
+| `REDUNDANCY_ANALYSIS.md` | [redundancy-report.md](redundancy-report.md), [code-redundancy-audit.md](code-redundancy-audit.md) |
+| `METODI_DUPLICATI_ANALISI.md`, `metodi_duplicati_analisi.md` | [metodi-duplicati-analisi.md](metodi-duplicati-analisi.md) |
+| `ON-DEMAND-PATTERN.md`, `QMD-SETUP.md`, `PERFORMANCE-OPTIMIZATION.md`, `PROJECT-STRUCTURE.md` | pattern condivisi Themes/on-demand; in Rating usare wiki + questo indice |
+| `INDEX.md`, `00-INDEX.md` | **questo file** (`index.md`) |
+
+Convenzione nomi: kebab-case, **senza date** nel filename (eccezione `README.md`).
+
+## Redundancy nota
+
+Esistono stub che puntano a `Themes/docs/shared-components/...` (es. vecchi redirect): se il target è `.gitkeep` o fuori modulo, **non** seguirli — usare i file Rating in tabella sopra o il codice in `app/`.
+
+## Backlink
+
+- [User](../User/docs/README.md) — autori voto  
+- [Xot](../Xot/docs/) — `XotBase*`  
+- Prompt: [00-start](../../../../bashscripts/docs/prompts/00-start.md) · [57-second-brain](../../../../bashscripts/docs/prompts/57-second-brain.md)
