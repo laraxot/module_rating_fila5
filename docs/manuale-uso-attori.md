@@ -19,7 +19,7 @@ tramite Filament.
 |---|---|
 | Ospite | N/A: la valutazione richiede un utente autenticato. |
 | Utente autenticato | Può creare valutazioni tramite il contratto/trait integrato nel modello consumer; per i record morph può anche vedere/modificare il proprio record quando la policy lo riconosce come proprietario. |
-| Gruppo/ruolo | `evaluator` può vedere e creare; sui record morph può aggiornare o cancellare il proprio record. `hr-manager` può creare/aggiornare. |
+| Gruppo/ruolo | `evaluator` può vedere; la creazione è consentita a `super-admin`, `admin` e `hr-manager`. Sui record morph l'utente può aggiornare o cancellare il proprio record quando la policy lo riconosce come proprietario. |
 | Admin | Può vedere, creare, aggiornare e cancellare secondo `RatingPolicy`/`RatingMorphPolicy`. |
 | Super-admin | Può eseguire tutte le abilità, inclusi restore e force delete. |
 | Operatore | N/A. |
