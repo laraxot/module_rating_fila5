@@ -1,5 +1,8 @@
 ---
+<<<<<<< .merge_file_C2NBPS
+=======
 qmd: "rating wiki troubleshooting phpstan generic limitation morphtomany md"
+>>>>>>> .merge_file_rkzngL
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []
@@ -39,24 +42,30 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 
 ## Solution
 
-**This is a PHPStan limitation, NOT a code bug.**
+**RESOLVED** — passing the concrete pivot class to `morphToManyX()` resolves the generic mismatch.
 
 ### What we did
-1. Documented the limitation (this page)
-2. Verified code works at runtime (Eloquent handles `static` correctly)
-3. Did NOT add `@phpstan-ignore` (per project protocol: 0 ignores, 0 baselines)
 
-### Why no @phpstan-ignore
-- Project protocol forbids `@phpstan-ignore` in code
-- These are false positives from PHPStan's generic type system
-- Runtime behavior is correct
+1. Extended `RelationX::morphToManyX()` with an optional `?string $pivotClass = null` parameter (template `TPivot of MorphPivot`). When provided, the relation is built with `->using($pivot::class)`, so PHPStan infers the concrete `MorphToMany<Rating, $this, RatingMorph, 'pivot'>` instead of the base `MorphPivot` returned by `guessMorphPivot()`.
+2. Updated `HasRating::ratings()` to call `morphToManyX(Rating::class, 'model', pivotClass: RatingMorph::class)`.
+3. Verified: `./vendor/bin/phpstan analyse Modules/Rating --memory-limit=-1 --error-format=raw` → **0 errors**.
+
+### Why this works
+
+- `guessMorphPivot()` returns a base `MorphPivot`; the contract and callers expect the concrete `RatingMorph`.
+- Injecting `$pivotClass` lets the caller declare the exact pivot type, so PHPStan's generic inference aligns with the contract instead of hitting the `static`/invariance limitation.
 
 ## References
 - PHPStan blog: https://phpstan.org/blog/whats-up-with-template-covariant
 - Larastan issue: Generic type limitations with MorphToMany + static
 - Project protocol: `laravel/phpstan.neon` is NEVER modified
+- Canonical fix log: [../../phpstan-fixes.md](../../phpstan-fixes.md)
 
 ## Status
-- **5 remaining PHPStan errors** (as of 2026-05-06)
-- All are generic type false positives in Rating module
-- Code is correct, PHPStan cannot infer `static` in generic context
+- **Wave 2026-11-17**: modulo Rating a **0** errori sul gate `Modules/Rating`+`Modules/Lang`.
+- Contratto: interface `MorphToMany<Rating, Model>`; trait `MorphToMany<Rating, $this, RatingMorph, 'pivot'>` grazie al `pivotClass` injected.
+- Limitazione `static`/invarianza resta nota per analisi cross-module (Blog), non blocca il gate modulo.
+
+## Aggiornamento ripresa
+
+Contratto e trait allineati a `MorphToMany<Rating, Model|$this, RatingMorph, 'pivot'>`. Trait morti (`HasLikes`, `HasRatingsTrait`, `RatingTrait`) rimossi (restano solo `.lock` multi-agente). Canonico fix: [phpstan-fixes.md](../../phpstan-fixes.md).

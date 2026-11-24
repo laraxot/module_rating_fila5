@@ -1,35 +1,40 @@
 ---
-issues: []
-discussions: []
-title: "Best practices: Rating"
-type: guide
-tags: [best-practices, rating]
-created: 2026-07-14
-updated: 2026-09-02
-qmd: "best practices rating"
+title: "Rating — best practices"
+type: concept
+tags: [rating, dry, kiss, has-rating]
+updated: 2026-11-17
+qmd: "rating best practices HasRating actions morphToMany no RatingService dry kiss"
+canonical: true
 related:
-  - "./false-friends.md"
-status: draft
+  - ./index.md
+  - ./architecture.md
+  - ./phpstan-fixes.md
 ---
 
-# Best practices: Rating
+# Rating — best practices
 
-## Nota 2026-09-02
+> `BEST_PRACTICES.md` è alias storico (contenuto obsoleto che citava un `RatingService` inesistente). **Questo file è il canonico.**
 
-Questo file e `BEST_PRACTICES.md` (gemello con collisione di case, cancellato)
-contenevano contenuti opposti e inconciliabili: uno rimandava a un canonical
-`Themes/docs/shared-components/.gitkeep-Modules` che è un file placeholder
-vuoto, l'altro descriveva classi (`RatingService`, `RatingStar`,
-`AverageRating`) che **non esistono** in questo modulo (verificato con
-`grep -rln "class RatingService\|class RatingStar\|class AverageRating" app`
-- zero risultati). Nessuno dei due era utilizzabile: il primo puntava al
-nulla, il secondo era inventato.
+## Scopo
 
-## Modelli reali del dominio (verificato)
+Voti coerenti, tipizzati e riusabili: un host rateable espone `ratings()` via `HasRating` / `HasRatingContract`; la scrittura passa da Actions, non da service generici.
 
-`app/Models/`: `Rating`, `BaseRating`, `RatingMorph`, `BaseRatingMorph`,
-`Like`, `AbstractRatingsHost`. Azioni sotto `app/Actions/HasRating/`.
+## DRY / KISS
 
-Una guida best-practices accurata richiede di documentare questi, non le
-classi immaginarie di prima: non scritta qui per non ripetere lo stesso
-errore (contenuto plausibile ma non verificato riga per riga sul codice).
+- **Trait + contratto** sul modello host (`HasRating`), non copia di MorphToMany nei consumer.
+- **Actions** in `app/Actions/HasRating/` per lettura/aggregazione (es. opts, sum) — niente `RatingService`.
+- Voto come dominio chiaro (enum/cast dove già previsto), non stringhe magiche sparse.
+- Un voto per utente+rateable: update, non insert duplicato.
+
+## Filament / Xot
+
+- Resource e colonne: `XotBase*`; traduzioni via Lang, non `->label()` hardcoded.
+- Widget admin: riuso pattern modulo, non duplicare StatsOverview in path paralleli (vedi [wiki/redundancy](wiki/redundancy/duplicate-ratings-table-migrations.md)).
+
+## PHPStan
+
+Cause tipiche (generics MorphToMany, Builder, Pest harness): [phpstan-fixes.md](phpstan-fixes.md). Procedura globale: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md).
+
+## Indice
+
+[index.md](index.md)

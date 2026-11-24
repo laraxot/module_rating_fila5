@@ -140,3 +140,15 @@ sbagliato.
   `BaseListSchedas::getTableFilters()`, col nome vecchio.
 - **1 settembre 2026**: `use HasXotTable;` tolto da `XotBaseListRecords`, prefisso `Xot`
   rimosso dai nomi, candidato per-Resource in `getTableClass()`, test di regressione.
+
+## Nei test
+
+- La list page non configura la tabella: `ListRecords::table()` la restituisce intatta. Per
+  verificare le colonne si costruisce come fa Filament: `ListX::getResource()::table(Table::make($page))`.
+- Gli hook `getTable*()` di `XotBaseListRecords` restituiscono `[]`: filtri e azioni si verificano
+  sulla Table class (`RatingsTable`), non sulla pagina.
+- Una Table class di test fuori da `{Resource}\Tables\` dichiara `getResource()` (vedi
+  `tests/Fixtures/BaseRatingsTableStub`).
+- `RatingMorphResource` usa `RatingMorphsTable` (plurale dal model): le colonne sono quelle di
+  `rating_morph`; fino al 2026-11-19 c'erano `rating`, `ratingable_type`, `ratingable_id`, inesistenti.
+

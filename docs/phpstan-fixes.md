@@ -1,15 +1,30 @@
 ---
-title: "PHPStan Fixes - Modulo Rating"
-type: guide
-tags: [phpstan, fixes, rating]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan fixes"
+title: "Rating — PHPStan (canonico modulo)"
+status: canonical
+updated: 2026-11-17
+qmd: "rating phpstan fixes canonico HasRating MorphToMany Builder RateableHost"
 related:
-  - "./ponytail-audit-over-engineering.md"
+  - ./index.md
+  - ./wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md
 ---
 
-# PHPStan Fixes - Modulo Rating
+# PHPStan — Modulo Rating (canonico)
+
+> Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+
+## Scopo
+
+Far analizzare Rating al gate max **senza** nascondere errori: i fallimenti PHPStan qui di solito segnalano contratti MorphToMany/`HasRating` o harness test sbagliati, non “rumore di tipo”.
+
+## Wave 2026-11-17 — 172 → 0
+
+Verify (quando host non saturo): `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --memory-limit=-1 --error-format=raw` → **0**.
+
+Root causes: Eloquent PHPDoc `Builder<static>`; `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
+
+See also: [wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md).
+
+---
 
 ## ✅ Status: COMPLETATO - 0 Errori
 
@@ -93,6 +108,51 @@ abstract class BaseModel extends Model
 
 ---
 
+## 📊 Correzioni Wave 2026-11-17 (Novembre 2026)
+
+### 3. Fix MorphToMany generic mismatch via `pivotClass` injection ✅
+
+**Problema**: `HasRating::ratings()` restituiva `MorphToMany<Rating, $this, MorphPivot>` invece del `RatingMorph` atteso dal contratto. PHPStan segnalava incompatibilità su `Article::ratings()` e `Profile::ratings()`.
+
+**Errore PHPStan**:
+```
+Return type MorphToMany<Rating, static(Article)> should be compatible with MorphToMany<Rating, Illuminate\Database\Eloquent\Relations\MorphPivot>
+Method Article::ratings() should return MorphToMany<Rating, static(Article)> but returns MorphToMany<Rating, $this(Article)>
+```
+
+**Soluzione Implementata**:
+
+1. **`Modules/Xot/app/Models/Traits/RelationX.php`** — `morphToManyX()` esteso con parametro opzionale `?string $pivotClass = null` e template `TPivot of MorphPivot`:
+```php
+// @template TPivot of \Illuminate\Database\Eloquent\Relations\MorphPivot
+public function morphToManyX(
+    string $related,
+    string $name,
+    ?string $_table = null,
+    // ...
+    ?string $pivotClass = null,
+): MorphToMany {
+    $pivot = null !== $pivotClass ? app($pivotClass) : $this->guessMorphPivot($related);
+    // ...
+    ->using($pivot::class)
+```
+
+2. **`Modules/Rating/app/Models/Traits/HasRating.php`** — passa il pivot concreto:
+```php
+public function ratings(): MorphToMany
+{
+    return $this->morphToManyX(Rating::class, 'model', pivotClass: RatingMorph::class);
+}
+```
+
+**Benefici**:
+- ✅ PHPStan Module Rating: **0 errori** (`--error-format=raw`)
+- ✅ Tipo pivot inferito: `MorphToMany<Rating, $this, RatingMorph, 'pivot'>`
+- ✅ Contratto `HasRatingContract::ratings()` allineato
+- ✅ Nessun `@phpstan-ignore` o baseline
+
+---
+
 ## 📊 Correzioni Gennaio 2025
 
 ### 2. Rimozione Assert Ridondante ✅
@@ -129,26 +189,5 @@ return $result;
 ---
 
 **Status**: ✅ COMPLETATO  
-**Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
+**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
-
----
-
-## 📊 Verifica 2026-07-07
-
-Comando: `php -d memory_limit=2048M vendor/bin/phpstan analyse Modules/Rating --no-progress`
-
-**Errori di codice reali**: 0 ✅
-
-**Residuo (non correggibile, non è codice Rating)**: PHPStan segnala 2 errori
-`Ignored error pattern ... was not matched in reported errors` per i pattern
-globali `#Cannot cast mixed to ...#` e `larastan.noEnvCallsOutsideOfConfig`
-definiti in `phpstan.neon`. Sono falsi positivi da **scope parziale**: quei
-pattern matchano errori che esistono in altri moduli, non in Rating (verificato:
-nessun `env()` e nessun cast problematico in `Modules/Rating`). Stesso
-meccanismo documentato in
-[phpstan-partial-scope-false-positives](../../Xot/docs/wiki/concepts/phpstan-partial-scope-false-positives.md)
-per un pattern analogo (`@mixin contains unknown class`).
-
-Non risolvibile senza modificare `phpstan.neon` (vietato dal mandato). Sparisce
-eseguendo l'analisi sull'intero albero `Modules/`.
