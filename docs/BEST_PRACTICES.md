@@ -1,6 +1,4 @@
-> **Superseded.** Canonico kebab: [best-practices.md](best-practices.md) (niente `RatingService` — solo Actions/`HasRating`). Indice: [index.md](index.md).
-
-# Best Practices – Rating (alias storico)
+# Best Practices – Rating
 
 ## Principi DRY/KISS
 - **DRY**: Centralizza logica di scoring in `RatingService`. Usa attributi calcolati per azioni utente.

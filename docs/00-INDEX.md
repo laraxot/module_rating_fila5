@@ -1,11 +1,30 @@
----
-title: "Rating 00-INDEX (alias)"
-status: superseded
-canonical: ./index.md
-superseded_by: index.md
-updated: 2026-11-17
+# 📚 RATING Module - Documentation Index
+
+**Path**: `laravel/Modules/Rating/docs/`  
+**Modulo**: @Modules/Rating
+
+## 📄 Documenti
+
+### Product
+| File | Scopo |
+|------|-------|
+| PRD.md | Product Requirements |
+| PRODUCT_ROADMAP.md | Roadmap |
+| PRODUCT_STRATEGY.md | Strategy |
+| PRODUCT_LAUNCH_PLAN.md | Launch Plan |
+
+### Development
+| File | Scopo |
+|------|-------|
+| GSD_WORKFLOW.md | GSD Workflow |
+| SPRINT_PLANNING.md | Sprint Planning |
+| USER_RESEARCH.md | User Research |
+
+## 🔗 Riferimenti
+
+- [Xot Module](00-INDEX.md) - Base classes
+- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+
 ---
 
-# Alias — usare [index.md](index.md)
-
-Questo file esiste solo per link storici. Navigazione e mappa UPPERCASE→kebab: **[index.md](index.md)**.
+**Ultimo Aggiornamento**: 2026-03-24

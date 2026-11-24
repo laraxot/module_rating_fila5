@@ -7,10 +7,6 @@ namespace Modules\Rating\Actions\HasRating;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
-/**
- * @see docs/contracts/get-rating-opts-by-model-action.md
- * @contract docs/contracts/get-rating-opts-by-model-action.md
- */
 class GetRatingOptsByModelAction
 {
     use QueueableAction;
