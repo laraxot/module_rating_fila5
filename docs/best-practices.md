@@ -1,4 +1,12 @@
 ---
+<<<<<<< .merge_file_7pY2uv
+module: theme
+topic: best-practices
+canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
+=======
 title: "Rating — best practices"
 type: concept
 tags: [rating, dry, kiss, has-rating]
@@ -38,3 +46,4 @@ Cause tipiche (generics MorphToMany, Builder, Pest harness): [phpstan-fixes.md](
 ## Indice
 
 [index.md](index.md)
+>>>>>>> .merge_file_rw6qND

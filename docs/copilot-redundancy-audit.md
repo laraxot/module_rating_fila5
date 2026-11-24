@@ -1,4 +1,10 @@
 ---
+<<<<<<< .merge_file_YYsppQ
+created: 2026-05-25
+---
+
+Copilot Redundancy Audit — 2026-05-25
+=======
 issues: []
 discussions: []
 title: "Copilot Redundancy Audit"
@@ -13,6 +19,7 @@ status: draft
 ---
 
 Copilot Redundancy Audit: 2026-05-25
+>>>>>>> .merge_file_KoVpjS
 
 Sintesi
 - Documentazione di rating e componenti correlati presente in più posizioni.

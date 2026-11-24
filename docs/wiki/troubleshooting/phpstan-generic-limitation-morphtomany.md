@@ -1,8 +1,4 @@
 ---
-<<<<<<< .merge_file_C2NBPS
-=======
-qmd: "rating wiki troubleshooting phpstan generic limitation morphtomany md"
->>>>>>> .merge_file_rkzngL
 title: "PHPStan Generic Limitation: MorphToMany with static"
 type: troubleshooting
 sources: []
@@ -42,6 +38,19 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 
 ## Solution
 
+<<<<<<< .merge_file_sSq24X
+**This is a PHPStan limitation, NOT a code bug.**
+
+### What we did
+1. Documented the limitation (this page)
+2. Verified code works at runtime (Eloquent handles `static` correctly)
+3. Did NOT add `@phpstan-ignore` (per project protocol: 0 ignores, 0 baselines)
+
+### Why no @phpstan-ignore
+- Project protocol forbids `@phpstan-ignore` in code
+- These are false positives from PHPStan's generic type system
+- Runtime behavior is correct
+=======
 **RESOLVED** — passing the concrete pivot class to `morphToManyX()` resolves the generic mismatch.
 
 ### What we did
@@ -54,11 +63,19 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 
 - `guessMorphPivot()` returns a base `MorphPivot`; the contract and callers expect the concrete `RatingMorph`.
 - Injecting `$pivotClass` lets the caller declare the exact pivot type, so PHPStan's generic inference aligns with the contract instead of hitting the `static`/invariance limitation.
+>>>>>>> .merge_file_wJA4u9
 
 ## References
 - PHPStan blog: https://phpstan.org/blog/whats-up-with-template-covariant
 - Larastan issue: Generic type limitations with MorphToMany + static
 - Project protocol: `laravel/phpstan.neon` is NEVER modified
+<<<<<<< .merge_file_sSq24X
+
+## Status
+- **Wave 2026-11-17**: modulo Rating a **0** errori sul gate `Modules/Rating`+`Modules/Lang`.
+- Contratto: interface `MorphToMany<Rating, Model>`; trait `MorphToMany<Rating, $this>`; host in-module `RateableHost`.
+- Limitazione `static`/invarianza resta nota per analisi cross-module (Blog), non blocca il gate modulo.
+=======
 - Canonical fix log: [../../phpstan-fixes.md](../../phpstan-fixes.md)
 
 ## Status
@@ -69,3 +86,4 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 ## Aggiornamento ripresa
 
 Contratto e trait allineati a `MorphToMany<Rating, Model|$this, RatingMorph, 'pivot'>`. Trait morti (`HasLikes`, `HasRatingsTrait`, `RatingTrait`) rimossi (restano solo `.lock` multi-agente). Canonico fix: [phpstan-fixes.md](../../phpstan-fixes.md).
+>>>>>>> .merge_file_wJA4u9

@@ -49,13 +49,5 @@ perimetro Rating.
   (`copilot-redundancy-audit`, `redundancy-audit`, `cleanup-rating`, `auditcoverage-reinjection`,
   `phpstan-fleet-fix`, `phpstan-post-sync-restore`, `quality-gates-phpstan-swarm`,
   `ratingdata-api-restore-after-laraxot-sync`).
-<<<<<<< .merge_file_b21rmj
 - Residui rule-regex: **3** (`phpstan-fixes-modulo-rating.md`, 2× `phpstan-fix-178876*.story.md`).
-=======
-<<<<<<< .merge_file_AArv32
-- Residui rule-regex: **3** (`phpstan-fixes-2026-01.md`, 2× `phpstan-fix-178876*.story.md`).
-=======
-- Residui rule-regex: **3** (`phpstan-fixes-modulo-rating.md`, 2× `phpstan-fix-178876*.story.md`).
->>>>>>> .merge_file_DDUw2X
->>>>>>> .merge_file_GyPmce
 - Nessun delete. Canon: `Xot/.../docs-md-filename-date-debt.story.md`.
