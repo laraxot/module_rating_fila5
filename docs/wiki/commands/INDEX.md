@@ -1,4 +1,5 @@
 ---
+qmd: "rating wiki commands index md"
 title: "Commands Index"
 type: index
 created: 2026-05-11
@@ -13,7 +14,7 @@ related:
 
 Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
 
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+> Vedi anche → Trigger Map
 
 ## Regola
 
@@ -34,7 +35,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
+- Per Commands globali, consulta il [wiki root](../../../../../../docs/wiki/commands/INDEX.md)
 
 ## Aggiungere una Nuova COMMANDS
 

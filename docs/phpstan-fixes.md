@@ -10,7 +10,11 @@ related:
 
 # PHPStan — Modulo Rating (canonico)
 
+<<<<<<< .merge_file_XSbWQO
 > Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-2026-01.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+=======
+> Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+>>>>>>> .merge_file_GBJsEi
 
 ## Scopo
 
@@ -105,6 +109,51 @@ abstract class BaseModel extends Model
 - ✅ Type hints completi
 
 ---
+
+---
+
+## 📊 Correzioni Wave 2026-11-17 (Novembre 2026)
+
+### 3. Fix MorphToMany generic mismatch via `pivotClass` injection ✅
+
+**Problema**: `HasRating::ratings()` restituiva `MorphToMany<Rating, $this, MorphPivot>` invece del `RatingMorph` atteso dal contratto. PHPStan segnalava incompatibilità su `Article::ratings()` e `Profile::ratings()`.
+
+**Errore PHPStan**:
+```
+Return type MorphToMany<Rating, static(Article)> should be compatible with MorphToMany<Rating, Illuminate\Database\Eloquent\Relations\MorphPivot>
+Method Article::ratings() should return MorphToMany<Rating, static(Article)> but returns MorphToMany<Rating, $this(Article)>
+```
+
+**Soluzione Implementata**:
+
+1. **`Modules/Xot/app/Models/Traits/RelationX.php`** — `morphToManyX()` esteso con parametro opzionale `?string $pivotClass = null` e template `TPivot of MorphPivot`:
+```php
+// @template TPivot of \Illuminate\Database\Eloquent\Relations\MorphPivot
+public function morphToManyX(
+    string $related,
+    string $name,
+    ?string $_table = null,
+    // ...
+    ?string $pivotClass = null,
+): MorphToMany {
+    $pivot = null !== $pivotClass ? app($pivotClass) : $this->guessMorphPivot($related);
+    // ...
+    ->using($pivot::class)
+```
+
+2. **`Modules/Rating/app/Models/Traits/HasRating.php`** — passa il pivot concreto:
+```php
+public function ratings(): MorphToMany
+{
+    return $this->morphToManyX(Rating::class, 'model', pivotClass: RatingMorph::class);
+}
+```
+
+**Benefici**:
+- ✅ PHPStan Module Rating: **0 errori** (`--error-format=raw`)
+- ✅ Tipo pivot inferito: `MorphToMany<Rating, $this, RatingMorph, 'pivot'>`
+- ✅ Contratto `HasRatingContract::ratings()` allineato
+- ✅ Nessun `@phpstan-ignore` o baseline
 
 ---
 

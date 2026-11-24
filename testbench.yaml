@@ -1,3 +1,0 @@
-providers:
-  - Modules\Rating\Providers\RatingServiceProvider
-  - Modules\Rating\Providers\Filament\AdminPanelProvider
