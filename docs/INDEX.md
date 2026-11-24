@@ -1,13 +1,11 @@
-# Documentation Index
-
-Modulo: Rating
-
-## File disponibili
-
-<!-- auto-generato: elencare i file .md presenti -->
-
+---
+title: "Rating INDEX (alias)"
+status: superseded
+canonical: ./index.md
+superseded_by: index.md
+updated: 2026-11-17
 ---
 
-## ⚠️ Architectural Rules
+# Alias — usare [index.md](index.md)
 
-- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.
+Canonico kebab: [index.md](index.md). Non aggiornare questo file.

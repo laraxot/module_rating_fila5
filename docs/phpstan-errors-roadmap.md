@@ -1,9 +1,11 @@
+> **Superseded / storico.** Canonico modulo: [phpstan-fixes.md](phpstan-fixes.md). Procedura: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+
 # PHPStan Level 10 Errors Roadmap - Modulo Rating
 
 **Data**: 2026-01-12  
 **Modulo**: Rating  
 **Livello PHPStan**: 10  
-**Status**: ✅ **COMPLETATO - 0 Errori**
+**Status**: ✅ **COMPLETATO - 0 Errori** (snapshot storico; non aggiornare)
 
 ---
 

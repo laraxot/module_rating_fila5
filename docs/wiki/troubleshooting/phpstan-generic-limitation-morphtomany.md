@@ -59,3 +59,7 @@ PHPStan's template type `TDeclaringModel` on `MorphToMany` is **not covariant**.
 - **Wave 2026-11-17**: modulo Rating a **0** errori sul gate `Modules/Rating`+`Modules/Lang`.
 - Contratto: interface `MorphToMany<Rating, Model>`; trait `MorphToMany<Rating, $this>`; host in-module `RateableHost`.
 - Limitazione `static`/invarianza resta nota per analisi cross-module (Blog), non blocca il gate modulo.
+
+## Aggiornamento ripresa
+
+Contratto e trait allineati a `MorphToMany<Rating, Model|$this, RatingMorph, 'pivot'>`. Trait morti (`HasLikes`, `HasRatingsTrait`, `RatingTrait`) rimossi (restano solo `.lock` multi-agente). Canonico fix: [phpstan-fixes.md](../../phpstan-fixes.md).

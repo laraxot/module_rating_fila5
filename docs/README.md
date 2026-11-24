@@ -1,68 +1,49 @@
 ---
 title: "Rating Module Documentation"
 type: documentation
-tags: [module, documentation]
+tags: [module, rating, documentation]
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-11-17
+qmd: "rating modulo documentazione scopo voti polimorfici HasRating actions filament phpstan"
 ---
 
 # Modulo Rating
 
-## Overview
-
-Il modulo **Rating** fa parte dell'ecosistema [PROJECT_NAME] platform.
-
 ## Scopo
 
-Questo modulo gestisce [DESCRIZIONE SPECIFICA DA COMPLETARE].
+Permettere a un utente autenticato di **valutare** (voto tipicamente 1–5, commento opzionale) **qualsiasi modello** che implementa `HasRatingContract` / usa il trait `HasRating`, con:
 
-## Struttura
+- un voto per coppia (utente, rateable) — update invece di duplicato;
+- aggregazioni (media, conteggi) per UI e admin;
+- gestione BO via Filament (`XotBaseResource`, mai Resource Filament diretta).
 
-```
-Rating/
-├── app/
-│   ├── Models/
-│   ├── Filament/
-│   └── ...
-├── docs/
-├── lang/
-└── resources/
-```
+**Perché un modulo dedicato:** il contratto polimorfico e le Actions di dominio devono restare riusabili tra Blog, Product, ecc. senza copiare MorphToMany e regole anti-duplicato.
 
-## Dipendenze
+## Non fare
 
-- [Xot Base](../Xot/docs/)
-- [User Module](../User/docs/) (se usa autenticazione)
-- [Tenant Module](../Tenant/docs/) (se multi-tenant)
+- Non introdurre `RatingService`: usare Actions in `app/Actions/HasRating/`.
+- Non estendere classi Filament crude — solo `XotBase*`.
+- Non trattare i file `UPPERCASE.md` come SSoT — vedi [index.md](index.md).
 
-## Collegamenti
+## Navigazione
 
-- [Documentazione Root](../../../docs/RATING_MODULE.md)
-- [Regole Architecture](../Xot/docs/architecture/)
+- **Indice canonico:** [index.md](index.md)
+- **PHPStan (modulo):** [phpstan-fixes.md](phpstan-fixes.md)
+- **Architettura:** [architecture.md](architecture.md) · [rating-architecture.md](rating-architecture.md)
+- **Best practice:** [best-practices.md](best-practices.md)
+- **Wiki:** [wiki/index.md](wiki/index.md)
 
-## Backlinks
+## Qualità
 
-- [Indice Moduli](../README.md)
+Procedura e saturazione host: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md).  
+Sessione / second brain: [00-start.md](../../../../bashscripts/docs/prompts/00-start.md) · [57-second-brain.md](../../../../bashscripts/docs/prompts/57-second-brain.md).
 
-## TODO
+## Dipendenze tipiche
 
-- [ ] Completare descrizione funzionalità
-- [ ] Documentare modelli principali
-- [ ] Documentare risorse Filament
-- [ ] Aggiungere esempi codice
+- [Xot](../Xot/docs/) — basi modello/resource  
+- [User](../User/docs/README.md) — autore del voto  
 
-- [Conflict Resolution](conflict-resolution.md)
+## Standard
 
-
-## Standard Rules & Workflow
-
-- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
-
-## Documentation
-
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md) — Pattern per caricamento efficiente
-- [QMD Setup](./QMD-SETUP.md) — Configurazione ricerca locale
-- [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
+- [docs-archive-policy.md](docs-archive-policy.md) — `archive/` non è SSoT  
+- Nomi `.md`: kebab-case, senza date (eccezione `README.md`)
