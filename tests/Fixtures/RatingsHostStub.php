@@ -37,12 +37,14 @@ class RatingsHostStub extends AbstractRatingsHost
 
     /**
      * Stessa firma di `RelationX::morphToManyX()`: il pivot lo deduce il parent per convenzione
-     * (`guessMorphPivot`), `$pivotClass` non entra nel tipo di ritorno.
+     * (`guessMorphPivot`), `$pivotClass` esplicito ha priorità.
      *
      * @template TRelatedModel of Model
+     * @template TPivot of MorphPivot
      *
      * @param  class-string<TRelatedModel>  $related
-     * @return MorphToMany<TRelatedModel, $this>
+     * @param  class-string<TPivot>|null  $pivotClass
+     * @return MorphToMany<TRelatedModel, $this, ($pivotClass is null ? MorphPivot : TPivot), 'pivot'>
      */
     public function morphToManyX(
         string $related,
@@ -57,7 +59,7 @@ class RatingsHostStub extends AbstractRatingsHost
         ?string $pivotClass = null,
     ): MorphToMany {
         if ($this->forcedMorph instanceof MorphToMany) {
-            /** @var MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'> $forcedMorph */
+            /** @var MorphToMany<TRelatedModel, $this, ($pivotClass is null ? MorphPivot : TPivot), 'pivot'> $forcedMorph */
             $forcedMorph = $this->forcedMorph;
 
             return $forcedMorph;
