@@ -37,9 +37,11 @@ class RatingsHostStub extends AbstractRatingsHost
 
     /**
      * @template TRelatedModel of Model
+     * @template TPivot of MorphPivot
      *
      * @param  class-string<TRelatedModel>  $related
-     * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
+     * @param  class-string<TPivot>|null  $pivotClass
+     * @return MorphToMany<TRelatedModel, $this, ($pivotClass is null ? MorphPivot : TPivot), 'pivot'>
      */
     public function morphToManyX(
         string $related,
