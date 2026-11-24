@@ -12,7 +12,7 @@ description: "Due analisi accoppiate: dove vivono le opzioni di un criterio a sc
 metadata:
   type: story
   status: awaiting-decision
-  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]
+  agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]"
   module: Rating
   related: 18.46.analisi-criteri-scelta-e-tipo-campo
 ---

@@ -13,7 +13,7 @@ metadata:
   type: story
   status: done
   date: 2026-09-08
-  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1] + base-ptvx-fila5-be [8397b5]
+  agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1] + base-ptvx-fila5-be [8397b5]"
   module: Rating
 ---
 
