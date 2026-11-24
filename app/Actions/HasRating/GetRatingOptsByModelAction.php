@@ -7,6 +7,11 @@ namespace Modules\Rating\Actions\HasRating;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
+/**
+ * Criteri attivi su un model (pivot senza user_id), id => titolo.
+ *
+ * @contract docs/contracts/get-rating-opts-by-model-action.md
+ */
 class GetRatingOptsByModelAction
 {
     use QueueableAction;

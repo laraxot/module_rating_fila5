@@ -51,6 +51,7 @@ class RatingsHostStub extends AbstractRatingsHost
         ?string $relatedKey = null,
         ?string $relation = null,
         bool $inverse = false,
+        ?string $pivotClass = null,
     ): MorphToMany {
         if ($this->forcedMorph instanceof MorphToMany) {
             /** @var MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'> $forcedMorph */
@@ -69,6 +70,7 @@ class RatingsHostStub extends AbstractRatingsHost
             $relatedKey,
             $relation,
             $inverse,
+            $pivotClass,
         );
     }
 
