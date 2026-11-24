@@ -1,5 +1,4 @@
 ---
-qmd: "rating wiki skills index md"
 title: "Skills Index"
 type: "index"
 created: 2026-05-11
