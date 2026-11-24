@@ -1,3 +1,8 @@
+---
+title: "Rating Module"
+type: note
+qmd: "rating"
+---
 # Rating Module
 
 Sistema di valutazione e rating per la piattaforma con supporto per diverse entità e filtraggio avanzato.

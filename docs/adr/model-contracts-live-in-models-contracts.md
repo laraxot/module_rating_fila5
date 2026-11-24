@@ -8,6 +8,7 @@ module: Rating
 tags: [adr, contracts, namespace, phpstan, models]
 related:
   - ../dove-vive-un-contratto.md
+qmd: "model contracts live models contratti implementabili"
 ---
 
 # ADR: dove vive un'interfaccia

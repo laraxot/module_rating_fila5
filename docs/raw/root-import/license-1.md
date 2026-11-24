@@ -1,3 +1,8 @@
+---
+title: "License 1"
+type: note
+qmd: "license 1"
+---
 The MIT License (MIT)
 
 Copyright (c) :vendor_name <author@domain.com>

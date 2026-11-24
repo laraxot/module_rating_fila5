@@ -1,5 +1,6 @@
 ---
 created: 2026-01
+qmd: "phpstan fixes rating"
 ---
 
 # PHPStan Fixes - Modulo Rating

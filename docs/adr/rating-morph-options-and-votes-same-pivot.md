@@ -11,6 +11,7 @@ related:
   - ../contracts/get-sum-by-model-rating-id-action.md
   - ../contracts/get-count-by-model-rating-id-action.md
   - ../contracts/get-rating-opts-by-model-action.md
+qmd: "rating morph options and votes same"
 ---
 
 # ADR: una pivot per opzioni e voti

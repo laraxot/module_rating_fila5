@@ -1,10 +1,12 @@
----id: Rating/phpstan-fleet-fix-2026-09-16
+---
+id: Rating/phpstan-fleet-fix-2026-09-16
 title: "PHPStan fleet fix 2026-09-16 (Rating)"
 status: done
 module: Rating
 priority: P1
 updated: 2026-09-16
 superseded_by: phpstan-fleet-fix.story.md
+qmd: "rating phpstan fleet fix from iso story"
 ---
 
 # Claim

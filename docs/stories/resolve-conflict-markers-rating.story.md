@@ -14,6 +14,7 @@ related:
   - ./18.35.rating-morph-type-doppia-forma.story.md
 issues: []
 discussions: []
+qmd: "resolve conflict markers rating story trait"
 ---
 
 # Rating: resolve git conflict markers

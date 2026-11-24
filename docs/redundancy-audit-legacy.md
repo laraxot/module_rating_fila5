@@ -1,4 +1,5 @@
----qmd: "rating redundancy audit md"
+---
+qmd: "rating redundancy audit md"
 title: "Rating redundancy audit 2026-05-21"
 type: audit
 module: Rating

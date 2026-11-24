@@ -1,3 +1,8 @@
+---
+title: "📚 RATING Module - Documentation Index"
+type: note
+qmd: "00 rating"
+---
 # 📚 RATING Module - Documentation Index
 
 **Path**: `laravel/Modules/Rating/docs/`  

@@ -1,5 +1,6 @@
 ---
 superseded_by: cleanup-rating.story.md
+qmd: "cleanup rating from iso story"
 ---
 
 # Story: Cleanup Rating Module

@@ -1,4 +1,5 @@
----title: "Story — ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
+---
+title: "Story — ripristino API RatingData/HasRatingsTrait dopo il sync laraxot/dev (2026-09-24)"
 type: story
 module: Rating
 epic: quality

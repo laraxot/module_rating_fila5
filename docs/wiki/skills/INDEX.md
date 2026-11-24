@@ -4,6 +4,7 @@ type: "index"
 created: 2026-05-11
 updated: 2026-05-12
 tags: [skills, rating, filament, xotbase]
+qmd: "skills"
 ---
 
 # Skills — Rating Module Wiki

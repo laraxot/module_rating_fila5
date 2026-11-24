@@ -15,7 +15,7 @@ qmd: "Rating PHPStan swarm quality gates 2026-09-23 conflict markers other modul
 related:
   - 5.157-phpstan-rating-pivot-get-test.story.md
   - phpstan-Rating-fix.md
-github_issue: nessuno creato: nessuna modifica di codice necessaria, solo verifica
+github_issue: "nessuno creato: nessuna modifica di codice necessaria, solo verifica"
 ---
 
 # Story Rating/quality-gates-phpstan-swarm-2026-09-23

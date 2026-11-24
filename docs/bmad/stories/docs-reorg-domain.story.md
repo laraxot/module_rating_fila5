@@ -1,5 +1,5 @@
 ---
-title: Story: Indice docs canonico Rating
+title: "Story: Indice docs canonico Rating"
 type: story
 module: Rating
 tags: [docs, bmad, rating, reorganization]

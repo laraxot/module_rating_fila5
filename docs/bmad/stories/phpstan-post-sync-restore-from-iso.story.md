@@ -1,4 +1,5 @@
----title: "Story — PHPStan dopo il sync deprecato: fatal final getFormSchema, AuditCoverage, .gitattributes (2026-09-24)"
+---
+title: "Story — PHPStan dopo il sync deprecato: fatal final getFormSchema, AuditCoverage, .gitattributes (2026-09-24)"
 type: story
 module: Rating
 epic: quality

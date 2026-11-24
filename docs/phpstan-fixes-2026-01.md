@@ -1,3 +1,8 @@
+---
+title: "PHPStan Fixes - Modulo Rating"
+type: note
+qmd: "phpstan fixes 2026 01 rating"
+---
 > **Superseded / storico** (nome con data: non creare altri così). Canonico: [phpstan-fixes.md](phpstan-fixes.md). Indice: [index.md](index.md).
 
 # PHPStan Fixes - Modulo Rating

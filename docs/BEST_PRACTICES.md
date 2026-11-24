@@ -1,3 +1,8 @@
+---
+title: "Best Practices – Rating"
+type: note
+qmd: "best practices rating"
+---
 # Best Practices – Rating
 
 ## Principi DRY/KISS

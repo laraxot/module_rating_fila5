@@ -1,5 +1,6 @@
 ---
 created: 2026-05-25
+qmd: "copilot redundancy audit"
 ---
 
 Copilot Redundancy Audit — 2026-05-25

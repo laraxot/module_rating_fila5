@@ -2,7 +2,7 @@
 qmd: "visual testing playwright puppeteer"
 issues: []
 discussions: []
-title: Visual Testing con Playwright e Puppeteer: Modulo Rating
+title: "Visual Testing con Playwright e Puppeteer: Modulo Rating"
 type: concept
 sources:
   - https://playwright.dev/docs/test-snapshots

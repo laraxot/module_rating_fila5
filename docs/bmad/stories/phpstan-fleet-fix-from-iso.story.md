@@ -1,4 +1,5 @@
----title: "PHPStan fleet fix 2026-09-23 — generics.notSubtype su RatingContract"
+---
+title: "PHPStan fleet fix 2026-09-23 — generics.notSubtype su RatingContract"
 type: story
 module: Rating
 epic: quality

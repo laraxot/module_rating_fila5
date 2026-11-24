@@ -1,5 +1,6 @@
 ---
 superseded_by: copilot-redundancy-audit.md
+qmd: "copilot redundancy audit from iso"
 ---
 
 Copilot Redundancy Audit — 2026-05-25

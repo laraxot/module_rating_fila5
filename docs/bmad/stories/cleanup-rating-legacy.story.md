@@ -1,4 +1,5 @@
----title: "Story: Cleanup Rating Module"
+---
+title: "Story: Cleanup Rating Module"
 qmd: "rating bmad stories cleanup rating story md"
 type: note
 tags: [documentation]
