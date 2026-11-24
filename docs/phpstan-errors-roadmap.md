@@ -5,11 +5,7 @@
 **Data**: 2026-01-12  
 **Modulo**: Rating  
 **Livello PHPStan**: 10  
-<<<<<<< .merge_file_8BWprX
 **Status**: ✅ **COMPLETATO - 0 Errori**
-=======
-**Status**: ✅ **COMPLETATO - 0 Errori** (snapshot storico; non aggiornare)
->>>>>>> .merge_file_uYq5NG
 
 ---
 
