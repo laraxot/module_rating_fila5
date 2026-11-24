@@ -1,8 +1,8 @@
 ---
-created: 2026-05-25
-qmd: "copilot redundancy audit"
+title: "Copilot Redundancy Audit 2026 05 25"
+type: audit
+qmd: "copilot redundancy audit 2026 05 25"
 ---
-
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi
