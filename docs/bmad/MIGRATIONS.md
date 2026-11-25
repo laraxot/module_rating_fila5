@@ -117,5 +117,5 @@ Verify audit columns:
 ## References
 
 - XotBaseMigration: `Modules/Xot/app/Database/Migrations/XotBaseMigration.php`
-- Pattern: `docs/wiki/patterns/migration-xot-base-pattern.md`
-- Standard: `bashscripts/ai/.agents/rules/migration-naming-standard.md`
+- Pattern: `bashscripts/ai/wiki/patterns/patterns.md#migration-xot-base-pattern`
+- Standard: `bashscripts/ai/.agents/rules/migrations.md`

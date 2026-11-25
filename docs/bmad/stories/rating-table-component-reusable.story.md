@@ -25,5 +25,5 @@ status: draft
 - [ ] Usato in almeno un punto (esportazione XLS o vista scheda)
 
 ## Note
-- Second brain: aggiungere regola `blade-rating-table-component.md` in `bashscripts/ai/wiki/memories/`
+- Second brain: aggiungere regola `rating-scheda-domain.md#blade-rating-table-component` in `bashscripts/ai/wiki/memories/`
 - QMD: aggiornare `qmd update` dopo creazione componente

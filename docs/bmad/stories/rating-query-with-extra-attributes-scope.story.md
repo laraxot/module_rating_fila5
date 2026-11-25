@@ -25,4 +25,4 @@ status: draft
 - `spatie/laravel-schemaless-attributes` già in `composer.lock` (^2.5.1)
 - Chiusa 2026-09-23: codice IR già su `withExtraAttributes`; story era stale `ready-for-dev`
 - Follow-up catalogo riusabile: [18.60](./18.60-rating-xls-fields-catalog.story.md) + arch [rating-xls-fields-reusable](../architecture/rating-xls-fields-reusable.md)
-- Second brain: `bashscripts/ai/wiki/memories/schemaless-attributes-query.md`
+- Second brain: `bashscripts/ai/wiki/memories/architecture-models-actions.md#schemaless-attributes-query`

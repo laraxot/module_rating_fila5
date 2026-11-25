@@ -16,7 +16,7 @@ status: draft
 
 ## Available Rules
 - [context-overflow-prevention](../../../../../../docs/wiki/rules/context-overflow-prevention.md): prevenzione 262K token overflow; file vietati; tool output compression
-- [prefer-contracts-over-abstract-classes](../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md): tipizzare contratti, non astratte (`RatingContract` ≠ `BaseRating`)
+- [prefer-contracts-over-abstract-classes](../../../../../../bashscripts/ai/wiki/rules/modules.md): tipizzare contratti, non astratte (`RatingContract` ≠ `BaseRating`)
 - [no-trait-name-static-calls](./no-trait-name-static-calls.md): mai `HasRatingsTrait::static()`; usare `RatingData`
 - [rating-contract-over-baserating](./rating-contract-over-baserating.md): helper puri tipizzati `RatingContract` (anche closure `reject`/`filter`/`map`); `$ratingClass` required; ecc. OK: `class-string<BaseRating>` / `@var EloquentCollection<int, BaseRating>` per scope Eloquent
 - [no-rm-no-archive-use-old-suffix](./no-rm-no-archive-use-old-suffix.md): non `rm`/archive; suffisso `.old`

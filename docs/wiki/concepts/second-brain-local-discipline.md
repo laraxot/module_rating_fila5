@@ -13,7 +13,7 @@ discussions:
 related:
   - ../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md
   - ../../../../docs/wiki/concepts/ai-harness-module-discipline.md
-  - ../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
+  - ../../../../../../bashscripts/ai/wiki/concepts/agents-harness-tooling.md#hackernoon-ai-coding-tips-map
   - ../../../../../../bashscripts/tools/prompts/llm-wiki.txt
 status: draft
 ---
@@ -24,7 +24,7 @@ status: draft
 |---------|------|
 | **Canon** | [Xot second-brain-local-discipline.md](../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md) |
 | **Harness moduli** | [ai-harness-module-discipline.md](../../../../docs/wiki/concepts/ai-harness-module-discipline.md) |
-| **Tips 001–022** | [hackernoon map](../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md) |
+| **Tips 001–022** | [hackernoon map](../../../../../../bashscripts/ai/wiki/concepts/agents-harness-tooling.md#hackernoon-ai-coding-tips-map) |
 | **Prompt router** | [llm-wiki.txt](../../../../../../bashscripts/tools/prompts/llm-wiki.txt) |
 
 Solo decisioni specifiche di **Rating** in `docs/wiki/`; contratto generico in Xot. La feature

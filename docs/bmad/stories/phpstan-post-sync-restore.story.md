@@ -9,7 +9,7 @@ qmd: "phpstan exit 255 cannot override final getFormSchema BaseRatingResource me
 related:
   - ../../../../Xot/docs/bmad/stories/phpstan-analyse-no-path-certify.story.md
   - ./auditcoverage-reinjection-from-iso.story.md
-  - ../../../../../../docs/wiki/memories/merge-remote-repo-2-reinjects-conflict-markers.md
+  - ../../../../../../bashscripts/ai/wiki/memories/git-merge-markers.md#merge-remote-repo-2-reinjects-conflict-markers
 ---
 # phpstan-post-sync-restore-2026-09-24
 

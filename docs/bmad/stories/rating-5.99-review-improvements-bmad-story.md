@@ -55,7 +55,7 @@ L'altro agente ha recentemente modificato la documentazione Rating (1354 file ca
 - **Architettura coerente**: `rating-select-altro-note.md` definisce contratti chiari per Select+Textarea, chiave option `''`, placeholder `null`, `note` required solo su `select === ''`
 - **Specifica tecnica**: `rating-select-altro-implementation-spec.md` fornisce pseudocodice completo per `buildRatingComponent()`, inclusa la gestione `OTHER_OPTION_KEY = ''`, `selectIsOther` helper, Group(Select+Textarea) sempre visibile
 - **Stories allineate**: `5.99-select-altro-note-obbligatoria.story.md` cattura correttamente i criteri di accettazione, inclusa la distinzione `null` ≠ `''` (placeholder ≠ altro)
-- **Second brain**: `rating-select-altro-textarea.md` memory documenta il contratto canone
+- **Second brain**: `rating-scheda-domain.md#rating-select-altro-textarea` memory documenta il contratto canone
 
 ### Correzioni e miglioramenti identificati
 

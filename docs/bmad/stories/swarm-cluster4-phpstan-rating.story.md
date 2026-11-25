@@ -36,7 +36,7 @@ worktree con corpo svuotato ma `use` orfani.
    da PHPDoc (`HasRating`, `HasRatingsTrait`, `BaseRating:250`,
    `GetSumByModelRatingIdAction:26`, test). Rivalidati contro la SSoT:
    falsi positivi per costruzione: NON toccati (vedi memoria
-   `swarm-phpstan-peer-findings-vs-ssot-config.md`).
+   `multi-agent-coordination.md#swarm-phpstan-peer-findings-vs-ssot-config`).
 
 ## Fix (scopo/funzionalita')
 

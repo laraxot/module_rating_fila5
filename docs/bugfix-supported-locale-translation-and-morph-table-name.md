@@ -10,7 +10,7 @@ created: 2026-07-27
 updated: 2026-07-27
 related:
   - ../../Xot/docs/testing/pest-globally-blocked-sqlite-connection-collision.md
-  - ../../../../docs/chat/phpstan-modules-zero.md
+  - ../../../../bashscripts/ai/wiki/memories/phpstan-swarm-config.md#phpstan-modules-zero
 status: draft
 ---
 

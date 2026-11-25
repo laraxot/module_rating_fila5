@@ -15,7 +15,7 @@ language: it-IT
 updated_at: 2026-08-24
 related:
   - ../../../../bashscripts/docs/prompts/03-quality-gates.md
-  - ../../../../bashscripts/ai/wiki/concepts/quality-gate-canonical-commands.md
+  - ../../../../bashscripts/ai/wiki/concepts/quality-testing-verification.md#quality-gate-canonical-commands
   - ../../../../docs/bmad/stories/3.1.rating-coverage-and-xotbasepest.story.md
   - ../../Xot/tests/XotBasePest.php
 tags: [pest, coverage, xdebug, phpunit, skip, xotbasepest]

@@ -22,7 +22,7 @@ discussions:
   - "https://github.com/provtv/module_rating_fila5/discussions/24"
 related:
   - ../wiki/concepts/schema-form-dai-rating.md
-  - ../../../../../bashscripts/ai/wiki/rules/normativa-atterra-dove-vive-il-meccanismo.md
+  - ../../../../../bashscripts/ai/wiki/rules/agent-conduct.md
   - ../../../Ptv/docs/form-column-parity.md
   - ../../../Xot/docs/stories/5.91.docs-moduli-e-temi-debito-misurato.story.md
 maintainer: Laraxot
@@ -174,7 +174,7 @@ Si scrive la firma **dopo** i cinque passi, e deve poter essere letta senza il r
 ## Collegamenti
 
 - [Da riga di rating a campo di form](../wiki/concepts/schema-form-dai-rating.md): il caso che ha prodotto questo workflow
-- [`normativa-atterra-dove-vive-il-meccanismo`](../../../../../bashscripts/ai/wiki/rules/normativa-atterra-dove-vive-il-meccanismo.md)
+- [`normativa-atterra-dove-vive-il-meccanismo`](../../../../../bashscripts/ai/wiki/rules/agent-conduct.md)
 - [form-column-parity](../../../Ptv/docs/form-column-parity.md): la parità che vale anche per gli schemi estratti
 
 ---

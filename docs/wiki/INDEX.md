@@ -11,7 +11,7 @@ issues:
 discussions:
   - "https://github.com/laraxot/platform/discussions/273"
 related:
-  - ../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md
+  - ../../../../../bashscripts/ai/wiki/concepts/agents-harness-tooling.md#hackernoon-ai-coding-tips-map
   - ../../../../../docs/wiki/bmad/architecture.md
   - ../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
@@ -21,7 +21,7 @@ related:
 
 ## AI / second brain
 
-- [hackernoon-ai-coding-tips-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
+- [hackernoon-ai-coding-tips-map](../../../../../bashscripts/ai/wiki/concepts/agents-harness-tooling.md#hackernoon-ai-coding-tips-map)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
@@ -43,7 +43,7 @@ Indice operativo del wiki Rating.
 
 ## Regole collegate
 
-- [forbidden-folders-rule](../../../../../docs/wiki/concepts/forbidden-folders.md): Vincoli strutturali strict.
+- [forbidden-folders-rule](../../../../../bashscripts/ai/wiki/concepts/modules-structure-rules.md#forbidden-folders): Vincoli strutturali strict.
 - [llm-wiki-standard](../../../../../docs/project/karpathy-llm-wiki-adoption.md): Mapping repository e ciclo di vita conoscenza.
 
 ## On-Demand Entry Points

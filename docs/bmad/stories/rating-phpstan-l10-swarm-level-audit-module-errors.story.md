@@ -125,7 +125,7 @@ php -l Modules/Rating/app/Models/BaseRating.php
 I fix seguono pattern già noti dal progetto:
 - Type hints generici su Builder (memoria: "form-schema-solo-su-form-class.md", "form-column-parity-rule.md")
 - Trans() cast mediante guardia (memoria: "helper-text-empty-when-equals-key.md")
-- Return types su scopes (memoria: "prefer-contracts-over-abstract-classes.md")
+- Return types su scopes (memoria: "architecture-models-actions.md#prefer-contracts-over-abstract-classes")
 
 Nessuna innovazione architetturale; solo attenzione alla tipizzazione statica.
 

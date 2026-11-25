@@ -58,7 +58,7 @@ Rating/
 ## Standard Rules & Workflow
 
 - [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
+- [[Context Engineering](../../../../bashscripts/ai/wiki/concepts/context-token-optimization.md#context-engineering)]
 - [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ## Documentation

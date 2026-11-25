@@ -84,7 +84,7 @@ qmd: "spread vs array_merge RatingData getXlsFields"
 
 ## 6. AC (Acceptance Criteria): stato
 - [x] BMAD `rating-getxlsfields-relocation.story.md` creato
-- [x] Second brain `hasratings-trait-vs-rating-data.md` creato
+- [x] Second brain `rating-scheda-domain.md#hasratings-trait-vs-rating-data` creato
 - [x] `RatingData::getXlsFields()` creato (rinominato da `getXlsExportFields`)
 - [x] `HasRatingsTrait::ratingXlsFields()` delega a `RatingData::getXlsFields()`
 - [ ] Lock `IndennitaResponsabilitaResource.php` rilasciato → applicare spread

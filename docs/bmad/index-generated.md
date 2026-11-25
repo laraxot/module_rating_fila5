@@ -140,7 +140,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [overview.md](../wiki/overview.md)
 
 **Concepts** (14 files)
-  - [INDEX.md](wiki/concepts/INDEX.md)
+  - [INDEX.md](wiki/concepts/00-INDEX.md)
   - [index.md](wiki/concepts/index.md)
   - [composer-root-minimal-nwidart.md](../wiki/concepts/composer-root-minimal-nwidart.md)
   - [context-mode-rating-discipline.md](../wiki/concepts/context-mode-rating-discipline.md)
@@ -175,8 +175,8 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [skills/index.md](wiki/skills/index.md)
   - [commands/INDEX.md](wiki/commands/INDEX.md)
   - [commands/index.md](wiki/commands/index.md)
-  - [memories/INDEX.md](wiki/memories/INDEX.md)
-  - [memories/index.md](wiki/memories/index.md)
+  - [memories/INDEX.md](wiki/memories/00-INDEX.md)
+  - [memories/index.md](wiki/memories/00-INDEX.md)
   - [how-to/gitmodules-sync-session.md](../wiki/how-to/gitmodules-sync-session.md)
   - [redundancy/duplicate-ratings-table-migrations.md](../wiki/redundancy/duplicate-ratings-table-migrations.md)
 

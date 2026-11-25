@@ -51,7 +51,7 @@ status: draft
 - [x] `RatingData::getXlsFields()` usa `RatingContract` per assertion
 - [ ] `RatingData::formFieldLabel()`, `ratingXlsValuePath()`, `ratingValuePath()`
       devono cambiare firma da `BaseRating` a `RatingContract`
-- [x] Second brain aggiornato (`hasratings-trait-vs-rating-data.md`)
+- [x] Second brain aggiornato (`rating-scheda-domain.md#hasratings-trait-vs-rating-data`)
 - [x] BMAD `rating-contract-assert-subclass.story.md`
 - [-] PHPStan [OK] su Rating (11 errori erano da test mancante, non da codice)
 - [x] `RatingData::getXlsFields()`: `resolveRatingClassFromCaller()` usa

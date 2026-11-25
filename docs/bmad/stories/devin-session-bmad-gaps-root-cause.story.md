@@ -14,7 +14,7 @@ status: draft
 
 **Status**: done
 **Modulo**: Rating (processo)
-**Related**: `5.234-bmad-stories-dimenticate-process-fix.story.md` · `5.239-orchestrator-forgot-bmad-stories-root-cause.story.md` · `rating-statics-to-ratingdata-consolidation.story.md` · `../../../../../../bashscripts/ai/wiki/memories/orchestrator-must-own-bmad-story.md`
+**Related**: `5.234-bmad-stories-dimenticate-process-fix.story.md` · `5.239-orchestrator-forgot-bmad-stories-root-cause.story.md` · `rating-statics-to-ratingdata-consolidation.story.md` · `../../../../../../bashscripts/ai/wiki/memories/multi-agent-coordination.md#orchestrator-must-own-bmad-story`
 
 ## Sintomo
 
@@ -65,5 +65,5 @@ diverse, e additive.
 ## Gap chiusi in questo turno
 
 - `IndennitaResponsabilita/docs/bmad/stories/recalculate-ratingfields-contract-contravariance-fix.story.md` (nuova)
-- Memoria `orchestrator-must-own-bmad-story.md` arricchita coi 4 pattern
+- Memoria `multi-agent-coordination.md#orchestrator-must-own-bmad-story` arricchita coi 4 pattern
 - Sprint-status: righe per entrambe le story
