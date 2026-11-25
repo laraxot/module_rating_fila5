@@ -14,8 +14,25 @@ references:
   - "../../../app/Models/Contracts/RatingContract.php"
   - "../../../../Xot/docs/bmad/stories/global-phpstan-remediation.story.md"
 ---
-
 # Specificare il template del contratto Rating
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Scopo
 
@@ -37,6 +54,17 @@ PHPStan segnalava `missingType.generics`: `RatingContract` estendeva
 da modelli Eloquent concreti appartenenti a più moduli.
 
 ## Verifica
+
+- `cd laravel && ./vendor/bin/phpstan analyse Modules` → exit 0, 10.400 file analizzati,
+  zero errori nel report JSON del gate integrato.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
 
 - `cd laravel && ./vendor/bin/phpstan analyse Modules` → exit 0, 10.400 file analizzati,
   zero errori nel report JSON del gate integrato.

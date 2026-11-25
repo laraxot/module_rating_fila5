@@ -9,8 +9,25 @@ issues: []
 discussions: []
 status: draft
 ---
-
 # Story: consolidamento helper statici: trait → `RatingData`
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 **Status**: done
 **Modulo**: Rating (+ repoint in IR, tests)
@@ -69,6 +86,24 @@ esplicito resta canon al call-site Resource (story 5.232, subclass IR per
 connection dedicata); `resolveRatingClassFromCaller()` resta fallback.
 
 ## Verifica swarm 2026-09-24 (cursor-swarm-rating)
+
+- API su `RatingData` presente e allineata ai callers/test:
+  `ratingFieldName`, `formFieldLabel`, `ratingValuePath`, `ratingXlsValuePath`,
+  `criteriaToXlsFields`, `getXlsFields` (corpo reale, no facade).
+- Trait: zero static API name-collision; chiama solo `RatingData::`.
+- `RatingPhpstanTraitProbe` rimosso (regola no-phpstan-probe-models);
+  `HasRating::getArrayRatingsWithImage` return = `list<array<string, mixed>>`.
+- `RatingsHostStub` + `AbstractRatingsHost`: `@property-read ratings_by_id`.
+- `tests/AuditCoverage/` assente; già in `.gitignore`.
+- PHPStan `Modules/Rating`: **0 errori**.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
 
 - API su `RatingData` presente e allineata ai callers/test:
   `ratingFieldName`, `formFieldLabel`, `ratingValuePath`, `ratingXlsValuePath`,

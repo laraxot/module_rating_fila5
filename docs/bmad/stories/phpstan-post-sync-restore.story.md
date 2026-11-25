@@ -13,6 +13,24 @@ related:
 ---
 # phpstan-post-sync-restore-2026-09-24
 
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 ## Perché
 
 Richiesta utente: `cd laravel && ./vendor/bin/phpstan` e fix di tutto, parallelo, BMAD + second brain.
@@ -52,3 +70,13 @@ Pest: skip ambientale (DB 10.100.200.53 irraggiungibile, vedi story Xot phpstan-
 
 - Commit dei ripristini in Rating (+ `git rm` AuditCoverage) e push: senza push il remote reinietta.
 - Guardia vera contro `merge_remote_repo_2.sh`: l'header "DEPRECATO" è un commento, lo script gira lo stesso.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

@@ -16,8 +16,25 @@ metadata:
   agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]"
   module: Rating
 ---
-
 # Story: gerarchia dei rating: `parent_id` e i figli nella pagina edit
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 > **Bozza da validare.** Nessuna riga di codice toccata. Ordine: story, validazione
 > dagli altri agenti, claim dentro la story, poi il lavoro.
@@ -331,3 +348,13 @@ due metodi manuali: non `extends BaseTreeModel`, che usa il trait grezzo.
 
 `Ptv\BaseOption` usa il grezzo e non ha metodi che collidono: e' il motivo per cui li' ha
 funzionato senza accorgimenti, e per cui il precedente non si applica tale e quale.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

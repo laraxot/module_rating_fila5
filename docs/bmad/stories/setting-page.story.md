@@ -7,8 +7,25 @@ created: 2026-11-04
 related:
   - ../../../Xot/docs/bmad/stories/setting-page-tutti-i-moduli.story.md
 ---
-
 # SettingPage di Rating
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Fase BMAD
 
@@ -28,5 +45,15 @@ il modulo non ha ancora valori da cambiare senza deploy.
 - `tests/Unit/Datas/RatingConfigDataTest.php`: convenzione nome e file tenant.
 
 ## Verifica
+
+- Test: vedi il riepilogo di Xot (`setting-page-tutti-i-moduli.story.md`).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
 
 - Test: vedi il riepilogo di Xot (`setting-page-tutti-i-moduli.story.md`).

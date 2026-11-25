@@ -42,8 +42,25 @@ updated_at: '2026-09-16'
 maintainer: PTVX
 license: project-internal
 ---
-
 # Review Rating/5.99 'altro' feature implementation: BMAD story
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Contesto
 
@@ -98,3 +115,12 @@ L'altro agente ha recentemente modificato la documentazione Rating (1354 file ca
 Efficienza: l'implementazione documentata è tecnicamente corretta e coerente, ma manca l'allineamento con il consumer IR (CompilaIndennitaResponsabilita) e con il filtro HasRatingValuesFilter. Questi gap devono essere colmati per garantire end-to-end correctness (form fill → save → DB → render).
 
 **Nota**: Questa story non implica nuova implementazione codice nella sessione corrente, ma documenta le migliorie necessarie che altri agenti (o lo stesso agente in sessioni successive) dovranno implementare per completare la feature end-to-end.
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

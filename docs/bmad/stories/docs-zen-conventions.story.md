@@ -11,8 +11,27 @@ qmd: "rating docs bonifica kebab-case frontmatter qmd duplicati md5 template fab
 related:
   - ../../../../Xot/docs/bmad/stories/docs-zen-conventions-swarm.story.md
 ---
-
 # Rating: bonifica docs `.md`
+
+## Context and Problem Statement
+
+Il rumore in `docs/` (copie esatte, varianti `_`/MAIUSCOLO/`-2`, stub generati, template di prodotto
+generici) degrada QMD e confonde gli agenti. Obiettivo: una copia canonica per contenuto, nomi kebab,
+frontmatter con `title` + `qmd` ovunque, link aggiornati.
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 Parte della lane F della story ombrello
 [docs-zen-conventions-swarm](../../../../Xot/docs/bmad/stories/docs-zen-conventions-swarm.story.md).
@@ -82,3 +101,13 @@ Le copie esatte residue sono solo tra file `*.story.md` (non eliminabili per reg
 Solo file `.md` sotto `docs/`: PHPStan/Pint/Pest non applicabili (skip documentato); PHPStan gia' 0.
 Misura con `measure.py` (md5, regex nomi, `yaml.safe_load` frontmatter). Link rotti verso file rinominati/rimossi
 riscritti nei docs di moduli non bloccati; riferimenti nei moduli con lock attivo segnalati sopra.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

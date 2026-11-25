@@ -15,8 +15,25 @@ related:
   - ../../../tests/Unit/StatsOverviewWidgetTest.php
   - ../../../tests/Unit/RatingFilamentRelationManagerTest.php
 ---
-
 # PHPStan Rating: 16 errori in 3 file di test
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Scopo
 
@@ -60,6 +77,20 @@ Stato osservato a fine lavoro: i due file risultano gia' modificati e lockati da
 - `laravel/Modules/Rating/tests/Fixtures/RatingsHostStub.php` (solo PHPDoc di `morphToManyX()`).
 
 ## Verifica
+
+- `php -l` RatingsHostStub: `No syntax errors detected`.
+- PHPStan mirato su `tests/Fixtures` + 4 test che usano lo stub: `[OK] No errors`.
+- Pest `HasRatingsTraitAccessorsTest` + `HasRatingsTraitRatingsByIdTest`: non eseguibile, 23 failed (0 assertions)
+  per `TestDatabaseGuard` ("connection mysql -> host 10.100.200.53 is not local"). Skip documentato, nessun forzo.
+- I 15 errori dei due test file restano aperti fino alla decisione sopra.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
 
 - `php -l` RatingsHostStub: `No syntax errors detected`.
 - PHPStan mirato su `tests/Fixtures` + 4 test che usano lo stub: `[OK] No errors`.

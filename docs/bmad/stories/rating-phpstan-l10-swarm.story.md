@@ -14,8 +14,25 @@ github_issue: BMAD-only, no external issue
 type: story
 tags: [docs, rating, bmad]
 ---
-
 # Story Rating/phpstan-l10-swarm-2026-10-06
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Contesto
 
@@ -180,3 +197,23 @@ Il `@property-read MorphToMany<BaseRating> $ratings` aggiunto al trait in `2a233
 
 ### Lezione
 Un `@property`/`@property-read` su un trait non deve riscrivere il tipo di una relazione gia' dichiarata dal metodo: la proprieta' magica e' la collection, il metodo e' la relazione. Un docblock che "calma" PHPStan senza dire la verita' sposta l'errore nel contesto dell'host.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+PHPStan in corso (background task), ma fix sintattici verificati con `php -l` su tutti i file.
+
+```bash
+php -l Modules/Rating/app/Datas/RatingData.php
+php -l Modules/Rating/app/Datas/RatingMorphData.php
+php -l Modules/Rating/app/Filament/Actions/Table/BetTableAction.php
+php -l Modules/Rating/app/Filament/Tables/Columns/RatingsColumn.php
+php -l Modules/Rating/app/Filament/Resources/RatingResource/Schemas/BaseRatingForm.php
+php -l Modules/Rating/app/Models/BaseRating.php
+# → All OK
+```

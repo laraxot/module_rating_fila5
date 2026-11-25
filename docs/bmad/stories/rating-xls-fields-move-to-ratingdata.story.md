@@ -9,8 +9,25 @@ issues: []
 discussions: []
 status: draft
 ---
-
 # Story: `ratingXlsFields` → `RatingData::getXlsFields` (mossa reale, no facade)
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 **Status**: done
 **Modulo**: Rating (+ commento in IR Resource)
@@ -63,3 +80,13 @@ anche il confine canon documentato.
 - `php -l` ×3 ✅ · `pint` 3 file (1 fix) ✅
 - PHPStan RatingData + HasRatingsTrait + IR Resource → `[OK] No errors`
 - Pest `HasRatingsTraitCriteriaToXlsFieldsTest` + IR `GetXlsFieldsTest` → **5 passed / 10 assertions**
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

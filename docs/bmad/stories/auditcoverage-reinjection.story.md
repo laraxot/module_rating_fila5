@@ -18,6 +18,24 @@ related:
 ---
 # auditcoverage-reinjection-2026-09-24
 
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 ## Perché
 
 Richiesta utente: sistemare le segnalazioni PHPStan (partite da
@@ -72,3 +90,13 @@ Fix: `git checkout HEAD --` dei 5 file (verbatim, regola recuperare-codice-cance
 lock/unlock per file, `php -l` OK.
 
 Gate finale: `phpstan analyse Modules` → `{"errors":0,"file_errors":0}` exit 0.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

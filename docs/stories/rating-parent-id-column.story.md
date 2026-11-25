@@ -10,8 +10,25 @@ github_discussion: "https://github.com/provtv/base_ptv_fila5_mono/discussions"
 related:
   - ../../../Progressioni/docs/stories/progressioni-audit.epic.md
 ---
-
 # Colonna parent_id per gli alberi di criteri
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Fase BMAD
 
@@ -41,5 +58,15 @@ Analisi + Build. Nata dall'audit del 2026-10-28 (epic `progressioni-audit`).
 - `Modules/*/database/migrations/*ratings*`
 
 ## Verifica
+
+PHPStan livello 10 sui file toccati, Pint; Pest su ambiente di sviluppo (non su 10.100.200.15).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
 
 PHPStan livello 10 sui file toccati, Pint; Pest su ambiente di sviluppo (non su 10.100.200.15).

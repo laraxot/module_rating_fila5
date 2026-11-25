@@ -14,8 +14,25 @@ related:
 github_issue: nessuno creato — nessuna modifica di codice necessaria, solo verifica
 superseded_by: quality-gates-phpstan-swarm.story.md
 ---
-
 # Story Rating/quality-gates-phpstan-swarm-2026-09-23
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Contesto
 
@@ -105,3 +122,18 @@ che un modulo ha un bug bloccante, verificare lo stack trace: se il frame che fa
 fuori dal path del proprio modulo (qui: `Modules/Incentivi/...` o
 `Modules/IndennitaCondizioniLavoro/...`), non è un problema del modulo assegnato — riprovare
 e/o segnalare, non "aggiustare" file fuori scope.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Prima esecuzione pulita (prima che l'instabilità globale comparisse):
+
+```
+cd /var/www/_bases/base_ptvx_fila5/laravel && ./vendor/bin/phpstan analyse Modules/Rating --no-progress --memory-limit=-1
+[OK] No errors
+```

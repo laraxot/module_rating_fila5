@@ -12,8 +12,25 @@ related:
   - 18.59-ratings-hoststub-getclassname-harness.story.md
   - ../stories/18.56.ratings-by-id-accessor.story.md
 ---
-
 # Story Rating/phpstan-fix-rating
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Finding
 
@@ -63,3 +80,13 @@ Nessun `@phpstan-ignore` (vincolo del task).
   `RuntimeException: Unable to resolve caller object for getClassName()` da
   `XotBaseModel.php:72`, meccanismo backtrace fragile tracciato in 18.55/18.59).
   Il fix e' docblock-only → zero impatto runtime, conteggio invariato.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

@@ -41,6 +41,24 @@ tags:
 ---
 # RatingsColumn: story BMAD
 
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 ## Contesto
 
 `BaseSchedasTable` (modulo Ptv) gestisce la lista delle schede di valutazione. La relazione con `Rating` (`BaseRating`) aggiunge le colonne aggregate `ratings_avg` e `ratings_count`. Serve un filtro per capire se le valutazioni sono state popolate con valore diverso da zero, e una colonna per mostrare la media.
@@ -77,3 +95,12 @@ class RatingsColumn extends TextColumn
             ->sortable();
     }
 }
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

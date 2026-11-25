@@ -16,8 +16,25 @@ discussions: []
 tags: [docs, rating, bmad]
 qmd: "audit traduzioni `.navigation`   modulo rating rating"
 ---
-
 # Audit traduzioni `.navigation`: modulo Rating
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 Task utente 2026-09-29: trovare tutti i file di traduzione con la sottostringa
 `.navigation` o una chiave `'navigation'`, completare/migliorare per ogni
@@ -51,3 +68,13 @@ disponibile per il commit di chi possiede quella story.
 Confermato: `qmd://concepts/translation-discipline-rule.md`. Pattern nuovo
 scoperto (falso positivo euristica case-insensitive su valori Title Case) da
 consolidare in una memoria Xot condivisa: vedi sintesi cross-modulo §6.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

@@ -12,8 +12,30 @@ related:
 qmd: "phpstan generics notSubtype Collection RatingContract HasRecursiveRelationshipsContract Model interface property children fleet-wide analyse Modules"
 superseded_by: phpstan-fleet-fix.story.md
 ---
-
 # phpstan-fleet-fix-2026-09-23 — unico finding reale su tutto Modules/
+
+## Context and Problem Statement
+
+Chiudere ogni segnalazione phpstan residua sull'intero albero `Modules/`.
+"Ponytail" non e' un tool da installare: e' gia' una metodologia documentata
+nel repo (`docs/modules/ponytail.md`, Lazy Senior Developer Philosophy,
+scala YAGNI). Applicarla qui vuol dire: non installare nulla (la filosofia
+c'e' gia'), e non forzare uno swarm multi-agente per un solo finding banale —
+proporzionare lo sforzo al lavoro reale trovato.
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Richiesta (utente, 2026-09-23)
 
@@ -87,3 +109,13 @@ esistente, non nuova regola.
 | Pest | skip — DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3`) |
 
 Dettaglio: `Modules/Rating/docs/coverage.md`.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

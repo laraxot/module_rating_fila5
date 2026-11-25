@@ -25,8 +25,25 @@ gh_issue: "https://github.com/provtv/module_rating_fila5/issues/35"
 gh_discussion: "https://github.com/provtv/module_rating_fila5/discussions/36"
 related_repo_remote: "provtv/module_rating_fila5"
 ---
-
 # Story 01.42: Verifica frontmatters: tutte le story BMAD hanno GitHub links corretti
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Obiettivo
 
@@ -60,3 +77,12 @@ Verificare che ogni story BMAD in `laravel/Modules/Rating/docs/stories/` abbia:
 - Issue: `https://github.com/provtv/module_rating_fila5/issues/35`
 - Discussion: `https://github.com/provtv/module_rating_fila5/discussions/36`
 - Remote Rating: `provtv/module_rating_fila5`
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

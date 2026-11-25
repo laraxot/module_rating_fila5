@@ -12,12 +12,26 @@ updated: 2026-09-23
 superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 qmd: "spread vs array_merge RatingData getXlsFields"
 ---
-
-> **SUPERSEDED**: IR Resource già usa `$where` + spread +
-> `RatingData::getXlsFields($where, Rating::class)`. Chiusura: `5.238`.
-> Testo sotto = debate storico (parti obsolete su helper nel trait).
-
 # BMAD: rating-xls-export-spread-vs-array-merge (storico)
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 **Status**: superseded (implementato)
 **Epic**: Rating / IndennitaResponsabilita: spostamento `getXlsFields()` in `RatingData`
 
@@ -108,3 +122,13 @@ return [
 ];
 ```
 E aggiungere `use Modules\Rating\Datas\RatingData;` al file.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

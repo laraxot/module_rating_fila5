@@ -9,8 +9,25 @@ issues: []
 discussions: []
 status: draft
 ---
-
 # Story: Perché Devin ha mancato story BMAD in questa sessione (root cause propria)
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 **Status**: done
 **Modulo**: Rating (processo)
@@ -67,3 +84,13 @@ diverse, e additive.
 - `IndennitaResponsabilita/docs/bmad/stories/recalculate-ratingfields-contract-contravariance-fix.story.md` (nuova)
 - Memoria `multi-agent-coordination.md#orchestrator-must-own-bmad-story` arricchita coi 4 pattern
 - Sprint-status: righe per entrambe le story
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

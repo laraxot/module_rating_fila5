@@ -10,8 +10,25 @@ qmd: "rating docs ingressi readme 00-index verifica codice fixcity valutazione c
 related:
   - ../../../Fixcity/docs/stories/dcp-56-organizzazione-docs-moduli-e-temi.story.md
 ---
-
 # Rating docs: ingressi verificati contro il codice
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 Fase BMAD: documentazione e qualita' (DOC-010 e DOC-002 del piano `bmad-output/stories/docs-organization/`).
 
@@ -54,3 +71,21 @@ I 3 `unresolved` rimasti sui file toccati sono in documenti segnati `stale`.
 - 56 collisioni di maiuscole e 65 gruppi di nomi quasi uguali nella radice di `docs/`: DOC-004 e DOC-006, richiedono revisione umana.
 - Il `decision-log.md` e' vuoto.
 - Gli stub con `canonical` verso `Themes/docs/shared-components` non sono riparati (vedi nota di memoria 2026-10-14).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+```
+audit_one (criterio dell'audit, file indice a profondita' 0 e 1)   link rotti: 59 -> 0
+docs-organizer links --by-name, busy-minutes 0                      eventi unresolved: 667 -> 608 (tutta la cartella)
+stessi eventi sui 16 file toccati                                   62 -> 3
+php artisan route:list --json                                       rotte rating: 11 (tutte rating/admin)
+DB_DATABASE_LIMESURVEY= bash bashscripts/tools/pest-scratch-db.sh Modules/Rating/tests
+                                                                    Tests: 182 failed (0 assertions), tutti SQLiteDatabaseDoesNotExistException
+```
+I 3 `unresolved` rimasti sui file toccati sono in documenti segnati `stale`.

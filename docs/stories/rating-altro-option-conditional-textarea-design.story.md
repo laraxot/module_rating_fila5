@@ -25,8 +25,25 @@ github_issues:
   - https://github.com/laraxot/module_rating_fila5/issues/60
 github_discussion: https://github.com/laraxot/module_rating_fila5/discussions/59
 ---
-
 # Design: Select «altro» + note
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## BMAD pack (2026-09-16)
 
@@ -142,3 +159,13 @@ Story [IR/5.140](../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-a
 - Flag per disabilitare «altro» per rating
 - `maxLength` su note
 - Cambiare ricalcolo readonly
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

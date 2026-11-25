@@ -9,11 +9,26 @@ issues: []
 discussions: []
 status: draft
 ---
-
-> **SUPERSEDED (2026-09-23)**: bozza pre-correzione dello stesso lavoro.
-> Canon: [`5.232-ratingcontract-check-getxlsfields`](./5.232-ratingcontract-check-getxlsfields.story.md) (Assert::implementsInterface), [`5.233-formfieldlabel-ratingcontract-typehint`](./5.233-formfieldlabel-ratingcontract-typehint.story.md) (RatingContract sulle firme), [`5.234-ratingdata-ratingclass-required-revert-backtrace`](./5.234-ratingdata-ratingclass-required-revert-backtrace.story.md) ($ratingClass required, no backtrace).
-
 # BMAD: ratingdata-formfieldlabel-contract
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 **Status**: done + review
 **Modulo**: Rating
 **Perché ho dimenticato BMAD**: focus su `getXlsFields` e `ratingClass`: non ho
@@ -33,3 +48,13 @@ esteso il ragionamento alle firme dei metodi helper (`formFieldLabel`,
       aggiornate da `BaseRating` a `RatingContract`
 - [x] `RatingData` non dipende più dal concreto `BaseRating` per le firme
 - [x] PHPStan passa con `RatingContract` come tipo parametro
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

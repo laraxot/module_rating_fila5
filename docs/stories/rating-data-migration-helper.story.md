@@ -16,8 +16,25 @@ metadata:
   agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1] + base-ptvx-fila5-be [8397b5]"
   module: Rating
 ---
-
 # Story: `RatingData`: le colonne di `ratings` dichiarate una volta sola
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Richiesta
 
@@ -133,3 +150,28 @@ non fatta di passaggio.
    `@return list` senza tipo dell'elemento. `mixed` è l'ultima spiaggia, non la
    prima: sostituito con `Assert::allString()`, che **verifica** invece di
    coercizzare: se un giorno non fossero stringhe, il test lo direbbe.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Il refactor deve non cambiare **niente**. Confronto fra le colonne che
+`updateColumns()` dichiara e quelle vive:
+
+```
+updateColumns() dichiara: extra_attributes, rule, is_disabled, is_readonly, slug, order_column
+  indennita_responsabilita   niente (idempotente)
+  progressione               niente (idempotente)
+  ptv                        niente (idempotente)
+```
+
+Nessuna colonna verrebbe aggiunta da nessuna parte: il comportamento è identico e le
+migrazioni restano rieseguibili.
+
+- `php -l` verde su tutti i file
+- `phpstan analyse Modules/Rating/app/Datas` + le tre migrazioni → **0 errori**
+- Guard `hasColumn` nelle tre migrazioni: da 6+6+10 a **0**, una chiamata ciascuna

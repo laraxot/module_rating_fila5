@@ -16,8 +16,25 @@ metadata:
   agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]"
   module: Rating
 ---
-
 # Story: `RatingsColumn`, `RatingsSection`, `HasRatingValuesFilter`
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Richiesta
 
@@ -172,3 +189,23 @@ Conseguenze concrete, prima della rimozione:
 
 File rimosso. Il contenuto utile e' questa sezione. Chi cerca `ratings_nonzero` in
 git lo trova qui.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+```
+colonna:  id=9354 count=9 sum=3550  ->  "9 criteri · totale 3550"
+Section:  stesso record, stesso criterio  ->  "9 criteri · totale 3550"
+filtro:   valutate 147 · non valutate 7.808 · totale 7.955  (147+7808=7955 ✓)
+```
+
+- `phpstan analyse Modules/Rating/app/Filament Modules/Ptv/.../SchedaResource/Tables`
+  → **0 errori**, nessun ignore
+- `php -l` verde su ogni file
+- La tabella si costruisce e la colonna produce il testo giusto passando dal vero
+  `applyRelationshipAggregates()` di Filament, non da una query ricostruita a mano

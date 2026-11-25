@@ -8,8 +8,25 @@ updated: 2026-09-16
 superseded_by: phpstan-fleet-fix.story.md
 qmd: "rating phpstan fleet fix from iso story"
 ---
-
 # Claim
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm.story.md) e peer base-ptvx-fila5-c5.
 
@@ -37,3 +54,13 @@ su `Filament/*/Widgets/StatsOverview.php` (classe anonima/DNF, vedi
 
 Pest: skip ambientale, `10.100.200.53:3306` irraggiungibile (`nc -z` negativo, run con
 timeout 120s senza output — bootstrap pende sul DB invece di fallire subito).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

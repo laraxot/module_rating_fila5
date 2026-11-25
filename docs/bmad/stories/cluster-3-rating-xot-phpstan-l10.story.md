@@ -16,8 +16,27 @@ updated: 2026-10-07
 tags: [docs, rating, bmad]
 qmd: "cluster 3: phpstan l10 rating + xot rating"
 ---
-
 # Cluster 3: PHPStan L10 Rating + Xot
+
+## Context and Problem Statement
+
+This cluster is part of the PHPStan L10 fleet remediation swarm. Cluster 3 focuses on two important modules:
+- **Rating**: 13 errors, all false positives (alreadyNarrowedType from PHPDoc)
+- **Xot**: Large module (338 files), full-tree scan timeout, requires scoped strategy
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Context
 
@@ -491,3 +510,13 @@ Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns()
 - No architectural issues found
 - Xot module preparation underway
 
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

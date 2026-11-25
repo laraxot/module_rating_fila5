@@ -3,8 +3,25 @@ superseded_by: cleanup-rating.story.md
 qmd: "cleanup rating from iso story"
 title: "Story: Cleanup Rating Module"
 ---
-
 # Story: Cleanup Rating Module
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## BMAD Method Applied
 - **Scale**: Feature/module (Rating)
@@ -22,3 +39,13 @@ title: "Story: Cleanup Rating Module"
 - Rating/docs/architecture.md
 - Rating/docs/INDEX.md
 - Rating/Comments and reviews handling
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

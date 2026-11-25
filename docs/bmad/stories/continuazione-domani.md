@@ -19,8 +19,25 @@ related:
   - ../../../IndennitaResponsabilita/docs/bmad/stories/5.235-ir-prompt-04-traceability-index.story.md
   - ../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
-
 # Rating: Continuazione Domani
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 **SSoT pack:** [`5.244-continuazione-domani-post-prompt-04-pack.story.md`](./5.244-continuazione-domani-post-prompt-04-pack.story.md)
 
@@ -39,3 +56,13 @@ related:
 ## Non rifare
 
 Mossa helper → RatingData, facade, backtrace-resolve, Assert RatingContract (già done).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

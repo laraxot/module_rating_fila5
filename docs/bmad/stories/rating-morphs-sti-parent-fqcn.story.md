@@ -14,8 +14,25 @@ related:
   - 5.162-clear-ratings-scoped-to-model-id.story.md
 tags: [docs, rating, bmad]
 ---
-
 # ratingMorphs su figlio STI: alias e FQCN del padre
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 ## Perché
 
@@ -136,3 +153,29 @@ ne' di stub: il metodo **non esisteva piu' nel trait**.
   stub: `[OK] No errors`.
 - Nota ambiente: `pest` richiede `DB_CONNECTION=sqlite DB_DATABASE=fixcity_data_test`
   (il DB MariaDB `fixcity_data_test` non esiste su questa macchina).
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+- Red: 12 falliti, 7 passati (`HasRatingsTraitMorphTypesTest` + `HasRatingsTraitFormDataTest`).
+- Green: `pest` su MorphTypes + FormData + RatingsById + Accessors + BaseRatingXlsExportValue:
+  **42 passati, 4 falliti**. I 4 falliti sono gli stessi del baseline prima dell'edit
+  (33 passati, 4 falliti in `HasRatingsTraitAccessorsTest`: myRatings, ratingObjectives,
+  syncRatingsWhere x2, tutti `Unable to resolve caller object for getClassName()`).
+- PHPStan (livello da `phpstan.neon`, cache isolata) sui 4 file toccati: `[OK] No errors`.
+- PHPMD (`tools/phpmd.sh`): 0 nuovi. 4 preesistenti, identici su `944bf31`
+  (CyclomaticComplexity syncRatingsFormData=10, 2 MissingImport `\LogicException`,
+  UnusedFormalParameter `clearRatingsFormData($ratings)`).
+- PHPInsights: trait 96.5 / 100 / 100 / 96.3; test 98.8 / 100 / 100 / 97.5. Le righe segnalate
+  sul trait sono codice preesistente.
+- Lettura reale (sola lettura) su 9240 dopo il fix: `ratingMorphTypes` =
+  `["indennita_responsabilita", "Modules\IndennitaResponsabilita\Models\IndennitaResponsabilita"]`.
+  Nota: alle 11:34:54 la scheda e' stata salvata da un utente (dal=20260401, voti uguali sulle
+  due forme), quindi la misura delle righe vuote non e' piu' riproducibile su 9240.
+- Suite intera `Modules/Rating/tests/Unit`: oltre 580 s sotto carico (decine di processi
+  PHPStan di altre sessioni), non completata. Eseguiti i 5 file che toccano il trait.

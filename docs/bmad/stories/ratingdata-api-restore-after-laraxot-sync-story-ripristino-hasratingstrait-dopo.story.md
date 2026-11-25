@@ -19,6 +19,24 @@ superseded_by: ratingdata-api-restore-after-laraxot-sync.story.md
 ---
 # ratingdata-api-restore-after-laraxot-sync-2026-09-24
 
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 ## Perché
 
 54 errori PHPStan (Rating + IndennitaResponsabilita) con una sola causa: il sync da
@@ -61,3 +79,13 @@ sovrascritto.
 phpstan analyse Modules/Rating Modules/IndennitaResponsabilita → 0 errori
 Pest: DB_CONNECTION=sqlite DB_DATABASE=:memory: (MySQL 10.100.200.53 irraggiungibile, con .env.testing si blocca in connect())
 ```
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

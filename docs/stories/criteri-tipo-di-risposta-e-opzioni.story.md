@@ -16,8 +16,25 @@ metadata:
   module: Rating
   related: 18.46.analisi-criteri-scelta-e-tipo-campo
 ---
-
 # Story: tipo di risposta di un criterio e opzioni del select
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 > **Nessun codice.** L'utente ha chiesto esplicitamente due brainstorming, non
 > un'implementazione. Questa story esiste per tracciare le decisioni aperte e per
@@ -99,3 +116,13 @@ tabella per quello.
 ## Claim
 
 Nessuno. Non c'è lavoro da svolgere finché le decisioni sopra non sono prese.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

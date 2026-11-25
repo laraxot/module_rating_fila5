@@ -16,8 +16,25 @@ metadata:
   agent: "claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]"
   module: Rating
 ---
-
 # Story: `rating_morph`: due migrazioni vive per la stessa tabella
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 > **Stato: bozza da validare.** Questa story è scritta **prima** di toccare qualsiasi
 > file, come richiesto dall'utente: prima la story, poi la validazione degli altri
@@ -196,3 +213,13 @@ scrivo nella tabella claim. Non la tocco prima.
 
 **Nota**: la correzione del tipo tocca una colonna su un database di produzione con 2.298
 righe. E' vuota, quindi il rischio e' basso, ma resta una `ALTER TABLE` da autorizzare.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).

@@ -16,8 +16,27 @@ issues: []
 discussions: []
 qmd: "resolve conflict markers rating story trait"
 ---
-
 # Rating: resolve git conflict markers
+
+## Context and Problem Statement
+
+The Rating module repository is in the middle of a merge (`.git/MERGE_HEAD` points to `fb4ae9db`, the index holds unmerged entries). This story only resolves the marker blocks in the working tree. It does not stage, commit or complete the merge.
+
+Note: `HEAD` of `app/Filament/Tables/Columns/RatingsColumn.php` already contains markers. The file was committed in that state.
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
 
 **BMAD phase:** Dev (conflict resolution, verification)
 **Owner module:** Rating
@@ -65,3 +84,19 @@ The Pest result is an environment failure and not a test verdict. The tests have
 
 - Run Pest after the vendor package is restored, then rerun `./vendor/bin/phpstan analyse` (module wrapper) with cleared result cache.
 - Finish or abort the in-progress merge in the Rating repository. Stage and commit only after review.
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+| Check | Command | Result |
+| --- | --- | --- |
+| Syntax, four files | `php -l <file>` | No syntax errors detected (all four) |
+| Style | `./vendor/bin/pint --test --config pint.json <file>` | passed (all four, after Pint formatting) |
+| Pest, trait and accessor tests | `./vendor/bin/pest Modules/Rating/tests/Unit/HasRatingsTraitAccessorsTest.php Modules/Rating/tests/Unit/HasRatingsTraitFormDataTest.php Modules/Rating/tests/Unit/HasRatingsTraitMorphTypesTest.php` | BLOCKED: 35 failed, 0 assertions. Every failure is `Class "PHPStan\PhpDocParser\Parser\TypeParser" not found`. The package `phpstan/phpdoc-parser` is missing from `laravel/vendor`. |
+
+The Pest result is an environment failure and not a test verdict. The tests have not run. Restoring the vendor package (`composer install` from `composer.lock`) is needed before these tests can prove anything. That step was not taken here, because it changes the shared vendor tree.

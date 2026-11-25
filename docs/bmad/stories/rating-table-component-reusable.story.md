@@ -9,8 +9,26 @@ issues: []
 discussions: []
 status: draft
 ---
-
 # Story: rating-table-component-reusable
+
+## Context and Problem Statement
+
+Problema e obiettivo sono descritti nel Decision Outcome (migrazione automatica a MADR).
+
+## Decision Drivers
+
+- Richiesta utente / acceptance criteria della story
+- Vincoli BMAD, second brain, Pest gate e dati sacri
+
+## Considered Options
+
+- Status quo (non fare)
+- Implementare come descritto nel Decision Outcome
+
+## Decision Outcome
+
+Scelta: **implementare**, perché i driver sopra.
+
 **Status**: ready-for-dev
 **Modulo**: Rating
 **Epic**: componente blade riutilizzabile per tabella rating (esportazioni + UI)
@@ -27,3 +45,13 @@ status: draft
 ## Note
 - Second brain: aggiungere regola `rating-scheda-domain.md#blade-rating-table-component` in `bashscripts/ai/wiki/memories/`
 - QMD: aggiornare `qmd update` dopo creazione componente
+
+
+### Consequences
+
+- Buono, perché chiude il gap descritto nel Context
+- Cattivo, perché richiede write-back docs, lock e quality gate
+
+### Confirmation
+
+Aggiungere prova ripetibile (Pest exit code + conteggio, PHPStan, o skip host documentato).
