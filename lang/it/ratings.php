@@ -73,6 +73,7 @@ return [
         'layout' => [
             'tooltip' => '',
             'icon' => 'layout',
+            'label' => 'layout',
         ],
     ],
 ];
