@@ -1,3 +1,8 @@
+---
+title: "Changelog"
+type: note
+qmd: "changelog 1"
+---
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.
