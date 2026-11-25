@@ -210,3 +210,17 @@ Le cartelle di import grezzo (`raw/`, `root-*-files/`), immagini e log sono escl
 | [`llm-wiki/`](llm-wiki/index.md) | 6 |
 | [`roadmap/`](roadmap/README.md) | 7 |
 | [`wiki/`](wiki/index.md) | 24 |
+
+## Contenuto fuso da `index.md`
+
+# Documentation Index
+
+Modulo: Rating
+
+## File disponibili
+
+<!-- auto-generato: elencare i file .md presenti -->
+
+## ⚠️ Architectural Rules
+
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: Rating module must NOT use Http\Controllers. Rating HTTP endpoints use Folio + Actions. Admin uses Filament.

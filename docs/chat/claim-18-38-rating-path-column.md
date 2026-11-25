@@ -38,7 +38,7 @@ Dalla revisione in corso (sessione `base-ptvx-fila5-92`, data 2026-09-08):
 | `laravel/Modules/Rating/app/Datas/RatingData.php` | Aggiungere `path` a `updateColumns()` | In corso |
 | `laravel/Modules/Rating/database/migrations/2026_06_16_000003_create_ratings_table.php` | Aggiungere `$table->string('path')->nullable()` | In corso |
 | `laravel/Modules/Rating/docs/stories/18.38.rating-path-column.story.md` | Storia BMAD registrata | Fatto |
-| `laravel/Modules/Rating/docs/chat/claim-18.38-rating-path-column.md` | Questo claim | Fatto |
+| `laravel/Modules/Rating/docs/chat/claim-18-38-rating-path-column.md` | Questo claim | Fatto |
 
 ## Lock
 

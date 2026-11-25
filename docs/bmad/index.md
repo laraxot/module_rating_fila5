@@ -35,14 +35,14 @@ tags: [docs, rating, bmad]
 **2026-09-22: risolto.** I 38 file sotto `docs/` con marker di merge non risolti
 (`<<<<<<<`/`=======`/`>>>>>>>`, incluso `architecture.md`) sono stati fusi e ripuliti
 (verifica: `grep -rl '^<<<<<<< \|^=======$\|^>>>>>>> ' docs/` → nessun risultato).
-Duplicati case-sensitive noti (es. `INDEX.md`/`index.md`, `BEST_PRACTICES.md`/`best_practices.md`)
+Duplicati case-sensitive noti (es. `INDEX.md`/`index.md`, `BEST_PRACTICES.md`/`best-practices.md`)
 non sono stati deduplicati in questo passaggio: sono fuori scope, tracciati in
 `root-files-hygiene.md`.
 
 Ancora aperto (fuori scope per questo cleanup, non toccare qui):
 - root `README.md` del modulo ha marker di merge non risolti (righe 3-19, 122-133) -
   file fuori `docs/`, serve una story dedicata.
-- regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`LICENSE.md` duplicati in
+- regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`license.md` duplicati in
   root): vedi `root-files-hygiene.md`.
 - possibile corruzione repo Git (commit mancante, vedi `git fsck`): da investigare
   prima di qualsiasi rewrite di history su questo modulo.

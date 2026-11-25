@@ -44,7 +44,7 @@ status: draft
 
 ### [2026-05-12 08:19:00 UTC] UPDATE | Routing on-demand esposto in index/rules/skills
 
-- Aggiornati `index.md`/`INDEX.md`, `rules/index.md`/`INDEX.md` e `skills/index.md`/`INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+- Aggiornati `index.md`/`index.md`, `rules/index.md`/`index.md` e `skills/index.md`/`index.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
 
 ---
 
@@ -59,6 +59,6 @@ status: draft
 
 ## [2026-10-14] docs | verifica degli ingressi contro il codice
 
-- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota di canonicita'. `INDEX.md`, `00-index.md`, `rating-architecture.md`, `up.md` segnati `stale`.
+- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota di canonicita'. `index.md`, `00-index.md`, `rating-architecture.md`, `up.md` segnati `stale`.
 - Verificato: uso reale in Fixcity (`SubmitCitizenTicketRatingAction`) e Blog; il modulo IndennitaResponsabilita citato dai docs non esiste; 11 rotte, tutte del pannello Filament `rating/admin`; Pest su DB usa-e-getta: 182 falliti per `SQLiteDatabaseDoesNotExistException`.
 - Link rotti negli indici (criterio audit): 59 -> 0. Story: `stories/docs-rating-verifica-ingressi.story.md`.

@@ -68,8 +68,8 @@ return (float) $sum;
 ## 📚 Documentazione Correlata
 
 - [PHPStan Fixes](./phpstan-fixes.md)
-- [Data Models](./data-models.md)
-- [Roadmap](./roadmap.md)
+- Data Models
+- [Roadmap](bmad/roadmap/README.md)
 
 *Ultimo aggiornamento: 2025-01-22*
 

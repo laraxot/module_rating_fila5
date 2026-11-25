@@ -16,6 +16,6 @@ Frontmatter (`title`, `type: decision`, `status`, `created`, `updated`, `decisio
 
 ## ADR presenti
 
-Elenco con stato: [INDEX.md](INDEX.md). Nessun ADR nuovo in questa passata: la scelta dimostrabile dal codice (relazione `morphToMany` e lettura di entrambe le forme di `model_type` in `HasRatingsTrait`) è già in [rating-is-polymorphic](rating-is-polymorphic.md) e [rating-is-domain-feedback](rating-is-domain-feedback.md).
+Elenco con stato: [INDEX.md](index.md). Nessun ADR nuovo in questa passata: la scelta dimostrabile dal codice (relazione `morphToMany` e lettura di entrambe le forme di `model_type` in `HasRatingsTrait`) è già in [rating-is-polymorphic](rating-is-polymorphic.md) e [rating-is-domain-feedback](rating-is-domain-feedback.md).
 
 Policy trasversale su dati sacri e test isolati: [0013-dati-sacri-migrazioni-e-test](../../../Xot/docs/adr/0013-dati-sacri-migrazioni-e-test.md).

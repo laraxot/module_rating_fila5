@@ -8,7 +8,7 @@ qmd: "rating patterns"
 related:
   - "./BEST_PRACTICES.md"
   - "./architecture.md"
-  - "./TROUBLESHOOTING.md"
+  - "troubleshooting.md"
 status: draft
 ---
 
@@ -409,5 +409,5 @@ $validated = $request->validate($rating->rules());
 
 - [Best Practices](./BEST_PRACTICES.md): DRY, KISS, clean code
 - [Architecture](./architecture.md): Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md): Common issues & solutions
+- [Troubleshooting](troubleshooting.md): Common issues & solutions
 - [Wiki Concepts](./wiki/concepts/): Schemaless attributes, polymorphism

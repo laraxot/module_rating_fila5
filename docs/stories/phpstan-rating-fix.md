@@ -7,6 +7,7 @@ scope: [module:Rating, project:base_workorder_fila5]
 status: Completed
 priority: High
 created: 2026-09-06
+title: "phpstan Rating fix"
 ---
 
 ## Problema

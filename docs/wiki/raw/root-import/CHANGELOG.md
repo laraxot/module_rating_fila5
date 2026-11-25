@@ -1,7 +1,11 @@
 ---
 title: "Changelog"
 type: note
-qmd: "changelog 1"
+updated: 2026-10-07
+tags: [docs, rating, wiki]
+qmd: "changelog rating"
+status: superseded
+superseded_by: ../CHANGELOG.md
 ---
 # Changelog
 

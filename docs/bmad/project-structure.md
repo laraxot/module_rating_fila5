@@ -47,7 +47,7 @@ qmd: "project structure   module **rating** rating"
 > modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso: vedi
 > `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
 > tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
-> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`): vedi
+> `on-demand-pattern.md`/`on-demand-pattern.md`, `qmd-setup.md`/`qmd-setup.md`): vedi
 > `case-sensitivity-rules.md`.
 
 ## File Chiave
@@ -58,7 +58,7 @@ qmd: "project structure   module **rating** rating"
 | `wiki/log.md` | Storico attività (ingest/query/lint) |
 | `wiki/rules/` | Regole + trigger map locale |
 | `wiki/concepts/` | Concetti specifici del modulo |
-| `ON-DEMAND-PATTERN.md` | **Leggi prima**: pattern da seguire |
+| `on-demand-pattern.md` | **Leggi prima**: pattern da seguire |
 
 ## Convenzioni
 

@@ -12,3 +12,11 @@ superseded_by: ../redundancy-analysis.md
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/REDUNDANCY_ANALYSIS.md
+
+## Contenuto fuso da `redundancy-analysis.md`
+
+# redundancy analysis
+
+Documento identico al canonico: [redundancy-analysis.md](redundancy-analysis.md).
+
+Canonico: `laravel/Modules/Rating/docs/bmad/redundancy-analysis.md`. Qui non ci sono istruzioni: seguire il file collegato.

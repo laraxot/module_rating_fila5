@@ -1,6 +1,7 @@
 ---
 created: 2026-01
 qmd: "phpstan fixes rating"
+title: "PHPStan Fixes - Modulo Rating"
 ---
 
 # PHPStan Fixes - Modulo Rating
@@ -291,3 +292,11 @@ if (isset($this->extra_attributes) && is_object($this->extra_attributes) && meth
 - [PHPStan Code Quality Guide](../../Xot/docs/phpstan-code-quality-guide.md)
 
 *Ultimo aggiornamento: gennaio 2026*
+
+## Contenuto fuso da `phpstan-fixes.md`
+
+# Alias (superseded)
+
+Canonico: [`./phpstan-fixes.md`](./phpstan-fixes.md).
+
+Questo path resta solo per link storici; non aggiungere contenuto qui.

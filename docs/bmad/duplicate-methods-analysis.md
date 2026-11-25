@@ -6,7 +6,7 @@ created: 2026-07-14
 updated: 2026-08-02
 qmd: "duplicate methods analysis"
 related:
-  - "./duplicate_methods.md"
+  - "duplicate-methods.md"
 status: superseded
 superseded_by: ../duplicate-methods-analysis.md
 ---

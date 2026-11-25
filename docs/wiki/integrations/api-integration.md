@@ -8,6 +8,6 @@ qmd: "api-integration alias superseded"
 
 # api integration
 
-Documento identico al canonico: [api-integration.md](../../api-integration.md).
+Documento identico al canonico: [api-integration.md](api-integration.md).
 
-Canonico: `laravel/Modules/Rating/docs/api-integration.md`. Qui non ci sono istruzioni: seguire il file collegato.
+Canonico: `laravel/Modules/Rating/docs/wiki/integrations/api-integration.md`. Qui non ci sono istruzioni: seguire il file collegato.

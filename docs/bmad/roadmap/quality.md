@@ -45,7 +45,7 @@ Questa checklist serve come riferimento operativo per mantenere il modulo `Ratin
 - [ ] Traduzioni complete in `Modules/Rating/lang/it/` e, quando necessario, in `lang/en/`.
 - [ ] Nessuna data nei nomi file `.md` e nessuna data nel contenuto (le informazioni temporali vivono nei changelog o nella storia git).
 - [ ] Documentazione aggiornata in:
-  - `Modules/Rating/docs/roadmap.md` (vista di insieme)
+  - `Modules/Rating/docs/bmad/roadmap/README.md` (vista di insieme)
   - file specifici in `Modules/Rating/docs/roadmap/`.
 - [ ] Link sempre relativi tra documenti (mai URL assolute del filesystem).
 

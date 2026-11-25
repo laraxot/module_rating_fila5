@@ -17,7 +17,7 @@ status: draft
 ## Quick Navigation
 
 - [Architecture](rating-architecture.md) | [Analysis](code-quality-analysis.md) | [Wiki](wiki/) | [Raw](raw/) | [Roadmap](roadmap/)
-- [Configuration](configuration.md) | [Models](data-models.md) | [Concepts](wiki/concepts/)
+- [Configuration](configuration.md) | Models | [Concepts](wiki/concepts/)
 
 ## Documentation by Category
 
@@ -30,7 +30,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [INDEX.md](index.md)
 - [index.md](index.md)
 - [README.md](README.md)
-- [BEST_PRACTICES.md](BEST_PRACTICES.md)
+- [BEST_PRACTICES.md](best-practices.md)
 - [best-practices.md](best-practices.md)
 - [BAD_PRACTICES.md](BAD_PRACTICES.md)
 - [bad-practices.md](bad-practices.md)
@@ -40,7 +40,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [false-friends.md](false-friends.md)
 - [LICENSE.md](LICENSE.md)
 - [METODI_DUPLICATI_ANALISI.md](METODI_DUPLICATI_ANALISI.md)
-- [metodi_duplicati_analisi.md](metodi_duplicati_analisi.md)
+- [metodi_duplicati_analisi.md](metodi-duplicati-analisi.md)
 - [MIGRATIONS.md](MIGRATIONS.md)
 - [migrations.md](migrations.md)
 - [ON-DEMAND-PATTERN.md](ON-DEMAND-PATTERN.md)
@@ -61,7 +61,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [agent-confidence-discipline.md](agent-confidence-discipline.md)
 - [agent-confidence-protocol.md](agent-confidence-protocol.md)
 - [agent-edit-discipline.md](agent-edit-discipline.md)
-- [api-integration.md](api-integration.md)
+- [api-integration.md](wiki/integrations/api-integration.md)
 - [architecture-rules.md](architecture-rules.md)
 - [architecture.md](architecture.md)
 - [best-practices.md](best-practices.md)
@@ -71,31 +71,31 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [code-quality-analysis.md](code-quality-analysis.md)
 - [code-redundancy-audit.md](code-redundancy-audit.md)
 - [codex-error-fix.md](codex-error-fix.md)
-- [confidence_guidelines.md](confidence_guidelines.md)
+- confidence_guidelines.md
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
-- [core-functionality.md](core-functionality.md)
+- core-functionality.md
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
-- [data-models.md](data-models.md)
+- data-models.md
 - [dry-kiss-analysis.md](dry-kiss-analysis.md)
 - [duplicate-methods-analysis.md](duplicate-methods-analysis.md)
-- [duplicate_methods.md](duplicate_methods.md)
-- [duplicate_methods_report.md](duplicate_methods_report.md)
+- [duplicate_methods.md](duplicate-methods.md)
+- [duplicate_methods_report.md](duplicate-methods-report.md)
 - [filament-version.md](filament-version.md)
 - [file-naming-rules.md](file-naming-rules.md)
 - [git-multi-org-sync-handoff.md](git-multi-org-sync-handoff.md)
 - [index.md](index.md)
 - [laravel-13-upgrade.md](laravel-13-upgrade.md)
-- [launch-plan.md](launch-plan.md)
+- launch-plan.md
 - [LICENSE.md](LICENSE.md)
 - [license.md](license.md)
 - [merge-conflict-files-list.md](merge-conflict-files-list.md)
 - [merge-conflicts-list.md](merge-conflicts-list.md)
 - [metodi-duplicati-analisi.md](metodi-duplicati-analisi.md)
-- [metodi_duplicati_analisi.md](metodi_duplicati_analisi.md)
-- [migration-patterns.md](migration-patterns.md)
+- [metodi_duplicati_analisi.md](metodi-duplicati-analisi.md)
+- migration-patterns.md
 - [multi-org-sync-laraxot-provtv.md](multi-org-sync-laraxot-provtv.md)
 - [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md)
 - [phpstan-fixes.md](phpstan-fixes.md)
@@ -104,39 +104,39 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [ponytail-audit-over-engineering.md](ponytail-audit-over-engineering.md)
 - [prd.json](prd.json)
 - [prd.md](prd.md)
-- [product-launch-plan.md](product-launch-plan.md)
+- product-launch-plan.md
 - [product-requirements.md](product-requirements.md)
-- [product-roadmap.md](product-roadmap.md)
-- [product-strategy.md](product-strategy.md)
+- product-roadmap.md
+- product-strategy.md
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
 - [redundancy-audit-rating.md](redundancy-audit-rating.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
-- [roadmap.md](roadmap.md)
+- [roadmap.md](bmad/roadmap/README.md)
 - [root-file-policy.md](root-file-policy.md)
 - [root-files-hygiene.md](root-files-hygiene.md)
 - [schema.md](schema.md)
 - [schemaless-attributes-errors.md](schemaless-attributes-errors.md)
 - [schemaless-attributes.md](schemaless-attributes.md)
 - [second-brain.md](second-brain.md)
-- [sprint-planning-meeting.md](sprint-planning-meeting.md)
-- [sprint-planning.md](sprint-planning.md)
-- [strategy.md](strategy.md)
+- sprint-planning-meeting.md
+- sprint-planning.md
+- strategy.md
 - [troubleshooting.md](troubleshooting.md)
 - [up.txt](up.txt)
 - [user-interface.md](user-interface.md)
-- [user-research.md](user-research.md)
+- user-research.md
 
 ### Wiki (39 files)
 
 Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooting:
 
 **Main Index** (7 files)
-  - [AGENTS.md](wiki/AGENTS.md)
+  - [AGENTS.md](wiki/agents.md)
   - [agents.md](wiki/agents.md)
-  - [SCHEMA.md](wiki/SCHEMA.md)
+  - [SCHEMA.md](wiki/schema.md)
   - [schema.md](wiki/schema.md)
   - [README.md](wiki/README.md)
   - [index.md](wiki/index.md)
@@ -204,17 +204,17 @@ Raw source documents and import sources:
 - [index.md](raw/index.md)
 
 **Root Import** (5 files)
-  - [changelog-1.md](raw/root-import/changelog-1.md)
-  - [changelog-2.md](raw/root-import/changelog-2.md)
-  - [changelog.md](raw/root-import/changelog.md)
-  - [license-1.md](raw/root-import/license-1.md)
+  - [changelog-1.md](raw/root-import/CHANGELOG.md)
+  - [changelog-2.md](raw/root-import/CHANGELOG.md)
+  - [changelog.md](raw/root-import/CHANGELOG.md)
+  - [license-1.md](raw/root-import/license.md)
   - [license.md](raw/root-import/license.md)
 
 ### LLM Wiki (7 files)
 
 Machine learning and documentation knowledge base:
 
-- [AGENTS.md](llm-wiki/AGENTS.md)
+- [AGENTS.md](llm-wiki/agents.md)
 - [agents.md](llm-wiki/agents.md)
 - [index.md](llm-wiki/index.md)
 - [log.md](llm-wiki/log.md)
@@ -228,9 +228,9 @@ Machine learning and documentation knowledge base:
 
 Consolidated root-level markdown documentation:
 
-- [changelog-1.md](raw/root-import/changelog-1.md)
-- [changelog.md](root-md-files/changelog.md)
-- [license-1.md](raw/root-import/license-1.md)
+- [changelog-1.md](raw/root-import/CHANGELOG.md)
+- [changelog.md](root-md-files/CHANGELOG.md)
+- [license-1.md](raw/root-import/license.md)
 - [license.md](root-md-files/license.md)
 
 ### Archive (3 files)
@@ -259,15 +259,15 @@ Additional archived content:
 | 2026-07-28 | [00-index.md](00-index.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
-| 2026-07-28 | [BEST_PRACTICES.md](BEST_PRACTICES.md) | root |
+| 2026-07-28 | [BEST_PRACTICES.md](best-practices.md) | root |
 | 2026-07-28 | [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md) | root |
 | 2026-07-28 | [PRODUCT_ROADMAP.md](PRODUCT_ROADMAP.md) | root |
 | 2026-07-28 | [SPRINT_PLANNING.md](SPRINT_PLANNING.md) | root |
 | 2026-07-28 | [rating-architecture.md](rating-architecture.md) | root |
 | 2026-07-28 | [architecture.md](architecture.md) | root |
 | 2026-07-28 | [configuration.md](configuration.md) | root |
-| 2026-07-28 | [core-functionality.md](core-functionality.md) | root |
-| 2026-07-28 | [data-models.md](data-models.md) | root |
+| 2026-07-28 | core-functionality.md | root |
+| 2026-07-28 | data-models.md | root |
 | 2026-07-28 | [schema.md](schema.md) | root |
 | 2026-07-28 | [user-interface.md](user-interface.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
@@ -313,7 +313,7 @@ Additional archived content:
 ## Recommendations
 
 1. **Deduplication**: Consolidate similar files:
-   - `best-practices.md` vs `BEST_PRACTICES.md`
+   - `best-practices.md` vs `best-practices.md`
    - `changelog.md` vs `CHANGELOG.md` vs `changelog-*.md`
    - `license.md` vs `LICENSE.md`
    - `product-*.md` vs `PRODUCT_*.md`

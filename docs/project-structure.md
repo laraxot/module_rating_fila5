@@ -49,7 +49,7 @@ superseded_by: project-structure.md
 > esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
 > modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso: vedi
 > `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
-> tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
+> tuttora varianti case-duplicate non deduplicate (`index.md`/`index.md`,
 > `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`): vedi
 > `case-sensitivity-rules.md`.
 

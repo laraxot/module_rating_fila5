@@ -21,3 +21,9 @@ Genera problemi di UI e formattazione; usa interi 1-5.
 
 ## ❌ Consentire rating duplicati senza validazione
 Implementa `unique:ratings,user_id,rateable_id`.
+
+## Contenuto fuso da `bad-practices.md`
+
+Documento identico al canonico: [bad-practices.md](bad-practices.md).
+
+Canonico: `laravel/Modules/Rating/docs/bmad/bad-practices.md`. Qui non ci sono istruzioni: seguire il file collegato.

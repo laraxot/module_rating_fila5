@@ -1,22 +1,4 @@
 ---
-module: theme
-topic: troubleshooting
-canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
-title: "Troubleshooting – Rating"
-type: note
-status: stub
-updated: 2026-10-07
-tags: [docs, rating, bmad]
-qmd: "troubleshooting   rating rating"
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
-
----
-
-<!-- Merged from TROUBLESHOOTING.md, which collided with this file on case-insensitive filesystems. -->
-
----
 title: "Troubleshooting – Rating"
 type: guide
 tags: [troubleshooting, debugging, rating]
@@ -575,3 +557,15 @@ $this->post('/ratings', ['category' => 'technical'])
 - **PHPStan errors** → Prefix with `phpstan` in QMD: `qmd search "phpstan rating"`
 
 **Last resort:** Check [INDEX_GENERATED.md](../INDEX_GENERATED.md) for all 151 documentation files.
+
+## Contenuto fuso da `troubleshooting.md`
+
+**Reference:**
+- [BEST_PRACTICES.md](./BEST_PRACTICES.md): DRY rule definitions
+- [architecture.md](./architecture.md): Rating model casts
+
+- **Architecture issues** → [architecture.md](./architecture.md)
+- **Design patterns** → [PATTERNS.md](./patterns.md)
+- **Code style** → [BEST_PRACTICES.md](./BEST_PRACTICES.md)
+- **Wiki concepts** → [wiki/](./wiki/)
+- **PHPStan errors** → Prefix with `phpstan` in QMD: `qmd search "phpstan rating"`

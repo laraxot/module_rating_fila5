@@ -6,7 +6,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "AGENTS"
 status: superseded
-superseded_by: ../../llm-wiki/AGENTS.md
+superseded_by: ../../llm-wiki/agents.md
 ---
 
 # Rating Module LLM Wiki Agent Instructions

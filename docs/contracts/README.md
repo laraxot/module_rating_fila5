@@ -12,7 +12,7 @@ Un contract descrive un'operazione di Rating che tocca valutazioni (dati persona
 
 ## Formato
 
-Per le Action: frontmatter `type: contract` e `action: "Modules\\Rating\\Actions\\..."`, sezioni `## Input`, `## Output`, `## Invarianti`, `## Effetti collaterali`, `## Errori`, `## Non fa`. Per la policy: `type: policy-contract` e `contract: <FQCN>` (standard, sezione «Contratti non-Action»). Invarianti con ID `RATING-<AREA>-INV-<N>` e test Pest con `->group('<ID>')`. Registro: [INDEX.md](INDEX.md).
+Per le Action: frontmatter `type: contract` e `action: "Modules\\Rating\\Actions\\..."`, sezioni `## Input`, `## Output`, `## Invarianti`, `## Effetti collaterali`, `## Errori`, `## Non fa`. Per la policy: `type: policy-contract` e `contract: <FQCN>` (standard, sezione «Contratti non-Action»). Invarianti con ID `RATING-<AREA>-INV-<N>` e test Pest con `->group('<ID>')`. Registro: [INDEX.md](index.md).
 
 ## File presenti
 

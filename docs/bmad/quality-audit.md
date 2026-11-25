@@ -74,7 +74,7 @@ nemmeno raccolto: due file con lo stesso basename generano la stessa classe.
 Percorsi coinvolti:
 
 - `CHANGELOG.md`
-- `LICENSE.md`
+- `license.md`
 
 ## Coverage
 

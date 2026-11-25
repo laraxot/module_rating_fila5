@@ -353,7 +353,7 @@ For more details, see:
 - [Troubleshooting](troubleshooting.md) - Common problems
 - [Concepts](concepts.md) - Design patterns
 - [References](references.md) - CLI and external links
-- [Roadmap](roadmap.md) - Development phases
+- Roadmap - Development phases
 
 ---
 
