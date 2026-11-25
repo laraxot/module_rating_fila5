@@ -10,8 +10,7 @@ priority: P2
 created: 2026-09-29
 updated: 2026-09-29
 related:
-  - ../../../../../docs/wiki/i18n/navigation-translations-audit.md
-  - ../../../../../docs/wiki/i18n/navigation-translations-inventory-2026-09-29.md
+  - ../../../../../docs/wiki/i18n-navigation-translations.md
 issues: []
 discussions: []
 tags: [docs, rating, bmad]
@@ -24,7 +23,7 @@ Task utente 2026-09-29: trovare tutti i file di traduzione con la sottostringa
 `.navigation` o una chiave `'navigation'`, completare/migliorare per ogni
 lingua, senza mai togliere contenuto esistente. Dettaglio completo, metodo e
 tabelle nel documento di sintesi cross-modulo:
-`docs/wiki/i18n/navigation-translations-audit.md` (inventario pre-intervento in `docs/wiki/i18n/navigation-translations-inventory-2026-09-29.md`).
+`docs/wiki/i18n-navigation-translations.md`.
 
 ## Esito
 
