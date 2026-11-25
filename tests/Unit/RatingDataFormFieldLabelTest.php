@@ -25,4 +25,11 @@ describe('RatingData::formFieldLabel', function (): void {
 
         Assert::assertSame('Criterio', RatingData::formFieldLabel($rating));
     });
+
+    test('usa title se txt e stringa vuota (intestazione XLS mai "Rating {id}")', function (): void {
+        $rating = new Rating;
+        $rating->forceFill(['id' => 52, 'title' => 'Ruoli Specifici', 'txt' => '']);
+
+        Assert::assertSame('Ruoli Specifici', RatingData::formFieldLabel($rating));
+    });
 });

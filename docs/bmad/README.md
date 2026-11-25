@@ -69,17 +69,17 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 | **Spec codice proposto** | [architecture/rating-select-altro-implementation-spec.md](architecture/rating-select-altro-implementation-spec.md) |
 | Epic | [epics/rating-select-altro.md](epics/rating-select-altro.md) |
 | Brainstorming | [brainstorming/rating-select-altro-note-obbligatoria.md](brainstorming/rating-select-altro-note-obbligatoria.md) |
-| Story 5.99 | [stories/5.99-select-altro-note-obbligatoria.story.md](stories/5.99-select-altro-note-obbligatoria.story.md) |
-| Story 5.141 D-8 filtro | [stories/5.141-has-rating-values-filter-note.story.md](stories/5.141-has-rating-values-filter-note.story.md) |
-| Story 5.142 review gate | [stories/5.142-review-gate-select-altro-impl.story.md](stories/5.142-review-gate-select-altro-impl.story.md) |
-| Story 5.143 lang altro | [stories/5.143-lang-fields-altro.story.md](stories/5.143-lang-fields-altro.story.md) |
-| Story 5.144 rename EN | [stories/5.144-rename-select-is-other.story.md](stories/5.144-rename-select-is-other.story.md) |
-| Story 5.146 Section/Fieldset UI | [stories/5.146-select-textarea-section-ui.story.md](stories/5.146-select-textarea-section-ui.story.md) |
-| **Story 5.147 pivot fill/save nel trait** | [stories/5.147-hydrate-sync-ratings-form-data.story.md](stories/5.147-hydrate-sync-ratings-form-data.story.md) |
-| Story 5.148 Fieldset UI | [stories/5.148-fieldset-always-visible-two-columns.story.md](stories/5.148-fieldset-always-visible-two-columns.story.md) |
-| Story 5.149 confine Compila↔trait | [stories/5.149-compila-vs-trait-reusable-boundary.story.md](stories/5.149-compila-vs-trait-reusable-boundary.story.md) |
-| Story 5.151 validation UI | [stories/5.151-human-validation-attribute.story.md](stories/5.151-human-validation-attribute.story.md) |
-| Design SSoT | [../stories/rating-altro-option-conditional-textarea-design.story.md](../stories/rating-altro-option-conditional-textarea-design.story.md) |
+| Story 5.99 | [stories/5.99-select-altro-note-obbligatoria.story.md](stories/0045-select-altro-note-obbligatoria.story.md) |
+| Story 5.141 D-8 filtro | [stories/5.141-has-rating-values-filter-note.story.md](stories/0005-has-rating-values-filter-note.story.md) |
+| Story 5.142 review gate | [stories/5.142-review-gate-select-altro-impl.story.md](stories/0006-review-gate-select-altro-impl.story.md) |
+| Story 5.143 lang altro | [stories/5.143-lang-fields-altro.story.md](stories/0007-lang-fields-altro.story.md) |
+| Story 5.144 rename EN | [stories/5.144-rename-select-is-other.story.md](stories/0008-rename-select-is-other.story.md) |
+| Story 5.146 Section/Fieldset UI | [stories/5.146-select-textarea-section-ui.story.md](stories/0011-select-textarea-section-ui.story.md) |
+| **Story 5.147 pivot fill/save nel trait** | [stories/5.147-hydrate-sync-ratings-form-data.story.md](stories/0012-hydrate-sync-ratings-form-data.story.md) |
+| Story 5.148 Fieldset UI | [stories/5.148-fieldset-always-visible-two-columns.story.md](stories/0013-fieldset-always-visible-two-columns.story.md) |
+| Story 5.149 confine Compila↔trait | [stories/5.149-compila-vs-trait-reusable-boundary.story.md](stories/0014-compila-vs-trait-reusable-boundary.story.md) |
+| Story 5.151 validation UI | [stories/5.151-human-validation-attribute.story.md](stories/0015-human-validation-attribute.story.md) |
+| Design SSoT | [../stories/rating-altro-option-conditional-textarea-design.story.md](../stories/0063-rating-altro-option-conditional-textarea-design.story.md) |
 | Smoke IR | ../../../IndennitaResponsabilita/docs/bmad/stories/5.140-compila-altro-note-smoke.story.md _(riferimento non presente nel repository, verificato 2026-10-14)_ |
 
 ## GitHub
@@ -104,10 +104,10 @@ Pack documentazione per `HasRatingsTrait`: rating con figli → **Group(Select +
 | File | Nota |
 |------|------|
 | brainstorming/rating-other-option-note-required.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Pointer EN obsoleto |
-| [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/5.99-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
-| [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
+| [stories/5.99-select-altro-textarea-obbligatoria.story.md](stories/0046-select-altro-textarea-obbligatoria.story.md) | Bozza intermedia → pointer |
+| [../stories/5.99-rating-select-altro-textarea-obbligatoria.story.md](../stories/0052-rating-select-altro-textarea-obbligatoria.story.md) | Bozza `ALTRO_KEY='altro'` → pointer |
 | ../../../../docs/stories/5.109-… _(riferimento non presente nel repository, verificato 2026-10-14)_ | is_altro/migration → superseded |
-| [stories/5.145-refactor-host-rating-to-trait.story.md](stories/5.145-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146): se citi "5.145" verifica su disco quale intendi |
+| [stories/5.145-refactor-host-rating-to-trait.story.md](stories/0009-refactor-host-rating-to-trait.story.md) | Bozza pivot fill/save (nomi diversi) → pointer a 5.147. **Numero 5.145 riusato** da due story diverse nello stesso giro (questa e Section UI, ora 5.146): se citi "5.145" verifica su disco quale intendi |
 | `docs/*.md` con `<<<<<<<` (≈33 file fuori bmad) | Debito merge: non SSoT; vedi [../index.md](../index.md) |
 
 **Regola swarm:** se un agente rivendica «utente ha confermato `'altro'` stringa», verificare
