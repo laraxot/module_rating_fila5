@@ -49,13 +49,13 @@ perimetro Rating.
   (`copilot-redundancy-audit`, `redundancy-audit`, `cleanup-rating`, `auditcoverage-reinjection`,
   `phpstan-fleet-fix`, `phpstan-post-sync-restore`, `quality-gates-phpstan-swarm`,
   `ratingdata-api-restore-after-laraxot-sync`).
-<<<<<<< .merge_file_b21rmj
 - Residui rule-regex: **3** (`phpstan-fixes-modulo-rating.md`, 2× `phpstan-fix-178876*.story.md`).
-=======
-<<<<<<< .merge_file_AArv32
-- Residui rule-regex: **3** (`phpstan-fixes-2026-01.md`, 2× `phpstan-fix-178876*.story.md`).
-=======
-- Residui rule-regex: **3** (`phpstan-fixes-modulo-rating.md`, 2× `phpstan-fix-178876*.story.md`).
->>>>>>> .merge_file_DDUw2X
->>>>>>> .merge_file_GyPmce
 - Nessun delete. Canon: `Xot/.../docs-md-filename-date-debt.story.md`.
+
+<!-- GateGuard: append diary; linked from Xot docs-md-filename-date-debt wave 24d. -->
+
+## Diario 2026-11-24d (wave date-debt companion)
+
+- Ignored `*-[0-9][0-9].md`: `phpstan-fixes-2026-01.md` → `phpstan-fixes-jan-historical.md` + stub → `phpstan-fixes.md`.
+- `bmad/phpstan-fixes-2026-01.md` → promote `bmad/phpstan-fixes.md` + stub dated.
+- Date ACTIVE Rating post-wave: **0**. Nessun `rm`. Parent: `Xot/.../docs-md-filename-date-debt.story.md`.

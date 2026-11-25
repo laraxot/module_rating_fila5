@@ -1,4 +1,5 @@
----title: "Story — tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
+---
+title: "Story — tests/AuditCoverage reiniettata dal remote dopo il fix PHPStan (2026-09-24)"
 type: story
 module: Rating
 epic: quality

@@ -1,5 +1,5 @@
 ---
-title: "Rating: mai Filament\*, sempre XotBase*"
+title: "Rating: mai Filament\\*, sempre XotBase*"
 type: concept
 module: Rating
 tags: [rating, filament, xotbase, architecture]

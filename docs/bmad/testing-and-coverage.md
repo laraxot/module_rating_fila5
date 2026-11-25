@@ -1,5 +1,5 @@
 ---
-title: Rating: test e coverage
+title: "Rating: test e coverage"
 description: Come si eseguono i test del modulo Rating, su quale perimetro si misura la coverage e perché alcuni test sono in skip condizionato.
 document_type: doc
 category: testing

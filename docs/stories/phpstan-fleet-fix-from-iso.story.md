@@ -1,23 +1,17 @@
----id: Rating/phpstan-fleet-fix-2026-09-16
+---
+id: Rating/phpstan-fleet-fix-2026-09-16
 title: "PHPStan fleet fix 2026-09-16 (Rating)"
 status: done
 module: Rating
 priority: P1
 updated: 2026-09-16
 superseded_by: phpstan-fleet-fix.story.md
+qmd: "rating phpstan fleet fix from iso story"
 ---
 
 # Claim
 
-<<<<<<< .merge_file_CtYjZ8
 Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm.story.md) e peer base-ptvx-fila5-c5.
-=======
-<<<<<<< .merge_file_JK5K39
-Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm-2026-09-16.story.md) e peer base-ptvx-fila5-c5.
-=======
-Sessione base-ptvx-fila5-0d — swarm PHPStan fleet, coordinato con codex-2026-09-16 (bashscripts/docs/bmad/stories/phpstan-fleet-random-swarm.story.md) e peer base-ptvx-fila5-c5.
->>>>>>> .merge_file_SE4qXo
->>>>>>> .merge_file_MV0dhI
 
 # Esito
 

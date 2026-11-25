@@ -1,4 +1,5 @@
----title: "Rating redundancy audit 2026-05-21"
+---
+title: "Rating redundancy audit 2026-05-21"
 type: audit
 module: Rating
 tags: [redundancy, livewire, views]
@@ -6,6 +7,7 @@ created: 2026-05-21
 related:
   - https://github.com/laraxot/base_fixcity_fila5/issues/89
 superseded_by: redundancy-audit.md
+qmd: "redundancy audit from iso rating 20260521"
 ---
 
 # Rating redundancy audit 2026-05-21

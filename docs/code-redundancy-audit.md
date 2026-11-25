@@ -7,6 +7,7 @@ created: "2026-05-26"
 updated: "2026-05-26"
 owner: "Rating"
 issue: "https://github.com/provtv/base_ptv_fila5/issues/150"
+qmd: "code redundancy audit rating"
 ---
 
 # Code redundancy audit — Rating
