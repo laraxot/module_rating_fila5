@@ -103,14 +103,14 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [phpstan-fixes.md](phpstan-fixes.md)
 - [ponytail-audit-over-engineering.md](ponytail-audit-over-engineering.md)
 - [prd.json](prd.json)
-- [prd.md](prd.md)
+- [prd.md](bmad/prd.md)
 - product-launch-plan.md
-- [product-requirements.md](product-requirements.md)
+- [product-requirements.md](bmad/product-requirements.md)
 - product-roadmap.md
 - product-strategy.md
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
-- [redundancy-audit-rating.md](redundancy-audit-rating.md)
+- [redundancy-audit-rating.md](redundancy-audit.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
@@ -161,9 +161,9 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [xotbase-table-columns-enforcement.md](wiki/concepts/filament-widgets.md#xotbase-table-columns-enforcement)
 
 **Templates** (3 files)
-  - [concept.md](wiki/_templates/concept.md)
-  - [entity.md](wiki/_templates/entity.md)
-  - [source.md](wiki/_templates/source.md)
+  - [concept.md](index.md)
+  - [entity.md](index.md)
+  - [source.md](index.md)
 
 **Rules** (2 files)
   - [INDEX.md](wiki/rules/index.md)
@@ -220,18 +220,18 @@ Machine learning and documentation knowledge base:
 - [log.md](llm-wiki/log.md)
 
 **Templates** (3 files)
-  - [concept.md](llm-wiki/_templates/concept.md)
-  - [entity.md](llm-wiki/_templates/entity.md)
-  - [source.md](llm-wiki/_templates/source.md)
+  - [concept.md](index.md)
+  - [entity.md](index.md)
+  - [source.md](index.md)
 
 ### Root Markdown Files (4 files)
 
 Consolidated root-level markdown documentation:
 
 - [changelog-1.md](raw/root-import/CHANGELOG.md)
-- [changelog.md](root-md-files/CHANGELOG.md)
+- [changelog.md](CHANGELOG.md)
 - [license-1.md](raw/root-import/license.md)
-- [license.md](root-md-files/license.md)
+- [license.md](license.md)
 
 ### Archive (3 files)
 
@@ -246,7 +246,7 @@ Legacy and superseded documentation:
 
 Additional archived content:
 
-- [license.md](archived/license.md)
+- [license.md](license.md)
 
 ---
 ## Recently Updated

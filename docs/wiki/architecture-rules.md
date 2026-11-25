@@ -8,6 +8,6 @@ qmd: "architecture-rules alias superseded"
 
 # Architectural Rules & Guidelines
 
-Documento identico al canonico: [architecture-rules.md](../bmad/architecture-rules.md).
+Documento identico al canonico: [architecture-rules.md](../architecture-rules.md).
 
-Canonico: `laravel/Modules/Rating/docs/bmad/architecture-rules.md`. Qui non ci sono istruzioni: seguire il file collegato.
+Canonico: `laravel/Modules/Rating/docs/architecture-rules.md`. Qui non ci sono istruzioni: seguire il file collegato.

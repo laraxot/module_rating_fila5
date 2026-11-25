@@ -27,7 +27,7 @@ tags: [docs, rating, bmad]
 
 - [README.md](README.md)
 - [architecture.md](architecture.md)
-- [criteri-a-scelta-multipla.md](criteri-a-scelta-multipla.md)
+- [criteri-a-scelta-multipla.md](../criteri-a-scelta-multipla.md)
 - [wiki/](../wiki/)
 
 ## Debito docs

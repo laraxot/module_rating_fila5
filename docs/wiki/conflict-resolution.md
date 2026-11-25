@@ -8,6 +8,6 @@ qmd: "conflict-resolution alias superseded"
 
 # Conflict Resolution: Module Rating
 
-Documento identico al canonico: [conflict-resolution.md](../bmad/conflict-resolution.md).
+Documento identico al canonico: [conflict-resolution.md](../conflict-resolution.md).
 
-Canonico: `laravel/Modules/Rating/docs/bmad/conflict-resolution.md`. Qui non ci sono istruzioni: seguire il file collegato.
+Canonico: `laravel/Modules/Rating/docs/conflict-resolution.md`. Qui non ci sono istruzioni: seguire il file collegato.

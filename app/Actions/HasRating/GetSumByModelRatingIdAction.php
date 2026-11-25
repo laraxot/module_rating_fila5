@@ -9,6 +9,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 /**
  * @see docs/contracts/get-sum-by-model-rating-id-action.md
+ *
  * @contract docs/contracts/get-sum-by-model-rating-id-action.md
  */
 class GetSumByModelRatingIdAction
@@ -22,7 +23,7 @@ class GetSumByModelRatingIdAction
     {
         $opts = $model->ratings()
             ->wherePivot('user_id', '!=', null);
-        if (null !== $rating_id) {
+        if ($rating_id !== null) {
             $opts = $opts->wherePivot('rating_id', $rating_id);
         }
         $sum = $opts->sum('rating_morph.value');

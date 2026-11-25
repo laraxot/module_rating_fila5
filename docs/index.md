@@ -188,7 +188,7 @@ $distribution = Rating::where('rateable_type', Product::class)
 
 Vedi anche:
 - [README](README.md) - Panoramica
-- [PRD](prd.md) - Product requirements
+- [PRD](bmad/prd.md) - Product requirements
 - [Architecture Rules](architecture-rules.md) - Regole architetturali
 - [Best Practices](best-practices.md) - Pattern consolidati
 - [PHPStan Fixes](phpstan-fixes.md) - Conformità statica

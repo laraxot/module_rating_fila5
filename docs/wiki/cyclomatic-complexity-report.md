@@ -8,6 +8,6 @@ qmd: "cyclomatic-complexity-report alias superseded"
 
 # Cyclomatic Complexity Report - Module: Rating
 
-Documento identico al canonico: [cyclomatic-complexity-report.md](../bmad/cyclomatic-complexity-report.md).
+Documento identico al canonico: [cyclomatic-complexity-report.md](../cyclomatic-complexity-report.md).
 
-Canonico: `laravel/Modules/Rating/docs/bmad/cyclomatic-complexity-report.md`. Qui non ci sono istruzioni: seguire il file collegato.
+Canonico: `laravel/Modules/Rating/docs/cyclomatic-complexity-report.md`. Qui non ci sono istruzioni: seguire il file collegato.

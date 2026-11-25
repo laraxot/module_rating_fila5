@@ -8,6 +8,6 @@ qmd: "contracts-naming alias superseded"
 
 # Contracts Naming & Placement
 
-Documento identico al canonico: [contracts-naming.md](../bmad/contracts-naming.md).
+Documento identico al canonico: [contracts-naming.md](../contracts-naming.md).
 
-Canonico: `laravel/Modules/Rating/docs/bmad/contracts-naming.md`. Qui non ci sono istruzioni: seguire il file collegato.
+Canonico: `laravel/Modules/Rating/docs/contracts-naming.md`. Qui non ci sono istruzioni: seguire il file collegato.
