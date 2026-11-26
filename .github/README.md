@@ -35,7 +35,9 @@ Rating è un pacchetto Composer **indipendente e riusabile**: nessuna dipendenza
 - **[Actions](https://github.com/laraxot/module_rating_fila5/actions)** — pipeline CI
 - **[Milestone](https://github.com/laraxot/module_rating_fila5/milestones)** · **[Label](https://github.com/laraxot/module_rating_fila5/labels)** · **[Wiki](https://github.com/laraxot/module_rating_fila5/wiki)** · **[Security](https://github.com/laraxot/module_rating_fila5/security)**
 
-### 📖 Manuali\n\n- [Manuale utente](https://github.com/laraxot/module_rating_fila5/blob/dev/docs/manuals/manuale-utente.md)
+### 📖 Manuali
+
+- [Manuale utente](https://github.com/laraxot/module_rating_fila5/blob/dev/docs/manuals/manuale-utente.md)
 
 ## 🛠 Sviluppo
 
