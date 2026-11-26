@@ -1,42 +1,21 @@
 ---
-title: "Architecture Decision Records"
+title: "ADR — Rating"
 type: index
-tags: [adr, decisioni]
-created: 2026-11-18
-updated: 2026-11-18
+owner: Rating
+updated: 2026-11-24
+qmd: "Rating ADR architecture decision record MADR formato valutazioni polimorfiche"
 ---
 
-# Architecture Decision Records
+# ADR — Rating
 
-Il **perche'** delle scelte di questo pacchetto: una decisione per file, con le alternative scartate.
-Il nome del file e' l'argomento, senza date ne' numeri (la data sta nella frontmatter).
+Un ADR del modulo Rating registra una scelta difficile da invertire, sorprendente o frutto di un trade-off reale sulle valutazioni polimorfiche e sui dati di performance. Ogni affermazione ha un file di prova. Template condiviso: [0000-template](../../../Xot/docs/adr/0000-template.md); standard: [Xot ADR](../../../Xot/docs/adr/README.md).
 
-## Formato
+## Formato MADR
 
-```markdown
----
-title: "ADR — <decisione in una riga>"
-type: decision
-status: accepted | superseded | deprecated
-created: AAAA-MM-GG
-updated: AAAA-MM-GG
-issues: []
----
+Frontmatter (`title`, `type: decision`, `status`, `created`, `updated`, `decision-makers`, `module`, `qmd`) e sezioni nell'ordine: `## Contesto`, `## Driver della decisione`, `## Alternative scartate`, `## Decisione`, `## Conseguenze`, `## Conferma`. Nome file in kebab-case senza data né numero.
 
-# ADR: <decisione>
+## ADR presenti
 
-## Contesto
-Fatti e vincoli che hanno reso necessaria la scelta (misure, norme, policy, incidenti).
+Elenco con stato: [INDEX.md](index.md). Nessun ADR nuovo in questa passata: la scelta dimostrabile dal codice (relazione `morphToMany` e lettura di entrambe le forme di `model_type` in `HasRatingsTrait`) è già in [rating-is-polymorphic](rating-is-polymorphic.md) e [rating-is-domain-feedback](rating-is-domain-feedback.md).
 
-## Decisione
-Cosa si fa, in concreto, e dove sta nel codice.
-
-## Alternative scartate
-Ogni alternativa seria, con il motivo per cui non e' stata scelta.
-
-## Conseguenze
-Pro, contro, debito che resta, cosa misurare. Chi cambia la decisione scrive un nuovo ADR e segna questo `superseded`.
-```
-
-## Decisioni
-
+Policy trasversale su dati sacri e test isolati: [0013-dati-sacri-migrazioni-e-test](../../../Xot/docs/adr/0013-dati-sacri-migrazioni-e-test.md).

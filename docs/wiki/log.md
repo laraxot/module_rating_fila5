@@ -39,12 +39,12 @@ status: draft
 
 ### [2026-06-05] docs | HackerNoon harness: tips 001-022 in wiki locale
 
-- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../bashscripts/ai/wiki/concepts/agents-harness-tooling.md#hackernoon-ai-coding-tips-map), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
 - GitHub: [#272](https://github.com/laraxot/platform/issues/272) / [D#273](https://github.com/laraxot/platform/discussions/273)
 
 ### [2026-05-12 08:19:00 UTC] UPDATE | Routing on-demand esposto in index/rules/skills
 
-- Aggiornati `index.md`/`INDEX.md`, `rules/index.md`/`INDEX.md` e `skills/index.md`/`INDEX.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
+- Aggiornati `index.md`/`index.md`, `rules/index.md`/`index.md` e `skills/index.md`/`index.md` per esporre il routing on-demand verso pattern Filament/XotBase gia' presenti nel modulo e skill condivise Xot.
 
 ---
 
@@ -59,6 +59,13 @@ status: draft
 
 ## [2026-10-14] docs | verifica degli ingressi contro il codice
 
-- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota di canonicita'. `INDEX.md`, `00-index.md`, `rating-architecture.md`, `up.md` segnati `stale`.
+- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota di canonicita'. `index.md`, `00-index.md`, `rating-architecture.md`, `up.md` segnati `stale`.
 - Verificato: uso reale in Fixcity (`SubmitCitizenTicketRatingAction`) e Blog; il modulo IndennitaResponsabilita citato dai docs non esiste; 11 rotte, tutte del pannello Filament `rating/admin`; Pest su DB usa-e-getta: 182 falliti per `SQLiteDatabaseDoesNotExistException`.
 - Link rotti negli indici (criterio audit): 59 -> 0. Story: `stories/docs-rating-verifica-ingressi.story.md`.
+
+## 2026-11-25 — manuals + dashboard widget
+
+- Creato `docs/manuals/manuale-utente.md` con screenshot reali `rating/admin`.
+- Fix dashboard vuota → `RatingPanelStatsOverviewWidget` ([rating-panel-dashboard.md](../rating-panel-dashboard.md)).
+- Risolti marker merge (preferenza laraxot/dev).
+- Canon root: `docs/wiki/rules/module-documentation.md` MANUALS-001.

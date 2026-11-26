@@ -10,9 +10,10 @@ use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
 use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Models\Contracts\RatingContract;
+use Modules\Rating\Models\Traits\HasRatingsTrait;
 
 /**
- * Decorazione **standard** dei campi rating costruiti da {@see \Modules\Rating\Models\Traits\HasRatingsTrait}.
+ * Decorazione **standard** dei campi rating costruiti da {@see HasRatingsTrait}.
  *
  * Per page Filament che implementano {@see RatingsFormCallerContract}:
  * applica l'etichetta condivisa ({@see RatingData::formFieldLabel()}) a `Fieldset`

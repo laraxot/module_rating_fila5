@@ -12,7 +12,7 @@ qmd: "HasRatingsTrait::static anti-pattern RatingData Spatie Data"
 related:
   - ../../bmad/architecture/rating-entity-helpers-home-in-ratingdata.md
   - ../../bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
-  - ../../../../../../bashscripts/ai/wiki/memories/improve-migliorabile-bugs-always-bmad.md
+  - ../../../../../../bashscripts/ai/wiki/memories/bmad-workflow.md#improve-migliorabile-bugs-always-bmad
 ---
 
 # Anti-pattern: `HasRatingsTrait::foo()`

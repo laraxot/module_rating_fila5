@@ -47,3 +47,10 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 3. Aggiorna questo indice se la Memories e' ricorrente
 4. Committa: `docs: add memories <nome>`
 
+## Contenuto fuso da `index.md`
+
+> Vedi anche → [Trigger Map](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
+
+- La sorgente di verita' per le Memories e' sempre il wiki locale
+- Non embeddare Memories nei prompt di avvio
+- Per Memories globali, consulta il [wiki root](../../../../../../docs/wiki/memories/INDEX.md)

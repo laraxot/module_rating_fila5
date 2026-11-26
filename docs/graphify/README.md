@@ -1,3 +1,8 @@
+---
+title: "Graphify Knowledge Graph"
+type: note
+qmd: "graphify knowledge graph"
+---
 # Graphify Knowledge Graph
 
 ## Overview

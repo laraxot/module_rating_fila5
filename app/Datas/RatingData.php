@@ -119,7 +119,11 @@ class RatingData extends Data
      */
     public static function formFieldLabel(RatingContract $rating): string
     {
-        return strip_tags((string) ($rating->txt ?? $rating->title));
+        // `txt` vuoto (non null) su alcuni criteri: `??` non ripiegava sul titolo e
+        // l'intestazione XLS diventava "Rating {id}".
+        $txt = strip_tags((string) ($rating->txt ?? ''));
+
+        return $txt !== '' ? $txt : strip_tags((string) ($rating->title ?? ''));
     }
 
     /**

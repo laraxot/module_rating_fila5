@@ -122,7 +122,7 @@ cambia?»*.
 
 Le prime quattro righe sono un contratto. Le ultime due sono una convenzione nascosta in una
 stringa italiana. Ed è già una story aperta:
-[`IndennitaResponsabilita/18.49`](../../../../IndennitaResponsabilita/docs/stories/18.49.campi-calcolati-riconosciuti-dal-titolo.story.md)
+[`IndennitaResponsabilita/18.49`](../../../../IndennitaResponsabilita/docs/stories/0059-campi-calcolati-riconosciuti-dal-titolo.story.md)
 - «i campi calcolati si riconoscono dal titolo, e il flag c'è già».
 
 ## La tensione che l'estrazione costringe a chiudere: l'etichetta
@@ -175,5 +175,5 @@ in perdita.
 ## Collegamenti
 
 - [Workflow: estrarre uno schema Filament condiviso](../../workflows/estrarre-uno-schema-filament-condiviso.md)
-- [18.49: i campi calcolati si riconoscono dal titolo](../../../../IndennitaResponsabilita/docs/stories/18.49.campi-calcolati-riconosciuti-dal-titolo.story.md)
-- [5.90: resolveRatingClass e il meccanismo della piattaforma](../../stories/5.90.resolve-rating-class-guardia-e-rationale.story.md)
+- [18.49: i campi calcolati si riconoscono dal titolo](../../../../IndennitaResponsabilita/docs/stories/0059-campi-calcolati-riconosciuti-dal-titolo.story.md)
+- [5.90: resolveRatingClass e il meccanismo della piattaforma](../../stories/0046-resolve-rating-class-guardia-e-rationale.story.md)

@@ -2,66 +2,100 @@
 title: "Manuale utente — Rating"
 type: user-manual
 status: active
-screenshot: assets/front-office-home.png
+module: Rating
+screenshot: assets/rating-admin-dashboard.webp
+updated: 2026-11-25
+qmd: "manuale utente rating filament admin screenshot reali criteri voto morph"
 ---
 
-> Screenshot reale del front office FixCity, verificato il 23 novembre 2026. Per questo modulo è una superficie condivisa: il manuale non attribuisce al modulo una UI propria se non documentata dalle fonti.
+# Manuale d'uso — Rating
 
-![Screenshot reale del front office](assets/front-office-home.png)
+Rating gestisce i **criteri di voto** (tabella `ratings`) e i **voti** assegnati dagli utenti a qualunque modello valutabile
+(tabella `rating_morph`). L'interfaccia è il pannello Filament `rating/admin`; il modulo non ha pagine di front office.
 
-# Modulo Rating
+> **Come sono fatte le immagini.** Sono catture reali del pannello, fatte con `bashscripts/tools/docs/manual-screenshots.mjs`
+> su un'istanza di prova isolata (database usa-e-getta, utente sintetico), non sull'ambiente di sviluppo. Ogni cattura è registrata
+> in `screenshots.json` con data, esito HTTP e impronta sha256. Le tabelle di prova sono vuote: dove vedi «Nessun risultato» non
+> è un errore. Per rifarle: `node bashscripts/tools/docs/manual-screenshots.mjs Rating` (istruzioni in
+> `bashscripts/docs/operations/manual-screenshots.md`).
 
-## Scopo
+## Accesso
 
-Rating permette a un utente autenticato di valutare un modello che implementa
-`HasRatingContract`/`HasRatingsTrait`. Mantiene la relazione polimorfica, una
-valutazione per coppia utente/entità, aggregazioni e gestione amministrativa
-tramite Filament.
+Apri `/rating/admin/login` e accedi con un account abilitato al pannello (ad esempio `super-admin`).
 
-## Matrice attori
+![Accesso al pannello Rating](assets/rating-admin-login.webp)
 
-| Attore | Accesso o responsabilità verificata |
+Il menu laterale ha tre gruppi: **Gestione Rating** (Rating Morph), **Opzioni di voto** (Rating) e **Configurazione**
+(Impostazioni), più il collegamento «Pannello principale». I numeri accanto alle voci sono i conteggi delle righe.
+
+## Dashboard
+
+![Dashboard Rating](assets/rating-admin-dashboard.webp)
+
+Due schede: **Criteri di voto** (righe della tabella `ratings`) e **Collegamenti morph** (righe della tabella `rating_morph`).
+Sono contatori: non hanno filtri né azioni.
+
+## Criteri di voto (`/rating/admin/ratings`)
+
+![Elenco dei criteri di voto](assets/rating-admin-ratings.webp)
+
+Colonne: **ID, Titolo, Indirizzo (slug), Regola, Disattivato, Sola lettura, Ordine, Creato il**. Hai la ricerca, la scelta delle
+colonne visibili e il cambio di visualizzazione della tabella.
+
+### Nuovo criterio
+
+![Nuovo criterio di voto](assets/rating-admin-ratings-create.webp)
+
+| Campo | Cosa fa |
 |---|---|
-| Ospite | N/A: la valutazione richiede un utente autenticato. |
-| Utente autenticato | Può creare valutazioni tramite il contratto/trait integrato nel modello consumer; per i record morph può anche vedere/modificare il proprio record quando la policy lo riconosce come proprietario. |
-| Gruppo/ruolo | `evaluator` può vedere e creare; sui record morph può aggiornare o cancellare il proprio record. `hr-manager` può creare/aggiornare. |
-| Admin | Può vedere, creare, aggiornare e cancellare secondo `RatingPolicy`/`RatingMorphPolicy`. |
-| Super-admin | Può eseguire tutte le abilità, inclusi restore e force delete. |
-| Operatore | N/A. |
+| **Titolo** (obbligatorio) | Nome con cui il criterio compare nelle valutazioni. |
+| **Colore** | Selettore di colore del criterio. |
+| **Regola** | Intervallo di voti ammessi: Nessuna regola · Da 0 a 4 · Da 0 a 5 · Da 0 a 6 · O zero o da 4 a 25 · Da 0 a 25, facoltativo. |
+| **Criterio padre** | Criterio di livello superiore, se esiste. L'elenco non propone il criterio stesso né i suoi discendenti, così non si creano cicli. |
+| **Disattivato** | Un criterio disattivato non è più proposto nelle valutazioni. |
+| **Sola lettura** | Un criterio in sola lettura mostra i voti ma non li accetta. |
+| **Testo** | Descrizione estesa, in un editor di testo (in fondo alla pagina). |
 
-## Flussi reali
+Le regole sono quelle dell'enum `RuleEnum`.
 
-1. Un modulo consumer aggiunge il trait Rating al proprio modello.
-2. L'utente autenticato invia il voto tramite le Actions del modulo consumer o
-   l'integrazione UI disponibile.
-3. La regola di unicità aggiorna il voto esistente invece di crearne un doppio.
-4. Le medie e i conteggi sono usati dalla UI e dall'amministrazione.
-5. Admin, `hr-manager`, `evaluator` e super-admin operano sulle Resource
-   Filament secondo le policy; restore e force delete restano del super-admin.
+## Voti (`/rating/admin/rating-morphs`)
 
-## Prerequisiti
+![Elenco dei voti](assets/rating-admin-rating-morphs.webp)
 
-- Modulo User e utente autenticato per la creazione.
-- Modello consumer compatibile con il contratto/trait Rating.
-- Tabelle e migrazioni Rating disponibili.
-- Ruoli applicativi coerenti con le policy per il back office.
+Colonne: **ID, Titolo criterio, ID criterio, ID utente, Tipo elemento valutato, ID elemento valutato, Voto, Nota, Vincente, Premio,
+Creato il**. Il pulsante in alto è **Nuovo voto**.
 
-## Limiti
+### Nuovo voto
 
-- Il modulo non espone route web/API proprie operative: i file route sono
-  vuoti; l'integrazione passa da consumer, Actions e Filament.
-- Rating non importa i moduli consumer: il verso della dipendenza è consumer →
-  Rating.
-- `admin` e `hr-manager` non hanno tutti i poteri del super-admin; restore e
-  force delete sono esplicitamente riservati a quest'ultimo.
+![Nuovo voto](assets/rating-admin-rating-morphs-create.webp)
 
-## Link a codice/docs
+Il modulo ha solo tre campi: **Criterio** (a quale criterio si riferisce il voto), **Voto** e **Nota** (facoltativa). Utente,
+tipo e identificativo dell'elemento valutato **non** si inseriscono qui: li scrive il contesto che registra il voto
+(`BaseRatingMorphForm`). La percentuale non è un campo: è calcolata dai voti (`HasRating`).
 
-- [README](README.md)
-- [Architettura](architecture.md)
-- [Policy rating](../app/Models/Policies/RatingPolicy.php)
-- [Policy rating morph](../app/Models/Policies/RatingMorphPolicy.php)
-- [Trait consumer](../app/Models/Traits/HasRatingsTrait.php)
-- [Resource rating](../app/Filament/Resources/RatingResource.php)
-- [Impostazioni](../app/Filament/Pages/SettingPage.php)
+## Impostazioni (`/rating/admin/setting`)
 
+![Impostazioni](assets/rating-admin-setting.webp)
+
+La pagina esiste in ogni modulo per uniformità. Per Rating non ci sono ancora valori da cambiare, quindi mostra solo il
+pulsante **Salva** (scelta registrata nella story `0101`).
+
+## Cose da sapere
+
+- **Due pulsanti «Nuovo» nelle liste.** Compaiono uno in alto e uno nella barra della tabella: è un comportamento comune a tutte le
+  liste dei moduli Xot (`HasXotTable::getTableHeaderActions` e `XotBaseListRecords::getHeaderActions`), non un difetto di Rating.
+  Fanno la stessa cosa.
+- **Le schede della dashboard citano i nomi delle tabelle** («Righe nella tabella ratings»): testo tecnico, pensato per chi amministra.
+- **Solo italiano.** I testi di `rating_morph` e `rating_morphs` esistono solo in `lang/it`.
+
+## Per chi sviluppa
+
+I modelli che ricevono voti usano i trait `HasRating` / `HasRatingsTrait` e, per i «mi piace», `HasLikes`: non hanno interfaccia
+in questo pannello.
+
+## Fonti
+
+- `app/Providers/Filament/AdminPanelProvider.php`, `app/Filament/Pages/Dashboard.php`, `app/Filament/Pages/SettingPage.php`
+- `app/Filament/Resources/RatingResource.php` e `RatingMorphResource` (`Schemas/BaseRatingForm.php`, `Schemas/BaseRatingMorphForm.php`)
+- `app/Enums/RuleEnum.php`, `lang/it/rating_morph_form.php`, `lang/it/rating_morphs.php`
+- `docs/rating-panel-dashboard.md`

@@ -44,4 +44,4 @@ Contratto: ECC non sostituisce AGENTS.md/BMAD. Ogni finding → story BMAD, lock
 
 ## Riferimenti
 
-[00-index](./00-index.md) · [BMAD audit](../bmad/audit.md) · [story](../bmad/stories/module-bmad-audit.story.md)
+[00-index](./00-index.md) · [BMAD audit](../bmad/audit.md) · [story](../bmad/stories/0066-module-bmad-audit.story.md)
