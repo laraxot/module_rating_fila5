@@ -3,7 +3,7 @@ title: "ADR — Opzioni e voti nella stessa pivot rating_morph, distinti da user
 type: decision
 status: accepted
 created: 2026-11-24
-updated: 2026-11-24
+updated: 2026-11-26
 module: Rating
 tags: [adr, rating, pivot, rating_morph, legacy]
 related:
@@ -31,6 +31,11 @@ Il codice che legge lo dà per scontato ovunque: `GetRatingOptsByModelAction` e 
 `wherePivot('user_id', null)`; `GetSumByModelRatingIdAction`, `GetCountByModelRatingIdAction`,
 `HasRating::getBettingUsers()`, `getVolumeCredit()` filtrano `user_id != null`. Come si distingue un'opzione da un voto?
 
+
+## Driver della decisione
+
+- Opzioni di voto e voti condividono il perimetro morph senza due pivot divergenti.
+- Il codice nuovo non deve inventare una seconda tabella di voto per lo stesso soggetto.
 ## Decisione
 
 - In `rating_morph`, `user_id IS NULL` = l'opzione (il criterio è attivo su quel model); `user_id IS NOT NULL` = un voto.
@@ -54,7 +59,7 @@ Il codice che legge lo dà per scontato ovunque: `GetRatingOptsByModelAction` e 
 - Debito: `HasRating::getRatingsPercentageByUser()` e `getVolumeCredit()` interrogano `RatingMorph` per `model_id`
   senza filtrare `model_type` (due model diversi con lo stesso id si mescolano).
 
-## Verifica
+## Conferma
 
 - `cd laravel && vendor/bin/pest Modules/Rating/tests --group=RATING-VOTES-SUM-INV-1` e
   `--group=RATING-VOTES-COUNT-INV-1`: falliscono se somma o conteggio non filtrano `user_id != null`.
