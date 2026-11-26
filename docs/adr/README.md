@@ -2,20 +2,23 @@
 title: "ADR — Rating"
 type: index
 owner: Rating
-updated: 2026-11-24
+updated: 2026-11-26
 qmd: "Rating ADR architecture decision record MADR formato valutazioni polimorfiche"
 ---
 
 # ADR — Rating
 
-Un ADR del modulo Rating registra una scelta difficile da invertire, sorprendente o frutto di un trade-off reale sulle valutazioni polimorfiche e sui dati di performance. Ogni affermazione ha un file di prova. Template condiviso: [0000-template](../../../Xot/docs/adr/0000-template.md); standard: [Xot ADR](../../../Xot/docs/adr/README.md).
+Un ADR del modulo Rating registra una scelta difficile da invertire sulle valutazioni polimorfiche.
+Template: [0000-template](0000-template.md). Standard trasversale: [Xot ADR](../../../Xot/docs/adr/README.md).
 
-## Formato MADR
+## Formato
 
-Frontmatter (`title`, `type: decision`, `status`, `created`, `updated`, `decision-makers`, `module`, `qmd`) e sezioni nell'ordine: `## Contesto`, `## Driver della decisione`, `## Alternative scartate`, `## Decisione`, `## Conseguenze`, `## Conferma`. Nome file in kebab-case senza data né numero.
+Sezioni substantive (workshop laravelday / MADR FixCity): `## Contesto`, `## Driver della decisione`,
+`## Alternative scartate`, `## Decisione`, `## Conseguenze`, `## Conferma`. Nome file kebab-case senza data.
 
 ## ADR presenti
 
-Elenco con stato: [INDEX.md](index.md). Nessun ADR nuovo in questa passata: la scelta dimostrabile dal codice (relazione `morphToMany` e lettura di entrambe le forme di `model_type` in `HasRatingsTrait`) è già in [rating-is-polymorphic](rating-is-polymorphic.md) e [rating-is-domain-feedback](rating-is-domain-feedback.md).
+- [Contratti model in Models/Contracts](0001-model-contracts-live-in-models-contracts.md) — interfacce vicino ai model.
+- [Opzioni e voti nella stessa pivot `rating_morph`](0002-rating-morph-options-and-votes-same-pivot.md) — `user_id` null = opzione, non null = voto (**substantive**).
 
-Policy trasversale su dati sacri e test isolati: [0013-dati-sacri-migrazioni-e-test](../../../Xot/docs/adr/0013-dati-sacri-migrazioni-e-test.md).
+Policy dati/test: [0013-dati-sacri-migrazioni-e-test](../../../Xot/docs/adr/0013-dati-sacri-migrazioni-e-test.md).

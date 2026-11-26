@@ -19,3 +19,4 @@ Per le Action: frontmatter `type: contract` e `action: "Modules\\Rating\\Actions
 - [get-sum-by-model-rating-id-action](get-sum-by-model-rating-id-action.md)
 - [get-count-by-model-rating-id-action](get-count-by-model-rating-id-action.md)
 - [rating-morph-policy](rating-morph-policy.md) (policy-contract)
+- [get-rating-opts-by-model-action.md](get-rating-opts-by-model-action.md)
