@@ -66,21 +66,21 @@ describe('HasRatingsTrait::ratingMorphTypes', function (): void {
 
         Assert::assertSame([MORPH_TYPES_TEST_ALIAS, RatingsHostStub::class], $types);
         Assert::assertNotContains(RatingsHostStiChildStub::class, $types);
-    });
+    })->group('RATING-WRITE-INV-8');
 
     test('figlio STI senza alias: solo il FQCN del padre', function (): void {
         Assert::assertSame([RatingsHostStub::class], (new RatingsHostStiChildStub)->ratingMorphTypes());
-    });
+    })->group('RATING-WRITE-INV-8');
 
     test('host non STI con alias: alias e FQCN', function (): void {
         aliasRatingsHostStub();
 
         Assert::assertSame([MORPH_TYPES_TEST_ALIAS, RatingsHostStub::class], (new RatingsHostStub)->ratingMorphTypes());
-    });
+    })->group('RATING-WRITE-INV-8');
 
     test('host non STI senza alias: un solo FQCN, nessun duplicato', function (): void {
         Assert::assertSame([RatingsHostStub::class], (new RatingsHostStub)->ratingMorphTypes());
-    });
+    })->group('RATING-WRITE-INV-8');
 });
 
 describe('HasRatingsTrait::ratings_by_id fra le due forme', function (): void {
@@ -153,7 +153,7 @@ describe('HasRatingsTrait: chi scrive il pivot invalida le relazioni caricate', 
 
         Assert::assertFalse($host->relationLoaded('ratings'));
         Assert::assertFalse($host->relationLoaded('ratingMorphs'));
-    });
+    })->group('RATING-WRITE-INV-5');
 
     test('clearEvaluation scarica ratings e ratingMorphs dopo la scrittura', function (): void {
         /** @var HasMany<MorphPivot, RatingsHostStub>&MockInterface $relation */
@@ -173,5 +173,5 @@ describe('HasRatingsTrait: chi scrive il pivot invalida le relazioni caricate', 
 
         Assert::assertFalse($host->relationLoaded('ratings'));
         Assert::assertFalse($host->relationLoaded('ratingMorphs'));
-    });
+    })->group('RATING-WRITE-INV-5');
 });

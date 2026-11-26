@@ -118,7 +118,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host->syncRatingsFormData([
             7 => ['pivot' => ['value' => 5, 'note' => 'ok']],
         ]);
-    });
+    })->group('RATING-WRITE-INV-1', 'RATING-WRITE-INV-6');
 
     test('normalizza a null la chiave "other" (altro), mai a zero', function (): void {
         $host = new RatingsHostStub;
@@ -129,7 +129,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host->syncRatingsFormData([
             8 => ['pivot' => ['value' => 'other', 'note' => 'motivo']],
         ]);
-    });
+    })->group('RATING-WRITE-INV-2');
 
     test('normalizza a null un valore non numerico, mai a zero', function (): void {
         $host = new RatingsHostStub;
@@ -140,7 +140,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host->syncRatingsFormData([
             9 => ['pivot' => ['value' => 'garbage']],
         ]);
-    });
+    })->group('RATING-WRITE-INV-2', 'RATING-WRITE-INV-6');
 
     test('value null resta null (nessuna scelta), mai a zero', function (): void {
         $host = new RatingsHostStub;
@@ -151,7 +151,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host->syncRatingsFormData([
             10 => ['pivot' => ['value' => null]],
         ]);
-    });
+    })->group('RATING-WRITE-INV-2');
 
     test('se nessuna pivot esiste per questo host, attach una sola volta', function (): void {
         $host = new RatingsHostStub;
@@ -167,7 +167,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
         $host->syncRatingsFormData([
             11 => ['pivot' => ['value' => 3]],
         ]);
-    });
+    })->group('RATING-WRITE-INV-3');
 });
 
 describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function (): void {
@@ -185,7 +185,7 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
         $host->forcedHasMany = $relation;
 
         $host->clearEvaluation();
-    });
+    })->group('RATING-WRITE-INV-7');
 
     test('clearRatingsFormData delega a clearEvaluation (stesso scope model_id)', function (): void {
         /** @var HasMany<MorphPivot, RatingsHostStub>&MockInterface $relation */
@@ -201,5 +201,5 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
         $host->forcedHasMany = $relation;
 
         $host->clearRatingsFormData(null);
-    });
+    })->group('RATING-WRITE-INV-7');
 });

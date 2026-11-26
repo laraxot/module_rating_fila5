@@ -38,7 +38,7 @@ describe('HasRating Actions', function (): void {
         $count = $action->execute(ratingMockHost($relation), '7');
 
         Assert::assertSame(4.0, $count);
-    })->group('RATING-VOTES-COUNT-INV-1', 'RATING-VOTES-COUNT-INV-2');
+    })->group('RATING-VOTES-COUNT-INV-1', 'RATING-VOTES-COUNT-INV-2', 'RATING-VOTES-COUNT-INV-3');
 
     test('GetSumByModelRatingIdAction somma i punti pivot', function (): void {
         $relation = Mockery::mock(MorphToMany::class);
@@ -49,7 +49,7 @@ describe('HasRating Actions', function (): void {
         $sum = $action->execute(ratingMockHost($relation));
 
         Assert::assertSame(12.5, $sum);
-    })->group('RATING-VOTES-SUM-INV-1');
+    })->group('RATING-VOTES-SUM-INV-1', 'RATING-VOTES-SUM-INV-4');
 
     test('GetSumByModelRatingIdAction filtra per rating_id quando passato', function (): void {
         $relation = Mockery::mock(MorphToMany::class);

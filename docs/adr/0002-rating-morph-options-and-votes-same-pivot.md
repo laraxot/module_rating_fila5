@@ -5,9 +5,9 @@ status: accepted
 created: 2026-11-24
 updated: 2026-11-26
 module: Rating
+decision-makers: [team Laraxot]
 tags: [adr, rating, pivot, rating_morph, legacy]
 related:
-  - ../criteri-a-scelta-multipla.md
   - ../contracts/get-sum-by-model-rating-id-action.md
   - ../contracts/get-count-by-model-rating-id-action.md
   - ../contracts/get-rating-opts-by-model-action.md
@@ -34,19 +34,20 @@ Il codice che legge lo dà per scontato ovunque: `GetRatingOptsByModelAction` e 
 
 ## Driver della decisione
 
-- Opzioni di voto e voti condividono il perimetro morph senza due pivot divergenti.
+- Opzioni di voto e voti condividono il perimetro morph (`rating_morph`) senza due pivot divergenti: una tabella, una relazione `ratings()` per host.
+- Nessuna migrazione dei dati dei moduli che usano Rating su connessioni diverse.
 - Il codice nuovo non deve inventare una seconda tabella di voto per lo stesso soggetto.
+
 ## Decisione
 
 - In `rating_morph`, `user_id IS NULL` = l'opzione (il criterio è attivo su quel model); `user_id IS NOT NULL` = un voto.
 - Ogni lettura di aggregati (somma, conteggio, percentuali) **deve** escludere le righe senza utente; ogni lettura delle
   opzioni **deve** escludere quelle con utente. Le Action di `app/Actions/HasRating/` incapsulano i due filtri.
 
-## Alternative considerate
+## Alternative scartate
 
 - **Tabella separata per le opzioni** (`rating_options` o colonna JSON sul model): più chiara, ma richiede di
-  migrare i dati di tutti i moduli che usano Rating su connessioni diverse; valutata in
-  `../criteri-a-scelta-multipla.md` per le opzioni dei criteri a scelta, non decisa.
+  migrare i dati di tutti i moduli che usano Rating su connessioni diverse; la valutazione per le opzioni dei criteri a scelta non e' documentata (vedi «Stato attuale»).
 - **Colonna `kind` esplicita**: renderebbe leggibile la distinzione senza cambiare tabella; non fatta perché nessuna
   query esistente la userebbe e andrebbe valorizzata su dati storici.
 - **Lo stato attuale** (scelto per continuità): nessuna migrazione, ma la semantica sta nel valore nullo di una FK.
@@ -58,6 +59,15 @@ Il codice che legge lo dà per scontato ovunque: `GetRatingOptsByModelAction` e 
 - Cattivo: un voto anonimo (senza utente) non è rappresentabile: diventerebbe un'opzione.
 - Debito: `HasRating::getRatingsPercentageByUser()` e `getVolumeCredit()` interrogano `RatingMorph` per `model_id`
   senza filtrare `model_type` (due model diversi con lo stesso id si mescolano).
+
+## Stato attuale
+
+Letto dal codice il 2026-11-26 (nessun test eseguito):
+
+- **Il percorso di scrittura del trait non rispetta la convenzione.** `HasRatingsTrait::syncRatingsFormData()` crea la pivot con `attach($id, ['value' => ...])` senza `user_id` (righe 527-540); nessun hook dei model pivot lo imposta. Una riga creata cosi' ha `user_id` nullo e, per questa convenzione, e' un'opzione: esclusa da somma e conteggio, inclusa da `GetRatingOptsByModelAction`.
+  Dettaglio nel contratto [has-ratings-trait](../contracts/has-ratings-trait.md); decisione umana aperta.
+- `../criteri-a-scelta-multipla.md`, citato in `related` e nelle Alternative, non esiste nel modulo (`find docs -iname '*criteri*'` e' vuoto): la valutazione di una tabella separata per le opzioni non e' documentata.
+- Il debito citato nelle Conseguenze e' reale: `getBettingUsers()`, `getRatingsPercentageByUser()` e `getVolumeCredit()` di `app/Models/Traits/HasRating.php` interrogano `RatingMorph::where('model_id', ...)` senza `model_type`.
 
 ## Conferma
 
