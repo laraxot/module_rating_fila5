@@ -1,39 +1,15 @@
 ---
 title: "Contratti — Rating"
 type: index
-<<<<<<< .merge_file_oAgQow
-tags: [contracts, actions, rating]
-created: 2026-11-18
-updated: 2026-11-24
-=======
 owner: Rating
 tags: [contracts, actions, rating, pivot]
 created: 2026-11-18
 updated: 2026-11-26
 qmd: "Rating contract comportamentali valutazioni dati personali policy aggregazioni invarianti RATING-INV"
->>>>>>> .merge_file_6MFFYb
 ---
 
 # Contratti — Rating
 
-<<<<<<< .merge_file_oAgQow
-Le Action di Rating sono letture, ma portano la regola che più facilmente si rompe: separare i **voti** (pivot con
-`user_id`) dalle **opzioni** (pivot senza `user_id`). I contratti dicono quale delle due righe ogni Action legge.
-Le interfacce in `app/Contracts` e `app/Models/Contracts` sono documentate nei loro docblock e in
-`../dove-vive-un-contratto.md`.
-
-**Quando leggerli**: prima di usare questi aggregati in un widget o in un export, o di scriverne uno nuovo.
-
-Formato (6 sezioni, tabella invarianti con ID e group Pest, `@contract` nel docblock):
-[action-behavioral-contract](../../../Xot/docs/rules/action-behavioral-contract.md). Un'invariante con group si
-verifica con `vendor/bin/pest Modules/Rating/tests --group=<ID>`; `—` è debito dichiarato.
-
-## Contratti
-
-- [GetSumByModelRatingIdAction](get-sum-by-model-rating-id-action.md) — somma dei `value` dei voti di un model, per criterio o totale.
-- [GetCountByModelRatingIdAction](get-count-by-model-rating-id-action.md) — numero dei voti di un model, per criterio o totale.
-- [GetRatingOptsByModelAction](get-rating-opts-by-model-action.md) — i criteri attivi su un model, id → titolo.
-=======
 Un contratto descrive un'operazione di Rating che tocca valutazioni (dati personali di performance) o ne regola l'accesso. Documenta il comportamento **implementato**, difetti compresi (sezione «Limiti noti»).
 Standard: [contract-authoring-standard](../../../Xot/docs/contracts/contract-authoring-standard.md); governance: [ADR 0012](../../../Xot/docs/adr/0012-behavioral-contract-governance.md); regola: [action-behavioral-contract](../../../Xot/docs/rules/action-behavioral-contract.md).
 
@@ -83,4 +59,11 @@ Action e punti di scrittura senza contratto (lo script di audit non ne conta alt
 | RATING-OPTS-INV-3 | Un'opzione con titolo `null` e un id passato come stringa: l'Action restituisce `null` e chiave intera (oggi il mock restituisce gia' i tipi giusti). |
 | RATING-WRITE-INV-4 | `syncRatingsFormData` e `clearEvaluation` su un host non salvato: `expect(...)->toThrow(LogicException::class)`. |
 | Tutti | Un test con database vero (sqlite) che crei opzioni e voti e provi somma, conteggio e scrittura; oggi nessuna prova passa da `rating_morph` reale. Vedi anche il limite sul `user_id` mancante in [has-ratings-trait](has-ratings-trait.md). |
->>>>>>> .merge_file_6MFFYb
+
+## Harness minimo: ownership, evidenza e recupero (2026-11-27)
+
+I contratti di **module_rating_fila5** restano accanto alle Action, interfacce o superfici di questo package; root e Xot definiscono lo standard, non copiano le promesse. Un contratto comportamentale esplicita **Input, Output, Invarianti, Effetti collaterali, Errori, Non fa**; ogni ID di invariante punta a un group Pest effettivo oppure segnala `non dimostrata`. Se esiste la classe, il docblock deve rimandare al file con `@contract` e `@see`; per temi senza classi PHP non inventare Action/contratti.
+
+- [Standard Xot](https://github.com/laraxot/module_xot_fila5/blob/dev/docs/contracts/contract-authoring-standard.md) · [ownership root](https://github.com/laraxot/base_ptvx_fila5/blob/dev/docs/adr/0001-harness-minimo-e-ownership.md) · [runbook ECC/Second Brain](https://github.com/laraxot/base_ptvx_fila5/blob/dev/docs/harness/README.md).
+- **BMAD**: prima di cambiare una promessa, fissa nella story owner scope, esclusioni, evidenza e approvazioni richieste.
+- **ECC**: i marker di merge rendono invalido l'indice; citare una suite non significa averla eseguita. Distingui `pass`, `fail`, `non eseguito` e registra il debito in [rollout #15](https://github.com/laraxot/base_ptvx_fila5/issues/15).
