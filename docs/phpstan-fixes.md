@@ -2,6 +2,7 @@
 created: 2026-01
 ---
 
+<<<<<<< .merge_file_TXfdVX
 # PHPStan Fixes - Modulo Rating
 
 ## Wave 2026-11-17 — 172 → 0
@@ -9,6 +10,21 @@ created: 2026-01
 Verify: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating Modules/Lang --memory-limit=-1 --error-format=raw` → **0**.
 
 Root causes: Eloquent PHPDoc `Builder<static>` (no Larastan in neon); `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
+=======
+# PHPStan — Modulo Rating (canonico)
+
+> Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
+
+## Scopo
+
+Far analizzare Rating al gate max **senza** nascondere errori: i fallimenti PHPStan qui di solito segnalano contratti MorphToMany/`HasRating` o harness test sbagliati, non “rumore di tipo”.
+
+## Wave 2026-11-17 — 172 → 0
+
+Verify (quando host non saturo): `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --memory-limit=-1 --error-format=raw` → **0**.
+
+Root causes: Eloquent PHPDoc `Builder<static>`; `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
+>>>>>>> .merge_file_9kDWdv
 
 See also: [wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md).
 

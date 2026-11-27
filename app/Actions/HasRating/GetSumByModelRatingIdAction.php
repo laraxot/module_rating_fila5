@@ -7,6 +7,11 @@ namespace Modules\Rating\Actions\HasRating;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
+/**
+ * Somma dei voti (pivot con user_id) di un model, per criterio o totale.
+ *
+ * @contract docs/contracts/get-sum-by-model-rating-id-action.md
+ */
 class GetSumByModelRatingIdAction
 {
     use QueueableAction;

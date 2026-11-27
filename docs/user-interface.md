@@ -1,3 +1,17 @@
+---
+issues: []
+discussions: []
+title: "User Interface"
+type: guide
+tags: [user, interface, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "user interface"
+related:
+  - "./user-research.md"
+status: draft
+---
+
 ## User Interface - Modulo Rating
 
 - Le risorse Filament espongono le traduzioni da `rating::` secondo la struttura espansa.

@@ -7,24 +7,30 @@ namespace Modules\Rating\Actions\HasRating;
 use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
+/**
+ * Criteri attivi su un model (pivot senza user_id), id => titolo.
+ *
+ * @contract docs/contracts/get-rating-opts-by-model-action.md
+ */
 class GetRatingOptsByModelAction
 {
     use QueueableAction;
 
     /**
-     * Options id=>title for ratings linked to the host without a betting user.
-     *
-     * @return array<int|string, string>
+     * @return array<int, string|null>
      */
     public function execute(HasRatingContract $model): array
     {
-        $options = [];
-        foreach ($model->ratings()->wherePivot('user_id', null)->get() as $rating) {
-            if (is_string($rating->title) && '' !== $rating->title) {
-                $options[$rating->id] = $rating->title;
-            }
+        $result = [];
+
+        foreach (
+            $model->ratings()
+                ->wherePivot('user_id', null)
+                ->pluck('title', 'ratings.id') as $ratingId => $title
+        ) {
+            $result[(int) $ratingId] = is_string($title) ? $title : null;
         }
 
-        return $options;
+        return $result;
     }
 }

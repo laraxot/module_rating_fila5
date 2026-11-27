@@ -1,4 +1,5 @@
 ---
+qmd: "rating wiki memories index md"
 title: "Memories Index"
 type: index
 created: 2026-05-11
@@ -13,7 +14,7 @@ related:
 
 Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono caricate **on-demand**.
 
-> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+> Vedi anche → [Trigger Map](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 
 ## Regola
 
@@ -34,7 +35,7 @@ Le Memories progettuali vivono qui, nel wiki del Module **Rating**, e vengono ca
 
 - La sorgente di verita' per le Memories e' sempre il wiki locale
 - Non embeddare Memories nei prompt di avvio
-- Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
+- Per Memories globali, consulta il [wiki root](../../../../../../docs/wiki/memories/INDEX.md)
 
 ## Aggiungere una Nuova MEMORIES
 
