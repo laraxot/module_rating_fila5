@@ -56,3 +56,24 @@ docs/
 - Frontmatter: title, description, tags, created
 - Cross-ref: `Link`
 - NON modificare mai `docs/raw/`
+
+## Contenuto fuso da `schema.md`
+
+```
+docs/
+├── wiki/
+│   ├── index.md           # Catalogo
+│   ├── log.md             # Registro
+│   ├── schema.md          # Questo file
+│   ├── SCHEMA.md          # Questo file (case-duplicate di schema.md)
+│   ├── concepts/          # Pattern, architettura
+│   ├── entities/          # Modelli, azioni
+│   ├── sources/           # Doc esterna
+│   └── comparisons/       # Tabelle comparative
+└── raw/                   # Sorgenti immutable
+```
+
+- File: kebab-case (es. `entity-user.md`)
+- Frontmatter: title, description, tags, created
+- Cross-ref: `[Link](../concepts/name.md)`
+- NON modificare mai `docs/raw/`

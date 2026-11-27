@@ -40,6 +40,10 @@ use Webmozart\Assert\Assert;
  * Perché: un solo punto per relazioni, sync per extra_attributes, regole validazione.
  * Consumer: `@use HasRatingsTrait<static>` sulla classe host.
  *
+ * @see docs/contracts/has-ratings-trait.md
+ *
+ * @contract docs/contracts/has-ratings-trait.md
+ *
  * @template TModel of Model
  *
  * @phpstan-require-extends Model

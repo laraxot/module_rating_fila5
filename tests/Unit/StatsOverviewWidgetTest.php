@@ -21,30 +21,29 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 afterEach(function (): void {
-    \Mockery::close();
+    Mockery::close();
 });
 
 /**
- * @param Collection<int, Rating> $ratings
- *
+ * @param  Collection<int, Rating>  $ratings
  * @return Model&HasRatingContract
  */
 function ratingStatsHost(Collection $ratings): Model
 {
     /** @var MorphToMany<Rating, Model, MorphPivot, 'pivot'>&Mockery\MockInterface $relation */
-    $relation = \Mockery::mock(MorphToMany::class);
+    $relation = Mockery::mock(MorphToMany::class);
     $relation->shouldReceive('wherePivot')->with('user_id', null)->andReturnSelf();
     $relation->shouldReceive('get')->andReturn($ratings);
 
     /** @var Model&HasRatingContract&Mockery\MockInterface $host */
-    $host = \Mockery::mock(Model::class, HasRatingContract::class);
+    $host = Mockery::mock(Model::class, HasRatingContract::class);
     $host->shouldReceive('ratings')->andReturn($relation);
 
     return $host;
 }
 
 test('StatsOverview senza record restituisce array vuoto', function (): void {
-    $widget = new StatsOverview();
+    $widget = new StatsOverview;
     $widget->record = null;
 
     $method = new \ReflectionMethod(StatsOverview::class, 'getStats');
@@ -56,19 +55,19 @@ test('StatsOverview senza record restituisce array vuoto', function (): void {
 });
 
 test('StatsOverview con record costruisce stat per rating e totali', function (): void {
-    $rating = new Rating();
+    $rating = new Rating;
     $rating->forceFill(['id' => 4, 'title' => 'Qualità']);
 
-    $sumAction = \Mockery::mock(GetSumByModelRatingIdAction::class);
+    $sumAction = Mockery::mock(GetSumByModelRatingIdAction::class);
     $sumAction->shouldReceive('execute')->andReturn(12.0, 99.0);
 
-    $countAction = \Mockery::mock(GetCountByModelRatingIdAction::class);
+    $countAction = Mockery::mock(GetCountByModelRatingIdAction::class);
     $countAction->shouldReceive('execute')->andReturn(3.0, 15.0);
 
     app()->instance(GetSumByModelRatingIdAction::class, $sumAction);
     app()->instance(GetCountByModelRatingIdAction::class, $countAction);
 
-    $widget = new StatsOverview();
+    $widget = new StatsOverview;
     $widget->record = ratingStatsHost(collect([$rating]));
 
     $method = new \ReflectionMethod(StatsOverview::class, 'getStats');

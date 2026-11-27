@@ -2,7 +2,7 @@
 qmd: "visual testing playwright puppeteer"
 issues: []
 discussions: []
-title: Visual Testing con Playwright e Puppeteer: Modulo Rating
+title: "Visual Testing con Playwright e Puppeteer: Modulo Rating"
 type: concept
 sources:
   - https://playwright.dev/docs/test-snapshots
@@ -23,7 +23,7 @@ status: draft
 
 Il testing visivo (visual regression testing) permette di rilevare cambiamenti UI non intenzionali confrontando screenshot di riferimento con screenshot attuali.
 
-Per la policy di collocazione dei test: vedi [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md).
+Per la policy di collocazione dei test: vedi [Playwright Testing Policy](../../../../../../bashscripts/ai/wiki/concepts/visual-browser-tooling.md#playwright-testing-policy).
 
 ## Collocazione Test
 
@@ -69,5 +69,5 @@ test('Rating UI renders correctly', async ({ page }) => {
 ## Risorse
 
 - [Playwright Docs](https://playwright.dev/)
-- [Visual Control Mastery](../../../../../../docs/wiki/concepts/visual-control-mastery.md)
-- [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md)
+- [Visual Control Mastery](../../../../../../bashscripts/ai/wiki/concepts/visual-browser-tooling.md#visual-control-mastery)
+- [Playwright Testing Policy](../../../../../../bashscripts/ai/wiki/concepts/visual-browser-tooling.md#playwright-testing-policy)

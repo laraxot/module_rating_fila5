@@ -10,9 +10,9 @@ created: 2026-09-23
 updated: 2026-09-23
 qmd: "RatingContract formFieldLabel ratingFieldName BaseRating Assert implementsInterface closure fn"
 related:
-  - ../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md
-  - ../../../../../../bashscripts/ai/wiki/skills/prefer-contracts-over-abstract-classes.md
-  - ../../../../../../bashscripts/ai/wiki/memories/prefer-contracts-over-abstract-classes.md
+  - ../../../../../../bashscripts/ai/wiki/rules/modules.md
+  - ../../../../../../bashscripts/ai/wiki/skills/prefer.md#prefer-contracts-over-abstract-classes
+  - ../../../../../../bashscripts/ai/wiki/memories/architecture-models-actions.md#prefer-contracts-over-abstract-classes
   - ../../bmad/architecture/rating-entity-helpers-home-in-ratingdata.md
   - ../../bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
   - ../../bmad/stories/5.240-ratingcontract-closures-not-baserating.story.md
@@ -23,7 +23,7 @@ related:
 
 # Rating: applicazione della legge generale
 
-**SSoT progetto:** [`prefer-contracts-over-abstract-classes.md`](../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md)
+**SSoT progetto:** [`architecture-models-actions.md#prefer-contracts-over-abstract-classes`](../../../../../../bashscripts/ai/wiki/rules/modules.md)
 
 Qui solo l’esempio Rating.
 

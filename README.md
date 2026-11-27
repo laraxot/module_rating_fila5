@@ -36,10 +36,9 @@ issues: []
 discussions: []
 ## Scopo e confini
 
-Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo
-estendono `BaseRating` o `BaseRatingMorph`** (Ptv, Performance, Progressioni,
-IndennitaResponsabilita, IndennitaCondizioniLavoro) e `Modules/Ptv/app/Models/BaseScheda.php:111`
-compone `HasRatingsTrait`. Due tabelle sole: `ratings` (il criterio, schemaless) e
+Rating è un modulo di piattaforma, non una foglia: le applicazioni ospitanti
+possono estendere `BaseRating` o `BaseRatingMorph` nei propri moduli verticali
+e comporre `HasRatingsTrait`. Due tabelle sole: `ratings` (il criterio, schemaless) e
 `rating_morph` (il voto, polimorfo). La direzione delle dipendenze è pulita — 38 file
 toccano Xot, 2 Media, **zero** un modulo di dominio.
 

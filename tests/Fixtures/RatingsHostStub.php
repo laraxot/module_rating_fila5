@@ -36,6 +36,9 @@ class RatingsHostStub extends AbstractRatingsHost
     public ?HasMany $forcedHasMany = null;
 
     /**
+     * Stessa firma di `RelationX::morphToManyX()`: il pivot lo deduce il parent per convenzione
+     * (`guessMorphPivot`), `$pivotClass` esplicito ha priorità.
+     *
      * @template TRelatedModel of Model
      * @template TPivot of MorphPivot
      *
@@ -56,7 +59,7 @@ class RatingsHostStub extends AbstractRatingsHost
         ?string $pivotClass = null,
     ): MorphToMany {
         if ($this->forcedMorph instanceof MorphToMany) {
-            /** @var MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'> $forcedMorph */
+            /** @var MorphToMany<TRelatedModel, $this, ($pivotClass is null ? MorphPivot : TPivot), 'pivot'> $forcedMorph */
             $forcedMorph = $this->forcedMorph;
 
             return $forcedMorph;

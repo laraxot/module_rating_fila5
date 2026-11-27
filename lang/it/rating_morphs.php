@@ -2,28 +2,82 @@
 
 declare(strict_types=1);
 
+// Colonne e azioni della lista dei voti (`RatingMorphsTable`, chiave `rating::rating_morphs`).
+// Un `rating_morph` e' il voto di un utente (`user_id`) su un criterio (`rating_id`) per un elemento
+// valutato (`model_type` + `model_id`). Vedi `Modules/Rating/docs/wiki/concepts/xotbase-table-columns-enforcement.md`.
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'rating_id' => ['label' => 'rating_id'],
-        'user_id' => ['label' => 'user_id'],
-        'model_type' => ['label' => 'model_type'],
-        'model_id' => ['label' => 'model_id'],
-        'value' => ['label' => 'value'],
-        'note' => ['label' => 'note'],
-        'is_winner' => ['label' => 'is_winner'],
-        'reward' => ['label' => 'reward'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'rating' => ['label' => 'rating'],
-        'ratingable_type' => ['label' => 'ratingable_type'],
-        'ratingable_id' => ['label' => 'ratingable_id'],
+        'id' => [
+            'label' => 'ID',
+        ],
+        'rating_id' => [
+            'label' => 'ID criterio',
+        ],
+        'user_id' => [
+            'label' => 'ID utente',
+        ],
+        'model_type' => [
+            'label' => 'Tipo elemento valutato',
+        ],
+        'model_id' => [
+            'label' => 'ID elemento valutato',
+        ],
+        'value' => [
+            'label' => 'Voto',
+        ],
+        'note' => [
+            'label' => 'Nota',
+        ],
+        'is_winner' => [
+            'label' => 'Vincente',
+        ],
+        'reward' => [
+            'label' => 'Premio',
+        ],
+        'created_at' => [
+            'label' => 'Creato il',
+        ],
+        'updated_at' => [
+            'label' => 'Aggiornato il',
+        ],
+        'rating' => [
+            'label' => 'Criterio',
+            'title' => [
+                'label' => 'Titolo criterio',
+            ],
+        ],
+        'ratingable_type' => [
+            'label' => 'Tipo elemento valutato',
+        ],
+        'ratingable_id' => [
+            'label' => 'ID elemento valutato',
+        ],
     ],
     'actions' => [
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'delete' => [
+            'label' => 'Elimina',
+            'icon' => 'delete',
+            'tooltip' => 'Elimina',
+        ],
+        'create' => [
+            'label' => 'Nuovo voto',
+            'icon' => 'create',
+            'tooltip' => 'Nuovo voto',
+        ],
+        'layout' => [
+            'label' => 'Layout',
+            'icon' => 'layout',
+            'tooltip' => 'Layout',
+        ],
+        'view' => [
+            'label' => 'Vedi',
+            'icon' => 'view',
+            'tooltip' => 'Vedi',
+        ],
+        'edit' => [
+            'label' => 'Modifica',
+            'icon' => 'edit',
+            'tooltip' => 'Modifica',
+        ],
     ],
 ];
