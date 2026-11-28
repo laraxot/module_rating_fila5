@@ -8,11 +8,7 @@ use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
-<<<<<<< .merge_file_Oj0qv2
- * Somma dei voti (pivot con user_id) di un model, per criterio o totale.
-=======
  * @see docs/contracts/get-sum-by-model-rating-id-action.md
->>>>>>> .merge_file_NdPDam
  *
  * @contract docs/contracts/get-sum-by-model-rating-id-action.md
  */

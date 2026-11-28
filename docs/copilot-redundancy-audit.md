@@ -1,10 +1,4 @@
 ---
-<<<<<<< .merge_file_YYsppQ
-created: 2026-05-25
----
-
-Copilot Redundancy Audit — 2026-05-25
-=======
 issues: []
 discussions: []
 title: "Copilot Redundancy Audit"
@@ -15,11 +9,14 @@ updated: 2026-07-14
 qmd: "copilot redundancy audit"
 related:
   - "./core-functionality.md"
+issues:
+  - "https://github.com/laraxot/platform/issues/272"
+discussions:
+  - "https://github.com/laraxot/platform/discussions/273"
 status: draft
 ---
 
-Copilot Redundancy Audit: 2026-05-25
->>>>>>> .merge_file_KoVpjS
+# Copilot Redundancy Audit — 2026-05-25
 
 Sintesi
 - Documentazione di rating e componenti correlati presente in più posizioni.

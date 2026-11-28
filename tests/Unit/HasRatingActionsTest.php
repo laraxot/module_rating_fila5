@@ -29,11 +29,7 @@ function ratingMockHost(Mockery\MockInterface $relation): HasRatingContract
 
 describe('HasRating Actions', function (): void {
     test('GetCountByModelRatingIdAction conta i pivot con user', function (): void {
-<<<<<<< .merge_file_VirLIv
-        $relation = \Mockery::mock(MorphToMany::class);
-=======
         $relation = Mockery::mock(MorphToMany::class);
->>>>>>> .merge_file_EtyUja
         $relation->shouldReceive('wherePivot')->with('user_id', '!=', null)->once()->andReturnSelf();
         $relation->shouldReceive('wherePivot')->with('rating_id', '7')->once()->andReturnSelf();
         $relation->shouldReceive('count')->with('rating_morph.value')->andReturn(4);
@@ -42,17 +38,10 @@ describe('HasRating Actions', function (): void {
         $count = $action->execute(ratingMockHost($relation), '7');
 
         Assert::assertSame(4.0, $count);
-<<<<<<< .merge_file_VirLIv
-    })->group('RATING-VOTES-COUNT-INV-1', 'RATING-VOTES-COUNT-INV-2');
-
-    test('GetSumByModelRatingIdAction somma i punti pivot', function (): void {
-        $relation = \Mockery::mock(MorphToMany::class);
-=======
     })->group('RATING-VOTES-COUNT-INV-1', 'RATING-VOTES-COUNT-INV-2', 'RATING-VOTES-COUNT-INV-3');
 
     test('GetSumByModelRatingIdAction somma i punti pivot', function (): void {
         $relation = Mockery::mock(MorphToMany::class);
->>>>>>> .merge_file_EtyUja
         $relation->shouldReceive('wherePivot')->with('user_id', '!=', null)->once()->andReturnSelf();
         $relation->shouldReceive('sum')->with('rating_morph.value')->andReturn('12.5');
 
@@ -60,17 +49,10 @@ describe('HasRating Actions', function (): void {
         $sum = $action->execute(ratingMockHost($relation));
 
         Assert::assertSame(12.5, $sum);
-<<<<<<< .merge_file_VirLIv
-    })->group('RATING-VOTES-SUM-INV-1');
-
-    test('GetSumByModelRatingIdAction filtra per rating_id quando passato', function (): void {
-        $relation = \Mockery::mock(MorphToMany::class);
-=======
     })->group('RATING-VOTES-SUM-INV-1', 'RATING-VOTES-SUM-INV-4');
 
     test('GetSumByModelRatingIdAction filtra per rating_id quando passato', function (): void {
         $relation = Mockery::mock(MorphToMany::class);
->>>>>>> .merge_file_EtyUja
         $relation->shouldReceive('wherePivot')->with('user_id', '!=', null)->once()->andReturnSelf();
         $relation->shouldReceive('wherePivot')->with('rating_id', '9')->once()->andReturnSelf();
         $relation->shouldReceive('sum')->with('rating_morph.value')->andReturn(3.0);
@@ -81,11 +63,7 @@ describe('HasRating Actions', function (): void {
     })->group('RATING-VOTES-SUM-INV-1', 'RATING-VOTES-SUM-INV-2');
 
     test('GetSumByModelRatingIdAction restituisce zero se sum non numerico', function (): void {
-<<<<<<< .merge_file_VirLIv
-        $relation = \Mockery::mock(MorphToMany::class);
-=======
         $relation = Mockery::mock(MorphToMany::class);
->>>>>>> .merge_file_EtyUja
         $relation->shouldReceive('wherePivot')->with('user_id', '!=', null)->once()->andReturnSelf();
         $relation->shouldReceive('sum')->with('rating_morph.value')->andReturn(null);
 
@@ -95,11 +73,7 @@ describe('HasRating Actions', function (): void {
     })->group('RATING-VOTES-SUM-INV-3');
 
     test('GetRatingOptsByModelAction mappa id titolo', function (): void {
-<<<<<<< .merge_file_VirLIv
-        $relation = \Mockery::mock(MorphToMany::class);
-=======
         $relation = Mockery::mock(MorphToMany::class);
->>>>>>> .merge_file_EtyUja
         $relation->shouldReceive('wherePivot')->with('user_id', null)->once()->andReturnSelf();
         $relation->shouldReceive('pluck')->with('title', 'ratings.id')->andReturn(collect([
             3 => 'Ottimo',

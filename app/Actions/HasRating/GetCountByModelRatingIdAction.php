@@ -8,11 +8,7 @@ use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
-<<<<<<< .merge_file_bgXgQk
- * Numero dei voti (pivot con user_id) di un model, per criterio o totale.
-=======
  * @see docs/contracts/get-count-by-model-rating-id-action.md
->>>>>>> .merge_file_DdnDbU
  *
  * @contract docs/contracts/get-count-by-model-rating-id-action.md
  */

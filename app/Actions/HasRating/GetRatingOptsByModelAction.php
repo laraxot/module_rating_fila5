@@ -8,11 +8,7 @@ use Modules\Rating\Models\Contracts\HasRatingContract;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
-<<<<<<< .merge_file_9Whcg2
- * Criteri attivi su un model (pivot senza user_id), id => titolo.
-=======
  * @see docs/contracts/get-rating-opts-by-model-action.md
->>>>>>> .merge_file_SPmmQL
  *
  * @contract docs/contracts/get-rating-opts-by-model-action.md
  */

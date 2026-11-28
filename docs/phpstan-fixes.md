@@ -1,8 +1,16 @@
 ---
 created: 2026-01
+title: "Rating PHPStan fixes"
+type: note
+tags: [rating, phpstan, quality]
+updated: 2026-11-17
+qmd: "rating phpstan fixes morphToMany HasRating quality gate"
+issues:
+  - "https://github.com/laraxot/platform/issues/272"
+discussions:
+  - "https://github.com/laraxot/platform/discussions/273"
 ---
 
-<<<<<<< .merge_file_TXfdVX
 # PHPStan Fixes - Modulo Rating
 
 ## Wave 2026-11-17 — 172 → 0
@@ -10,7 +18,6 @@ created: 2026-01
 Verify: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating Modules/Lang --memory-limit=-1 --error-format=raw` → **0**.
 
 Root causes: Eloquent PHPDoc `Builder<static>` (no Larastan in neon); `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
-=======
 # PHPStan — Modulo Rating (canonico)
 
 > Storici: [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md), [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md), [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md). Procedura swarm: [11-phpstan.md](../../../../bashscripts/docs/prompts/11-phpstan.md). Indice: [index.md](index.md).
@@ -23,8 +30,7 @@ Far analizzare Rating al gate max **senza** nascondere errori: i fallimenti PHPS
 
 Verify (quando host non saturo): `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --memory-limit=-1 --error-format=raw` → **0**.
 
-Root causes: Eloquent PHPDoc `Builder<static>`; `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
->>>>>>> .merge_file_9kDWdv
+Root causes: Eloquent PHPDoc `Builder<static>` (no Larastan in neon); `::query()` for where/create; HasRating array/MorphToMany types + `RateableHost`; dead traits removed; migrations `json('extra_attributes')`; Pest `Ensure` + XotBaseTestCase.
 
 See also: [wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md](wiki/troubleshooting/phpstan-generic-limitation-morphtomany.md).
 

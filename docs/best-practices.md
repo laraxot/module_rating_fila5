@@ -1,17 +1,14 @@
 ---
-<<<<<<< .merge_file_7pY2uv
-module: theme
-topic: best-practices
-canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
-=======
 title: "Rating — best practices"
 type: concept
 tags: [rating, dry, kiss, has-rating]
+created: 2026-11-17
 updated: 2026-11-17
 qmd: "rating best practices HasRating actions morphToMany no RatingService dry kiss"
+issues:
+  - "https://github.com/laraxot/platform/issues/272"
+discussions:
+  - "https://github.com/laraxot/platform/discussions/273"
 canonical: true
 related:
   - ./index.md
@@ -46,4 +43,3 @@ Cause tipiche (generics MorphToMany, Builder, Pest harness): [phpstan-fixes.md](
 ## Indice
 
 [index.md](index.md)
->>>>>>> .merge_file_rw6qND
